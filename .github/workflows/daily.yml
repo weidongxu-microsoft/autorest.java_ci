@@ -48,7 +48,7 @@ jobs:
       - name: Generate and Compile
         run: |
           rm -rf generated
-          ./gen.py -u autorest.java -o azure-sdk-for-java
+          ./gen.py -u ./autorest.java -o azure-sdk-for-java
           ./update_pom.py
 
       - name: Commit and push
