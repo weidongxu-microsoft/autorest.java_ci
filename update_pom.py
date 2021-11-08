@@ -35,13 +35,13 @@ pre_dependency = '''<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi
     <dependency>
       <groupId>com.azure</groupId>
       <artifactId>azure-core-test</artifactId>
-      <version>1.7.0</version>
+      <version>1.7.4</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.azure</groupId>
       <artifactId>azure-identity</artifactId>
-      <version>1.3.5</version>
+      <version>1.4.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
