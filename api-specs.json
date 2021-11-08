@@ -1,0 +1,165 @@
+{
+    "applicationinsights": {
+        "source": "specification/applicationinsights/resource-manager/readme.md",
+        "tag": "package-2020-04",
+        "namespace": "com.azure.resourcemanager.applicationinsights.generated",
+        "output": "sdk/applicationinsights/azure-resourcemanager-applicationinsights-generated"
+    },
+    "appservice": {
+        "source": "specification/web/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.appservice.generated",
+        "output": "sdk/appservice/azure-resourcemanager-appservice-generated"
+    },
+    "authorization": {
+        "source": "specification/authorization/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.authorization.generated",
+        "output": "sdk/authorization/azure-resourcemanager-authorization-generated",
+        "tag": "package-2018-09-01-preview"
+    },
+    "commerce": {
+        "source": "specification/commerce/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.commerce.generated",
+        "output": "sdk/commerce/azure-resourcemanager-commerce-generated"
+    },
+    "compute": {
+        "source": "specification/compute/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.compute.generated",
+        "output": "sdk/compute/azure-resourcemanager-compute-generated"
+    },
+    "consumption": {
+        "source": "specification/consumption/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.consumption.generated",
+        "output": "sdk/consumption/azure-resourcemanager-consumption-generated"
+    },
+    "databoxedge": {
+        "source": "specification/databoxedge/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.databoxedge.generated",
+        "output": "sdk/databoxedge/azure-resourcemanager-databoxedge-generated"
+    },
+    "dns": {
+        "source": "specification/dns/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.dns.generated",
+        "output": "sdk/dns/azure-resourcemanager-dns-generated"
+    },
+    "eventhubs": {
+        "source": "specification/eventhub/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.eventhubs.generated",
+        "output": "sdk/eventhubs/azure-resourcemanager-eventhubs-generated"
+    },
+    "frontdoor": {
+        "source": "specification/frontdoor/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.frontdoor.generated",
+        "output": "sdk/frontdoor/azure-resourcemanager-frontdoor-generated"
+    },
+    "hdinsight": {
+        "source": "specification/hdinsight/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.hdinsight.generated",
+        "output": "sdk/hdinsight/azure-resourcemanager-hdinsight-generated"
+    },
+    "iothub": {
+        "source": "specification/iothub/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.iothub.generated",
+        "output": "sdk/iothub/azure-resourcemanager-iothub-generated"
+    },
+    "keyvault": {
+        "source": "specification/keyvault/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.keyvault.generated",
+        "output": "sdk/keyvault/azure-resourcemanager-keyvault-generated"
+    },
+    "locks": {
+        "source": "specification/resources/resource-manager/readme.md",
+        "tag": "package-locks-2016-09",
+        "namespace": "com.azure.resourcemanager.locks.generated",
+        "output": "sdk/locks/azure-resourcemanager-locks-generated"
+    },
+    "mediaservices": {
+        "source": "specification/mediaservices/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.mediaservices.generated",
+        "output": "sdk/mediaservices/azure-resourcemanager-mediaservices-generated"
+    },
+    "monitor": {
+        "source": "specification/monitor/resource-manager/readme.md",
+        "tag": "package-2020-03",
+        "namespace": "com.azure.resourcemanager.monitor.generated",
+        "output": "sdk/monitor/azure-resourcemanager-monitor-generated"
+    },
+    "mysql": {
+        "source": "specification/mysql/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.mysql.generated",
+        "output": "sdk/mysql/azure-resourcemanager-mysql-generated"
+    },
+    "network": {
+        "source": "specification/network/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.network.generated",
+        "output": "sdk/network/azure-resourcemanager-network-generated"
+    },
+    "policy": {
+        "source": "specification/resources/resource-manager/readme.md",
+        "tag": "package-policy-2020-09",
+        "namespace": "com.azure.resourcemanager.policy.generated",
+        "output": "sdk/policy/azure-resourcemanager-policy-generated"
+    },
+    "postgresql": {
+        "source": "specification/postgresql/resource-manager/readme.md",
+        "tag": "package-2020-01-01",
+        "namespace": "com.azure.resourcemanager.postgresql.generated",
+        "output": "sdk/postgresql/azure-resourcemanager-postgresql-generated"
+    },
+    "resourcegraph": {
+        "source": "specification/resourcegraph/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.resourcegraph.generated",
+        "output": "sdk/resourcegraph/azure-resourcemanager-resourcegraph-generated"
+    },
+    "resources": {
+        "source": "specification/resources/resource-manager/readme.md",
+        "tag": "package-resources-2020-06",
+        "namespace": "com.azure.resourcemanager.resources.generated",
+        "output": "sdk/resources/azure-resourcemanager-resources-generated"
+    },
+    "search": {
+        "source": "specification/search/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.search.generated",
+        "output": "sdk/search/azure-resourcemanager-search-generated"
+    },
+    "storage": {
+        "source": "specification/storage/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.storage.generated",
+        "output": "sdk/storage/azure-resourcemanager-storage-generated"
+    },
+    "relay": {
+        "source": "specification/relay/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.relay.generated",
+        "output": "sdk/relay/azure-resourcemanager-relay-generated"
+    },
+    "sqlvirtualmachine": {
+        "source": "specification/sqlvirtualmachine/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.sqlvirtualmachine.generated",
+        "output": "sdk/sqlvirtualmachine/azure-resourcemanager-sqlvirtualmachine-generated"
+    },
+    "recoveryservices": {
+        "source": "specification/recoveryservices/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.recoveryservices.generated",
+        "output": "sdk/recoveryservices/azure-resourcemanager-recoveryservices-generated"
+    },
+    "operationalinsights": {
+        "source": "specification/operationalinsights/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.operationalinsights.generated",
+        "output": "sdk/operationalinsights/azure-resourcemanager-operationalinsights-generated"
+    },
+    "eventgrid": {
+        "source": "specification/eventgrid/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.eventgrid.generated",
+        "output": "sdk/eventgrid/azure-resourcemanager-eventgrid-generated"
+    },
+    "azurekusto": {
+        "source": "specification/azure-kusto/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.azurekusto.generated",
+        "output": "sdk/azurekusto/azure-resourcemanager-azurekusto-generated"
+    },
+    "costmanagement": {
+        "source": "specification/cost-management/resource-manager/readme.md",
+        "tag": "package-2019-11",
+        "namespace": "com.azure.resourcemanager.costmanagement.generated",
+        "output": "sdk/costmanagement/azure-resourcemanager-costmanagement-generated"
+    }
+}

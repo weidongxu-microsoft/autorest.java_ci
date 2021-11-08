@@ -1,0 +1,251 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2018-03-01",
+    "title": "MonitorManagementClient",
+    "x-ms-code-generation-settings": {
+      "name": "MonitorManagementClient"
+    },
+    "description": "Azure Monitor client to create/update/delete metric based alerts."
+  },
+  "host": "management.azure.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "security": [
+    {
+      "azure_auth": [
+        "user_impersonation"
+      ]
+    }
+  ],
+  "securityDefinitions": {
+    "azure_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "flow": "implicit",
+      "description": "Azure Active Directory OAuth2 Flow",
+      "scopes": {
+        "user_impersonation": "impersonate your user account"
+      }
+    }
+  },
+  "paths": {
+    "/providers/Microsoft.Insights/metricAlerts": {
+      "get": {
+        "tags": [
+          "MetricAlerts"
+        ],
+        "description": "Retrieve an alert rule definition.",
+        "operationId": "MetricAlerts_Get",
+        "responses": {
+          "200": {
+            "description": "Successful request for a list of metric alerts",
+            "schema": {
+              "$ref": "#/definitions/MetricAlertResource"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "MetricAlertResource": {
+      "type": "object",
+      "required": [
+        "properties"
+      ],
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten": true,
+          "$ref": "#/definitions/MetricAlertProperties",
+          "description": "The alert rule properties of the resource."
+        }
+      },
+      "description": "The metric alert resource."
+    },
+    "MetricAlertProperties": {
+      "required": [
+        "criteria"
+      ],
+      "properties": {
+        "criteria": {
+          "$ref": "#/definitions/MetricAlertCriteria",
+          "description": "defines the specific alert criteria information."
+        }
+      },
+      "description": "An alert rule."
+    },
+    "MetricAlertCriteria": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object"
+      },
+      "discriminator": "odata.type",
+      "properties": {
+        "odata.type": {
+          "type": "string",
+          "enum": [
+            "Microsoft.Azure.Monitor.SingleResourceMultipleMetricCriteria",
+            "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria",
+            "Microsoft.Azure.Monitor.WebtestLocationAvailabilityCriteria"
+          ],
+          "x-ms-enum": {
+            "name": "odatatype",
+            "modelAsString": true
+          },
+          "description": "specifies the type of the alert criteria."
+        }
+      },
+      "required": [
+        "odata.type"
+      ],
+      "description": "The rule criteria that defines the conditions of the alert rule."
+    },
+    "MetricAlertSingleResourceMultipleMetricCriteria": {
+      "x-ms-discriminator-value": "Microsoft.Azure.Monitor.SingleResourceMultipleMetricCriteria",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/MetricAlertCriteria"
+        }
+      ],
+      "properties": {
+        "allOf": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The list of metric criteria for this 'all of' operation. "
+        }
+      },
+      "description": "Specifies the metric alert criteria for a single resource that has multiple metric criteria."
+    },
+    "VirtualMachineScaleSet": {
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten": true,
+          "$ref": "#/definitions/VirtualMachineScaleSetProperties"
+        }
+      },
+      "description": "Describes a Virtual Machine Scale Set."
+    },
+    "VirtualMachineScaleSetProperties": {
+      "properties": {
+        "virtualMachineProfile": {
+          "$ref": "#/definitions/VirtualMachineScaleSetVMProfile",
+          "description": "The virtual machine profile."
+        }
+      },
+      "description": "Describes the properties of a Virtual Machine Scale Set."
+    },
+    "VirtualMachineScaleSetVMProfile": {
+      "properties": {
+        "networkProfile": {
+          "$ref": "#/definitions/VirtualMachineScaleSetNetworkProfile",
+          "description": "Specifies properties of the network interfaces of the virtual machines in the scale set."
+        }
+      },
+      "description": "Describes a virtual machine scale set virtual machine profile."
+    },
+    "VirtualMachineScaleSetNetworkProfile": {
+      "properties": {
+        "networkInterfaceConfigurations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/VirtualMachineScaleSetNetworkConfiguration"
+          },
+          "description": "The list of network configurations."
+        }
+      },
+      "description": "Describes a virtual machine scale set network profile."
+    },
+    "VirtualMachineScaleSetNetworkConfiguration": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The network configuration name."
+        },
+        "properties": {
+          "x-ms-client-flatten": true,
+          "$ref": "#/definitions/VirtualMachineScaleSetNetworkConfigurationProperties"
+        }
+      },
+      "description": "Describes a virtual machine scale set network profile's network configurations."
+    },
+    "VirtualMachineScaleSetNetworkConfigurationProperties": {
+      "properties": {
+        "primary": {
+          "type": "boolean",
+          "description": "Specifies the primary network interface in case the virtual machine has more than 1 network interface."
+        }
+      },
+      "description": "Describes a virtual machine scale set network profile's IP configuration."
+    },
+    "LoadBalancer": {
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten": true,
+          "$ref": "#/definitions/LoadBalancerPropertiesFormat",
+          "description": "Properties of load balancer."
+        }
+      },
+      "description": "LoadBalancer resource."
+    },
+    "LoadBalancerPropertiesFormat": {
+      "properties": {
+        "backendAddressPools": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BackendAddressPool"
+          },
+          "description": "Collection of backend address pools used by a load balancer."
+        }
+      },
+      "description": "Properties of the load balancer."
+    },
+    "BackendAddressPool": {
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten": true,
+          "$ref": "#/definitions/BackendAddressPoolPropertiesFormat",
+          "description": "Properties of load balancer backend address pool."
+        }
+      },
+      "description": "Pool of backend IP addresses."
+    },
+    "BackendAddressPoolPropertiesFormat": {
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "The location of the backend address pool."
+        }
+      },
+      "description": "Properties of the backend address pool."
+    },
+    "ApplicationPackageReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "The ID of the application package to install. This must be inside the same batch account as the pool. This can either be a reference to a specific version or the default version if one exists."
+        },
+        "version": {
+          "type": "string",
+          "title": "The version of the application to deploy. If omitted, the default version is deployed.",
+          "description": "If this is omitted, and no default version is specified for this application, the request fails with the error code InvalidApplicationPackageReferences. If you are calling the REST API directly, the HTTP status code is 409."
+        }
+      },
+      "title": "Link to an application package inside the batch account",
+      "required": [
+        "id"
+      ]
+    }
+  }
+}
