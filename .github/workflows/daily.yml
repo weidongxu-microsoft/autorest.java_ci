@@ -10,13 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ci
+          ref: main
           fetch-depth: 0
-      - name: Merge from Azure/autorest.java
-        run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "Github Actions"
-          git pull --rebase=false --no-edit https://github.com/azure/autorest.java main
 
       - name: Cache maven dependencies
         uses: actions/cache@v1
@@ -39,21 +34,28 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.11
+
+      - name: Clone autorest.java
+        run: git clone --depth 1 https://github.com/azure/autorest.java
       - name: Build and Package
-        run: mvn -f pom.xml -Dlocal package
-      - name: clone azure-sdk-for-java
+        run: mvn -f autorest.java/pom.xml -Plocal package --no-transfer-progress
+
+      - name: Clone azure-sdk-for-java
         run: git clone --depth 1 https://github.com/azure/azure-sdk-for-java
       - name: Install sdk-build-tools
-        run: mvn -f azure-sdk-for-java/eng/code-quality-reports/pom.xml install
+        run: mvn -f azure-sdk-for-java/eng/code-quality-reports/pom.xml install --no-transfer-progress
+
       - name: Generate and Compile
         run: |
           rm -rf generated
-          ./gen.py -u . -o azure-sdk-for-java
+          ./gen.py -u autorest.java -o azure-sdk-for-java
           ./update_pom.py
 
       - name: Commit and push
         run: |
-          git pull --rebase=false --no-edit https://github.com/chentanyi/autorest.java ci
+          git config --global user.email "actions@github.com"
+          git config --global user.name "Github Actions"
+          git pull --rebase=false --no-edit
           git push
           {
             git add generated test && \
