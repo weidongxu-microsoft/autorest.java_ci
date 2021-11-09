@@ -24,13 +24,6 @@ public final class QueryDataset {
     private GranularityType granularity;
 
     /*
-     * Has configuration information for the data in the export. The
-     * configuration will be ignored if aggregation and grouping are provided.
-     */
-    @JsonProperty(value = "configuration")
-    private QueryDatasetConfiguration configuration;
-
-    /*
      * Dictionary of aggregation expression to use in the query. The key of
      * each item in the dictionary is the alias for the aggregated column.
      * Query can have up to 2 aggregation clauses.
@@ -70,28 +63,6 @@ public final class QueryDataset {
      */
     public QueryDataset withGranularity(GranularityType granularity) {
         this.granularity = granularity;
-        return this;
-    }
-
-    /**
-     * Get the configuration property: Has configuration information for the data in the export. The configuration will
-     * be ignored if aggregation and grouping are provided.
-     *
-     * @return the configuration value.
-     */
-    public QueryDatasetConfiguration configuration() {
-        return this.configuration;
-    }
-
-    /**
-     * Set the configuration property: Has configuration information for the data in the export. The configuration will
-     * be ignored if aggregation and grouping are provided.
-     *
-     * @param configuration the configuration value to set.
-     * @return the QueryDataset object itself.
-     */
-    public QueryDataset withConfiguration(QueryDatasetConfiguration configuration) {
-        this.configuration = configuration;
         return this;
     }
 
@@ -167,9 +138,6 @@ public final class QueryDataset {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (configuration() != null) {
-            configuration().validate();
-        }
         if (aggregation() != null) {
             aggregation()
                 .values()
