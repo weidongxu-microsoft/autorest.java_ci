@@ -39,6 +39,7 @@ import com.azure.resourcemanager.operationalinsights.generated.implementation.Sa
 import com.azure.resourcemanager.operationalinsights.generated.implementation.SchemasImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.SharedKeysOperationsImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.StorageInsightConfigsImpl;
+import com.azure.resourcemanager.operationalinsights.generated.implementation.TablesImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.UsagesImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.WorkspacePurgesImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.WorkspacesImpl;
@@ -58,6 +59,7 @@ import com.azure.resourcemanager.operationalinsights.generated.models.SavedSearc
 import com.azure.resourcemanager.operationalinsights.generated.models.Schemas;
 import com.azure.resourcemanager.operationalinsights.generated.models.SharedKeysOperations;
 import com.azure.resourcemanager.operationalinsights.generated.models.StorageInsightConfigs;
+import com.azure.resourcemanager.operationalinsights.generated.models.Tables;
 import com.azure.resourcemanager.operationalinsights.generated.models.Usages;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePurges;
 import com.azure.resourcemanager.operationalinsights.generated.models.Workspaces;
@@ -101,6 +103,8 @@ public final class LogAnalyticsManager {
     private WorkspacePurges workspacePurges;
 
     private Operations operations;
+
+    private Tables tables;
 
     private Clusters clusters;
 
@@ -422,6 +426,14 @@ public final class LogAnalyticsManager {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
         }
         return operations;
+    }
+
+    /** @return Resource collection API of Tables. */
+    public Tables tables() {
+        if (this.tables == null) {
+            this.tables = new TablesImpl(clientObject.getTables(), this);
+        }
+        return tables;
     }
 
     /** @return Resource collection API of Clusters. */

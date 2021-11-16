@@ -165,8 +165,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
             serviceManager
                 .serviceClient()
                 .getClusters()
-                .updateWithResponse(resourceGroupName, clusterName, updateParameters, Context.NONE)
-                .getValue();
+                .update(resourceGroupName, clusterName, updateParameters, Context.NONE);
         return this;
     }
 
@@ -175,8 +174,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
             serviceManager
                 .serviceClient()
                 .getClusters()
-                .updateWithResponse(resourceGroupName, clusterName, updateParameters, context)
-                .getValue();
+                .update(resourceGroupName, clusterName, updateParameters, context);
         return this;
     }
 

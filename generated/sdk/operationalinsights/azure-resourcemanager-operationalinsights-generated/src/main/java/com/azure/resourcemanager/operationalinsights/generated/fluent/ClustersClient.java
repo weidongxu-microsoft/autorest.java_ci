@@ -214,6 +214,37 @@ public interface ClustersClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the top level Log Analytics cluster resource container.
      */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(
+        String resourceGroupName, String clusterName, ClusterPatch parameters);
+
+    /**
+     * Updates a Log Analytics cluster.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param clusterName Name of the Log Analytics Cluster.
+     * @param parameters The parameters required to patch a Log Analytics cluster.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the top level Log Analytics cluster resource container.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(
+        String resourceGroupName, String clusterName, ClusterPatch parameters, Context context);
+
+    /**
+     * Updates a Log Analytics cluster.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param clusterName Name of the Log Analytics Cluster.
+     * @param parameters The parameters required to patch a Log Analytics cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the top level Log Analytics cluster resource container.
+     */
     @ServiceMethod(returns = ReturnType.SINGLE)
     ClusterInner update(String resourceGroupName, String clusterName, ClusterPatch parameters);
 
@@ -230,6 +261,5 @@ public interface ClustersClient {
      * @return the top level Log Analytics cluster resource container.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ClusterInner> updateWithResponse(
-        String resourceGroupName, String clusterName, ClusterPatch parameters, Context context);
+    ClusterInner update(String resourceGroupName, String clusterName, ClusterPatch parameters, Context context);
 }

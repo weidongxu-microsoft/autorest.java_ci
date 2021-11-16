@@ -38,6 +38,7 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.SavedSearc
 import com.azure.resourcemanager.operationalinsights.generated.fluent.SchemasClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.SharedKeysOperationsClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.StorageInsightConfigsClient;
+import com.azure.resourcemanager.operationalinsights.generated.fluent.TablesClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.UsagesClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.WorkspacePurgesClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.WorkspacesClient;
@@ -308,6 +309,18 @@ public final class OperationalInsightsManagementClientImpl implements Operationa
         return this.operations;
     }
 
+    /** The TablesClient object to access its operations. */
+    private final TablesClient tables;
+
+    /**
+     * Gets the TablesClient object to access its operations.
+     *
+     * @return the TablesClient object.
+     */
+    public TablesClient getTables() {
+        return this.tables;
+    }
+
     /** The ClustersClient object to access its operations. */
     private final ClustersClient clusters;
 
@@ -382,6 +395,7 @@ public final class OperationalInsightsManagementClientImpl implements Operationa
         this.schemas = new SchemasClientImpl(this);
         this.workspacePurges = new WorkspacePurgesClientImpl(this);
         this.operations = new OperationsClientImpl(this);
+        this.tables = new TablesClientImpl(this);
         this.clusters = new ClustersClientImpl(this);
         this.workspaces = new WorkspacesClientImpl(this);
         this.deletedWorkspaces = new DeletedWorkspacesClientImpl(this);

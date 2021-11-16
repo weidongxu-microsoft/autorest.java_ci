@@ -150,6 +150,13 @@ public interface OperationalInsightsManagementClient {
     OperationsClient getOperations();
 
     /**
+     * Gets the TablesClient object to access its operations.
+     *
+     * @return the TablesClient object.
+     */
+    TablesClient getTables();
+
+    /**
      * Gets the ClustersClient object to access its operations.
      *
      * @return the ClustersClient object.
