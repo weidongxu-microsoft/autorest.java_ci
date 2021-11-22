@@ -1227,7 +1227,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, publicIpAddressName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1668,7 +1669,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 this.client.getHttpPipeline(),
                 PublicIpAddressInner.class,
                 PublicIpAddressInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

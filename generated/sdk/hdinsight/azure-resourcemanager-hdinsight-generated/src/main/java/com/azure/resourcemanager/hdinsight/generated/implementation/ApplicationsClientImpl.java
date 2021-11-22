@@ -648,7 +648,11 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
         return this
             .client
             .<ApplicationInner, ApplicationInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ApplicationInner.class, ApplicationInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                ApplicationInner.class,
+                ApplicationInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -931,7 +935,8 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
             deleteWithResponseAsync(resourceGroupName, clusterName, applicationName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

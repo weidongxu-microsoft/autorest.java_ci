@@ -352,7 +352,8 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
             enableMonitoringWithResponseAsync(resourceGroupName, clusterName, parameters);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -744,7 +745,8 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = disableMonitoringWithResponseAsync(resourceGroupName, clusterName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -991,7 +993,8 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
             enableAzureMonitorWithResponseAsync(resourceGroupName, clusterName, parameters);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1382,7 +1385,8 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = disableAzureMonitorWithResponseAsync(resourceGroupName, clusterName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1640,7 +1644,8 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
             createWithResponseAsync(resourceGroupName, clusterName, extensionName, parameters);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2063,7 +2068,8 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, clusterName, extensionName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

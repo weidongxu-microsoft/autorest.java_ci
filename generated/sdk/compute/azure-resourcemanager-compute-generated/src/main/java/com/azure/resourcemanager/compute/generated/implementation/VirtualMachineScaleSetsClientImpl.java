@@ -769,7 +769,7 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
                 this.client.getHttpPipeline(),
                 VirtualMachineScaleSetInner.class,
                 VirtualMachineScaleSetInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1041,7 +1041,7 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
                 this.client.getHttpPipeline(),
                 VirtualMachineScaleSetInner.class,
                 VirtualMachineScaleSetInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1295,7 +1295,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
             deleteWithResponseAsync(resourceGroupName, vmScaleSetName, forceDeletion);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1771,7 +1772,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
             deallocateWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2100,7 +2102,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
             deleteInstancesWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -3294,7 +3297,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
             powerOffWithResponseAsync(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -3641,7 +3645,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
             restartWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -3942,7 +3947,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
             startWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -4246,7 +4252,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
             redeployWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -4562,7 +4569,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
             performMaintenanceWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -4885,7 +4893,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
             updateInstancesWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -5163,7 +5172,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
             reimageWithResponseAsync(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -5491,7 +5501,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
             reimageAllWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -6134,7 +6145,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
             setOrchestrationServiceStateWithResponseAsync(resourceGroupName, vmScaleSetName, parameters);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

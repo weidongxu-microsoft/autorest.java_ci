@@ -726,7 +726,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
                 this.client.getHttpPipeline(),
                 DatabasePrincipalAssignmentInner.class,
                 DatabasePrincipalAssignmentInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1066,7 +1066,8 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
             deleteWithResponseAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

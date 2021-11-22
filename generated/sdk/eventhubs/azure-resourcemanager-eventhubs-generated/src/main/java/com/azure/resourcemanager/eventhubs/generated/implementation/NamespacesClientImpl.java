@@ -783,7 +783,11 @@ public final class NamespacesClientImpl implements NamespacesClient {
         return this
             .client
             .<EHNamespaceInner, EHNamespaceInner>getLroResult(
-                mono, this.client.getHttpPipeline(), EHNamespaceInner.class, EHNamespaceInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                EHNamespaceInner.class,
+                EHNamespaceInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -1034,7 +1038,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, namespaceName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

@@ -668,7 +668,7 @@ public final class AddonsClientImpl implements AddonsClient {
         return this
             .client
             .<AddonInner, AddonInner>getLroResult(
-                mono, this.client.getHttpPipeline(), AddonInner.class, AddonInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), AddonInner.class, AddonInner.class, this.client.getContext());
     }
 
     /**
@@ -972,7 +972,8 @@ public final class AddonsClientImpl implements AddonsClient {
             deleteWithResponseAsync(deviceName, roleName, addonName, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

@@ -481,7 +481,7 @@ public final class SqlVirtualMachineGroupsClientImpl implements SqlVirtualMachin
                 this.client.getHttpPipeline(),
                 SqlVirtualMachineGroupInner.class,
                 SqlVirtualMachineGroupInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -756,7 +756,8 @@ public final class SqlVirtualMachineGroupsClientImpl implements SqlVirtualMachin
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, sqlVirtualMachineGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1027,7 +1028,7 @@ public final class SqlVirtualMachineGroupsClientImpl implements SqlVirtualMachin
                 this.client.getHttpPipeline(),
                 SqlVirtualMachineGroupInner.class,
                 SqlVirtualMachineGroupInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

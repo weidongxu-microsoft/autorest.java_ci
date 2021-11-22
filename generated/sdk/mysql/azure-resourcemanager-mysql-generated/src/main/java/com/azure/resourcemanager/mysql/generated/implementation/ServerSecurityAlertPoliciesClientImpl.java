@@ -457,7 +457,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
                 this.client.getHttpPipeline(),
                 ServerSecurityAlertPolicyInner.class,
                 ServerSecurityAlertPolicyInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

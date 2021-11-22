@@ -457,7 +457,11 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
         return this
             .client
             .<VirtualWanInner, VirtualWanInner>getLroResult(
-                mono, this.client.getHttpPipeline(), VirtualWanInner.class, VirtualWanInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                VirtualWanInner.class,
+                VirtualWanInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -872,7 +876,8 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, virtualWanName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

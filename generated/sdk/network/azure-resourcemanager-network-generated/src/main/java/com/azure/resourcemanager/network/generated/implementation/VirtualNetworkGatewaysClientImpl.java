@@ -587,7 +587,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                 this.client.getHttpPipeline(),
                 VirtualNetworkGatewayInner.class,
                 VirtualNetworkGatewayInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1016,7 +1016,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, virtualNetworkGatewayName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1276,7 +1277,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                 this.client.getHttpPipeline(),
                 VirtualNetworkGatewayInner.class,
                 VirtualNetworkGatewayInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1903,7 +1904,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                 this.client.getHttpPipeline(),
                 VirtualNetworkGatewayInner.class,
                 VirtualNetworkGatewayInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -2203,7 +2204,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
             resetVpnClientSharedKeyWithResponseAsync(resourceGroupName, virtualNetworkGatewayName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2461,7 +2463,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         return this
             .client
             .<String, String>getLroResult(
-                mono, this.client.getHttpPipeline(), String.class, String.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), String.class, String.class, this.client.getContext());
     }
 
     /**
@@ -2737,7 +2739,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         return this
             .client
             .<String, String>getLroResult(
-                mono, this.client.getHttpPipeline(), String.class, String.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), String.class, String.class, this.client.getContext());
     }
 
     /**
@@ -3003,7 +3005,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         return this
             .client
             .<String, String>getLroResult(
-                mono, this.client.getHttpPipeline(), String.class, String.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), String.class, String.class, this.client.getContext());
     }
 
     /**
@@ -3264,7 +3266,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                 this.client.getHttpPipeline(),
                 BgpPeerStatusListResultInner.class,
                 BgpPeerStatusListResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -3724,7 +3726,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                 this.client.getHttpPipeline(),
                 GatewayRouteListResultInner.class,
                 GatewayRouteListResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -3998,7 +4000,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                 this.client.getHttpPipeline(),
                 GatewayRouteListResultInner.class,
                 GatewayRouteListResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -4296,7 +4298,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                 this.client.getHttpPipeline(),
                 VpnClientIPsecParametersInner.class,
                 VpnClientIPsecParametersInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -4606,7 +4608,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                 this.client.getHttpPipeline(),
                 VpnClientIPsecParametersInner.class,
                 VpnClientIPsecParametersInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -5073,7 +5075,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         return this
             .client
             .<String, String>getLroResult(
-                mono, this.client.getHttpPipeline(), String.class, String.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), String.class, String.class, this.client.getContext());
     }
 
     /**
@@ -5393,7 +5395,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         return this
             .client
             .<String, String>getLroResult(
-                mono, this.client.getHttpPipeline(), String.class, String.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), String.class, String.class, this.client.getContext());
     }
 
     /**
@@ -5673,7 +5675,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     this.client.getHttpPipeline(),
                     VpnClientConnectionHealthDetailListResultInner.class,
                     VpnClientConnectionHealthDetailListResultInner.class,
-                    Context.NONE);
+                    this.client.getContext());
     }
 
     /**
@@ -5961,7 +5963,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                 resourceGroupName, virtualNetworkGatewayName, request);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

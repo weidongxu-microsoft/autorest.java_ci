@@ -589,7 +589,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
                 this.client.getHttpPipeline(),
                 WebApplicationFirewallPolicyInner.class,
                 WebApplicationFirewallPolicyInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -843,7 +843,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, policyName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

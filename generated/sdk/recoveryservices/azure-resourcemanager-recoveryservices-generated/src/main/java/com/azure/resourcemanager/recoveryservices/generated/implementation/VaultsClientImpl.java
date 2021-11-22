@@ -754,7 +754,7 @@ public final class VaultsClientImpl implements VaultsClient {
         return this
             .client
             .<VaultInner, VaultInner>getLroResult(
-                mono, this.client.getHttpPipeline(), VaultInner.class, VaultInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), VaultInner.class, VaultInner.class, this.client.getContext());
     }
 
     /**
@@ -1150,7 +1150,7 @@ public final class VaultsClientImpl implements VaultsClient {
         return this
             .client
             .<VaultInner, VaultInner>getLroResult(
-                mono, this.client.getHttpPipeline(), VaultInner.class, VaultInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), VaultInner.class, VaultInner.class, this.client.getContext());
     }
 
     /**

@@ -358,7 +358,11 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
         return this
             .client
             .<ManagedHsmInner, ManagedHsmInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ManagedHsmInner.class, ManagedHsmInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                ManagedHsmInner.class,
+                ManagedHsmInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -619,7 +623,11 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
         return this
             .client
             .<ManagedHsmInner, ManagedHsmInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ManagedHsmInner.class, ManagedHsmInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                ManagedHsmInner.class,
+                ManagedHsmInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -859,7 +867,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, name);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1877,7 +1886,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = purgeDeletedWithResponseAsync(name, location);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

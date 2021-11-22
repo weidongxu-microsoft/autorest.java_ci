@@ -261,7 +261,11 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
         return this
             .client
             .<ConfigurationInner, ConfigurationInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ConfigurationInner.class, ConfigurationInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                ConfigurationInner.class,
+                ConfigurationInner.class,
+                this.client.getContext());
     }
 
     /**

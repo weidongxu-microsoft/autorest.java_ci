@@ -649,7 +649,7 @@ public final class TriggersClientImpl implements TriggersClient {
         return this
             .client
             .<TriggerInner, TriggerInner>getLroResult(
-                mono, this.client.getHttpPipeline(), TriggerInner.class, TriggerInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), TriggerInner.class, TriggerInner.class, this.client.getContext());
     }
 
     /**
@@ -912,7 +912,8 @@ public final class TriggersClientImpl implements TriggersClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(deviceName, name, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

@@ -273,7 +273,8 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, firewallPolicyName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -713,7 +714,7 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
                 this.client.getHttpPipeline(),
                 FirewallPolicyInner.class,
                 FirewallPolicyInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

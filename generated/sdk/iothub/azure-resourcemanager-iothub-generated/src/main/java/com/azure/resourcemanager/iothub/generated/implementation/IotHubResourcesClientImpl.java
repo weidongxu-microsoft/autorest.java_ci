@@ -826,7 +826,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
                 this.client.getHttpPipeline(),
                 IotHubDescriptionInner.class,
                 IotHubDescriptionInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1183,7 +1183,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
                 this.client.getHttpPipeline(),
                 IotHubDescriptionInner.class,
                 IotHubDescriptionInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1436,7 +1436,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
                 this.client.getHttpPipeline(),
                 IotHubDescriptionInner.class,
                 IotHubDescriptionInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

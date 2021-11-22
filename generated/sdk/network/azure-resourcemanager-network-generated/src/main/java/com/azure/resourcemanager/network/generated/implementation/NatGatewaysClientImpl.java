@@ -288,7 +288,8 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, natGatewayName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -720,7 +721,11 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
         return this
             .client
             .<NatGatewayInner, NatGatewayInner>getLroResult(
-                mono, this.client.getHttpPipeline(), NatGatewayInner.class, NatGatewayInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                NatGatewayInner.class,
+                NatGatewayInner.class,
+                this.client.getContext());
     }
 
     /**

@@ -416,7 +416,11 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
         return this
             .client
             .<CloudServiceInner, CloudServiceInner>getLroResult(
-                mono, this.client.getHttpPipeline(), CloudServiceInner.class, CloudServiceInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                CloudServiceInner.class,
+                CloudServiceInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -713,7 +717,11 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
         return this
             .client
             .<CloudServiceInner, CloudServiceInner>getLroResult(
-                mono, this.client.getHttpPipeline(), CloudServiceInner.class, CloudServiceInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                CloudServiceInner.class,
+                CloudServiceInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -995,7 +1003,8 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, cloudServiceName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1848,7 +1857,8 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = startWithResponseAsync(resourceGroupName, cloudServiceName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2084,7 +2094,8 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = powerOffWithResponseAsync(resourceGroupName, cloudServiceName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2337,7 +2348,8 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
             restartWithResponseAsync(resourceGroupName, cloudServiceName, parameters);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2626,7 +2638,8 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
             reimageWithResponseAsync(resourceGroupName, cloudServiceName, parameters);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2921,7 +2934,8 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
             rebuildWithResponseAsync(resourceGroupName, cloudServiceName, parameters);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -3228,7 +3242,8 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
             deleteInstancesWithResponseAsync(resourceGroupName, cloudServiceName, parameters);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

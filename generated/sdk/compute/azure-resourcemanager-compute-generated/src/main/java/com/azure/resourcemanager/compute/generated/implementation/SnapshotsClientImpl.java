@@ -342,7 +342,11 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         return this
             .client
             .<SnapshotInner, SnapshotInner>getLroResult(
-                mono, this.client.getHttpPipeline(), SnapshotInner.class, SnapshotInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                SnapshotInner.class,
+                SnapshotInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -625,7 +629,11 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         return this
             .client
             .<SnapshotInner, SnapshotInner>getLroResult(
-                mono, this.client.getHttpPipeline(), SnapshotInner.class, SnapshotInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                SnapshotInner.class,
+                SnapshotInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -1046,7 +1054,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, snapshotName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1612,7 +1621,11 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         return this
             .client
             .<AccessUriInner, AccessUriInner>getLroResult(
-                mono, this.client.getHttpPipeline(), AccessUriInner.class, AccessUriInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                AccessUriInner.class,
+                AccessUriInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -1874,7 +1887,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = revokeAccessWithResponseAsync(resourceGroupName, snapshotName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

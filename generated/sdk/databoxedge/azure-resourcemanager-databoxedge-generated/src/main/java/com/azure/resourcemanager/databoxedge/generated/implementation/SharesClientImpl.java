@@ -637,7 +637,7 @@ public final class SharesClientImpl implements SharesClient {
         return this
             .client
             .<ShareInner, ShareInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ShareInner.class, ShareInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), ShareInner.class, ShareInner.class, this.client.getContext());
     }
 
     /**
@@ -900,7 +900,8 @@ public final class SharesClientImpl implements SharesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(deviceName, name, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1148,7 +1149,8 @@ public final class SharesClientImpl implements SharesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = refreshWithResponseAsync(deviceName, name, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

@@ -527,7 +527,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
                 this.client.getHttpPipeline(),
                 DataConnectionValidationListResultInner.class,
                 DataConnectionValidationListResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1249,7 +1249,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
                 this.client.getHttpPipeline(),
                 DataConnectionInner.class,
                 DataConnectionInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1607,7 +1607,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
                 this.client.getHttpPipeline(),
                 DataConnectionInner.class,
                 DataConnectionInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1928,7 +1928,8 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
             deleteWithResponseAsync(resourceGroupName, clusterName, databaseName, dataConnectionName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

@@ -291,7 +291,8 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, ipAllocationName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -727,7 +728,11 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
         return this
             .client
             .<IpAllocationInner, IpAllocationInner>getLroResult(
-                mono, this.client.getHttpPipeline(), IpAllocationInner.class, IpAllocationInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                IpAllocationInner.class,
+                IpAllocationInner.class,
+                this.client.getContext());
     }
 
     /**

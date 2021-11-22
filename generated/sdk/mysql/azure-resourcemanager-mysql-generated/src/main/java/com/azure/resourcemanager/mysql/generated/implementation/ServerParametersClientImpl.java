@@ -211,7 +211,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
                 this.client.getHttpPipeline(),
                 ConfigurationListResultInner.class,
                 ConfigurationListResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

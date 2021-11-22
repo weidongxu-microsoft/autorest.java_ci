@@ -827,7 +827,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
                 this.client.getHttpPipeline(),
                 AttachedDatabaseConfigurationInner.class,
                 AttachedDatabaseConfigurationInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1138,7 +1138,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
             deleteWithResponseAsync(resourceGroupName, clusterName, attachedDatabaseConfigurationName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

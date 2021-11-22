@@ -307,7 +307,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                                     this.client.getHttpPipeline(),
                                     BastionShareableLinkListResult.class,
                                     BastionShareableLinkListResult.class,
-                                    Context.NONE)
+                                    this.client.getContext())
                                 .last()
                                 .flatMap(this.client::getLroFinalResultOrError));
                 })
@@ -607,7 +607,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
             deleteBastionShareableLinkWithResponseAsync(resourceGroupName, bastionHostname, bslRequest);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1005,7 +1006,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                                     this.client.getHttpPipeline(),
                                     BastionActiveSessionListResult.class,
                                     BastionActiveSessionListResult.class,
-                                    Context.NONE)
+                                    this.client.getContext())
                                 .last()
                                 .flatMap(this.client::getLroFinalResultOrError));
                 })
@@ -1821,7 +1822,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                 this.client.getHttpPipeline(),
                 VpnProfileResponseInner.class,
                 VpnProfileResponseInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

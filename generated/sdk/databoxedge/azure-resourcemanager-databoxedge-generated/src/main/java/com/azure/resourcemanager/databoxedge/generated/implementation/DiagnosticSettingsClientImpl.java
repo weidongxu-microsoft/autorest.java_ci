@@ -426,7 +426,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
                 this.client.getHttpPipeline(),
                 DiagnosticProactiveLogCollectionSettingsInner.class,
                 DiagnosticProactiveLogCollectionSettingsInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -898,7 +898,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
                 this.client.getHttpPipeline(),
                 DiagnosticRemoteSupportSettingsInner.class,
                 DiagnosticRemoteSupportSettingsInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

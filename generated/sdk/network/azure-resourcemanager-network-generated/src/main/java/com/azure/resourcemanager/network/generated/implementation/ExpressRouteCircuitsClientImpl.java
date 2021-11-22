@@ -375,7 +375,8 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, circuitName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -777,7 +778,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                 this.client.getHttpPipeline(),
                 ExpressRouteCircuitInner.class,
                 ExpressRouteCircuitInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1227,7 +1228,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                 this.client.getHttpPipeline(),
                 ExpressRouteCircuitsArpTableListResultInner.class,
                 ExpressRouteCircuitsArpTableListResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1521,7 +1522,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     this.client.getHttpPipeline(),
                     ExpressRouteCircuitsRoutesTableListResultInner.class,
                     ExpressRouteCircuitsRoutesTableListResultInner.class,
-                    Context.NONE);
+                    this.client.getContext());
     }
 
     /**
@@ -1823,7 +1824,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     this.client.getHttpPipeline(),
                     ExpressRouteCircuitsRoutesTableSummaryListResultInner.class,
                     ExpressRouteCircuitsRoutesTableSummaryListResultInner.class,
-                    Context.NONE);
+                    this.client.getContext());
     }
 
     /**

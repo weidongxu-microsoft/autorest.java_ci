@@ -708,7 +708,11 @@ public final class ContainersClientImpl implements ContainersClient {
         return this
             .client
             .<ContainerInner, ContainerInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ContainerInner.class, ContainerInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                ContainerInner.class,
+                ContainerInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -1031,7 +1035,8 @@ public final class ContainersClientImpl implements ContainersClient {
             deleteWithResponseAsync(deviceName, storageAccountName, containerName, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1306,7 +1311,8 @@ public final class ContainersClientImpl implements ContainersClient {
             refreshWithResponseAsync(deviceName, storageAccountName, containerName, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

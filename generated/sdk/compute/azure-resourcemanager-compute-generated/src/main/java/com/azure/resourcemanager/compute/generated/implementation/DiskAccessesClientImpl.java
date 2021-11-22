@@ -405,7 +405,11 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
         return this
             .client
             .<DiskAccessInner, DiskAccessInner>getLroResult(
-                mono, this.client.getHttpPipeline(), DiskAccessInner.class, DiskAccessInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                DiskAccessInner.class,
+                DiskAccessInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -688,7 +692,11 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
         return this
             .client
             .<DiskAccessInner, DiskAccessInner>getLroResult(
-                mono, this.client.getHttpPipeline(), DiskAccessInner.class, DiskAccessInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                DiskAccessInner.class,
+                DiskAccessInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -1114,7 +1122,8 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, diskAccessName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1887,7 +1896,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
                 this.client.getHttpPipeline(),
                 PrivateEndpointConnectionInner.class,
                 PrivateEndpointConnectionInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -2424,7 +2433,8 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
                 resourceGroupName, diskAccessName, privateEndpointConnectionName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

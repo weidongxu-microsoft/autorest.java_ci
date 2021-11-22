@@ -823,7 +823,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteAtScopeWithResponseAsync(scope, deploymentName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1221,7 +1222,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 DeploymentExtendedInner.class,
                 DeploymentExtendedInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1729,7 +1730,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 DeploymentValidateResultInner.class,
                 DeploymentValidateResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -2271,7 +2272,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteAtTenantScopeWithResponseAsync(deploymentName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2629,7 +2631,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 DeploymentExtendedInner.class,
                 DeploymentExtendedInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -3081,7 +3083,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 DeploymentValidateResultInner.class,
                 DeploymentValidateResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -3318,7 +3320,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 WhatIfOperationResultInner.class,
                 WhatIfOperationResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -3824,7 +3826,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteAtManagementGroupScopeWithResponseAsync(groupId, deploymentName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -4229,7 +4232,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 DeploymentExtendedInner.class,
                 DeploymentExtendedInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -4747,7 +4750,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 DeploymentValidateResultInner.class,
                 DeploymentValidateResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -5012,7 +5015,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 WhatIfOperationResultInner.class,
                 WhatIfOperationResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -5577,7 +5580,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteAtSubscriptionScopeWithResponseAsync(deploymentName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -5979,7 +5983,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 DeploymentExtendedInner.class,
                 DeploymentExtendedInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -6497,7 +6501,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 DeploymentValidateResultInner.class,
                 DeploymentValidateResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -6753,7 +6757,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 WhatIfOperationResultInner.class,
                 WhatIfOperationResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -7329,7 +7333,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, deploymentName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -7790,7 +7795,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 DeploymentExtendedInner.class,
                 DeploymentExtendedInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -8371,7 +8376,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 DeploymentValidateResultInner.class,
                 DeploymentValidateResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -8658,7 +8663,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                 this.client.getHttpPipeline(),
                 WhatIfOperationResultInner.class,
                 WhatIfOperationResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

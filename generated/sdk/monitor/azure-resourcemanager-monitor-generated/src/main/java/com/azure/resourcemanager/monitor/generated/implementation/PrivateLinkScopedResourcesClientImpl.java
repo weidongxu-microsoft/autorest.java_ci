@@ -451,7 +451,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
                 this.client.getHttpPipeline(),
                 ScopedResourceInner.class,
                 ScopedResourceInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -713,7 +713,8 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, scopeName, name);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

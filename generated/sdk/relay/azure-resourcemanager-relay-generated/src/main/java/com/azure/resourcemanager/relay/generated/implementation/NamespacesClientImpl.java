@@ -873,7 +873,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 this.client.getHttpPipeline(),
                 RelayNamespaceInner.class,
                 RelayNamespaceInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1117,7 +1117,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, namespaceName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

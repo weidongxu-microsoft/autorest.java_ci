@@ -759,7 +759,11 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
         return this
             .client
             .<FrontDoorInner, FrontDoorInner>getLroResult(
-                mono, this.client.getHttpPipeline(), FrontDoorInner.class, FrontDoorInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                FrontDoorInner.class,
+                FrontDoorInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -1012,7 +1016,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, frontDoorName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

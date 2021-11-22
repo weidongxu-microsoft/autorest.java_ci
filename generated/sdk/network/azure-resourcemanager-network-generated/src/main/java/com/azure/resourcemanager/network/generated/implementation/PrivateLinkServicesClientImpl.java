@@ -433,7 +433,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, serviceName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -867,7 +868,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
                 this.client.getHttpPipeline(),
                 PrivateLinkServiceInner.class,
                 PrivateLinkServiceInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1839,7 +1840,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             deletePrivateEndpointConnectionWithResponseAsync(resourceGroupName, serviceName, peConnectionName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2278,7 +2280,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
                 this.client.getHttpPipeline(),
                 PrivateLinkServiceVisibilityInner.class,
                 PrivateLinkServiceVisibilityInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -2550,7 +2552,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
                 this.client.getHttpPipeline(),
                 PrivateLinkServiceVisibilityInner.class,
                 PrivateLinkServiceVisibilityInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

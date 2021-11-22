@@ -352,7 +352,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
                 this.client.getHttpPipeline(),
                 DiskEncryptionSetInner.class,
                 DiskEncryptionSetInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -675,7 +675,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
                 this.client.getHttpPipeline(),
                 DiskEncryptionSetInner.class,
                 DiskEncryptionSetInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1132,7 +1132,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, diskEncryptionSetName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

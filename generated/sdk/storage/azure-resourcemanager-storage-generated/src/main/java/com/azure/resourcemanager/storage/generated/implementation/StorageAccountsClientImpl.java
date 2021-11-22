@@ -632,7 +632,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
                 this.client.getHttpPipeline(),
                 StorageAccountInner.class,
                 StorageAccountInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -2523,7 +2523,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = failoverWithResponseAsync(resourceGroupName, accountName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2803,7 +2804,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
             hierarchicalNamespaceMigrationWithResponseAsync(resourceGroupName, accountName, requestType);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -3081,7 +3083,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
             abortHierarchicalNamespaceMigrationWithResponseAsync(resourceGroupName, accountName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -3355,7 +3358,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
                 this.client.getHttpPipeline(),
                 BlobRestoreStatusInner.class,
                 BlobRestoreStatusInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

@@ -278,7 +278,11 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
         return this
             .client
             .<LinkedServiceInner, LinkedServiceInner>getLroResult(
-                mono, this.client.getHttpPipeline(), LinkedServiceInner.class, LinkedServiceInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                LinkedServiceInner.class,
+                LinkedServiceInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -566,7 +570,11 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
         return this
             .client
             .<LinkedServiceInner, LinkedServiceInner>getLroResult(
-                mono, this.client.getHttpPipeline(), LinkedServiceInner.class, LinkedServiceInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                LinkedServiceInner.class,
+                LinkedServiceInner.class,
+                this.client.getContext());
     }
 
     /**

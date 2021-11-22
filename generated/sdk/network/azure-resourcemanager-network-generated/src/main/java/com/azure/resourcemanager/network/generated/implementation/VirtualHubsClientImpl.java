@@ -477,7 +477,11 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
         return this
             .client
             .<VirtualHubInner, VirtualHubInner>getLroResult(
-                mono, this.client.getHttpPipeline(), VirtualHubInner.class, VirtualHubInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                VirtualHubInner.class,
+                VirtualHubInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -896,7 +900,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, virtualHubName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1440,7 +1445,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
             getEffectiveVirtualHubRoutesWithResponseAsync(resourceGroupName, virtualHubName, effectiveRoutesParameters);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

@@ -634,7 +634,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
                 this.client.getHttpPipeline(),
                 StorageAccountInner.class,
                 StorageAccountInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -919,7 +919,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
             deleteWithResponseAsync(deviceName, storageAccountName, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

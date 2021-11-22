@@ -459,7 +459,8 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, applicationGatewayName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -873,7 +874,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                 this.client.getHttpPipeline(),
                 ApplicationGatewayInner.class,
                 ApplicationGatewayInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1599,7 +1600,8 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         Mono<Response<Flux<ByteBuffer>>> mono = startWithResponseAsync(resourceGroupName, applicationGatewayName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1835,7 +1837,8 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         Mono<Response<Flux<ByteBuffer>>> mono = stopWithResponseAsync(resourceGroupName, applicationGatewayName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2083,7 +2086,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                 this.client.getHttpPipeline(),
                 ApplicationGatewayBackendHealthInner.class,
                 ApplicationGatewayBackendHealthInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -2419,7 +2422,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                 this.client.getHttpPipeline(),
                 ApplicationGatewayBackendHealthOnDemandInner.class,
                 ApplicationGatewayBackendHealthOnDemandInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

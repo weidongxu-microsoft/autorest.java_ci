@@ -210,7 +210,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
                 this.client.getHttpPipeline(),
                 OperationStatusInner.class,
                 OperationStatusInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -471,7 +471,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
                 this.client.getHttpPipeline(),
                 OperationStatusInner.class,
                 OperationStatusInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

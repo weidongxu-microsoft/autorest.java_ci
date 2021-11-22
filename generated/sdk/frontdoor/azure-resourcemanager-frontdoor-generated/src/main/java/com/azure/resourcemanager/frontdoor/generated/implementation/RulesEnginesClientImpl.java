@@ -650,7 +650,11 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
         return this
             .client
             .<RulesEngineInner, RulesEngineInner>getLroResult(
-                mono, this.client.getHttpPipeline(), RulesEngineInner.class, RulesEngineInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                RulesEngineInner.class,
+                RulesEngineInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -964,7 +968,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
             deleteWithResponseAsync(resourceGroupName, frontDoorName, rulesEngineName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

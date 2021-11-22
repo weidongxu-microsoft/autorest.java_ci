@@ -655,7 +655,7 @@ public final class ClustersClientImpl implements ClustersClient {
         return this
             .client
             .<ClusterInner, ClusterInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ClusterInner.class, ClusterInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), ClusterInner.class, ClusterInner.class, this.client.getContext());
     }
 
     /**
@@ -1015,7 +1015,7 @@ public final class ClustersClientImpl implements ClustersClient {
         return this
             .client
             .<ClusterInner, ClusterInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ClusterInner.class, ClusterInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), ClusterInner.class, ClusterInner.class, this.client.getContext());
     }
 
     /**
@@ -1308,7 +1308,8 @@ public final class ClustersClientImpl implements ClustersClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, clusterName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1534,7 +1535,8 @@ public final class ClustersClientImpl implements ClustersClient {
         Mono<Response<Flux<ByteBuffer>>> mono = stopWithResponseAsync(resourceGroupName, clusterName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1759,7 +1761,8 @@ public final class ClustersClientImpl implements ClustersClient {
         Mono<Response<Flux<ByteBuffer>>> mono = startWithResponseAsync(resourceGroupName, clusterName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2178,7 +2181,8 @@ public final class ClustersClientImpl implements ClustersClient {
             detachFollowerDatabasesWithResponseAsync(resourceGroupName, clusterName, followerDatabaseToRemove);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2440,7 +2444,7 @@ public final class ClustersClientImpl implements ClustersClient {
                 this.client.getHttpPipeline(),
                 DiagnoseVirtualNetworkResultInner.class,
                 DiagnoseVirtualNetworkResultInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -3778,7 +3782,8 @@ public final class ClustersClientImpl implements ClustersClient {
             addLanguageExtensionsWithResponseAsync(resourceGroupName, clusterName, languageExtensionsToAdd);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -4047,7 +4052,8 @@ public final class ClustersClientImpl implements ClustersClient {
             removeLanguageExtensionsWithResponseAsync(resourceGroupName, clusterName, languageExtensionsToRemove);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

@@ -663,7 +663,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
                 this.client.getHttpPipeline(),
                 ClusterPrincipalAssignmentInner.class,
                 ClusterPrincipalAssignmentInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -966,7 +966,8 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
             deleteWithResponseAsync(resourceGroupName, clusterName, principalAssignmentName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

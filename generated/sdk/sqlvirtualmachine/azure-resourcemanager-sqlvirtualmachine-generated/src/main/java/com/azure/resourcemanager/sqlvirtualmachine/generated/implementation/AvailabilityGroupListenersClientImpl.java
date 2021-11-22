@@ -504,7 +504,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
                 this.client.getHttpPipeline(),
                 AvailabilityGroupListenerInner.class,
                 AvailabilityGroupListenerInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -831,7 +831,8 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
             deleteWithResponseAsync(resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

@@ -402,7 +402,8 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
             updateWithResponseAsync(resourceGroupName, clusterName, configurationName, parameters);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

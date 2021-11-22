@@ -849,7 +849,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
                 this.client.getHttpPipeline(),
                 MhsmPrivateEndpointConnectionInner.class,
                 MhsmPrivateEndpointConnectionInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

@@ -716,7 +716,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                 this.client.getHttpPipeline(),
                 StreamingEndpointInner.class,
                 StreamingEndpointInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1094,7 +1094,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                 this.client.getHttpPipeline(),
                 StreamingEndpointInner.class,
                 StreamingEndpointInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -1382,7 +1382,8 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             deleteWithResponseAsync(resourceGroupName, accountName, streamingEndpointName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1636,7 +1637,8 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             startWithResponseAsync(resourceGroupName, accountName, streamingEndpointName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1890,7 +1892,8 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             stopWithResponseAsync(resourceGroupName, accountName, streamingEndpointName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2169,7 +2172,8 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             scaleWithResponseAsync(resourceGroupName, accountName, streamingEndpointName, parameters);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

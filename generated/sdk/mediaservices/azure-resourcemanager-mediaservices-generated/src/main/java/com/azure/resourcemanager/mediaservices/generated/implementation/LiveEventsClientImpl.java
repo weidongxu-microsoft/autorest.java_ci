@@ -722,7 +722,11 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         return this
             .client
             .<LiveEventInner, LiveEventInner>getLroResult(
-                mono, this.client.getHttpPipeline(), LiveEventInner.class, LiveEventInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                LiveEventInner.class,
+                LiveEventInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -1087,7 +1091,11 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         return this
             .client
             .<LiveEventInner, LiveEventInner>getLroResult(
-                mono, this.client.getHttpPipeline(), LiveEventInner.class, LiveEventInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                LiveEventInner.class,
+                LiveEventInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -1367,7 +1375,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, accountName, liveEventName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1619,7 +1628,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
             allocateWithResponseAsync(resourceGroupName, accountName, liveEventName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1870,7 +1880,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = startWithResponseAsync(resourceGroupName, accountName, liveEventName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2140,7 +2151,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
             stopWithResponseAsync(resourceGroupName, accountName, liveEventName, parameters);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2423,7 +2435,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = resetWithResponseAsync(resourceGroupName, accountName, liveEventName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

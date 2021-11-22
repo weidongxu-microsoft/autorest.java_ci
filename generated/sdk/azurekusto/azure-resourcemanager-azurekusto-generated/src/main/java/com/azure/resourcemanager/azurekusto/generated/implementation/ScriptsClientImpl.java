@@ -687,7 +687,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
         return this
             .client
             .<ScriptInner, ScriptInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ScriptInner.class, ScriptInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), ScriptInner.class, ScriptInner.class, this.client.getContext());
     }
 
     /**
@@ -1015,7 +1015,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
         return this
             .client
             .<ScriptInner, ScriptInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ScriptInner.class, ScriptInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), ScriptInner.class, ScriptInner.class, this.client.getContext());
     }
 
     /**
@@ -1319,7 +1319,8 @@ public final class ScriptsClientImpl implements ScriptsClient {
             deleteWithResponseAsync(resourceGroupName, clusterName, databaseName, scriptName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

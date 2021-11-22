@@ -418,7 +418,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
                 this.client.getHttpPipeline(),
                 ServerAdministratorResourceInner.class,
                 ServerAdministratorResourceInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -677,7 +677,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, serverName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

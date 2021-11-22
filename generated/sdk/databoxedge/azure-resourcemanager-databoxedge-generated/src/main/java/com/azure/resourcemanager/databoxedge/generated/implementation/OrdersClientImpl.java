@@ -608,7 +608,7 @@ public final class OrdersClientImpl implements OrdersClient {
         return this
             .client
             .<OrderInner, OrderInner>getLroResult(
-                mono, this.client.getHttpPipeline(), OrderInner.class, OrderInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), OrderInner.class, OrderInner.class, this.client.getContext());
     }
 
     /**
@@ -849,7 +849,8 @@ public final class OrdersClientImpl implements OrdersClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(deviceName, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

@@ -650,7 +650,11 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
         return this
             .client
             .<ExperimentInner, ExperimentInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ExperimentInner.class, ExperimentInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                ExperimentInner.class,
+                ExperimentInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -954,7 +958,11 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
         return this
             .client
             .<ExperimentInner, ExperimentInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ExperimentInner.class, ExperimentInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                ExperimentInner.class,
+                ExperimentInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -1236,7 +1244,8 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, profileName, experimentName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

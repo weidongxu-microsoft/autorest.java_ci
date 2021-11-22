@@ -756,7 +756,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
         return this
             .client
             .<ProfileInner, ProfileInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ProfileInner.class, ProfileInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), ProfileInner.class, ProfileInner.class, this.client.getContext());
     }
 
     /**
@@ -1019,7 +1019,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
         return this
             .client
             .<ProfileInner, ProfileInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ProfileInner.class, ProfileInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), ProfileInner.class, ProfileInner.class, this.client.getContext());
     }
 
     /**
@@ -1264,7 +1264,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, profileName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

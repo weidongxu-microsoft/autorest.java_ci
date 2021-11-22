@@ -272,7 +272,11 @@ public final class DatabasesClientImpl implements DatabasesClient {
         return this
             .client
             .<DatabaseInner, DatabaseInner>getLroResult(
-                mono, this.client.getHttpPipeline(), DatabaseInner.class, DatabaseInner.class, Context.NONE);
+                mono,
+                this.client.getHttpPipeline(),
+                DatabaseInner.class,
+                DatabaseInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -539,7 +543,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, serverName, databaseName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

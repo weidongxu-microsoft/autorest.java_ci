@@ -1194,7 +1194,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
                 this.client.getHttpPipeline(),
                 AppServicePlanInner.class,
                 AppServicePlanInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

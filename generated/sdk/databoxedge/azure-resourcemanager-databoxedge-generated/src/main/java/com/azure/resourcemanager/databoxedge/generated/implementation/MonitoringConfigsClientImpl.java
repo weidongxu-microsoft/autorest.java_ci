@@ -661,7 +661,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
                 this.client.getHttpPipeline(),
                 MonitoringMetricConfigurationInner.class,
                 MonitoringMetricConfigurationInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -961,7 +961,8 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(deviceName, roleName, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

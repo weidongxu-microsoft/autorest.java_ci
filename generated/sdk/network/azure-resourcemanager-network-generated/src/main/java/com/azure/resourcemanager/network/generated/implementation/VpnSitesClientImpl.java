@@ -456,7 +456,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
         return this
             .client
             .<VpnSiteInner, VpnSiteInner>getLroResult(
-                mono, this.client.getHttpPipeline(), VpnSiteInner.class, VpnSiteInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), VpnSiteInner.class, VpnSiteInner.class, this.client.getContext());
     }
 
     /**
@@ -872,7 +872,8 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, vpnSiteName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

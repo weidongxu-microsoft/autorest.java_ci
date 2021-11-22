@@ -1134,7 +1134,8 @@ public final class DevicesClientImpl implements DevicesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, deviceName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -1529,7 +1530,8 @@ public final class DevicesClientImpl implements DevicesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = downloadUpdatesWithResponseAsync(deviceName, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2058,7 +2060,8 @@ public final class DevicesClientImpl implements DevicesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = installUpdatesWithResponseAsync(deviceName, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2436,7 +2439,8 @@ public final class DevicesClientImpl implements DevicesClient {
         Mono<Response<Flux<ByteBuffer>>> mono = scanForUpdatesWithResponseAsync(deviceName, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
@@ -2684,7 +2688,8 @@ public final class DevicesClientImpl implements DevicesClient {
             createOrUpdateSecuritySettingsWithResponseAsync(deviceName, resourceGroupName, securitySettings);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

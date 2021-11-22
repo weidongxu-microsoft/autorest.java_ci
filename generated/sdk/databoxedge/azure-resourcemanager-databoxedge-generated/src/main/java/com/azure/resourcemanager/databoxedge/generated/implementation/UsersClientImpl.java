@@ -648,7 +648,7 @@ public final class UsersClientImpl implements UsersClient {
         return this
             .client
             .<UserInner, UserInner>getLroResult(
-                mono, this.client.getHttpPipeline(), UserInner.class, UserInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), UserInner.class, UserInner.class, this.client.getContext());
     }
 
     /**
@@ -911,7 +911,8 @@ public final class UsersClientImpl implements UsersClient {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(deviceName, name, resourceGroupName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

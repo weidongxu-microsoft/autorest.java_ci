@@ -1161,7 +1161,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
                 this.client.getHttpPipeline(),
                 AppServiceCertificateOrderInner.class,
                 AppServiceCertificateOrderInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -2162,7 +2162,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
                 this.client.getHttpPipeline(),
                 AppServiceCertificateResourceInner.class,
                 AppServiceCertificateResourceInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**

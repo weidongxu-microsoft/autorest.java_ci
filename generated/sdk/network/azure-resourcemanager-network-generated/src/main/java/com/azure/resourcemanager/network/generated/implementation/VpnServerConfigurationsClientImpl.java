@@ -489,7 +489,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                 this.client.getHttpPipeline(),
                 VpnServerConfigurationInner.class,
                 VpnServerConfigurationInner.class,
-                Context.NONE);
+                this.client.getContext());
     }
 
     /**
@@ -964,7 +964,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, vpnServerConfigurationName);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**

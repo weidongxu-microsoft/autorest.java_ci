@@ -416,7 +416,7 @@ public final class VaultsClientImpl implements VaultsClient {
         return this
             .client
             .<VaultInner, VaultInner>getLroResult(
-                mono, this.client.getHttpPipeline(), VaultInner.class, VaultInner.class, Context.NONE);
+                mono, this.client.getHttpPipeline(), VaultInner.class, VaultInner.class, this.client.getContext());
     }
 
     /**
@@ -1955,7 +1955,8 @@ public final class VaultsClientImpl implements VaultsClient {
         Mono<Response<Flux<ByteBuffer>>> mono = purgeDeletedWithResponseAsync(vaultName, location);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
     }
 
     /**
