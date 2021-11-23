@@ -157,15 +157,6 @@ public final class LegacyReservationRecommendation extends ReservationRecommenda
     }
 
     /**
-     * Get the scope property: Shared or single recommendation.
-     *
-     * @return the scope value.
-     */
-    public String scope() {
-        return this.innerProperties() == null ? null : this.innerProperties().scope();
-    }
-
-    /**
      * Get the skuProperties property: List of sku properties.
      *
      * @return the skuProperties value.
