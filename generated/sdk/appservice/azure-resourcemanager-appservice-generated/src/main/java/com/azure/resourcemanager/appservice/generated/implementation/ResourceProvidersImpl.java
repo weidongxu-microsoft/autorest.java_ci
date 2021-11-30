@@ -10,7 +10,6 @@ import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.fluent.ResourceProvidersClient;
-import com.azure.resourcemanager.appservice.generated.fluent.models.AppserviceGithubTokenInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BillingMeterInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeploymentLocationsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.GeoRegionInner;
@@ -23,8 +22,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.SourceContro
 import com.azure.resourcemanager.appservice.generated.fluent.models.UserInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResponseInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
-import com.azure.resourcemanager.appservice.generated.models.AppserviceGithubToken;
-import com.azure.resourcemanager.appservice.generated.models.AppserviceGithubTokenRequest;
 import com.azure.resourcemanager.appservice.generated.models.BillingMeter;
 import com.azure.resourcemanager.appservice.generated.models.CsmMoveResourceEnvelope;
 import com.azure.resourcemanager.appservice.generated.models.DeploymentLocations;
@@ -56,30 +53,6 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
-    }
-
-    public AppserviceGithubToken generateGithubAccessTokenForAppserviceCliAsync(AppserviceGithubTokenRequest request) {
-        AppserviceGithubTokenInner inner = this.serviceClient().generateGithubAccessTokenForAppserviceCliAsync(request);
-        if (inner != null) {
-            return new AppserviceGithubTokenImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<AppserviceGithubToken> generateGithubAccessTokenForAppserviceCliAsyncWithResponse(
-        AppserviceGithubTokenRequest request, Context context) {
-        Response<AppserviceGithubTokenInner> inner =
-            this.serviceClient().generateGithubAccessTokenForAppserviceCliAsyncWithResponse(request, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new AppserviceGithubTokenImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
     }
 
     public User getPublishingUser() {
