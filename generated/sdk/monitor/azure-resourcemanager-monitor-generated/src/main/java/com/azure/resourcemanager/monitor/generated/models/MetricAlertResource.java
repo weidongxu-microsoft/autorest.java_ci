@@ -208,7 +208,7 @@ public interface MetricAlertResource {
             /**
              * Specifies resourceGroupName.
              *
-             * @param resourceGroupName The name of the resource group.
+             * @param resourceGroupName The name of the resource group. The name is case insensitive.
              * @return the next definition stage.
              */
             WithSeverity withExistingResourceGroup(String resourceGroupName);

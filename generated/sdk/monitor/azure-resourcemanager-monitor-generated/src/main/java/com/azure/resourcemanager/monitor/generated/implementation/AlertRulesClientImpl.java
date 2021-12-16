@@ -155,7 +155,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Creates or updates a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -211,7 +211,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Creates or updates a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
      * @param context The context to associate with this operation.
@@ -265,7 +265,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Creates or updates a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -290,7 +290,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Creates or updates a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -307,7 +307,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Creates or updates a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
      * @param context The context to associate with this operation.
@@ -325,7 +325,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Deletes a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -373,7 +373,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Deletes a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -419,7 +419,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Deletes a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -434,7 +434,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Deletes a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -448,7 +448,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Deletes a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -464,7 +464,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Gets a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -513,7 +513,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Gets a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -560,7 +560,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Gets a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -583,7 +583,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Gets a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -598,7 +598,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Gets a classic metric alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -615,7 +615,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Updates an existing classic metric AlertRuleResource. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param alertRulesResource Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -672,7 +672,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Updates an existing classic metric AlertRuleResource. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param alertRulesResource Parameters supplied to the operation.
      * @param context The context to associate with this operation.
@@ -727,7 +727,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Updates an existing classic metric AlertRuleResource. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param alertRulesResource Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -752,7 +752,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Updates an existing classic metric AlertRuleResource. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param alertRulesResource Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -769,7 +769,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * Updates an existing classic metric AlertRuleResource. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param alertRulesResource Parameters supplied to the operation.
      * @param context The context to associate with this operation.
@@ -787,7 +787,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * List the classic metric alert rules within a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -834,7 +834,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * List the classic metric alert rules within a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -880,7 +880,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * List the classic metric alert rules within a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -894,7 +894,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * List the classic metric alert rules within a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -909,7 +909,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * List the classic metric alert rules within a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -923,7 +923,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     /**
      * List the classic metric alert rules within a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
