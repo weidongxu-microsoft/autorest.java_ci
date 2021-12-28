@@ -194,6 +194,13 @@ public interface Snapshot {
     String diskAccessId();
 
     /**
+     * Gets the securityProfile property: Contains the security related information for the resource.
+     *
+     * @return the securityProfile value.
+     */
+    DiskSecurityProfile securityProfile();
+
+    /**
      * Gets the supportsHibernation property: Indicates the OS on a snapshot supports hibernation.
      *
      * @return the supportsHibernation value.
@@ -295,6 +302,7 @@ public interface Snapshot {
                 DefinitionStages.WithEncryption,
                 DefinitionStages.WithNetworkAccessPolicy,
                 DefinitionStages.WithDiskAccessId,
+                DefinitionStages.WithSecurityProfile,
                 DefinitionStages.WithSupportsHibernation,
                 DefinitionStages.WithPublicNetworkAccess,
                 DefinitionStages.WithCompletionPercent {
@@ -479,6 +487,16 @@ public interface Snapshot {
              */
             WithCreate withDiskAccessId(String diskAccessId);
         }
+        /** The stage of the Snapshot definition allowing to specify securityProfile. */
+        interface WithSecurityProfile {
+            /**
+             * Specifies the securityProfile property: Contains the security related information for the resource..
+             *
+             * @param securityProfile Contains the security related information for the resource.
+             * @return the next definition stage.
+             */
+            WithCreate withSecurityProfile(DiskSecurityProfile securityProfile);
+        }
         /** The stage of the Snapshot definition allowing to specify supportsHibernation. */
         interface WithSupportsHibernation {
             /**
@@ -530,7 +548,8 @@ public interface Snapshot {
             UpdateStages.WithNetworkAccessPolicy,
             UpdateStages.WithDiskAccessId,
             UpdateStages.WithSupportsHibernation,
-            UpdateStages.WithPublicNetworkAccess {
+            UpdateStages.WithPublicNetworkAccess,
+            UpdateStages.WithSupportedCapabilities {
         /**
          * Executes the update request.
          *
@@ -662,6 +681,18 @@ public interface Snapshot {
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
+        }
+        /** The stage of the Snapshot update allowing to specify supportedCapabilities. */
+        interface WithSupportedCapabilities {
+            /**
+             * Specifies the supportedCapabilities property: List of supported capabilities (like accelerated
+             * networking) for the image from which the OS disk was created..
+             *
+             * @param supportedCapabilities List of supported capabilities (like accelerated networking) for the image
+             *     from which the OS disk was created.
+             * @return the next definition stage.
+             */
+            Update withSupportedCapabilities(SupportedCapabilities supportedCapabilities);
         }
     }
     /**
