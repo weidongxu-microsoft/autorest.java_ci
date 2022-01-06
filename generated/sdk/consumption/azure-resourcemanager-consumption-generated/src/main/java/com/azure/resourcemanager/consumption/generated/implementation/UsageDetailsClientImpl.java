@@ -62,7 +62,7 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
     private interface UsageDetailsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.Consumption/usageDetails")
-        @ExpectedResponses({200})
+        @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<UsageDetailsListResult>> list(
             @HostParam("$host") String endpoint,
@@ -78,7 +78,7 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
 
         @Headers({"Content-Type: application/json"})
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<UsageDetailsListResult>> listNext(
             @PathParam(value = "nextLink", encoded = true) String nextLink,

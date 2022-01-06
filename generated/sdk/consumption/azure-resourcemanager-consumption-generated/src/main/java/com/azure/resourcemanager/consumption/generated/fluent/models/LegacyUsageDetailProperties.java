@@ -298,6 +298,18 @@ public final class LegacyUsageDetailProperties {
     private BigDecimal payGPrice;
 
     /*
+     * Unique identifier for the applicable benefit.
+     */
+    @JsonProperty(value = "benefitId", access = JsonProperty.Access.WRITE_ONLY)
+    private String benefitId;
+
+    /*
+     * Name of the applicable benefit.
+     */
+    @JsonProperty(value = "benefitName", access = JsonProperty.Access.WRITE_ONLY)
+    private String benefitName;
+
+    /*
      * Identifier that indicates how the meter is priced.
      */
     @JsonProperty(value = "pricingModel", access = JsonProperty.Access.WRITE_ONLY)
@@ -702,6 +714,24 @@ public final class LegacyUsageDetailProperties {
      */
     public BigDecimal payGPrice() {
         return this.payGPrice;
+    }
+
+    /**
+     * Get the benefitId property: Unique identifier for the applicable benefit.
+     *
+     * @return the benefitId value.
+     */
+    public String benefitId() {
+        return this.benefitId;
+    }
+
+    /**
+     * Get the benefitName property: Name of the applicable benefit.
+     *
+     * @return the benefitName value.
+     */
+    public String benefitName() {
+        return this.benefitName;
     }
 
     /**

@@ -591,6 +591,30 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public SiteAuthSettingsV2 getAuthSettingsV2WithoutSecrets(String resourceGroupName, String name) {
+        SiteAuthSettingsV2Inner inner = this.serviceClient().getAuthSettingsV2WithoutSecrets(resourceGroupName, name);
+        if (inner != null) {
+            return new SiteAuthSettingsV2Impl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<SiteAuthSettingsV2> getAuthSettingsV2WithoutSecretsWithResponse(
+        String resourceGroupName, String name, Context context) {
+        Response<SiteAuthSettingsV2Inner> inner =
+            this.serviceClient().getAuthSettingsV2WithoutSecretsWithResponse(resourceGroupName, name, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new SiteAuthSettingsV2Impl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
     public SiteAuthSettingsV2 updateAuthSettingsV2(
         String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
         SiteAuthSettingsV2Inner inner =

@@ -64,6 +64,14 @@ public final class TablesImpl implements Tables {
         }
     }
 
+    public void delete(String resourceGroupName, String workspaceName, String tableName) {
+        this.serviceClient().delete(resourceGroupName, workspaceName, tableName);
+    }
+
+    public void delete(String resourceGroupName, String workspaceName, String tableName, Context context) {
+        this.serviceClient().delete(resourceGroupName, workspaceName, tableName, context);
+    }
+
     public Table getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
@@ -114,6 +122,58 @@ public final class TablesImpl implements Tables {
                         String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
         }
         return this.getWithResponse(resourceGroupName, workspaceName, tableName, context);
+    }
+
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+        }
+        String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
+        if (workspaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
+        }
+        String tableName = Utils.getValueFromIdByName(id, "tables");
+        if (tableName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
+        }
+        this.delete(resourceGroupName, workspaceName, tableName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+        }
+        String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
+        if (workspaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
+        }
+        String tableName = Utils.getValueFromIdByName(id, "tables");
+        if (tableName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
+        }
+        this.delete(resourceGroupName, workspaceName, tableName, context);
     }
 
     private TablesClient serviceClient() {

@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspaceInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.PrivateLinkScopedResource;
@@ -47,6 +48,10 @@ public final class WorkspaceImpl implements Workspace, Workspace.Definition, Wor
         } else {
             return Collections.emptyMap();
         }
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String etag() {
@@ -104,6 +109,10 @@ public final class WorkspaceImpl implements Workspace, Workspace.Definition, Wor
 
     public WorkspaceFeatures features() {
         return this.innerModel().features();
+    }
+
+    public String defaultDataCollectionRuleResourceId() {
+        return this.innerModel().defaultDataCollectionRuleResourceId();
     }
 
     public Region region() {
@@ -313,6 +322,16 @@ public final class WorkspaceImpl implements Workspace, Workspace.Definition, Wor
             return this;
         } else {
             this.updateParameters.withFeatures(features);
+            return this;
+        }
+    }
+
+    public WorkspaceImpl withDefaultDataCollectionRuleResourceId(String defaultDataCollectionRuleResourceId) {
+        if (isInCreateMode()) {
+            this.innerModel().withDefaultDataCollectionRuleResourceId(defaultDataCollectionRuleResourceId);
+            return this;
+        } else {
+            this.updateParameters.withDefaultDataCollectionRuleResourceId(defaultDataCollectionRuleResourceId);
             return this;
         }
     }

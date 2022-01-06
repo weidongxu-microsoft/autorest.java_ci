@@ -186,6 +186,28 @@ public interface ResourceProviders {
         ResourceNameAvailabilityRequest request, Context context);
 
     /**
+     * Get custom hostnames under this subscription.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return custom hostnames under this subscription.
+     */
+    PagedIterable<CustomHostnameSites> listCustomHostnameSites();
+
+    /**
+     * Get custom hostnames under this subscription.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return custom hostnames under this subscription.
+     */
+    PagedIterable<CustomHostnameSites> listCustomHostnameSites(Context context);
+
+    /**
      * Description for Gets list of available geo regions plus ministamps.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

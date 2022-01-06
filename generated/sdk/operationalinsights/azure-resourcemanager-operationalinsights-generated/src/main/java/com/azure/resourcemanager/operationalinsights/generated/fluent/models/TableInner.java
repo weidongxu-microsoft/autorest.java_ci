@@ -6,7 +6,14 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.operationalinsights.generated.models.ProvisioningStateEnum;
+import com.azure.resourcemanager.operationalinsights.generated.models.RestoredLogs;
+import com.azure.resourcemanager.operationalinsights.generated.models.ResultStatistics;
+import com.azure.resourcemanager.operationalinsights.generated.models.Schema;
+import com.azure.resourcemanager.operationalinsights.generated.models.SearchResults;
+import com.azure.resourcemanager.operationalinsights.generated.models.TablePlanEnum;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -16,13 +23,19 @@ public final class TableInner extends ProxyResource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(TableInner.class);
 
     /*
-     * Table properties.
+     * Table's properties.
      */
     @JsonProperty(value = "properties")
     private TableProperties innerProperties;
 
+    /*
+     * Metadata pertaining to creation and last modification of the resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
+
     /**
-     * Get the innerProperties property: Table properties.
+     * Get the innerProperties property: Table's properties.
      *
      * @return the innerProperties value.
      */
@@ -31,7 +44,16 @@ public final class TableInner extends ProxyResource {
     }
 
     /**
-     * Get the retentionInDays property: The data table data retention in days, between 7 and 730. Setting this property
+     * Get the systemData property: Metadata pertaining to creation and last modification of the resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
+    }
+
+    /**
+     * Get the retentionInDays property: The data table data retention in days, between 4 and 730. Setting this property
      * to null will default to the workspace retention.
      *
      * @return the retentionInDays value.
@@ -41,7 +63,7 @@ public final class TableInner extends ProxyResource {
     }
 
     /**
-     * Set the retentionInDays property: The data table data retention in days, between 7 and 730. Setting this property
+     * Set the retentionInDays property: The data table data retention in days, between 4 and 730. Setting this property
      * to null will default to the workspace retention.
      *
      * @param retentionInDays the retentionInDays value to set.
@@ -56,45 +78,173 @@ public final class TableInner extends ProxyResource {
     }
 
     /**
-     * Get the isTroubleshootingAllowed property: Specifies if IsTroubleshootingEnabled property can be set for this
-     * table.
+     * Get the totalRetentionInDays property: The table data total retention in days, between 4 and 2555. Setting this
+     * property to null will default to table retention.
      *
-     * @return the isTroubleshootingAllowed value.
+     * @return the totalRetentionInDays value.
      */
-    public Boolean isTroubleshootingAllowed() {
-        return this.innerProperties() == null ? null : this.innerProperties().isTroubleshootingAllowed();
+    public Integer totalRetentionInDays() {
+        return this.innerProperties() == null ? null : this.innerProperties().totalRetentionInDays();
     }
 
     /**
-     * Get the isTroubleshootEnabled property: Enable or disable troubleshoot for this table.
+     * Set the totalRetentionInDays property: The table data total retention in days, between 4 and 2555. Setting this
+     * property to null will default to table retention.
      *
-     * @return the isTroubleshootEnabled value.
-     */
-    public Boolean isTroubleshootEnabled() {
-        return this.innerProperties() == null ? null : this.innerProperties().isTroubleshootEnabled();
-    }
-
-    /**
-     * Set the isTroubleshootEnabled property: Enable or disable troubleshoot for this table.
-     *
-     * @param isTroubleshootEnabled the isTroubleshootEnabled value to set.
+     * @param totalRetentionInDays the totalRetentionInDays value to set.
      * @return the TableInner object itself.
      */
-    public TableInner withIsTroubleshootEnabled(Boolean isTroubleshootEnabled) {
+    public TableInner withTotalRetentionInDays(Integer totalRetentionInDays) {
         if (this.innerProperties() == null) {
             this.innerProperties = new TableProperties();
         }
-        this.innerProperties().withIsTroubleshootEnabled(isTroubleshootEnabled);
+        this.innerProperties().withTotalRetentionInDays(totalRetentionInDays);
         return this;
     }
 
     /**
-     * Get the lastTroubleshootDate property: Last time when troubleshooting was set for this table.
+     * Get the archiveRetentionInDays property: The table data archive retention in days. Calculated as
+     * (totalRetentionInDays-retentionInDays).
      *
-     * @return the lastTroubleshootDate value.
+     * @return the archiveRetentionInDays value.
      */
-    public String lastTroubleshootDate() {
-        return this.innerProperties() == null ? null : this.innerProperties().lastTroubleshootDate();
+    public Integer archiveRetentionInDays() {
+        return this.innerProperties() == null ? null : this.innerProperties().archiveRetentionInDays();
+    }
+
+    /**
+     * Get the searchResults property: Parameters of the search job that initiated this table.
+     *
+     * @return the searchResults value.
+     */
+    public SearchResults searchResults() {
+        return this.innerProperties() == null ? null : this.innerProperties().searchResults();
+    }
+
+    /**
+     * Set the searchResults property: Parameters of the search job that initiated this table.
+     *
+     * @param searchResults the searchResults value to set.
+     * @return the TableInner object itself.
+     */
+    public TableInner withSearchResults(SearchResults searchResults) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new TableProperties();
+        }
+        this.innerProperties().withSearchResults(searchResults);
+        return this;
+    }
+
+    /**
+     * Get the restoredLogs property: Parameters of the restore operation that initiated this table.
+     *
+     * @return the restoredLogs value.
+     */
+    public RestoredLogs restoredLogs() {
+        return this.innerProperties() == null ? null : this.innerProperties().restoredLogs();
+    }
+
+    /**
+     * Set the restoredLogs property: Parameters of the restore operation that initiated this table.
+     *
+     * @param restoredLogs the restoredLogs value to set.
+     * @return the TableInner object itself.
+     */
+    public TableInner withRestoredLogs(RestoredLogs restoredLogs) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new TableProperties();
+        }
+        this.innerProperties().withRestoredLogs(restoredLogs);
+        return this;
+    }
+
+    /**
+     * Get the resultStatistics property: Search job execution statistics.
+     *
+     * @return the resultStatistics value.
+     */
+    public ResultStatistics resultStatistics() {
+        return this.innerProperties() == null ? null : this.innerProperties().resultStatistics();
+    }
+
+    /**
+     * Set the resultStatistics property: Search job execution statistics.
+     *
+     * @param resultStatistics the resultStatistics value to set.
+     * @return the TableInner object itself.
+     */
+    public TableInner withResultStatistics(ResultStatistics resultStatistics) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new TableProperties();
+        }
+        this.innerProperties().withResultStatistics(resultStatistics);
+        return this;
+    }
+
+    /**
+     * Get the plan property: The table plan.
+     *
+     * @return the plan value.
+     */
+    public TablePlanEnum plan() {
+        return this.innerProperties() == null ? null : this.innerProperties().plan();
+    }
+
+    /**
+     * Set the plan property: The table plan.
+     *
+     * @param plan the plan value to set.
+     * @return the TableInner object itself.
+     */
+    public TableInner withPlan(TablePlanEnum plan) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new TableProperties();
+        }
+        this.innerProperties().withPlan(plan);
+        return this;
+    }
+
+    /**
+     * Get the lastPlanModifiedDate property: The timestamp that table plan was last modified (UTC).
+     *
+     * @return the lastPlanModifiedDate value.
+     */
+    public String lastPlanModifiedDate() {
+        return this.innerProperties() == null ? null : this.innerProperties().lastPlanModifiedDate();
+    }
+
+    /**
+     * Get the schema property: Table schema.
+     *
+     * @return the schema value.
+     */
+    public Schema schema() {
+        return this.innerProperties() == null ? null : this.innerProperties().schema();
+    }
+
+    /**
+     * Set the schema property: Table schema.
+     *
+     * @param schema the schema value to set.
+     * @return the TableInner object itself.
+     */
+    public TableInner withSchema(Schema schema) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new TableProperties();
+        }
+        this.innerProperties().withSchema(schema);
+        return this;
+    }
+
+    /**
+     * Get the provisioningState property: Table's current provisioning state. If set to 'updating', indicates a
+     * resource lock due to ongoing operation, forbidding any update to the table until the ongoing operation is
+     * concluded.
+     *
+     * @return the provisioningState value.
+     */
+    public ProvisioningStateEnum provisioningState() {
+        return this.innerProperties() == null ? null : this.innerProperties().provisioningState();
     }
 
     /**

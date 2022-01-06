@@ -440,6 +440,24 @@ public final class LegacyUsageDetail extends UsageDetailInner {
     }
 
     /**
+     * Get the benefitId property: Unique identifier for the applicable benefit.
+     *
+     * @return the benefitId value.
+     */
+    public String benefitId() {
+        return this.innerProperties() == null ? null : this.innerProperties().benefitId();
+    }
+
+    /**
+     * Get the benefitName property: Name of the applicable benefit.
+     *
+     * @return the benefitName value.
+     */
+    public String benefitName() {
+        return this.innerProperties() == null ? null : this.innerProperties().benefitName();
+    }
+
+    /**
      * Get the pricingModel property: Identifier that indicates how the meter is priced.
      *
      * @return the pricingModel value.

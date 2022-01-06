@@ -8,7 +8,9 @@ import com.azure.core.annotation.ReturnType;
 import com.azure.core.annotation.ServiceMethod;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
+import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
+import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.TableInner;
 
 /** An instance of this class provides access to all the operations defined in TablesClient. */
@@ -41,7 +43,105 @@ public interface TablesClient {
     PagedIterable<TableInner> listByWorkspace(String resourceGroupName, String workspaceName, Context context);
 
     /**
-     * Updates a Log Analytics workspace table properties.
+     * Update or Create a Log Analytics workspace table.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @param tableName The name of the table.
+     * @param parameters The parameters required to update table properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workspace data table definition.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<TableInner>, TableInner> beginUpsert(
+        String resourceGroupName, String workspaceName, String tableName, TableInner parameters);
+
+    /**
+     * Update or Create a Log Analytics workspace table.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @param tableName The name of the table.
+     * @param parameters The parameters required to update table properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workspace data table definition.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<TableInner>, TableInner> beginUpsert(
+        String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context);
+
+    /**
+     * Update or Create a Log Analytics workspace table.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @param tableName The name of the table.
+     * @param parameters The parameters required to update table properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workspace data table definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    TableInner upsert(String resourceGroupName, String workspaceName, String tableName, TableInner parameters);
+
+    /**
+     * Update or Create a Log Analytics workspace table.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @param tableName The name of the table.
+     * @param parameters The parameters required to update table properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workspace data table definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    TableInner upsert(
+        String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context);
+
+    /**
+     * Update a Log Analytics workspace table.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @param tableName The name of the table.
+     * @param parameters The parameters required to update table properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workspace data table definition.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<TableInner>, TableInner> beginUpdate(
+        String resourceGroupName, String workspaceName, String tableName, TableInner parameters);
+
+    /**
+     * Update a Log Analytics workspace table.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @param tableName The name of the table.
+     * @param parameters The parameters required to update table properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workspace data table definition.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<TableInner>, TableInner> beginUpdate(
+        String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context);
+
+    /**
+     * Update a Log Analytics workspace table.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
@@ -56,7 +156,7 @@ public interface TablesClient {
     TableInner update(String resourceGroupName, String workspaceName, String tableName, TableInner parameters);
 
     /**
-     * Updates a Log Analytics workspace table properties.
+     * Update a Log Analytics workspace table.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
@@ -69,39 +169,7 @@ public interface TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<TableInner> updateWithResponse(
-        String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context);
-
-    /**
-     * Updates a Log Analytics workspace table properties.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @param tableName The name of the table.
-     * @param parameters The parameters required to update table properties.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return workspace data table definition.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    TableInner create(String resourceGroupName, String workspaceName, String tableName, TableInner parameters);
-
-    /**
-     * Updates a Log Analytics workspace table properties.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @param tableName The name of the table.
-     * @param parameters The parameters required to update table properties.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return workspace data table definition.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<TableInner> createWithResponse(
+    TableInner update(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context);
 
     /**
@@ -133,4 +201,61 @@ public interface TablesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TableInner> getWithResponse(
         String resourceGroupName, String workspaceName, String tableName, Context context);
+
+    /**
+     * Delete a Log Analytics workspace table.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @param tableName The name of the table.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the completion.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String workspaceName, String tableName);
+
+    /**
+     * Delete a Log Analytics workspace table.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @param tableName The name of the table.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the completion.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<Void>, Void> beginDelete(
+        String resourceGroupName, String workspaceName, String tableName, Context context);
+
+    /**
+     * Delete a Log Analytics workspace table.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @param tableName The name of the table.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void delete(String resourceGroupName, String workspaceName, String tableName);
+
+    /**
+     * Delete a Log Analytics workspace table.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @param tableName The name of the table.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void delete(String resourceGroupName, String workspaceName, String tableName, Context context);
 }

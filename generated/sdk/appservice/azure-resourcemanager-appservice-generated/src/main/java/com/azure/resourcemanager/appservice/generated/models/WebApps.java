@@ -681,6 +681,34 @@ public interface WebApps {
     Response<SiteAuthSettings> getAuthSettingsWithResponse(String resourceGroupName, String name, Context context);
 
     /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
+     */
+    SiteAuthSettingsV2 getAuthSettingsV2WithoutSecrets(String resourceGroupName, String name);
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
+     */
+    Response<SiteAuthSettingsV2> getAuthSettingsV2WithoutSecretsWithResponse(
+        String resourceGroupName, String name, Context context);
+
+    /**
      * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.

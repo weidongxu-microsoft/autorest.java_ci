@@ -11,6 +11,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.fluent.ResourceProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BillingMeterInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.CustomHostnameSitesInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeploymentLocationsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.GeoRegionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.IdentifierInner;
@@ -24,6 +25,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResp
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
 import com.azure.resourcemanager.appservice.generated.models.BillingMeter;
 import com.azure.resourcemanager.appservice.generated.models.CsmMoveResourceEnvelope;
+import com.azure.resourcemanager.appservice.generated.models.CustomHostnameSites;
 import com.azure.resourcemanager.appservice.generated.models.DeploymentLocations;
 import com.azure.resourcemanager.appservice.generated.models.GeoRegion;
 import com.azure.resourcemanager.appservice.generated.models.Identifier;
@@ -188,6 +190,16 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         } else {
             return null;
         }
+    }
+
+    public PagedIterable<CustomHostnameSites> listCustomHostnameSites() {
+        PagedIterable<CustomHostnameSitesInner> inner = this.serviceClient().listCustomHostnameSites();
+        return Utils.mapPage(inner, inner1 -> new CustomHostnameSitesImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<CustomHostnameSites> listCustomHostnameSites(Context context) {
+        PagedIterable<CustomHostnameSitesInner> inner = this.serviceClient().listCustomHostnameSites(context);
+        return Utils.mapPage(inner, inner1 -> new CustomHostnameSitesImpl(inner1, this.manager()));
     }
 
     public DeploymentLocations getSubscriptionDeploymentLocations() {

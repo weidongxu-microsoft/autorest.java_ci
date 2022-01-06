@@ -4,9 +4,16 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.TableInner;
+import com.azure.resourcemanager.operationalinsights.generated.models.ProvisioningStateEnum;
+import com.azure.resourcemanager.operationalinsights.generated.models.RestoredLogs;
+import com.azure.resourcemanager.operationalinsights.generated.models.ResultStatistics;
+import com.azure.resourcemanager.operationalinsights.generated.models.Schema;
+import com.azure.resourcemanager.operationalinsights.generated.models.SearchResults;
 import com.azure.resourcemanager.operationalinsights.generated.models.Table;
+import com.azure.resourcemanager.operationalinsights.generated.models.TablePlanEnum;
 
 public final class TableImpl implements Table, Table.Definition, Table.Update {
     private TableInner innerObject;
@@ -25,20 +32,48 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
         return this.innerModel().type();
     }
 
+    public SystemData systemData() {
+        return this.innerModel().systemData();
+    }
+
     public Integer retentionInDays() {
         return this.innerModel().retentionInDays();
     }
 
-    public Boolean isTroubleshootingAllowed() {
-        return this.innerModel().isTroubleshootingAllowed();
+    public Integer totalRetentionInDays() {
+        return this.innerModel().totalRetentionInDays();
     }
 
-    public Boolean isTroubleshootEnabled() {
-        return this.innerModel().isTroubleshootEnabled();
+    public Integer archiveRetentionInDays() {
+        return this.innerModel().archiveRetentionInDays();
     }
 
-    public String lastTroubleshootDate() {
-        return this.innerModel().lastTroubleshootDate();
+    public SearchResults searchResults() {
+        return this.innerModel().searchResults();
+    }
+
+    public RestoredLogs restoredLogs() {
+        return this.innerModel().restoredLogs();
+    }
+
+    public ResultStatistics resultStatistics() {
+        return this.innerModel().resultStatistics();
+    }
+
+    public TablePlanEnum plan() {
+        return this.innerModel().plan();
+    }
+
+    public String lastPlanModifiedDate() {
+        return this.innerModel().lastPlanModifiedDate();
+    }
+
+    public Schema schema() {
+        return this.innerModel().schema();
+    }
+
+    public ProvisioningStateEnum provisioningState() {
+        return this.innerModel().provisioningState();
     }
 
     public TableInner innerModel() {
@@ -66,8 +101,7 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
             serviceManager
                 .serviceClient()
                 .getTables()
-                .createWithResponse(resourceGroupName, workspaceName, tableName, this.innerModel(), Context.NONE)
-                .getValue();
+                .upsert(resourceGroupName, workspaceName, tableName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -76,8 +110,7 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
             serviceManager
                 .serviceClient()
                 .getTables()
-                .createWithResponse(resourceGroupName, workspaceName, tableName, this.innerModel(), context)
-                .getValue();
+                .upsert(resourceGroupName, workspaceName, tableName, this.innerModel(), context);
         return this;
     }
 
@@ -96,8 +129,7 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
             serviceManager
                 .serviceClient()
                 .getTables()
-                .updateWithResponse(resourceGroupName, workspaceName, tableName, this.innerModel(), Context.NONE)
-                .getValue();
+                .update(resourceGroupName, workspaceName, tableName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -106,8 +138,7 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
             serviceManager
                 .serviceClient()
                 .getTables()
-                .updateWithResponse(resourceGroupName, workspaceName, tableName, this.innerModel(), context)
-                .getValue();
+                .update(resourceGroupName, workspaceName, tableName, this.innerModel(), context);
         return this;
     }
 
@@ -146,8 +177,33 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
         return this;
     }
 
-    public TableImpl withIsTroubleshootEnabled(Boolean isTroubleshootEnabled) {
-        this.innerModel().withIsTroubleshootEnabled(isTroubleshootEnabled);
+    public TableImpl withTotalRetentionInDays(Integer totalRetentionInDays) {
+        this.innerModel().withTotalRetentionInDays(totalRetentionInDays);
+        return this;
+    }
+
+    public TableImpl withSearchResults(SearchResults searchResults) {
+        this.innerModel().withSearchResults(searchResults);
+        return this;
+    }
+
+    public TableImpl withRestoredLogs(RestoredLogs restoredLogs) {
+        this.innerModel().withRestoredLogs(restoredLogs);
+        return this;
+    }
+
+    public TableImpl withResultStatistics(ResultStatistics resultStatistics) {
+        this.innerModel().withResultStatistics(resultStatistics);
+        return this;
+    }
+
+    public TableImpl withPlan(TablePlanEnum plan) {
+        this.innerModel().withPlan(plan);
+        return this;
+    }
+
+    public TableImpl withSchema(Schema schema) {
+        this.innerModel().withSchema(schema);
         return this;
     }
 }

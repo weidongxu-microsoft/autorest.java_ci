@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.TableInner;
 
@@ -31,7 +32,14 @@ public interface Table {
     String type();
 
     /**
-     * Gets the retentionInDays property: The data table data retention in days, between 7 and 730. Setting this
+     * Gets the systemData property: Metadata pertaining to creation and last modification of the resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
+     * Gets the retentionInDays property: The data table data retention in days, between 4 and 730. Setting this
      * property to null will default to the workspace retention.
      *
      * @return the retentionInDays value.
@@ -39,26 +47,71 @@ public interface Table {
     Integer retentionInDays();
 
     /**
-     * Gets the isTroubleshootingAllowed property: Specifies if IsTroubleshootingEnabled property can be set for this
-     * table.
+     * Gets the totalRetentionInDays property: The table data total retention in days, between 4 and 2555. Setting this
+     * property to null will default to table retention.
      *
-     * @return the isTroubleshootingAllowed value.
+     * @return the totalRetentionInDays value.
      */
-    Boolean isTroubleshootingAllowed();
+    Integer totalRetentionInDays();
 
     /**
-     * Gets the isTroubleshootEnabled property: Enable or disable troubleshoot for this table.
+     * Gets the archiveRetentionInDays property: The table data archive retention in days. Calculated as
+     * (totalRetentionInDays-retentionInDays).
      *
-     * @return the isTroubleshootEnabled value.
+     * @return the archiveRetentionInDays value.
      */
-    Boolean isTroubleshootEnabled();
+    Integer archiveRetentionInDays();
 
     /**
-     * Gets the lastTroubleshootDate property: Last time when troubleshooting was set for this table.
+     * Gets the searchResults property: Parameters of the search job that initiated this table.
      *
-     * @return the lastTroubleshootDate value.
+     * @return the searchResults value.
      */
-    String lastTroubleshootDate();
+    SearchResults searchResults();
+
+    /**
+     * Gets the restoredLogs property: Parameters of the restore operation that initiated this table.
+     *
+     * @return the restoredLogs value.
+     */
+    RestoredLogs restoredLogs();
+
+    /**
+     * Gets the resultStatistics property: Search job execution statistics.
+     *
+     * @return the resultStatistics value.
+     */
+    ResultStatistics resultStatistics();
+
+    /**
+     * Gets the plan property: The table plan.
+     *
+     * @return the plan value.
+     */
+    TablePlanEnum plan();
+
+    /**
+     * Gets the lastPlanModifiedDate property: The timestamp that table plan was last modified (UTC).
+     *
+     * @return the lastPlanModifiedDate value.
+     */
+    String lastPlanModifiedDate();
+
+    /**
+     * Gets the schema property: Table schema.
+     *
+     * @return the schema value.
+     */
+    Schema schema();
+
+    /**
+     * Gets the provisioningState property: Table's current provisioning state. If set to 'updating', indicates a
+     * resource lock due to ongoing operation, forbidding any update to the table until the ongoing operation is
+     * concluded.
+     *
+     * @return the provisioningState value.
+     */
+    ProvisioningStateEnum provisioningState();
 
     /**
      * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.TableInner object.
@@ -91,7 +144,14 @@ public interface Table {
          * The stage of the Table definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithRetentionInDays, DefinitionStages.WithIsTroubleshootEnabled {
+        interface WithCreate
+            extends DefinitionStages.WithRetentionInDays,
+                DefinitionStages.WithTotalRetentionInDays,
+                DefinitionStages.WithSearchResults,
+                DefinitionStages.WithRestoredLogs,
+                DefinitionStages.WithResultStatistics,
+                DefinitionStages.WithPlan,
+                DefinitionStages.WithSchema {
             /**
              * Executes the create request.
              *
@@ -110,24 +170,76 @@ public interface Table {
         /** The stage of the Table definition allowing to specify retentionInDays. */
         interface WithRetentionInDays {
             /**
-             * Specifies the retentionInDays property: The data table data retention in days, between 7 and 730. Setting
+             * Specifies the retentionInDays property: The data table data retention in days, between 4 and 730. Setting
              * this property to null will default to the workspace retention..
              *
-             * @param retentionInDays The data table data retention in days, between 7 and 730. Setting this property to
+             * @param retentionInDays The data table data retention in days, between 4 and 730. Setting this property to
              *     null will default to the workspace retention.
              * @return the next definition stage.
              */
             WithCreate withRetentionInDays(Integer retentionInDays);
         }
-        /** The stage of the Table definition allowing to specify isTroubleshootEnabled. */
-        interface WithIsTroubleshootEnabled {
+        /** The stage of the Table definition allowing to specify totalRetentionInDays. */
+        interface WithTotalRetentionInDays {
             /**
-             * Specifies the isTroubleshootEnabled property: Enable or disable troubleshoot for this table..
+             * Specifies the totalRetentionInDays property: The table data total retention in days, between 4 and 2555.
+             * Setting this property to null will default to table retention..
              *
-             * @param isTroubleshootEnabled Enable or disable troubleshoot for this table.
+             * @param totalRetentionInDays The table data total retention in days, between 4 and 2555. Setting this
+             *     property to null will default to table retention.
              * @return the next definition stage.
              */
-            WithCreate withIsTroubleshootEnabled(Boolean isTroubleshootEnabled);
+            WithCreate withTotalRetentionInDays(Integer totalRetentionInDays);
+        }
+        /** The stage of the Table definition allowing to specify searchResults. */
+        interface WithSearchResults {
+            /**
+             * Specifies the searchResults property: Parameters of the search job that initiated this table..
+             *
+             * @param searchResults Parameters of the search job that initiated this table.
+             * @return the next definition stage.
+             */
+            WithCreate withSearchResults(SearchResults searchResults);
+        }
+        /** The stage of the Table definition allowing to specify restoredLogs. */
+        interface WithRestoredLogs {
+            /**
+             * Specifies the restoredLogs property: Parameters of the restore operation that initiated this table..
+             *
+             * @param restoredLogs Parameters of the restore operation that initiated this table.
+             * @return the next definition stage.
+             */
+            WithCreate withRestoredLogs(RestoredLogs restoredLogs);
+        }
+        /** The stage of the Table definition allowing to specify resultStatistics. */
+        interface WithResultStatistics {
+            /**
+             * Specifies the resultStatistics property: Search job execution statistics..
+             *
+             * @param resultStatistics Search job execution statistics.
+             * @return the next definition stage.
+             */
+            WithCreate withResultStatistics(ResultStatistics resultStatistics);
+        }
+        /** The stage of the Table definition allowing to specify plan. */
+        interface WithPlan {
+            /**
+             * Specifies the plan property: The table plan..
+             *
+             * @param plan The table plan.
+             * @return the next definition stage.
+             */
+            WithCreate withPlan(TablePlanEnum plan);
+        }
+        /** The stage of the Table definition allowing to specify schema. */
+        interface WithSchema {
+            /**
+             * Specifies the schema property: Table schema..
+             *
+             * @param schema Table schema.
+             * @return the next definition stage.
+             */
+            WithCreate withSchema(Schema schema);
         }
     }
     /**
@@ -138,7 +250,14 @@ public interface Table {
     Table.Update update();
 
     /** The template for Table update. */
-    interface Update extends UpdateStages.WithRetentionInDays, UpdateStages.WithIsTroubleshootEnabled {
+    interface Update
+        extends UpdateStages.WithRetentionInDays,
+            UpdateStages.WithTotalRetentionInDays,
+            UpdateStages.WithSearchResults,
+            UpdateStages.WithRestoredLogs,
+            UpdateStages.WithResultStatistics,
+            UpdateStages.WithPlan,
+            UpdateStages.WithSchema {
         /**
          * Executes the update request.
          *
@@ -159,24 +278,76 @@ public interface Table {
         /** The stage of the Table update allowing to specify retentionInDays. */
         interface WithRetentionInDays {
             /**
-             * Specifies the retentionInDays property: The data table data retention in days, between 7 and 730. Setting
+             * Specifies the retentionInDays property: The data table data retention in days, between 4 and 730. Setting
              * this property to null will default to the workspace retention..
              *
-             * @param retentionInDays The data table data retention in days, between 7 and 730. Setting this property to
+             * @param retentionInDays The data table data retention in days, between 4 and 730. Setting this property to
              *     null will default to the workspace retention.
              * @return the next definition stage.
              */
             Update withRetentionInDays(Integer retentionInDays);
         }
-        /** The stage of the Table update allowing to specify isTroubleshootEnabled. */
-        interface WithIsTroubleshootEnabled {
+        /** The stage of the Table update allowing to specify totalRetentionInDays. */
+        interface WithTotalRetentionInDays {
             /**
-             * Specifies the isTroubleshootEnabled property: Enable or disable troubleshoot for this table..
+             * Specifies the totalRetentionInDays property: The table data total retention in days, between 4 and 2555.
+             * Setting this property to null will default to table retention..
              *
-             * @param isTroubleshootEnabled Enable or disable troubleshoot for this table.
+             * @param totalRetentionInDays The table data total retention in days, between 4 and 2555. Setting this
+             *     property to null will default to table retention.
              * @return the next definition stage.
              */
-            Update withIsTroubleshootEnabled(Boolean isTroubleshootEnabled);
+            Update withTotalRetentionInDays(Integer totalRetentionInDays);
+        }
+        /** The stage of the Table update allowing to specify searchResults. */
+        interface WithSearchResults {
+            /**
+             * Specifies the searchResults property: Parameters of the search job that initiated this table..
+             *
+             * @param searchResults Parameters of the search job that initiated this table.
+             * @return the next definition stage.
+             */
+            Update withSearchResults(SearchResults searchResults);
+        }
+        /** The stage of the Table update allowing to specify restoredLogs. */
+        interface WithRestoredLogs {
+            /**
+             * Specifies the restoredLogs property: Parameters of the restore operation that initiated this table..
+             *
+             * @param restoredLogs Parameters of the restore operation that initiated this table.
+             * @return the next definition stage.
+             */
+            Update withRestoredLogs(RestoredLogs restoredLogs);
+        }
+        /** The stage of the Table update allowing to specify resultStatistics. */
+        interface WithResultStatistics {
+            /**
+             * Specifies the resultStatistics property: Search job execution statistics..
+             *
+             * @param resultStatistics Search job execution statistics.
+             * @return the next definition stage.
+             */
+            Update withResultStatistics(ResultStatistics resultStatistics);
+        }
+        /** The stage of the Table update allowing to specify plan. */
+        interface WithPlan {
+            /**
+             * Specifies the plan property: The table plan..
+             *
+             * @param plan The table plan.
+             * @return the next definition stage.
+             */
+            Update withPlan(TablePlanEnum plan);
+        }
+        /** The stage of the Table update allowing to specify schema. */
+        interface WithSchema {
+            /**
+             * Specifies the schema property: Table schema..
+             *
+             * @param schema Table schema.
+             * @return the next definition stage.
+             */
+            Update withSchema(Schema schema);
         }
     }
     /**
