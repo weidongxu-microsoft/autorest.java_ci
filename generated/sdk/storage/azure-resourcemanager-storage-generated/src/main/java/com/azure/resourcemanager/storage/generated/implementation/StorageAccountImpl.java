@@ -13,6 +13,7 @@ import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountI
 import com.azure.resourcemanager.storage.generated.models.AccessTier;
 import com.azure.resourcemanager.storage.generated.models.AccountSasParameters;
 import com.azure.resourcemanager.storage.generated.models.AccountStatus;
+import com.azure.resourcemanager.storage.generated.models.AllowedCopyScope;
 import com.azure.resourcemanager.storage.generated.models.AzureFilesIdentityBasedAuthentication;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreParameters;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreStatus;
@@ -169,6 +170,14 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.innerModel().networkRuleSet();
     }
 
+    public Boolean isSftpEnabled() {
+        return this.innerModel().isSftpEnabled();
+    }
+
+    public Boolean isLocalUserEnabled() {
+        return this.innerModel().isLocalUserEnabled();
+    }
+
     public Boolean isHnsEnabled() {
         return this.innerModel().isHnsEnabled();
     }
@@ -242,6 +251,10 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     public ImmutableStorageAccount immutableStorageWithVersioning() {
         return this.innerModel().immutableStorageWithVersioning();
+    }
+
+    public AllowedCopyScope allowedCopyScope() {
+        return this.innerModel().allowedCopyScope();
     }
 
     public Region region() {
@@ -475,6 +488,16 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         }
     }
 
+    public StorageAccountImpl withAllowedCopyScope(AllowedCopyScope allowedCopyScope) {
+        if (isInCreateMode()) {
+            this.createParameters.withAllowedCopyScope(allowedCopyScope);
+            return this;
+        } else {
+            this.updateParameters.withAllowedCopyScope(allowedCopyScope);
+            return this;
+        }
+    }
+
     public StorageAccountImpl withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess) {
         if (isInCreateMode()) {
             this.createParameters.withPublicNetworkAccess(publicNetworkAccess);
@@ -562,6 +585,26 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             return this;
         } else {
             this.updateParameters.withEnableHttpsTrafficOnly(enableHttpsTrafficOnly);
+            return this;
+        }
+    }
+
+    public StorageAccountImpl withIsSftpEnabled(Boolean isSftpEnabled) {
+        if (isInCreateMode()) {
+            this.createParameters.withIsSftpEnabled(isSftpEnabled);
+            return this;
+        } else {
+            this.updateParameters.withIsSftpEnabled(isSftpEnabled);
+            return this;
+        }
+    }
+
+    public StorageAccountImpl withIsLocalUserEnabled(Boolean isLocalUserEnabled) {
+        if (isInCreateMode()) {
+            this.createParameters.withIsLocalUserEnabled(isLocalUserEnabled);
+            return this;
+        } else {
+            this.updateParameters.withIsLocalUserEnabled(isLocalUserEnabled);
             return this;
         }
     }

@@ -18,7 +18,7 @@ public final class Schema {
     /*
      * Table name.
      */
-    @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "name")
     private String name;
 
     /*
@@ -101,6 +101,17 @@ public final class Schema {
      */
     public String name() {
         return this.name;
+    }
+
+    /**
+     * Set the name property: Table name.
+     *
+     * @param name the name value to set.
+     * @return the Schema object itself.
+     */
+    public Schema withName(String name) {
+        this.name = name;
+        return this;
     }
 
     /**

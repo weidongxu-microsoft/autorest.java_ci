@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.models.AccessTier;
 import com.azure.resourcemanager.storage.generated.models.AccountStatus;
+import com.azure.resourcemanager.storage.generated.models.AllowedCopyScope;
 import com.azure.resourcemanager.storage.generated.models.AzureFilesIdentityBasedAuthentication;
 import com.azure.resourcemanager.storage.generated.models.CustomDomain;
 import com.azure.resourcemanager.storage.generated.models.Encryption;
@@ -125,8 +126,8 @@ public final class StorageAccountPropertiesInner {
     private Endpoints secondaryEndpoints;
 
     /*
-     * Gets the encryption settings on the account. If unspecified, the account
-     * is unencrypted.
+     * Encryption settings to be used for server-side encryption for the
+     * storage account.
      */
     @JsonProperty(value = "encryption", access = JsonProperty.Access.WRITE_ONLY)
     private Encryption encryption;
@@ -155,6 +156,18 @@ public final class StorageAccountPropertiesInner {
      */
     @JsonProperty(value = "networkAcls", access = JsonProperty.Access.WRITE_ONLY)
     private NetworkRuleSet networkRuleSet;
+
+    /*
+     * Enables Secure File Transfer Protocol, if set to true
+     */
+    @JsonProperty(value = "isSftpEnabled")
+    private Boolean isSftpEnabled;
+
+    /*
+     * Enables local users feature, if set to true
+     */
+    @JsonProperty(value = "isLocalUserEnabled")
+    private Boolean isLocalUserEnabled;
 
     /*
      * Account HierarchicalNamespace enabled if sets to true.
@@ -260,6 +273,13 @@ public final class StorageAccountPropertiesInner {
      */
     @JsonProperty(value = "immutableStorageWithVersioning")
     private ImmutableStorageAccount immutableStorageWithVersioning;
+
+    /*
+     * Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
+     */
+    @JsonProperty(value = "allowedCopyScope")
+    private AllowedCopyScope allowedCopyScope;
 
     /**
      * Get the provisioningState property: Gets the status of the storage account at the time the operation was called.
@@ -387,8 +407,7 @@ public final class StorageAccountPropertiesInner {
     }
 
     /**
-     * Get the encryption property: Gets the encryption settings on the account. If unspecified, the account is
-     * unencrypted.
+     * Get the encryption property: Encryption settings to be used for server-side encryption for the storage account.
      *
      * @return the encryption value.
      */
@@ -456,6 +475,46 @@ public final class StorageAccountPropertiesInner {
      */
     public NetworkRuleSet networkRuleSet() {
         return this.networkRuleSet;
+    }
+
+    /**
+     * Get the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
+     *
+     * @return the isSftpEnabled value.
+     */
+    public Boolean isSftpEnabled() {
+        return this.isSftpEnabled;
+    }
+
+    /**
+     * Set the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
+     *
+     * @param isSftpEnabled the isSftpEnabled value to set.
+     * @return the StorageAccountPropertiesInner object itself.
+     */
+    public StorageAccountPropertiesInner withIsSftpEnabled(Boolean isSftpEnabled) {
+        this.isSftpEnabled = isSftpEnabled;
+        return this;
+    }
+
+    /**
+     * Get the isLocalUserEnabled property: Enables local users feature, if set to true.
+     *
+     * @return the isLocalUserEnabled value.
+     */
+    public Boolean isLocalUserEnabled() {
+        return this.isLocalUserEnabled;
+    }
+
+    /**
+     * Set the isLocalUserEnabled property: Enables local users feature, if set to true.
+     *
+     * @param isLocalUserEnabled the isLocalUserEnabled value to set.
+     * @return the StorageAccountPropertiesInner object itself.
+     */
+    public StorageAccountPropertiesInner withIsLocalUserEnabled(Boolean isLocalUserEnabled) {
+        this.isLocalUserEnabled = isLocalUserEnabled;
+        return this;
     }
 
     /**
@@ -736,6 +795,28 @@ public final class StorageAccountPropertiesInner {
     public StorageAccountPropertiesInner withImmutableStorageWithVersioning(
         ImmutableStorageAccount immutableStorageWithVersioning) {
         this.immutableStorageWithVersioning = immutableStorageWithVersioning;
+        return this;
+    }
+
+    /**
+     * Get the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
+     *
+     * @return the allowedCopyScope value.
+     */
+    public AllowedCopyScope allowedCopyScope() {
+        return this.allowedCopyScope;
+    }
+
+    /**
+     * Set the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
+     *
+     * @param allowedCopyScope the allowedCopyScope value to set.
+     * @return the StorageAccountPropertiesInner object itself.
+     */
+    public StorageAccountPropertiesInner withAllowedCopyScope(AllowedCopyScope allowedCopyScope) {
+        this.allowedCopyScope = allowedCopyScope;
         return this;
     }
 

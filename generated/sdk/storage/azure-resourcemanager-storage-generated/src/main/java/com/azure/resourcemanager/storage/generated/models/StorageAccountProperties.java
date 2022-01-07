@@ -110,8 +110,7 @@ public interface StorageAccountProperties {
     Endpoints secondaryEndpoints();
 
     /**
-     * Gets the encryption property: Gets the encryption settings on the account. If unspecified, the account is
-     * unencrypted.
+     * Gets the encryption property: Encryption settings to be used for server-side encryption for the storage account.
      *
      * @return the encryption value.
      */
@@ -146,6 +145,20 @@ public interface StorageAccountProperties {
      * @return the networkRuleSet value.
      */
     NetworkRuleSet networkRuleSet();
+
+    /**
+     * Gets the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
+     *
+     * @return the isSftpEnabled value.
+     */
+    Boolean isSftpEnabled();
+
+    /**
+     * Gets the isLocalUserEnabled property: Enables local users feature, if set to true.
+     *
+     * @return the isLocalUserEnabled value.
+     */
+    Boolean isLocalUserEnabled();
 
     /**
      * Gets the isHnsEnabled property: Account HierarchicalNamespace enabled if sets to true.
@@ -264,6 +277,14 @@ public interface StorageAccountProperties {
      * @return the immutableStorageWithVersioning value.
      */
     ImmutableStorageAccount immutableStorageWithVersioning();
+
+    /**
+     * Gets the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
+     *
+     * @return the allowedCopyScope value.
+     */
+    AllowedCopyScope allowedCopyScope();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountPropertiesInner object.

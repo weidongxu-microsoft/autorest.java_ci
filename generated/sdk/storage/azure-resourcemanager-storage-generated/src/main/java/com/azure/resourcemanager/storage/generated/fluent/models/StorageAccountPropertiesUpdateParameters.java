@@ -7,6 +7,7 @@ package com.azure.resourcemanager.storage.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.models.AccessTier;
+import com.azure.resourcemanager.storage.generated.models.AllowedCopyScope;
 import com.azure.resourcemanager.storage.generated.models.AzureFilesIdentityBasedAuthentication;
 import com.azure.resourcemanager.storage.generated.models.CustomDomain;
 import com.azure.resourcemanager.storage.generated.models.Encryption;
@@ -36,8 +37,8 @@ public final class StorageAccountPropertiesUpdateParameters {
     private CustomDomain customDomain;
 
     /*
-     * Provides the encryption settings on the account. The default setting is
-     * unencrypted.
+     * Not applicable. Azure Storage encryption at rest is enabled by default
+     * for all storage accounts and cannot be disabled.
      */
     @JsonProperty(value = "encryption")
     private Encryption encryption;
@@ -72,6 +73,18 @@ public final class StorageAccountPropertiesUpdateParameters {
      */
     @JsonProperty(value = "supportsHttpsTrafficOnly")
     private Boolean enableHttpsTrafficOnly;
+
+    /*
+     * Enables Secure File Transfer Protocol, if set to true
+     */
+    @JsonProperty(value = "isSftpEnabled")
+    private Boolean isSftpEnabled;
+
+    /*
+     * Enables local users feature, if set to true
+     */
+    @JsonProperty(value = "isLocalUserEnabled")
+    private Boolean isLocalUserEnabled;
 
     /*
      * Network rule set
@@ -146,6 +159,13 @@ public final class StorageAccountPropertiesUpdateParameters {
     @JsonProperty(value = "immutableStorageWithVersioning")
     private ImmutableStorageAccount immutableStorageWithVersioning;
 
+    /*
+     * Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
+     */
+    @JsonProperty(value = "allowedCopyScope")
+    private AllowedCopyScope allowedCopyScope;
+
     /**
      * Get the customDomain property: Custom domain assigned to the storage account by the user. Name is the CNAME
      * source. Only one custom domain is supported per storage account at this time. To clear the existing custom
@@ -171,7 +191,8 @@ public final class StorageAccountPropertiesUpdateParameters {
     }
 
     /**
-     * Get the encryption property: Provides the encryption settings on the account. The default setting is unencrypted.
+     * Get the encryption property: Not applicable. Azure Storage encryption at rest is enabled by default for all
+     * storage accounts and cannot be disabled.
      *
      * @return the encryption value.
      */
@@ -180,7 +201,8 @@ public final class StorageAccountPropertiesUpdateParameters {
     }
 
     /**
-     * Set the encryption property: Provides the encryption settings on the account. The default setting is unencrypted.
+     * Set the encryption property: Not applicable. Azure Storage encryption at rest is enabled by default for all
+     * storage accounts and cannot be disabled.
      *
      * @param encryption the encryption value to set.
      * @return the StorageAccountPropertiesUpdateParameters object itself.
@@ -292,6 +314,46 @@ public final class StorageAccountPropertiesUpdateParameters {
      */
     public StorageAccountPropertiesUpdateParameters withEnableHttpsTrafficOnly(Boolean enableHttpsTrafficOnly) {
         this.enableHttpsTrafficOnly = enableHttpsTrafficOnly;
+        return this;
+    }
+
+    /**
+     * Get the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
+     *
+     * @return the isSftpEnabled value.
+     */
+    public Boolean isSftpEnabled() {
+        return this.isSftpEnabled;
+    }
+
+    /**
+     * Set the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
+     *
+     * @param isSftpEnabled the isSftpEnabled value to set.
+     * @return the StorageAccountPropertiesUpdateParameters object itself.
+     */
+    public StorageAccountPropertiesUpdateParameters withIsSftpEnabled(Boolean isSftpEnabled) {
+        this.isSftpEnabled = isSftpEnabled;
+        return this;
+    }
+
+    /**
+     * Get the isLocalUserEnabled property: Enables local users feature, if set to true.
+     *
+     * @return the isLocalUserEnabled value.
+     */
+    public Boolean isLocalUserEnabled() {
+        return this.isLocalUserEnabled;
+    }
+
+    /**
+     * Set the isLocalUserEnabled property: Enables local users feature, if set to true.
+     *
+     * @param isLocalUserEnabled the isLocalUserEnabled value to set.
+     * @return the StorageAccountPropertiesUpdateParameters object itself.
+     */
+    public StorageAccountPropertiesUpdateParameters withIsLocalUserEnabled(Boolean isLocalUserEnabled) {
+        this.isLocalUserEnabled = isLocalUserEnabled;
         return this;
     }
 
@@ -518,6 +580,28 @@ public final class StorageAccountPropertiesUpdateParameters {
     public StorageAccountPropertiesUpdateParameters withImmutableStorageWithVersioning(
         ImmutableStorageAccount immutableStorageWithVersioning) {
         this.immutableStorageWithVersioning = immutableStorageWithVersioning;
+        return this;
+    }
+
+    /**
+     * Get the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
+     *
+     * @return the allowedCopyScope value.
+     */
+    public AllowedCopyScope allowedCopyScope() {
+        return this.allowedCopyScope;
+    }
+
+    /**
+     * Set the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
+     *
+     * @param allowedCopyScope the allowedCopyScope value to set.
+     * @return the StorageAccountPropertiesUpdateParameters object itself.
+     */
+    public StorageAccountPropertiesUpdateParameters withAllowedCopyScope(AllowedCopyScope allowedCopyScope) {
+        this.allowedCopyScope = allowedCopyScope;
         return this;
     }
 

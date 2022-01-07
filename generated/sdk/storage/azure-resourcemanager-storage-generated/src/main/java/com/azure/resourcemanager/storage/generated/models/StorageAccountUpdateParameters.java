@@ -182,7 +182,8 @@ public final class StorageAccountUpdateParameters {
     }
 
     /**
-     * Get the encryption property: Provides the encryption settings on the account. The default setting is unencrypted.
+     * Get the encryption property: Not applicable. Azure Storage encryption at rest is enabled by default for all
+     * storage accounts and cannot be disabled.
      *
      * @return the encryption value.
      */
@@ -191,7 +192,8 @@ public final class StorageAccountUpdateParameters {
     }
 
     /**
-     * Set the encryption property: Provides the encryption settings on the account. The default setting is unencrypted.
+     * Set the encryption property: Not applicable. Azure Storage encryption at rest is enabled by default for all
+     * storage accounts and cannot be disabled.
      *
      * @param encryption the encryption value to set.
      * @return the StorageAccountUpdateParameters object itself.
@@ -321,6 +323,52 @@ public final class StorageAccountUpdateParameters {
             this.innerProperties = new StorageAccountPropertiesUpdateParameters();
         }
         this.innerProperties().withEnableHttpsTrafficOnly(enableHttpsTrafficOnly);
+        return this;
+    }
+
+    /**
+     * Get the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
+     *
+     * @return the isSftpEnabled value.
+     */
+    public Boolean isSftpEnabled() {
+        return this.innerProperties() == null ? null : this.innerProperties().isSftpEnabled();
+    }
+
+    /**
+     * Set the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
+     *
+     * @param isSftpEnabled the isSftpEnabled value to set.
+     * @return the StorageAccountUpdateParameters object itself.
+     */
+    public StorageAccountUpdateParameters withIsSftpEnabled(Boolean isSftpEnabled) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new StorageAccountPropertiesUpdateParameters();
+        }
+        this.innerProperties().withIsSftpEnabled(isSftpEnabled);
+        return this;
+    }
+
+    /**
+     * Get the isLocalUserEnabled property: Enables local users feature, if set to true.
+     *
+     * @return the isLocalUserEnabled value.
+     */
+    public Boolean isLocalUserEnabled() {
+        return this.innerProperties() == null ? null : this.innerProperties().isLocalUserEnabled();
+    }
+
+    /**
+     * Set the isLocalUserEnabled property: Enables local users feature, if set to true.
+     *
+     * @param isLocalUserEnabled the isLocalUserEnabled value to set.
+     * @return the StorageAccountUpdateParameters object itself.
+     */
+    public StorageAccountUpdateParameters withIsLocalUserEnabled(Boolean isLocalUserEnabled) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new StorageAccountPropertiesUpdateParameters();
+        }
+        this.innerProperties().withIsLocalUserEnabled(isLocalUserEnabled);
         return this;
     }
 
@@ -574,6 +622,31 @@ public final class StorageAccountUpdateParameters {
             this.innerProperties = new StorageAccountPropertiesUpdateParameters();
         }
         this.innerProperties().withImmutableStorageWithVersioning(immutableStorageWithVersioning);
+        return this;
+    }
+
+    /**
+     * Get the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
+     *
+     * @return the allowedCopyScope value.
+     */
+    public AllowedCopyScope allowedCopyScope() {
+        return this.innerProperties() == null ? null : this.innerProperties().allowedCopyScope();
+    }
+
+    /**
+     * Set the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
+     *
+     * @param allowedCopyScope the allowedCopyScope value to set.
+     * @return the StorageAccountUpdateParameters object itself.
+     */
+    public StorageAccountUpdateParameters withAllowedCopyScope(AllowedCopyScope allowedCopyScope) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new StorageAccountPropertiesUpdateParameters();
+        }
+        this.innerProperties().withAllowedCopyScope(allowedCopyScope);
         return this;
     }
 

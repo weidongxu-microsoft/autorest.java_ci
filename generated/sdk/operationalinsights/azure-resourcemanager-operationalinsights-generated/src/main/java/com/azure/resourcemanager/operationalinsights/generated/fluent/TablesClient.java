@@ -55,7 +55,7 @@ public interface TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<TableInner>, TableInner> beginUpsert(
+    SyncPoller<PollResult<TableInner>, TableInner> beginCreateOrUpdate(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters);
 
     /**
@@ -72,7 +72,7 @@ public interface TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<TableInner>, TableInner> beginUpsert(
+    SyncPoller<PollResult<TableInner>, TableInner> beginCreateOrUpdate(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context);
 
     /**
@@ -88,7 +88,7 @@ public interface TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    TableInner upsert(String resourceGroupName, String workspaceName, String tableName, TableInner parameters);
+    TableInner createOrUpdate(String resourceGroupName, String workspaceName, String tableName, TableInner parameters);
 
     /**
      * Update or Create a Log Analytics workspace table.
@@ -104,7 +104,7 @@ public interface TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    TableInner upsert(
+    TableInner createOrUpdate(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context);
 
     /**

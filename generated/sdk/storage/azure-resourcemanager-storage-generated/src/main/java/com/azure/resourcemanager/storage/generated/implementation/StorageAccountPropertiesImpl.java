@@ -9,6 +9,7 @@ import com.azure.resourcemanager.storage.generated.fluent.models.PrivateEndpoint
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountPropertiesInner;
 import com.azure.resourcemanager.storage.generated.models.AccessTier;
 import com.azure.resourcemanager.storage.generated.models.AccountStatus;
+import com.azure.resourcemanager.storage.generated.models.AllowedCopyScope;
 import com.azure.resourcemanager.storage.generated.models.AzureFilesIdentityBasedAuthentication;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreStatus;
 import com.azure.resourcemanager.storage.generated.models.CustomDomain;
@@ -116,6 +117,14 @@ public final class StorageAccountPropertiesImpl implements StorageAccountPropert
         return this.innerModel().networkRuleSet();
     }
 
+    public Boolean isSftpEnabled() {
+        return this.innerModel().isSftpEnabled();
+    }
+
+    public Boolean isLocalUserEnabled() {
+        return this.innerModel().isLocalUserEnabled();
+    }
+
     public Boolean isHnsEnabled() {
         return this.innerModel().isHnsEnabled();
     }
@@ -189,6 +198,10 @@ public final class StorageAccountPropertiesImpl implements StorageAccountPropert
 
     public ImmutableStorageAccount immutableStorageWithVersioning() {
         return this.innerModel().immutableStorageWithVersioning();
+    }
+
+    public AllowedCopyScope allowedCopyScope() {
+        return this.innerModel().allowedCopyScope();
     }
 
     public StorageAccountPropertiesInner innerModel() {

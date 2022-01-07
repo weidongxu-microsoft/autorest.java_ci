@@ -101,7 +101,7 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
             serviceManager
                 .serviceClient()
                 .getTables()
-                .upsert(resourceGroupName, workspaceName, tableName, this.innerModel(), Context.NONE);
+                .createOrUpdate(resourceGroupName, workspaceName, tableName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -110,7 +110,7 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
             serviceManager
                 .serviceClient()
                 .getTables()
-                .upsert(resourceGroupName, workspaceName, tableName, this.innerModel(), context);
+                .createOrUpdate(resourceGroupName, workspaceName, tableName, this.innerModel(), context);
         return this;
     }
 

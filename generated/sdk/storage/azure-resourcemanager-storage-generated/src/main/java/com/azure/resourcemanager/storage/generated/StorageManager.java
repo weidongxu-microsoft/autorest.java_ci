@@ -29,6 +29,7 @@ import com.azure.resourcemanager.storage.generated.implementation.DeletedAccount
 import com.azure.resourcemanager.storage.generated.implementation.EncryptionScopesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.FileServicesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.FileSharesImpl;
+import com.azure.resourcemanager.storage.generated.implementation.LocalUsersOperationsImpl;
 import com.azure.resourcemanager.storage.generated.implementation.ManagementPoliciesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.ObjectReplicationPoliciesOperationsImpl;
 import com.azure.resourcemanager.storage.generated.implementation.OperationsImpl;
@@ -49,6 +50,7 @@ import com.azure.resourcemanager.storage.generated.models.DeletedAccounts;
 import com.azure.resourcemanager.storage.generated.models.EncryptionScopes;
 import com.azure.resourcemanager.storage.generated.models.FileServices;
 import com.azure.resourcemanager.storage.generated.models.FileShares;
+import com.azure.resourcemanager.storage.generated.models.LocalUsersOperations;
 import com.azure.resourcemanager.storage.generated.models.ManagementPolicies;
 import com.azure.resourcemanager.storage.generated.models.ObjectReplicationPoliciesOperations;
 import com.azure.resourcemanager.storage.generated.models.Operations;
@@ -89,6 +91,8 @@ public final class StorageManager {
     private PrivateLinkResources privateLinkResources;
 
     private ObjectReplicationPoliciesOperations objectReplicationPoliciesOperations;
+
+    private LocalUsersOperations localUsersOperations;
 
     private EncryptionScopes encryptionScopes;
 
@@ -377,6 +381,14 @@ public final class StorageManager {
                     clientObject.getObjectReplicationPoliciesOperations(), this);
         }
         return objectReplicationPoliciesOperations;
+    }
+
+    /** @return Resource collection API of LocalUsersOperations. */
+    public LocalUsersOperations localUsersOperations() {
+        if (this.localUsersOperations == null) {
+            this.localUsersOperations = new LocalUsersOperationsImpl(clientObject.getLocalUsersOperations(), this);
+        }
+        return localUsersOperations;
     }
 
     /** @return Resource collection API of EncryptionScopes. */

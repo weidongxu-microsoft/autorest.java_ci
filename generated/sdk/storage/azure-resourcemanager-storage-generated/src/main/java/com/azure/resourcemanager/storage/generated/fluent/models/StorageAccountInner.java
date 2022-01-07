@@ -9,6 +9,7 @@ import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.models.AccessTier;
 import com.azure.resourcemanager.storage.generated.models.AccountStatus;
+import com.azure.resourcemanager.storage.generated.models.AllowedCopyScope;
 import com.azure.resourcemanager.storage.generated.models.AzureFilesIdentityBasedAuthentication;
 import com.azure.resourcemanager.storage.generated.models.CustomDomain;
 import com.azure.resourcemanager.storage.generated.models.Encryption;
@@ -276,8 +277,7 @@ public final class StorageAccountInner extends Resource {
     }
 
     /**
-     * Get the encryption property: Gets the encryption settings on the account. If unspecified, the account is
-     * unencrypted.
+     * Get the encryption property: Encryption settings to be used for server-side encryption for the storage account.
      *
      * @return the encryption value.
      */
@@ -351,6 +351,52 @@ public final class StorageAccountInner extends Resource {
      */
     public NetworkRuleSet networkRuleSet() {
         return this.innerProperties() == null ? null : this.innerProperties().networkRuleSet();
+    }
+
+    /**
+     * Get the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
+     *
+     * @return the isSftpEnabled value.
+     */
+    public Boolean isSftpEnabled() {
+        return this.innerProperties() == null ? null : this.innerProperties().isSftpEnabled();
+    }
+
+    /**
+     * Set the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
+     *
+     * @param isSftpEnabled the isSftpEnabled value to set.
+     * @return the StorageAccountInner object itself.
+     */
+    public StorageAccountInner withIsSftpEnabled(Boolean isSftpEnabled) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new StorageAccountPropertiesInner();
+        }
+        this.innerProperties().withIsSftpEnabled(isSftpEnabled);
+        return this;
+    }
+
+    /**
+     * Get the isLocalUserEnabled property: Enables local users feature, if set to true.
+     *
+     * @return the isLocalUserEnabled value.
+     */
+    public Boolean isLocalUserEnabled() {
+        return this.innerProperties() == null ? null : this.innerProperties().isLocalUserEnabled();
+    }
+
+    /**
+     * Set the isLocalUserEnabled property: Enables local users feature, if set to true.
+     *
+     * @param isLocalUserEnabled the isLocalUserEnabled value to set.
+     * @return the StorageAccountInner object itself.
+     */
+    public StorageAccountInner withIsLocalUserEnabled(Boolean isLocalUserEnabled) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new StorageAccountPropertiesInner();
+        }
+        this.innerProperties().withIsLocalUserEnabled(isLocalUserEnabled);
+        return this;
     }
 
     /**
@@ -664,6 +710,31 @@ public final class StorageAccountInner extends Resource {
             this.innerProperties = new StorageAccountPropertiesInner();
         }
         this.innerProperties().withImmutableStorageWithVersioning(immutableStorageWithVersioning);
+        return this;
+    }
+
+    /**
+     * Get the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
+     *
+     * @return the allowedCopyScope value.
+     */
+    public AllowedCopyScope allowedCopyScope() {
+        return this.innerProperties() == null ? null : this.innerProperties().allowedCopyScope();
+    }
+
+    /**
+     * Set the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
+     *
+     * @param allowedCopyScope the allowedCopyScope value to set.
+     * @return the StorageAccountInner object itself.
+     */
+    public StorageAccountInner withAllowedCopyScope(AllowedCopyScope allowedCopyScope) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new StorageAccountPropertiesInner();
+        }
+        this.innerProperties().withAllowedCopyScope(allowedCopyScope);
         return this;
     }
 

@@ -88,7 +88,7 @@ public final class TablesClientImpl implements TablesClient {
                 + "/workspaces/{workspaceName}/tables/{tableName}")
         @ExpectedResponses({200, 202})
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> upsert(
+        Mono<Response<Flux<ByteBuffer>>> createOrUpdate(
             @HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
             @PathParam("resourceGroupName") String resourceGroupName,
@@ -329,7 +329,7 @@ public final class TablesClientImpl implements TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> upsertWithResponseAsync(
+    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -364,7 +364,7 @@ public final class TablesClientImpl implements TablesClient {
             .withContext(
                 context ->
                     service
-                        .upsert(
+                        .createOrUpdate(
                             this.client.getEndpoint(),
                             this.client.getSubscriptionId(),
                             resourceGroupName,
@@ -391,7 +391,7 @@ public final class TablesClientImpl implements TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> upsertWithResponseAsync(
+    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -424,7 +424,7 @@ public final class TablesClientImpl implements TablesClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .upsert(
+            .createOrUpdate(
                 this.client.getEndpoint(),
                 this.client.getSubscriptionId(),
                 resourceGroupName,
@@ -449,10 +449,10 @@ public final class TablesClientImpl implements TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<TableInner>, TableInner> beginUpsertAsync(
+    private PollerFlux<PollResult<TableInner>, TableInner> beginCreateOrUpdateAsync(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters) {
         Mono<Response<Flux<ByteBuffer>>> mono =
-            upsertWithResponseAsync(resourceGroupName, workspaceName, tableName, parameters);
+            createOrUpdateWithResponseAsync(resourceGroupName, workspaceName, tableName, parameters);
         return this
             .client
             .<TableInner, TableInner>getLroResult(
@@ -473,11 +473,11 @@ public final class TablesClientImpl implements TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<TableInner>, TableInner> beginUpsertAsync(
+    private PollerFlux<PollResult<TableInner>, TableInner> beginCreateOrUpdateAsync(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context) {
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono =
-            upsertWithResponseAsync(resourceGroupName, workspaceName, tableName, parameters, context);
+            createOrUpdateWithResponseAsync(resourceGroupName, workspaceName, tableName, parameters, context);
         return this
             .client
             .<TableInner, TableInner>getLroResult(
@@ -497,9 +497,9 @@ public final class TablesClientImpl implements TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<TableInner>, TableInner> beginUpsert(
+    public SyncPoller<PollResult<TableInner>, TableInner> beginCreateOrUpdate(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters) {
-        return beginUpsertAsync(resourceGroupName, workspaceName, tableName, parameters).getSyncPoller();
+        return beginCreateOrUpdateAsync(resourceGroupName, workspaceName, tableName, parameters).getSyncPoller();
     }
 
     /**
@@ -516,9 +516,10 @@ public final class TablesClientImpl implements TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<TableInner>, TableInner> beginUpsert(
+    public SyncPoller<PollResult<TableInner>, TableInner> beginCreateOrUpdate(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context) {
-        return beginUpsertAsync(resourceGroupName, workspaceName, tableName, parameters, context).getSyncPoller();
+        return beginCreateOrUpdateAsync(resourceGroupName, workspaceName, tableName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -534,9 +535,9 @@ public final class TablesClientImpl implements TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<TableInner> upsertAsync(
+    private Mono<TableInner> createOrUpdateAsync(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters) {
-        return beginUpsertAsync(resourceGroupName, workspaceName, tableName, parameters)
+        return beginCreateOrUpdateAsync(resourceGroupName, workspaceName, tableName, parameters)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
@@ -555,9 +556,9 @@ public final class TablesClientImpl implements TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<TableInner> upsertAsync(
+    private Mono<TableInner> createOrUpdateAsync(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context) {
-        return beginUpsertAsync(resourceGroupName, workspaceName, tableName, parameters, context)
+        return beginCreateOrUpdateAsync(resourceGroupName, workspaceName, tableName, parameters, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
@@ -575,8 +576,9 @@ public final class TablesClientImpl implements TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public TableInner upsert(String resourceGroupName, String workspaceName, String tableName, TableInner parameters) {
-        return upsertAsync(resourceGroupName, workspaceName, tableName, parameters).block();
+    public TableInner createOrUpdate(
+        String resourceGroupName, String workspaceName, String tableName, TableInner parameters) {
+        return createOrUpdateAsync(resourceGroupName, workspaceName, tableName, parameters).block();
     }
 
     /**
@@ -593,9 +595,9 @@ public final class TablesClientImpl implements TablesClient {
      * @return workspace data table definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public TableInner upsert(
+    public TableInner createOrUpdate(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context) {
-        return upsertAsync(resourceGroupName, workspaceName, tableName, parameters, context).block();
+        return createOrUpdateAsync(resourceGroupName, workspaceName, tableName, parameters, context).block();
     }
 
     /**
