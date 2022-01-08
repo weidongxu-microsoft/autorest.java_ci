@@ -12,91 +12,6 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.Authorization
 /** Resource collection API of EventHubs. */
 public interface EventHubs {
     /**
-     * Gets all the Event Hubs in a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Event Hubs in a Namespace.
-     */
-    PagedIterable<Eventhub> listByNamespace(String resourceGroupName, String namespaceName);
-
-    /**
-     * Gets all the Event Hubs in a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
-     *     a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
-     *     point to use for subsequent calls.
-     * @param top May be used to limit the number of results to the most recent N usageDetails.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Event Hubs in a Namespace.
-     */
-    PagedIterable<Eventhub> listByNamespace(
-        String resourceGroupName, String namespaceName, Integer skip, Integer top, Context context);
-
-    /**
-     * Deletes an Event Hub from the specified Namespace and resource group.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void delete(String resourceGroupName, String namespaceName, String eventHubName);
-
-    /**
-     * Deletes an Event Hub from the specified Namespace and resource group.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    Response<Void> deleteWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, Context context);
-
-    /**
-     * Gets an Event Hubs description for the specified Event Hub.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Event Hubs description for the specified Event Hub.
-     */
-    Eventhub get(String resourceGroupName, String namespaceName, String eventHubName);
-
-    /**
-     * Gets an Event Hubs description for the specified Event Hub.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Event Hubs description for the specified Event Hub.
-     */
-    Response<Eventhub> getWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, Context context);
-
-    /**
      * Gets the authorization rules for an Event Hub.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
@@ -314,6 +229,91 @@ public interface EventHubs {
         String authorizationRuleName,
         RegenerateAccessKeyParameters parameters,
         Context context);
+
+    /**
+     * Gets all the Event Hubs in a Namespace.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all the Event Hubs in a Namespace.
+     */
+    PagedIterable<Eventhub> listByNamespace(String resourceGroupName, String namespaceName);
+
+    /**
+     * Gets all the Event Hubs in a Namespace.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
+     *     a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
+     *     point to use for subsequent calls.
+     * @param top May be used to limit the number of results to the most recent N usageDetails.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all the Event Hubs in a Namespace.
+     */
+    PagedIterable<Eventhub> listByNamespace(
+        String resourceGroupName, String namespaceName, Integer skip, Integer top, Context context);
+
+    /**
+     * Deletes an Event Hub from the specified Namespace and resource group.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param eventHubName The Event Hub name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void delete(String resourceGroupName, String namespaceName, String eventHubName);
+
+    /**
+     * Deletes an Event Hub from the specified Namespace and resource group.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param eventHubName The Event Hub name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteWithResponse(
+        String resourceGroupName, String namespaceName, String eventHubName, Context context);
+
+    /**
+     * Gets an Event Hubs description for the specified Event Hub.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param eventHubName The Event Hub name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Event Hubs description for the specified Event Hub.
+     */
+    Eventhub get(String resourceGroupName, String namespaceName, String eventHubName);
+
+    /**
+     * Gets an Event Hubs description for the specified Event Hub.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param eventHubName The Event Hub name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Event Hubs description for the specified Event Hub.
+     */
+    Response<Eventhub> getWithResponse(
+        String resourceGroupName, String namespaceName, String eventHubName, Context context);
 
     /**
      * Gets an Event Hubs description for the specified Event Hub.

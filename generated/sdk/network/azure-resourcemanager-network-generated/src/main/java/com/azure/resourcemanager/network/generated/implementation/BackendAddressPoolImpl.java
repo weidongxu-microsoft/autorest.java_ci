@@ -98,15 +98,6 @@ public final class BackendAddressPoolImpl
         }
     }
 
-    public List<SubResource> inboundNatRules() {
-        List<SubResource> inner = this.innerModel().inboundNatRules();
-        if (inner != null) {
-            return Collections.unmodifiableList(inner);
-        } else {
-            return Collections.emptyList();
-        }
-    }
-
     public ProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
     }

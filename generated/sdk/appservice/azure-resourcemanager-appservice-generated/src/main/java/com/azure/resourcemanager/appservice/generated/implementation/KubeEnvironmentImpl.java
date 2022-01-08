@@ -9,7 +9,6 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.KubeEnvironmentInner;
 import com.azure.resourcemanager.appservice.generated.models.AppLogsConfiguration;
 import com.azure.resourcemanager.appservice.generated.models.ArcConfiguration;
-import com.azure.resourcemanager.appservice.generated.models.ContainerAppsConfiguration;
 import com.azure.resourcemanager.appservice.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.appservice.generated.models.KubeEnvironment;
 import com.azure.resourcemanager.appservice.generated.models.KubeEnvironmentPatchResource;
@@ -75,20 +74,12 @@ public final class KubeEnvironmentImpl implements KubeEnvironment, KubeEnvironme
         return this.innerModel().staticIp();
     }
 
-    public String environmentType() {
-        return this.innerModel().environmentType();
-    }
-
     public ArcConfiguration arcConfiguration() {
         return this.innerModel().arcConfiguration();
     }
 
     public AppLogsConfiguration appLogsConfiguration() {
         return this.innerModel().appLogsConfiguration();
-    }
-
-    public ContainerAppsConfiguration containerAppsConfiguration() {
-        return this.innerModel().containerAppsConfiguration();
     }
 
     public String aksResourceId() {
@@ -240,11 +231,6 @@ public final class KubeEnvironmentImpl implements KubeEnvironment, KubeEnvironme
         return this;
     }
 
-    public KubeEnvironmentImpl withEnvironmentType(String environmentType) {
-        this.innerModel().withEnvironmentType(environmentType);
-        return this;
-    }
-
     public KubeEnvironmentImpl withArcConfiguration(ArcConfiguration arcConfiguration) {
         if (isInCreateMode()) {
             this.innerModel().withArcConfiguration(arcConfiguration);
@@ -261,16 +247,6 @@ public final class KubeEnvironmentImpl implements KubeEnvironment, KubeEnvironme
             return this;
         } else {
             this.updateKubeEnvironmentEnvelope.withAppLogsConfiguration(appLogsConfiguration);
-            return this;
-        }
-    }
-
-    public KubeEnvironmentImpl withContainerAppsConfiguration(ContainerAppsConfiguration containerAppsConfiguration) {
-        if (isInCreateMode()) {
-            this.innerModel().withContainerAppsConfiguration(containerAppsConfiguration);
-            return this;
-        } else {
-            this.updateKubeEnvironmentEnvelope.withContainerAppsConfiguration(containerAppsConfiguration);
             return this;
         }
     }

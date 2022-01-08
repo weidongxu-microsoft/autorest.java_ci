@@ -32,7 +32,7 @@ import com.azure.resourcemanager.eventhubs.generated.implementation.NamespacesIm
 import com.azure.resourcemanager.eventhubs.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.eventhubs.generated.implementation.PrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.eventhubs.generated.implementation.PrivateLinkResourcesImpl;
-import com.azure.resourcemanager.eventhubs.generated.implementation.SchemaRegistriesImpl;
+import com.azure.resourcemanager.eventhubs.generated.implementation.RegionsImpl;
 import com.azure.resourcemanager.eventhubs.generated.models.Clusters;
 import com.azure.resourcemanager.eventhubs.generated.models.Configurations;
 import com.azure.resourcemanager.eventhubs.generated.models.ConsumerGroups;
@@ -42,7 +42,7 @@ import com.azure.resourcemanager.eventhubs.generated.models.Namespaces;
 import com.azure.resourcemanager.eventhubs.generated.models.Operations;
 import com.azure.resourcemanager.eventhubs.generated.models.PrivateEndpointConnections;
 import com.azure.resourcemanager.eventhubs.generated.models.PrivateLinkResources;
-import com.azure.resourcemanager.eventhubs.generated.models.SchemaRegistries;
+import com.azure.resourcemanager.eventhubs.generated.models.Regions;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -57,23 +57,23 @@ import java.util.stream.Collectors;
 public final class EventHubsManager {
     private Clusters clusters;
 
-    private Configurations configurations;
-
     private Namespaces namespaces;
 
     private PrivateEndpointConnections privateEndpointConnections;
 
     private PrivateLinkResources privateLinkResources;
 
-    private Operations operations;
-
-    private EventHubs eventHubs;
+    private Configurations configurations;
 
     private DisasterRecoveryConfigs disasterRecoveryConfigs;
 
+    private EventHubs eventHubs;
+
     private ConsumerGroups consumerGroups;
 
-    private SchemaRegistries schemaRegistries;
+    private Operations operations;
+
+    private Regions regions;
 
     private final EventHubManagementClient clientObject;
 
@@ -271,14 +271,6 @@ public final class EventHubsManager {
         return clusters;
     }
 
-    /** @return Resource collection API of Configurations. */
-    public Configurations configurations() {
-        if (this.configurations == null) {
-            this.configurations = new ConfigurationsImpl(clientObject.getConfigurations(), this);
-        }
-        return configurations;
-    }
-
     /** @return Resource collection API of Namespaces. */
     public Namespaces namespaces() {
         if (this.namespaces == null) {
@@ -304,20 +296,12 @@ public final class EventHubsManager {
         return privateLinkResources;
     }
 
-    /** @return Resource collection API of Operations. */
-    public Operations operations() {
-        if (this.operations == null) {
-            this.operations = new OperationsImpl(clientObject.getOperations(), this);
+    /** @return Resource collection API of Configurations. */
+    public Configurations configurations() {
+        if (this.configurations == null) {
+            this.configurations = new ConfigurationsImpl(clientObject.getConfigurations(), this);
         }
-        return operations;
-    }
-
-    /** @return Resource collection API of EventHubs. */
-    public EventHubs eventHubs() {
-        if (this.eventHubs == null) {
-            this.eventHubs = new EventHubsImpl(clientObject.getEventHubs(), this);
-        }
-        return eventHubs;
+        return configurations;
     }
 
     /** @return Resource collection API of DisasterRecoveryConfigs. */
@@ -329,6 +313,14 @@ public final class EventHubsManager {
         return disasterRecoveryConfigs;
     }
 
+    /** @return Resource collection API of EventHubs. */
+    public EventHubs eventHubs() {
+        if (this.eventHubs == null) {
+            this.eventHubs = new EventHubsImpl(clientObject.getEventHubs(), this);
+        }
+        return eventHubs;
+    }
+
     /** @return Resource collection API of ConsumerGroups. */
     public ConsumerGroups consumerGroups() {
         if (this.consumerGroups == null) {
@@ -337,12 +329,20 @@ public final class EventHubsManager {
         return consumerGroups;
     }
 
-    /** @return Resource collection API of SchemaRegistries. */
-    public SchemaRegistries schemaRegistries() {
-        if (this.schemaRegistries == null) {
-            this.schemaRegistries = new SchemaRegistriesImpl(clientObject.getSchemaRegistries(), this);
+    /** @return Resource collection API of Operations. */
+    public Operations operations() {
+        if (this.operations == null) {
+            this.operations = new OperationsImpl(clientObject.getOperations(), this);
         }
-        return schemaRegistries;
+        return operations;
+    }
+
+    /** @return Resource collection API of Regions. */
+    public Regions regions() {
+        if (this.regions == null) {
+            this.regions = new RegionsImpl(clientObject.getRegions(), this);
+        }
+        return regions;
     }
 
     /**

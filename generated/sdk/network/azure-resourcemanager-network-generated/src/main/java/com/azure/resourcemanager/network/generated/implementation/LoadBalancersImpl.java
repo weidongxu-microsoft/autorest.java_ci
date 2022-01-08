@@ -10,13 +10,10 @@ import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancersClient;
-import com.azure.resourcemanager.network.generated.fluent.models.BackendAddressInboundNatRulePortMappingsInner;
 import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancerInner;
-import com.azure.resourcemanager.network.generated.models.BackendAddressInboundNatRulePortMappings;
 import com.azure.resourcemanager.network.generated.models.LoadBalancer;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerVipSwapRequest;
 import com.azure.resourcemanager.network.generated.models.LoadBalancers;
-import com.azure.resourcemanager.network.generated.models.QueryInboundNatRulePortMappingRequest;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LoadBalancersImpl implements LoadBalancers {
@@ -90,39 +87,6 @@ public final class LoadBalancersImpl implements LoadBalancers {
 
     public void swapPublicIpAddresses(String location, LoadBalancerVipSwapRequest parameters, Context context) {
         this.serviceClient().swapPublicIpAddresses(location, parameters, context);
-    }
-
-    public BackendAddressInboundNatRulePortMappings listInboundNatRulePortMappings(
-        String groupName,
-        String loadBalancerName,
-        String backendPoolName,
-        QueryInboundNatRulePortMappingRequest parameters) {
-        BackendAddressInboundNatRulePortMappingsInner inner =
-            this
-                .serviceClient()
-                .listInboundNatRulePortMappings(groupName, loadBalancerName, backendPoolName, parameters);
-        if (inner != null) {
-            return new BackendAddressInboundNatRulePortMappingsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public BackendAddressInboundNatRulePortMappings listInboundNatRulePortMappings(
-        String groupName,
-        String loadBalancerName,
-        String backendPoolName,
-        QueryInboundNatRulePortMappingRequest parameters,
-        Context context) {
-        BackendAddressInboundNatRulePortMappingsInner inner =
-            this
-                .serviceClient()
-                .listInboundNatRulePortMappings(groupName, loadBalancerName, backendPoolName, parameters, context);
-        if (inner != null) {
-            return new BackendAddressInboundNatRulePortMappingsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public LoadBalancer getById(String id) {

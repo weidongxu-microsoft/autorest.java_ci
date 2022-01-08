@@ -96,14 +96,6 @@ public final class WorkspaceProperties {
     @JsonProperty(value = "features")
     private WorkspaceFeatures features;
 
-    /*
-     * The resource ID of the default Data Collection Rule to use for this
-     * workspace. Expected format is -
-     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
-     */
-    @JsonProperty(value = "defaultDataCollectionRuleResourceId")
-    private String defaultDataCollectionRuleResourceId;
-
     /**
      * Get the provisioningState property: The provisioning state of the workspace.
      *
@@ -300,30 +292,6 @@ public final class WorkspaceProperties {
      */
     public WorkspaceProperties withFeatures(WorkspaceFeatures features) {
         this.features = features;
-        return this;
-    }
-
-    /**
-     * Get the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use
-     * for this workspace. Expected format is -
-     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
-     *
-     * @return the defaultDataCollectionRuleResourceId value.
-     */
-    public String defaultDataCollectionRuleResourceId() {
-        return this.defaultDataCollectionRuleResourceId;
-    }
-
-    /**
-     * Set the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use
-     * for this workspace. Expected format is -
-     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
-     *
-     * @param defaultDataCollectionRuleResourceId the defaultDataCollectionRuleResourceId value to set.
-     * @return the WorkspaceProperties object itself.
-     */
-    public WorkspaceProperties withDefaultDataCollectionRuleResourceId(String defaultDataCollectionRuleResourceId) {
-        this.defaultDataCollectionRuleResourceId = defaultDataCollectionRuleResourceId;
         return this;
     }
 

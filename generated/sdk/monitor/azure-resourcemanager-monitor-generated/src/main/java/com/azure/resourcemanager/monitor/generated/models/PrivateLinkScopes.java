@@ -33,7 +33,7 @@ public interface PrivateLinkScopes {
     /**
      * Gets a list of Azure Monitor PrivateLinkScopes within a resource group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -44,7 +44,7 @@ public interface PrivateLinkScopes {
     /**
      * Gets a list of Azure Monitor PrivateLinkScopes within a resource group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -56,7 +56,7 @@ public interface PrivateLinkScopes {
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -67,7 +67,7 @@ public interface PrivateLinkScopes {
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -79,7 +79,7 @@ public interface PrivateLinkScopes {
     /**
      * Returns a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -91,7 +91,7 @@ public interface PrivateLinkScopes {
     /**
      * Returns a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

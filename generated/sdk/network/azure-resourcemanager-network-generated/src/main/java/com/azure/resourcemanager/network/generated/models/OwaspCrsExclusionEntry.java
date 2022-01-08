@@ -8,7 +8,6 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.List;
 
 /** Allow to exclude some variable satisfy the condition for the WAF check. */
 @Fluent
@@ -34,12 +33,6 @@ public final class OwaspCrsExclusionEntry {
      */
     @JsonProperty(value = "selector", required = true)
     private String selector;
-
-    /*
-     * The managed rule sets that are associated with the exclusion.
-     */
-    @JsonProperty(value = "exclusionManagedRuleSets")
-    private List<ExclusionManagedRuleSet> exclusionManagedRuleSets;
 
     /**
      * Get the matchVariable property: The variable to be excluded.
@@ -107,26 +100,6 @@ public final class OwaspCrsExclusionEntry {
     }
 
     /**
-     * Get the exclusionManagedRuleSets property: The managed rule sets that are associated with the exclusion.
-     *
-     * @return the exclusionManagedRuleSets value.
-     */
-    public List<ExclusionManagedRuleSet> exclusionManagedRuleSets() {
-        return this.exclusionManagedRuleSets;
-    }
-
-    /**
-     * Set the exclusionManagedRuleSets property: The managed rule sets that are associated with the exclusion.
-     *
-     * @param exclusionManagedRuleSets the exclusionManagedRuleSets value to set.
-     * @return the OwaspCrsExclusionEntry object itself.
-     */
-    public OwaspCrsExclusionEntry withExclusionManagedRuleSets(List<ExclusionManagedRuleSet> exclusionManagedRuleSets) {
-        this.exclusionManagedRuleSets = exclusionManagedRuleSets;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -148,9 +121,6 @@ public final class OwaspCrsExclusionEntry {
             throw logger
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property selector in model OwaspCrsExclusionEntry"));
-        }
-        if (exclusionManagedRuleSets() != null) {
-            exclusionManagedRuleSets().forEach(e -> e.validate());
         }
     }
 }

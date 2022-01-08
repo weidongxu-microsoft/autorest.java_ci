@@ -117,14 +117,6 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
         return this.innerModel().immutableStorageWithVersioning();
     }
 
-    public Boolean enableNfsV3RootSquash() {
-        return this.innerModel().enableNfsV3RootSquash();
-    }
-
-    public Boolean enableNfsV3AllSquash() {
-        return this.innerModel().enableNfsV3AllSquash();
-    }
-
     public BlobContainerInner innerModel() {
         return this.innerObject;
     }
@@ -285,16 +277,6 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
     public BlobContainerImpl withImmutableStorageWithVersioning(
         ImmutableStorageWithVersioning immutableStorageWithVersioning) {
         this.innerModel().withImmutableStorageWithVersioning(immutableStorageWithVersioning);
-        return this;
-    }
-
-    public BlobContainerImpl withEnableNfsV3RootSquash(Boolean enableNfsV3RootSquash) {
-        this.innerModel().withEnableNfsV3RootSquash(enableNfsV3RootSquash);
-        return this;
-    }
-
-    public BlobContainerImpl withEnableNfsV3AllSquash(Boolean enableNfsV3AllSquash) {
-        this.innerModel().withEnableNfsV3AllSquash(enableNfsV3AllSquash);
         return this;
     }
 }

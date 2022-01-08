@@ -106,14 +106,6 @@ public interface Key {
     RotationPolicy rotationPolicy();
 
     /**
-     * Gets the releasePolicy property: Key release policy in response. It will be used for both output and input.
-     * Omitted if empty.
-     *
-     * @return the releasePolicy value.
-     */
-    KeyReleasePolicy releasePolicy();
-
-    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.

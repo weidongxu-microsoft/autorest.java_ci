@@ -92,14 +92,6 @@ public interface BackendAddressPool {
     List<SubResource> outboundRules();
 
     /**
-     * Gets the inboundNatRules property: An array of references to inbound NAT rules that use this backend address
-     * pool.
-     *
-     * @return the inboundNatRules value.
-     */
-    List<SubResource> inboundNatRules();
-
-    /**
      * Gets the provisioningState property: The provisioning state of the backend address pool resource.
      *
      * @return the provisioningState value.

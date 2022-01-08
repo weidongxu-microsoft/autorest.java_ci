@@ -48,24 +48,6 @@ public final class ModernUsageDetail extends UsageDetailInner {
     }
 
     /**
-     * Get the effectivePrice property: Effective Price that's charged for the usage.
-     *
-     * @return the effectivePrice value.
-     */
-    public BigDecimal effectivePrice() {
-        return this.innerProperties() == null ? null : this.innerProperties().effectivePrice();
-    }
-
-    /**
-     * Get the pricingModel property: Identifier that indicates how the meter is priced.
-     *
-     * @return the pricingModel value.
-     */
-    public PricingModelType pricingModel() {
-        return this.innerProperties() == null ? null : this.innerProperties().pricingModel();
-    }
-
-    /**
      * Get the billingAccountName property: Name of the Billing Account.
      *
      * @return the billingAccountName value.
@@ -683,43 +665,6 @@ public final class ModernUsageDetail extends UsageDetailInner {
      */
     public BigDecimal payGPrice() {
         return this.innerProperties() == null ? null : this.innerProperties().payGPrice();
-    }
-
-    /**
-     * Get the benefitId property: Unique identifier for the applicable benefit.
-     *
-     * @return the benefitId value.
-     */
-    public String benefitId() {
-        return this.innerProperties() == null ? null : this.innerProperties().benefitId();
-    }
-
-    /**
-     * Get the benefitName property: Name of the applicable benefit.
-     *
-     * @return the benefitName value.
-     */
-    public String benefitName() {
-        return this.innerProperties() == null ? null : this.innerProperties().benefitName();
-    }
-
-    /**
-     * Get the provider property: Identifier for Product Category or Line Of Business, Ex - Azure, Microsoft 365, AWS
-     * e.t.c.
-     *
-     * @return the provider value.
-     */
-    public String provider() {
-        return this.innerProperties() == null ? null : this.innerProperties().provider();
-    }
-
-    /**
-     * Get the costAllocationRuleName property: Name for Cost Allocation Rule.
-     *
-     * @return the costAllocationRuleName value.
-     */
-    public String costAllocationRuleName() {
-        return this.innerProperties() == null ? null : this.innerProperties().costAllocationRuleName();
     }
 
     /**

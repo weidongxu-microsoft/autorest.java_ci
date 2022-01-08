@@ -23,20 +23,8 @@ public final class OperationImpl implements Operation {
         return this.innerModel().name();
     }
 
-    public Boolean isDataAction() {
-        return this.innerModel().isDataAction();
-    }
-
     public OperationDisplay display() {
         return this.innerModel().display();
-    }
-
-    public String origin() {
-        return this.innerModel().origin();
-    }
-
-    public Object properties() {
-        return this.innerModel().properties();
     }
 
     public OperationInner innerModel() {

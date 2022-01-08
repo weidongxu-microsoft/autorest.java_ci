@@ -72,7 +72,7 @@ public interface PrivateEndpointConnection {
             /**
              * Specifies resourceGroupName, scopeName.
              *
-             * @param resourceGroupName The name of the resource group. The name is case insensitive.
+             * @param resourceGroupName The name of the resource group.
              * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
              * @return the next definition stage.
              */

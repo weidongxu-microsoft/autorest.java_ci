@@ -28,8 +28,6 @@ import com.azure.resourcemanager.appservice.generated.implementation.AppServiceP
 import com.azure.resourcemanager.appservice.generated.implementation.CertificateOrdersDiagnosticsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.CertificateRegistrationProvidersImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.CertificatesImpl;
-import com.azure.resourcemanager.appservice.generated.implementation.ContainerAppsImpl;
-import com.azure.resourcemanager.appservice.generated.implementation.ContainerAppsRevisionsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.DeletedWebAppsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.DiagnosticsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.DomainRegistrationProvidersImpl;
@@ -50,8 +48,6 @@ import com.azure.resourcemanager.appservice.generated.models.AppServicePlans;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrdersDiagnostics;
 import com.azure.resourcemanager.appservice.generated.models.CertificateRegistrationProviders;
 import com.azure.resourcemanager.appservice.generated.models.Certificates;
-import com.azure.resourcemanager.appservice.generated.models.ContainerApps;
-import com.azure.resourcemanager.appservice.generated.models.ContainerAppsRevisions;
 import com.azure.resourcemanager.appservice.generated.models.DeletedWebApps;
 import com.azure.resourcemanager.appservice.generated.models.Diagnostics;
 import com.azure.resourcemanager.appservice.generated.models.DomainRegistrationProviders;
@@ -91,10 +87,6 @@ public final class AppServiceManager {
     private AppServicePlans appServicePlans;
 
     private Certificates certificates;
-
-    private ContainerApps containerApps;
-
-    private ContainerAppsRevisions containerAppsRevisions;
 
     private DeletedWebApps deletedWebApps;
 
@@ -379,23 +371,6 @@ public final class AppServiceManager {
             this.certificates = new CertificatesImpl(clientObject.getCertificates(), this);
         }
         return certificates;
-    }
-
-    /** @return Resource collection API of ContainerApps. */
-    public ContainerApps containerApps() {
-        if (this.containerApps == null) {
-            this.containerApps = new ContainerAppsImpl(clientObject.getContainerApps(), this);
-        }
-        return containerApps;
-    }
-
-    /** @return Resource collection API of ContainerAppsRevisions. */
-    public ContainerAppsRevisions containerAppsRevisions() {
-        if (this.containerAppsRevisions == null) {
-            this.containerAppsRevisions =
-                new ContainerAppsRevisionsImpl(clientObject.getContainerAppsRevisions(), this);
-        }
-        return containerAppsRevisions;
     }
 
     /** @return Resource collection API of DeletedWebApps. */

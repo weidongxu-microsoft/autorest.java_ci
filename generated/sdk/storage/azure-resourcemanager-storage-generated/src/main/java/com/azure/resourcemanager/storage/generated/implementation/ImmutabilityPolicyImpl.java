@@ -43,10 +43,6 @@ public final class ImmutabilityPolicyImpl
         return this.innerModel().allowProtectedAppendWrites();
     }
 
-    public Boolean allowProtectedAppendWritesAll() {
-        return this.innerModel().allowProtectedAppendWritesAll();
-    }
-
     public ImmutabilityPolicyInner innerModel() {
         return this.innerObject;
     }
@@ -169,11 +165,6 @@ public final class ImmutabilityPolicyImpl
 
     public ImmutabilityPolicyImpl withAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites) {
         this.innerModel().withAllowProtectedAppendWrites(allowProtectedAppendWrites);
-        return this;
-    }
-
-    public ImmutabilityPolicyImpl withAllowProtectedAppendWritesAll(Boolean allowProtectedAppendWritesAll) {
-        this.innerModel().withAllowProtectedAppendWritesAll(allowProtectedAppendWritesAll);
         return this;
     }
 

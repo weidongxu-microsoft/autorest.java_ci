@@ -127,44 +127,6 @@ public interface LoadBalancers {
     void swapPublicIpAddresses(String location, LoadBalancerVipSwapRequest parameters, Context context);
 
     /**
-     * List of inbound NAT rule port mappings.
-     *
-     * @param groupName The name of the resource group.
-     * @param loadBalancerName The name of the load balancer.
-     * @param backendPoolName The name of the load balancer backend address pool.
-     * @param parameters Query inbound NAT rule port mapping request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for a QueryInboundNatRulePortMapping API.
-     */
-    BackendAddressInboundNatRulePortMappings listInboundNatRulePortMappings(
-        String groupName,
-        String loadBalancerName,
-        String backendPoolName,
-        QueryInboundNatRulePortMappingRequest parameters);
-
-    /**
-     * List of inbound NAT rule port mappings.
-     *
-     * @param groupName The name of the resource group.
-     * @param loadBalancerName The name of the load balancer.
-     * @param backendPoolName The name of the load balancer backend address pool.
-     * @param parameters Query inbound NAT rule port mapping request.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for a QueryInboundNatRulePortMapping API.
-     */
-    BackendAddressInboundNatRulePortMappings listInboundNatRulePortMappings(
-        String groupName,
-        String loadBalancerName,
-        String backendPoolName,
-        QueryInboundNatRulePortMappingRequest parameters,
-        Context context);
-
-    /**
      * Gets the specified load balancer.
      *
      * @param id the resource ID.

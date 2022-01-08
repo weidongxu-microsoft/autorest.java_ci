@@ -53,9 +53,6 @@ import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortsClien
 import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortsLocationsClient;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteServiceProvidersClient;
 import com.azure.resourcemanager.network.generated.fluent.FirewallPoliciesClient;
-import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyIdpsSignaturesClient;
-import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyIdpsSignaturesFilterValuesClient;
-import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyIdpsSignaturesOverridesClient;
 import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyRuleCollectionGroupsClient;
 import com.azure.resourcemanager.network.generated.fluent.FlowLogsClient;
 import com.azure.resourcemanager.network.generated.fluent.HubRouteTablesClient;
@@ -98,7 +95,6 @@ import com.azure.resourcemanager.network.generated.fluent.RouteFilterRulesClient
 import com.azure.resourcemanager.network.generated.fluent.RouteFiltersClient;
 import com.azure.resourcemanager.network.generated.fluent.RouteTablesClient;
 import com.azure.resourcemanager.network.generated.fluent.RoutesClient;
-import com.azure.resourcemanager.network.generated.fluent.RoutingIntentsClient;
 import com.azure.resourcemanager.network.generated.fluent.SecurityPartnerProvidersClient;
 import com.azure.resourcemanager.network.generated.fluent.SecurityRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.ServiceAssociationLinksClient;
@@ -595,42 +591,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
      */
     public FirewallPolicyRuleCollectionGroupsClient getFirewallPolicyRuleCollectionGroups() {
         return this.firewallPolicyRuleCollectionGroups;
-    }
-
-    /** The FirewallPolicyIdpsSignaturesClient object to access its operations. */
-    private final FirewallPolicyIdpsSignaturesClient firewallPolicyIdpsSignatures;
-
-    /**
-     * Gets the FirewallPolicyIdpsSignaturesClient object to access its operations.
-     *
-     * @return the FirewallPolicyIdpsSignaturesClient object.
-     */
-    public FirewallPolicyIdpsSignaturesClient getFirewallPolicyIdpsSignatures() {
-        return this.firewallPolicyIdpsSignatures;
-    }
-
-    /** The FirewallPolicyIdpsSignaturesOverridesClient object to access its operations. */
-    private final FirewallPolicyIdpsSignaturesOverridesClient firewallPolicyIdpsSignaturesOverrides;
-
-    /**
-     * Gets the FirewallPolicyIdpsSignaturesOverridesClient object to access its operations.
-     *
-     * @return the FirewallPolicyIdpsSignaturesOverridesClient object.
-     */
-    public FirewallPolicyIdpsSignaturesOverridesClient getFirewallPolicyIdpsSignaturesOverrides() {
-        return this.firewallPolicyIdpsSignaturesOverrides;
-    }
-
-    /** The FirewallPolicyIdpsSignaturesFilterValuesClient object to access its operations. */
-    private final FirewallPolicyIdpsSignaturesFilterValuesClient firewallPolicyIdpsSignaturesFilterValues;
-
-    /**
-     * Gets the FirewallPolicyIdpsSignaturesFilterValuesClient object to access its operations.
-     *
-     * @return the FirewallPolicyIdpsSignaturesFilterValuesClient object.
-     */
-    public FirewallPolicyIdpsSignaturesFilterValuesClient getFirewallPolicyIdpsSignaturesFilterValues() {
-        return this.firewallPolicyIdpsSignaturesFilterValues;
     }
 
     /** The IpAllocationsClient object to access its operations. */
@@ -1535,18 +1495,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.hubRouteTables;
     }
 
-    /** The RoutingIntentsClient object to access its operations. */
-    private final RoutingIntentsClient routingIntents;
-
-    /**
-     * Gets the RoutingIntentsClient object to access its operations.
-     *
-     * @return the RoutingIntentsClient object.
-     */
-    public RoutingIntentsClient getRoutingIntents() {
-        return this.routingIntents;
-    }
-
     /** The WebApplicationFirewallPoliciesClient object to access its operations. */
     private final WebApplicationFirewallPoliciesClient webApplicationFirewallPolicies;
 
@@ -1615,9 +1563,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.expressRouteLinks = new ExpressRouteLinksClientImpl(this);
         this.firewallPolicies = new FirewallPoliciesClientImpl(this);
         this.firewallPolicyRuleCollectionGroups = new FirewallPolicyRuleCollectionGroupsClientImpl(this);
-        this.firewallPolicyIdpsSignatures = new FirewallPolicyIdpsSignaturesClientImpl(this);
-        this.firewallPolicyIdpsSignaturesOverrides = new FirewallPolicyIdpsSignaturesOverridesClientImpl(this);
-        this.firewallPolicyIdpsSignaturesFilterValues = new FirewallPolicyIdpsSignaturesFilterValuesClientImpl(this);
         this.ipAllocations = new IpAllocationsClientImpl(this);
         this.ipGroups = new IpGroupsClientImpl(this);
         this.loadBalancers = new LoadBalancersClientImpl(this);
@@ -1694,7 +1639,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.virtualHubBgpConnections = new VirtualHubBgpConnectionsClientImpl(this);
         this.virtualHubIpConfigurations = new VirtualHubIpConfigurationsClientImpl(this);
         this.hubRouteTables = new HubRouteTablesClientImpl(this);
-        this.routingIntents = new RoutingIntentsClientImpl(this);
         this.webApplicationFirewallPolicies = new WebApplicationFirewallPoliciesClientImpl(this);
     }
 

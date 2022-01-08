@@ -9,37 +9,31 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Operation display payload. */
+/** The object that represents the operation. */
 @Immutable
 public final class OperationDisplay {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(OperationDisplay.class);
 
     /*
-     * Resource provider of the operation
+     * Service provider: Microsoft.EventHub
      */
     @JsonProperty(value = "provider", access = JsonProperty.Access.WRITE_ONLY)
     private String provider;
 
     /*
-     * Resource of the operation
+     * Resource on which the operation is performed: Invoice, etc.
      */
     @JsonProperty(value = "resource", access = JsonProperty.Access.WRITE_ONLY)
     private String resource;
 
     /*
-     * Localized friendly name for the operation
+     * Operation type: Read, write, delete, etc.
      */
     @JsonProperty(value = "operation", access = JsonProperty.Access.WRITE_ONLY)
     private String operation;
 
-    /*
-     * Localized friendly description for the operation
-     */
-    @JsonProperty(value = "description", access = JsonProperty.Access.WRITE_ONLY)
-    private String description;
-
     /**
-     * Get the provider property: Resource provider of the operation.
+     * Get the provider property: Service provider: Microsoft.EventHub.
      *
      * @return the provider value.
      */
@@ -48,7 +42,7 @@ public final class OperationDisplay {
     }
 
     /**
-     * Get the resource property: Resource of the operation.
+     * Get the resource property: Resource on which the operation is performed: Invoice, etc.
      *
      * @return the resource value.
      */
@@ -57,21 +51,12 @@ public final class OperationDisplay {
     }
 
     /**
-     * Get the operation property: Localized friendly name for the operation.
+     * Get the operation property: Operation type: Read, write, delete, etc.
      *
      * @return the operation value.
      */
     public String operation() {
         return this.operation;
-    }
-
-    /**
-     * Get the description property: Localized friendly description for the operation.
-     *
-     * @return the description value.
-     */
-    public String description() {
-        return this.description;
     }
 
     /**

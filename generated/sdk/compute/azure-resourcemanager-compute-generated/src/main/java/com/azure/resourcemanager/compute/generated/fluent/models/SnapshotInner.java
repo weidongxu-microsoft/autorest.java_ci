@@ -8,7 +8,6 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.models.CreationData;
-import com.azure.resourcemanager.compute.generated.models.DiskSecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.DiskState;
 import com.azure.resourcemanager.compute.generated.models.Encryption;
 import com.azure.resourcemanager.compute.generated.models.EncryptionSettingsCollection;
@@ -449,29 +448,6 @@ public final class SnapshotInner extends Resource {
             this.innerProperties = new SnapshotProperties();
         }
         this.innerProperties().withDiskAccessId(diskAccessId);
-        return this;
-    }
-
-    /**
-     * Get the securityProfile property: Contains the security related information for the resource.
-     *
-     * @return the securityProfile value.
-     */
-    public DiskSecurityProfile securityProfile() {
-        return this.innerProperties() == null ? null : this.innerProperties().securityProfile();
-    }
-
-    /**
-     * Set the securityProfile property: Contains the security related information for the resource.
-     *
-     * @param securityProfile the securityProfile value to set.
-     * @return the SnapshotInner object itself.
-     */
-    public SnapshotInner withSecurityProfile(DiskSecurityProfile securityProfile) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new SnapshotProperties();
-        }
-        this.innerProperties().withSecurityProfile(securityProfile);
         return this;
     }
 

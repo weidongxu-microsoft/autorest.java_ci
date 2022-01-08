@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkRuleSetInner;
 import java.util.List;
 
@@ -30,20 +29,6 @@ public interface NetworkRuleSet {
      * @return the type value.
      */
     String type();
-
-    /**
-     * Gets the systemData property: The system meta data relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
-
-    /**
-     * Gets the location property: The geo-location where the resource lives.
-     *
-     * @return the location value.
-     */
-    String location();
 
     /**
      * Gets the trustedServiceAccessEnabled property: Value that indicates whether Trusted Service Access is Enabled or
@@ -73,14 +58,6 @@ public interface NetworkRuleSet {
      * @return the ipRules value.
      */
     List<NWRuleSetIpRules> ipRules();
-
-    /**
-     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
-     * is enabled.
-     *
-     * @return the publicNetworkAccess value.
-     */
-    PublicNetworkAccessFlag publicNetworkAccess();
 
     /**
      * Gets the inner com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkRuleSetInner object.

@@ -13,7 +13,7 @@ public interface AlertRuleIncidents {
     /**
      * Gets an incident associated to an alert rule.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param incidentName The name of the incident to retrieve.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -26,7 +26,7 @@ public interface AlertRuleIncidents {
     /**
      * Gets an incident associated to an alert rule.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param incidentName The name of the incident to retrieve.
      * @param context The context to associate with this operation.
@@ -40,7 +40,7 @@ public interface AlertRuleIncidents {
     /**
      * Gets a list of incidents associated to an alert rule.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -52,7 +52,7 @@ public interface AlertRuleIncidents {
     /**
      * Gets a list of incidents associated to an alert rule.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

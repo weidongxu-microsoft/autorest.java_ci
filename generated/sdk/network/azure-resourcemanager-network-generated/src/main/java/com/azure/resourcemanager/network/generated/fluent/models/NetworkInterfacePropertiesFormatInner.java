@@ -70,12 +70,6 @@ public final class NetworkInterfacePropertiesFormatInner {
     private Boolean primary;
 
     /*
-     * Whether the virtual machine this nic is attached to supports encryption.
-     */
-    @JsonProperty(value = "vnetEncryptionSupported", access = JsonProperty.Access.WRITE_ONLY)
-    private Boolean vnetEncryptionSupported;
-
-    /*
      * If the network interface is accelerated networking enabled.
      */
     @JsonProperty(value = "enableAcceleratedNetworking")
@@ -241,16 +235,6 @@ public final class NetworkInterfacePropertiesFormatInner {
      */
     public Boolean primary() {
         return this.primary;
-    }
-
-    /**
-     * Get the vnetEncryptionSupported property: Whether the virtual machine this nic is attached to supports
-     * encryption.
-     *
-     * @return the vnetEncryptionSupported value.
-     */
-    public Boolean vnetEncryptionSupported() {
-        return this.vnetEncryptionSupported;
     }
 
     /**

@@ -12,6 +12,8 @@ import com.azure.resourcemanager.consumption.generated.models.LotSummary;
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import com.azure.resourcemanager.consumption.generated.models.Status;
 import java.time.OffsetDateTime;
+import java.util.Collections;
+import java.util.Map;
 
 public final class LotSummaryImpl implements LotSummary {
     private LotSummaryInner innerObject;
@@ -41,6 +43,15 @@ public final class LotSummaryImpl implements LotSummary {
         return this.innerModel().etag();
     }
 
+    public Map<String, String> tags() {
+        Map<String, String> inner = this.innerModel().tags();
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
+    }
+
     public Amount originalAmount() {
         return this.innerModel().originalAmount();
     }
@@ -65,8 +76,8 @@ public final class LotSummaryImpl implements LotSummary {
         return this.innerModel().poNumber();
     }
 
-    public OffsetDateTime purchasedDate() {
-        return this.innerModel().purchasedDate();
+    public OffsetDateTime purchaseDate() {
+        return this.innerModel().purchaseDate();
     }
 
     public Status status() {
@@ -91,10 +102,6 @@ public final class LotSummaryImpl implements LotSummary {
 
     public Reseller reseller() {
         return this.innerModel().reseller();
-    }
-
-    public String etagPropertiesEtag() {
-        return this.innerModel().etagPropertiesEtag();
     }
 
     public LotSummaryInner innerModel() {

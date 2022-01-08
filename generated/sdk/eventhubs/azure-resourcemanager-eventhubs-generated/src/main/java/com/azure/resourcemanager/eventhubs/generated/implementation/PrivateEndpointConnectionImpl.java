@@ -4,8 +4,6 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
-import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ConnectionState;
@@ -31,14 +29,6 @@ public final class PrivateEndpointConnectionImpl
         return this.innerModel().type();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
-    public String location() {
-        return this.innerModel().location();
-    }
-
     public PrivateEndpoint privateEndpoint() {
         return this.innerModel().privateEndpoint();
     }
@@ -49,14 +39,6 @@ public final class PrivateEndpointConnectionImpl
 
     public EndPointProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
-    }
-
-    public Region region() {
-        return Region.fromName(this.regionName());
-    }
-
-    public String regionName() {
-        return this.location();
     }
 
     public PrivateEndpointConnectionInner innerModel() {

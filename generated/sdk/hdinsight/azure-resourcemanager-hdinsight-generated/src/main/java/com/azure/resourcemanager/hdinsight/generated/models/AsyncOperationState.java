@@ -4,34 +4,47 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import java.util.Collection;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /** Defines values for AsyncOperationState. */
-public final class AsyncOperationState extends ExpandableStringEnum<AsyncOperationState> {
-    /** Static value InProgress for AsyncOperationState. */
-    public static final AsyncOperationState IN_PROGRESS = fromString("InProgress");
+public enum AsyncOperationState {
+    /** Enum value InProgress. */
+    IN_PROGRESS("InProgress"),
 
-    /** Static value Succeeded for AsyncOperationState. */
-    public static final AsyncOperationState SUCCEEDED = fromString("Succeeded");
+    /** Enum value Succeeded. */
+    SUCCEEDED("Succeeded"),
 
-    /** Static value Failed for AsyncOperationState. */
-    public static final AsyncOperationState FAILED = fromString("Failed");
+    /** Enum value Failed. */
+    FAILED("Failed");
 
-    /**
-     * Creates or finds a AsyncOperationState from its string representation.
-     *
-     * @param name a name to look for.
-     * @return the corresponding AsyncOperationState.
-     */
-    @JsonCreator
-    public static AsyncOperationState fromString(String name) {
-        return fromString(name, AsyncOperationState.class);
+    /** The actual serialized value for a AsyncOperationState instance. */
+    private final String value;
+
+    AsyncOperationState(String value) {
+        this.value = value;
     }
 
-    /** @return known AsyncOperationState values. */
-    public static Collection<AsyncOperationState> values() {
-        return values(AsyncOperationState.class);
+    /**
+     * Parses a serialized value to a AsyncOperationState instance.
+     *
+     * @param value the serialized value to parse.
+     * @return the parsed AsyncOperationState object, or null if unable to parse.
+     */
+    @JsonCreator
+    public static AsyncOperationState fromString(String value) {
+        AsyncOperationState[] items = AsyncOperationState.values();
+        for (AsyncOperationState item : items) {
+            if (item.toString().equalsIgnoreCase(value)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    @JsonValue
+    @Override
+    public String toString() {
+        return this.value;
     }
 }

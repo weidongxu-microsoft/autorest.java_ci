@@ -9,8 +9,8 @@ import com.azure.resourcemanager.compute.generated.fluent.models.RestorePointInn
 import com.azure.resourcemanager.compute.generated.models.ApiEntityReference;
 import com.azure.resourcemanager.compute.generated.models.ConsistencyModeTypes;
 import com.azure.resourcemanager.compute.generated.models.RestorePoint;
+import com.azure.resourcemanager.compute.generated.models.RestorePointProvisioningDetails;
 import com.azure.resourcemanager.compute.generated.models.RestorePointSourceMetadata;
-import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
 
@@ -58,8 +58,8 @@ public final class RestorePointImpl implements RestorePoint, RestorePoint.Defini
         return this.innerModel().consistencyMode();
     }
 
-    public OffsetDateTime timeCreated() {
-        return this.innerModel().timeCreated();
+    public RestorePointProvisioningDetails provisioningDetails() {
+        return this.innerModel().provisioningDetails();
     }
 
     public RestorePointInner innerModel() {
@@ -130,11 +130,6 @@ public final class RestorePointImpl implements RestorePoint, RestorePoint.Defini
 
     public RestorePointImpl withExcludeDisks(List<ApiEntityReference> excludeDisks) {
         this.innerModel().withExcludeDisks(excludeDisks);
-        return this;
-    }
-
-    public RestorePointImpl withTimeCreated(OffsetDateTime timeCreated) {
-        this.innerModel().withTimeCreated(timeCreated);
         return this;
     }
 }

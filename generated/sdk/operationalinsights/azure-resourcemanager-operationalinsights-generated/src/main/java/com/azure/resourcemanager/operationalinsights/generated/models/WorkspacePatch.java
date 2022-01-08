@@ -283,33 +283,6 @@ public final class WorkspacePatch extends AzureEntityResource {
     }
 
     /**
-     * Get the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use
-     * for this workspace. Expected format is -
-     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
-     *
-     * @return the defaultDataCollectionRuleResourceId value.
-     */
-    public String defaultDataCollectionRuleResourceId() {
-        return this.innerProperties() == null ? null : this.innerProperties().defaultDataCollectionRuleResourceId();
-    }
-
-    /**
-     * Set the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use
-     * for this workspace. Expected format is -
-     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
-     *
-     * @param defaultDataCollectionRuleResourceId the defaultDataCollectionRuleResourceId value to set.
-     * @return the WorkspacePatch object itself.
-     */
-    public WorkspacePatch withDefaultDataCollectionRuleResourceId(String defaultDataCollectionRuleResourceId) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new WorkspaceProperties();
-        }
-        this.innerProperties().withDefaultDataCollectionRuleResourceId(defaultDataCollectionRuleResourceId);
-        return this;
-    }
-
-    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

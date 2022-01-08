@@ -4,37 +4,50 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import java.util.Collection;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /** Defines values for ResourceIdentityType. */
-public final class ResourceIdentityType extends ExpandableStringEnum<ResourceIdentityType> {
-    /** Static value SystemAssigned for ResourceIdentityType. */
-    public static final ResourceIdentityType SYSTEM_ASSIGNED = fromString("SystemAssigned");
+public enum ResourceIdentityType {
+    /** Enum value SystemAssigned. */
+    SYSTEM_ASSIGNED("SystemAssigned"),
 
-    /** Static value UserAssigned for ResourceIdentityType. */
-    public static final ResourceIdentityType USER_ASSIGNED = fromString("UserAssigned");
+    /** Enum value UserAssigned. */
+    USER_ASSIGNED("UserAssigned"),
 
-    /** Static value SystemAssigned, UserAssigned for ResourceIdentityType. */
-    public static final ResourceIdentityType SYSTEM_ASSIGNED_USER_ASSIGNED = fromString("SystemAssigned, UserAssigned");
+    /** Enum value SystemAssigned, UserAssigned. */
+    SYSTEM_ASSIGNED_USER_ASSIGNED("SystemAssigned, UserAssigned"),
 
-    /** Static value None for ResourceIdentityType. */
-    public static final ResourceIdentityType NONE = fromString("None");
+    /** Enum value None. */
+    NONE("None");
 
-    /**
-     * Creates or finds a ResourceIdentityType from its string representation.
-     *
-     * @param name a name to look for.
-     * @return the corresponding ResourceIdentityType.
-     */
-    @JsonCreator
-    public static ResourceIdentityType fromString(String name) {
-        return fromString(name, ResourceIdentityType.class);
+    /** The actual serialized value for a ResourceIdentityType instance. */
+    private final String value;
+
+    ResourceIdentityType(String value) {
+        this.value = value;
     }
 
-    /** @return known ResourceIdentityType values. */
-    public static Collection<ResourceIdentityType> values() {
-        return values(ResourceIdentityType.class);
+    /**
+     * Parses a serialized value to a ResourceIdentityType instance.
+     *
+     * @param value the serialized value to parse.
+     * @return the parsed ResourceIdentityType object, or null if unable to parse.
+     */
+    @JsonCreator
+    public static ResourceIdentityType fromString(String value) {
+        ResourceIdentityType[] items = ResourceIdentityType.values();
+        for (ResourceIdentityType item : items) {
+            if (item.toString().equalsIgnoreCase(value)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    @JsonValue
+    @Override
+    public String toString() {
+        return this.value;
     }
 }

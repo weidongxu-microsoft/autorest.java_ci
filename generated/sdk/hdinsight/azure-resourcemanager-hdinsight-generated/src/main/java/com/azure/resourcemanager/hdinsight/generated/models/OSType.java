@@ -4,31 +4,44 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import java.util.Collection;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /** Defines values for OSType. */
-public final class OSType extends ExpandableStringEnum<OSType> {
-    /** Static value Windows for OSType. */
-    public static final OSType WINDOWS = fromString("Windows");
+public enum OSType {
+    /** Enum value Windows. */
+    WINDOWS("Windows"),
 
-    /** Static value Linux for OSType. */
-    public static final OSType LINUX = fromString("Linux");
+    /** Enum value Linux. */
+    LINUX("Linux");
 
-    /**
-     * Creates or finds a OSType from its string representation.
-     *
-     * @param name a name to look for.
-     * @return the corresponding OSType.
-     */
-    @JsonCreator
-    public static OSType fromString(String name) {
-        return fromString(name, OSType.class);
+    /** The actual serialized value for a OSType instance. */
+    private final String value;
+
+    OSType(String value) {
+        this.value = value;
     }
 
-    /** @return known OSType values. */
-    public static Collection<OSType> values() {
-        return values(OSType.class);
+    /**
+     * Parses a serialized value to a OSType instance.
+     *
+     * @param value the serialized value to parse.
+     * @return the parsed OSType object, or null if unable to parse.
+     */
+    @JsonCreator
+    public static OSType fromString(String value) {
+        OSType[] items = OSType.values();
+        for (OSType item : items) {
+            if (item.toString().equalsIgnoreCase(value)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    @JsonValue
+    @Override
+    public String toString() {
+        return this.value;
     }
 }

@@ -5,12 +5,9 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceInner;
-import com.azure.resourcemanager.eventhubs.generated.fluent.models.PrivateEndpointConnectionInner;
 import java.time.OffsetDateTime;
-import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of EHNamespace. */
@@ -63,13 +60,6 @@ public interface EHNamespace {
      * @return the identity value.
      */
     Identity identity();
-
-    /**
-     * Gets the systemData property: The system meta data relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the provisioningState property: Provisioning state of the Namespace.
@@ -159,27 +149,6 @@ public interface EHNamespace {
     Encryption encryption();
 
     /**
-     * Gets the privateEndpointConnections property: List of private endpoint connections.
-     *
-     * @return the privateEndpointConnections value.
-     */
-    List<PrivateEndpointConnection> privateEndpointConnections();
-
-    /**
-     * Gets the disableLocalAuth property: This property disables SAS authentication for the Event Hubs namespace.
-     *
-     * @return the disableLocalAuth value.
-     */
-    Boolean disableLocalAuth();
-
-    /**
-     * Gets the alternateName property: Alternate name specified when alias and namespace names are same.
-     *
-     * @return the alternateName value.
-     */
-    String alternateName();
-
-    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -253,10 +222,7 @@ public interface EHNamespace {
                 DefinitionStages.WithMaximumThroughputUnits,
                 DefinitionStages.WithKafkaEnabled,
                 DefinitionStages.WithZoneRedundant,
-                DefinitionStages.WithEncryption,
-                DefinitionStages.WithPrivateEndpointConnections,
-                DefinitionStages.WithDisableLocalAuth,
-                DefinitionStages.WithAlternateName {
+                DefinitionStages.WithEncryption {
             /**
              * Executes the create request.
              *
@@ -368,37 +334,6 @@ public interface EHNamespace {
              */
             WithCreate withEncryption(Encryption encryption);
         }
-        /** The stage of the EHNamespace definition allowing to specify privateEndpointConnections. */
-        interface WithPrivateEndpointConnections {
-            /**
-             * Specifies the privateEndpointConnections property: List of private endpoint connections..
-             *
-             * @param privateEndpointConnections List of private endpoint connections.
-             * @return the next definition stage.
-             */
-            WithCreate withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections);
-        }
-        /** The stage of the EHNamespace definition allowing to specify disableLocalAuth. */
-        interface WithDisableLocalAuth {
-            /**
-             * Specifies the disableLocalAuth property: This property disables SAS authentication for the Event Hubs
-             * namespace..
-             *
-             * @param disableLocalAuth This property disables SAS authentication for the Event Hubs namespace.
-             * @return the next definition stage.
-             */
-            WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
-        }
-        /** The stage of the EHNamespace definition allowing to specify alternateName. */
-        interface WithAlternateName {
-            /**
-             * Specifies the alternateName property: Alternate name specified when alias and namespace names are same..
-             *
-             * @param alternateName Alternate name specified when alias and namespace names are same.
-             * @return the next definition stage.
-             */
-            WithCreate withAlternateName(String alternateName);
-        }
     }
     /**
      * Begins update for the EHNamespace resource.
@@ -417,10 +352,7 @@ public interface EHNamespace {
             UpdateStages.WithMaximumThroughputUnits,
             UpdateStages.WithKafkaEnabled,
             UpdateStages.WithZoneRedundant,
-            UpdateStages.WithEncryption,
-            UpdateStages.WithPrivateEndpointConnections,
-            UpdateStages.WithDisableLocalAuth,
-            UpdateStages.WithAlternateName {
+            UpdateStages.WithEncryption {
         /**
          * Executes the update request.
          *
@@ -533,37 +465,6 @@ public interface EHNamespace {
              * @return the next definition stage.
              */
             Update withEncryption(Encryption encryption);
-        }
-        /** The stage of the EHNamespace update allowing to specify privateEndpointConnections. */
-        interface WithPrivateEndpointConnections {
-            /**
-             * Specifies the privateEndpointConnections property: List of private endpoint connections..
-             *
-             * @param privateEndpointConnections List of private endpoint connections.
-             * @return the next definition stage.
-             */
-            Update withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections);
-        }
-        /** The stage of the EHNamespace update allowing to specify disableLocalAuth. */
-        interface WithDisableLocalAuth {
-            /**
-             * Specifies the disableLocalAuth property: This property disables SAS authentication for the Event Hubs
-             * namespace..
-             *
-             * @param disableLocalAuth This property disables SAS authentication for the Event Hubs namespace.
-             * @return the next definition stage.
-             */
-            Update withDisableLocalAuth(Boolean disableLocalAuth);
-        }
-        /** The stage of the EHNamespace update allowing to specify alternateName. */
-        interface WithAlternateName {
-            /**
-             * Specifies the alternateName property: Alternate name specified when alias and namespace names are same..
-             *
-             * @param alternateName Alternate name specified when alias and namespace names are same.
-             * @return the next definition stage.
-             */
-            Update withAlternateName(String alternateName);
         }
     }
     /**

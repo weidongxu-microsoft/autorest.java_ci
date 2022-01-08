@@ -110,7 +110,8 @@ public interface StorageAccountProperties {
     Endpoints secondaryEndpoints();
 
     /**
-     * Gets the encryption property: Encryption settings to be used for server-side encryption for the storage account.
+     * Gets the encryption property: Gets the encryption settings on the account. If unspecified, the account is
+     * unencrypted.
      *
      * @return the encryption value.
      */
@@ -145,20 +146,6 @@ public interface StorageAccountProperties {
      * @return the networkRuleSet value.
      */
     NetworkRuleSet networkRuleSet();
-
-    /**
-     * Gets the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
-     *
-     * @return the isSftpEnabled value.
-     */
-    Boolean isSftpEnabled();
-
-    /**
-     * Gets the isLocalUserEnabled property: Enables local users feature, if set to true.
-     *
-     * @return the isLocalUserEnabled value.
-     */
-    Boolean isLocalUserEnabled();
 
     /**
      * Gets the isHnsEnabled property: Account HierarchicalNamespace enabled if sets to true.
@@ -252,39 +239,6 @@ public interface StorageAccountProperties {
      * @return the allowCrossTenantReplication value.
      */
     Boolean allowCrossTenantReplication();
-
-    /**
-     * Gets the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default authentication
-     * is OAuth or not. The default interpretation is false for this property.
-     *
-     * @return the defaultToOAuthAuthentication value.
-     */
-    Boolean defaultToOAuthAuthentication();
-
-    /**
-     * Gets the publicNetworkAccess property: Allow or disallow public network access to Storage Account. Value is
-     * optional but if passed in, must be 'Enabled' or 'Disabled'.
-     *
-     * @return the publicNetworkAccess value.
-     */
-    PublicNetworkAccess publicNetworkAccess();
-
-    /**
-     * Gets the immutableStorageWithVersioning property: The property is immutable and can only be set to true at the
-     * account creation time. When set to true, it enables object level immutability for all the containers in the
-     * account by default.
-     *
-     * @return the immutableStorageWithVersioning value.
-     */
-    ImmutableStorageAccount immutableStorageWithVersioning();
-
-    /**
-     * Gets the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
-     * Private Links to the same VNet.
-     *
-     * @return the allowedCopyScope value.
-     */
-    AllowedCopyScope allowedCopyScope();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountPropertiesInner object.

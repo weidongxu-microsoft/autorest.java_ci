@@ -16,32 +16,11 @@ public interface Operation {
     String name();
 
     /**
-     * Gets the isDataAction property: Indicates whether the operation is a data action.
-     *
-     * @return the isDataAction value.
-     */
-    Boolean isDataAction();
-
-    /**
-     * Gets the display property: Display of the operation.
+     * Gets the display property: The object that represents the operation.
      *
      * @return the display value.
      */
     OperationDisplay display();
-
-    /**
-     * Gets the origin property: Origin of the operation.
-     *
-     * @return the origin value.
-     */
-    String origin();
-
-    /**
-     * Gets the properties property: Properties of the operation.
-     *
-     * @return the properties value.
-     */
-    Object properties();
 
     /**
      * Gets the inner com.azure.resourcemanager.eventhubs.generated.fluent.models.OperationInner object.

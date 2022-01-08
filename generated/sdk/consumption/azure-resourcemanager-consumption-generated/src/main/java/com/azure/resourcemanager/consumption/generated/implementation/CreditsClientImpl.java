@@ -57,7 +57,7 @@ public final class CreditsClientImpl implements CreditsClient {
         @Get(
             "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}"
                 + "/providers/Microsoft.Consumption/credits/balanceSummary")
-        @ExpectedResponses({200, 204})
+        @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<CreditSummaryInner>> get(
             @HostParam("$host") String endpoint,

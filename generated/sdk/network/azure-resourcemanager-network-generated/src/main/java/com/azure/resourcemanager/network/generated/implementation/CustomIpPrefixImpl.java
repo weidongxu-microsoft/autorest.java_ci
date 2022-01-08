@@ -16,6 +16,7 @@ import com.azure.resourcemanager.network.generated.models.TagsObject;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.Definition, CustomIpPrefix.Update {
     private CustomIpPrefixInner innerObject;
@@ -76,14 +77,24 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this.innerModel().authorizationMessage();
     }
 
-    public SubResource customIpPrefixParent() {
-        return this.innerModel().customIpPrefixParent();
+    public CustomIpPrefix customIpPrefixParent() {
+        CustomIpPrefixInner inner = this.innerModel().customIpPrefixParent();
+        if (inner != null) {
+            return new CustomIpPrefixImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public List<SubResource> childCustomIpPrefixes() {
-        List<SubResource> inner = this.innerModel().childCustomIpPrefixes();
+    public List<CustomIpPrefix> childCustomIpPrefixes() {
+        List<CustomIpPrefixInner> inner = this.innerModel().childCustomIpPrefixes();
         if (inner != null) {
-            return Collections.unmodifiableList(inner);
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new CustomIpPrefixImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -265,7 +276,7 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this;
     }
 
-    public CustomIpPrefixImpl withCustomIpPrefixParent(SubResource customIpPrefixParent) {
+    public CustomIpPrefixImpl withCustomIpPrefixParent(CustomIpPrefixInner customIpPrefixParent) {
         this.innerModel().withCustomIpPrefixParent(customIpPrefixParent);
         return this;
     }

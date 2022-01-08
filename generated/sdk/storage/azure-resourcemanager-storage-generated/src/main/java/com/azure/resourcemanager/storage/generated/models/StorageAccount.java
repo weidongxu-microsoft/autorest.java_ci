@@ -177,7 +177,8 @@ public interface StorageAccount {
     Endpoints secondaryEndpoints();
 
     /**
-     * Gets the encryption property: Encryption settings to be used for server-side encryption for the storage account.
+     * Gets the encryption property: Gets the encryption settings on the account. If unspecified, the account is
+     * unencrypted.
      *
      * @return the encryption value.
      */
@@ -212,20 +213,6 @@ public interface StorageAccount {
      * @return the networkRuleSet value.
      */
     NetworkRuleSet networkRuleSet();
-
-    /**
-     * Gets the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
-     *
-     * @return the isSftpEnabled value.
-     */
-    Boolean isSftpEnabled();
-
-    /**
-     * Gets the isLocalUserEnabled property: Enables local users feature, if set to true.
-     *
-     * @return the isLocalUserEnabled value.
-     */
-    Boolean isLocalUserEnabled();
 
     /**
      * Gets the isHnsEnabled property: Account HierarchicalNamespace enabled if sets to true.
@@ -319,39 +306,6 @@ public interface StorageAccount {
      * @return the allowCrossTenantReplication value.
      */
     Boolean allowCrossTenantReplication();
-
-    /**
-     * Gets the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default authentication
-     * is OAuth or not. The default interpretation is false for this property.
-     *
-     * @return the defaultToOAuthAuthentication value.
-     */
-    Boolean defaultToOAuthAuthentication();
-
-    /**
-     * Gets the publicNetworkAccess property: Allow or disallow public network access to Storage Account. Value is
-     * optional but if passed in, must be 'Enabled' or 'Disabled'.
-     *
-     * @return the publicNetworkAccess value.
-     */
-    PublicNetworkAccess publicNetworkAccess();
-
-    /**
-     * Gets the immutableStorageWithVersioning property: The property is immutable and can only be set to true at the
-     * account creation time. When set to true, it enables object level immutability for all the containers in the
-     * account by default.
-     *
-     * @return the immutableStorageWithVersioning value.
-     */
-    ImmutableStorageAccount immutableStorageWithVersioning();
-
-    /**
-     * Gets the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
-     * Private Links to the same VNet.
-     *
-     * @return the allowedCopyScope value.
-     */
-    AllowedCopyScope allowedCopyScope();
 
     /**
      * Gets the region of the resource.
@@ -451,8 +405,6 @@ public interface StorageAccount {
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithIdentity,
-                DefinitionStages.WithAllowedCopyScope,
-                DefinitionStages.WithPublicNetworkAccess,
                 DefinitionStages.WithSasPolicy,
                 DefinitionStages.WithKeyPolicy,
                 DefinitionStages.WithCustomDomain,
@@ -461,8 +413,6 @@ public interface StorageAccount {
                 DefinitionStages.WithAccessTier,
                 DefinitionStages.WithAzureFilesIdentityBasedAuthentication,
                 DefinitionStages.WithEnableHttpsTrafficOnly,
-                DefinitionStages.WithIsSftpEnabled,
-                DefinitionStages.WithIsLocalUserEnabled,
                 DefinitionStages.WithIsHnsEnabled,
                 DefinitionStages.WithLargeFileSharesState,
                 DefinitionStages.WithRoutingPreference,
@@ -470,9 +420,7 @@ public interface StorageAccount {
                 DefinitionStages.WithMinimumTlsVersion,
                 DefinitionStages.WithAllowSharedKeyAccess,
                 DefinitionStages.WithEnableNfsV3,
-                DefinitionStages.WithAllowCrossTenantReplication,
-                DefinitionStages.WithDefaultToOAuthAuthentication,
-                DefinitionStages.WithImmutableStorageWithVersioning {
+                DefinitionStages.WithAllowCrossTenantReplication {
             /**
              * Executes the create request.
              *
@@ -528,30 +476,6 @@ public interface StorageAccount {
              */
             WithCreate withIdentity(Identity identity);
         }
-        /** The stage of the StorageAccount definition allowing to specify allowedCopyScope. */
-        interface WithAllowedCopyScope {
-            /**
-             * Specifies the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant
-             * or with Private Links to the same VNet..
-             *
-             * @param allowedCopyScope Restrict copy to and from Storage Accounts within an AAD tenant or with Private
-             *     Links to the same VNet.
-             * @return the next definition stage.
-             */
-            WithCreate withAllowedCopyScope(AllowedCopyScope allowedCopyScope);
-        }
-        /** The stage of the StorageAccount definition allowing to specify publicNetworkAccess. */
-        interface WithPublicNetworkAccess {
-            /**
-             * Specifies the publicNetworkAccess property: Allow or disallow public network access to Storage Account.
-             * Value is optional but if passed in, must be 'Enabled' or 'Disabled'..
-             *
-             * @param publicNetworkAccess Allow or disallow public network access to Storage Account. Value is optional
-             *     but if passed in, must be 'Enabled' or 'Disabled'.
-             * @return the next definition stage.
-             */
-            WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
-        }
         /** The stage of the StorageAccount definition allowing to specify sasPolicy. */
         interface WithSasPolicy {
             /**
@@ -589,10 +513,11 @@ public interface StorageAccount {
         /** The stage of the StorageAccount definition allowing to specify encryption. */
         interface WithEncryption {
             /**
-             * Specifies the encryption property: Encryption settings to be used for server-side encryption for the
-             * storage account..
+             * Specifies the encryption property: Not applicable. Azure Storage encryption is enabled for all storage
+             * accounts and cannot be disabled..
              *
-             * @param encryption Encryption settings to be used for server-side encryption for the storage account.
+             * @param encryption Not applicable. Azure Storage encryption is enabled for all storage accounts and cannot
+             *     be disabled.
              * @return the next definition stage.
              */
             WithCreate withEncryption(Encryption encryption);
@@ -643,26 +568,6 @@ public interface StorageAccount {
              * @return the next definition stage.
              */
             WithCreate withEnableHttpsTrafficOnly(Boolean enableHttpsTrafficOnly);
-        }
-        /** The stage of the StorageAccount definition allowing to specify isSftpEnabled. */
-        interface WithIsSftpEnabled {
-            /**
-             * Specifies the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
-             *
-             * @param isSftpEnabled Enables Secure File Transfer Protocol, if set to true.
-             * @return the next definition stage.
-             */
-            WithCreate withIsSftpEnabled(Boolean isSftpEnabled);
-        }
-        /** The stage of the StorageAccount definition allowing to specify isLocalUserEnabled. */
-        interface WithIsLocalUserEnabled {
-            /**
-             * Specifies the isLocalUserEnabled property: Enables local users feature, if set to true.
-             *
-             * @param isLocalUserEnabled Enables local users feature, if set to true.
-             * @return the next definition stage.
-             */
-            WithCreate withIsLocalUserEnabled(Boolean isLocalUserEnabled);
         }
         /** The stage of the StorageAccount definition allowing to specify isHnsEnabled. */
         interface WithIsHnsEnabled {
@@ -760,32 +665,6 @@ public interface StorageAccount {
              */
             WithCreate withAllowCrossTenantReplication(Boolean allowCrossTenantReplication);
         }
-        /** The stage of the StorageAccount definition allowing to specify defaultToOAuthAuthentication. */
-        interface WithDefaultToOAuthAuthentication {
-            /**
-             * Specifies the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default
-             * authentication is OAuth or not. The default interpretation is false for this property..
-             *
-             * @param defaultToOAuthAuthentication A boolean flag which indicates whether the default authentication is
-             *     OAuth or not. The default interpretation is false for this property.
-             * @return the next definition stage.
-             */
-            WithCreate withDefaultToOAuthAuthentication(Boolean defaultToOAuthAuthentication);
-        }
-        /** The stage of the StorageAccount definition allowing to specify immutableStorageWithVersioning. */
-        interface WithImmutableStorageWithVersioning {
-            /**
-             * Specifies the immutableStorageWithVersioning property: The property is immutable and can only be set to
-             * true at the account creation time. When set to true, it enables object level immutability for all the new
-             * containers in the account by default..
-             *
-             * @param immutableStorageWithVersioning The property is immutable and can only be set to true at the
-             *     account creation time. When set to true, it enables object level immutability for all the new
-             *     containers in the account by default.
-             * @return the next definition stage.
-             */
-            WithCreate withImmutableStorageWithVersioning(ImmutableStorageAccount immutableStorageWithVersioning);
-        }
     }
     /**
      * Begins update for the StorageAccount resource.
@@ -807,19 +686,13 @@ public interface StorageAccount {
             UpdateStages.WithAccessTier,
             UpdateStages.WithAzureFilesIdentityBasedAuthentication,
             UpdateStages.WithEnableHttpsTrafficOnly,
-            UpdateStages.WithIsSftpEnabled,
-            UpdateStages.WithIsLocalUserEnabled,
             UpdateStages.WithNetworkRuleSet,
             UpdateStages.WithLargeFileSharesState,
             UpdateStages.WithRoutingPreference,
             UpdateStages.WithAllowBlobPublicAccess,
             UpdateStages.WithMinimumTlsVersion,
             UpdateStages.WithAllowSharedKeyAccess,
-            UpdateStages.WithAllowCrossTenantReplication,
-            UpdateStages.WithDefaultToOAuthAuthentication,
-            UpdateStages.WithPublicNetworkAccess,
-            UpdateStages.WithImmutableStorageWithVersioning,
-            UpdateStages.WithAllowedCopyScope {
+            UpdateStages.WithAllowCrossTenantReplication {
         /**
          * Executes the update request.
          *
@@ -905,11 +778,10 @@ public interface StorageAccount {
         /** The stage of the StorageAccount update allowing to specify encryption. */
         interface WithEncryption {
             /**
-             * Specifies the encryption property: Not applicable. Azure Storage encryption at rest is enabled by default
-             * for all storage accounts and cannot be disabled..
+             * Specifies the encryption property: Provides the encryption settings on the account. The default setting
+             * is unencrypted..
              *
-             * @param encryption Not applicable. Azure Storage encryption at rest is enabled by default for all storage
-             *     accounts and cannot be disabled.
+             * @param encryption Provides the encryption settings on the account. The default setting is unencrypted.
              * @return the next definition stage.
              */
             Update withEncryption(Encryption encryption);
@@ -969,26 +841,6 @@ public interface StorageAccount {
              * @return the next definition stage.
              */
             Update withEnableHttpsTrafficOnly(Boolean enableHttpsTrafficOnly);
-        }
-        /** The stage of the StorageAccount update allowing to specify isSftpEnabled. */
-        interface WithIsSftpEnabled {
-            /**
-             * Specifies the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
-             *
-             * @param isSftpEnabled Enables Secure File Transfer Protocol, if set to true.
-             * @return the next definition stage.
-             */
-            Update withIsSftpEnabled(Boolean isSftpEnabled);
-        }
-        /** The stage of the StorageAccount update allowing to specify isLocalUserEnabled. */
-        interface WithIsLocalUserEnabled {
-            /**
-             * Specifies the isLocalUserEnabled property: Enables local users feature, if set to true.
-             *
-             * @param isLocalUserEnabled Enables local users feature, if set to true.
-             * @return the next definition stage.
-             */
-            Update withIsLocalUserEnabled(Boolean isLocalUserEnabled);
         }
         /** The stage of the StorageAccount update allowing to specify networkRuleSet. */
         interface WithNetworkRuleSet {
@@ -1075,56 +927,6 @@ public interface StorageAccount {
              * @return the next definition stage.
              */
             Update withAllowCrossTenantReplication(Boolean allowCrossTenantReplication);
-        }
-        /** The stage of the StorageAccount update allowing to specify defaultToOAuthAuthentication. */
-        interface WithDefaultToOAuthAuthentication {
-            /**
-             * Specifies the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default
-             * authentication is OAuth or not. The default interpretation is false for this property..
-             *
-             * @param defaultToOAuthAuthentication A boolean flag which indicates whether the default authentication is
-             *     OAuth or not. The default interpretation is false for this property.
-             * @return the next definition stage.
-             */
-            Update withDefaultToOAuthAuthentication(Boolean defaultToOAuthAuthentication);
-        }
-        /** The stage of the StorageAccount update allowing to specify publicNetworkAccess. */
-        interface WithPublicNetworkAccess {
-            /**
-             * Specifies the publicNetworkAccess property: Allow or disallow public network access to Storage Account.
-             * Value is optional but if passed in, must be 'Enabled' or 'Disabled'..
-             *
-             * @param publicNetworkAccess Allow or disallow public network access to Storage Account. Value is optional
-             *     but if passed in, must be 'Enabled' or 'Disabled'.
-             * @return the next definition stage.
-             */
-            Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
-        }
-        /** The stage of the StorageAccount update allowing to specify immutableStorageWithVersioning. */
-        interface WithImmutableStorageWithVersioning {
-            /**
-             * Specifies the immutableStorageWithVersioning property: The property is immutable and can only be set to
-             * true at the account creation time. When set to true, it enables object level immutability for all the
-             * containers in the account by default..
-             *
-             * @param immutableStorageWithVersioning The property is immutable and can only be set to true at the
-             *     account creation time. When set to true, it enables object level immutability for all the containers
-             *     in the account by default.
-             * @return the next definition stage.
-             */
-            Update withImmutableStorageWithVersioning(ImmutableStorageAccount immutableStorageWithVersioning);
-        }
-        /** The stage of the StorageAccount update allowing to specify allowedCopyScope. */
-        interface WithAllowedCopyScope {
-            /**
-             * Specifies the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant
-             * or with Private Links to the same VNet..
-             *
-             * @param allowedCopyScope Restrict copy to and from Storage Accounts within an AAD tenant or with Private
-             *     Links to the same VNet.
-             * @return the next definition stage.
-             */
-            Update withAllowedCopyScope(AllowedCopyScope allowedCopyScope);
         }
     }
     /**

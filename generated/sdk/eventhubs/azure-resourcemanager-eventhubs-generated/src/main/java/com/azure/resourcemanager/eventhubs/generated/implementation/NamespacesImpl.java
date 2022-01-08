@@ -14,17 +14,19 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.AccessKeysInn
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AuthorizationRuleInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.CheckNameAvailabilityResultInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceInner;
+import com.azure.resourcemanager.eventhubs.generated.fluent.models.IpFilterRuleInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkRuleSetInner;
-import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkRuleSetListResultInner;
+import com.azure.resourcemanager.eventhubs.generated.fluent.models.VirtualNetworkRuleInner;
 import com.azure.resourcemanager.eventhubs.generated.models.AccessKeys;
 import com.azure.resourcemanager.eventhubs.generated.models.AuthorizationRule;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityParameter;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityResult;
 import com.azure.resourcemanager.eventhubs.generated.models.EHNamespace;
+import com.azure.resourcemanager.eventhubs.generated.models.IpFilterRule;
 import com.azure.resourcemanager.eventhubs.generated.models.Namespaces;
 import com.azure.resourcemanager.eventhubs.generated.models.NetworkRuleSet;
-import com.azure.resourcemanager.eventhubs.generated.models.NetworkRuleSetListResult;
 import com.azure.resourcemanager.eventhubs.generated.models.RegenerateAccessKeyParameters;
+import com.azure.resourcemanager.eventhubs.generated.models.VirtualNetworkRule;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NamespacesImpl implements Namespaces {
@@ -38,6 +40,57 @@ public final class NamespacesImpl implements Namespaces {
         NamespacesClient innerClient, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
+    }
+
+    public PagedIterable<IpFilterRule> listIpFilterRules(String resourceGroupName, String namespaceName) {
+        PagedIterable<IpFilterRuleInner> inner =
+            this.serviceClient().listIpFilterRules(resourceGroupName, namespaceName);
+        return Utils.mapPage(inner, inner1 -> new IpFilterRuleImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<IpFilterRule> listIpFilterRules(
+        String resourceGroupName, String namespaceName, Context context) {
+        PagedIterable<IpFilterRuleInner> inner =
+            this.serviceClient().listIpFilterRules(resourceGroupName, namespaceName, context);
+        return Utils.mapPage(inner, inner1 -> new IpFilterRuleImpl(inner1, this.manager()));
+    }
+
+    public void deleteIpFilterRule(String resourceGroupName, String namespaceName, String ipFilterRuleName) {
+        this.serviceClient().deleteIpFilterRule(resourceGroupName, namespaceName, ipFilterRuleName);
+    }
+
+    public Response<Void> deleteIpFilterRuleWithResponse(
+        String resourceGroupName, String namespaceName, String ipFilterRuleName, Context context) {
+        return this
+            .serviceClient()
+            .deleteIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, context);
+    }
+
+    public IpFilterRule getIpFilterRule(String resourceGroupName, String namespaceName, String ipFilterRuleName) {
+        IpFilterRuleInner inner =
+            this.serviceClient().getIpFilterRule(resourceGroupName, namespaceName, ipFilterRuleName);
+        if (inner != null) {
+            return new IpFilterRuleImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<IpFilterRule> getIpFilterRuleWithResponse(
+        String resourceGroupName, String namespaceName, String ipFilterRuleName, Context context) {
+        Response<IpFilterRuleInner> inner =
+            this
+                .serviceClient()
+                .getIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new IpFilterRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
     }
 
     public PagedIterable<EHNamespace> list() {
@@ -92,6 +145,59 @@ public final class NamespacesImpl implements Namespaces {
         }
     }
 
+    public PagedIterable<VirtualNetworkRule> listVirtualNetworkRules(String resourceGroupName, String namespaceName) {
+        PagedIterable<VirtualNetworkRuleInner> inner =
+            this.serviceClient().listVirtualNetworkRules(resourceGroupName, namespaceName);
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkRuleImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<VirtualNetworkRule> listVirtualNetworkRules(
+        String resourceGroupName, String namespaceName, Context context) {
+        PagedIterable<VirtualNetworkRuleInner> inner =
+            this.serviceClient().listVirtualNetworkRules(resourceGroupName, namespaceName, context);
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkRuleImpl(inner1, this.manager()));
+    }
+
+    public void deleteVirtualNetworkRule(
+        String resourceGroupName, String namespaceName, String virtualNetworkRuleName) {
+        this.serviceClient().deleteVirtualNetworkRule(resourceGroupName, namespaceName, virtualNetworkRuleName);
+    }
+
+    public Response<Void> deleteVirtualNetworkRuleWithResponse(
+        String resourceGroupName, String namespaceName, String virtualNetworkRuleName, Context context) {
+        return this
+            .serviceClient()
+            .deleteVirtualNetworkRuleWithResponse(resourceGroupName, namespaceName, virtualNetworkRuleName, context);
+    }
+
+    public VirtualNetworkRule getVirtualNetworkRule(
+        String resourceGroupName, String namespaceName, String virtualNetworkRuleName) {
+        VirtualNetworkRuleInner inner =
+            this.serviceClient().getVirtualNetworkRule(resourceGroupName, namespaceName, virtualNetworkRuleName);
+        if (inner != null) {
+            return new VirtualNetworkRuleImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<VirtualNetworkRule> getVirtualNetworkRuleWithResponse(
+        String resourceGroupName, String namespaceName, String virtualNetworkRuleName, Context context) {
+        Response<VirtualNetworkRuleInner> inner =
+            this
+                .serviceClient()
+                .getVirtualNetworkRuleWithResponse(resourceGroupName, namespaceName, virtualNetworkRuleName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new VirtualNetworkRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
     public NetworkRuleSet createOrUpdateNetworkRuleSet(
         String resourceGroupName, String namespaceName, NetworkRuleSetInner parameters) {
         NetworkRuleSetInner inner =
@@ -139,30 +245,6 @@ public final class NamespacesImpl implements Namespaces {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkRuleSetImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
-    public NetworkRuleSetListResult listNetworkRuleSet(String resourceGroupName, String namespaceName) {
-        NetworkRuleSetListResultInner inner = this.serviceClient().listNetworkRuleSet(resourceGroupName, namespaceName);
-        if (inner != null) {
-            return new NetworkRuleSetListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<NetworkRuleSetListResult> listNetworkRuleSetWithResponse(
-        String resourceGroupName, String namespaceName, Context context) {
-        Response<NetworkRuleSetListResultInner> inner =
-            this.serviceClient().listNetworkRuleSetWithResponse(resourceGroupName, namespaceName, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new NetworkRuleSetListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
@@ -342,6 +424,119 @@ public final class NamespacesImpl implements Namespaces {
         return this.getByResourceGroupWithResponse(resourceGroupName, namespaceName, context);
     }
 
+    public IpFilterRule getIpFilterRuleById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String ipFilterRuleName = Utils.getValueFromIdByName(id, "ipfilterrules");
+        if (ipFilterRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'ipfilterrules'.", id)));
+        }
+        return this
+            .getIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<IpFilterRule> getIpFilterRuleByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String ipFilterRuleName = Utils.getValueFromIdByName(id, "ipfilterrules");
+        if (ipFilterRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'ipfilterrules'.", id)));
+        }
+        return this.getIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, context);
+    }
+
+    public VirtualNetworkRule getVirtualNetworkRuleById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String virtualNetworkRuleName = Utils.getValueFromIdByName(id, "virtualnetworkrules");
+        if (virtualNetworkRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualnetworkrules'.", id)));
+        }
+        return this
+            .getVirtualNetworkRuleWithResponse(resourceGroupName, namespaceName, virtualNetworkRuleName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<VirtualNetworkRule> getVirtualNetworkRuleByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String virtualNetworkRuleName = Utils.getValueFromIdByName(id, "virtualnetworkrules");
+        if (virtualNetworkRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualnetworkrules'.", id)));
+        }
+        return this
+            .getVirtualNetworkRuleWithResponse(resourceGroupName, namespaceName, virtualNetworkRuleName, context);
+    }
+
     public AuthorizationRule getAuthorizationRuleById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -438,6 +633,117 @@ public final class NamespacesImpl implements Namespaces {
         this.delete(resourceGroupName, namespaceName, context);
     }
 
+    public void deleteIpFilterRuleById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String ipFilterRuleName = Utils.getValueFromIdByName(id, "ipfilterrules");
+        if (ipFilterRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'ipfilterrules'.", id)));
+        }
+        this.deleteIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, Context.NONE);
+    }
+
+    public Response<Void> deleteIpFilterRuleByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String ipFilterRuleName = Utils.getValueFromIdByName(id, "ipfilterrules");
+        if (ipFilterRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'ipfilterrules'.", id)));
+        }
+        return this.deleteIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, context);
+    }
+
+    public void deleteVirtualNetworkRuleById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String virtualNetworkRuleName = Utils.getValueFromIdByName(id, "virtualnetworkrules");
+        if (virtualNetworkRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualnetworkrules'.", id)));
+        }
+        this
+            .deleteVirtualNetworkRuleWithResponse(
+                resourceGroupName, namespaceName, virtualNetworkRuleName, Context.NONE);
+    }
+
+    public Response<Void> deleteVirtualNetworkRuleByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String virtualNetworkRuleName = Utils.getValueFromIdByName(id, "virtualnetworkrules");
+        if (virtualNetworkRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualnetworkrules'.", id)));
+        }
+        return this
+            .deleteVirtualNetworkRuleWithResponse(resourceGroupName, namespaceName, virtualNetworkRuleName, context);
+    }
+
     public void deleteAuthorizationRuleById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -505,6 +811,14 @@ public final class NamespacesImpl implements Namespaces {
 
     public EHNamespaceImpl define(String name) {
         return new EHNamespaceImpl(name, this.manager());
+    }
+
+    public IpFilterRuleImpl defineIpFilterRule(String name) {
+        return new IpFilterRuleImpl(name, this.manager());
+    }
+
+    public VirtualNetworkRuleImpl defineVirtualNetworkRule(String name) {
+        return new VirtualNetworkRuleImpl(name, this.manager());
     }
 
     public AuthorizationRuleImpl defineAuthorizationRule(String name) {

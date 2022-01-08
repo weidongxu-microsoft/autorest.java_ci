@@ -13,6 +13,9 @@ public final class Operator extends ExpandableStringEnum<Operator> {
     /** Static value Equals for Operator. */
     public static final Operator EQUALS = fromString("Equals");
 
+    /** Static value NotEquals for Operator. */
+    public static final Operator NOT_EQUALS = fromString("NotEquals");
+
     /** Static value GreaterThan for Operator. */
     public static final Operator GREATER_THAN = fromString("GreaterThan");
 

@@ -89,7 +89,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
     /**
      * Retrieve an alert rule status.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -138,7 +138,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
     /**
      * Retrieve an alert rule status.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -185,7 +185,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
     /**
      * Retrieve an alert rule status.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -208,7 +208,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
     /**
      * Retrieve an alert rule status.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -223,7 +223,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
     /**
      * Retrieve an alert rule status.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -240,7 +240,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
     /**
      * Retrieve an alert rule status.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param statusName The name of the status.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -294,7 +294,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
     /**
      * Retrieve an alert rule status.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param statusName The name of the status.
      * @param context The context to associate with this operation.
@@ -346,7 +346,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
     /**
      * Retrieve an alert rule status.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param statusName The name of the status.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -371,7 +371,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
     /**
      * Retrieve an alert rule status.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param statusName The name of the status.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -387,7 +387,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
     /**
      * Retrieve an alert rule status.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param statusName The name of the status.
      * @param context The context to associate with this operation.

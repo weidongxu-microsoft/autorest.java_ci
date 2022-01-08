@@ -120,7 +120,7 @@ public interface AzureMonitorPrivateLinkScope {
             /**
              * Specifies resourceGroupName.
              *
-             * @param resourceGroupName The name of the resource group. The name is case insensitive.
+             * @param resourceGroupName The name of the resource group.
              * @return the next definition stage.
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);

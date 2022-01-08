@@ -31,9 +31,6 @@ public final class JsonWebKeyOperation extends ExpandableStringEnum<JsonWebKeyOp
     /** Static value import for JsonWebKeyOperation. */
     public static final JsonWebKeyOperation IMPORT = fromString("import");
 
-    /** Static value release for JsonWebKeyOperation. */
-    public static final JsonWebKeyOperation RELEASE = fromString("release");
-
     /**
      * Creates or finds a JsonWebKeyOperation from its string representation.
      *

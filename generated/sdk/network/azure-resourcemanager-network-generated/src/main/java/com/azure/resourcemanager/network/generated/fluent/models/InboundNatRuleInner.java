@@ -18,7 +18,7 @@ public final class InboundNatRuleInner extends SubResource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(InboundNatRuleInner.class);
 
     /*
-     * Properties of load balancer inbound NAT rule.
+     * Properties of load balancer inbound nat rule.
      */
     @JsonProperty(value = "properties")
     private InboundNatRulePropertiesFormatInner innerProperties;
@@ -44,7 +44,7 @@ public final class InboundNatRuleInner extends SubResource {
     private String type;
 
     /**
-     * Get the innerProperties property: Properties of load balancer inbound NAT rule.
+     * Get the innerProperties property: Properties of load balancer inbound nat rule.
      *
      * @return the innerProperties value.
      */

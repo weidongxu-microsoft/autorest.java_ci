@@ -8,7 +8,6 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.UUID;
 
 /** Properties describing the storage account, blob container and archive name format for capture destination. */
 @Fluent
@@ -35,24 +34,6 @@ public final class DestinationProperties {
      */
     @JsonProperty(value = "archiveNameFormat")
     private String archiveNameFormat;
-
-    /*
-     * Subscription Id of Azure Data Lake Store
-     */
-    @JsonProperty(value = "dataLakeSubscriptionId")
-    private UUID dataLakeSubscriptionId;
-
-    /*
-     * The Azure Data Lake Store name for the captured events
-     */
-    @JsonProperty(value = "dataLakeAccountName")
-    private String dataLakeAccountName;
-
-    /*
-     * The destination folder path for the captured events
-     */
-    @JsonProperty(value = "dataLakeFolderPath")
-    private String dataLakeFolderPath;
 
     /**
      * Get the storageAccountResourceId property: Resource id of the storage account to be used to create the blobs.
@@ -115,66 +96,6 @@ public final class DestinationProperties {
      */
     public DestinationProperties withArchiveNameFormat(String archiveNameFormat) {
         this.archiveNameFormat = archiveNameFormat;
-        return this;
-    }
-
-    /**
-     * Get the dataLakeSubscriptionId property: Subscription Id of Azure Data Lake Store.
-     *
-     * @return the dataLakeSubscriptionId value.
-     */
-    public UUID dataLakeSubscriptionId() {
-        return this.dataLakeSubscriptionId;
-    }
-
-    /**
-     * Set the dataLakeSubscriptionId property: Subscription Id of Azure Data Lake Store.
-     *
-     * @param dataLakeSubscriptionId the dataLakeSubscriptionId value to set.
-     * @return the DestinationProperties object itself.
-     */
-    public DestinationProperties withDataLakeSubscriptionId(UUID dataLakeSubscriptionId) {
-        this.dataLakeSubscriptionId = dataLakeSubscriptionId;
-        return this;
-    }
-
-    /**
-     * Get the dataLakeAccountName property: The Azure Data Lake Store name for the captured events.
-     *
-     * @return the dataLakeAccountName value.
-     */
-    public String dataLakeAccountName() {
-        return this.dataLakeAccountName;
-    }
-
-    /**
-     * Set the dataLakeAccountName property: The Azure Data Lake Store name for the captured events.
-     *
-     * @param dataLakeAccountName the dataLakeAccountName value to set.
-     * @return the DestinationProperties object itself.
-     */
-    public DestinationProperties withDataLakeAccountName(String dataLakeAccountName) {
-        this.dataLakeAccountName = dataLakeAccountName;
-        return this;
-    }
-
-    /**
-     * Get the dataLakeFolderPath property: The destination folder path for the captured events.
-     *
-     * @return the dataLakeFolderPath value.
-     */
-    public String dataLakeFolderPath() {
-        return this.dataLakeFolderPath;
-    }
-
-    /**
-     * Set the dataLakeFolderPath property: The destination folder path for the captured events.
-     *
-     * @param dataLakeFolderPath the dataLakeFolderPath value to set.
-     * @return the DestinationProperties object itself.
-     */
-    public DestinationProperties withDataLakeFolderPath(String dataLakeFolderPath) {
-        this.dataLakeFolderPath = dataLakeFolderPath;
         return this;
     }
 

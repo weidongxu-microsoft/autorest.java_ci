@@ -204,29 +204,6 @@ public final class DomainsImpl implements Domains {
         return this.serviceClient().renewWithResponse(resourceGroupName, domainName, context);
     }
 
-    public Domain transferOut(String resourceGroupName, String domainName) {
-        DomainInner inner = this.serviceClient().transferOut(resourceGroupName, domainName);
-        if (inner != null) {
-            return new DomainImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<Domain> transferOutWithResponse(String resourceGroupName, String domainName, Context context) {
-        Response<DomainInner> inner =
-            this.serviceClient().transferOutWithResponse(resourceGroupName, domainName, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new DomainImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
     public Domain getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {

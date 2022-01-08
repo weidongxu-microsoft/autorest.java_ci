@@ -54,9 +54,6 @@ import com.azure.resourcemanager.network.generated.implementation.ExpressRoutePo
 import com.azure.resourcemanager.network.generated.implementation.ExpressRoutePortsLocationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRouteServiceProvidersImpl;
 import com.azure.resourcemanager.network.generated.implementation.FirewallPoliciesImpl;
-import com.azure.resourcemanager.network.generated.implementation.FirewallPolicyIdpsSignaturesFilterValuesImpl;
-import com.azure.resourcemanager.network.generated.implementation.FirewallPolicyIdpsSignaturesImpl;
-import com.azure.resourcemanager.network.generated.implementation.FirewallPolicyIdpsSignaturesOverridesImpl;
 import com.azure.resourcemanager.network.generated.implementation.FirewallPolicyRuleCollectionGroupsImpl;
 import com.azure.resourcemanager.network.generated.implementation.FlowLogsImpl;
 import com.azure.resourcemanager.network.generated.implementation.HubRouteTablesImpl;
@@ -99,7 +96,6 @@ import com.azure.resourcemanager.network.generated.implementation.RouteFilterRul
 import com.azure.resourcemanager.network.generated.implementation.RouteFiltersImpl;
 import com.azure.resourcemanager.network.generated.implementation.RouteTablesImpl;
 import com.azure.resourcemanager.network.generated.implementation.RoutesImpl;
-import com.azure.resourcemanager.network.generated.implementation.RoutingIntentsImpl;
 import com.azure.resourcemanager.network.generated.implementation.SecurityPartnerProvidersImpl;
 import com.azure.resourcemanager.network.generated.implementation.SecurityRulesImpl;
 import com.azure.resourcemanager.network.generated.implementation.ServiceAssociationLinksImpl;
@@ -167,9 +163,6 @@ import com.azure.resourcemanager.network.generated.models.ExpressRoutePorts;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePortsLocations;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteServiceProviders;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicies;
-import com.azure.resourcemanager.network.generated.models.FirewallPolicyIdpsSignatures;
-import com.azure.resourcemanager.network.generated.models.FirewallPolicyIdpsSignaturesFilterValues;
-import com.azure.resourcemanager.network.generated.models.FirewallPolicyIdpsSignaturesOverrides;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyRuleCollectionGroups;
 import com.azure.resourcemanager.network.generated.models.FlowLogs;
 import com.azure.resourcemanager.network.generated.models.HubRouteTables;
@@ -211,7 +204,6 @@ import com.azure.resourcemanager.network.generated.models.RouteFilterRules;
 import com.azure.resourcemanager.network.generated.models.RouteFilters;
 import com.azure.resourcemanager.network.generated.models.RouteTables;
 import com.azure.resourcemanager.network.generated.models.Routes;
-import com.azure.resourcemanager.network.generated.models.RoutingIntents;
 import com.azure.resourcemanager.network.generated.models.SecurityPartnerProviders;
 import com.azure.resourcemanager.network.generated.models.SecurityRules;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLinks;
@@ -319,12 +311,6 @@ public final class NetworkManager {
     private FirewallPolicies firewallPolicies;
 
     private FirewallPolicyRuleCollectionGroups firewallPolicyRuleCollectionGroups;
-
-    private FirewallPolicyIdpsSignatures firewallPolicyIdpsSignatures;
-
-    private FirewallPolicyIdpsSignaturesOverrides firewallPolicyIdpsSignaturesOverrides;
-
-    private FirewallPolicyIdpsSignaturesFilterValues firewallPolicyIdpsSignaturesFilterValues;
 
     private IpAllocations ipAllocations;
 
@@ -475,8 +461,6 @@ public final class NetworkManager {
     private VirtualHubIpConfigurations virtualHubIpConfigurations;
 
     private HubRouteTables hubRouteTables;
-
-    private RoutingIntents routingIntents;
 
     private WebApplicationFirewallPolicies webApplicationFirewallPolicies;
 
@@ -940,35 +924,6 @@ public final class NetworkManager {
                 new FirewallPolicyRuleCollectionGroupsImpl(clientObject.getFirewallPolicyRuleCollectionGroups(), this);
         }
         return firewallPolicyRuleCollectionGroups;
-    }
-
-    /** @return Resource collection API of FirewallPolicyIdpsSignatures. */
-    public FirewallPolicyIdpsSignatures firewallPolicyIdpsSignatures() {
-        if (this.firewallPolicyIdpsSignatures == null) {
-            this.firewallPolicyIdpsSignatures =
-                new FirewallPolicyIdpsSignaturesImpl(clientObject.getFirewallPolicyIdpsSignatures(), this);
-        }
-        return firewallPolicyIdpsSignatures;
-    }
-
-    /** @return Resource collection API of FirewallPolicyIdpsSignaturesOverrides. */
-    public FirewallPolicyIdpsSignaturesOverrides firewallPolicyIdpsSignaturesOverrides() {
-        if (this.firewallPolicyIdpsSignaturesOverrides == null) {
-            this.firewallPolicyIdpsSignaturesOverrides =
-                new FirewallPolicyIdpsSignaturesOverridesImpl(
-                    clientObject.getFirewallPolicyIdpsSignaturesOverrides(), this);
-        }
-        return firewallPolicyIdpsSignaturesOverrides;
-    }
-
-    /** @return Resource collection API of FirewallPolicyIdpsSignaturesFilterValues. */
-    public FirewallPolicyIdpsSignaturesFilterValues firewallPolicyIdpsSignaturesFilterValues() {
-        if (this.firewallPolicyIdpsSignaturesFilterValues == null) {
-            this.firewallPolicyIdpsSignaturesFilterValues =
-                new FirewallPolicyIdpsSignaturesFilterValuesImpl(
-                    clientObject.getFirewallPolicyIdpsSignaturesFilterValues(), this);
-        }
-        return firewallPolicyIdpsSignaturesFilterValues;
     }
 
     /** @return Resource collection API of IpAllocations. */
@@ -1601,14 +1556,6 @@ public final class NetworkManager {
             this.hubRouteTables = new HubRouteTablesImpl(clientObject.getHubRouteTables(), this);
         }
         return hubRouteTables;
-    }
-
-    /** @return Resource collection API of RoutingIntents. */
-    public RoutingIntents routingIntents() {
-        if (this.routingIntents == null) {
-            this.routingIntents = new RoutingIntentsImpl(clientObject.getRoutingIntents(), this);
-        }
-        return routingIntents;
     }
 
     /** @return Resource collection API of WebApplicationFirewallPolicies. */

@@ -22,10 +22,6 @@ public final class AccessUriImpl implements AccessUri {
         return this.innerModel().accessSas();
     }
 
-    public String securityDataAccessSas() {
-        return this.innerModel().securityDataAccessSas();
-    }
-
     public AccessUriInner innerModel() {
         return this.innerObject;
     }

@@ -58,37 +58,25 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         }
     }
 
-    public DiagnosticProactiveLogCollectionSettings updateDiagnosticProactiveLogCollectionSettings(
+    public void updateDiagnosticProactiveLogCollectionSettings(
         String deviceName,
         String resourceGroupName,
         DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
-        DiagnosticProactiveLogCollectionSettingsInner inner =
-            this
-                .serviceClient()
-                .updateDiagnosticProactiveLogCollectionSettings(
-                    deviceName, resourceGroupName, proactiveLogCollectionSettings);
-        if (inner != null) {
-            return new DiagnosticProactiveLogCollectionSettingsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+        this
+            .serviceClient()
+            .updateDiagnosticProactiveLogCollectionSettings(
+                deviceName, resourceGroupName, proactiveLogCollectionSettings);
     }
 
-    public DiagnosticProactiveLogCollectionSettings updateDiagnosticProactiveLogCollectionSettings(
+    public void updateDiagnosticProactiveLogCollectionSettings(
         String deviceName,
         String resourceGroupName,
         DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
         Context context) {
-        DiagnosticProactiveLogCollectionSettingsInner inner =
-            this
-                .serviceClient()
-                .updateDiagnosticProactiveLogCollectionSettings(
-                    deviceName, resourceGroupName, proactiveLogCollectionSettings, context);
-        if (inner != null) {
-            return new DiagnosticProactiveLogCollectionSettingsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+        this
+            .serviceClient()
+            .updateDiagnosticProactiveLogCollectionSettings(
+                deviceName, resourceGroupName, proactiveLogCollectionSettings, context);
     }
 
     public DiagnosticRemoteSupportSettings getDiagnosticRemoteSupportSettings(
@@ -117,36 +105,24 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         }
     }
 
-    public DiagnosticRemoteSupportSettings updateDiagnosticRemoteSupportSettings(
+    public void updateDiagnosticRemoteSupportSettings(
         String deviceName,
         String resourceGroupName,
         DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
-        DiagnosticRemoteSupportSettingsInner inner =
-            this
-                .serviceClient()
-                .updateDiagnosticRemoteSupportSettings(deviceName, resourceGroupName, diagnosticRemoteSupportSettings);
-        if (inner != null) {
-            return new DiagnosticRemoteSupportSettingsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+        this
+            .serviceClient()
+            .updateDiagnosticRemoteSupportSettings(deviceName, resourceGroupName, diagnosticRemoteSupportSettings);
     }
 
-    public DiagnosticRemoteSupportSettings updateDiagnosticRemoteSupportSettings(
+    public void updateDiagnosticRemoteSupportSettings(
         String deviceName,
         String resourceGroupName,
         DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
         Context context) {
-        DiagnosticRemoteSupportSettingsInner inner =
-            this
-                .serviceClient()
-                .updateDiagnosticRemoteSupportSettings(
-                    deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context);
-        if (inner != null) {
-            return new DiagnosticRemoteSupportSettingsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+        this
+            .serviceClient()
+            .updateDiagnosticRemoteSupportSettings(
+                deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context);
     }
 
     private DiagnosticSettingsClient serviceClient() {

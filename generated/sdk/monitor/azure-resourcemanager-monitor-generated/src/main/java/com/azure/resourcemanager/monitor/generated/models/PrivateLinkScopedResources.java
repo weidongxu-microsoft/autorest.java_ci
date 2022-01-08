@@ -13,7 +13,7 @@ public interface PrivateLinkScopedResources {
     /**
      * Gets a scoped resource in a private link scope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param name The name of the scoped resource object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -26,7 +26,7 @@ public interface PrivateLinkScopedResources {
     /**
      * Gets a scoped resource in a private link scope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param name The name of the scoped resource object.
      * @param context The context to associate with this operation.
@@ -40,7 +40,7 @@ public interface PrivateLinkScopedResources {
     /**
      * Deletes a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param name The name of the scoped resource object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -52,7 +52,7 @@ public interface PrivateLinkScopedResources {
     /**
      * Deletes a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param name The name of the scoped resource object.
      * @param context The context to associate with this operation.
@@ -65,7 +65,7 @@ public interface PrivateLinkScopedResources {
     /**
      * Gets all private endpoint connections on a private link scope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -77,7 +77,7 @@ public interface PrivateLinkScopedResources {
     /**
      * Gets all private endpoint connections on a private link scope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

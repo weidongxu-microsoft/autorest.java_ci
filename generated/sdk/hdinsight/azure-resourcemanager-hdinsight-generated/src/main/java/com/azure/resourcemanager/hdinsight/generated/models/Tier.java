@@ -4,31 +4,44 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import java.util.Collection;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /** Defines values for Tier. */
-public final class Tier extends ExpandableStringEnum<Tier> {
-    /** Static value Standard for Tier. */
-    public static final Tier STANDARD = fromString("Standard");
+public enum Tier {
+    /** Enum value Standard. */
+    STANDARD("Standard"),
 
-    /** Static value Premium for Tier. */
-    public static final Tier PREMIUM = fromString("Premium");
+    /** Enum value Premium. */
+    PREMIUM("Premium");
 
-    /**
-     * Creates or finds a Tier from its string representation.
-     *
-     * @param name a name to look for.
-     * @return the corresponding Tier.
-     */
-    @JsonCreator
-    public static Tier fromString(String name) {
-        return fromString(name, Tier.class);
+    /** The actual serialized value for a Tier instance. */
+    private final String value;
+
+    Tier(String value) {
+        this.value = value;
     }
 
-    /** @return known Tier values. */
-    public static Collection<Tier> values() {
-        return values(Tier.class);
+    /**
+     * Parses a serialized value to a Tier instance.
+     *
+     * @param value the serialized value to parse.
+     * @return the parsed Tier object, or null if unable to parse.
+     */
+    @JsonCreator
+    public static Tier fromString(String value) {
+        Tier[] items = Tier.values();
+        for (Tier item : items) {
+            if (item.toString().equalsIgnoreCase(value)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    @JsonValue
+    @Override
+    public String toString() {
+        return this.value;
     }
 }

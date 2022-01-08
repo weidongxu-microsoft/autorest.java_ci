@@ -53,13 +53,6 @@ public interface EventHubManagementClient {
     ClustersClient getClusters();
 
     /**
-     * Gets the ConfigurationsClient object to access its operations.
-     *
-     * @return the ConfigurationsClient object.
-     */
-    ConfigurationsClient getConfigurations();
-
-    /**
      * Gets the NamespacesClient object to access its operations.
      *
      * @return the NamespacesClient object.
@@ -81,18 +74,11 @@ public interface EventHubManagementClient {
     PrivateLinkResourcesClient getPrivateLinkResources();
 
     /**
-     * Gets the OperationsClient object to access its operations.
+     * Gets the ConfigurationsClient object to access its operations.
      *
-     * @return the OperationsClient object.
+     * @return the ConfigurationsClient object.
      */
-    OperationsClient getOperations();
-
-    /**
-     * Gets the EventHubsClient object to access its operations.
-     *
-     * @return the EventHubsClient object.
-     */
-    EventHubsClient getEventHubs();
+    ConfigurationsClient getConfigurations();
 
     /**
      * Gets the DisasterRecoveryConfigsClient object to access its operations.
@@ -102,6 +88,13 @@ public interface EventHubManagementClient {
     DisasterRecoveryConfigsClient getDisasterRecoveryConfigs();
 
     /**
+     * Gets the EventHubsClient object to access its operations.
+     *
+     * @return the EventHubsClient object.
+     */
+    EventHubsClient getEventHubs();
+
+    /**
      * Gets the ConsumerGroupsClient object to access its operations.
      *
      * @return the ConsumerGroupsClient object.
@@ -109,9 +102,16 @@ public interface EventHubManagementClient {
     ConsumerGroupsClient getConsumerGroups();
 
     /**
-     * Gets the SchemaRegistriesClient object to access its operations.
+     * Gets the OperationsClient object to access its operations.
      *
-     * @return the SchemaRegistriesClient object.
+     * @return the OperationsClient object.
      */
-    SchemaRegistriesClient getSchemaRegistries();
+    OperationsClient getOperations();
+
+    /**
+     * Gets the RegionsClient object to access its operations.
+     *
+     * @return the RegionsClient object.
+     */
+    RegionsClient getRegions();
 }

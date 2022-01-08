@@ -13,6 +13,7 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.Reservation
 import com.azure.resourcemanager.consumption.generated.models.LookBackPeriod;
 import com.azure.resourcemanager.consumption.generated.models.ReservationRecommendationDetails;
 import com.azure.resourcemanager.consumption.generated.models.ReservationRecommendationDetailsModel;
+import com.azure.resourcemanager.consumption.generated.models.Scope;
 import com.azure.resourcemanager.consumption.generated.models.Term;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -31,9 +32,9 @@ public final class ReservationRecommendationDetailsImpl implements ReservationRe
     }
 
     public ReservationRecommendationDetailsModel get(
-        String scope, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
+        String scope, Scope scope1, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
         ReservationRecommendationDetailsModelInner inner =
-            this.serviceClient().get(scope, region, term, lookBackPeriod, product);
+            this.serviceClient().get(scope, scope1, region, term, lookBackPeriod, product);
         if (inner != null) {
             return new ReservationRecommendationDetailsModelImpl(inner, this.manager());
         } else {
@@ -42,9 +43,15 @@ public final class ReservationRecommendationDetailsImpl implements ReservationRe
     }
 
     public Response<ReservationRecommendationDetailsModel> getWithResponse(
-        String scope, String region, Term term, LookBackPeriod lookBackPeriod, String product, Context context) {
+        String scope,
+        Scope scope1,
+        String region,
+        Term term,
+        LookBackPeriod lookBackPeriod,
+        String product,
+        Context context) {
         Response<ReservationRecommendationDetailsModelInner> inner =
-            this.serviceClient().getWithResponse(scope, region, term, lookBackPeriod, product, context);
+            this.serviceClient().getWithResponse(scope, scope1, region, term, lookBackPeriod, product, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),

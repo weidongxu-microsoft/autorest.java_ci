@@ -9,10 +9,10 @@ import com.azure.core.management.ProxyResource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.models.ApiEntityReference;
 import com.azure.resourcemanager.compute.generated.models.ConsistencyModeTypes;
+import com.azure.resourcemanager.compute.generated.models.RestorePointProvisioningDetails;
 import com.azure.resourcemanager.compute.generated.models.RestorePointSourceMetadata;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 import java.util.List;
 
 /** Restore Point details. */
@@ -89,26 +89,13 @@ public final class RestorePointInner extends ProxyResource {
     }
 
     /**
-     * Get the timeCreated property: Gets the creation time of the restore point.
+     * Get the provisioningDetails property: Gets the provisioning details set by the server during Create restore point
+     * operation.
      *
-     * @return the timeCreated value.
+     * @return the provisioningDetails value.
      */
-    public OffsetDateTime timeCreated() {
-        return this.innerProperties() == null ? null : this.innerProperties().timeCreated();
-    }
-
-    /**
-     * Set the timeCreated property: Gets the creation time of the restore point.
-     *
-     * @param timeCreated the timeCreated value to set.
-     * @return the RestorePointInner object itself.
-     */
-    public RestorePointInner withTimeCreated(OffsetDateTime timeCreated) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new RestorePointProperties();
-        }
-        this.innerProperties().withTimeCreated(timeCreated);
-        return this;
+    public RestorePointProvisioningDetails provisioningDetails() {
+        return this.innerProperties() == null ? null : this.innerProperties().provisioningDetails();
     }
 
     /**

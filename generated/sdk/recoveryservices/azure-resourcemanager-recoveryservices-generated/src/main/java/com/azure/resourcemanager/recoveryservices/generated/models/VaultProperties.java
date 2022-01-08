@@ -63,12 +63,6 @@ public final class VaultProperties {
     @JsonProperty(value = "moveState", access = JsonProperty.Access.WRITE_ONLY)
     private ResourceMoveState moveState;
 
-    /*
-     * Backup storage version
-     */
-    @JsonProperty(value = "backupStorageVersion", access = JsonProperty.Access.WRITE_ONLY)
-    private BackupStorageVersion backupStorageVersion;
-
     /**
      * Get the provisioningState property: Provisioning State.
      *
@@ -172,15 +166,6 @@ public final class VaultProperties {
      */
     public ResourceMoveState moveState() {
         return this.moveState;
-    }
-
-    /**
-     * Get the backupStorageVersion property: Backup storage version.
-     *
-     * @return the backupStorageVersion value.
-     */
-    public BackupStorageVersion backupStorageVersion() {
-        return this.backupStorageVersion;
     }
 
     /**

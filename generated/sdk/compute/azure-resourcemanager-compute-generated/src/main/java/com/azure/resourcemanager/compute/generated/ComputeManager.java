@@ -30,9 +30,6 @@ import com.azure.resourcemanager.compute.generated.implementation.CloudServiceRo
 import com.azure.resourcemanager.compute.generated.implementation.CloudServiceRolesImpl;
 import com.azure.resourcemanager.compute.generated.implementation.CloudServicesImpl;
 import com.azure.resourcemanager.compute.generated.implementation.CloudServicesUpdateDomainsImpl;
-import com.azure.resourcemanager.compute.generated.implementation.CommunityGalleriesImpl;
-import com.azure.resourcemanager.compute.generated.implementation.CommunityGalleryImageVersionsImpl;
-import com.azure.resourcemanager.compute.generated.implementation.CommunityGalleryImagesImpl;
 import com.azure.resourcemanager.compute.generated.implementation.ComputeManagementClientBuilder;
 import com.azure.resourcemanager.compute.generated.implementation.DedicatedHostGroupsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.DedicatedHostsImpl;
@@ -80,9 +77,6 @@ import com.azure.resourcemanager.compute.generated.models.CloudServiceRoleInstan
 import com.azure.resourcemanager.compute.generated.models.CloudServiceRoles;
 import com.azure.resourcemanager.compute.generated.models.CloudServices;
 import com.azure.resourcemanager.compute.generated.models.CloudServicesUpdateDomains;
-import com.azure.resourcemanager.compute.generated.models.CommunityGalleries;
-import com.azure.resourcemanager.compute.generated.models.CommunityGalleryImageVersions;
-import com.azure.resourcemanager.compute.generated.models.CommunityGalleryImages;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroups;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHosts;
 import com.azure.resourcemanager.compute.generated.models.DiskAccesses;
@@ -211,12 +205,6 @@ public final class ComputeManager {
     private SharedGalleryImages sharedGalleryImages;
 
     private SharedGalleryImageVersions sharedGalleryImageVersions;
-
-    private CommunityGalleries communityGalleries;
-
-    private CommunityGalleryImages communityGalleryImages;
-
-    private CommunityGalleryImageVersions communityGalleryImageVersions;
 
     private CloudServiceRoleInstances cloudServiceRoleInstances;
 
@@ -760,32 +748,6 @@ public final class ComputeManager {
                 new SharedGalleryImageVersionsImpl(clientObject.getSharedGalleryImageVersions(), this);
         }
         return sharedGalleryImageVersions;
-    }
-
-    /** @return Resource collection API of CommunityGalleries. */
-    public CommunityGalleries communityGalleries() {
-        if (this.communityGalleries == null) {
-            this.communityGalleries = new CommunityGalleriesImpl(clientObject.getCommunityGalleries(), this);
-        }
-        return communityGalleries;
-    }
-
-    /** @return Resource collection API of CommunityGalleryImages. */
-    public CommunityGalleryImages communityGalleryImages() {
-        if (this.communityGalleryImages == null) {
-            this.communityGalleryImages =
-                new CommunityGalleryImagesImpl(clientObject.getCommunityGalleryImages(), this);
-        }
-        return communityGalleryImages;
-    }
-
-    /** @return Resource collection API of CommunityGalleryImageVersions. */
-    public CommunityGalleryImageVersions communityGalleryImageVersions() {
-        if (this.communityGalleryImageVersions == null) {
-            this.communityGalleryImageVersions =
-                new CommunityGalleryImageVersionsImpl(clientObject.getCommunityGalleryImageVersions(), this);
-        }
-        return communityGalleryImageVersions;
     }
 
     /** @return Resource collection API of CloudServiceRoleInstances. */

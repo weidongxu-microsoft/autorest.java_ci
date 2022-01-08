@@ -14,6 +14,7 @@ import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchema;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchemaMapping;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.ResourceSku;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -31,16 +32,22 @@ public final class DomainInner extends Resource {
     private DomainProperties innerProperties;
 
     /*
-     * The system metadata relating to Domain resource.
+     * The Sku pricing tier for the Event Grid Domain resource.
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
+    @JsonProperty(value = "sku")
+    private ResourceSku sku;
 
     /*
      * Identity information for the Event Grid Domain resource.
      */
     @JsonProperty(value = "identity")
     private IdentityInfo identity;
+
+    /*
+     * The system metadata relating to the Event Grid Domain resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the innerProperties property: Properties of the Event Grid Domain resource.
@@ -52,12 +59,23 @@ public final class DomainInner extends Resource {
     }
 
     /**
-     * Get the systemData property: The system metadata relating to Domain resource.
+     * Get the sku property: The Sku pricing tier for the Event Grid Domain resource.
      *
-     * @return the systemData value.
+     * @return the sku value.
      */
-    public SystemData systemData() {
-        return this.systemData;
+    public ResourceSku sku() {
+        return this.sku;
+    }
+
+    /**
+     * Set the sku property: The Sku pricing tier for the Event Grid Domain resource.
+     *
+     * @param sku the sku value to set.
+     * @return the DomainInner object itself.
+     */
+    public DomainInner withSku(ResourceSku sku) {
+        this.sku = sku;
+        return this;
     }
 
     /**
@@ -78,6 +96,15 @@ public final class DomainInner extends Resource {
     public DomainInner withIdentity(IdentityInfo identity) {
         this.identity = identity;
         return this;
+    }
+
+    /**
+     * Get the systemData property: The system metadata relating to the Event Grid Domain resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /** {@inheritDoc} */
@@ -113,7 +140,7 @@ public final class DomainInner extends Resource {
     }
 
     /**
-     * Get the endpoint property: Endpoint for the domain.
+     * Get the endpoint property: Endpoint for the Event Grid Domain Resource which is used for publishing the events.
      *
      * @return the endpoint value.
      */
@@ -123,7 +150,7 @@ public final class DomainInner extends Resource {
 
     /**
      * Get the inputSchema property: This determines the format that Event Grid should expect for incoming events
-     * published to the domain.
+     * published to the Event Grid Domain Resource.
      *
      * @return the inputSchema value.
      */
@@ -133,7 +160,7 @@ public final class DomainInner extends Resource {
 
     /**
      * Set the inputSchema property: This determines the format that Event Grid should expect for incoming events
-     * published to the domain.
+     * published to the Event Grid Domain Resource.
      *
      * @param inputSchema the inputSchema value to set.
      * @return the DomainInner object itself.
@@ -172,7 +199,7 @@ public final class DomainInner extends Resource {
     }
 
     /**
-     * Get the metricResourceId property: Metric resource id for the domain.
+     * Get the metricResourceId property: Metric resource id for the Event Grid Domain Resource.
      *
      * @return the metricResourceId value.
      */
@@ -345,6 +372,9 @@ public final class DomainInner extends Resource {
     public void validate() {
         if (innerProperties() != null) {
             innerProperties().validate();
+        }
+        if (sku() != null) {
+            sku().validate();
         }
         if (identity() != null) {
             identity().validate();

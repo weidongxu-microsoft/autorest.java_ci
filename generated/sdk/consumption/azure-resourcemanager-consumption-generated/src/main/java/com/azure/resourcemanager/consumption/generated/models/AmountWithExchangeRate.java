@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 
 /** The amount with exchange rate. */
 @Immutable
-public final class AmountWithExchangeRate extends Amount {
+public final class AmountWithExchangeRate {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(AmountWithExchangeRate.class);
 
     /*
@@ -50,8 +50,6 @@ public final class AmountWithExchangeRate extends Amount {
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
-    @Override
     public void validate() {
-        super.validate();
     }
 }

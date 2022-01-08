@@ -6,7 +6,6 @@ package com.azure.resourcemanager.hdinsight.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.ClusterInner;
 import com.azure.resourcemanager.hdinsight.generated.models.Cluster;
@@ -21,7 +20,6 @@ import com.azure.resourcemanager.hdinsight.generated.models.GatewaySettings;
 import com.azure.resourcemanager.hdinsight.generated.models.UpdateClusterIdentityCertificateParameters;
 import com.azure.resourcemanager.hdinsight.generated.models.UpdateGatewaySettingsParameters;
 import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 
 public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.Update {
@@ -58,25 +56,12 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         return this.innerModel().etag();
     }
 
-    public List<String> zones() {
-        List<String> inner = this.innerModel().zones();
-        if (inner != null) {
-            return Collections.unmodifiableList(inner);
-        } else {
-            return Collections.emptyList();
-        }
-    }
-
     public ClusterGetProperties properties() {
         return this.innerModel().properties();
     }
 
     public ClusterIdentity identity() {
         return this.innerModel().identity();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public Region region() {
@@ -244,11 +229,6 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
             this.updateParameters.withTags(tags);
             return this;
         }
-    }
-
-    public ClusterImpl withZones(List<String> zones) {
-        this.createParameters.withZones(zones);
-        return this;
     }
 
     public ClusterImpl withProperties(ClusterCreateProperties properties) {

@@ -165,7 +165,7 @@ public interface AlertRuleResource {
             /**
              * Specifies resourceGroupName.
              *
-             * @param resourceGroupName The name of the resource group. The name is case insensitive.
+             * @param resourceGroupName The name of the resource group.
              * @return the next definition stage.
              */
             WithNamePropertiesName withExistingResourceGroup(String resourceGroupName);

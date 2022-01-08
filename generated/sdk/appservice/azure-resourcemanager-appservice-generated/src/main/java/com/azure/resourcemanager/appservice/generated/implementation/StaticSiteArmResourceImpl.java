@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteArmResourceInner;
-import com.azure.resourcemanager.appservice.generated.models.EnterpriseGradeCdnStatus;
 import com.azure.resourcemanager.appservice.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.appservice.generated.models.ResponseMessageEnvelopeRemotePrivateEndpointConnection;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
@@ -141,10 +140,6 @@ public final class StaticSiteArmResourceImpl
 
     public String provider() {
         return this.innerModel().provider();
-    }
-
-    public EnterpriseGradeCdnStatus enterpriseGradeCdnStatus() {
-        return this.innerModel().enterpriseGradeCdnStatus();
     }
 
     public Region region() {
@@ -435,26 +430,6 @@ public final class StaticSiteArmResourceImpl
             return this;
         } else {
             this.updateStaticSiteEnvelope.withTemplateProperties(templateProperties);
-            return this;
-        }
-    }
-
-    public StaticSiteArmResourceImpl withProvider(String provider) {
-        if (isInCreateMode()) {
-            this.innerModel().withProvider(provider);
-            return this;
-        } else {
-            this.updateStaticSiteEnvelope.withProvider(provider);
-            return this;
-        }
-    }
-
-    public StaticSiteArmResourceImpl withEnterpriseGradeCdnStatus(EnterpriseGradeCdnStatus enterpriseGradeCdnStatus) {
-        if (isInCreateMode()) {
-            this.innerModel().withEnterpriseGradeCdnStatus(enterpriseGradeCdnStatus);
-            return this;
-        } else {
-            this.updateStaticSiteEnvelope.withEnterpriseGradeCdnStatus(enterpriseGradeCdnStatus);
             return this;
         }
     }

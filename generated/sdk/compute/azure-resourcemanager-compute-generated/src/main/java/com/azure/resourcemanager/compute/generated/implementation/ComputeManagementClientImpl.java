@@ -29,9 +29,6 @@ import com.azure.resourcemanager.compute.generated.fluent.CloudServiceRoleInstan
 import com.azure.resourcemanager.compute.generated.fluent.CloudServiceRolesClient;
 import com.azure.resourcemanager.compute.generated.fluent.CloudServicesClient;
 import com.azure.resourcemanager.compute.generated.fluent.CloudServicesUpdateDomainsClient;
-import com.azure.resourcemanager.compute.generated.fluent.CommunityGalleriesClient;
-import com.azure.resourcemanager.compute.generated.fluent.CommunityGalleryImageVersionsClient;
-import com.azure.resourcemanager.compute.generated.fluent.CommunityGalleryImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.ComputeManagementClient;
 import com.azure.resourcemanager.compute.generated.fluent.DedicatedHostGroupsClient;
 import com.azure.resourcemanager.compute.generated.fluent.DedicatedHostsClient;
@@ -642,42 +639,6 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         return this.sharedGalleryImageVersions;
     }
 
-    /** The CommunityGalleriesClient object to access its operations. */
-    private final CommunityGalleriesClient communityGalleries;
-
-    /**
-     * Gets the CommunityGalleriesClient object to access its operations.
-     *
-     * @return the CommunityGalleriesClient object.
-     */
-    public CommunityGalleriesClient getCommunityGalleries() {
-        return this.communityGalleries;
-    }
-
-    /** The CommunityGalleryImagesClient object to access its operations. */
-    private final CommunityGalleryImagesClient communityGalleryImages;
-
-    /**
-     * Gets the CommunityGalleryImagesClient object to access its operations.
-     *
-     * @return the CommunityGalleryImagesClient object.
-     */
-    public CommunityGalleryImagesClient getCommunityGalleryImages() {
-        return this.communityGalleryImages;
-    }
-
-    /** The CommunityGalleryImageVersionsClient object to access its operations. */
-    private final CommunityGalleryImageVersionsClient communityGalleryImageVersions;
-
-    /**
-     * Gets the CommunityGalleryImageVersionsClient object to access its operations.
-     *
-     * @return the CommunityGalleryImageVersionsClient object.
-     */
-    public CommunityGalleryImageVersionsClient getCommunityGalleryImageVersions() {
-        return this.communityGalleryImageVersions;
-    }
-
     /** The CloudServiceRoleInstancesClient object to access its operations. */
     private final CloudServiceRoleInstancesClient cloudServiceRoleInstances;
 
@@ -802,9 +763,6 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         this.sharedGalleries = new SharedGalleriesClientImpl(this);
         this.sharedGalleryImages = new SharedGalleryImagesClientImpl(this);
         this.sharedGalleryImageVersions = new SharedGalleryImageVersionsClientImpl(this);
-        this.communityGalleries = new CommunityGalleriesClientImpl(this);
-        this.communityGalleryImages = new CommunityGalleryImagesClientImpl(this);
-        this.communityGalleryImageVersions = new CommunityGalleryImageVersionsClientImpl(this);
         this.cloudServiceRoleInstances = new CloudServiceRoleInstancesClientImpl(this);
         this.cloudServiceRoles = new CloudServiceRolesClientImpl(this);
         this.cloudServices = new CloudServicesClientImpl(this);

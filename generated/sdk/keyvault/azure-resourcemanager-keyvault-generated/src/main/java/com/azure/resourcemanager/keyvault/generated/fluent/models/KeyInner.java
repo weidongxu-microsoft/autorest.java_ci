@@ -11,7 +11,6 @@ import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyCurveName;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyOperation;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyType;
 import com.azure.resourcemanager.keyvault.generated.models.KeyAttributes;
-import com.azure.resourcemanager.keyvault.generated.models.KeyReleasePolicy;
 import com.azure.resourcemanager.keyvault.generated.models.RotationPolicy;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -207,31 +206,6 @@ public final class KeyInner extends Resource {
             this.innerProperties = new KeyProperties();
         }
         this.innerProperties().withRotationPolicy(rotationPolicy);
-        return this;
-    }
-
-    /**
-     * Get the releasePolicy property: Key release policy in response. It will be used for both output and input.
-     * Omitted if empty.
-     *
-     * @return the releasePolicy value.
-     */
-    public KeyReleasePolicy releasePolicy() {
-        return this.innerProperties() == null ? null : this.innerProperties().releasePolicy();
-    }
-
-    /**
-     * Set the releasePolicy property: Key release policy in response. It will be used for both output and input.
-     * Omitted if empty.
-     *
-     * @param releasePolicy the releasePolicy value to set.
-     * @return the KeyInner object itself.
-     */
-    public KeyInner withReleasePolicy(KeyReleasePolicy releasePolicy) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new KeyProperties();
-        }
-        this.innerProperties().withReleasePolicy(releasePolicy);
         return this;
     }
 

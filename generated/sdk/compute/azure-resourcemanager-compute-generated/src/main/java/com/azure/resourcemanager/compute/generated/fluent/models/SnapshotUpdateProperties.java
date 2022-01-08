@@ -11,7 +11,6 @@ import com.azure.resourcemanager.compute.generated.models.EncryptionSettingsColl
 import com.azure.resourcemanager.compute.generated.models.NetworkAccessPolicy;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemTypes;
 import com.azure.resourcemanager.compute.generated.models.PublicNetworkAccess;
-import com.azure.resourcemanager.compute.generated.models.SupportedCapabilities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -73,13 +72,6 @@ public final class SnapshotUpdateProperties {
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
-
-    /*
-     * List of supported capabilities (like accelerated networking) for the
-     * image from which the OS disk was created.
-     */
-    @JsonProperty(value = "supportedCapabilities")
-    private SupportedCapabilities supportedCapabilities;
 
     /**
      * Get the osType property: the Operating System type.
@@ -253,28 +245,6 @@ public final class SnapshotUpdateProperties {
     }
 
     /**
-     * Get the supportedCapabilities property: List of supported capabilities (like accelerated networking) for the
-     * image from which the OS disk was created.
-     *
-     * @return the supportedCapabilities value.
-     */
-    public SupportedCapabilities supportedCapabilities() {
-        return this.supportedCapabilities;
-    }
-
-    /**
-     * Set the supportedCapabilities property: List of supported capabilities (like accelerated networking) for the
-     * image from which the OS disk was created.
-     *
-     * @param supportedCapabilities the supportedCapabilities value to set.
-     * @return the SnapshotUpdateProperties object itself.
-     */
-    public SnapshotUpdateProperties withSupportedCapabilities(SupportedCapabilities supportedCapabilities) {
-        this.supportedCapabilities = supportedCapabilities;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -285,9 +255,6 @@ public final class SnapshotUpdateProperties {
         }
         if (encryption() != null) {
             encryption().validate();
-        }
-        if (supportedCapabilities() != null) {
-            supportedCapabilities().validate();
         }
     }
 }

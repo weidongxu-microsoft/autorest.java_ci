@@ -8,11 +8,14 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.eventgrid.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.eventgrid.generated.models.IdentityInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchema;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchemaMapping;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.ResourceKind;
+import com.azure.resourcemanager.eventgrid.generated.models.ResourceSku;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicProvisioningState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -31,10 +34,28 @@ public final class TopicInner extends Resource {
     private TopicProperties innerProperties;
 
     /*
+     * The Sku pricing tier for the topic.
+     */
+    @JsonProperty(value = "sku")
+    private ResourceSku sku;
+
+    /*
      * Identity information for the resource.
      */
     @JsonProperty(value = "identity")
     private IdentityInfo identity;
+
+    /*
+     * Kind of the resource.
+     */
+    @JsonProperty(value = "kind")
+    private ResourceKind kind;
+
+    /*
+     * Extended location of the resource.
+     */
+    @JsonProperty(value = "extendedLocation")
+    private ExtendedLocation extendedLocation;
 
     /*
      * The system metadata relating to Topic resource.
@@ -49,6 +70,26 @@ public final class TopicInner extends Resource {
      */
     private TopicProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the sku property: The Sku pricing tier for the topic.
+     *
+     * @return the sku value.
+     */
+    public ResourceSku sku() {
+        return this.sku;
+    }
+
+    /**
+     * Set the sku property: The Sku pricing tier for the topic.
+     *
+     * @param sku the sku value to set.
+     * @return the TopicInner object itself.
+     */
+    public TopicInner withSku(ResourceSku sku) {
+        this.sku = sku;
+        return this;
     }
 
     /**
@@ -68,6 +109,46 @@ public final class TopicInner extends Resource {
      */
     public TopicInner withIdentity(IdentityInfo identity) {
         this.identity = identity;
+        return this;
+    }
+
+    /**
+     * Get the kind property: Kind of the resource.
+     *
+     * @return the kind value.
+     */
+    public ResourceKind kind() {
+        return this.kind;
+    }
+
+    /**
+     * Set the kind property: Kind of the resource.
+     *
+     * @param kind the kind value to set.
+     * @return the TopicInner object itself.
+     */
+    public TopicInner withKind(ResourceKind kind) {
+        this.kind = kind;
+        return this;
+    }
+
+    /**
+     * Get the extendedLocation property: Extended location of the resource.
+     *
+     * @return the extendedLocation value.
+     */
+    public ExtendedLocation extendedLocation() {
+        return this.extendedLocation;
+    }
+
+    /**
+     * Set the extendedLocation property: Extended location of the resource.
+     *
+     * @param extendedLocation the extendedLocation value to set.
+     * @return the TopicInner object itself.
+     */
+    public TopicInner withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.extendedLocation = extendedLocation;
         return this;
     }
 
@@ -270,8 +351,14 @@ public final class TopicInner extends Resource {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+        if (sku() != null) {
+            sku().validate();
+        }
         if (identity() != null) {
             identity().validate();
+        }
+        if (extendedLocation() != null) {
+            extendedLocation().validate();
         }
     }
 }

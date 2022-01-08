@@ -9,7 +9,6 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.SnapshotInner;
 import com.azure.resourcemanager.compute.generated.models.AccessUri;
 import com.azure.resourcemanager.compute.generated.models.CreationData;
-import com.azure.resourcemanager.compute.generated.models.DiskSecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.DiskState;
 import com.azure.resourcemanager.compute.generated.models.Encryption;
 import com.azure.resourcemanager.compute.generated.models.EncryptionSettingsCollection;
@@ -132,10 +131,6 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
 
     public String diskAccessId() {
         return this.innerModel().diskAccessId();
-    }
-
-    public DiskSecurityProfile securityProfile() {
-        return this.innerModel().securityProfile();
     }
 
     public Boolean supportsHibernation() {
@@ -323,13 +318,8 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
     }
 
     public SnapshotImpl withSupportedCapabilities(SupportedCapabilities supportedCapabilities) {
-        if (isInCreateMode()) {
-            this.innerModel().withSupportedCapabilities(supportedCapabilities);
-            return this;
-        } else {
-            this.updateSnapshot.withSupportedCapabilities(supportedCapabilities);
-            return this;
-        }
+        this.innerModel().withSupportedCapabilities(supportedCapabilities);
+        return this;
     }
 
     public SnapshotImpl withCreationData(CreationData creationData) {
@@ -390,11 +380,6 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
             this.updateSnapshot.withDiskAccessId(diskAccessId);
             return this;
         }
-    }
-
-    public SnapshotImpl withSecurityProfile(DiskSecurityProfile securityProfile) {
-        this.innerModel().withSecurityProfile(securityProfile);
-        return this;
     }
 
     public SnapshotImpl withSupportsHibernation(Boolean supportsHibernation) {

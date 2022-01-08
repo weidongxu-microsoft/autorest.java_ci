@@ -16,7 +16,7 @@ public interface Operation {
     String name();
 
     /**
-     * Gets the display property: The display of operation.
+     * Gets the display property: The object that represents the operation.
      *
      * @return the display value.
      */

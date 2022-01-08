@@ -12,7 +12,7 @@ public interface PrivateLinkScopeOperationStatus {
     /**
      * Get the status of an azure asynchronous operation associated with a private link scope operation.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param asyncOperationId The operation Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -24,7 +24,7 @@ public interface PrivateLinkScopeOperationStatus {
     /**
      * Get the status of an azure asynchronous operation associated with a private link scope operation.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param asyncOperationId The operation Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

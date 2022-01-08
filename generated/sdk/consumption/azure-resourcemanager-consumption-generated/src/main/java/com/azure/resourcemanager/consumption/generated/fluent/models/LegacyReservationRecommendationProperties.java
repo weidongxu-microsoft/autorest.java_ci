@@ -6,32 +6,17 @@ package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.consumption.generated.models.LegacySharedScopeReservationRecommendationProperties;
-import com.azure.resourcemanager.consumption.generated.models.LegacySingleScopeReservationRecommendationProperties;
 import com.azure.resourcemanager.consumption.generated.models.SkuProperty;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
 /** The properties of the reservation recommendation. */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "scope",
-    defaultImpl = LegacyReservationRecommendationProperties.class)
-@JsonTypeName("LegacyReservationRecommendationProperties")
-@JsonSubTypes({
-    @JsonSubTypes.Type(name = "Single", value = LegacySingleScopeReservationRecommendationProperties.class),
-    @JsonSubTypes.Type(name = "Shared", value = LegacySharedScopeReservationRecommendationProperties.class)
-})
 @Immutable
-public class LegacyReservationRecommendationProperties {
+public final class LegacyReservationRecommendationProperties {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(LegacyReservationRecommendationProperties.class);
 
     /*
@@ -111,6 +96,12 @@ public class LegacyReservationRecommendationProperties {
      */
     @JsonProperty(value = "firstUsageDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime firstUsageDate;
+
+    /*
+     * Shared or single recommendation.
+     */
+    @JsonProperty(value = "scope", access = JsonProperty.Access.WRITE_ONLY)
+    private String scope;
 
     /*
      * List of sku properties
@@ -233,6 +224,15 @@ public class LegacyReservationRecommendationProperties {
      */
     public OffsetDateTime firstUsageDate() {
         return this.firstUsageDate;
+    }
+
+    /**
+     * Get the scope property: Shared or single recommendation.
+     *
+     * @return the scope value.
+     */
+    public String scope() {
+        return this.scope;
     }
 
     /**

@@ -60,8 +60,8 @@ public final class LotProperties {
     /*
      * The date when the lot was added.
      */
-    @JsonProperty(value = "purchasedDate", access = JsonProperty.Access.WRITE_ONLY)
-    private OffsetDateTime purchasedDate;
+    @JsonProperty(value = "purchaseDate", access = JsonProperty.Access.WRITE_ONLY)
+    private OffsetDateTime purchaseDate;
 
     /*
      * The status of the lot.
@@ -98,12 +98,6 @@ public final class LotProperties {
      */
     @JsonProperty(value = "reseller", access = JsonProperty.Access.WRITE_ONLY)
     private Reseller reseller;
-
-    /*
-     * The eTag for the resource.
-     */
-    @JsonProperty(value = "eTag", access = JsonProperty.Access.WRITE_ONLY)
-    private String etag;
 
     /**
      * Get the originalAmount property: The original amount of a lot.
@@ -161,12 +155,12 @@ public final class LotProperties {
     }
 
     /**
-     * Get the purchasedDate property: The date when the lot was added.
+     * Get the purchaseDate property: The date when the lot was added.
      *
-     * @return the purchasedDate value.
+     * @return the purchaseDate value.
      */
-    public OffsetDateTime purchasedDate() {
-        return this.purchasedDate;
+    public OffsetDateTime purchaseDate() {
+        return this.purchaseDate;
     }
 
     /**
@@ -221,15 +215,6 @@ public final class LotProperties {
      */
     public Reseller reseller() {
         return this.reseller;
-    }
-
-    /**
-     * Get the etag property: The eTag for the resource.
-     *
-     * @return the etag value.
-     */
-    public String etag() {
-        return this.etag;
     }
 
     /**

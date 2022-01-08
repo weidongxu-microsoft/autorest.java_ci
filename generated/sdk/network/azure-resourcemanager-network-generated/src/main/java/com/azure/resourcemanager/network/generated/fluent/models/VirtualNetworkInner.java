@@ -13,7 +13,6 @@ import com.azure.resourcemanager.network.generated.models.DhcpOptions;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkBgpCommunities;
-import com.azure.resourcemanager.network.generated.models.VirtualNetworkEncryption;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -352,31 +351,6 @@ public final class VirtualNetworkInner extends Resource {
             this.innerProperties = new VirtualNetworkPropertiesFormat();
         }
         this.innerProperties().withBgpCommunities(bgpCommunities);
-        return this;
-    }
-
-    /**
-     * Get the encryption property: Indicates if encryption is enabled on virtual network and if VM without encryption
-     * is allowed in encrypted VNet.
-     *
-     * @return the encryption value.
-     */
-    public VirtualNetworkEncryption encryption() {
-        return this.innerProperties() == null ? null : this.innerProperties().encryption();
-    }
-
-    /**
-     * Set the encryption property: Indicates if encryption is enabled on virtual network and if VM without encryption
-     * is allowed in encrypted VNet.
-     *
-     * @param encryption the encryption value to set.
-     * @return the VirtualNetworkInner object itself.
-     */
-    public VirtualNetworkInner withEncryption(VirtualNetworkEncryption encryption) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new VirtualNetworkPropertiesFormat();
-        }
-        this.innerProperties().withEncryption(encryption);
         return this;
     }
 

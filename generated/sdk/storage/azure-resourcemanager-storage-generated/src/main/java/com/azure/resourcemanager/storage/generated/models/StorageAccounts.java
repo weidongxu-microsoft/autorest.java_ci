@@ -312,67 +312,6 @@ public interface StorageAccounts {
     void failover(String resourceGroupName, String accountName, Context context);
 
     /**
-     * Live Migration of storage account to enable Hns.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param requestType Required. Hierarchical namespace migration type can either be a hierarchical namespace
-     *     validation request 'HnsOnValidationRequest' or a hydration request 'HnsOnHydrationRequest'. The validation
-     *     request will validate the migration whereas the hydration request will migrate the account.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void hierarchicalNamespaceMigration(String resourceGroupName, String accountName, String requestType);
-
-    /**
-     * Live Migration of storage account to enable Hns.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param requestType Required. Hierarchical namespace migration type can either be a hierarchical namespace
-     *     validation request 'HnsOnValidationRequest' or a hydration request 'HnsOnHydrationRequest'. The validation
-     *     request will validate the migration whereas the hydration request will migrate the account.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void hierarchicalNamespaceMigration(
-        String resourceGroupName, String accountName, String requestType, Context context);
-
-    /**
-     * Abort live Migration of storage account to enable Hns.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void abortHierarchicalNamespaceMigration(String resourceGroupName, String accountName);
-
-    /**
-     * Abort live Migration of storage account to enable Hns.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void abortHierarchicalNamespaceMigration(String resourceGroupName, String accountName, Context context);
-
-    /**
      * Restore blobs in the specified blob ranges.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case

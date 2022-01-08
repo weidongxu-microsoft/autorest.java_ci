@@ -97,14 +97,14 @@ public interface CustomIpPrefix {
      *
      * @return the customIpPrefixParent value.
      */
-    SubResource customIpPrefixParent();
+    CustomIpPrefix customIpPrefixParent();
 
     /**
      * Gets the childCustomIpPrefixes property: The list of all Children for IPv6 /48 CustomIpPrefix.
      *
      * @return the childCustomIpPrefixes value.
      */
-    List<SubResource> childCustomIpPrefixes();
+    List<CustomIpPrefix> childCustomIpPrefixes();
 
     /**
      * Gets the commissionedState property: The commissioned state of the Custom IP Prefix.
@@ -300,7 +300,7 @@ public interface CustomIpPrefix {
              * @param customIpPrefixParent The Parent CustomIpPrefix for IPv6 /64 CustomIpPrefix.
              * @return the next definition stage.
              */
-            WithCreate withCustomIpPrefixParent(SubResource customIpPrefixParent);
+            WithCreate withCustomIpPrefixParent(CustomIpPrefixInner customIpPrefixParent);
         }
         /** The stage of the CustomIpPrefix definition allowing to specify commissionedState. */
         interface WithCommissionedState {

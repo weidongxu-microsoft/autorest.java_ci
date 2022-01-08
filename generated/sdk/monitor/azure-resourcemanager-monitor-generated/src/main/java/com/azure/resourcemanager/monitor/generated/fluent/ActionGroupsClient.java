@@ -18,7 +18,7 @@ public interface ActionGroupsClient {
     /**
      * Create a new action group or update an existing one.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param actionGroupName The name of the action group.
      * @param actionGroup The action group to create or use for the update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -33,7 +33,7 @@ public interface ActionGroupsClient {
     /**
      * Create a new action group or update an existing one.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param actionGroupName The name of the action group.
      * @param actionGroup The action group to create or use for the update.
      * @param context The context to associate with this operation.
@@ -49,7 +49,7 @@ public interface ActionGroupsClient {
     /**
      * Get an action group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param actionGroupName The name of the action group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -62,7 +62,7 @@ public interface ActionGroupsClient {
     /**
      * Get an action group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param actionGroupName The name of the action group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -77,7 +77,7 @@ public interface ActionGroupsClient {
     /**
      * Delete an action group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param actionGroupName The name of the action group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -89,7 +89,7 @@ public interface ActionGroupsClient {
     /**
      * Delete an action group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param actionGroupName The name of the action group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -103,7 +103,7 @@ public interface ActionGroupsClient {
     /**
      * Updates an existing action group's tags. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param actionGroupName The name of the action group.
      * @param actionGroupPatch Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -118,7 +118,7 @@ public interface ActionGroupsClient {
     /**
      * Updates an existing action group's tags. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param actionGroupName The name of the action group.
      * @param actionGroupPatch Parameters supplied to the operation.
      * @param context The context to associate with this operation.
@@ -156,7 +156,7 @@ public interface ActionGroupsClient {
     /**
      * Get a list of all action groups in a resource group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -168,7 +168,7 @@ public interface ActionGroupsClient {
     /**
      * Get a list of all action groups in a resource group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -182,7 +182,7 @@ public interface ActionGroupsClient {
      * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
      * is only supported for Email or SMS receivers.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param actionGroupName The name of the action group.
      * @param enableRequest The receiver to re-enable.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -196,7 +196,7 @@ public interface ActionGroupsClient {
      * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
      * is only supported for Email or SMS receivers.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param actionGroupName The name of the action group.
      * @param enableRequest The receiver to re-enable.
      * @param context The context to associate with this operation.

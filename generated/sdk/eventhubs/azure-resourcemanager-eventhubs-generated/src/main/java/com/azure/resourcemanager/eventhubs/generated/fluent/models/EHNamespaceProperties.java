@@ -10,7 +10,6 @@ import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
-import java.util.List;
 
 /** Namespace properties supplied for create namespace operation. */
 @Fluent
@@ -92,24 +91,6 @@ public final class EHNamespaceProperties {
      */
     @JsonProperty(value = "encryption")
     private Encryption encryption;
-
-    /*
-     * List of private endpoint connections.
-     */
-    @JsonProperty(value = "privateEndpointConnections")
-    private List<PrivateEndpointConnectionInner> privateEndpointConnections;
-
-    /*
-     * This property disables SAS authentication for the Event Hubs namespace.
-     */
-    @JsonProperty(value = "disableLocalAuth")
-    private Boolean disableLocalAuth;
-
-    /*
-     * Alternate name specified when alias and namespace names are same.
-     */
-    @JsonProperty(value = "alternateName")
-    private String alternateName;
 
     /**
      * Get the provisioningState property: Provisioning state of the Namespace.
@@ -292,67 +273,6 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Get the privateEndpointConnections property: List of private endpoint connections.
-     *
-     * @return the privateEndpointConnections value.
-     */
-    public List<PrivateEndpointConnectionInner> privateEndpointConnections() {
-        return this.privateEndpointConnections;
-    }
-
-    /**
-     * Set the privateEndpointConnections property: List of private endpoint connections.
-     *
-     * @param privateEndpointConnections the privateEndpointConnections value to set.
-     * @return the EHNamespaceProperties object itself.
-     */
-    public EHNamespaceProperties withPrivateEndpointConnections(
-        List<PrivateEndpointConnectionInner> privateEndpointConnections) {
-        this.privateEndpointConnections = privateEndpointConnections;
-        return this;
-    }
-
-    /**
-     * Get the disableLocalAuth property: This property disables SAS authentication for the Event Hubs namespace.
-     *
-     * @return the disableLocalAuth value.
-     */
-    public Boolean disableLocalAuth() {
-        return this.disableLocalAuth;
-    }
-
-    /**
-     * Set the disableLocalAuth property: This property disables SAS authentication for the Event Hubs namespace.
-     *
-     * @param disableLocalAuth the disableLocalAuth value to set.
-     * @return the EHNamespaceProperties object itself.
-     */
-    public EHNamespaceProperties withDisableLocalAuth(Boolean disableLocalAuth) {
-        this.disableLocalAuth = disableLocalAuth;
-        return this;
-    }
-
-    /**
-     * Get the alternateName property: Alternate name specified when alias and namespace names are same.
-     *
-     * @return the alternateName value.
-     */
-    public String alternateName() {
-        return this.alternateName;
-    }
-
-    /**
-     * Set the alternateName property: Alternate name specified when alias and namespace names are same.
-     *
-     * @param alternateName the alternateName value to set.
-     * @return the EHNamespaceProperties object itself.
-     */
-    public EHNamespaceProperties withAlternateName(String alternateName) {
-        this.alternateName = alternateName;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -360,9 +280,6 @@ public final class EHNamespaceProperties {
     public void validate() {
         if (encryption() != null) {
             encryption().validate();
-        }
-        if (privateEndpointConnections() != null) {
-            privateEndpointConnections().forEach(e -> e.validate());
         }
     }
 }

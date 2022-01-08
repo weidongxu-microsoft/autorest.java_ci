@@ -18,13 +18,13 @@ public final class QuotaCapability {
     /*
      * The number of cores used in the subscription.
      */
-    @JsonProperty(value = "coresUsed")
+    @JsonProperty(value = "cores_used")
     private Long coresUsed;
 
     /*
      * The number of cores that the subscription allowed.
      */
-    @JsonProperty(value = "maxCoresAllowed")
+    @JsonProperty(value = "max_cores_allowed")
     private Long maxCoresAllowed;
 
     /*

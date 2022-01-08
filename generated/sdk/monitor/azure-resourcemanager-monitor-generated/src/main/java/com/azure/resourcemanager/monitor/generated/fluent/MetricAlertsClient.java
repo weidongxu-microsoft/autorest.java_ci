@@ -39,7 +39,7 @@ public interface MetricAlertsClient {
     /**
      * Retrieve alert rule definitions in a resource group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -51,7 +51,7 @@ public interface MetricAlertsClient {
     /**
      * Retrieve alert rule definitions in a resource group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -64,7 +64,7 @@ public interface MetricAlertsClient {
     /**
      * Retrieve an alert rule definition.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -77,7 +77,7 @@ public interface MetricAlertsClient {
     /**
      * Retrieve an alert rule definition.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -92,7 +92,7 @@ public interface MetricAlertsClient {
     /**
      * Create or update an metric alert definition.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -107,7 +107,7 @@ public interface MetricAlertsClient {
     /**
      * Create or update an metric alert definition.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
      * @param context The context to associate with this operation.
@@ -123,7 +123,7 @@ public interface MetricAlertsClient {
     /**
      * Update an metric alert definition.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -137,7 +137,7 @@ public interface MetricAlertsClient {
     /**
      * Update an metric alert definition.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to update.
      * @param context The context to associate with this operation.
@@ -153,7 +153,7 @@ public interface MetricAlertsClient {
     /**
      * Delete an alert rule definition.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -165,7 +165,7 @@ public interface MetricAlertsClient {
     /**
      * Delete an alert rule definition.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

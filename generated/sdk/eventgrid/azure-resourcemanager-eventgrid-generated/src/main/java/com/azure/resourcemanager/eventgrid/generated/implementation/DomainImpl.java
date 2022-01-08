@@ -21,6 +21,7 @@ import com.azure.resourcemanager.eventgrid.generated.models.InputSchema;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchemaMapping;
 import com.azure.resourcemanager.eventgrid.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.ResourceSku;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -56,12 +57,16 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         }
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
+    public ResourceSku sku() {
+        return this.innerModel().sku();
     }
 
     public IdentityInfo identity() {
         return this.innerModel().identity();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public List<PrivateEndpointConnection> privateEndpointConnections() {
@@ -259,6 +264,16 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
             return this;
         } else {
             this.updateDomainUpdateParameters.withTags(tags);
+            return this;
+        }
+    }
+
+    public DomainImpl withSku(ResourceSku sku) {
+        if (isInCreateMode()) {
+            this.innerModel().withSku(sku);
+            return this;
+        } else {
+            this.updateDomainUpdateParameters.withSku(sku);
             return this;
         }
     }

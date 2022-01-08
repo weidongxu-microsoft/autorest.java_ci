@@ -29,6 +29,7 @@ import com.azure.resourcemanager.consumption.generated.implementation.ChargesImp
 import com.azure.resourcemanager.consumption.generated.implementation.ConsumptionManagementClientBuilder;
 import com.azure.resourcemanager.consumption.generated.implementation.CreditsImpl;
 import com.azure.resourcemanager.consumption.generated.implementation.EventsOperationsImpl;
+import com.azure.resourcemanager.consumption.generated.implementation.ForecastsImpl;
 import com.azure.resourcemanager.consumption.generated.implementation.LotsOperationsImpl;
 import com.azure.resourcemanager.consumption.generated.implementation.MarketplacesImpl;
 import com.azure.resourcemanager.consumption.generated.implementation.OperationsImpl;
@@ -46,6 +47,7 @@ import com.azure.resourcemanager.consumption.generated.models.Budgets;
 import com.azure.resourcemanager.consumption.generated.models.Charges;
 import com.azure.resourcemanager.consumption.generated.models.Credits;
 import com.azure.resourcemanager.consumption.generated.models.EventsOperations;
+import com.azure.resourcemanager.consumption.generated.models.Forecasts;
 import com.azure.resourcemanager.consumption.generated.models.LotsOperations;
 import com.azure.resourcemanager.consumption.generated.models.Marketplaces;
 import com.azure.resourcemanager.consumption.generated.models.Operations;
@@ -92,6 +94,8 @@ public final class ConsumptionManager {
     private ReservationTransactions reservationTransactions;
 
     private PriceSheets priceSheets;
+
+    private Forecasts forecasts;
 
     private Operations operations;
 
@@ -388,6 +392,14 @@ public final class ConsumptionManager {
             this.priceSheets = new PriceSheetsImpl(clientObject.getPriceSheets(), this);
         }
         return priceSheets;
+    }
+
+    /** @return Resource collection API of Forecasts. */
+    public Forecasts forecasts() {
+        if (this.forecasts == null) {
+            this.forecasts = new ForecastsImpl(clientObject.getForecasts(), this);
+        }
+        return forecasts;
     }
 
     /** @return Resource collection API of Operations. */

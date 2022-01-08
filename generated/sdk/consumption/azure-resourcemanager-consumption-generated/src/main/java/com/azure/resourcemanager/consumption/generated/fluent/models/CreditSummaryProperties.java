@@ -59,12 +59,6 @@ public final class CreditSummaryProperties {
     @JsonProperty(value = "reseller", access = JsonProperty.Access.WRITE_ONLY)
     private Reseller reseller;
 
-    /*
-     * The eTag for the resource.
-     */
-    @JsonProperty(value = "eTag", access = JsonProperty.Access.WRITE_ONLY)
-    private String etag;
-
     /**
      * Get the balanceSummary property: Summary of balances associated with this credit summary.
      *
@@ -126,15 +120,6 @@ public final class CreditSummaryProperties {
      */
     public Reseller reseller() {
         return this.reseller;
-    }
-
-    /**
-     * Get the etag property: The eTag for the resource.
-     *
-     * @return the etag value.
-     */
-    public String etag() {
-        return this.etag;
     }
 
     /**

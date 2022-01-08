@@ -4,28 +4,41 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import java.util.Collection;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /** Defines values for DirectoryType. */
-public final class DirectoryType extends ExpandableStringEnum<DirectoryType> {
-    /** Static value ActiveDirectory for DirectoryType. */
-    public static final DirectoryType ACTIVE_DIRECTORY = fromString("ActiveDirectory");
+public enum DirectoryType {
+    /** Enum value ActiveDirectory. */
+    ACTIVE_DIRECTORY("ActiveDirectory");
 
-    /**
-     * Creates or finds a DirectoryType from its string representation.
-     *
-     * @param name a name to look for.
-     * @return the corresponding DirectoryType.
-     */
-    @JsonCreator
-    public static DirectoryType fromString(String name) {
-        return fromString(name, DirectoryType.class);
+    /** The actual serialized value for a DirectoryType instance. */
+    private final String value;
+
+    DirectoryType(String value) {
+        this.value = value;
     }
 
-    /** @return known DirectoryType values. */
-    public static Collection<DirectoryType> values() {
-        return values(DirectoryType.class);
+    /**
+     * Parses a serialized value to a DirectoryType instance.
+     *
+     * @param value the serialized value to parse.
+     * @return the parsed DirectoryType object, or null if unable to parse.
+     */
+    @JsonCreator
+    public static DirectoryType fromString(String value) {
+        DirectoryType[] items = DirectoryType.values();
+        for (DirectoryType item : items) {
+            if (item.toString().equalsIgnoreCase(value)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    @JsonValue
+    @Override
+    public String toString() {
+        return this.value;
     }
 }

@@ -172,14 +172,6 @@ public interface StaticSiteArmResource {
     String provider();
 
     /**
-     * Gets the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN serving
-     * traffic to the static web app.
-     *
-     * @return the enterpriseGradeCdnStatus value.
-     */
-    EnterpriseGradeCdnStatus enterpriseGradeCdnStatus();
-
-    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -255,9 +247,7 @@ public interface StaticSiteArmResource {
                 DefinitionStages.WithBuildProperties,
                 DefinitionStages.WithStagingEnvironmentPolicy,
                 DefinitionStages.WithAllowConfigFileUpdates,
-                DefinitionStages.WithTemplateProperties,
-                DefinitionStages.WithProvider,
-                DefinitionStages.WithEnterpriseGradeCdnStatus {
+                DefinitionStages.WithTemplateProperties {
             /**
              * Executes the create request.
              *
@@ -389,30 +379,6 @@ public interface StaticSiteArmResource {
              */
             WithCreate withTemplateProperties(StaticSiteTemplateOptions templateProperties);
         }
-        /** The stage of the StaticSiteArmResource definition allowing to specify provider. */
-        interface WithProvider {
-            /**
-             * Specifies the provider property: The provider that submitted the last deployment to the primary
-             * environment of the static site..
-             *
-             * @param provider The provider that submitted the last deployment to the primary environment of the static
-             *     site.
-             * @return the next definition stage.
-             */
-            WithCreate withProvider(String provider);
-        }
-        /** The stage of the StaticSiteArmResource definition allowing to specify enterpriseGradeCdnStatus. */
-        interface WithEnterpriseGradeCdnStatus {
-            /**
-             * Specifies the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN
-             * serving traffic to the static web app..
-             *
-             * @param enterpriseGradeCdnStatus State indicating the status of the enterprise grade CDN serving traffic
-             *     to the static web app.
-             * @return the next definition stage.
-             */
-            WithCreate withEnterpriseGradeCdnStatus(EnterpriseGradeCdnStatus enterpriseGradeCdnStatus);
-        }
     }
     /**
      * Begins update for the StaticSiteArmResource resource.
@@ -430,9 +396,7 @@ public interface StaticSiteArmResource {
             UpdateStages.WithBuildProperties,
             UpdateStages.WithStagingEnvironmentPolicy,
             UpdateStages.WithAllowConfigFileUpdates,
-            UpdateStages.WithTemplateProperties,
-            UpdateStages.WithProvider,
-            UpdateStages.WithEnterpriseGradeCdnStatus {
+            UpdateStages.WithTemplateProperties {
         /**
          * Executes the update request.
          *
@@ -535,30 +499,6 @@ public interface StaticSiteArmResource {
              * @return the next definition stage.
              */
             Update withTemplateProperties(StaticSiteTemplateOptions templateProperties);
-        }
-        /** The stage of the StaticSiteArmResource update allowing to specify provider. */
-        interface WithProvider {
-            /**
-             * Specifies the provider property: The provider that submitted the last deployment to the primary
-             * environment of the static site..
-             *
-             * @param provider The provider that submitted the last deployment to the primary environment of the static
-             *     site.
-             * @return the next definition stage.
-             */
-            Update withProvider(String provider);
-        }
-        /** The stage of the StaticSiteArmResource update allowing to specify enterpriseGradeCdnStatus. */
-        interface WithEnterpriseGradeCdnStatus {
-            /**
-             * Specifies the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN
-             * serving traffic to the static web app..
-             *
-             * @param enterpriseGradeCdnStatus State indicating the status of the enterprise grade CDN serving traffic
-             *     to the static web app.
-             * @return the next definition stage.
-             */
-            Update withEnterpriseGradeCdnStatus(EnterpriseGradeCdnStatus enterpriseGradeCdnStatus);
         }
     }
     /**

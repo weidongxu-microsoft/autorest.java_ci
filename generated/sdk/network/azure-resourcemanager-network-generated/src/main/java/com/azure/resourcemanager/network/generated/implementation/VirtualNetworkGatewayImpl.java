@@ -109,10 +109,6 @@ public final class VirtualNetworkGatewayImpl
         return this.innerModel().active();
     }
 
-    public Boolean disableIpSecReplayProtection() {
-        return this.innerModel().disableIpSecReplayProtection();
-    }
-
     public SubResource gatewayDefaultSite() {
         return this.innerModel().gatewayDefaultSite();
     }
@@ -507,11 +503,6 @@ public final class VirtualNetworkGatewayImpl
 
     public VirtualNetworkGatewayImpl withActive(Boolean active) {
         this.innerModel().withActive(active);
-        return this;
-    }
-
-    public VirtualNetworkGatewayImpl withDisableIpSecReplayProtection(Boolean disableIpSecReplayProtection) {
-        this.innerModel().withDisableIpSecReplayProtection(disableIpSecReplayProtection);
         return this;
     }
 

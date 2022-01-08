@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.http.rest.Response;
-import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ArmDisasterRecoveryInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ArmDisasterRecovery;
@@ -31,14 +29,6 @@ public final class ArmDisasterRecoveryImpl
         return this.innerModel().type();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
-    public String location() {
-        return this.innerModel().location();
-    }
-
     public ProvisioningStateDR provisioningState() {
         return this.innerModel().provisioningState();
     }
@@ -57,14 +47,6 @@ public final class ArmDisasterRecoveryImpl
 
     public Long pendingReplicationOperationsCount() {
         return this.innerModel().pendingReplicationOperationsCount();
-    }
-
-    public Region region() {
-        return Region.fromName(this.regionName());
-    }
-
-    public String regionName() {
-        return this.location();
     }
 
     public ArmDisasterRecoveryInner innerModel() {

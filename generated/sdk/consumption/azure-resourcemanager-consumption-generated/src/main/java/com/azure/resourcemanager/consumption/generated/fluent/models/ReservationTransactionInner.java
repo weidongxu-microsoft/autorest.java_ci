@@ -218,33 +218,6 @@ public class ReservationTransactionInner extends ReservationTransactionResource 
     }
 
     /**
-     * Get the billingMonth property: The billing month(yyyyMMdd), on which the event initiated.
-     *
-     * @return the billingMonth value.
-     */
-    public Integer billingMonth() {
-        return this.innerProperties() == null ? null : this.innerProperties().billingMonth();
-    }
-
-    /**
-     * Get the monetaryCommitment property: The monetary commitment amount at the enrollment scope.
-     *
-     * @return the monetaryCommitment value.
-     */
-    public BigDecimal monetaryCommitment() {
-        return this.innerProperties() == null ? null : this.innerProperties().monetaryCommitment();
-    }
-
-    /**
-     * Get the overage property: The overage amount at the enrollment scope.
-     *
-     * @return the overage value.
-     */
-    public BigDecimal overage() {
-        return this.innerProperties() == null ? null : this.innerProperties().overage();
-    }
-
-    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

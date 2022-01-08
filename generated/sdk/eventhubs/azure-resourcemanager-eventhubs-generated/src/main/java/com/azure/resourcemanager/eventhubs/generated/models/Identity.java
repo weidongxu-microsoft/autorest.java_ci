@@ -7,9 +7,7 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Map;
 
 /** Properties to configure Identity for Bring your Own Keys. */
 @Fluent
@@ -19,27 +17,21 @@ public class Identity {
     /*
      * ObjectId from the KeyVault
      */
-    @JsonProperty(value = "principalId", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "principalId")
     private String principalId;
 
     /*
      * TenantId from the KeyVault
      */
-    @JsonProperty(value = "tenantId", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "tenantId")
     private String tenantId;
 
     /*
-     * Type of managed service identity.
+     * Enumerates the possible value Identity type, which currently supports
+     * only 'SystemAssigned'
      */
     @JsonProperty(value = "type")
-    private ManagedServiceIdentityType type;
-
-    /*
-     * Properties for User Assigned Identities
-     */
-    @JsonProperty(value = "userAssignedIdentities")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
-    private Map<String, UserAssignedIdentity> userAssignedIdentities;
+    private IdentityType type;
 
     /**
      * Get the principalId property: ObjectId from the KeyVault.
@@ -48,6 +40,17 @@ public class Identity {
      */
     public String principalId() {
         return this.principalId;
+    }
+
+    /**
+     * Set the principalId property: ObjectId from the KeyVault.
+     *
+     * @param principalId the principalId value to set.
+     * @return the Identity object itself.
+     */
+    public Identity withPrincipalId(String principalId) {
+        this.principalId = principalId;
+        return this;
     }
 
     /**
@@ -60,42 +63,35 @@ public class Identity {
     }
 
     /**
-     * Get the type property: Type of managed service identity.
+     * Set the tenantId property: TenantId from the KeyVault.
      *
-     * @return the type value.
-     */
-    public ManagedServiceIdentityType type() {
-        return this.type;
-    }
-
-    /**
-     * Set the type property: Type of managed service identity.
-     *
-     * @param type the type value to set.
+     * @param tenantId the tenantId value to set.
      * @return the Identity object itself.
      */
-    public Identity withType(ManagedServiceIdentityType type) {
-        this.type = type;
+    public Identity withTenantId(String tenantId) {
+        this.tenantId = tenantId;
         return this;
     }
 
     /**
-     * Get the userAssignedIdentities property: Properties for User Assigned Identities.
+     * Get the type property: Enumerates the possible value Identity type, which currently supports only
+     * 'SystemAssigned'.
      *
-     * @return the userAssignedIdentities value.
+     * @return the type value.
      */
-    public Map<String, UserAssignedIdentity> userAssignedIdentities() {
-        return this.userAssignedIdentities;
+    public IdentityType type() {
+        return this.type;
     }
 
     /**
-     * Set the userAssignedIdentities property: Properties for User Assigned Identities.
+     * Set the type property: Enumerates the possible value Identity type, which currently supports only
+     * 'SystemAssigned'.
      *
-     * @param userAssignedIdentities the userAssignedIdentities value to set.
+     * @param type the type value to set.
      * @return the Identity object itself.
      */
-    public Identity withUserAssignedIdentities(Map<String, UserAssignedIdentity> userAssignedIdentities) {
-        this.userAssignedIdentities = userAssignedIdentities;
+    public Identity withType(IdentityType type) {
+        this.type = type;
         return this;
     }
 
@@ -105,15 +101,5 @@ public class Identity {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (userAssignedIdentities() != null) {
-            userAssignedIdentities()
-                .values()
-                .forEach(
-                    e -> {
-                        if (e != null) {
-                            e.validate();
-                        }
-                    });
-        }
     }
 }

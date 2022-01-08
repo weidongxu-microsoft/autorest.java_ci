@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.http.rest.Response;
-import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AuthorizationRuleInner;
 import com.azure.resourcemanager.eventhubs.generated.models.AccessKeys;
@@ -34,14 +32,6 @@ public final class AuthorizationRuleImpl
         return this.innerModel().type();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
-    public String location() {
-        return this.innerModel().location();
-    }
-
     public List<AccessRights> rights() {
         List<AccessRights> inner = this.innerModel().rights();
         if (inner != null) {
@@ -49,14 +39,6 @@ public final class AuthorizationRuleImpl
         } else {
             return Collections.emptyList();
         }
-    }
-
-    public Region region() {
-        return Region.fromName(this.regionName());
-    }
-
-    public String regionName() {
-        return this.location();
     }
 
     public AuthorizationRuleInner innerModel() {

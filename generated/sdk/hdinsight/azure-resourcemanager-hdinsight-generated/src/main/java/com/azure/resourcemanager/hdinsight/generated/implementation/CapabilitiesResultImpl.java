@@ -9,6 +9,8 @@ import com.azure.resourcemanager.hdinsight.generated.models.CapabilitiesResult;
 import com.azure.resourcemanager.hdinsight.generated.models.QuotaCapability;
 import com.azure.resourcemanager.hdinsight.generated.models.RegionsCapability;
 import com.azure.resourcemanager.hdinsight.generated.models.VersionsCapability;
+import com.azure.resourcemanager.hdinsight.generated.models.VmSizeCompatibilityFilter;
+import com.azure.resourcemanager.hdinsight.generated.models.VmSizesCapability;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -40,6 +42,24 @@ public final class CapabilitiesResultImpl implements CapabilitiesResult {
             return Collections.unmodifiableMap(inner);
         } else {
             return Collections.emptyMap();
+        }
+    }
+
+    public Map<String, VmSizesCapability> vmsizes() {
+        Map<String, VmSizesCapability> inner = this.innerModel().vmsizes();
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
+    }
+
+    public List<VmSizeCompatibilityFilter> vmsizeFilters() {
+        List<VmSizeCompatibilityFilter> inner = this.innerModel().vmsizeFilters();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
         }
     }
 

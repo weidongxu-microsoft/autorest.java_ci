@@ -16,7 +16,7 @@ public final class SupportPackageRequestProperties {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(SupportPackageRequestProperties.class);
 
     /*
-     * Start of the timespan of the log collection
+     * MinimumTimeStamp from where logs need to be collected
      */
     @JsonProperty(value = "minimumTimeStamp")
     private OffsetDateTime minimumTimestamp;
@@ -37,7 +37,7 @@ public final class SupportPackageRequestProperties {
     private String include;
 
     /**
-     * Get the minimumTimestamp property: Start of the timespan of the log collection.
+     * Get the minimumTimestamp property: MinimumTimeStamp from where logs need to be collected.
      *
      * @return the minimumTimestamp value.
      */
@@ -46,7 +46,7 @@ public final class SupportPackageRequestProperties {
     }
 
     /**
-     * Set the minimumTimestamp property: Start of the timespan of the log collection.
+     * Set the minimumTimestamp property: MinimumTimeStamp from where logs need to be collected.
      *
      * @param minimumTimestamp the minimumTimestamp value to set.
      * @return the SupportPackageRequestProperties object itself.

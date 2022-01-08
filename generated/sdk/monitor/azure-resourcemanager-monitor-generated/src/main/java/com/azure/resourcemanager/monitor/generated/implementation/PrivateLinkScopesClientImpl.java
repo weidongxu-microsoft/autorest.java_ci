@@ -311,7 +311,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Gets a list of Azure Monitor PrivateLinkScopes within a resource group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -364,7 +364,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Gets a list of Azure Monitor PrivateLinkScopes within a resource group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -415,7 +415,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Gets a list of Azure Monitor PrivateLinkScopes within a resource group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -431,7 +431,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Gets a list of Azure Monitor PrivateLinkScopes within a resource group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -449,7 +449,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Gets a list of Azure Monitor PrivateLinkScopes within a resource group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -463,7 +463,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Gets a list of Azure Monitor PrivateLinkScopes within a resource group.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -479,7 +479,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -525,7 +525,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -570,7 +570,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -589,7 +589,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -610,7 +610,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -625,7 +625,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -641,7 +641,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -656,7 +656,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -674,7 +674,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -688,7 +688,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -703,7 +703,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Returns a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -752,7 +752,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Returns a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -799,7 +799,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Returns a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -823,7 +823,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Returns a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -838,7 +838,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Returns a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -856,7 +856,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
      * InstrumentationKey nor AppId in the Put operation.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
      *     Monitor PrivateLinkScope.
@@ -919,7 +919,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
      * InstrumentationKey nor AppId in the Put operation.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
      *     Monitor PrivateLinkScope.
@@ -981,7 +981,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
      * InstrumentationKey nor AppId in the Put operation.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
      *     Monitor PrivateLinkScope.
@@ -1010,7 +1010,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
      * InstrumentationKey nor AppId in the Put operation.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
      *     Monitor PrivateLinkScope.
@@ -1031,7 +1031,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
      * InstrumentationKey nor AppId in the Put operation.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
      *     Monitor PrivateLinkScope.
@@ -1055,7 +1055,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Updates an existing PrivateLinkScope's tags. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param privateLinkScopeTags Updated tag information to set into the PrivateLinkScope instance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1112,7 +1112,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Updates an existing PrivateLinkScope's tags. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param privateLinkScopeTags Updated tag information to set into the PrivateLinkScope instance.
      * @param context The context to associate with this operation.
@@ -1167,7 +1167,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Updates an existing PrivateLinkScope's tags. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param privateLinkScopeTags Updated tag information to set into the PrivateLinkScope instance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1192,7 +1192,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Updates an existing PrivateLinkScope's tags. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param privateLinkScopeTags Updated tag information to set into the PrivateLinkScope instance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1209,7 +1209,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     /**
      * Updates an existing PrivateLinkScope's tags. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param privateLinkScopeTags Updated tag information to set into the PrivateLinkScope instance.
      * @param context The context to associate with this operation.

@@ -47,9 +47,8 @@ public interface DiagnosticSettings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic proactive log collection settings of a device.
      */
-    DiagnosticProactiveLogCollectionSettings updateDiagnosticProactiveLogCollectionSettings(
+    void updateDiagnosticProactiveLogCollectionSettings(
         String deviceName,
         String resourceGroupName,
         DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings);
@@ -64,9 +63,8 @@ public interface DiagnosticSettings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic proactive log collection settings of a device.
      */
-    DiagnosticProactiveLogCollectionSettings updateDiagnosticProactiveLogCollectionSettings(
+    void updateDiagnosticProactiveLogCollectionSettings(
         String deviceName,
         String resourceGroupName,
         DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
@@ -107,9 +105,8 @@ public interface DiagnosticSettings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the remote support settings of a device.
      */
-    DiagnosticRemoteSupportSettings updateDiagnosticRemoteSupportSettings(
+    void updateDiagnosticRemoteSupportSettings(
         String deviceName,
         String resourceGroupName,
         DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings);
@@ -124,9 +121,8 @@ public interface DiagnosticSettings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the remote support settings of a device.
      */
-    DiagnosticRemoteSupportSettings updateDiagnosticRemoteSupportSettings(
+    void updateDiagnosticRemoteSupportSettings(
         String deviceName,
         String resourceGroupName,
         DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,

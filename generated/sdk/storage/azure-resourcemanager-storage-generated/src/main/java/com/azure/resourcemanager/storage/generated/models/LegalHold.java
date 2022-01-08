@@ -27,15 +27,6 @@ public interface LegalHold {
     List<String> tags();
 
     /**
-     * Gets the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock
-     * Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing
-     * blocks cannot be modified or deleted.
-     *
-     * @return the allowProtectedAppendWritesAll value.
-     */
-    Boolean allowProtectedAppendWritesAll();
-
-    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.LegalHoldInner object.
      *
      * @return the inner object.

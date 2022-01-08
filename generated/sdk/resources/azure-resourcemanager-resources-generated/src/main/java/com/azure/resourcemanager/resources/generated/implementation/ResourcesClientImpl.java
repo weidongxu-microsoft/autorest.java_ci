@@ -316,7 +316,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     plan/publisher and plan/name, identity and identity/principalId.
      * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
      *     `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
-     * @param top The number of results to return. If null is passed, returns all resources.
+     * @param top The maximum number of results to return. If null is passed, returns all resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -387,7 +387,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     plan/publisher and plan/name, identity and identity/principalId.
      * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
      *     `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
-     * @param top The number of results to return. If null is passed, returns all resources.
+     * @param top The maximum number of results to return. If null is passed, returns all resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -456,7 +456,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     plan/publisher and plan/name, identity and identity/principalId.
      * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
      *     `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
-     * @param top The number of results to return. If null is passed, returns all resources.
+     * @param top The maximum number of results to return. If null is passed, returns all resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -508,7 +508,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     plan/publisher and plan/name, identity and identity/principalId.
      * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
      *     `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
-     * @param top The number of results to return. If null is passed, returns all resources.
+     * @param top The maximum number of results to return. If null is passed, returns all resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -559,7 +559,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     plan/publisher and plan/name, identity and identity/principalId.
      * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
      *     `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
-     * @param top The number of results to return. If null is passed, returns all resources.
+     * @param top The maximum number of results to return. If null is passed, returns all resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1131,7 +1131,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     plan/publisher and plan/name, identity and identity/principalId.
      * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
      *     `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
-     * @param top The number of results to return. If null is passed, returns all resources.
+     * @param top The maximum number of results to return. If null is passed, returns all resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1196,7 +1196,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     plan/publisher and plan/name, identity and identity/principalId.
      * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
      *     `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
-     * @param top The number of results to return. If null is passed, returns all resources.
+     * @param top The maximum number of results to return. If null is passed, returns all resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1259,7 +1259,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     plan/publisher and plan/name, identity and identity/principalId.
      * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
      *     `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
-     * @param top The number of results to return. If null is passed, returns all resources.
+     * @param top The maximum number of results to return. If null is passed, returns all resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1305,7 +1305,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     plan/publisher and plan/name, identity and identity/principalId.
      * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
      *     `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
-     * @param top The number of results to return. If null is passed, returns all resources.
+     * @param top The maximum number of results to return. If null is passed, returns all resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1353,7 +1353,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     plan/publisher and plan/name, identity and identity/principalId.
      * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
      *     `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
-     * @param top The number of results to return. If null is passed, returns all resources.
+     * @param top The maximum number of results to return. If null is passed, returns all resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

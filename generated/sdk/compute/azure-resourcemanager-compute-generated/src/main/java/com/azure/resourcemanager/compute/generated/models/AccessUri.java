@@ -16,13 +16,6 @@ public interface AccessUri {
     String accessSas();
 
     /**
-     * Gets the securityDataAccessSas property: A SAS uri for accessing a VM guest state.
-     *
-     * @return the securityDataAccessSas value.
-     */
-    String securityDataAccessSas();
-
-    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.AccessUriInner object.
      *
      * @return the inner object.

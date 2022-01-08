@@ -107,18 +107,4 @@ public interface HDInsightManagementClient {
      * @return the VirtualMachinesClient object.
      */
     VirtualMachinesClient getVirtualMachines();
-
-    /**
-     * Gets the PrivateEndpointConnectionsClient object to access its operations.
-     *
-     * @return the PrivateEndpointConnectionsClient object.
-     */
-    PrivateEndpointConnectionsClient getPrivateEndpointConnections();
-
-    /**
-     * Gets the PrivateLinkResourcesClient object to access its operations.
-     *
-     * @return the PrivateLinkResourcesClient object.
-     */
-    PrivateLinkResourcesClient getPrivateLinkResources();
 }

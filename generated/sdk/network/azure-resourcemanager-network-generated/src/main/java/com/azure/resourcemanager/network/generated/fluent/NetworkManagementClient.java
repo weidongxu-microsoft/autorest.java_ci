@@ -263,27 +263,6 @@ public interface NetworkManagementClient {
     FirewallPolicyRuleCollectionGroupsClient getFirewallPolicyRuleCollectionGroups();
 
     /**
-     * Gets the FirewallPolicyIdpsSignaturesClient object to access its operations.
-     *
-     * @return the FirewallPolicyIdpsSignaturesClient object.
-     */
-    FirewallPolicyIdpsSignaturesClient getFirewallPolicyIdpsSignatures();
-
-    /**
-     * Gets the FirewallPolicyIdpsSignaturesOverridesClient object to access its operations.
-     *
-     * @return the FirewallPolicyIdpsSignaturesOverridesClient object.
-     */
-    FirewallPolicyIdpsSignaturesOverridesClient getFirewallPolicyIdpsSignaturesOverrides();
-
-    /**
-     * Gets the FirewallPolicyIdpsSignaturesFilterValuesClient object to access its operations.
-     *
-     * @return the FirewallPolicyIdpsSignaturesFilterValuesClient object.
-     */
-    FirewallPolicyIdpsSignaturesFilterValuesClient getFirewallPolicyIdpsSignaturesFilterValues();
-
-    /**
      * Gets the IpAllocationsClient object to access its operations.
      *
      * @return the IpAllocationsClient object.
@@ -807,13 +786,6 @@ public interface NetworkManagementClient {
      * @return the HubRouteTablesClient object.
      */
     HubRouteTablesClient getHubRouteTables();
-
-    /**
-     * Gets the RoutingIntentsClient object to access its operations.
-     *
-     * @return the RoutingIntentsClient object.
-     */
-    RoutingIntentsClient getRoutingIntents();
 
     /**
      * Gets the WebApplicationFirewallPoliciesClient object to access its operations.

@@ -10,12 +10,15 @@ import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.TopicInner;
+import com.azure.resourcemanager.eventgrid.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.eventgrid.generated.models.IdentityInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchema;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchemaMapping;
 import com.azure.resourcemanager.eventgrid.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.ResourceKind;
+import com.azure.resourcemanager.eventgrid.generated.models.ResourceSku;
 import com.azure.resourcemanager.eventgrid.generated.models.Topic;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicRegenerateKeyRequest;
@@ -56,8 +59,20 @@ public final class TopicImpl implements Topic, Topic.Definition, Topic.Update {
         }
     }
 
+    public ResourceSku sku() {
+        return this.innerModel().sku();
+    }
+
     public IdentityInfo identity() {
         return this.innerModel().identity();
+    }
+
+    public ResourceKind kind() {
+        return this.innerModel().kind();
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public SystemData systemData() {
@@ -252,6 +267,16 @@ public final class TopicImpl implements Topic, Topic.Definition, Topic.Update {
         }
     }
 
+    public TopicImpl withSku(ResourceSku sku) {
+        if (isInCreateMode()) {
+            this.innerModel().withSku(sku);
+            return this;
+        } else {
+            this.updateTopicUpdateParameters.withSku(sku);
+            return this;
+        }
+    }
+
     public TopicImpl withIdentity(IdentityInfo identity) {
         if (isInCreateMode()) {
             this.innerModel().withIdentity(identity);
@@ -260,6 +285,16 @@ public final class TopicImpl implements Topic, Topic.Definition, Topic.Update {
             this.updateTopicUpdateParameters.withIdentity(identity);
             return this;
         }
+    }
+
+    public TopicImpl withKind(ResourceKind kind) {
+        this.innerModel().withKind(kind);
+        return this;
+    }
+
+    public TopicImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
     }
 
     public TopicImpl withInputSchema(InputSchema inputSchema) {

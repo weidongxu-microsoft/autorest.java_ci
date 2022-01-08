@@ -122,14 +122,6 @@ public interface NetworkInterface {
     Boolean primary();
 
     /**
-     * Gets the vnetEncryptionSupported property: Whether the virtual machine this nic is attached to supports
-     * encryption.
-     *
-     * @return the vnetEncryptionSupported value.
-     */
-    Boolean vnetEncryptionSupported();
-
-    /**
      * Gets the enableAcceleratedNetworking property: If the network interface is accelerated networking enabled.
      *
      * @return the enableAcceleratedNetworking value.
