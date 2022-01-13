@@ -105,7 +105,7 @@ public final class MetricsClientImpl implements MetricsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a metrics query.
+     * @return the response to a metrics query along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResponseInner>> listWithResponseAsync(
@@ -182,7 +182,7 @@ public final class MetricsClientImpl implements MetricsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a metrics query.
+     * @return the response to a metrics query along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResponseInner>> listWithResponseAsync(
@@ -256,7 +256,7 @@ public final class MetricsClientImpl implements MetricsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a metrics query.
+     * @return the response to a metrics query on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ResponseInner> listAsync(
@@ -298,7 +298,7 @@ public final class MetricsClientImpl implements MetricsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a metrics query.
+     * @return the response to a metrics query on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ResponseInner> listAsync(String resourceUri) {
@@ -396,7 +396,7 @@ public final class MetricsClientImpl implements MetricsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a metrics query.
+     * @return the response to a metrics query along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ResponseInner> listWithResponse(

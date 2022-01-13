@@ -179,7 +179,7 @@ public final class ViewsClientImpl implements ViewsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing views.
+     * @return result of listing views along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ViewInner>> listSinglePageAsync() {
@@ -212,7 +212,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing views.
+     * @return result of listing views along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ViewInner>> listSinglePageAsync(Context context) {
@@ -311,7 +311,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing views.
+     * @return result of listing views along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ViewInner>> listByScopeSinglePageAsync(String scope) {
@@ -363,7 +363,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing views.
+     * @return result of listing views along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ViewInner>> listByScopeSinglePageAsync(String scope, Context context) {
@@ -515,7 +515,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the view by view name.
+     * @return the view by view name along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ViewInner>> getWithResponseAsync(String viewName) {
@@ -544,7 +544,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the view by view name.
+     * @return the view by view name along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ViewInner>> getWithResponseAsync(String viewName, Context context) {
@@ -569,7 +569,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the view by view name.
+     * @return the view by view name on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ViewInner> getAsync(String viewName) {
@@ -606,7 +606,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the view by view name.
+     * @return the view by view name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ViewInner> getWithResponse(String viewName, Context context) {
@@ -622,7 +622,8 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return states and configurations of Cost Analysis.
+     * @return states and configurations of Cost Analysis along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ViewInner>> createOrUpdateWithResponseAsync(String viewName, ViewInner parameters) {
@@ -665,7 +666,8 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return states and configurations of Cost Analysis.
+     * @return states and configurations of Cost Analysis along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ViewInner>> createOrUpdateWithResponseAsync(
@@ -700,7 +702,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return states and configurations of Cost Analysis.
+     * @return states and configurations of Cost Analysis on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ViewInner> createOrUpdateAsync(String viewName, ViewInner parameters) {
@@ -741,7 +743,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return states and configurations of Cost Analysis.
+     * @return states and configurations of Cost Analysis along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ViewInner> createOrUpdateWithResponse(String viewName, ViewInner parameters, Context context) {
@@ -755,7 +757,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String viewName) {
@@ -784,7 +786,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String viewName, Context context) {
@@ -809,7 +811,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String viewName) {
@@ -837,7 +839,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String viewName, Context context) {
@@ -866,7 +868,8 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the view for the defined scope by view name.
+     * @return the view for the defined scope by view name along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ViewInner>> getByScopeWithResponseAsync(String scope, String viewName) {
@@ -915,7 +918,8 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the view for the defined scope by view name.
+     * @return the view for the defined scope by view name along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ViewInner>> getByScopeWithResponseAsync(String scope, String viewName, Context context) {
@@ -959,7 +963,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the view for the defined scope by view name.
+     * @return the view for the defined scope by view name on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ViewInner> getByScopeAsync(String scope, String viewName) {
@@ -1026,7 +1030,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the view for the defined scope by view name.
+     * @return the view for the defined scope by view name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ViewInner> getByScopeWithResponse(String scope, String viewName, Context context) {
@@ -1057,7 +1061,8 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return states and configurations of Cost Analysis.
+     * @return states and configurations of Cost Analysis along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ViewInner>> createOrUpdateByScopeWithResponseAsync(
@@ -1120,7 +1125,8 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return states and configurations of Cost Analysis.
+     * @return states and configurations of Cost Analysis along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ViewInner>> createOrUpdateByScopeWithResponseAsync(
@@ -1173,7 +1179,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return states and configurations of Cost Analysis.
+     * @return states and configurations of Cost Analysis on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ViewInner> createOrUpdateByScopeAsync(String scope, String viewName, ViewInner parameters) {
@@ -1244,7 +1250,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return states and configurations of Cost Analysis.
+     * @return states and configurations of Cost Analysis along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ViewInner> createOrUpdateByScopeWithResponse(
@@ -1274,7 +1280,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteByScopeWithResponseAsync(String scope, String viewName) {
@@ -1323,7 +1329,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteByScopeWithResponseAsync(String scope, String viewName, Context context) {
@@ -1367,7 +1373,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteByScopeAsync(String scope, String viewName) {
@@ -1425,7 +1431,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteByScopeWithResponse(String scope, String viewName, Context context) {
@@ -1439,7 +1445,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing views.
+     * @return result of listing views along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ViewInner>> listNextSinglePageAsync(String nextLink) {
@@ -1475,7 +1481,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing views.
+     * @return result of listing views along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ViewInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1510,7 +1516,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing views.
+     * @return result of listing views along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ViewInner>> listByScopeNextSinglePageAsync(String nextLink) {
@@ -1546,7 +1552,7 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing views.
+     * @return result of listing views along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ViewInner>> listByScopeNextSinglePageAsync(String nextLink, Context context) {

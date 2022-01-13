@@ -179,7 +179,8 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoscaleSettingResourceInner>> listByResourceGroupSinglePageAsync(
@@ -233,7 +234,8 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoscaleSettingResourceInner>> listByResourceGroupSinglePageAsync(
@@ -348,7 +350,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the autoscale setting resource.
+     * @return the autoscale setting resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AutoscaleSettingResourceInner>> createOrUpdateWithResponseAsync(
@@ -406,7 +408,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the autoscale setting resource.
+     * @return the autoscale setting resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AutoscaleSettingResourceInner>> createOrUpdateWithResponseAsync(
@@ -463,7 +465,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the autoscale setting resource.
+     * @return the autoscale setting resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AutoscaleSettingResourceInner> createOrUpdateAsync(
@@ -506,7 +508,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the autoscale setting resource.
+     * @return the autoscale setting resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AutoscaleSettingResourceInner> createOrUpdateWithResponse(
@@ -525,7 +527,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String autoscaleSettingName) {
@@ -575,7 +577,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -622,7 +624,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String autoscaleSettingName) {
@@ -653,7 +655,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String autoscaleSettingName, Context context) {
@@ -668,7 +670,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an autoscale setting.
+     * @return an autoscale setting along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AutoscaleSettingResourceInner>> getByResourceGroupWithResponseAsync(
@@ -719,7 +721,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an autoscale setting.
+     * @return an autoscale setting along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AutoscaleSettingResourceInner>> getByResourceGroupWithResponseAsync(
@@ -766,7 +768,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an autoscale setting.
+     * @return an autoscale setting on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AutoscaleSettingResourceInner> getByResourceGroupAsync(
@@ -806,7 +808,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an autoscale setting.
+     * @return an autoscale setting along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AutoscaleSettingResourceInner> getByResourceGroupWithResponse(
@@ -823,7 +825,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the autoscale setting resource.
+     * @return the autoscale setting resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AutoscaleSettingResourceInner>> updateWithResponseAsync(
@@ -883,7 +885,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the autoscale setting resource.
+     * @return the autoscale setting resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AutoscaleSettingResourceInner>> updateWithResponseAsync(
@@ -942,7 +944,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the autoscale setting resource.
+     * @return the autoscale setting resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AutoscaleSettingResourceInner> updateAsync(
@@ -985,7 +987,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the autoscale setting resource.
+     * @return the autoscale setting resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AutoscaleSettingResourceInner> updateWithResponse(
@@ -1002,7 +1004,8 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoscaleSettingResourceInner>> listSinglePageAsync() {
@@ -1044,7 +1047,8 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoscaleSettingResourceInner>> listSinglePageAsync(Context context) {
@@ -1137,7 +1141,8 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoscaleSettingResourceInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1174,7 +1179,8 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoscaleSettingResourceInner>> listByResourceGroupNextSinglePageAsync(
@@ -1210,7 +1216,8 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoscaleSettingResourceInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -1247,7 +1254,8 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoscaleSettingResourceInner>> listBySubscriptionNextSinglePageAsync(

@@ -65,7 +65,7 @@ public interface CloudServiceRoleInstances {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role instance from a cloud service.
+     * @return a role instance from a cloud service along with {@link Response}.
      */
     Response<RoleInstance> getWithResponse(
         String roleInstanceName,
@@ -99,7 +99,7 @@ public interface CloudServiceRoleInstances {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the instance view of the role instance.
+     * @return the instance view of the role instance along with {@link Response}.
      */
     Response<RoleInstanceView> getInstanceViewWithResponse(
         String roleInstanceName, String resourceGroupName, String cloudServiceName, Context context);

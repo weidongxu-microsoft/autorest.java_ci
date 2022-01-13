@@ -54,7 +54,7 @@ public interface ExpressRouteCircuits {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified express route circuit.
+     * @return information about the specified express route circuit along with {@link Response}.
      */
     Response<ExpressRouteCircuit> getByResourceGroupWithResponse(
         String resourceGroupName, String circuitName, Context context);
@@ -175,7 +175,7 @@ public interface ExpressRouteCircuits {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the stats from an express route circuit in a resource group.
+     * @return all the stats from an express route circuit in a resource group along with {@link Response}.
      */
     Response<ExpressRouteCircuitStats> getStatsWithResponse(
         String resourceGroupName, String circuitName, Context context);
@@ -203,7 +203,7 @@ public interface ExpressRouteCircuits {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all stats from an express route circuit in a resource group.
+     * @return all stats from an express route circuit in a resource group along with {@link Response}.
      */
     Response<ExpressRouteCircuitStats> getPeeringStatsWithResponse(
         String resourceGroupName, String circuitName, String peeringName, Context context);
@@ -258,7 +258,7 @@ public interface ExpressRouteCircuits {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified express route circuit.
+     * @return information about the specified express route circuit along with {@link Response}.
      */
     ExpressRouteCircuit getById(String id);
 
@@ -270,7 +270,7 @@ public interface ExpressRouteCircuits {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified express route circuit.
+     * @return information about the specified express route circuit along with {@link Response}.
      */
     Response<ExpressRouteCircuit> getByIdWithResponse(String id, Context context);
 

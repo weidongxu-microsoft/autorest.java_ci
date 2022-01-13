@@ -44,7 +44,8 @@ public interface GalleryApplicationVersions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Version that you want to create or update.
+     * @return specifies information about the gallery Application Version that you want to create or update along with
+     *     {@link Response}.
      */
     Response<GalleryApplicationVersion> getWithResponse(
         String resourceGroupName,
@@ -135,7 +136,8 @@ public interface GalleryApplicationVersions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Version that you want to create or update.
+     * @return specifies information about the gallery Application Version that you want to create or update along with
+     *     {@link Response}.
      */
     GalleryApplicationVersion getById(String id);
 
@@ -149,7 +151,8 @@ public interface GalleryApplicationVersions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Version that you want to create or update.
+     * @return specifies information about the gallery Application Version that you want to create or update along with
+     *     {@link Response}.
      */
     Response<GalleryApplicationVersion> getByIdWithResponse(String id, ReplicationStatusTypes expand, Context context);
 

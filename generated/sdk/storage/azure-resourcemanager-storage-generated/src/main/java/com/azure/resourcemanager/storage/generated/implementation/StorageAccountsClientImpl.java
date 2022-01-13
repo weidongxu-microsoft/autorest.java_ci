@@ -319,7 +319,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>> checkNameAvailabilityWithResponseAsync(
@@ -365,7 +366,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>> checkNameAvailabilityWithResponseAsync(
@@ -407,7 +409,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<CheckNameAvailabilityResultInner> checkNameAvailabilityAsync(
@@ -448,7 +450,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
@@ -470,7 +472,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createWithResponseAsync(
@@ -531,7 +533,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createWithResponseAsync(
@@ -588,7 +590,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<StorageAccountInner>, StorageAccountInner> beginCreateAsync(
@@ -619,7 +621,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<StorageAccountInner>, StorageAccountInner> beginCreateAsync(
@@ -647,7 +649,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<StorageAccountInner>, StorageAccountInner> beginCreate(
@@ -670,7 +672,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<StorageAccountInner>, StorageAccountInner> beginCreate(
@@ -692,7 +694,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageAccountInner> createAsync(
@@ -717,7 +719,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageAccountInner> createAsync(
@@ -782,7 +784,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String accountName) {
@@ -830,7 +832,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -875,7 +877,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String accountName) {
@@ -909,7 +911,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String accountName, Context context) {
@@ -929,7 +931,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageAccountInner>> getByResourceGroupWithResponseAsync(
@@ -984,7 +986,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageAccountInner>> getByResourceGroupWithResponseAsync(
@@ -1035,7 +1037,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageAccountInner> getByResourceGroupAsync(
@@ -1062,7 +1064,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageAccountInner> getByResourceGroupAsync(String resourceGroupName, String accountName) {
@@ -1111,7 +1113,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StorageAccountInner> getByResourceGroupWithResponse(
@@ -1135,7 +1137,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageAccountInner>> updateWithResponseAsync(
@@ -1198,7 +1200,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageAccountInner>> updateWithResponseAsync(
@@ -1257,7 +1259,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageAccountInner> updateAsync(
@@ -1314,7 +1316,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StorageAccountInner> updateWithResponse(
@@ -1328,7 +1330,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage Accounts operation.
+     * @return the response from the List Storage Accounts operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageAccountInner>> listSinglePageAsync() {
@@ -1375,7 +1378,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage Accounts operation.
+     * @return the response from the List Storage Accounts operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageAccountInner>> listSinglePageAsync(Context context) {
@@ -1477,7 +1481,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage Accounts operation.
+     * @return the response from the List Storage Accounts operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageAccountInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1531,7 +1536,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage Accounts operation.
+     * @return the response from the List Storage Accounts operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageAccountInner>> listByResourceGroupSinglePageAsync(
@@ -1654,7 +1660,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageAccountListKeysResultInner>> listKeysWithResponseAsync(
@@ -1707,7 +1714,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageAccountListKeysResultInner>> listKeysWithResponseAsync(
@@ -1756,7 +1764,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageAccountListKeysResultInner> listKeysAsync(
@@ -1782,7 +1790,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageAccountListKeysResultInner> listKeysAsync(String resourceGroupName, String accountName) {
@@ -1828,7 +1836,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StorageAccountListKeysResultInner> listKeysWithResponse(
@@ -1847,7 +1855,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageAccountListKeysResultInner>> regenerateKeyWithResponseAsync(
@@ -1905,7 +1914,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageAccountListKeysResultInner>> regenerateKeyWithResponseAsync(
@@ -1962,7 +1972,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageAccountListKeysResultInner> regenerateKeyAsync(
@@ -2009,7 +2019,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StorageAccountListKeysResultInner> regenerateKeyWithResponse(
@@ -2031,7 +2041,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List SAS credentials operation response.
+     * @return the List SAS credentials operation response along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ListAccountSasResponseInner>> listAccountSasWithResponseAsync(
@@ -2089,7 +2100,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List SAS credentials operation response.
+     * @return the List SAS credentials operation response along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ListAccountSasResponseInner>> listAccountSasWithResponseAsync(
@@ -2143,7 +2155,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List SAS credentials operation response.
+     * @return the List SAS credentials operation response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ListAccountSasResponseInner> listAccountSasAsync(
@@ -2190,7 +2202,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List SAS credentials operation response.
+     * @return the List SAS credentials operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ListAccountSasResponseInner> listAccountSasWithResponse(
@@ -2209,7 +2221,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List service SAS credentials operation response.
+     * @return the List service SAS credentials operation response along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ListServiceSasResponseInner>> listServiceSasWithResponseAsync(
@@ -2267,7 +2280,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List service SAS credentials operation response.
+     * @return the List service SAS credentials operation response along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ListServiceSasResponseInner>> listServiceSasWithResponseAsync(
@@ -2321,7 +2335,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List service SAS credentials operation response.
+     * @return the List service SAS credentials operation response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ListServiceSasResponseInner> listServiceSasAsync(
@@ -2368,7 +2382,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List service SAS credentials operation response.
+     * @return the List service SAS credentials operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ListServiceSasResponseInner> listServiceSasWithResponse(
@@ -2388,7 +2402,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> failoverWithResponseAsync(String resourceGroupName, String accountName) {
@@ -2438,7 +2452,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> failoverWithResponseAsync(
@@ -2485,7 +2499,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginFailoverAsync(String resourceGroupName, String accountName) {
@@ -2509,7 +2523,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginFailoverAsync(
@@ -2533,7 +2547,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginFailover(String resourceGroupName, String accountName) {
@@ -2553,7 +2567,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginFailover(
@@ -2573,7 +2587,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> failoverAsync(String resourceGroupName, String accountName) {
@@ -2593,7 +2607,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> failoverAsync(String resourceGroupName, String accountName, Context context) {
@@ -2650,7 +2664,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return blob restore status.
+     * @return blob restore status along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> restoreBlobRangesWithResponseAsync(
@@ -2708,7 +2722,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return blob restore status.
+     * @return blob restore status along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> restoreBlobRangesWithResponseAsync(
@@ -2762,7 +2776,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return blob restore status.
+     * @return blob restore status along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<BlobRestoreStatusInner>, BlobRestoreStatusInner> beginRestoreBlobRangesAsync(
@@ -2791,7 +2805,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return blob restore status.
+     * @return blob restore status along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<BlobRestoreStatusInner>, BlobRestoreStatusInner> beginRestoreBlobRangesAsync(
@@ -2820,7 +2834,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return blob restore status.
+     * @return blob restore status along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<BlobRestoreStatusInner>, BlobRestoreStatusInner> beginRestoreBlobRanges(
@@ -2840,7 +2854,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return blob restore status.
+     * @return blob restore status along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<BlobRestoreStatusInner>, BlobRestoreStatusInner> beginRestoreBlobRanges(
@@ -2859,7 +2873,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return blob restore status.
+     * @return blob restore status on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<BlobRestoreStatusInner> restoreBlobRangesAsync(
@@ -2881,7 +2895,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return blob restore status.
+     * @return blob restore status on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<BlobRestoreStatusInner> restoreBlobRangesAsync(
@@ -2940,7 +2954,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> revokeUserDelegationKeysWithResponseAsync(
@@ -2989,7 +3003,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> revokeUserDelegationKeysWithResponseAsync(
@@ -3034,7 +3048,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> revokeUserDelegationKeysAsync(String resourceGroupName, String accountName) {
@@ -3069,7 +3083,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> revokeUserDelegationKeysWithResponse(
@@ -3084,7 +3098,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage Accounts operation.
+     * @return the response from the List Storage Accounts operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageAccountInner>> listNextSinglePageAsync(String nextLink) {
@@ -3120,7 +3135,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage Accounts operation.
+     * @return the response from the List Storage Accounts operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageAccountInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -3155,7 +3171,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage Accounts operation.
+     * @return the response from the List Storage Accounts operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageAccountInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -3192,7 +3209,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage Accounts operation.
+     * @return the response from the List Storage Accounts operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageAccountInner>> listByResourceGroupNextSinglePageAsync(

@@ -260,7 +260,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentOperationInner>> getAtScopeWithResponseAsync(
@@ -306,7 +306,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentOperationInner>> getAtScopeWithResponseAsync(
@@ -348,7 +348,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentOperationInner> getAtScopeAsync(String scope, String deploymentName, String operationId) {
@@ -389,7 +389,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentOperationInner> getAtScopeWithResponse(
@@ -406,7 +406,8 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtScopeSinglePageAsync(
@@ -458,7 +459,8 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtScopeSinglePageAsync(
@@ -589,7 +591,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentOperationInner>> getAtTenantScopeWithResponseAsync(
@@ -630,7 +632,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentOperationInner>> getAtTenantScopeWithResponseAsync(
@@ -662,7 +664,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentOperationInner> getAtTenantScopeAsync(String deploymentName, String operationId) {
@@ -701,7 +703,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentOperationInner> getAtTenantScopeWithResponse(
@@ -717,7 +719,8 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtTenantScopeSinglePageAsync(
@@ -764,7 +767,8 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtTenantScopeSinglePageAsync(
@@ -888,7 +892,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentOperationInner>> getAtManagementGroupScopeWithResponseAsync(
@@ -934,7 +938,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentOperationInner>> getAtManagementGroupScopeWithResponseAsync(
@@ -976,7 +980,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentOperationInner> getAtManagementGroupScopeAsync(
@@ -1019,7 +1023,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentOperationInner> getAtManagementGroupScopeWithResponse(
@@ -1036,7 +1040,8 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtManagementGroupScopeSinglePageAsync(
@@ -1088,7 +1093,8 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtManagementGroupScopeSinglePageAsync(
@@ -1220,7 +1226,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentOperationInner>> getAtSubscriptionScopeWithResponseAsync(
@@ -1268,7 +1274,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentOperationInner>> getAtSubscriptionScopeWithResponseAsync(
@@ -1312,7 +1318,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentOperationInner> getAtSubscriptionScopeAsync(String deploymentName, String operationId) {
@@ -1351,7 +1357,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentOperationInner> getAtSubscriptionScopeWithResponse(
@@ -1367,7 +1373,8 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtSubscriptionScopeSinglePageAsync(
@@ -1421,7 +1428,8 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtSubscriptionScopeSinglePageAsync(
@@ -1557,7 +1565,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentOperationInner>> getWithResponseAsync(
@@ -1611,7 +1619,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentOperationInner>> getWithResponseAsync(
@@ -1661,7 +1669,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentOperationInner> getAsync(
@@ -1703,7 +1711,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentOperationInner> getWithResponse(
@@ -1720,7 +1728,8 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listByResourceGroupSinglePageAsync(
@@ -1780,7 +1789,8 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listByResourceGroupSinglePageAsync(
@@ -1927,7 +1937,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployment operations.
+     * @return list of deployment operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtScopeNextSinglePageAsync(String nextLink) {
@@ -1963,7 +1973,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployment operations.
+     * @return list of deployment operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtScopeNextSinglePageAsync(
@@ -1999,7 +2009,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployment operations.
+     * @return list of deployment operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtTenantScopeNextSinglePageAsync(String nextLink) {
@@ -2035,7 +2045,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployment operations.
+     * @return list of deployment operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtTenantScopeNextSinglePageAsync(
@@ -2071,7 +2081,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployment operations.
+     * @return list of deployment operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtManagementGroupScopeNextSinglePageAsync(
@@ -2109,7 +2119,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployment operations.
+     * @return list of deployment operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtManagementGroupScopeNextSinglePageAsync(
@@ -2145,7 +2155,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployment operations.
+     * @return list of deployment operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtSubscriptionScopeNextSinglePageAsync(String nextLink) {
@@ -2182,7 +2192,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployment operations.
+     * @return list of deployment operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listAtSubscriptionScopeNextSinglePageAsync(
@@ -2218,7 +2228,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployment operations.
+     * @return list of deployment operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listNextSinglePageAsync(String nextLink) {
@@ -2254,7 +2264,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployment operations.
+     * @return list of deployment operations along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentOperationInner>> listNextSinglePageAsync(String nextLink, Context context) {

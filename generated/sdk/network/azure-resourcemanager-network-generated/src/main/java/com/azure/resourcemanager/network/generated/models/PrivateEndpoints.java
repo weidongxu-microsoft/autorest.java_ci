@@ -59,7 +59,7 @@ public interface PrivateEndpoints {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint by resource group.
+     * @return the specified private endpoint by resource group along with {@link Response}.
      */
     Response<PrivateEndpoint> getByResourceGroupWithResponse(
         String resourceGroupName, String privateEndpointName, String expand, Context context);
@@ -119,7 +119,7 @@ public interface PrivateEndpoints {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint by resource group.
+     * @return the specified private endpoint by resource group along with {@link Response}.
      */
     PrivateEndpoint getById(String id);
 
@@ -133,7 +133,7 @@ public interface PrivateEndpoints {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint by resource group.
+     * @return the specified private endpoint by resource group along with {@link Response}.
      */
     Response<PrivateEndpoint> getByIdWithResponse(String id, String expand, Context context);
 

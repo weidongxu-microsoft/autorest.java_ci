@@ -23,6 +23,7 @@ import com.azure.resourcemanager.network.generated.models.VpnClientParameters;
 import com.azure.resourcemanager.network.generated.models.VpnDeviceScriptParameters;
 import com.azure.resourcemanager.network.generated.models.VpnPacketCaptureStartParameters;
 import com.azure.resourcemanager.network.generated.models.VpnPacketCaptureStopParameters;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in VirtualNetworkGatewaysClient. */
 public interface VirtualNetworkGatewaysClient {
@@ -35,7 +36,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkGatewayInner>, VirtualNetworkGatewayInner> beginCreateOrUpdate(
@@ -51,7 +53,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkGatewayInner>, VirtualNetworkGatewayInner> beginCreateOrUpdate(
@@ -116,7 +119,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway by resource group.
+     * @return the specified virtual network gateway by resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VirtualNetworkGatewayInner> getByResourceGroupWithResponse(
@@ -130,7 +133,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String virtualNetworkGatewayName);
@@ -144,7 +147,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -184,7 +187,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkGatewayInner>, VirtualNetworkGatewayInner> beginUpdateTags(
@@ -200,7 +204,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkGatewayInner>, VirtualNetworkGatewayInner> beginUpdateTags(
@@ -301,7 +306,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkGatewayInner>, VirtualNetworkGatewayInner> beginReset(
@@ -318,7 +324,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkGatewayInner>, VirtualNetworkGatewayInner> beginReset(
@@ -377,7 +384,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginResetVpnClientSharedKey(
@@ -392,7 +399,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginResetVpnClientSharedKey(
@@ -432,7 +439,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginGeneratevpnclientpackage(
@@ -448,7 +455,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginGeneratevpnclientpackage(
@@ -495,7 +502,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginGenerateVpnProfile(
@@ -512,7 +519,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginGenerateVpnProfile(
@@ -560,7 +567,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group.
+     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginGetVpnProfilePackageUrl(
@@ -576,7 +584,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group.
+     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginGetVpnProfilePackageUrl(
@@ -620,7 +629,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for list BGP peer status API service call.
+     * @return response for list BGP peer status API service call along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<BgpPeerStatusListResultInner>, BgpPeerStatusListResultInner> beginGetBgpPeerStatus(
@@ -636,7 +646,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for list BGP peer status API service call.
+     * @return response for list BGP peer status API service call along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<BgpPeerStatusListResultInner>, BgpPeerStatusListResultInner> beginGetBgpPeerStatus(
@@ -708,7 +719,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for supported vpn devices.
+     * @return a xml format representation for supported vpn devices along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<String> supportedVpnDevicesWithResponse(
@@ -723,7 +734,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of virtual network gateway routes.
+     * @return list of virtual network gateway routes along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<GatewayRouteListResultInner>, GatewayRouteListResultInner> beginGetLearnedRoutes(
@@ -739,7 +751,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of virtual network gateway routes.
+     * @return list of virtual network gateway routes along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<GatewayRouteListResultInner>, GatewayRouteListResultInner> beginGetLearnedRoutes(
@@ -784,7 +797,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of virtual network gateway routes.
+     * @return list of virtual network gateway routes along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<GatewayRouteListResultInner>, GatewayRouteListResultInner> beginGetAdvertisedRoutes(
@@ -800,7 +814,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of virtual network gateway routes.
+     * @return list of virtual network gateway routes along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<GatewayRouteListResultInner>, GatewayRouteListResultInner> beginGetAdvertisedRoutes(
@@ -848,7 +863,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IPSec parameters for a virtual network gateway P2S connection.
+     * @return an IPSec parameters for a virtual network gateway P2S connection along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VpnClientIPsecParametersInner>, VpnClientIPsecParametersInner>
@@ -869,7 +885,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IPSec parameters for a virtual network gateway P2S connection.
+     * @return an IPSec parameters for a virtual network gateway P2S connection along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VpnClientIPsecParametersInner>, VpnClientIPsecParametersInner>
@@ -926,7 +943,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IPSec parameters for a virtual network gateway P2S connection.
+     * @return an IPSec parameters for a virtual network gateway P2S connection along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VpnClientIPsecParametersInner>, VpnClientIPsecParametersInner>
@@ -942,7 +960,8 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IPSec parameters for a virtual network gateway P2S connection.
+     * @return an IPSec parameters for a virtual network gateway P2S connection along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VpnClientIPsecParametersInner>, VpnClientIPsecParametersInner>
@@ -1006,7 +1025,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for vpn device configuration script.
+     * @return a xml format representation for vpn device configuration script along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<String> vpnDeviceConfigurationScriptWithResponse(
@@ -1025,7 +1044,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginStartPacketCapture(
@@ -1042,7 +1061,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginStartPacketCapture(
@@ -1111,7 +1130,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginStopPacketCapture(
@@ -1128,7 +1147,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginStopPacketCapture(
@@ -1183,7 +1202,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
-     *     specified resource group.
+     *     specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<
@@ -1201,7 +1220,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
-     *     specified resource group.
+     *     specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<
@@ -1250,7 +1269,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDisconnectVirtualNetworkGatewayVpnConnections(
@@ -1266,7 +1285,7 @@ public interface VirtualNetworkGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDisconnectVirtualNetworkGatewayVpnConnections(

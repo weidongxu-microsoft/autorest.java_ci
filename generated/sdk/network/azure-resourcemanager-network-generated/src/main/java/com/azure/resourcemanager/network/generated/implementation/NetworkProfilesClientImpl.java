@@ -186,7 +186,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -237,7 +237,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -284,7 +284,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String networkProfileName) {
@@ -304,7 +304,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -324,7 +324,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkProfileName) {
@@ -340,7 +340,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -356,7 +356,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String networkProfileName) {
@@ -374,7 +374,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String networkProfileName, Context context) {
@@ -421,7 +421,8 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network profile in a specified resource group.
+     * @return the specified network profile in a specified resource group along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkProfileInner>> getByResourceGroupWithResponseAsync(
@@ -474,7 +475,8 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network profile in a specified resource group.
+     * @return the specified network profile in a specified resource group along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkProfileInner>> getByResourceGroupWithResponseAsync(
@@ -523,7 +525,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network profile in a specified resource group.
+     * @return the specified network profile in a specified resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkProfileInner> getByResourceGroupAsync(
@@ -547,7 +549,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network profile in a specified resource group.
+     * @return the specified network profile in a specified resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkProfileInner> getByResourceGroupAsync(String resourceGroupName, String networkProfileName) {
@@ -589,7 +591,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network profile in a specified resource group.
+     * @return the specified network profile in a specified resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkProfileInner> getByResourceGroupWithResponse(
@@ -606,7 +608,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network profile resource.
+     * @return network profile resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkProfileInner>> createOrUpdateWithResponseAsync(
@@ -664,7 +666,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network profile resource.
+     * @return network profile resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkProfileInner>> createOrUpdateWithResponseAsync(
@@ -718,7 +720,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network profile resource.
+     * @return network profile resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkProfileInner> createOrUpdateAsync(
@@ -761,7 +763,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network profile resource.
+     * @return network profile resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkProfileInner> createOrUpdateWithResponse(
@@ -778,7 +780,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network profile resource.
+     * @return network profile resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkProfileInner>> updateTagsWithResponseAsync(
@@ -836,7 +838,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network profile resource.
+     * @return network profile resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkProfileInner>> updateTagsWithResponseAsync(
@@ -890,7 +892,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network profile resource.
+     * @return network profile resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkProfileInner> updateTagsAsync(
@@ -932,7 +934,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network profile resource.
+     * @return network profile resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkProfileInner> updateTagsWithResponse(
@@ -945,7 +947,8 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the network profiles in a subscription.
+     * @return all the network profiles in a subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkProfileInner>> listSinglePageAsync() {
@@ -987,7 +990,8 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the network profiles in a subscription.
+     * @return all the network profiles in a subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkProfileInner>> listSinglePageAsync(Context context) {
@@ -1079,7 +1083,8 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network profiles in a resource group.
+     * @return all network profiles in a resource group along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkProfileInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1132,7 +1137,8 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network profiles in a resource group.
+     * @return all network profiles in a resource group along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkProfileInner>> listByResourceGroupSinglePageAsync(
@@ -1243,7 +1249,8 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkProfiles API service call.
+     * @return response for ListNetworkProfiles API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkProfileInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -1279,7 +1286,8 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkProfiles API service call.
+     * @return response for ListNetworkProfiles API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkProfileInner>> listAllNextSinglePageAsync(String nextLink, Context context) {
@@ -1314,7 +1322,8 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkProfiles API service call.
+     * @return response for ListNetworkProfiles API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkProfileInner>> listNextSinglePageAsync(String nextLink) {
@@ -1350,7 +1359,8 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkProfiles API service call.
+     * @return response for ListNetworkProfiles API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkProfileInner>> listNextSinglePageAsync(String nextLink, Context context) {

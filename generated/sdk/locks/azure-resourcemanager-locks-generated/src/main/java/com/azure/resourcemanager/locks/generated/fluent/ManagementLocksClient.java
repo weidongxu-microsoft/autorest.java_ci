@@ -44,7 +44,7 @@ public interface ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the lock information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ManagementLockObjectInner> createOrUpdateAtResourceGroupLevelWithResponse(
@@ -73,7 +73,7 @@ public interface ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String lockName, Context context);
@@ -100,7 +100,7 @@ public interface ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the resource group level.
+     * @return a management lock at the resource group level along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ManagementLockObjectInner> getByResourceGroupWithResponse(
@@ -139,7 +139,7 @@ public interface ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the lock information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ManagementLockObjectInner> createOrUpdateByScopeWithResponse(
@@ -166,7 +166,7 @@ public interface ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteByScopeWithResponse(String scope, String lockName, Context context);
@@ -193,7 +193,7 @@ public interface ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock by scope.
+     * @return a management lock by scope along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ManagementLockObjectInner> getByScopeWithResponse(String scope, String lockName, Context context);
@@ -243,7 +243,7 @@ public interface ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the lock information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ManagementLockObjectInner> createOrUpdateAtResourceLevelWithResponse(
@@ -293,7 +293,7 @@ public interface ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteAtResourceLevelWithResponse(
@@ -341,7 +341,7 @@ public interface ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the management lock of a resource or any level below resource.
+     * @return the management lock of a resource or any level below resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ManagementLockObjectInner> getAtResourceLevelWithResponse(
@@ -381,7 +381,7 @@ public interface ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the lock information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ManagementLockObjectInner> createOrUpdateAtSubscriptionLevelWithResponse(
@@ -408,7 +408,7 @@ public interface ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteAtSubscriptionLevelWithResponse(String lockName, Context context);
@@ -433,7 +433,7 @@ public interface ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the subscription level.
+     * @return a management lock at the subscription level along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ManagementLockObjectInner> getAtSubscriptionLevelWithResponse(String lockName, Context context);

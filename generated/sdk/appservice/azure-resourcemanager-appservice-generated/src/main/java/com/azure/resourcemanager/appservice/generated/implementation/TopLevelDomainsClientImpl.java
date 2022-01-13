@@ -128,7 +128,8 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Top-level domains.
+     * @return collection of Top-level domains along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TopLevelDomainInner>> listSinglePageAsync() {
@@ -174,7 +175,8 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Top-level domains.
+     * @return collection of Top-level domains along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TopLevelDomainInner>> listSinglePageAsync(Context context) {
@@ -270,7 +272,7 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a top level domain object.
+     * @return a top level domain object along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TopLevelDomainInner>> getWithResponseAsync(String name) {
@@ -312,7 +314,7 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a top level domain object.
+     * @return a top level domain object along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TopLevelDomainInner>> getWithResponseAsync(String name, Context context) {
@@ -350,7 +352,7 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a top level domain object.
+     * @return a top level domain object on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TopLevelDomainInner> getAsync(String name) {
@@ -387,7 +389,7 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a top level domain object.
+     * @return a top level domain object along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<TopLevelDomainInner> getWithResponse(String name, Context context) {
@@ -402,7 +404,8 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of top-level domain legal agreements.
+     * @return collection of top-level domain legal agreements along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TldLegalAgreementInner>> listAgreementsSinglePageAsync(
@@ -462,7 +465,8 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of top-level domain legal agreements.
+     * @return collection of top-level domain legal agreements along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TldLegalAgreementInner>> listAgreementsSinglePageAsync(
@@ -587,7 +591,8 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Top-level domains.
+     * @return collection of Top-level domains along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TopLevelDomainInner>> listNextSinglePageAsync(String nextLink) {
@@ -623,7 +628,8 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Top-level domains.
+     * @return collection of Top-level domains along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TopLevelDomainInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -658,7 +664,8 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of top-level domain legal agreements.
+     * @return collection of top-level domain legal agreements along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TldLegalAgreementInner>> listAgreementsNextSinglePageAsync(String nextLink) {
@@ -694,7 +701,8 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of top-level domain legal agreements.
+     * @return collection of top-level domain legal agreements along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<TldLegalAgreementInner>> listAgreementsNextSinglePageAsync(

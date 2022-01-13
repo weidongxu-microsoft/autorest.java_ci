@@ -34,7 +34,7 @@ public interface FileServices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     Response<FileServiceItems> listWithResponse(String resourceGroupName, String accountName, Context context);
 
@@ -64,8 +64,8 @@ public interface FileServices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing)
-     *     rules.
+     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules
+     *     along with {@link Response}.
      */
     Response<FileServiceProperties> getServicePropertiesWithResponse(
         String resourceGroupName, String accountName, Context context);
@@ -77,8 +77,8 @@ public interface FileServices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing)
-     *     rules.
+     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules
+     *     along with {@link Response}.
      */
     FileServiceProperties getServicePropertiesById(String id);
 
@@ -90,8 +90,8 @@ public interface FileServices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing)
-     *     rules.
+     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules
+     *     along with {@link Response}.
      */
     Response<FileServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context);
 

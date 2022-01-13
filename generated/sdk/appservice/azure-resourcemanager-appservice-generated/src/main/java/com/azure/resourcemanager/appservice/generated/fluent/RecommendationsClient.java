@@ -61,7 +61,7 @@ public interface RecommendationsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> resetAllFiltersWithResponse(Context context);
@@ -87,7 +87,7 @@ public interface RecommendationsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> disableRecommendationForSubscriptionWithResponse(String name, Context context);
@@ -189,7 +189,7 @@ public interface RecommendationsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> disableAllForHostingEnvironmentWithResponse(
@@ -221,7 +221,7 @@ public interface RecommendationsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> resetAllFiltersForHostingEnvironmentWithResponse(
@@ -258,7 +258,7 @@ public interface RecommendationsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform.
+     * @return represents a recommendation rule that the recommendation engine can perform along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RecommendationRuleInner> getRuleDetailsByHostingEnvironmentWithResponse(
@@ -297,7 +297,7 @@ public interface RecommendationsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> disableRecommendationForHostingEnvironmentWithResponse(
@@ -395,7 +395,7 @@ public interface RecommendationsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> disableAllForWebAppWithResponse(String resourceGroupName, String siteName, Context context);
@@ -423,7 +423,7 @@ public interface RecommendationsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> resetAllFiltersForWebAppWithResponse(String resourceGroupName, String siteName, Context context);
@@ -458,7 +458,7 @@ public interface RecommendationsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform.
+     * @return represents a recommendation rule that the recommendation engine can perform along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RecommendationRuleInner> getRuleDetailsByWebAppWithResponse(
@@ -494,7 +494,7 @@ public interface RecommendationsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> disableRecommendationForSiteWithResponse(

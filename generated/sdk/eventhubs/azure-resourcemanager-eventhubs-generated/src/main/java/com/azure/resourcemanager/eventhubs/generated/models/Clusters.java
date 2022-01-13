@@ -26,7 +26,7 @@ public interface Clusters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Available Clusters operation.
+     * @return the response of the List Available Clusters operation along with {@link Response}.
      */
     Response<AvailableClustersList> listAvailableClusterRegionWithResponse(Context context);
 
@@ -74,7 +74,7 @@ public interface Clusters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the resource description of the specified Event Hubs Cluster.
+     * @return the resource description of the specified Event Hubs Cluster along with {@link Response}.
      */
     Response<Cluster> getByResourceGroupWithResponse(String resourceGroupName, String clusterName, Context context);
 
@@ -122,7 +122,7 @@ public interface Clusters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace IDs operation.
+     * @return the response of the List Namespace IDs operation along with {@link Response}.
      */
     Response<EHNamespaceIdListResult> listNamespacesWithResponse(
         String resourceGroupName, String clusterName, Context context);
@@ -134,7 +134,7 @@ public interface Clusters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the resource description of the specified Event Hubs Cluster.
+     * @return the resource description of the specified Event Hubs Cluster along with {@link Response}.
      */
     Cluster getById(String id);
 
@@ -146,7 +146,7 @@ public interface Clusters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the resource description of the specified Event Hubs Cluster.
+     * @return the resource description of the specified Event Hubs Cluster along with {@link Response}.
      */
     Response<Cluster> getByIdWithResponse(String id, Context context);
 

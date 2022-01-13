@@ -18,6 +18,7 @@ import com.azure.resourcemanager.network.generated.models.P2SVpnConnectionHealth
 import com.azure.resourcemanager.network.generated.models.P2SVpnConnectionRequest;
 import com.azure.resourcemanager.network.generated.models.P2SVpnProfileParameters;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in P2SVpnGatewaysClient. */
 public interface P2SVpnGatewaysClient {
@@ -43,7 +44,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<P2SVpnGatewayInner> getByResourceGroupWithResponse(
@@ -58,7 +59,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginCreateOrUpdate(
@@ -74,7 +75,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginCreateOrUpdate(
@@ -120,7 +121,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginUpdateTags(
@@ -136,7 +137,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginUpdateTags(
@@ -180,7 +181,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String gatewayName);
@@ -194,7 +195,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String gatewayName, Context context);
@@ -279,7 +280,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginReset(
@@ -294,7 +295,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginReset(
@@ -336,7 +337,8 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner> beginGenerateVpnProfile(
@@ -352,7 +354,8 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner> beginGenerateVpnProfile(
@@ -397,7 +400,8 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginGetP2SVpnConnectionHealth(
@@ -412,7 +416,8 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginGetP2SVpnConnectionHealth(
@@ -456,7 +461,7 @@ public interface P2SVpnGatewaysClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     *     specified resource group.
+     *     specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnConnectionHealthInner>, P2SVpnConnectionHealthInner>
@@ -475,7 +480,7 @@ public interface P2SVpnGatewaysClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     *     specified resource group.
+     *     specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<P2SVpnConnectionHealthInner>, P2SVpnConnectionHealthInner>
@@ -526,7 +531,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDisconnectP2SVpnConnections(
@@ -542,7 +547,7 @@ public interface P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDisconnectP2SVpnConnections(

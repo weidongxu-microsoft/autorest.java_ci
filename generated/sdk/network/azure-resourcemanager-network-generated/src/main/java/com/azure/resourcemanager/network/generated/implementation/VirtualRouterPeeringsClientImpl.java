@@ -152,7 +152,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -208,7 +208,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -260,7 +260,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -283,7 +283,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -305,7 +305,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -323,7 +323,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -340,7 +340,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String virtualRouterName, String peeringName) {
@@ -359,7 +359,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(
@@ -409,7 +409,8 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router Peering.
+     * @return the specified Virtual Router Peering along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualRouterPeeringInner>> getWithResponseAsync(
@@ -465,7 +466,8 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router Peering.
+     * @return the specified Virtual Router Peering along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualRouterPeeringInner>> getWithResponseAsync(
@@ -517,7 +519,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router Peering.
+     * @return the specified Virtual Router Peering on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualRouterPeeringInner> getAsync(
@@ -559,7 +561,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router Peering.
+     * @return the specified Virtual Router Peering along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VirtualRouterPeeringInner> getWithResponse(
@@ -577,7 +579,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Router Peering resource.
+     * @return virtual Router Peering resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -640,7 +642,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Router Peering resource.
+     * @return virtual Router Peering resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -703,7 +705,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Router Peering resource.
+     * @return virtual Router Peering resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualRouterPeeringInner>, VirtualRouterPeeringInner> beginCreateOrUpdateAsync(
@@ -731,7 +733,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Router Peering resource.
+     * @return virtual Router Peering resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualRouterPeeringInner>, VirtualRouterPeeringInner> beginCreateOrUpdateAsync(
@@ -763,7 +765,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Router Peering resource.
+     * @return virtual Router Peering resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualRouterPeeringInner>, VirtualRouterPeeringInner> beginCreateOrUpdate(
@@ -782,7 +784,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Router Peering resource.
+     * @return virtual Router Peering resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualRouterPeeringInner>, VirtualRouterPeeringInner> beginCreateOrUpdate(
@@ -805,7 +807,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Router Peering resource.
+     * @return virtual Router Peering resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualRouterPeeringInner> createOrUpdateAsync(
@@ -826,7 +828,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Router Peering resource.
+     * @return virtual Router Peering resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualRouterPeeringInner> createOrUpdateAsync(
@@ -889,7 +891,8 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouterPeerings API service call.
+     * @return response for ListVirtualRouterPeerings API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualRouterPeeringInner>> listSinglePageAsync(
@@ -949,7 +952,8 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouterPeerings API service call.
+     * @return response for ListVirtualRouterPeerings API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualRouterPeeringInner>> listSinglePageAsync(
@@ -1072,7 +1076,8 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouterPeerings API service call.
+     * @return response for ListVirtualRouterPeerings API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualRouterPeeringInner>> listNextSinglePageAsync(String nextLink) {
@@ -1108,7 +1113,8 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouterPeerings API service call.
+     * @return response for ListVirtualRouterPeerings API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualRouterPeeringInner>> listNextSinglePageAsync(String nextLink, Context context) {

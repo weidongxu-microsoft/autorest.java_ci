@@ -384,7 +384,7 @@ public interface PartnerNamespace {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return shared access keys of the partner namespace.
+     * @return shared access keys of the partner namespace along with {@link Response}.
      */
     Response<PartnerNamespaceSharedAccessKeys> listSharedAccessKeysWithResponse(Context context);
 
@@ -407,7 +407,7 @@ public interface PartnerNamespace {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return shared access keys of the partner namespace.
+     * @return shared access keys of the partner namespace along with {@link Response}.
      */
     Response<PartnerNamespaceSharedAccessKeys> regenerateKeyWithResponse(
         PartnerNamespaceRegenerateKeyRequest regenerateKeyRequest, Context context);

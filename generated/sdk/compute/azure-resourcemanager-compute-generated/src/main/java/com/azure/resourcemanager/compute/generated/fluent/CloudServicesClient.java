@@ -15,6 +15,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.CloudServiceInn
 import com.azure.resourcemanager.compute.generated.fluent.models.CloudServiceInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.models.CloudServiceUpdate;
 import com.azure.resourcemanager.compute.generated.models.RoleInstances;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in CloudServicesClient. */
 public interface CloudServicesClient {
@@ -28,7 +29,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the cloud service.
+     * @return describes the cloud service along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<CloudServiceInner>, CloudServiceInner> beginCreateOrUpdate(
@@ -45,7 +46,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the cloud service.
+     * @return describes the cloud service along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<CloudServiceInner>, CloudServiceInner> beginCreateOrUpdate(
@@ -107,7 +108,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the cloud service.
+     * @return describes the cloud service along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<CloudServiceInner>, CloudServiceInner> beginUpdate(
@@ -124,7 +125,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the cloud service.
+     * @return describes the cloud service along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<CloudServiceInner>, CloudServiceInner> beginUpdate(
@@ -185,7 +186,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String cloudServiceName);
@@ -200,7 +201,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String cloudServiceName, Context context);
@@ -256,7 +257,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the cloud service.
+     * @return describes the cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CloudServiceInner> getByResourceGroupWithResponse(
@@ -286,7 +287,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a cloud service.
+     * @return the status of a cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CloudServiceInstanceViewInner> getInstanceViewWithResponse(
@@ -358,7 +359,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginStart(String resourceGroupName, String cloudServiceName);
@@ -373,7 +374,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginStart(String resourceGroupName, String cloudServiceName, Context context);
@@ -415,7 +416,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginPowerOff(String resourceGroupName, String cloudServiceName);
@@ -431,7 +432,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginPowerOff(
@@ -476,7 +477,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginRestart(
@@ -493,7 +494,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginRestart(
@@ -551,7 +552,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginReimage(
@@ -568,7 +569,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginReimage(
@@ -628,7 +629,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginRebuild(
@@ -647,7 +648,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginRebuild(
@@ -711,7 +712,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteInstances(
@@ -728,7 +729,7 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteInstances(

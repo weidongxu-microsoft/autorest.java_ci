@@ -68,7 +68,7 @@ public interface BlobServices {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS
-     *     (Cross-Origin Resource Sharing) rules.
+     *     (Cross-Origin Resource Sharing) rules along with {@link Response}.
      */
     Response<BlobServiceProperties> getServicePropertiesWithResponse(
         String resourceGroupName, String accountName, Context context);
@@ -82,7 +82,7 @@ public interface BlobServices {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS
-     *     (Cross-Origin Resource Sharing) rules.
+     *     (Cross-Origin Resource Sharing) rules along with {@link Response}.
      */
     BlobServiceProperties getServicePropertiesById(String id);
 
@@ -96,7 +96,7 @@ public interface BlobServices {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS
-     *     (Cross-Origin Resource Sharing) rules.
+     *     (Cross-Origin Resource Sharing) rules along with {@link Response}.
      */
     Response<BlobServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context);
 

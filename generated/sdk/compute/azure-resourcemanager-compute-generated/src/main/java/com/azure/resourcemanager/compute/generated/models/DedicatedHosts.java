@@ -60,7 +60,7 @@ public interface DedicatedHosts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Dedicated host.
+     * @return specifies information about the Dedicated host along with {@link Response}.
      */
     Response<DedicatedHost> getWithResponse(
         String resourceGroupName, String hostGroupName, String hostname, InstanceViewTypes expand, Context context);
@@ -99,7 +99,7 @@ public interface DedicatedHosts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Dedicated host.
+     * @return specifies information about the Dedicated host along with {@link Response}.
      */
     DedicatedHost getById(String id);
 
@@ -113,7 +113,7 @@ public interface DedicatedHosts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Dedicated host.
+     * @return specifies information about the Dedicated host along with {@link Response}.
      */
     Response<DedicatedHost> getByIdWithResponse(String id, InstanceViewTypes expand, Context context);
 

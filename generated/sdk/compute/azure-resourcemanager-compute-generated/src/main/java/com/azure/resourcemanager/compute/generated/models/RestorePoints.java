@@ -61,7 +61,7 @@ public interface RestorePoints {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return restore Point details.
+     * @return restore Point details along with {@link Response}.
      */
     Response<RestorePoint> getWithResponse(
         String resourceGroupName, String restorePointCollectionName, String restorePointName, Context context);
@@ -74,7 +74,7 @@ public interface RestorePoints {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return restore Point details.
+     * @return restore Point details along with {@link Response}.
      */
     RestorePoint getById(String id);
 
@@ -87,7 +87,7 @@ public interface RestorePoints {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return restore Point details.
+     * @return restore Point details along with {@link Response}.
      */
     Response<RestorePoint> getByIdWithResponse(String id, Context context);
 

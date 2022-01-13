@@ -31,7 +31,7 @@ public interface VpnServerConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfiguration Resource.
+     * @return vpnServerConfiguration Resource along with {@link Response}.
      */
     Response<VpnServerConfiguration> getByResourceGroupWithResponse(
         String resourceGroupName, String vpnServerConfigurationName, Context context);
@@ -109,7 +109,7 @@ public interface VpnServerConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfiguration Resource.
+     * @return vpnServerConfiguration Resource along with {@link Response}.
      */
     VpnServerConfiguration getById(String id);
 
@@ -121,7 +121,7 @@ public interface VpnServerConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfiguration Resource.
+     * @return vpnServerConfiguration Resource along with {@link Response}.
      */
     Response<VpnServerConfiguration> getByIdWithResponse(String id, Context context);
 

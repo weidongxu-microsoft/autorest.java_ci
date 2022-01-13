@@ -142,7 +142,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -205,7 +206,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -268,7 +270,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<LinkedServiceInner>, LinkedServiceInner> beginCreateOrUpdateAsync(
@@ -296,7 +299,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<LinkedServiceInner>, LinkedServiceInner> beginCreateOrUpdateAsync(
@@ -324,7 +328,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<LinkedServiceInner>, LinkedServiceInner> beginCreateOrUpdate(
@@ -344,7 +349,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<LinkedServiceInner>, LinkedServiceInner> beginCreateOrUpdate(
@@ -367,7 +373,7 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LinkedServiceInner> createOrUpdateAsync(
@@ -388,7 +394,7 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LinkedServiceInner> createOrUpdateAsync(
@@ -452,7 +458,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -508,7 +515,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -560,7 +568,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<LinkedServiceInner>, LinkedServiceInner> beginDeleteAsync(
@@ -587,7 +596,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<LinkedServiceInner>, LinkedServiceInner> beginDeleteAsync(
@@ -610,7 +620,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<LinkedServiceInner>, LinkedServiceInner> beginDelete(
@@ -628,7 +639,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<LinkedServiceInner>, LinkedServiceInner> beginDelete(
@@ -645,7 +657,7 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LinkedServiceInner> deleteAsync(
@@ -665,7 +677,7 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Linked service resource container.
+     * @return the top level Linked service resource container on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LinkedServiceInner> deleteAsync(
@@ -718,7 +730,7 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a linked service instance.
+     * @return a linked service instance along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LinkedServiceInner>> getWithResponseAsync(
@@ -774,7 +786,7 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a linked service instance.
+     * @return a linked service instance along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LinkedServiceInner>> getWithResponseAsync(
@@ -826,7 +838,7 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a linked service instance.
+     * @return a linked service instance on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LinkedServiceInner> getAsync(
@@ -868,7 +880,7 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a linked service instance.
+     * @return a linked service instance along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<LinkedServiceInner> getWithResponse(
@@ -884,7 +896,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the linked services instances in a workspace.
+     * @return the linked services instances in a workspace along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LinkedServiceInner>> listByWorkspaceSinglePageAsync(
@@ -938,7 +951,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the linked services instances in a workspace.
+     * @return the linked services instances in a workspace along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LinkedServiceInner>> listByWorkspaceSinglePageAsync(

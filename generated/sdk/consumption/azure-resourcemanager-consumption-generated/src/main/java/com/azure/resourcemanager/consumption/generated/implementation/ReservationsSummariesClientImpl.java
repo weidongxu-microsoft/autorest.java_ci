@@ -150,7 +150,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderSinglePageAsync(
@@ -204,7 +205,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderSinglePageAsync(
@@ -349,7 +351,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderAndReservationSinglePageAsync(
@@ -408,7 +411,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderAndReservationSinglePageAsync(
@@ -576,7 +580,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listSinglePageAsync(
@@ -648,7 +653,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listSinglePageAsync(
@@ -864,7 +870,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderNextSinglePageAsync(String nextLink) {
@@ -901,7 +908,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderNextSinglePageAsync(
@@ -937,7 +945,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderAndReservationNextSinglePageAsync(
@@ -977,7 +986,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listByReservationOrderAndReservationNextSinglePageAsync(
@@ -1013,7 +1023,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listNextSinglePageAsync(String nextLink) {
@@ -1049,7 +1060,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listNextSinglePageAsync(String nextLink, Context context) {

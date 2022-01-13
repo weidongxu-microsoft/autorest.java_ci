@@ -39,7 +39,7 @@ public interface TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteValueWithResponse(String tagName, String tagValue, Context context);
@@ -68,7 +68,7 @@ public interface TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return tag information.
+     * @return tag information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TagValueInner> createOrUpdateValueWithResponse(String tagName, String tagValue, Context context);
@@ -97,7 +97,7 @@ public interface TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return tag details.
+     * @return tag details along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TagDetailsInner> createOrUpdateWithResponse(String tagName, Context context);
@@ -125,7 +125,7 @@ public interface TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String tagName, Context context);
@@ -180,7 +180,7 @@ public interface TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper resource for tags API requests and responses.
+     * @return wrapper resource for tags API requests and responses along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TagsResourceInner> createOrUpdateAtScopeWithResponse(
@@ -216,7 +216,7 @@ public interface TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper resource for tags API requests and responses.
+     * @return wrapper resource for tags API requests and responses along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TagsResourceInner> updateAtScopeWithResponse(String scope, TagsPatchResource parameters, Context context);
@@ -241,7 +241,7 @@ public interface TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the entire set of tags on a resource or subscription.
+     * @return the entire set of tags on a resource or subscription along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TagsResourceInner> getAtScopeWithResponse(String scope, Context context);
@@ -265,7 +265,7 @@ public interface TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteAtScopeWithResponse(String scope, Context context);

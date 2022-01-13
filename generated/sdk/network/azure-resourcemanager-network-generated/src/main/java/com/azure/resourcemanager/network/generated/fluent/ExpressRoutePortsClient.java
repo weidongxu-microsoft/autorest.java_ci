@@ -15,6 +15,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.ExpressRoutePor
 import com.azure.resourcemanager.network.generated.fluent.models.GenerateExpressRoutePortsLoaResultInner;
 import com.azure.resourcemanager.network.generated.models.GenerateExpressRoutePortsLoaRequest;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ExpressRoutePortsClient. */
 public interface ExpressRoutePortsClient {
@@ -26,7 +27,7 @@ public interface ExpressRoutePortsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String expressRoutePortName);
@@ -40,7 +41,7 @@ public interface ExpressRoutePortsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -93,7 +94,7 @@ public interface ExpressRoutePortsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute Port.
+     * @return expressRoute Port along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ExpressRoutePortInner> getByResourceGroupWithResponse(
@@ -108,7 +109,7 @@ public interface ExpressRoutePortsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute Port.
+     * @return expressRoute Port along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRoutePortInner>, ExpressRoutePortInner> beginCreateOrUpdate(
@@ -124,7 +125,7 @@ public interface ExpressRoutePortsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute Port.
+     * @return expressRoute Port along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRoutePortInner>, ExpressRoutePortInner> beginCreateOrUpdate(
@@ -185,7 +186,7 @@ public interface ExpressRoutePortsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute Port.
+     * @return expressRoute Port along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ExpressRoutePortInner> updateTagsWithResponse(
@@ -263,7 +264,7 @@ public interface ExpressRoutePortsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GenerateExpressRoutePortsLOA API service call.
+     * @return response for GenerateExpressRoutePortsLOA API service call along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<GenerateExpressRoutePortsLoaResultInner> generateLoaWithResponse(

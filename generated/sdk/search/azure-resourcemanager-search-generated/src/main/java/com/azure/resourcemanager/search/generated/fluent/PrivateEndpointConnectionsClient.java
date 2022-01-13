@@ -52,7 +52,8 @@ public interface PrivateEndpointConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an existing Private Endpoint connection to the Azure Cognitive Search service.
+     * @return describes an existing Private Endpoint connection to the Azure Cognitive Search service along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateEndpointConnectionInner> updateWithResponse(
@@ -96,7 +97,8 @@ public interface PrivateEndpointConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the private endpoint connection to the search service in the given resource group.
+     * @return the details of the private endpoint connection to the search service in the given resource group along
+     *     with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateEndpointConnectionInner> getWithResponse(
@@ -139,7 +141,8 @@ public interface PrivateEndpointConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an existing Private Endpoint connection to the Azure Cognitive Search service.
+     * @return describes an existing Private Endpoint connection to the Azure Cognitive Search service along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateEndpointConnectionInner> deleteWithResponse(

@@ -70,7 +70,7 @@ public interface WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource.
+     * @return description of the WCF relay resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<WcfRelayInner> createOrUpdateWithResponse(
@@ -99,7 +99,7 @@ public interface WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(
@@ -129,7 +129,7 @@ public interface WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource.
+     * @return description of the WCF relay resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<WcfRelayInner> getWithResponse(
@@ -199,7 +199,7 @@ public interface WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return description of a namespace authorization rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AuthorizationRuleInner> createOrUpdateAuthorizationRuleWithResponse(
@@ -236,7 +236,7 @@ public interface WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteAuthorizationRuleWithResponse(
@@ -273,7 +273,7 @@ public interface WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return authorizationRule for a WCF relay by name.
+     * @return authorizationRule for a WCF relay by name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
@@ -310,7 +310,7 @@ public interface WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AccessKeysInner> listKeysWithResponse(
@@ -353,7 +353,7 @@ public interface WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AccessKeysInner> regenerateKeysWithResponse(

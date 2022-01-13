@@ -35,7 +35,7 @@ public interface DiagnosticSettingsCategoriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic settings category for the specified resource.
+     * @return the diagnostic settings category for the specified resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DiagnosticSettingsCategoryResourceInner> getWithResponse(String resourceUri, String name, Context context);
@@ -60,7 +60,7 @@ public interface DiagnosticSettingsCategoriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of diagnostic setting category resources.
+     * @return represents a collection of diagnostic setting category resources along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DiagnosticSettingsCategoryResourceCollectionInner> listWithResponse(String resourceUri, Context context);

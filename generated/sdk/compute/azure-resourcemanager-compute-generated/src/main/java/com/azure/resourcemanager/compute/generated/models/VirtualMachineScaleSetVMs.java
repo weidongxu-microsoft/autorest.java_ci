@@ -215,7 +215,7 @@ public interface VirtualMachineScaleSetVMs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual machine from a VM scale set.
+     * @return a virtual machine from a VM scale set along with {@link Response}.
      */
     Response<VirtualMachineScaleSetVM> getWithResponse(
         String resourceGroupName, String vmScaleSetName, String instanceId, InstanceViewTypes expand, Context context);
@@ -244,7 +244,7 @@ public interface VirtualMachineScaleSetVMs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a virtual machine from a VM scale set.
+     * @return the status of a virtual machine from a VM scale set along with {@link Response}.
      */
     Response<VirtualMachineScaleSetVMInstanceView> getInstanceViewWithResponse(
         String resourceGroupName, String vmScaleSetName, String instanceId, Context context);
@@ -435,7 +435,7 @@ public interface VirtualMachineScaleSetVMs {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SAS URIs of the console screenshot and serial log blobs.
+     * @return the SAS URIs of the console screenshot and serial log blobs along with {@link Response}.
      */
     Response<RetrieveBootDiagnosticsDataResult> retrieveBootDiagnosticsDataWithResponse(
         String resourceGroupName,
@@ -491,7 +491,7 @@ public interface VirtualMachineScaleSetVMs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> simulateEvictionWithResponse(
         String resourceGroupName, String vmScaleSetName, String instanceId, Context context);

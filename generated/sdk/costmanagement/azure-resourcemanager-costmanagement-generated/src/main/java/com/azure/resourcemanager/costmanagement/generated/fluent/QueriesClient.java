@@ -64,7 +64,7 @@ public interface QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<QueryResultInner> usageWithResponse(String scope, QueryDefinition parameters, Context context);
@@ -102,7 +102,7 @@ public interface QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<QueryResultInner> usageByExternalCloudProviderTypeWithResponse(

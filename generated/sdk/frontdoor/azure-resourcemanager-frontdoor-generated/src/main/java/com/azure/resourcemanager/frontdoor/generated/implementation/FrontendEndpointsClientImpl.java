@@ -150,7 +150,8 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list frontend endpoints.
+     * @return result of the request to list frontend endpoints along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontendEndpointInner>> listByFrontDoorSinglePageAsync(
@@ -209,7 +210,8 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list frontend endpoints.
+     * @return result of the request to list frontend endpoints along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontendEndpointInner>> listByFrontDoorSinglePageAsync(
@@ -333,7 +335,8 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Frontend endpoint with the specified name within the specified Front Door.
+     * @return a Frontend endpoint with the specified name within the specified Front Door along with {@link Response}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<FrontendEndpointInner>> getWithResponseAsync(
@@ -389,7 +392,8 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Frontend endpoint with the specified name within the specified Front Door.
+     * @return a Frontend endpoint with the specified name within the specified Front Door along with {@link Response}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<FrontendEndpointInner>> getWithResponseAsync(
@@ -441,7 +445,8 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Frontend endpoint with the specified name within the specified Front Door.
+     * @return a Frontend endpoint with the specified name within the specified Front Door on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<FrontendEndpointInner> getAsync(
@@ -483,7 +488,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Frontend endpoint with the specified name within the specified Front Door.
+     * @return a Frontend endpoint with the specified name within the specified Front Door along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<FrontendEndpointInner> getWithResponse(
@@ -501,7 +506,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> enableHttpsWithResponseAsync(
@@ -569,7 +574,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> enableHttpsWithResponseAsync(
@@ -634,7 +639,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginEnableHttpsAsync(
@@ -662,7 +667,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginEnableHttpsAsync(
@@ -690,7 +695,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginEnableHttps(
@@ -713,7 +718,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginEnableHttps(
@@ -737,7 +742,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> enableHttpsAsync(
@@ -761,7 +766,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> enableHttpsAsync(
@@ -828,7 +833,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> disableHttpsWithResponseAsync(
@@ -884,7 +889,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> disableHttpsWithResponseAsync(
@@ -936,7 +941,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDisableHttpsAsync(
@@ -959,7 +964,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDisableHttpsAsync(
@@ -981,7 +986,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDisableHttps(
@@ -999,7 +1004,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDisableHttps(
@@ -1016,7 +1021,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> disableHttpsAsync(String resourceGroupName, String frontDoorName, String frontendEndpointName) {
@@ -1035,7 +1040,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> disableHttpsAsync(
@@ -1084,7 +1089,8 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list frontend endpoints.
+     * @return result of the request to list frontend endpoints along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontendEndpointInner>> listByFrontDoorNextSinglePageAsync(String nextLink) {
@@ -1120,7 +1126,8 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list frontend endpoints.
+     * @return result of the request to list frontend endpoints along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontendEndpointInner>> listByFrontDoorNextSinglePageAsync(

@@ -42,7 +42,8 @@ public interface DedicatedHostGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
+     *     with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DedicatedHostGroupInner> createOrUpdateWithResponse(
@@ -72,7 +73,8 @@ public interface DedicatedHostGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
+     *     with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DedicatedHostGroupInner> updateWithResponse(
@@ -99,7 +101,7 @@ public interface DedicatedHostGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String hostGroupName, Context context);
@@ -129,7 +131,8 @@ public interface DedicatedHostGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
+     *     with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DedicatedHostGroupInner> getByResourceGroupWithResponse(

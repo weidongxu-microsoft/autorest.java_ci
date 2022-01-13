@@ -87,7 +87,8 @@ public final class ClassicAdministratorsClientImpl implements ClassicAdministrat
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return service administrator, account administrator, and co-administrators for the subscription.
+     * @return service administrator, account administrator, and co-administrators for the subscription along with
+     *     {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClassicAdministratorInner>> listSinglePageAsync() {
@@ -129,7 +130,8 @@ public final class ClassicAdministratorsClientImpl implements ClassicAdministrat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return service administrator, account administrator, and co-administrators for the subscription.
+     * @return service administrator, account administrator, and co-administrators for the subscription along with
+     *     {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClassicAdministratorInner>> listSinglePageAsync(Context context) {
@@ -221,7 +223,8 @@ public final class ClassicAdministratorsClientImpl implements ClassicAdministrat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return classicAdministrator list result information.
+     * @return classicAdministrator list result information along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClassicAdministratorInner>> listNextSinglePageAsync(String nextLink) {
@@ -257,7 +260,8 @@ public final class ClassicAdministratorsClientImpl implements ClassicAdministrat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return classicAdministrator list result information.
+     * @return classicAdministrator list result information along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClassicAdministratorInner>> listNextSinglePageAsync(String nextLink, Context context) {

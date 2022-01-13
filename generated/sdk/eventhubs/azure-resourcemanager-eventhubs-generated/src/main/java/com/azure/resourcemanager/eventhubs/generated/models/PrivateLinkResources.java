@@ -30,7 +30,7 @@ public interface PrivateLinkResources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lists of resources that supports Privatelinks.
+     * @return lists of resources that supports Privatelinks along with {@link Response}.
      */
     Response<PrivateLinkResourcesListResult> getWithResponse(
         String resourceGroupName, String namespaceName, Context context);

@@ -83,7 +83,7 @@ public interface FileShares {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a specified share.
+     * @return properties of a specified share along with {@link Response}.
      */
     Response<FileShare> getWithResponse(
         String resourceGroupName,
@@ -129,7 +129,7 @@ public interface FileShares {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName,
@@ -171,7 +171,7 @@ public interface FileShares {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> restoreWithResponse(
         String resourceGroupName, String accountName, String shareName, DeletedShare deletedShare, Context context);
@@ -228,7 +228,7 @@ public interface FileShares {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a specified share.
+     * @return properties of a specified share along with {@link Response}.
      */
     FileShare getById(String id);
 
@@ -243,7 +243,7 @@ public interface FileShares {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a specified share.
+     * @return properties of a specified share along with {@link Response}.
      */
     Response<FileShare> getByIdWithResponse(String id, String expand, String xMsSnapshot, Context context);
 
@@ -271,7 +271,7 @@ public interface FileShares {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, String xMsSnapshot, String include, Context context);
 

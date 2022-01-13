@@ -268,7 +268,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list hybrid connection operation.
+     * @return the response of the list hybrid connection operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HybridConnectionInner>> listByNamespaceSinglePageAsync(
@@ -326,7 +327,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list hybrid connection operation.
+     * @return the response of the list hybrid connection operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HybridConnectionInner>> listByNamespaceSinglePageAsync(
@@ -450,7 +452,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of hybrid connection resource.
+     * @return description of hybrid connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionInner>> createOrUpdateWithResponseAsync(
@@ -512,7 +515,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of hybrid connection resource.
+     * @return description of hybrid connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionInner>> createOrUpdateWithResponseAsync(
@@ -574,7 +578,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of hybrid connection resource.
+     * @return description of hybrid connection resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<HybridConnectionInner> createOrUpdateAsync(
@@ -619,7 +623,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of hybrid connection resource.
+     * @return description of hybrid connection resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<HybridConnectionInner> createOrUpdateWithResponse(
@@ -642,7 +646,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -697,7 +701,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -748,7 +752,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, String hybridConnectionName) {
@@ -781,7 +785,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -798,7 +802,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of hybrid connection resource.
+     * @return description of hybrid connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionInner>> getWithResponseAsync(
@@ -853,7 +858,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of hybrid connection resource.
+     * @return description of hybrid connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionInner>> getWithResponseAsync(
@@ -904,7 +910,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of hybrid connection resource.
+     * @return description of hybrid connection resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<HybridConnectionInner> getAsync(
@@ -946,7 +952,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of hybrid connection resource.
+     * @return description of hybrid connection resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<HybridConnectionInner> getWithResponse(
@@ -963,7 +969,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the list namespace operation.
+     * @return the response from the list namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesSinglePageAsync(
@@ -1027,7 +1034,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the list namespace operation.
+     * @return the response from the list namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesSinglePageAsync(
@@ -1165,7 +1173,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return description of a namespace authorization rule along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> createOrUpdateAuthorizationRuleWithResponseAsync(
@@ -1237,7 +1246,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return description of a namespace authorization rule along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> createOrUpdateAuthorizationRuleWithResponseAsync(
@@ -1306,7 +1316,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return description of a namespace authorization rule on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AuthorizationRuleInner> createOrUpdateAuthorizationRuleAsync(
@@ -1364,7 +1374,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return description of a namespace authorization rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AuthorizationRuleInner> createOrUpdateAuthorizationRuleWithResponse(
@@ -1389,7 +1399,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteAuthorizationRuleWithResponseAsync(
@@ -1450,7 +1460,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteAuthorizationRuleWithResponseAsync(
@@ -1511,7 +1521,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAuthorizationRuleAsync(
@@ -1550,7 +1560,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteAuthorizationRuleWithResponse(
@@ -1574,7 +1584,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return description of a namespace authorization rule along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> getAuthorizationRuleWithResponseAsync(
@@ -1635,7 +1646,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return description of a namespace authorization rule along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> getAuthorizationRuleWithResponseAsync(
@@ -1696,7 +1708,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return description of a namespace authorization rule on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AuthorizationRuleInner> getAuthorizationRuleAsync(
@@ -1743,7 +1755,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return description of a namespace authorization rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
@@ -1767,7 +1779,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> listKeysWithResponseAsync(
@@ -1828,7 +1840,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> listKeysWithResponseAsync(
@@ -1889,7 +1901,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AccessKeysInner> listKeysAsync(
@@ -1934,7 +1946,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AccessKeysInner> listKeysWithResponse(
@@ -1959,7 +1971,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> regenerateKeysWithResponseAsync(
@@ -2031,7 +2043,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> regenerateKeysWithResponseAsync(
@@ -2100,7 +2112,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AccessKeysInner> regenerateKeysAsync(
@@ -2158,7 +2170,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AccessKeysInner> regenerateKeysWithResponse(
@@ -2180,7 +2192,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list hybrid connection operation.
+     * @return the response of the list hybrid connection operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HybridConnectionInner>> listByNamespaceNextSinglePageAsync(String nextLink) {
@@ -2216,7 +2229,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list hybrid connection operation.
+     * @return the response of the list hybrid connection operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HybridConnectionInner>> listByNamespaceNextSinglePageAsync(
@@ -2252,7 +2266,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the list namespace operation.
+     * @return the response from the list namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesNextSinglePageAsync(String nextLink) {
@@ -2289,7 +2304,8 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the list namespace operation.
+     * @return the response from the list namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesNextSinglePageAsync(

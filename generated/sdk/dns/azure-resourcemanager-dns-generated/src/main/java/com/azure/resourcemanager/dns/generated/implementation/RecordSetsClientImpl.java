@@ -234,7 +234,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecordSetInner>> updateWithResponseAsync(
@@ -309,7 +310,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecordSetInner>> updateWithResponseAsync(
@@ -381,7 +383,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecordSetInner> updateAsync(
@@ -414,7 +417,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecordSetInner> updateAsync(
@@ -474,7 +478,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RecordSetInner> updateWithResponse(
@@ -506,7 +511,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecordSetInner>> createOrUpdateWithResponseAsync(
@@ -586,7 +592,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecordSetInner>> createOrUpdateWithResponseAsync(
@@ -663,7 +670,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecordSetInner> createOrUpdateAsync(
@@ -698,7 +706,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecordSetInner> createOrUpdateAsync(
@@ -766,7 +775,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RecordSetInner> createOrUpdateWithResponse(
@@ -803,7 +813,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -871,7 +881,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -936,7 +946,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(
@@ -960,7 +970,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(
@@ -1002,7 +1012,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -1026,7 +1036,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a record set.
+     * @return a record set along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecordSetInner>> getWithResponseAsync(
@@ -1086,7 +1096,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a record set.
+     * @return a record set along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecordSetInner>> getWithResponseAsync(
@@ -1146,7 +1156,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a record set.
+     * @return a record set on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecordSetInner> getAsync(
@@ -1191,7 +1201,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a record set.
+     * @return a record set along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RecordSetInner> getWithResponse(
@@ -1216,7 +1226,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByTypeSinglePageAsync(
@@ -1285,7 +1296,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByTypeSinglePageAsync(
@@ -1473,7 +1485,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByDnsZoneSinglePageAsync(
@@ -1537,7 +1550,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByDnsZoneSinglePageAsync(
@@ -1699,7 +1713,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listAllByDnsZoneSinglePageAsync(
@@ -1763,7 +1778,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listAllByDnsZoneSinglePageAsync(
@@ -1921,7 +1937,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByTypeNextSinglePageAsync(String nextLink) {
@@ -1957,7 +1974,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByTypeNextSinglePageAsync(String nextLink, Context context) {
@@ -1992,7 +2010,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByDnsZoneNextSinglePageAsync(String nextLink) {
@@ -2028,7 +2047,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByDnsZoneNextSinglePageAsync(String nextLink, Context context) {
@@ -2063,7 +2083,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listAllByDnsZoneNextSinglePageAsync(String nextLink) {
@@ -2099,7 +2120,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listAllByDnsZoneNextSinglePageAsync(String nextLink, Context context) {

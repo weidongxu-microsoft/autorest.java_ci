@@ -961,7 +961,7 @@ public interface StorageAccount {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response}.
      */
     Response<StorageAccountListKeysResult> listKeysWithResponse(ListKeyExpand expand, Context context);
 
@@ -984,7 +984,7 @@ public interface StorageAccount {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response}.
      */
     Response<StorageAccountListKeysResult> regenerateKeyWithResponse(
         StorageAccountRegenerateKeyParameters regenerateKey, Context context);
@@ -1008,7 +1008,7 @@ public interface StorageAccount {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List SAS credentials operation response.
+     * @return the List SAS credentials operation response along with {@link Response}.
      */
     Response<ListAccountSasResponse> listAccountSasWithResponse(AccountSasParameters parameters, Context context);
 
@@ -1031,7 +1031,7 @@ public interface StorageAccount {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List service SAS credentials operation response.
+     * @return the List service SAS credentials operation response along with {@link Response}.
      */
     Response<ListServiceSasResponse> listServiceSasWithResponse(ServiceSasParameters parameters, Context context);
 
@@ -1095,7 +1095,7 @@ public interface StorageAccount {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> revokeUserDelegationKeysWithResponse(Context context);
 }

@@ -32,7 +32,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String vaultName, Context context);
 
@@ -57,7 +57,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure key vault.
+     * @return the specified Azure key vault along with {@link Response}.
      */
     Response<Vault> getByResourceGroupWithResponse(String resourceGroupName, String vaultName, Context context);
 
@@ -90,7 +90,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return parameters for updating the access policy in a vault.
+     * @return parameters for updating the access policy in a vault along with {@link Response}.
      */
     Response<VaultAccessPolicyParameters> updateAccessPolicyWithResponse(
         String resourceGroupName,
@@ -187,7 +187,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deleted Azure key vault.
+     * @return the deleted Azure key vault along with {@link Response}.
      */
     Response<DeletedVault> getDeletedWithResponse(String vaultName, String location, Context context);
 
@@ -254,7 +254,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response along with {@link Response}.
      */
     Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(
         VaultCheckNameAvailabilityParameters vaultName, Context context);
@@ -266,7 +266,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure key vault.
+     * @return the specified Azure key vault along with {@link Response}.
      */
     Vault getById(String id);
 
@@ -278,7 +278,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure key vault.
+     * @return the specified Azure key vault along with {@link Response}.
      */
     Response<Vault> getByIdWithResponse(String id, Context context);
 
@@ -300,7 +300,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

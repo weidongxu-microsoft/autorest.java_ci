@@ -107,7 +107,7 @@ public final class BaselinesClientImpl implements BaselinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of metric baselines.
+     * @return a list of metric baselines along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SingleMetricBaselineInner>> listSinglePageAsync(
@@ -183,7 +183,7 @@ public final class BaselinesClientImpl implements BaselinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of metric baselines.
+     * @return a list of metric baselines along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SingleMetricBaselineInner>> listSinglePageAsync(

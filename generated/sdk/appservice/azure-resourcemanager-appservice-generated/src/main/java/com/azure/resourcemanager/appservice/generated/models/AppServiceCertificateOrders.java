@@ -55,7 +55,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> validatePurchaseInformationWithResponse(
         AppServiceCertificateOrderInner appServiceCertificateOrder, Context context);
@@ -108,7 +108,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response}.
      */
     Response<AppServiceCertificateOrder> getByResourceGroupWithResponse(
         String resourceGroupName, String certificateOrderName, Context context);
@@ -135,7 +135,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String certificateOrderName, Context context);
 
@@ -193,7 +193,8 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response}.
      */
     Response<AppServiceCertificateResource> getCertificateWithResponse(
         String resourceGroupName, String certificateOrderName, String name, Context context);
@@ -222,7 +223,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteCertificateWithResponse(
         String resourceGroupName, String certificateOrderName, String name, Context context);
@@ -254,7 +255,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> reissueWithResponse(
         String resourceGroupName,
@@ -289,7 +290,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> renewWithResponse(
         String resourceGroupName,
@@ -319,7 +320,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> resendEmailWithResponse(String resourceGroupName, String certificateOrderName, Context context);
 
@@ -349,7 +350,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> resendRequestEmailsWithResponse(
         String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier, Context context);
@@ -391,7 +392,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site seal.
+     * @return site seal along with {@link Response}.
      */
     Response<SiteSeal> retrieveSiteSealWithResponse(
         String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest, Context context);
@@ -418,7 +419,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> verifyDomainOwnershipWithResponse(
         String resourceGroupName, String certificateOrderName, Context context);
@@ -446,7 +447,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateOrderAction.
+     * @return array of CertificateOrderAction along with {@link Response}.
      */
     Response<List<CertificateOrderAction>> retrieveCertificateActionsWithResponse(
         String resourceGroupName, String name, Context context);
@@ -474,7 +475,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateEmail.
+     * @return array of CertificateEmail along with {@link Response}.
      */
     Response<List<CertificateEmail>> retrieveCertificateEmailHistoryWithResponse(
         String resourceGroupName, String name, Context context);
@@ -487,7 +488,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response}.
      */
     AppServiceCertificateOrder getById(String id);
 
@@ -500,7 +501,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response}.
      */
     Response<AppServiceCertificateOrder> getByIdWithResponse(String id, Context context);
 
@@ -512,7 +513,8 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response}.
      */
     AppServiceCertificateResource getCertificateById(String id);
 
@@ -525,7 +527,8 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response}.
      */
     Response<AppServiceCertificateResource> getCertificateByIdWithResponse(String id, Context context);
 
@@ -549,7 +552,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 
@@ -573,7 +576,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteCertificateByIdWithResponse(String id, Context context);
 

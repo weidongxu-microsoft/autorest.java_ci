@@ -33,7 +33,7 @@ public interface NatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGatewayNatRule Resource.
+     * @return vpnGatewayNatRule Resource along with {@link Response}.
      */
     Response<VpnGatewayNatRule> getWithResponse(
         String resourceGroupName, String gatewayName, String natRuleName, Context context);
@@ -95,7 +95,7 @@ public interface NatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGatewayNatRule Resource.
+     * @return vpnGatewayNatRule Resource along with {@link Response}.
      */
     VpnGatewayNatRule getById(String id);
 
@@ -107,7 +107,7 @@ public interface NatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGatewayNatRule Resource.
+     * @return vpnGatewayNatRule Resource along with {@link Response}.
      */
     Response<VpnGatewayNatRule> getByIdWithResponse(String id, Context context);
 

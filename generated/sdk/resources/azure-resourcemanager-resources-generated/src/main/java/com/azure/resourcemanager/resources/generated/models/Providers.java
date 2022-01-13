@@ -29,7 +29,7 @@ public interface Providers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource provider information.
+     * @return resource provider information along with {@link Response}.
      */
     Response<Provider> unregisterWithResponse(String resourceProviderNamespace, Context context);
 
@@ -53,7 +53,7 @@ public interface Providers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> registerAtManagementGroupScopeWithResponse(
         String resourceProviderNamespace, String groupId, Context context);
@@ -77,7 +77,7 @@ public interface Providers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource provider information.
+     * @return resource provider information along with {@link Response}.
      */
     Response<Provider> registerWithResponse(String resourceProviderNamespace, Context context);
 
@@ -150,7 +150,7 @@ public interface Providers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified resource provider.
+     * @return the specified resource provider along with {@link Response}.
      */
     Response<Provider> getWithResponse(String resourceProviderNamespace, String expand, Context context);
 
@@ -175,7 +175,7 @@ public interface Providers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified resource provider at the tenant level.
+     * @return the specified resource provider at the tenant level along with {@link Response}.
      */
     Response<Provider> getAtTenantScopeWithResponse(String resourceProviderNamespace, String expand, Context context);
 }

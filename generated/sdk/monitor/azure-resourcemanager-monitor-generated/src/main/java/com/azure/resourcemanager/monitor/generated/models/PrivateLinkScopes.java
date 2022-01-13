@@ -97,7 +97,7 @@ public interface PrivateLinkScopes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition.
+     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response}.
      */
     Response<AzureMonitorPrivateLinkScope> getByResourceGroupWithResponse(
         String resourceGroupName, String scopeName, Context context);
@@ -109,7 +109,7 @@ public interface PrivateLinkScopes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition.
+     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response}.
      */
     AzureMonitorPrivateLinkScope getById(String id);
 
@@ -121,7 +121,7 @@ public interface PrivateLinkScopes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition.
+     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response}.
      */
     Response<AzureMonitorPrivateLinkScope> getByIdWithResponse(String id, Context context);
 

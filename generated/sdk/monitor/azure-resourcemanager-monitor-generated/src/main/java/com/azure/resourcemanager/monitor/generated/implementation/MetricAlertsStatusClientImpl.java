@@ -94,7 +94,8 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MetricAlertStatusCollectionInner>> listWithResponseAsync(
@@ -144,7 +145,8 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MetricAlertStatusCollectionInner>> listWithResponseAsync(
@@ -190,7 +192,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MetricAlertStatusCollectionInner> listAsync(String resourceGroupName, String ruleName) {
@@ -229,7 +231,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<MetricAlertStatusCollectionInner> listWithResponse(
@@ -246,7 +248,8 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MetricAlertStatusCollectionInner>> listByNameWithResponseAsync(
@@ -301,7 +304,8 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MetricAlertStatusCollectionInner>> listByNameWithResponseAsync(
@@ -352,7 +356,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MetricAlertStatusCollectionInner> listByNameAsync(
@@ -394,7 +398,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<MetricAlertStatusCollectionInner> listByNameWithResponse(

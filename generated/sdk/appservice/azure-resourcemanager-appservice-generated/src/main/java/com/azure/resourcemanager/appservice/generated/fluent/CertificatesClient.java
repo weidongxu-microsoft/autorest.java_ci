@@ -91,7 +91,7 @@ public interface CertificatesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
+     * @return sSL certificate for an app along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CertificateInner> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
@@ -122,7 +122,7 @@ public interface CertificatesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
+     * @return sSL certificate for an app along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CertificateInner> createOrUpdateWithResponse(
@@ -151,7 +151,7 @@ public interface CertificatesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context);
@@ -182,7 +182,7 @@ public interface CertificatesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
+     * @return sSL certificate for an app along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CertificateInner> updateWithResponse(

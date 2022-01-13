@@ -33,7 +33,7 @@ public interface PrivateLinkScopedResources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a scoped resource in a private link scope.
+     * @return a scoped resource in a private link scope along with {@link Response}.
      */
     Response<ScopedResource> getWithResponse(String resourceGroupName, String scopeName, String name, Context context);
 
@@ -94,7 +94,7 @@ public interface PrivateLinkScopedResources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a scoped resource in a private link scope.
+     * @return a scoped resource in a private link scope along with {@link Response}.
      */
     ScopedResource getById(String id);
 
@@ -106,7 +106,7 @@ public interface PrivateLinkScopedResources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a scoped resource in a private link scope.
+     * @return a scoped resource in a private link scope along with {@link Response}.
      */
     Response<ScopedResource> getByIdWithResponse(String id, Context context);
 

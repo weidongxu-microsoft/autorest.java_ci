@@ -164,7 +164,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request.
+     * @return the result returned from a check name availability request along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(
@@ -220,7 +221,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request.
+     * @return the result returned from a check name availability request along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(
@@ -275,7 +277,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request.
+     * @return the result returned from a check name availability request on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<CheckNameResultInner> checkNameAvailabilityAsync(
@@ -318,7 +320,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request.
+     * @return the result returned from a check name availability request along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<CheckNameResultInner> checkNameAvailabilityWithResponse(
@@ -337,7 +339,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list attached database configurations operation response.
+     * @return the list attached database configurations operation response along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AttachedDatabaseConfigurationInner>> listByClusterSinglePageAsync(
@@ -390,7 +393,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list attached database configurations operation response.
+     * @return the list attached database configurations operation response along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AttachedDatabaseConfigurationInner>> listByClusterSinglePageAsync(
@@ -506,7 +510,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration.
+     * @return class representing an attached database configuration along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AttachedDatabaseConfigurationInner>> getWithResponseAsync(
@@ -563,7 +568,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration.
+     * @return class representing an attached database configuration along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AttachedDatabaseConfigurationInner>> getWithResponseAsync(
@@ -616,7 +622,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration.
+     * @return class representing an attached database configuration on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AttachedDatabaseConfigurationInner> getAsync(
@@ -659,7 +665,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration.
+     * @return class representing an attached database configuration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AttachedDatabaseConfigurationInner> getWithResponse(
@@ -677,7 +683,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration.
+     * @return class representing an attached database configuration along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -744,7 +751,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration.
+     * @return class representing an attached database configuration along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -808,7 +816,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration.
+     * @return class representing an attached database configuration along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AttachedDatabaseConfigurationInner>, AttachedDatabaseConfigurationInner>
@@ -841,7 +850,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration.
+     * @return class representing an attached database configuration along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AttachedDatabaseConfigurationInner>, AttachedDatabaseConfigurationInner>
@@ -875,7 +885,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration.
+     * @return class representing an attached database configuration along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AttachedDatabaseConfigurationInner>, AttachedDatabaseConfigurationInner>
@@ -899,7 +910,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration.
+     * @return class representing an attached database configuration along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AttachedDatabaseConfigurationInner>, AttachedDatabaseConfigurationInner>
@@ -924,7 +936,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration.
+     * @return class representing an attached database configuration on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AttachedDatabaseConfigurationInner> createOrUpdateAsync(
@@ -948,7 +960,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration.
+     * @return class representing an attached database configuration on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AttachedDatabaseConfigurationInner> createOrUpdateAsync(
@@ -1019,7 +1031,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -1076,7 +1088,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -1129,7 +1141,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1152,7 +1164,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1174,7 +1186,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1192,7 +1204,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1210,7 +1222,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(
@@ -1230,7 +1242,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(

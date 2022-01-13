@@ -13,6 +13,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontendEndpointInner;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomHttpsConfiguration;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in FrontendEndpointsClient. */
 public interface FrontendEndpointsClient {
@@ -68,7 +69,7 @@ public interface FrontendEndpointsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Frontend endpoint with the specified name within the specified Front Door.
+     * @return a Frontend endpoint with the specified name within the specified Front Door along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<FrontendEndpointInner> getWithResponse(
@@ -84,7 +85,7 @@ public interface FrontendEndpointsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginEnableHttps(
@@ -104,7 +105,7 @@ public interface FrontendEndpointsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginEnableHttps(
@@ -161,7 +162,7 @@ public interface FrontendEndpointsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDisableHttps(
@@ -177,7 +178,7 @@ public interface FrontendEndpointsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDisableHttps(

@@ -33,7 +33,7 @@ public interface Keys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault.
+     * @return the current version of the specified key from the specified key vault along with {@link Response}.
      */
     Response<Key> getWithResponse(String resourceGroupName, String vaultName, String keyName, Context context);
 
@@ -87,7 +87,7 @@ public interface Keys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified key vault.
+     * @return the specified version of the specified key in the specified key vault along with {@link Response}.
      */
     Response<Key> getVersionWithResponse(
         String resourceGroupName, String vaultName, String keyName, String keyVersion, Context context);
@@ -126,7 +126,7 @@ public interface Keys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault.
+     * @return the current version of the specified key from the specified key vault along with {@link Response}.
      */
     Key getById(String id);
 
@@ -138,7 +138,7 @@ public interface Keys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault.
+     * @return the current version of the specified key from the specified key vault along with {@link Response}.
      */
     Response<Key> getByIdWithResponse(String id, Context context);
 

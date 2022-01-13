@@ -45,7 +45,8 @@ public interface RecordSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link
+     *     Response}.
      */
     Response<RecordSet> updateWithResponse(
         String resourceGroupName,
@@ -94,7 +95,8 @@ public interface RecordSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link
+     *     Response}.
      */
     Response<RecordSet> createOrUpdateWithResponse(
         String resourceGroupName,
@@ -134,7 +136,7 @@ public interface RecordSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName,
@@ -169,7 +171,7 @@ public interface RecordSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a record set.
+     * @return a record set along with {@link Response}.
      */
     Response<RecordSet> getWithResponse(
         String resourceGroupName,

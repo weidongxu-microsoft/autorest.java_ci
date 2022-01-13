@@ -33,7 +33,7 @@ public interface VirtualHubIpConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ipConfigurations.
+     * @return ipConfigurations along with {@link Response}.
      */
     Response<HubIpConfiguration> getWithResponse(
         String resourceGroupName, String virtualHubName, String ipConfigName, Context context);
@@ -95,7 +95,7 @@ public interface VirtualHubIpConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ipConfigurations.
+     * @return ipConfigurations along with {@link Response}.
      */
     HubIpConfiguration getById(String id);
 
@@ -107,7 +107,7 @@ public interface VirtualHubIpConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ipConfigurations.
+     * @return ipConfigurations along with {@link Response}.
      */
     Response<HubIpConfiguration> getByIdWithResponse(String id, Context context);
 

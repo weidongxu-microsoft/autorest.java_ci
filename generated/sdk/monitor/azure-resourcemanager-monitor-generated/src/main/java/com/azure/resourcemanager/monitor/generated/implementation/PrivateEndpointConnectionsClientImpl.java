@@ -152,7 +152,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateEndpointConnectionInner>> getWithResponseAsync(
@@ -210,7 +210,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateEndpointConnectionInner>> getWithResponseAsync(
@@ -264,7 +264,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return a private endpoint connection on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateEndpointConnectionInner> getAsync(
@@ -307,7 +307,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return a private endpoint connection along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PrivateEndpointConnectionInner> getWithResponse(
@@ -325,7 +325,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -393,7 +393,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -458,7 +458,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner>
@@ -490,7 +490,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner>
@@ -524,7 +524,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginCreateOrUpdate(
@@ -547,7 +547,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginCreateOrUpdate(
@@ -571,7 +571,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return a private endpoint connection on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateEndpointConnectionInner> createOrUpdateAsync(
@@ -595,7 +595,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return a private endpoint connection on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateEndpointConnectionInner> createOrUpdateAsync(
@@ -664,7 +664,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -720,7 +720,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -772,7 +772,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -795,7 +795,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -817,7 +817,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -835,7 +835,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -852,7 +852,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String scopeName, String privateEndpointConnectionName) {
@@ -871,7 +871,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(
@@ -921,7 +921,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoint connections on a private link scope.
+     * @return all private endpoint connections on a private link scope along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointConnectionInner>> listByPrivateLinkScopeSinglePageAsync(
@@ -980,7 +981,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoint connections on a private link scope.
+     * @return all private endpoint connections on a private link scope along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointConnectionInner>> listByPrivateLinkScopeSinglePageAsync(
@@ -1104,7 +1106,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of private endpoint connections.
+     * @return a list of private endpoint connections along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointConnectionInner>> listByPrivateLinkScopeNextSinglePageAsync(
@@ -1142,7 +1145,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of private endpoint connections.
+     * @return a list of private endpoint connections along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointConnectionInner>> listByPrivateLinkScopeNextSinglePageAsync(

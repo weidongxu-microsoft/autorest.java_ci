@@ -165,7 +165,7 @@ public interface AuthorizationRule {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return the primary and secondary connection strings for the Namespace along with {@link Response}.
      */
     Response<AccessKeys> listKeysWithResponse(Context context);
 
@@ -188,7 +188,7 @@ public interface AuthorizationRule {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return namespace/EventHub Connection String along with {@link Response}.
      */
     Response<AccessKeys> regenerateKeysWithResponse(RegenerateAccessKeyParameters parameters, Context context);
 }

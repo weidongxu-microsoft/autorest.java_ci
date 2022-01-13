@@ -54,7 +54,7 @@ public interface ApplicationSecurityGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified application security group.
+     * @return information about the specified application security group along with {@link Response}.
      */
     Response<ApplicationSecurityGroup> getByResourceGroupWithResponse(
         String resourceGroupName, String applicationSecurityGroupName, Context context);
@@ -109,7 +109,7 @@ public interface ApplicationSecurityGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified application security group.
+     * @return information about the specified application security group along with {@link Response}.
      */
     ApplicationSecurityGroup getById(String id);
 
@@ -121,7 +121,7 @@ public interface ApplicationSecurityGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified application security group.
+     * @return information about the specified application security group along with {@link Response}.
      */
     Response<ApplicationSecurityGroup> getByIdWithResponse(String id, Context context);
 

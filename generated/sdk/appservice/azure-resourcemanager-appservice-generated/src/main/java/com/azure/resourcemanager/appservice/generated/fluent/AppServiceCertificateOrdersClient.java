@@ -23,6 +23,7 @@ import com.azure.resourcemanager.appservice.generated.models.ReissueCertificateO
 import com.azure.resourcemanager.appservice.generated.models.RenewCertificateOrderRequest;
 import com.azure.resourcemanager.appservice.generated.models.SiteSealRequest;
 import java.util.List;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in AppServiceCertificateOrdersClient. */
 public interface AppServiceCertificateOrdersClient {
@@ -71,7 +72,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> validatePurchaseInformationWithResponse(
@@ -128,7 +129,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AppServiceCertificateOrderInner> getByResourceGroupWithResponse(
@@ -144,7 +145,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AppServiceCertificateOrderInner>, AppServiceCertificateOrderInner> beginCreateOrUpdate(
@@ -163,7 +164,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AppServiceCertificateOrderInner>, AppServiceCertificateOrderInner> beginCreateOrUpdate(
@@ -233,7 +234,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String certificateOrderName, Context context);
@@ -267,7 +268,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AppServiceCertificateOrderInner> updateWithResponse(
@@ -334,7 +335,8 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AppServiceCertificateResourceInner> getCertificateWithResponse(
@@ -351,7 +353,8 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -373,7 +376,8 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -451,7 +455,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteCertificateWithResponse(
@@ -489,7 +493,8 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AppServiceCertificateResourceInner> updateCertificateWithResponse(
@@ -527,7 +532,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> reissueWithResponse(
@@ -564,7 +569,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> renewWithResponse(
@@ -596,7 +601,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> resendEmailWithResponse(String resourceGroupName, String certificateOrderName, Context context);
@@ -628,7 +633,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> resendRequestEmailsWithResponse(
@@ -673,7 +678,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site seal.
+     * @return site seal along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SiteSealInner> retrieveSiteSealWithResponse(
@@ -702,7 +707,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> verifyDomainOwnershipWithResponse(
@@ -732,7 +737,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateOrderAction.
+     * @return array of CertificateOrderAction along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<CertificateOrderActionInner>> retrieveCertificateActionsWithResponse(
@@ -762,7 +767,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateEmail.
+     * @return array of CertificateEmail along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<CertificateEmailInner>> retrieveCertificateEmailHistoryWithResponse(

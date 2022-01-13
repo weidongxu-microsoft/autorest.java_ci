@@ -94,7 +94,7 @@ public interface VirtualMachineScaleSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set.
+     * @return describes a Virtual Machine Scale Set along with {@link Response}.
      */
     Response<VirtualMachineScaleSet> getByResourceGroupWithResponse(
         String resourceGroupName, String vmScaleSetName, ExpandTypesForGetVMScaleSets expand, Context context);
@@ -214,7 +214,7 @@ public interface VirtualMachineScaleSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a VM scale set instance.
+     * @return the status of a VM scale set instance along with {@link Response}.
      */
     Response<VirtualMachineScaleSetInstanceView> getInstanceViewWithResponse(
         String resourceGroupName, String vmScaleSetName, Context context);
@@ -692,7 +692,7 @@ public interface VirtualMachineScaleSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response after calling a manual recovery walk.
+     * @return response after calling a manual recovery walk along with {@link Response}.
      */
     Response<RecoveryWalkResponse> forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponse(
         String resourceGroupName, String vmScaleSetName, int platformUpdateDomain, Context context);
@@ -720,7 +720,7 @@ public interface VirtualMachineScaleSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> convertToSinglePlacementGroupWithResponse(
         String resourceGroupName,
@@ -762,7 +762,7 @@ public interface VirtualMachineScaleSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set.
+     * @return describes a Virtual Machine Scale Set along with {@link Response}.
      */
     VirtualMachineScaleSet getById(String id);
 
@@ -776,7 +776,7 @@ public interface VirtualMachineScaleSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set.
+     * @return describes a Virtual Machine Scale Set along with {@link Response}.
      */
     Response<VirtualMachineScaleSet> getByIdWithResponse(
         String id, ExpandTypesForGetVMScaleSets expand, Context context);

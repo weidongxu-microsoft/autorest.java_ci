@@ -60,7 +60,7 @@ public interface PrivateLinkServices {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private link service by resource group.
+     * @return the specified private link service by resource group along with {@link Response}.
      */
     Response<PrivateLinkService> getByResourceGroupWithResponse(
         String resourceGroupName, String serviceName, String expand, Context context);
@@ -139,7 +139,8 @@ public interface PrivateLinkServices {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specific private end point connection by specific private link service in the resource group.
+     * @return the specific private end point connection by specific private link service in the resource group along
+     *     with {@link Response}.
      */
     Response<PrivateEndpointConnection> getPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String serviceName, String peConnectionName, String expand, Context context);
@@ -175,7 +176,7 @@ public interface PrivateLinkServices {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return privateEndpointConnection resource.
+     * @return privateEndpointConnection resource along with {@link Response}.
      */
     Response<PrivateEndpointConnection> updatePrivateEndpointConnectionWithResponse(
         String resourceGroupName,
@@ -362,7 +363,7 @@ public interface PrivateLinkServices {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private link service by resource group.
+     * @return the specified private link service by resource group along with {@link Response}.
      */
     PrivateLinkService getById(String id);
 
@@ -376,7 +377,7 @@ public interface PrivateLinkServices {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private link service by resource group.
+     * @return the specified private link service by resource group along with {@link Response}.
      */
     Response<PrivateLinkService> getByIdWithResponse(String id, String expand, Context context);
 

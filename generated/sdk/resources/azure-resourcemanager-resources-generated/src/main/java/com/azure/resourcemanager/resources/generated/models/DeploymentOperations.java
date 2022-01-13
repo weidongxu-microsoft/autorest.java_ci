@@ -33,7 +33,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     Response<DeploymentOperation> getAtScopeWithResponse(
         String scope, String deploymentName, String operationId, Context context);
@@ -85,7 +85,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     Response<DeploymentOperation> getAtTenantScopeWithResponse(
         String deploymentName, String operationId, Context context);
@@ -137,7 +137,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     Response<DeploymentOperation> getAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, String operationId, Context context);
@@ -190,7 +190,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     Response<DeploymentOperation> getAtSubscriptionScopeWithResponse(
         String deploymentName, String operationId, Context context);
@@ -242,7 +242,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     Response<DeploymentOperation> getWithResponse(
         String resourceGroupName, String deploymentName, String operationId, Context context);

@@ -125,7 +125,7 @@ public interface VirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine.
+     * @return describes a Virtual Machine along with {@link Response}.
      */
     Response<VirtualMachine> getByResourceGroupWithResponse(
         String resourceGroupName, String vmName, InstanceViewTypes expand, Context context);
@@ -151,7 +151,7 @@ public interface VirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the instance view of a virtual machine.
+     * @return the instance view of a virtual machine along with {@link Response}.
      */
     Response<VirtualMachineInstanceView> instanceViewWithResponse(
         String resourceGroupName, String vmName, Context context);
@@ -248,7 +248,7 @@ public interface VirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> generalizeWithResponse(String resourceGroupName, String vmName, Context context);
 
@@ -524,7 +524,7 @@ public interface VirtualMachines {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SAS URIs of the console screenshot and serial log blobs.
+     * @return the SAS URIs of the console screenshot and serial log blobs along with {@link Response}.
      */
     Response<RetrieveBootDiagnosticsDataResult> retrieveBootDiagnosticsDataWithResponse(
         String resourceGroupName, String vmName, Integer sasUriExpirationTimeInMinutes, Context context);
@@ -572,7 +572,7 @@ public interface VirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> simulateEvictionWithResponse(String resourceGroupName, String vmName, Context context);
 
@@ -671,7 +671,7 @@ public interface VirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine.
+     * @return describes a Virtual Machine along with {@link Response}.
      */
     VirtualMachine getById(String id);
 
@@ -687,7 +687,7 @@ public interface VirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine.
+     * @return describes a Virtual Machine along with {@link Response}.
      */
     Response<VirtualMachine> getByIdWithResponse(String id, InstanceViewTypes expand, Context context);
 

@@ -187,7 +187,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -239,7 +239,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -287,7 +287,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -308,7 +308,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -329,7 +329,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkSecurityGroupName) {
@@ -345,7 +345,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -361,7 +361,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String networkSecurityGroupName) {
@@ -379,7 +379,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String networkSecurityGroupName, Context context) {
@@ -426,7 +426,8 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security group.
+     * @return the specified network security group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkSecurityGroupInner>> getByResourceGroupWithResponseAsync(
@@ -480,7 +481,8 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security group.
+     * @return the specified network security group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkSecurityGroupInner>> getByResourceGroupWithResponseAsync(
@@ -530,7 +532,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security group.
+     * @return the specified network security group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkSecurityGroupInner> getByResourceGroupAsync(
@@ -554,7 +556,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security group.
+     * @return the specified network security group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkSecurityGroupInner> getByResourceGroupAsync(
@@ -597,7 +599,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security group.
+     * @return the specified network security group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkSecurityGroupInner> getByResourceGroupWithResponse(
@@ -615,7 +617,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkSecurityGroup resource.
+     * @return networkSecurityGroup resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -674,7 +676,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkSecurityGroup resource.
+     * @return networkSecurityGroup resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -732,7 +734,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkSecurityGroup resource.
+     * @return networkSecurityGroup resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<NetworkSecurityGroupInner>, NetworkSecurityGroupInner> beginCreateOrUpdateAsync(
@@ -759,7 +761,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkSecurityGroup resource.
+     * @return networkSecurityGroup resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<NetworkSecurityGroupInner>, NetworkSecurityGroupInner> beginCreateOrUpdateAsync(
@@ -789,7 +791,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkSecurityGroup resource.
+     * @return networkSecurityGroup resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<NetworkSecurityGroupInner>, NetworkSecurityGroupInner> beginCreateOrUpdate(
@@ -807,7 +809,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkSecurityGroup resource.
+     * @return networkSecurityGroup resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<NetworkSecurityGroupInner>, NetworkSecurityGroupInner> beginCreateOrUpdate(
@@ -828,7 +830,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkSecurityGroup resource.
+     * @return networkSecurityGroup resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkSecurityGroupInner> createOrUpdateAsync(
@@ -848,7 +850,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkSecurityGroup resource.
+     * @return networkSecurityGroup resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkSecurityGroupInner> createOrUpdateAsync(
@@ -908,7 +910,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkSecurityGroup resource.
+     * @return networkSecurityGroup resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkSecurityGroupInner>> updateTagsWithResponseAsync(
@@ -967,7 +969,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkSecurityGroup resource.
+     * @return networkSecurityGroup resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkSecurityGroupInner>> updateTagsWithResponseAsync(
@@ -1022,7 +1024,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkSecurityGroup resource.
+     * @return networkSecurityGroup resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkSecurityGroupInner> updateTagsAsync(
@@ -1065,7 +1067,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkSecurityGroup resource.
+     * @return networkSecurityGroup resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkSecurityGroupInner> updateTagsWithResponse(
@@ -1078,7 +1080,8 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups in a subscription.
+     * @return all network security groups in a subscription along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkSecurityGroupInner>> listSinglePageAsync() {
@@ -1120,7 +1123,8 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups in a subscription.
+     * @return all network security groups in a subscription along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkSecurityGroupInner>> listSinglePageAsync(Context context) {
@@ -1212,7 +1216,8 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups in a resource group.
+     * @return all network security groups in a resource group along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkSecurityGroupInner>> listByResourceGroupSinglePageAsync(
@@ -1266,7 +1271,8 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups in a resource group.
+     * @return all network security groups in a resource group along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkSecurityGroupInner>> listByResourceGroupSinglePageAsync(
@@ -1377,7 +1383,8 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkSecurityGroups API service call.
+     * @return response for ListNetworkSecurityGroups API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkSecurityGroupInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -1413,7 +1420,8 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkSecurityGroups API service call.
+     * @return response for ListNetworkSecurityGroups API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkSecurityGroupInner>> listAllNextSinglePageAsync(
@@ -1449,7 +1457,8 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkSecurityGroups API service call.
+     * @return response for ListNetworkSecurityGroups API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkSecurityGroupInner>> listNextSinglePageAsync(String nextLink) {
@@ -1485,7 +1494,8 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkSecurityGroups API service call.
+     * @return response for ListNetworkSecurityGroups API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkSecurityGroupInner>> listNextSinglePageAsync(String nextLink, Context context) {

@@ -13,6 +13,7 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteGatewayInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteGatewayListInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ExpressRouteGatewaysClient. */
 public interface ExpressRouteGatewaysClient {
@@ -33,7 +34,7 @@ public interface ExpressRouteGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of ExpressRoute gateways.
+     * @return list of ExpressRoute gateways along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ExpressRouteGatewayListInner> listBySubscriptionWithResponse(Context context);
@@ -58,7 +59,7 @@ public interface ExpressRouteGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of ExpressRoute gateways.
+     * @return list of ExpressRoute gateways along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ExpressRouteGatewayListInner> listByResourceGroupWithResponse(String resourceGroupName, Context context);
@@ -72,7 +73,7 @@ public interface ExpressRouteGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute gateway resource.
+     * @return expressRoute gateway resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteGatewayInner>, ExpressRouteGatewayInner> beginCreateOrUpdate(
@@ -90,7 +91,7 @@ public interface ExpressRouteGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute gateway resource.
+     * @return expressRoute gateway resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteGatewayInner>, ExpressRouteGatewayInner> beginCreateOrUpdate(
@@ -144,7 +145,7 @@ public interface ExpressRouteGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute gateway resource.
+     * @return expressRoute gateway resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteGatewayInner>, ExpressRouteGatewayInner> beginUpdateTags(
@@ -160,7 +161,7 @@ public interface ExpressRouteGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute gateway resource.
+     * @return expressRoute gateway resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteGatewayInner>, ExpressRouteGatewayInner> beginUpdateTags(
@@ -225,7 +226,7 @@ public interface ExpressRouteGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute gateway resource.
+     * @return expressRoute gateway resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ExpressRouteGatewayInner> getByResourceGroupWithResponse(
@@ -240,7 +241,7 @@ public interface ExpressRouteGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String expressRouteGatewayName);
@@ -255,7 +256,7 @@ public interface ExpressRouteGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(

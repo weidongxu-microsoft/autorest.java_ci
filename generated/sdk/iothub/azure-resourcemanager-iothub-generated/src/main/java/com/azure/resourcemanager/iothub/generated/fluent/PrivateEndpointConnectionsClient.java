@@ -12,6 +12,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.iothub.generated.fluent.models.PrivateEndpointConnectionInner;
 import java.util.List;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in PrivateEndpointConnectionsClient. */
 public interface PrivateEndpointConnectionsClient {
@@ -39,7 +40,7 @@ public interface PrivateEndpointConnectionsClient {
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of private endpoint connections for an IotHub.
+     * @return the list of private endpoint connections for an IotHub along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<PrivateEndpointConnectionInner>> listWithResponse(
@@ -72,7 +73,7 @@ public interface PrivateEndpointConnectionsClient {
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection properties.
+     * @return private endpoint connection properties along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateEndpointConnectionInner> getWithResponse(
@@ -89,7 +90,8 @@ public interface PrivateEndpointConnectionsClient {
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private endpoint connection of an IotHub.
+     * @return the private endpoint connection of an IotHub along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginUpdate(
@@ -110,7 +112,8 @@ public interface PrivateEndpointConnectionsClient {
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private endpoint connection of an IotHub.
+     * @return the private endpoint connection of an IotHub along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginUpdate(
@@ -172,7 +175,8 @@ public interface PrivateEndpointConnectionsClient {
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private endpoint connection of an IotHub.
+     * @return the private endpoint connection of an IotHub along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginDelete(
@@ -189,7 +193,8 @@ public interface PrivateEndpointConnectionsClient {
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private endpoint connection of an IotHub.
+     * @return the private endpoint connection of an IotHub along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginDelete(

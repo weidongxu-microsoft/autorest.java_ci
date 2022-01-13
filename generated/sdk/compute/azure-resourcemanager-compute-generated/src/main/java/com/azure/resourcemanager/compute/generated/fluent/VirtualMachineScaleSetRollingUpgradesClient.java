@@ -11,6 +11,7 @@ import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.compute.generated.fluent.models.RollingUpgradeStatusInfoInner;
+import reactor.core.publisher.Mono;
 
 /**
  * An instance of this class provides access to all the operations defined in
@@ -25,7 +26,7 @@ public interface VirtualMachineScaleSetRollingUpgradesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginCancel(String resourceGroupName, String vmScaleSetName);
@@ -39,7 +40,7 @@ public interface VirtualMachineScaleSetRollingUpgradesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginCancel(String resourceGroupName, String vmScaleSetName, Context context);
@@ -78,7 +79,7 @@ public interface VirtualMachineScaleSetRollingUpgradesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginStartOSUpgrade(String resourceGroupName, String vmScaleSetName);
@@ -93,7 +94,7 @@ public interface VirtualMachineScaleSetRollingUpgradesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginStartOSUpgrade(
@@ -135,7 +136,7 @@ public interface VirtualMachineScaleSetRollingUpgradesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginStartExtensionUpgrade(String resourceGroupName, String vmScaleSetName);
@@ -150,7 +151,7 @@ public interface VirtualMachineScaleSetRollingUpgradesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginStartExtensionUpgrade(
@@ -205,7 +206,7 @@ public interface VirtualMachineScaleSetRollingUpgradesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the latest virtual machine scale set rolling upgrade.
+     * @return the status of the latest virtual machine scale set rolling upgrade along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RollingUpgradeStatusInfoInner> getLatestWithResponse(

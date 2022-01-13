@@ -66,7 +66,7 @@ public interface SharedGalleryImages {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a shared gallery image by subscription id or tenant id.
+     * @return a shared gallery image by subscription id or tenant id along with {@link Response}.
      */
     Response<SharedGalleryImage> getWithResponse(
         String location, String galleryUniqueName, String galleryImageName, Context context);

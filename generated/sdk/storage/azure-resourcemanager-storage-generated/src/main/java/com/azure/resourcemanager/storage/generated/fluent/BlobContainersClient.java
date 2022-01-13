@@ -23,6 +23,7 @@ import com.azure.resourcemanager.storage.generated.models.BlobContainersGetImmut
 import com.azure.resourcemanager.storage.generated.models.BlobContainersLockImmutabilityPolicyResponse;
 import com.azure.resourcemanager.storage.generated.models.LeaseContainerRequest;
 import com.azure.resourcemanager.storage.generated.models.ListContainersInclude;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in BlobContainersClient. */
 public interface BlobContainersClient {
@@ -105,7 +106,8 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the blob container, including Id, resource name, resource type, Etag.
+     * @return properties of the blob container, including Id, resource name, resource type, Etag along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<BlobContainerInner> createWithResponse(
@@ -152,7 +154,8 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the blob container, including Id, resource name, resource type, Etag.
+     * @return properties of the blob container, including Id, resource name, resource type, Etag along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<BlobContainerInner> updateWithResponse(
@@ -194,7 +197,7 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a specified container.
+     * @return properties of a specified container along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<BlobContainerInner> getWithResponse(
@@ -231,7 +234,7 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(
@@ -274,7 +277,7 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the LegalHold property of a blob container.
+     * @return the LegalHold property of a blob container along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<LegalHoldInner> setLegalHoldWithResponse(
@@ -317,7 +320,7 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the LegalHold property of a blob container.
+     * @return the LegalHold property of a blob container along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<LegalHoldInner> clearLegalHoldWithResponse(
@@ -598,7 +601,7 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lease Container response schema.
+     * @return lease Container response schema along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<LeaseContainerResponseInner> leaseWithResponse(
@@ -623,7 +626,7 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginObjectLevelWorm(
@@ -645,7 +648,7 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginObjectLevelWorm(

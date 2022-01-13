@@ -107,7 +107,7 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response}.
      */
     Response<ResourceHealthMetadata> getBySiteWithResponse(String resourceGroupName, String name, Context context);
 
@@ -166,7 +166,7 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response}.
      */
     Response<ResourceHealthMetadata> getBySiteSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);

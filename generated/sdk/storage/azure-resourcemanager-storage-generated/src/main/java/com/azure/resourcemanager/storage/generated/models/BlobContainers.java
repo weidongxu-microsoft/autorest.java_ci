@@ -83,7 +83,7 @@ public interface BlobContainers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a specified container.
+     * @return properties of a specified container along with {@link Response}.
      */
     Response<BlobContainer> getWithResponse(
         String resourceGroupName, String accountName, String containerName, Context context);
@@ -118,7 +118,7 @@ public interface BlobContainers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName, String accountName, String containerName, Context context);
@@ -159,7 +159,7 @@ public interface BlobContainers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the LegalHold property of a blob container.
+     * @return the LegalHold property of a blob container along with {@link Response}.
      */
     Response<LegalHold> setLegalHoldWithResponse(
         String resourceGroupName, String accountName, String containerName, LegalHoldInner legalHold, Context context);
@@ -200,7 +200,7 @@ public interface BlobContainers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the LegalHold property of a blob container.
+     * @return the LegalHold property of a blob container along with {@link Response}.
      */
     Response<LegalHold> clearLegalHoldWithResponse(
         String resourceGroupName, String accountName, String containerName, LegalHoldInner legalHold, Context context);
@@ -421,7 +421,7 @@ public interface BlobContainers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lease Container response schema.
+     * @return lease Container response schema along with {@link Response}.
      */
     Response<LeaseContainerResponse> leaseWithResponse(
         String resourceGroupName,
@@ -474,7 +474,7 @@ public interface BlobContainers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a specified container.
+     * @return properties of a specified container along with {@link Response}.
      */
     BlobContainer getById(String id);
 
@@ -486,7 +486,7 @@ public interface BlobContainers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a specified container.
+     * @return properties of a specified container along with {@link Response}.
      */
     Response<BlobContainer> getByIdWithResponse(String id, Context context);
 
@@ -534,7 +534,7 @@ public interface BlobContainers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

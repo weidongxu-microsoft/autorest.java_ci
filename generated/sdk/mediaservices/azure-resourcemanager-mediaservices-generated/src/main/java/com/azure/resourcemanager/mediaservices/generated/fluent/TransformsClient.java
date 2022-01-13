@@ -67,7 +67,7 @@ public interface TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform.
+     * @return a Transform along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TransformInner> getWithResponse(
@@ -102,7 +102,7 @@ public interface TransformsClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
-     *     as by transcoding or by extracting insights.
+     *     as by transcoding or by extracting insights along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TransformInner> createOrUpdateWithResponse(
@@ -131,7 +131,7 @@ public interface TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(
@@ -166,7 +166,7 @@ public interface TransformsClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
-     *     as by transcoding or by extracting insights.
+     *     as by transcoding or by extracting insights along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TransformInner> updateWithResponse(

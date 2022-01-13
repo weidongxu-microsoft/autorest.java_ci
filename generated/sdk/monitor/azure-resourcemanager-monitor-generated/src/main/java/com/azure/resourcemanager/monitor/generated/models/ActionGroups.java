@@ -31,7 +31,7 @@ public interface ActionGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group.
+     * @return an action group along with {@link Response}.
      */
     Response<ActionGroupResource> getByResourceGroupWithResponse(
         String resourceGroupName, String actionGroupName, Context context);
@@ -56,7 +56,7 @@ public interface ActionGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String actionGroupName, Context context);
 
@@ -127,7 +127,7 @@ public interface ActionGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> enableReceiverWithResponse(
         String resourceGroupName, String actionGroupName, EnableRequest enableRequest, Context context);
@@ -139,7 +139,7 @@ public interface ActionGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group.
+     * @return an action group along with {@link Response}.
      */
     ActionGroupResource getById(String id);
 
@@ -151,7 +151,7 @@ public interface ActionGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group.
+     * @return an action group along with {@link Response}.
      */
     Response<ActionGroupResource> getByIdWithResponse(String id, Context context);
 
@@ -173,7 +173,7 @@ public interface ActionGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

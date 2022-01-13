@@ -153,7 +153,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports.
+     * @return result of listing exports along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExportListResultInner>> listWithResponseAsync(String scope) {
@@ -195,7 +195,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports.
+     * @return result of listing exports along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExportListResultInner>> listWithResponseAsync(String scope, Context context) {
@@ -234,7 +234,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports.
+     * @return result of listing exports on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExportListResultInner> listAsync(String scope) {
@@ -299,7 +299,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports.
+     * @return result of listing exports along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ExportListResultInner> listWithResponse(String scope, Context context) {
@@ -328,7 +328,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a export resource.
+     * @return a export resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExportInner>> getWithResponseAsync(String scope, String exportName) {
@@ -377,7 +377,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a export resource.
+     * @return a export resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExportInner>> getWithResponseAsync(String scope, String exportName, Context context) {
@@ -420,7 +420,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a export resource.
+     * @return a export resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExportInner> getAsync(String scope, String exportName) {
@@ -487,7 +487,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a export resource.
+     * @return a export resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ExportInner> getWithResponse(String scope, String exportName, Context context) {
@@ -518,7 +518,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a export resource.
+     * @return a export resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExportInner>> createOrUpdateWithResponseAsync(
@@ -581,7 +581,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a export resource.
+     * @return a export resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExportInner>> createOrUpdateWithResponseAsync(
@@ -634,7 +634,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a export resource.
+     * @return a export resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExportInner> createOrUpdateAsync(String scope, String exportName, ExportInner parameters) {
@@ -705,7 +705,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a export resource.
+     * @return a export resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ExportInner> createOrUpdateWithResponse(
@@ -735,7 +735,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String scope, String exportName) {
@@ -784,7 +784,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String scope, String exportName, Context context) {
@@ -828,7 +828,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String scope, String exportName) {
@@ -886,7 +886,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String scope, String exportName, Context context) {
@@ -915,7 +915,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> executeWithResponseAsync(String scope, String exportName) {
@@ -964,7 +964,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> executeWithResponseAsync(String scope, String exportName, Context context) {
@@ -1008,7 +1008,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> executeAsync(String scope, String exportName) {
@@ -1066,7 +1066,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> executeWithResponse(String scope, String exportName, Context context) {
@@ -1095,7 +1095,8 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports execution history of a export by name.
+     * @return result of listing exports execution history of a export by name along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExportExecutionListResultInner>> getExecutionHistoryWithResponseAsync(
@@ -1145,7 +1146,8 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports execution history of a export by name.
+     * @return result of listing exports execution history of a export by name along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExportExecutionListResultInner>> getExecutionHistoryWithResponseAsync(
@@ -1191,7 +1193,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports execution history of a export by name.
+     * @return result of listing exports execution history of a export by name on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExportExecutionListResultInner> getExecutionHistoryAsync(String scope, String exportName) {
@@ -1258,7 +1260,7 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports execution history of a export by name.
+     * @return result of listing exports execution history of a export by name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ExportExecutionListResultInner> getExecutionHistoryWithResponse(

@@ -31,7 +31,7 @@ public interface RoleDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition.
+     * @return role definition along with {@link Response}.
      */
     Response<RoleDefinition> deleteWithResponse(String scope, String roleDefinitionId, Context context);
 
@@ -56,7 +56,7 @@ public interface RoleDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition by name (GUID).
+     * @return role definition by name (GUID) along with {@link Response}.
      */
     Response<RoleDefinition> getWithResponse(String scope, String roleDefinitionId, Context context);
 
@@ -110,7 +110,7 @@ public interface RoleDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role definition by ID.
+     * @return a role definition by ID along with {@link Response}.
      */
     Response<RoleDefinition> getByIdWithResponse(String roleId, Context context);
 
@@ -121,7 +121,7 @@ public interface RoleDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition.
+     * @return role definition along with {@link Response}.
      */
     RoleDefinition deleteById(String id);
 
@@ -133,7 +133,7 @@ public interface RoleDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition.
+     * @return role definition along with {@link Response}.
      */
     Response<RoleDefinition> deleteByIdWithResponse(String id, Context context);
 

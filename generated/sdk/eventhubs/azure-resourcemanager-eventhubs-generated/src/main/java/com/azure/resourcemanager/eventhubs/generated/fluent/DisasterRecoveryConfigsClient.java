@@ -75,7 +75,7 @@ public interface DisasterRecoveryConfigsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
@@ -108,7 +108,7 @@ public interface DisasterRecoveryConfigsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return the primary and secondary connection strings for the Namespace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AccessKeysInner> listKeysWithResponse(
@@ -139,7 +139,7 @@ public interface DisasterRecoveryConfigsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation.
+     * @return the Result of the CheckNameAvailability operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
@@ -199,7 +199,7 @@ public interface DisasterRecoveryConfigsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ArmDisasterRecoveryInner> createOrUpdateWithResponse(
@@ -232,7 +232,7 @@ public interface DisasterRecoveryConfigsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String alias, Context context);
@@ -261,7 +261,7 @@ public interface DisasterRecoveryConfigsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ArmDisasterRecoveryInner> getWithResponse(
@@ -290,7 +290,7 @@ public interface DisasterRecoveryConfigsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> breakPairingWithResponse(
@@ -319,7 +319,7 @@ public interface DisasterRecoveryConfigsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> failOverWithResponse(String resourceGroupName, String namespaceName, String alias, Context context);

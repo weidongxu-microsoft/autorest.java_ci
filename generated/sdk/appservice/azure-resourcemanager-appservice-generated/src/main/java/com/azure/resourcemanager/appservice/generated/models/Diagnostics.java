@@ -67,7 +67,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector.
+     * @return class representing Response from Detector along with {@link Response}.
      */
     Response<DetectorResponse> getHostingEnvironmentDetectorResponseWithResponse(
         String resourceGroupName,
@@ -134,7 +134,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector.
+     * @return class representing Response from Detector along with {@link Response}.
      */
     Response<DetectorResponse> getSiteDetectorResponseWithResponse(
         String resourceGroupName,
@@ -198,7 +198,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing detector definition.
+     * @return class representing detector definition along with {@link Response}.
      */
     Response<DiagnosticCategory> getSiteDiagnosticCategoryWithResponse(
         String resourceGroupName, String siteName, String diagnosticCategory, Context context);
@@ -262,7 +262,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return definition of Analysis.
+     * @return definition of Analysis along with {@link Response}.
      */
     Response<AnalysisDefinition> getSiteAnalysisWithResponse(
         String resourceGroupName, String siteName, String diagnosticCategory, String analysisName, Context context);
@@ -298,7 +298,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a diagnostic analysis done on an application.
+     * @return class representing a diagnostic analysis done on an application along with {@link Response}.
      */
     Response<DiagnosticAnalysis> executeSiteAnalysisWithResponse(
         String resourceGroupName,
@@ -369,7 +369,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return aRM resource for a detector definition.
+     * @return aRM resource for a detector definition along with {@link Response}.
      */
     Response<DetectorDefinitionResource> getSiteDetectorWithResponse(
         String resourceGroupName, String siteName, String diagnosticCategory, String detectorName, Context context);
@@ -405,7 +405,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Diagnostic Detectors.
+     * @return class representing Response from Diagnostic Detectors along with {@link Response}.
      */
     Response<DiagnosticDetectorResponse> executeSiteDetectorWithResponse(
         String resourceGroupName,
@@ -479,7 +479,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector.
+     * @return class representing Response from Detector along with {@link Response}.
      */
     Response<DetectorResponse> getSiteDetectorResponseSlotWithResponse(
         String resourceGroupName,
@@ -550,7 +550,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing detector definition.
+     * @return class representing detector definition along with {@link Response}.
      */
     Response<DiagnosticCategory> getSiteDiagnosticCategorySlotWithResponse(
         String resourceGroupName, String siteName, String diagnosticCategory, String slot, Context context);
@@ -618,7 +618,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return definition of Analysis.
+     * @return definition of Analysis along with {@link Response}.
      */
     Response<AnalysisDefinition> getSiteAnalysisSlotWithResponse(
         String resourceGroupName,
@@ -661,7 +661,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a diagnostic analysis done on an application.
+     * @return class representing a diagnostic analysis done on an application along with {@link Response}.
      */
     Response<DiagnosticAnalysis> executeSiteAnalysisSlotWithResponse(
         String resourceGroupName,
@@ -737,7 +737,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return aRM resource for a detector definition.
+     * @return aRM resource for a detector definition along with {@link Response}.
      */
     Response<DetectorDefinitionResource> getSiteDetectorSlotWithResponse(
         String resourceGroupName,
@@ -780,7 +780,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Diagnostic Detectors.
+     * @return class representing Response from Diagnostic Detectors along with {@link Response}.
      */
     Response<DiagnosticDetectorResponse> executeSiteDetectorSlotWithResponse(
         String resourceGroupName,

@@ -14,6 +14,7 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.compute.generated.fluent.models.AccessUriInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskRestorePointInner;
 import com.azure.resourcemanager.compute.generated.models.GrantAccessData;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in DiskRestorePointsClient. */
 public interface DiskRestorePointsClient {
@@ -49,7 +50,7 @@ public interface DiskRestorePointsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return disk restorePoint resource.
+     * @return disk restorePoint resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DiskRestorePointInner> getWithResponse(
@@ -104,7 +105,7 @@ public interface DiskRestorePointsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a disk access SAS uri.
+     * @return a disk access SAS uri along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AccessUriInner>, AccessUriInner> beginGrantAccess(
@@ -127,7 +128,7 @@ public interface DiskRestorePointsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a disk access SAS uri.
+     * @return a disk access SAS uri along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AccessUriInner>, AccessUriInner> beginGrantAccess(
@@ -195,7 +196,7 @@ public interface DiskRestorePointsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginRevokeAccess(
@@ -216,7 +217,7 @@ public interface DiskRestorePointsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginRevokeAccess(

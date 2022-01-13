@@ -80,7 +80,8 @@ public final class OperationsStatusClientImpl implements OperationsStatusClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a specified job on a Data Box Edge/Data Box Gateway device.
+     * @return the details of a specified job on a Data Box Edge/Data Box Gateway device along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<JobInner>> getWithResponseAsync(String deviceName, String name, String resourceGroupName) {
@@ -133,7 +134,8 @@ public final class OperationsStatusClientImpl implements OperationsStatusClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a specified job on a Data Box Edge/Data Box Gateway device.
+     * @return the details of a specified job on a Data Box Edge/Data Box Gateway device along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<JobInner>> getWithResponseAsync(
@@ -183,7 +185,8 @@ public final class OperationsStatusClientImpl implements OperationsStatusClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a specified job on a Data Box Edge/Data Box Gateway device.
+     * @return the details of a specified job on a Data Box Edge/Data Box Gateway device on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<JobInner> getAsync(String deviceName, String name, String resourceGroupName) {
@@ -224,7 +227,7 @@ public final class OperationsStatusClientImpl implements OperationsStatusClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a specified job on a Data Box Edge/Data Box Gateway device.
+     * @return the details of a specified job on a Data Box Edge/Data Box Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<JobInner> getWithResponse(

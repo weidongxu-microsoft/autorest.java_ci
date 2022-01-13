@@ -184,7 +184,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Network Experiment Profiles under a subscription.
+     * @return a list of Network Experiment Profiles under a subscription along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProfileInner>> listSinglePageAsync() {
@@ -226,7 +227,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Network Experiment Profiles under a subscription.
+     * @return a list of Network Experiment Profiles under a subscription along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProfileInner>> listSinglePageAsync(Context context) {
@@ -318,7 +320,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Network Experiment Profiles within a resource group under a subscription.
+     * @return a list of Network Experiment Profiles within a resource group under a subscription along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProfileInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -371,7 +374,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Network Experiment Profiles within a resource group under a subscription.
+     * @return a list of Network Experiment Profiles within a resource group under a subscription along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProfileInner>> listByResourceGroupSinglePageAsync(
@@ -484,7 +488,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an NetworkExperiment Profile by ProfileName.
+     * @return an NetworkExperiment Profile by ProfileName along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProfileInner>> getByResourceGroupWithResponseAsync(
@@ -534,7 +539,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an NetworkExperiment Profile by ProfileName.
+     * @return an NetworkExperiment Profile by ProfileName along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProfileInner>> getByResourceGroupWithResponseAsync(
@@ -580,7 +586,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an NetworkExperiment Profile by ProfileName.
+     * @return an NetworkExperiment Profile by ProfileName on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ProfileInner> getByResourceGroupAsync(String resourceGroupName, String profileName) {
@@ -619,7 +625,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an NetworkExperiment Profile by ProfileName.
+     * @return an NetworkExperiment Profile by ProfileName along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ProfileInner> getByResourceGroupWithResponse(
@@ -636,7 +642,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -693,7 +700,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -746,7 +754,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ProfileInner>, ProfileInner> beginCreateOrUpdateAsync(
@@ -769,7 +778,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ProfileInner>, ProfileInner> beginCreateOrUpdateAsync(
@@ -792,7 +802,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ProfileInner>, ProfileInner> beginCreateOrUpdate(
@@ -810,7 +821,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ProfileInner>, ProfileInner> beginCreateOrUpdate(
@@ -827,7 +839,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ProfileInner> createOrUpdateAsync(
@@ -847,7 +859,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ProfileInner> createOrUpdateAsync(
@@ -900,7 +912,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(
@@ -957,7 +970,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(
@@ -1010,7 +1024,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ProfileInner>, ProfileInner> beginUpdateAsync(
@@ -1032,7 +1047,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ProfileInner>, ProfileInner> beginUpdateAsync(
@@ -1055,7 +1071,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ProfileInner>, ProfileInner> beginUpdate(
@@ -1073,7 +1090,8 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ProfileInner>, ProfileInner> beginUpdate(
@@ -1090,7 +1108,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ProfileInner> updateAsync(
@@ -1110,7 +1128,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines an Network Experiment Profile and lists of Experiments.
+     * @return defines an Network Experiment Profile and lists of Experiments on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ProfileInner> updateAsync(
@@ -1162,7 +1180,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String profileName) {
@@ -1211,7 +1229,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -1257,7 +1275,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String profileName) {
@@ -1277,7 +1295,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1297,7 +1315,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String profileName) {
@@ -1313,7 +1331,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1329,7 +1347,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String profileName) {
@@ -1345,7 +1363,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String profileName, Context context) {
@@ -1390,7 +1408,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of Profiles.
+     * @return defines a list of Profiles along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProfileInner>> listNextSinglePageAsync(String nextLink) {
@@ -1426,7 +1444,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of Profiles.
+     * @return defines a list of Profiles along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProfileInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1461,7 +1479,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of Profiles.
+     * @return defines a list of Profiles along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProfileInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1498,7 +1516,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of Profiles.
+     * @return defines a list of Profiles along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProfileInner>> listByResourceGroupNextSinglePageAsync(String nextLink, Context context) {

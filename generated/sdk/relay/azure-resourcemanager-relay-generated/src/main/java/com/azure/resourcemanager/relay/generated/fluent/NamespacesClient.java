@@ -18,6 +18,7 @@ import com.azure.resourcemanager.relay.generated.fluent.models.RelayNamespaceInn
 import com.azure.resourcemanager.relay.generated.models.CheckNameAvailability;
 import com.azure.resourcemanager.relay.generated.models.RegenerateAccessKeyParameters;
 import com.azure.resourcemanager.relay.generated.models.RelayUpdateParameters;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in NamespacesClient. */
 public interface NamespacesClient {
@@ -41,7 +42,7 @@ public interface NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the check name availability request properties.
+     * @return description of the check name availability request properties along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
@@ -103,7 +104,7 @@ public interface NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace resource.
+     * @return description of a namespace resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<RelayNamespaceInner>, RelayNamespaceInner> beginCreateOrUpdate(
@@ -119,7 +120,7 @@ public interface NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace resource.
+     * @return description of a namespace resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<RelayNamespaceInner>, RelayNamespaceInner> beginCreateOrUpdate(
@@ -163,7 +164,7 @@ public interface NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String namespaceName);
@@ -177,7 +178,7 @@ public interface NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String namespaceName, Context context);
@@ -229,7 +230,7 @@ public interface NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace resource.
+     * @return description of a namespace resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RelayNamespaceInner> getByResourceGroupWithResponse(
@@ -261,7 +262,7 @@ public interface NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace resource.
+     * @return description of a namespace resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RelayNamespaceInner> updateWithResponse(
@@ -325,7 +326,7 @@ public interface NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return description of a namespace authorization rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AuthorizationRuleInner> createOrUpdateAuthorizationRuleWithResponse(
@@ -358,7 +359,7 @@ public interface NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteAuthorizationRuleWithResponse(
@@ -389,7 +390,7 @@ public interface NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return description of a namespace authorization rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
@@ -419,7 +420,7 @@ public interface NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AccessKeysInner> listKeysWithResponse(
@@ -455,7 +456,7 @@ public interface NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AccessKeysInner> regenerateKeysWithResponse(

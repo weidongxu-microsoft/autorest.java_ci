@@ -85,7 +85,7 @@ public interface SharedGalleryImageVersionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a shared gallery image version by subscription id or tenant id.
+     * @return a shared gallery image version by subscription id or tenant id along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SharedGalleryImageVersionInner> getWithResponse(

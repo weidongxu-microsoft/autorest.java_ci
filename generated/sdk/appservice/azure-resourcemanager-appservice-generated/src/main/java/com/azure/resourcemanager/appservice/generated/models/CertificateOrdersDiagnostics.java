@@ -69,7 +69,7 @@ public interface CertificateOrdersDiagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector.
+     * @return class representing Response from Detector along with {@link Response}.
      */
     Response<DetectorResponse> getAppServiceCertificateOrderDetectorResponseWithResponse(
         String resourceGroupName,

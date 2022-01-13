@@ -212,7 +212,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Application Insights components within a subscription.
+     * @return a list of all Application Insights components within a subscription along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationInsightsComponentInner>> listSinglePageAsync() {
@@ -254,7 +255,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Application Insights components within a subscription.
+     * @return a list of all Application Insights components within a subscription along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationInsightsComponentInner>> listSinglePageAsync(Context context) {
@@ -346,7 +348,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Application Insights components within a resource group.
+     * @return a list of Application Insights components within a resource group along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationInsightsComponentInner>> listByResourceGroupSinglePageAsync(
@@ -400,7 +403,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Application Insights components within a resource group.
+     * @return a list of Application Insights components within a resource group along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationInsightsComponentInner>> listByResourceGroupSinglePageAsync(
@@ -515,7 +519,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String resourceName) {
@@ -562,7 +566,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -606,7 +610,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String resourceName) {
@@ -636,7 +640,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String resourceName, Context context) {
@@ -651,7 +655,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component definition.
+     * @return an Application Insights component definition along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentInner>> getByResourceGroupWithResponseAsync(
@@ -701,7 +706,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component definition.
+     * @return an Application Insights component definition along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentInner>> getByResourceGroupWithResponseAsync(
@@ -747,7 +753,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component definition.
+     * @return an Application Insights component definition on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ApplicationInsightsComponentInner> getByResourceGroupAsync(
@@ -787,7 +793,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component definition.
+     * @return an Application Insights component definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ApplicationInsightsComponentInner> getByResourceGroupWithResponse(
@@ -805,7 +811,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component definition.
+     * @return an Application Insights component definition along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentInner>> createOrUpdateWithResponseAsync(
@@ -864,7 +871,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component definition.
+     * @return an Application Insights component definition along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentInner>> createOrUpdateWithResponseAsync(
@@ -922,7 +930,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component definition.
+     * @return an Application Insights component definition on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ApplicationInsightsComponentInner> createOrUpdateAsync(
@@ -967,7 +975,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component definition.
+     * @return an Application Insights component definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ApplicationInsightsComponentInner> createOrUpdateWithResponse(
@@ -987,7 +995,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component definition.
+     * @return an Application Insights component definition along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentInner>> updateTagsWithResponseAsync(
@@ -1044,7 +1053,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component definition.
+     * @return an Application Insights component definition along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInsightsComponentInner>> updateTagsWithResponseAsync(
@@ -1097,7 +1107,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component definition.
+     * @return an Application Insights component definition on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ApplicationInsightsComponentInner> updateTagsAsync(
@@ -1140,7 +1150,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component definition.
+     * @return an Application Insights component definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ApplicationInsightsComponentInner> updateTagsWithResponse(
@@ -1162,7 +1172,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing operationId for a specific purge action.
+     * @return response containing operationId for a specific purge action along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ComponentPurgeResponseInner>> purgeWithResponseAsync(
@@ -1224,7 +1235,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing operationId for a specific purge action.
+     * @return response containing operationId for a specific purge action along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ComponentPurgeResponseInner>> purgeWithResponseAsync(
@@ -1282,7 +1294,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing operationId for a specific purge action.
+     * @return response containing operationId for a specific purge action on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ComponentPurgeResponseInner> purgeAsync(
@@ -1334,7 +1346,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing operationId for a specific purge action.
+     * @return response containing operationId for a specific purge action along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ComponentPurgeResponseInner> purgeWithResponse(
@@ -1351,7 +1363,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return status for an ongoing purge operation.
+     * @return status for an ongoing purge operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ComponentPurgeStatusResponseInner>> getPurgeStatusWithResponseAsync(
@@ -1406,7 +1419,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return status for an ongoing purge operation.
+     * @return status for an ongoing purge operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ComponentPurgeStatusResponseInner>> getPurgeStatusWithResponseAsync(
@@ -1457,7 +1471,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return status for an ongoing purge operation.
+     * @return status for an ongoing purge operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ComponentPurgeStatusResponseInner> getPurgeStatusAsync(
@@ -1500,7 +1514,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return status for an ongoing purge operation.
+     * @return status for an ongoing purge operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ComponentPurgeStatusResponseInner> getPurgeStatusWithResponse(
@@ -1515,7 +1529,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the list of Application Insights Resources.
+     * @return describes the list of Application Insights Resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationInsightsComponentInner>> listNextSinglePageAsync(String nextLink) {
@@ -1551,7 +1566,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the list of Application Insights Resources.
+     * @return describes the list of Application Insights Resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationInsightsComponentInner>> listNextSinglePageAsync(
@@ -1587,7 +1603,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the list of Application Insights Resources.
+     * @return describes the list of Application Insights Resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationInsightsComponentInner>> listByResourceGroupNextSinglePageAsync(
@@ -1625,7 +1642,8 @@ public final class ComponentsClientImpl implements ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the list of Application Insights Resources.
+     * @return describes the list of Application Insights Resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationInsightsComponentInner>> listByResourceGroupNextSinglePageAsync(

@@ -20,6 +20,7 @@ import com.azure.resourcemanager.keyvault.generated.models.AccessPolicyUpdateKin
 import com.azure.resourcemanager.keyvault.generated.models.VaultCheckNameAvailabilityParameters;
 import com.azure.resourcemanager.keyvault.generated.models.VaultCreateOrUpdateParameters;
 import com.azure.resourcemanager.keyvault.generated.models.VaultPatchParameters;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in VaultsClient. */
 public interface VaultsClient {
@@ -32,7 +33,8 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VaultInner>, VaultInner> beginCreateOrUpdate(
@@ -48,7 +50,8 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VaultInner>, VaultInner> beginCreateOrUpdate(
@@ -108,7 +111,7 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VaultInner> updateWithResponse(
@@ -135,7 +138,7 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String vaultName, Context context);
@@ -162,7 +165,7 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure key vault.
+     * @return the specified Azure key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VaultInner> getByResourceGroupWithResponse(String resourceGroupName, String vaultName, Context context);
@@ -197,7 +200,7 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return parameters for updating the access policy in a vault.
+     * @return parameters for updating the access policy in a vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VaultAccessPolicyParametersInner> updateAccessPolicyWithResponse(
@@ -302,7 +305,7 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deleted Azure key vault.
+     * @return the deleted Azure key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeletedVaultInner> getDeletedWithResponse(String vaultName, String location, Context context);
@@ -315,7 +318,7 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginPurgeDeleted(String vaultName, String location);
@@ -329,7 +332,7 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginPurgeDeleted(String vaultName, String location, Context context);
@@ -402,7 +405,7 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(

@@ -119,7 +119,8 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventSummaryInner>> listByBillingProfileSinglePageAsync(
@@ -182,7 +183,8 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventSummaryInner>> listByBillingProfileSinglePageAsync(
@@ -324,7 +326,8 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventSummaryInner>> listByBillingAccountSinglePageAsync(
@@ -375,7 +378,8 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventSummaryInner>> listByBillingAccountSinglePageAsync(
@@ -509,7 +513,8 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventSummaryInner>> listByBillingProfileNextSinglePageAsync(String nextLink) {
@@ -546,7 +551,8 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventSummaryInner>> listByBillingProfileNextSinglePageAsync(
@@ -582,7 +588,8 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventSummaryInner>> listByBillingAccountNextSinglePageAsync(String nextLink) {
@@ -619,7 +626,8 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventSummaryInner>> listByBillingAccountNextSinglePageAsync(

@@ -77,7 +77,7 @@ public final class SchemasClientImpl implements SchemasClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the schema for a given workspace.
+     * @return the schema for a given workspace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SearchGetSchemaResponseInner>> getWithResponseAsync(
@@ -127,7 +127,7 @@ public final class SchemasClientImpl implements SchemasClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the schema for a given workspace.
+     * @return the schema for a given workspace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SearchGetSchemaResponseInner>> getWithResponseAsync(
@@ -173,7 +173,7 @@ public final class SchemasClientImpl implements SchemasClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the schema for a given workspace.
+     * @return the schema for a given workspace on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SearchGetSchemaResponseInner> getAsync(String resourceGroupName, String workspaceName) {
@@ -212,7 +212,7 @@ public final class SchemasClientImpl implements SchemasClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the schema for a given workspace.
+     * @return the schema for a given workspace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SearchGetSchemaResponseInner> getWithResponse(

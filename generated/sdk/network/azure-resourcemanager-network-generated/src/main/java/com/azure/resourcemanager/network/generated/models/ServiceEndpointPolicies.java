@@ -55,7 +55,7 @@ public interface ServiceEndpointPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service Endpoint Policies in a specified resource group.
+     * @return the specified service Endpoint Policies in a specified resource group along with {@link Response}.
      */
     Response<ServiceEndpointPolicy> getByResourceGroupWithResponse(
         String resourceGroupName, String serviceEndpointPolicyName, String expand, Context context);
@@ -110,7 +110,7 @@ public interface ServiceEndpointPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service Endpoint Policies in a specified resource group.
+     * @return the specified service Endpoint Policies in a specified resource group along with {@link Response}.
      */
     ServiceEndpointPolicy getById(String id);
 
@@ -123,7 +123,7 @@ public interface ServiceEndpointPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service Endpoint Policies in a specified resource group.
+     * @return the specified service Endpoint Policies in a specified resource group along with {@link Response}.
      */
     Response<ServiceEndpointPolicy> getByIdWithResponse(String id, String expand, Context context);
 

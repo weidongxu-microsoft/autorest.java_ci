@@ -13,6 +13,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskEncryptionSetInner;
 import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSetUpdate;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in DiskEncryptionSetsClient. */
 public interface DiskEncryptionSetsClient {
@@ -29,7 +30,7 @@ public interface DiskEncryptionSetsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return disk encryption set resource.
+     * @return disk encryption set resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DiskEncryptionSetInner>, DiskEncryptionSetInner> beginCreateOrUpdate(
@@ -49,7 +50,7 @@ public interface DiskEncryptionSetsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return disk encryption set resource.
+     * @return disk encryption set resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DiskEncryptionSetInner>, DiskEncryptionSetInner> beginCreateOrUpdate(
@@ -113,7 +114,7 @@ public interface DiskEncryptionSetsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return disk encryption set resource.
+     * @return disk encryption set resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DiskEncryptionSetInner>, DiskEncryptionSetInner> beginUpdate(
@@ -133,7 +134,7 @@ public interface DiskEncryptionSetsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return disk encryption set resource.
+     * @return disk encryption set resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DiskEncryptionSetInner>, DiskEncryptionSetInner> beginUpdate(
@@ -212,7 +213,7 @@ public interface DiskEncryptionSetsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk encryption set.
+     * @return information about a disk encryption set along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DiskEncryptionSetInner> getByResourceGroupWithResponse(
@@ -229,7 +230,7 @@ public interface DiskEncryptionSetsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String diskEncryptionSetName);
@@ -246,7 +247,7 @@ public interface DiskEncryptionSetsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(

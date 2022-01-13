@@ -59,7 +59,7 @@ public interface VirtualMachineScaleSetExtensions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set Extension.
+     * @return describes a Virtual Machine Scale Set Extension along with {@link Response}.
      */
     Response<VirtualMachineScaleSetExtension> getWithResponse(
         String resourceGroupName, String vmScaleSetName, String vmssExtensionName, String expand, Context context);
@@ -97,7 +97,7 @@ public interface VirtualMachineScaleSetExtensions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set Extension.
+     * @return describes a Virtual Machine Scale Set Extension along with {@link Response}.
      */
     VirtualMachineScaleSetExtension getById(String id);
 
@@ -110,7 +110,7 @@ public interface VirtualMachineScaleSetExtensions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set Extension.
+     * @return describes a Virtual Machine Scale Set Extension along with {@link Response}.
      */
     Response<VirtualMachineScaleSetExtension> getByIdWithResponse(String id, String expand, Context context);
 

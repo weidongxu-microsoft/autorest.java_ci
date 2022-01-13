@@ -33,7 +33,7 @@ public interface HubRouteTables {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return routeTable resource in a virtual hub.
+     * @return routeTable resource in a virtual hub along with {@link Response}.
      */
     Response<HubRouteTable> getWithResponse(
         String resourceGroupName, String virtualHubName, String routeTableName, Context context);
@@ -95,7 +95,7 @@ public interface HubRouteTables {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return routeTable resource in a virtual hub.
+     * @return routeTable resource in a virtual hub along with {@link Response}.
      */
     HubRouteTable getById(String id);
 
@@ -107,7 +107,7 @@ public interface HubRouteTables {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return routeTable resource in a virtual hub.
+     * @return routeTable resource in a virtual hub along with {@link Response}.
      */
     Response<HubRouteTable> getByIdWithResponse(String id, Context context);
 

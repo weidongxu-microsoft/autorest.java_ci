@@ -13,6 +13,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.PatchVault;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in VaultsClient. */
 public interface VaultsClient {
@@ -85,7 +86,7 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Vault details.
+     * @return the Vault details along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VaultInner> getByResourceGroupWithResponse(String resourceGroupName, String vaultName, Context context);
@@ -99,7 +100,8 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information, as returned by the resource provider.
+     * @return resource information, as returned by the resource provider along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VaultInner>, VaultInner> beginCreateOrUpdate(
@@ -115,7 +117,8 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information, as returned by the resource provider.
+     * @return resource information, as returned by the resource provider along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VaultInner>, VaultInner> beginCreateOrUpdate(
@@ -171,7 +174,7 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String vaultName, Context context);
@@ -185,7 +188,8 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information, as returned by the resource provider.
+     * @return resource information, as returned by the resource provider along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VaultInner>, VaultInner> beginUpdate(
@@ -201,7 +205,8 @@ public interface VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information, as returned by the resource provider.
+     * @return resource information, as returned by the resource provider along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VaultInner>, VaultInner> beginUpdate(

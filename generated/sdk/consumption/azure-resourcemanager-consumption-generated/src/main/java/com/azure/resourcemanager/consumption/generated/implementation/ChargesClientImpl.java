@@ -99,7 +99,7 @@ public final class ChargesClientImpl implements ChargesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing charge summary.
+     * @return result of listing charge summary along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ChargesListResultInner>> listWithResponseAsync(
@@ -162,7 +162,7 @@ public final class ChargesClientImpl implements ChargesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing charge summary.
+     * @return result of listing charge summary along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ChargesListResultInner>> listWithResponseAsync(
@@ -221,7 +221,7 @@ public final class ChargesClientImpl implements ChargesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing charge summary.
+     * @return result of listing charge summary on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ChargesListResultInner> listAsync(
@@ -259,7 +259,7 @@ public final class ChargesClientImpl implements ChargesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing charge summary.
+     * @return result of listing charge summary on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ChargesListResultInner> listAsync(String scope) {
@@ -342,7 +342,7 @@ public final class ChargesClientImpl implements ChargesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing charge summary.
+     * @return result of listing charge summary along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ChargesListResultInner> listWithResponse(

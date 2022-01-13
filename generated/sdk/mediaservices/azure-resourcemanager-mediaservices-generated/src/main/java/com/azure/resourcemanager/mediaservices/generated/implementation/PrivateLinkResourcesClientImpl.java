@@ -96,7 +96,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of group IDs.
+     * @return list of group IDs along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceListResultInner>> listWithResponseAsync(
@@ -145,7 +145,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of group IDs.
+     * @return list of group IDs along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceListResultInner>> listWithResponseAsync(
@@ -190,7 +190,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of group IDs.
+     * @return list of group IDs on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkResourceListResultInner> listAsync(String resourceGroupName, String accountName) {
@@ -229,7 +229,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of group IDs.
+     * @return list of group IDs along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PrivateLinkResourceListResultInner> listWithResponse(
@@ -246,7 +246,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return group ID.
+     * @return group ID along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceInner>> getWithResponseAsync(
@@ -300,7 +300,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return group ID.
+     * @return group ID along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceInner>> getWithResponseAsync(
@@ -350,7 +350,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return group ID.
+     * @return group ID on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkResourceInner> getAsync(String resourceGroupName, String accountName, String name) {
@@ -391,7 +391,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return group ID.
+     * @return group ID along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PrivateLinkResourceInner> getWithResponse(

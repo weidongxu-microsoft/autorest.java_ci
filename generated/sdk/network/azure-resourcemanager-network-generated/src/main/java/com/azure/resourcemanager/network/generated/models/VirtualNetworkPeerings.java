@@ -58,7 +58,7 @@ public interface VirtualNetworkPeerings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network peering.
+     * @return the specified virtual network peering along with {@link Response}.
      */
     Response<VirtualNetworkPeering> getWithResponse(
         String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName, Context context);
@@ -95,7 +95,7 @@ public interface VirtualNetworkPeerings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network peering.
+     * @return the specified virtual network peering along with {@link Response}.
      */
     VirtualNetworkPeering getById(String id);
 
@@ -107,7 +107,7 @@ public interface VirtualNetworkPeerings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network peering.
+     * @return the specified virtual network peering along with {@link Response}.
      */
     Response<VirtualNetworkPeering> getByIdWithResponse(String id, Context context);
 

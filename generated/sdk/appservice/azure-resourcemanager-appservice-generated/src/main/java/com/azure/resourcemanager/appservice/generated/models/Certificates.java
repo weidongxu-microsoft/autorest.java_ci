@@ -82,7 +82,7 @@ public interface Certificates {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
+     * @return sSL certificate for an app along with {@link Response}.
      */
     Response<Certificate> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
 
@@ -108,7 +108,7 @@ public interface Certificates {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context);
 
@@ -120,7 +120,7 @@ public interface Certificates {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
+     * @return sSL certificate for an app along with {@link Response}.
      */
     Certificate getById(String id);
 
@@ -133,7 +133,7 @@ public interface Certificates {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
+     * @return sSL certificate for an app along with {@link Response}.
      */
     Response<Certificate> getByIdWithResponse(String id, Context context);
 
@@ -157,7 +157,7 @@ public interface Certificates {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

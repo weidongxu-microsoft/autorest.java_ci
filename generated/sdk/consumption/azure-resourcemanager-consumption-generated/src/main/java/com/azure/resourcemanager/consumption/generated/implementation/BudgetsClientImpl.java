@@ -138,7 +138,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing budgets.
+     * @return result of listing budgets along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BudgetInner>> listSinglePageAsync(String scope) {
@@ -186,7 +186,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing budgets.
+     * @return result of listing budgets along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BudgetInner>> listSinglePageAsync(String scope, Context context) {
@@ -336,7 +336,8 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the budget for the scope by budget name.
+     * @return the budget for the scope by budget name along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BudgetInner>> getWithResponseAsync(String scope, String budgetName) {
@@ -382,7 +383,8 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the budget for the scope by budget name.
+     * @return the budget for the scope by budget name along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BudgetInner>> getWithResponseAsync(String scope, String budgetName, Context context) {
@@ -422,7 +424,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the budget for the scope by budget name.
+     * @return the budget for the scope by budget name on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<BudgetInner> getAsync(String scope, String budgetName) {
@@ -483,7 +485,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the budget for the scope by budget name.
+     * @return the budget for the scope by budget name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<BudgetInner> getWithResponse(String scope, String budgetName, Context context) {
@@ -512,7 +514,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a budget resource.
+     * @return a budget resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BudgetInner>> createOrUpdateWithResponseAsync(
@@ -573,7 +575,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a budget resource.
+     * @return a budget resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BudgetInner>> createOrUpdateWithResponseAsync(
@@ -624,7 +626,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a budget resource.
+     * @return a budget resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<BudgetInner> createOrUpdateAsync(String scope, String budgetName, BudgetInner parameters) {
@@ -691,7 +693,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a budget resource.
+     * @return a budget resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<BudgetInner> createOrUpdateWithResponse(
@@ -718,7 +720,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String scope, String budgetName) {
@@ -764,7 +766,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String scope, String budgetName, Context context) {
@@ -805,7 +807,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String scope, String budgetName) {
@@ -857,7 +859,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String scope, String budgetName, Context context) {
@@ -871,7 +873,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing budgets.
+     * @return result of listing budgets along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BudgetInner>> listNextSinglePageAsync(String nextLink) {
@@ -907,7 +909,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing budgets.
+     * @return result of listing budgets along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BudgetInner>> listNextSinglePageAsync(String nextLink, Context context) {

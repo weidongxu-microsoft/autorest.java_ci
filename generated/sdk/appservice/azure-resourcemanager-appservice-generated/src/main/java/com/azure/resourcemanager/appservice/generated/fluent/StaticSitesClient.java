@@ -30,6 +30,7 @@ import com.azure.resourcemanager.appservice.generated.models.StaticSiteResetProp
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteZipDeploymentArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreviewRequest;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in StaticSitesClient. */
 public interface StaticSitesClient {
@@ -60,7 +61,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return preview for the Static Site Workflow to be generated.
+     * @return preview for the Static Site Workflow to be generated along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StaticSitesWorkflowPreviewInner> previewWorkflowWithResponse(
@@ -141,7 +142,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource.
+     * @return static Site ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StaticSiteArmResourceInner> getByResourceGroupWithResponse(
@@ -157,7 +158,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource.
+     * @return static Site ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<StaticSiteArmResourceInner>, StaticSiteArmResourceInner> beginCreateOrUpdateStaticSite(
@@ -174,7 +175,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource.
+     * @return static Site ARM resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<StaticSiteArmResourceInner>, StaticSiteArmResourceInner> beginCreateOrUpdateStaticSite(
@@ -222,7 +223,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name);
@@ -237,7 +238,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name, Context context);
@@ -296,7 +297,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource.
+     * @return static Site ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StaticSiteArmResourceInner> updateStaticSiteWithResponse(
@@ -362,7 +363,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteStaticSiteUserWithResponse(
@@ -403,7 +404,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User ARM resource.
+     * @return static Site User ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StaticSiteUserArmResourceInner> updateStaticSiteUserWithResponse(
@@ -470,7 +471,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Build ARM resource.
+     * @return static Site Build ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StaticSiteBuildArmResourceInner> getStaticSiteBuildWithResponse(
@@ -486,7 +487,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteStaticSiteBuild(
@@ -503,7 +504,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteStaticSiteBuild(
@@ -567,7 +568,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StringDictionaryInner> createOrUpdateStaticSiteBuildAppSettingsWithResponse(
@@ -606,7 +607,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StringDictionaryInner> createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponse(
@@ -675,7 +676,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StringDictionaryInner> listStaticSiteBuildAppSettingsWithResponse(
@@ -708,7 +709,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StringDictionaryInner> listStaticSiteBuildFunctionAppSettingsWithResponse(
@@ -776,7 +777,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
+     * @return static Site User Provided Function App ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StaticSiteUserProvidedFunctionAppArmResourceInner>
@@ -799,7 +800,8 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
+     * @return static Site User Provided Function App ARM resource along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<
@@ -830,7 +832,8 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
+     * @return static Site User Provided Function App ARM resource along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<
@@ -952,7 +955,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(
@@ -970,7 +973,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginCreateZipDeploymentForStaticSiteBuild(
@@ -992,7 +995,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginCreateZipDeploymentForStaticSiteBuild(
@@ -1071,7 +1074,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StringDictionaryInner> createOrUpdateStaticSiteAppSettingsWithResponse(
@@ -1104,7 +1107,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StringDictionaryInner> createOrUpdateStaticSiteFunctionAppSettingsWithResponse(
@@ -1139,7 +1142,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static sites user roles invitation link resource.
+     * @return static sites user roles invitation link resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StaticSiteUserInvitationResponseResourceInner> createUserRolesInvitationLinkWithResponse(
@@ -1206,7 +1209,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Custom Domain Overview ARM resource.
+     * @return static Site Custom Domain Overview ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StaticSiteCustomDomainOverviewArmResourceInner> getStaticSiteCustomDomainWithResponse(
@@ -1224,7 +1227,8 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Custom Domain Overview ARM resource.
+     * @return static Site Custom Domain Overview ARM resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<
@@ -1248,7 +1252,8 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Custom Domain Overview ARM resource.
+     * @return static Site Custom Domain Overview ARM resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<
@@ -1314,7 +1319,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteStaticSiteCustomDomain(
@@ -1331,7 +1336,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteStaticSiteCustomDomain(
@@ -1378,7 +1383,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginValidateCustomDomainCanBeAddedToStaticSite(
@@ -1400,7 +1405,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginValidateCustomDomainCanBeAddedToStaticSite(
@@ -1461,7 +1466,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDetachStaticSite(String resourceGroupName, String name);
@@ -1476,7 +1481,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDetachStaticSite(String resourceGroupName, String name, Context context);
@@ -1563,7 +1568,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StringDictionaryInner> listStaticSiteAppSettingsWithResponse(
@@ -1593,7 +1598,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string list resource.
+     * @return string list resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StringListInner> listStaticSiteConfiguredRolesWithResponse(
@@ -1623,7 +1628,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StringDictionaryInner> listStaticSiteFunctionAppSettingsWithResponse(
@@ -1653,7 +1658,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StringDictionaryInner> listStaticSiteSecretsWithResponse(
@@ -1717,7 +1722,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionWithResponse(
@@ -1734,7 +1739,8 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<
@@ -1758,7 +1764,8 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<
@@ -1823,7 +1830,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Object>, Object> beginDeletePrivateEndpointConnection(
@@ -1840,7 +1847,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Object>, Object> beginDeletePrivateEndpointConnection(
@@ -1902,7 +1909,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources.
+     * @return wrapper for a collection of private link resources along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateLinkResourcesWrapperInner> getPrivateLinkResourcesWithResponse(
@@ -1934,7 +1941,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> resetStaticSiteApiKeyWithResponse(
@@ -2001,7 +2008,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
+     * @return static Site User Provided Function App ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StaticSiteUserProvidedFunctionAppArmResourceInner> getUserProvidedFunctionAppForStaticSiteWithResponse(
@@ -2022,7 +2029,8 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
+     * @return static Site User Provided Function App ARM resource along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<
@@ -2051,7 +2059,8 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
+     * @return static Site User Provided Function App ARM resource along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<
@@ -2163,7 +2172,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> detachUserProvidedFunctionAppFromStaticSiteWithResponse(
@@ -2180,7 +2189,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginCreateZipDeploymentForStaticSite(
@@ -2198,7 +2207,7 @@ public interface StaticSitesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginCreateZipDeploymentForStaticSite(

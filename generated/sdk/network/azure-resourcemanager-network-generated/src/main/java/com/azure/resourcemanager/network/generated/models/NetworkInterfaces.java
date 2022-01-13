@@ -93,7 +93,7 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a cloud service.
+     * @return the specified network interface in a cloud service along with {@link Response}.
      */
     Response<NetworkInterface> getCloudServiceNetworkInterfaceWithResponse(
         String resourceGroupName,
@@ -148,7 +148,7 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface.
+     * @return information about the specified network interface along with {@link Response}.
      */
     Response<NetworkInterface> getByResourceGroupWithResponse(
         String resourceGroupName, String networkInterfaceName, String expand, Context context);
@@ -335,7 +335,7 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a virtual machine scale set.
+     * @return the specified network interface in a virtual machine scale set along with {@link Response}.
      */
     Response<NetworkInterface> getVirtualMachineScaleSetNetworkInterfaceWithResponse(
         String resourceGroupName,
@@ -418,7 +418,8 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set.
+     * @return the specified network interface ip configuration in a virtual machine scale set along with {@link
+     *     Response}.
      */
     Response<NetworkInterfaceIpConfiguration> getVirtualMachineScaleSetIpConfigurationWithResponse(
         String resourceGroupName,
@@ -436,7 +437,7 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface.
+     * @return information about the specified network interface along with {@link Response}.
      */
     NetworkInterface getById(String id);
 
@@ -449,7 +450,7 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface.
+     * @return information about the specified network interface along with {@link Response}.
      */
     Response<NetworkInterface> getByIdWithResponse(String id, String expand, Context context);
 

@@ -365,7 +365,7 @@ public interface FunctionEnvelope {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> listFunctionKeysWithResponse(Context context);
 
@@ -387,7 +387,7 @@ public interface FunctionEnvelope {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function secrets.
+     * @return function secrets along with {@link Response}.
      */
     Response<FunctionSecrets> listFunctionSecretsWithResponse(Context context);
 }

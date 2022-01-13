@@ -20,6 +20,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.VpnProfileRespo
 import com.azure.resourcemanager.network.generated.models.BastionShareableLinkListRequest;
 import com.azure.resourcemanager.network.generated.models.SessionIds;
 import com.azure.resourcemanager.network.generated.models.VirtualWanVpnProfileParameters;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ResourceProvidersClient. */
 public interface ResourceProvidersClient {
@@ -63,7 +64,7 @@ public interface ResourceProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteBastionShareableLink(
@@ -79,7 +80,7 @@ public interface ResourceProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteBastionShareableLink(
@@ -228,7 +229,7 @@ public interface ResourceProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckDnsNameAvailability API service call.
+     * @return response for the CheckDnsNameAvailability API service call along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DnsNameAvailabilityResultInner> checkDnsNameAvailabilityWithResponse(
@@ -256,7 +257,7 @@ public interface ResourceProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SecurityProviders.
+     * @return collection of SecurityProviders along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VirtualWanSecurityProvidersInner> supportedSecurityProvidersWithResponse(
@@ -272,7 +273,8 @@ public interface ResourceProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner>
@@ -290,7 +292,8 @@ public interface ResourceProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner>

@@ -25,7 +25,7 @@ public interface ExpressRouteGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of ExpressRoute gateways.
+     * @return list of ExpressRoute gateways along with {@link Response}.
      */
     Response<ExpressRouteGatewayList> listBySubscriptionWithResponse(Context context);
 
@@ -48,7 +48,7 @@ public interface ExpressRouteGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of ExpressRoute gateways.
+     * @return list of ExpressRoute gateways along with {@link Response}.
      */
     Response<ExpressRouteGatewayList> listByResourceGroupWithResponse(String resourceGroupName, Context context);
 
@@ -73,7 +73,7 @@ public interface ExpressRouteGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute gateway resource.
+     * @return expressRoute gateway resource along with {@link Response}.
      */
     Response<ExpressRouteGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String expressRouteGatewayName, Context context);
@@ -110,7 +110,7 @@ public interface ExpressRouteGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute gateway resource.
+     * @return expressRoute gateway resource along with {@link Response}.
      */
     ExpressRouteGateway getById(String id);
 
@@ -122,7 +122,7 @@ public interface ExpressRouteGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute gateway resource.
+     * @return expressRoute gateway resource along with {@link Response}.
      */
     Response<ExpressRouteGateway> getByIdWithResponse(String id, Context context);
 

@@ -99,7 +99,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of Query Performance Insight data reset.
+     * @return result of Query Performance Insight data reset along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QueryPerformanceInsightResetDataResultInner>>
@@ -149,7 +150,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of Query Performance Insight data reset.
+     * @return result of Query Performance Insight data reset along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QueryPerformanceInsightResetDataResultInner>>
@@ -196,7 +198,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of Query Performance Insight data reset.
+     * @return result of Query Performance Insight data reset on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<QueryPerformanceInsightResetDataResultInner> resetQueryPerformanceInsightDataAsync(
@@ -237,7 +239,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of Query Performance Insight data reset.
+     * @return result of Query Performance Insight data reset along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<QueryPerformanceInsightResetDataResultInner> resetQueryPerformanceInsightDataWithResponse(
@@ -255,7 +257,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createRecommendedActionSessionWithResponseAsync(
@@ -313,7 +315,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createRecommendedActionSessionWithResponseAsync(
@@ -367,7 +369,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginCreateRecommendedActionSessionAsync(
@@ -391,7 +393,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginCreateRecommendedActionSessionAsync(
@@ -415,7 +417,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreateRecommendedActionSession(
@@ -435,7 +437,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreateRecommendedActionSession(
@@ -455,7 +457,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> createRecommendedActionSessionAsync(
@@ -476,7 +478,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> createRecommendedActionSessionAsync(

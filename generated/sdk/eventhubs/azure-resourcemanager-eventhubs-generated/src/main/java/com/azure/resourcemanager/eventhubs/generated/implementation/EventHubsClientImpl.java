@@ -266,7 +266,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the authorization rules for an Event Hub.
+     * @return the authorization rules for an Event Hub along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesSinglePageAsync(
@@ -329,7 +330,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the authorization rules for an Event Hub.
+     * @return the authorization rules for an Event Hub along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesSinglePageAsync(
@@ -466,7 +468,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> createOrUpdateAuthorizationRuleWithResponseAsync(
@@ -538,7 +541,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> createOrUpdateAuthorizationRuleWithResponseAsync(
@@ -607,7 +611,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
+     * @return single item in a List or Get AuthorizationRule operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AuthorizationRuleInner> createOrUpdateAuthorizationRuleAsync(
@@ -667,7 +671,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AuthorizationRuleInner> createOrUpdateAuthorizationRuleWithResponse(
@@ -692,7 +696,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for an Event Hub by rule name.
+     * @return an AuthorizationRule for an Event Hub by rule name along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> getAuthorizationRuleWithResponseAsync(
@@ -752,7 +757,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for an Event Hub by rule name.
+     * @return an AuthorizationRule for an Event Hub by rule name along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> getAuthorizationRuleWithResponseAsync(
@@ -812,7 +818,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for an Event Hub by rule name.
+     * @return an AuthorizationRule for an Event Hub by rule name on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AuthorizationRuleInner> getAuthorizationRuleAsync(
@@ -858,7 +864,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for an Event Hub by rule name.
+     * @return an AuthorizationRule for an Event Hub by rule name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
@@ -882,7 +888,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteAuthorizationRuleWithResponseAsync(
@@ -942,7 +948,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteAuthorizationRuleWithResponseAsync(
@@ -1002,7 +1008,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAuthorizationRuleAsync(
@@ -1040,7 +1046,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteAuthorizationRuleWithResponse(
@@ -1064,7 +1070,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the ACS and SAS connection strings for the Event Hub.
+     * @return the ACS and SAS connection strings for the Event Hub along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> listKeysWithResponseAsync(
@@ -1124,7 +1131,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the ACS and SAS connection strings for the Event Hub.
+     * @return the ACS and SAS connection strings for the Event Hub along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> listKeysWithResponseAsync(
@@ -1184,7 +1192,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the ACS and SAS connection strings for the Event Hub.
+     * @return the ACS and SAS connection strings for the Event Hub on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AccessKeysInner> listKeysAsync(
@@ -1229,7 +1237,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the ACS and SAS connection strings for the Event Hub.
+     * @return the ACS and SAS connection strings for the Event Hub along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AccessKeysInner> listKeysWithResponse(
@@ -1253,7 +1261,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return namespace/EventHub Connection String along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> regenerateKeysWithResponseAsync(
@@ -1324,7 +1333,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return namespace/EventHub Connection String along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> regenerateKeysWithResponseAsync(
@@ -1392,7 +1402,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return namespace/EventHub Connection String on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AccessKeysInner> regenerateKeysAsync(
@@ -1449,7 +1459,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return namespace/EventHub Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AccessKeysInner> regenerateKeysWithResponse(
@@ -1476,7 +1486,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Event Hubs in a Namespace.
+     * @return all the Event Hubs in a Namespace along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventhubInner>> listByNamespaceSinglePageAsync(
@@ -1540,7 +1551,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Event Hubs in a Namespace.
+     * @return all the Event Hubs in a Namespace along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventhubInner>> listByNamespaceSinglePageAsync(
@@ -1700,7 +1712,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Event Hub operation.
+     * @return single item in List or Get Event Hub operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EventhubInner>> createOrUpdateWithResponseAsync(
@@ -1761,7 +1774,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Event Hub operation.
+     * @return single item in List or Get Event Hub operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EventhubInner>> createOrUpdateWithResponseAsync(
@@ -1822,7 +1836,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Event Hub operation.
+     * @return single item in List or Get Event Hub operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EventhubInner> createOrUpdateAsync(
@@ -1867,7 +1881,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Event Hub operation.
+     * @return single item in List or Get Event Hub operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<EventhubInner> createOrUpdateWithResponse(
@@ -1889,7 +1903,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -1943,7 +1957,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -1993,7 +2007,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, String eventHubName) {
@@ -2026,7 +2040,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -2043,7 +2057,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Event Hubs description for the specified Event Hub.
+     * @return an Event Hubs description for the specified Event Hub along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EventhubInner>> getWithResponseAsync(
@@ -2097,7 +2112,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Event Hubs description for the specified Event Hub.
+     * @return an Event Hubs description for the specified Event Hub along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EventhubInner>> getWithResponseAsync(
@@ -2147,7 +2163,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Event Hubs description for the specified Event Hub.
+     * @return an Event Hubs description for the specified Event Hub on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EventhubInner> getAsync(String resourceGroupName, String namespaceName, String eventHubName) {
@@ -2188,7 +2204,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Event Hubs description for the specified Event Hub.
+     * @return an Event Hubs description for the specified Event Hub along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<EventhubInner> getWithResponse(
@@ -2203,7 +2219,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List namespace operation.
+     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesNextSinglePageAsync(String nextLink) {
@@ -2240,7 +2257,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List namespace operation.
+     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesNextSinglePageAsync(
@@ -2276,7 +2294,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result of the List EventHubs operation.
+     * @return the result of the List EventHubs operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventhubInner>> listByNamespaceNextSinglePageAsync(String nextLink) {
@@ -2312,7 +2331,8 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result of the List EventHubs operation.
+     * @return the result of the List EventHubs operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventhubInner>> listByNamespaceNextSinglePageAsync(String nextLink, Context context) {

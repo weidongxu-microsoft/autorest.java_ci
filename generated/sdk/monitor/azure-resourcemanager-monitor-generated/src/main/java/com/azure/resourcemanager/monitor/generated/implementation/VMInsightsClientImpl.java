@@ -74,7 +74,8 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vM Insights onboarding status for a resource.
+     * @return vM Insights onboarding status for a resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VMInsightsOnboardingStatusInner>> getOnboardingStatusWithResponseAsync(String resourceUri) {
@@ -105,7 +106,8 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vM Insights onboarding status for a resource.
+     * @return vM Insights onboarding status for a resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VMInsightsOnboardingStatusInner>> getOnboardingStatusWithResponseAsync(
@@ -133,7 +135,7 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vM Insights onboarding status for a resource.
+     * @return vM Insights onboarding status for a resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VMInsightsOnboardingStatusInner> getOnboardingStatusAsync(String resourceUri) {
@@ -172,7 +174,7 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vM Insights onboarding status for a resource.
+     * @return vM Insights onboarding status for a resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VMInsightsOnboardingStatusInner> getOnboardingStatusWithResponse(

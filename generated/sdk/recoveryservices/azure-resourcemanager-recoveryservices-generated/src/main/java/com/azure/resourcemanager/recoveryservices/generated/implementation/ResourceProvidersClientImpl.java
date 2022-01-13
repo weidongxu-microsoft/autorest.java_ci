@@ -97,7 +97,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation status for a resource.
+     * @return the operation status for a resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OperationResourceInner>> getOperationStatusWithResponseAsync(
@@ -151,7 +151,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation status for a resource.
+     * @return the operation status for a resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OperationResourceInner>> getOperationStatusWithResponseAsync(
@@ -201,7 +201,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation status for a resource.
+     * @return the operation status for a resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<OperationResourceInner> getOperationStatusAsync(
@@ -243,7 +243,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation status for a resource.
+     * @return the operation status for a resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<OperationResourceInner> getOperationStatusWithResponse(
@@ -260,7 +260,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation result for a resource.
+     * @return the operation result for a resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultInner>> getOperationResultWithResponseAsync(
@@ -314,7 +314,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation result for a resource.
+     * @return the operation result for a resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultInner>> getOperationResultWithResponseAsync(
@@ -364,7 +364,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation result for a resource.
+     * @return the operation result for a resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultInner> getOperationResultAsync(String resourceGroupName, String vaultName, String operationId) {
@@ -405,7 +405,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation result for a resource.
+     * @return the operation result for a resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VaultInner> getOperationResultWithResponse(

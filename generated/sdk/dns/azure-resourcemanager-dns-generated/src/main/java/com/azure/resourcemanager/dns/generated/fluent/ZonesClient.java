@@ -13,6 +13,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.dns.generated.fluent.models.ZoneInner;
 import com.azure.resourcemanager.dns.generated.models.ZoneUpdate;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ZonesClient. */
 public interface ZonesClient {
@@ -44,7 +45,7 @@ public interface ZonesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone.
+     * @return describes a DNS zone along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ZoneInner> createOrUpdateWithResponse(
@@ -65,7 +66,7 @@ public interface ZonesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String zoneName, String ifMatch);
@@ -81,7 +82,7 @@ public interface ZonesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -150,7 +151,7 @@ public interface ZonesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone.
+     * @return a DNS zone along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ZoneInner> getByResourceGroupWithResponse(String resourceGroupName, String zoneName, Context context);
@@ -181,7 +182,7 @@ public interface ZonesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone.
+     * @return describes a DNS zone along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ZoneInner> updateWithResponse(

@@ -113,7 +113,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the vault extended info.
+     * @return the vault extended info along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultExtendedInfoResourceInner>> getWithResponseAsync(
@@ -162,7 +162,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the vault extended info.
+     * @return the vault extended info along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultExtendedInfoResourceInner>> getWithResponseAsync(
@@ -207,7 +207,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the vault extended info.
+     * @return the vault extended info on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultExtendedInfoResourceInner> getAsync(String resourceGroupName, String vaultName) {
@@ -246,7 +246,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the vault extended info.
+     * @return the vault extended info along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VaultExtendedInfoResourceInner> getWithResponse(
@@ -263,7 +263,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vault extended information.
+     * @return vault extended information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultExtendedInfoResourceInner>> createOrUpdateWithResponseAsync(
@@ -322,7 +322,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vault extended information.
+     * @return vault extended information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultExtendedInfoResourceInner>> createOrUpdateWithResponseAsync(
@@ -380,7 +380,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vault extended information.
+     * @return vault extended information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultExtendedInfoResourceInner> createOrUpdateAsync(
@@ -423,7 +423,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vault extended information.
+     * @return vault extended information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VaultExtendedInfoResourceInner> createOrUpdateWithResponse(
@@ -444,7 +444,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vault extended information.
+     * @return vault extended information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultExtendedInfoResourceInner>> updateWithResponseAsync(
@@ -503,7 +503,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vault extended information.
+     * @return vault extended information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultExtendedInfoResourceInner>> updateWithResponseAsync(
@@ -561,7 +561,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vault extended information.
+     * @return vault extended information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultExtendedInfoResourceInner> updateAsync(
@@ -604,7 +604,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vault extended information.
+     * @return vault extended information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VaultExtendedInfoResourceInner> updateWithResponse(

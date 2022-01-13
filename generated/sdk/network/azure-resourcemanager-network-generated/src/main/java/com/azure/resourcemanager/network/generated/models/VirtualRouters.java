@@ -59,7 +59,7 @@ public interface VirtualRouters {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router.
+     * @return the specified Virtual Router along with {@link Response}.
      */
     Response<VirtualRouter> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualRouterName, String expand, Context context);
@@ -119,7 +119,7 @@ public interface VirtualRouters {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router.
+     * @return the specified Virtual Router along with {@link Response}.
      */
     VirtualRouter getById(String id);
 
@@ -133,7 +133,7 @@ public interface VirtualRouters {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router.
+     * @return the specified Virtual Router along with {@link Response}.
      */
     Response<VirtualRouter> getByIdWithResponse(String id, String expand, Context context);
 

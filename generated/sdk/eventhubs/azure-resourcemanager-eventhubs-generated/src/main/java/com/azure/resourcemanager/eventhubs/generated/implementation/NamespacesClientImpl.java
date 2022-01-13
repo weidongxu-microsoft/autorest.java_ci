@@ -494,7 +494,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of IP Filter rules for a Namespace.
+     * @return a list of IP Filter rules for a Namespace along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpFilterRuleInner>> listIpFilterRulesSinglePageAsync(
@@ -552,7 +553,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of IP Filter rules for a Namespace.
+     * @return a list of IP Filter rules for a Namespace along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpFilterRuleInner>> listIpFilterRulesSinglePageAsync(
@@ -676,7 +678,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get IpFilterRules operation.
+     * @return single item in a List or Get IpFilterRules operation along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IpFilterRuleInner>> createOrUpdateIpFilterRuleWithResponseAsync(
@@ -738,7 +741,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get IpFilterRules operation.
+     * @return single item in a List or Get IpFilterRules operation along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IpFilterRuleInner>> createOrUpdateIpFilterRuleWithResponseAsync(
@@ -800,7 +804,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get IpFilterRules operation.
+     * @return single item in a List or Get IpFilterRules operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<IpFilterRuleInner> createOrUpdateIpFilterRuleAsync(
@@ -846,7 +850,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get IpFilterRules operation.
+     * @return single item in a List or Get IpFilterRules operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<IpFilterRuleInner> createOrUpdateIpFilterRuleWithResponse(
@@ -869,7 +873,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteIpFilterRuleWithResponseAsync(
@@ -924,7 +928,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteIpFilterRuleWithResponseAsync(
@@ -975,7 +979,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteIpFilterRuleAsync(
@@ -1009,7 +1013,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteIpFilterRuleWithResponse(
@@ -1026,7 +1030,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name.
+     * @return an IpFilterRule for a Namespace by rule name along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IpFilterRuleInner>> getIpFilterRuleWithResponseAsync(
@@ -1081,7 +1086,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name.
+     * @return an IpFilterRule for a Namespace by rule name along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IpFilterRuleInner>> getIpFilterRuleWithResponseAsync(
@@ -1132,7 +1138,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name.
+     * @return an IpFilterRule for a Namespace by rule name on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<IpFilterRuleInner> getIpFilterRuleAsync(
@@ -1174,7 +1180,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name.
+     * @return an IpFilterRule for a Namespace by rule name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<IpFilterRuleInner> getIpFilterRuleWithResponse(
@@ -1187,7 +1193,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listSinglePageAsync() {
@@ -1233,7 +1240,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listSinglePageAsync(Context context) {
@@ -1329,7 +1337,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1381,7 +1390,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listByResourceGroupSinglePageAsync(
@@ -1495,7 +1505,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation.
+     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -1552,7 +1563,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation.
+     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -1605,7 +1617,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation.
+     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<EHNamespaceInner>, EHNamespaceInner> beginCreateOrUpdateAsync(
@@ -1633,7 +1646,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation.
+     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<EHNamespaceInner>, EHNamespaceInner> beginCreateOrUpdateAsync(
@@ -1657,7 +1671,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation.
+     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<EHNamespaceInner>, EHNamespaceInner> beginCreateOrUpdate(
@@ -1676,7 +1691,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation.
+     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<EHNamespaceInner>, EHNamespaceInner> beginCreateOrUpdate(
@@ -1694,7 +1710,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation.
+     * @return single Namespace item in List or Get Operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EHNamespaceInner> createOrUpdateAsync(
@@ -1715,7 +1731,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation.
+     * @return single Namespace item in List or Get Operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EHNamespaceInner> createOrUpdateAsync(
@@ -1770,7 +1786,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String namespaceName) {
@@ -1818,7 +1834,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -1863,7 +1879,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String namespaceName) {
@@ -1883,7 +1899,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1903,7 +1919,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String namespaceName) {
@@ -1919,7 +1935,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1935,7 +1951,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName) {
@@ -1951,7 +1967,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, Context context) {
@@ -1997,7 +2013,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the description of the specified namespace.
+     * @return the description of the specified namespace along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EHNamespaceInner>> getByResourceGroupWithResponseAsync(
@@ -2046,7 +2063,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the description of the specified namespace.
+     * @return the description of the specified namespace along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EHNamespaceInner>> getByResourceGroupWithResponseAsync(
@@ -2091,7 +2109,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the description of the specified namespace.
+     * @return the description of the specified namespace on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EHNamespaceInner> getByResourceGroupAsync(String resourceGroupName, String namespaceName) {
@@ -2130,7 +2148,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the description of the specified namespace.
+     * @return the description of the specified namespace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<EHNamespaceInner> getByResourceGroupWithResponse(
@@ -2148,7 +2166,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation.
+     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EHNamespaceInner>> updateWithResponseAsync(
@@ -2205,7 +2224,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation.
+     * @return single Namespace item in List or Get Operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EHNamespaceInner>> updateWithResponseAsync(
@@ -2258,7 +2278,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation.
+     * @return single Namespace item in List or Get Operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EHNamespaceInner> updateAsync(
@@ -2302,7 +2322,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation.
+     * @return single Namespace item in List or Get Operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<EHNamespaceInner> updateWithResponse(
@@ -2318,7 +2338,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of VirtualNetwork rules for a Namespace.
+     * @return a list of VirtualNetwork rules for a Namespace along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkRuleInner>> listVirtualNetworkRulesSinglePageAsync(
@@ -2376,7 +2397,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of VirtualNetwork rules for a Namespace.
+     * @return a list of VirtualNetwork rules for a Namespace along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkRuleInner>> listVirtualNetworkRulesSinglePageAsync(
@@ -2502,7 +2524,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get VirtualNetworkRules operation.
+     * @return single item in a List or Get VirtualNetworkRules operation along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualNetworkRuleInner>> createOrUpdateVirtualNetworkRuleWithResponseAsync(
@@ -2568,7 +2591,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get VirtualNetworkRules operation.
+     * @return single item in a List or Get VirtualNetworkRules operation along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualNetworkRuleInner>> createOrUpdateVirtualNetworkRuleWithResponseAsync(
@@ -2631,7 +2655,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get VirtualNetworkRules operation.
+     * @return single item in a List or Get VirtualNetworkRules operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualNetworkRuleInner> createOrUpdateVirtualNetworkRuleAsync(
@@ -2685,7 +2709,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get VirtualNetworkRules operation.
+     * @return single item in a List or Get VirtualNetworkRules operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VirtualNetworkRuleInner> createOrUpdateVirtualNetworkRuleWithResponse(
@@ -2708,7 +2732,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteVirtualNetworkRuleWithResponseAsync(
@@ -2764,7 +2788,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteVirtualNetworkRuleWithResponseAsync(
@@ -2816,7 +2840,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteVirtualNetworkRuleAsync(
@@ -2851,7 +2875,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteVirtualNetworkRuleWithResponse(
@@ -2870,7 +2894,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an VirtualNetworkRule for a Namespace by rule name.
+     * @return an VirtualNetworkRule for a Namespace by rule name along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualNetworkRuleInner>> getVirtualNetworkRuleWithResponseAsync(
@@ -2926,7 +2951,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an VirtualNetworkRule for a Namespace by rule name.
+     * @return an VirtualNetworkRule for a Namespace by rule name along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualNetworkRuleInner>> getVirtualNetworkRuleWithResponseAsync(
@@ -2978,7 +3004,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an VirtualNetworkRule for a Namespace by rule name.
+     * @return an VirtualNetworkRule for a Namespace by rule name on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualNetworkRuleInner> getVirtualNetworkRuleAsync(
@@ -3021,7 +3047,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an VirtualNetworkRule for a Namespace by rule name.
+     * @return an VirtualNetworkRule for a Namespace by rule name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VirtualNetworkRuleInner> getVirtualNetworkRuleWithResponse(
@@ -3039,7 +3065,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of topic resource.
+     * @return description of topic resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkRuleSetInner>> createOrUpdateNetworkRuleSetWithResponseAsync(
@@ -3095,7 +3121,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of topic resource.
+     * @return description of topic resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkRuleSetInner>> createOrUpdateNetworkRuleSetWithResponseAsync(
@@ -3147,7 +3173,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of topic resource.
+     * @return description of topic resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkRuleSetInner> createOrUpdateNetworkRuleSetAsync(
@@ -3190,7 +3216,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of topic resource.
+     * @return description of topic resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkRuleSetInner> createOrUpdateNetworkRuleSetWithResponse(
@@ -3207,7 +3233,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkRuleSet for a Namespace.
+     * @return networkRuleSet for a Namespace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkRuleSetInner>> getNetworkRuleSetWithResponseAsync(
@@ -3256,7 +3282,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkRuleSet for a Namespace.
+     * @return networkRuleSet for a Namespace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkRuleSetInner>> getNetworkRuleSetWithResponseAsync(
@@ -3301,7 +3327,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkRuleSet for a Namespace.
+     * @return networkRuleSet for a Namespace on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkRuleSetInner> getNetworkRuleSetAsync(String resourceGroupName, String namespaceName) {
@@ -3340,7 +3366,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkRuleSet for a Namespace.
+     * @return networkRuleSet for a Namespace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkRuleSetInner> getNetworkRuleSetWithResponse(
@@ -3356,7 +3382,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of authorization rules for a Namespace.
+     * @return a list of authorization rules for a Namespace along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesSinglePageAsync(
@@ -3414,7 +3441,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of authorization rules for a Namespace.
+     * @return a list of authorization rules for a Namespace along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesSinglePageAsync(
@@ -3540,7 +3568,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> createOrUpdateAuthorizationRuleWithResponseAsync(
@@ -3605,7 +3634,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> createOrUpdateAuthorizationRuleWithResponseAsync(
@@ -3667,7 +3697,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
+     * @return single item in a List or Get AuthorizationRule operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AuthorizationRuleInner> createOrUpdateAuthorizationRuleAsync(
@@ -3720,7 +3750,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AuthorizationRuleInner> createOrUpdateAuthorizationRuleWithResponse(
@@ -3743,7 +3773,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteAuthorizationRuleWithResponseAsync(
@@ -3798,7 +3828,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteAuthorizationRuleWithResponseAsync(
@@ -3849,7 +3879,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAuthorizationRuleAsync(
@@ -3883,7 +3913,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteAuthorizationRuleWithResponse(
@@ -3902,7 +3932,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> getAuthorizationRuleWithResponseAsync(
@@ -3957,7 +3988,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> getAuthorizationRuleWithResponseAsync(
@@ -4008,7 +4040,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AuthorizationRuleInner> getAuthorizationRuleAsync(
@@ -4051,7 +4083,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
@@ -4069,7 +4101,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return the primary and secondary connection strings for the Namespace along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> listKeysWithResponseAsync(
@@ -4124,7 +4157,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return the primary and secondary connection strings for the Namespace along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> listKeysWithResponseAsync(
@@ -4175,7 +4209,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return the primary and secondary connection strings for the Namespace on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AccessKeysInner> listKeysAsync(
@@ -4217,7 +4251,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return the primary and secondary connection strings for the Namespace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AccessKeysInner> listKeysWithResponse(
@@ -4235,7 +4269,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return namespace/EventHub Connection String along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> regenerateKeysWithResponseAsync(
@@ -4300,7 +4335,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return namespace/EventHub Connection String along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> regenerateKeysWithResponseAsync(
@@ -4362,7 +4398,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return namespace/EventHub Connection String on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AccessKeysInner> regenerateKeysAsync(
@@ -4413,7 +4449,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return namespace/EventHub Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AccessKeysInner> regenerateKeysWithResponse(
@@ -4434,7 +4470,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation.
+     * @return the Result of the CheckNameAvailability operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>> checkNameAvailabilityWithResponseAsync(
@@ -4479,7 +4516,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation.
+     * @return the Result of the CheckNameAvailability operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>> checkNameAvailabilityWithResponseAsync(
@@ -4520,7 +4558,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation.
+     * @return the Result of the CheckNameAvailability operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<CheckNameAvailabilityResultInner> checkNameAvailabilityAsync(
@@ -4558,7 +4596,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation.
+     * @return the Result of the CheckNameAvailability operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
@@ -4573,7 +4611,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List namespace operation.
+     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpFilterRuleInner>> listIpFilterRulesNextSinglePageAsync(String nextLink) {
@@ -4609,7 +4648,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List namespace operation.
+     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpFilterRuleInner>> listIpFilterRulesNextSinglePageAsync(
@@ -4645,7 +4685,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listNextSinglePageAsync(String nextLink) {
@@ -4681,7 +4722,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -4716,7 +4758,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -4753,7 +4796,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation.
+     * @return the response of the List Namespace operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EHNamespaceInner>> listByResourceGroupNextSinglePageAsync(
@@ -4789,7 +4833,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List namespace operation.
+     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkRuleInner>> listVirtualNetworkRulesNextSinglePageAsync(String nextLink) {
@@ -4826,7 +4871,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List namespace operation.
+     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkRuleInner>> listVirtualNetworkRulesNextSinglePageAsync(
@@ -4862,7 +4908,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List namespace operation.
+     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesNextSinglePageAsync(String nextLink) {
@@ -4899,7 +4946,8 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List namespace operation.
+     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesNextSinglePageAsync(

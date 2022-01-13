@@ -31,7 +31,7 @@ public interface VpnSites {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnSite Resource.
+     * @return vpnSite Resource along with {@link Response}.
      */
     Response<VpnSite> getByResourceGroupWithResponse(String resourceGroupName, String vpnSiteName, Context context);
 
@@ -108,7 +108,7 @@ public interface VpnSites {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnSite Resource.
+     * @return vpnSite Resource along with {@link Response}.
      */
     VpnSite getById(String id);
 
@@ -120,7 +120,7 @@ public interface VpnSites {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnSite Resource.
+     * @return vpnSite Resource along with {@link Response}.
      */
     Response<VpnSite> getByIdWithResponse(String id, Context context);
 

@@ -166,7 +166,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service.
+     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -245,7 +246,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service.
+     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -321,7 +323,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service.
+     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SharedPrivateLinkResourceInner>, SharedPrivateLinkResourceInner>
@@ -365,7 +368,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service.
+     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SharedPrivateLinkResourceInner>, SharedPrivateLinkResourceInner>
@@ -411,7 +415,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service.
+     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SharedPrivateLinkResourceInner>, SharedPrivateLinkResourceInner> beginCreateOrUpdate(
@@ -446,7 +451,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service.
+     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SharedPrivateLinkResourceInner>, SharedPrivateLinkResourceInner> beginCreateOrUpdate(
@@ -482,7 +488,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service.
+     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedPrivateLinkResourceInner> createOrUpdateAsync(
@@ -515,7 +522,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service.
+     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedPrivateLinkResourceInner> createOrUpdateAsync(
@@ -551,7 +559,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service.
+     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedPrivateLinkResourceInner> createOrUpdateAsync(
@@ -689,8 +698,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource
-     *     group.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedPrivateLinkResourceInner>> getWithResponseAsync(
@@ -757,8 +766,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource
-     *     group.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedPrivateLinkResourceInner>> getWithResponseAsync(
@@ -822,8 +831,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource
-     *     group.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedPrivateLinkResourceInner> getAsync(
@@ -855,8 +864,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource
-     *     group.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedPrivateLinkResourceInner> getAsync(
@@ -911,8 +920,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource
-     *     group.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     *     along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SharedPrivateLinkResourceInner> getWithResponse(
@@ -940,7 +949,7 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -1007,7 +1016,7 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -1071,7 +1080,7 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1103,7 +1112,7 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1135,7 +1144,7 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1162,7 +1171,7 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1190,7 +1199,7 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(
@@ -1215,7 +1224,7 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(
@@ -1241,7 +1250,7 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(
@@ -1338,7 +1347,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all shared private link resources managed by the given service.
+     * @return a list of all shared private link resources managed by the given service along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedPrivateLinkResourceInner>> listByServiceSinglePageAsync(
@@ -1402,7 +1412,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all shared private link resources managed by the given service.
+     * @return a list of all shared private link resources managed by the given service along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedPrivateLinkResourceInner>> listByServiceSinglePageAsync(
@@ -1565,7 +1576,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing a list of Shared Private Link Resources.
+     * @return response containing a list of Shared Private Link Resources along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedPrivateLinkResourceInner>> listByServiceNextSinglePageAsync(
@@ -1606,7 +1618,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing a list of Shared Private Link Resources.
+     * @return response containing a list of Shared Private Link Resources along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedPrivateLinkResourceInner>> listByServiceNextSinglePageAsync(

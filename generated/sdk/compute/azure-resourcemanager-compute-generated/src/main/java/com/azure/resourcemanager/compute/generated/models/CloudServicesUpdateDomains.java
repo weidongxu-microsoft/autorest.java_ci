@@ -91,7 +91,7 @@ public interface CloudServicesUpdateDomains {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified update domain of a cloud service.
+     * @return the specified update domain of a cloud service along with {@link Response}.
      */
     Response<UpdateDomain> getUpdateDomainWithResponse(
         String resourceGroupName, String cloudServiceName, int updateDomain, Context context);

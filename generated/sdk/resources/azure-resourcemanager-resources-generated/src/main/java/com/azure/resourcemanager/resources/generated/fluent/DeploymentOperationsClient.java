@@ -37,7 +37,7 @@ public interface DeploymentOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentOperationInner> getAtScopeWithResponse(
@@ -94,7 +94,7 @@ public interface DeploymentOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentOperationInner> getAtTenantScopeWithResponse(
@@ -150,7 +150,7 @@ public interface DeploymentOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentOperationInner> getAtManagementGroupScopeWithResponse(
@@ -207,7 +207,7 @@ public interface DeploymentOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentOperationInner> getAtSubscriptionScopeWithResponse(
@@ -264,7 +264,7 @@ public interface DeploymentOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
+     * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentOperationInner> getWithResponse(

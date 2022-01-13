@@ -59,7 +59,7 @@ public interface Subnets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified subnet by virtual network and resource group.
+     * @return the specified subnet by virtual network and resource group along with {@link Response}.
      */
     Response<Subnet> getWithResponse(
         String resourceGroupName, String virtualNetworkName, String subnetName, String expand, Context context);
@@ -172,7 +172,7 @@ public interface Subnets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified subnet by virtual network and resource group.
+     * @return the specified subnet by virtual network and resource group along with {@link Response}.
      */
     Subnet getById(String id);
 
@@ -185,7 +185,7 @@ public interface Subnets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified subnet by virtual network and resource group.
+     * @return the specified subnet by virtual network and resource group along with {@link Response}.
      */
     Response<Subnet> getByIdWithResponse(String id, String expand, Context context);
 

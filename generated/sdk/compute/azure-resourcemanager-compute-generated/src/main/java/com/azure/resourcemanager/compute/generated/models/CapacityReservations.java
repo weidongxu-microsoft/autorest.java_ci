@@ -71,7 +71,7 @@ public interface CapacityReservations {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the capacity reservation.
+     * @return specifies information about the capacity reservation along with {@link Response}.
      */
     Response<CapacityReservation> getWithResponse(
         String resourceGroupName,
@@ -119,7 +119,7 @@ public interface CapacityReservations {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the capacity reservation.
+     * @return specifies information about the capacity reservation along with {@link Response}.
      */
     CapacityReservation getById(String id);
 
@@ -135,7 +135,7 @@ public interface CapacityReservations {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the capacity reservation.
+     * @return specifies information about the capacity reservation along with {@link Response}.
      */
     Response<CapacityReservation> getByIdWithResponse(
         String id, CapacityReservationInstanceViewTypes expand, Context context);

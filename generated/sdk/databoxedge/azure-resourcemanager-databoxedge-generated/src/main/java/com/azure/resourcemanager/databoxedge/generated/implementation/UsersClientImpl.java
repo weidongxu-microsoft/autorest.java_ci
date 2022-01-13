@@ -151,7 +151,8 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the users registered on a Data Box Edge/Data Box Gateway device.
+     * @return all the users registered on a Data Box Edge/Data Box Gateway device along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UserInner>> listByDataBoxEdgeDeviceSinglePageAsync(
@@ -211,7 +212,8 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the users registered on a Data Box Edge/Data Box Gateway device.
+     * @return all the users registered on a Data Box Edge/Data Box Gateway device along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UserInner>> listByDataBoxEdgeDeviceSinglePageAsync(
@@ -358,7 +360,8 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the specified user.
+     * @return the properties of the specified user along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UserInner>> getWithResponseAsync(String deviceName, String name, String resourceGroupName) {
@@ -411,7 +414,8 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the specified user.
+     * @return the properties of the specified user along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UserInner>> getWithResponseAsync(
@@ -461,7 +465,7 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the specified user.
+     * @return the properties of the specified user on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<UserInner> getAsync(String deviceName, String name, String resourceGroupName) {
@@ -502,7 +506,7 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the specified user.
+     * @return the properties of the specified user along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<UserInner> getWithResponse(
@@ -520,7 +524,8 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device along with
+     *     {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -581,7 +586,8 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device along with
+     *     {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -638,7 +644,8 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device along with
+     *     {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<UserInner>, UserInner> beginCreateOrUpdateAsync(
@@ -662,7 +669,8 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device along with
+     *     {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<UserInner>, UserInner> beginCreateOrUpdateAsync(
@@ -686,7 +694,8 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device along with
+     *     {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<UserInner>, UserInner> beginCreateOrUpdate(
@@ -705,7 +714,8 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device along with
+     *     {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<UserInner>, UserInner> beginCreateOrUpdate(
@@ -723,7 +733,8 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<UserInner> createOrUpdateAsync(
@@ -744,7 +755,8 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @return represents a user who has access to one or more shares on the Data Box Edge/Gateway device on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<UserInner> createOrUpdateAsync(
@@ -799,7 +811,7 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -853,7 +865,7 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -903,7 +915,7 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -925,7 +937,7 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -946,7 +958,7 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String name, String resourceGroupName) {
@@ -963,7 +975,7 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -980,7 +992,7 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String deviceName, String name, String resourceGroupName) {
@@ -999,7 +1011,7 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String deviceName, String name, String resourceGroupName, Context context) {
@@ -1046,7 +1058,7 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of users.
+     * @return collection of users along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UserInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(String nextLink) {
@@ -1083,7 +1095,7 @@ public final class UsersClientImpl implements UsersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of users.
+     * @return collection of users along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UserInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(

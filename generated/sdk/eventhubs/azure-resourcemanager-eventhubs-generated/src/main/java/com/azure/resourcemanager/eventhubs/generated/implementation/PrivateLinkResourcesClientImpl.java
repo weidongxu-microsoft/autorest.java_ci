@@ -79,7 +79,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lists of resources that supports Privatelinks.
+     * @return lists of resources that supports Privatelinks along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourcesListResultInner>> getWithResponseAsync(
@@ -128,7 +129,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lists of resources that supports Privatelinks.
+     * @return lists of resources that supports Privatelinks along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourcesListResultInner>> getWithResponseAsync(
@@ -173,7 +175,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lists of resources that supports Privatelinks.
+     * @return lists of resources that supports Privatelinks on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkResourcesListResultInner> getAsync(String resourceGroupName, String namespaceName) {
@@ -212,7 +214,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lists of resources that supports Privatelinks.
+     * @return lists of resources that supports Privatelinks along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PrivateLinkResourcesListResultInner> getWithResponse(

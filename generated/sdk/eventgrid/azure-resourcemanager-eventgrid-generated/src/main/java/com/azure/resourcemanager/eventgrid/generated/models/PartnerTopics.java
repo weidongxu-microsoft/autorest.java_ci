@@ -31,7 +31,7 @@ public interface PartnerTopics {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a partner topic.
+     * @return properties of a partner topic along with {@link Response}.
      */
     Response<PartnerTopic> getByResourceGroupWithResponse(
         String resourceGroupName, String partnerTopicName, Context context);
@@ -83,7 +83,7 @@ public interface PartnerTopics {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     Response<PartnerTopic> updateWithResponse(
         String resourceGroupName,
@@ -172,7 +172,7 @@ public interface PartnerTopics {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return eventGrid Partner Topic.
+     * @return eventGrid Partner Topic along with {@link Response}.
      */
     Response<PartnerTopic> activateWithResponse(String resourceGroupName, String partnerTopicName, Context context);
 
@@ -197,7 +197,7 @@ public interface PartnerTopics {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return eventGrid Partner Topic.
+     * @return eventGrid Partner Topic along with {@link Response}.
      */
     Response<PartnerTopic> deactivateWithResponse(String resourceGroupName, String partnerTopicName, Context context);
 }

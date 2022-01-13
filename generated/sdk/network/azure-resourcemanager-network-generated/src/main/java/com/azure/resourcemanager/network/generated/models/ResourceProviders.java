@@ -173,7 +173,7 @@ public interface ResourceProviders {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckDnsNameAvailability API service call.
+     * @return response for the CheckDnsNameAvailability API service call along with {@link Response}.
      */
     Response<DnsNameAvailabilityResult> checkDnsNameAvailabilityWithResponse(
         String location, String domainNameLabel, Context context);
@@ -199,7 +199,7 @@ public interface ResourceProviders {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SecurityProviders.
+     * @return collection of SecurityProviders along with {@link Response}.
      */
     Response<VirtualWanSecurityProviders> supportedSecurityProvidersWithResponse(
         String resourceGroupName, String virtualWanName, Context context);

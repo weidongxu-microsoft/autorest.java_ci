@@ -13,6 +13,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in PublicIpAddressesClient. */
 public interface PublicIpAddressesClient {
@@ -126,7 +127,7 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP address in a cloud service.
+     * @return the specified public IP address in a cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PublicIpAddressInner> getCloudServicePublicIpAddressWithResponse(
@@ -147,7 +148,7 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String publicIpAddressName);
@@ -161,7 +162,7 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -215,7 +216,7 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP address in a specified resource group.
+     * @return the specified public IP address in a specified resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PublicIpAddressInner> getByResourceGroupWithResponse(
@@ -230,7 +231,7 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public IP address resource.
+     * @return public IP address resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PublicIpAddressInner>, PublicIpAddressInner> beginCreateOrUpdate(
@@ -246,7 +247,7 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public IP address resource.
+     * @return public IP address resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PublicIpAddressInner>, PublicIpAddressInner> beginCreateOrUpdate(
@@ -307,7 +308,7 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public IP address resource.
+     * @return public IP address resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PublicIpAddressInner> updateTagsWithResponse(
@@ -474,7 +475,7 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP address in a virtual machine scale set.
+     * @return the specified public IP address in a virtual machine scale set along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PublicIpAddressInner> getVirtualMachineScaleSetPublicIpAddressWithResponse(

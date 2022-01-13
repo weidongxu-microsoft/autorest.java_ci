@@ -480,7 +480,7 @@ public interface AppServiceCertificateOrder {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> reissueWithResponse(ReissueCertificateOrderRequest reissueCertificateOrderRequest, Context context);
 
@@ -504,7 +504,7 @@ public interface AppServiceCertificateOrder {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> renewWithResponse(RenewCertificateOrderRequest renewCertificateOrderRequest, Context context);
 
@@ -525,7 +525,7 @@ public interface AppServiceCertificateOrder {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> resendEmailWithResponse(Context context);
 
@@ -551,7 +551,7 @@ public interface AppServiceCertificateOrder {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> resendRequestEmailsWithResponse(NameIdentifierInner nameIdentifier, Context context);
 
@@ -588,7 +588,7 @@ public interface AppServiceCertificateOrder {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site seal.
+     * @return site seal along with {@link Response}.
      */
     Response<SiteSeal> retrieveSiteSealWithResponse(SiteSealRequest siteSealRequest, Context context);
 
@@ -609,7 +609,7 @@ public interface AppServiceCertificateOrder {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> verifyDomainOwnershipWithResponse(Context context);
 }

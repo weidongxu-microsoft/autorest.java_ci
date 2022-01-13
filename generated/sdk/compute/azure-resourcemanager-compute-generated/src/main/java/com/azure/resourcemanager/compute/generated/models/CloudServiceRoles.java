@@ -35,7 +35,7 @@ public interface CloudServiceRoles {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role from a cloud service.
+     * @return a role from a cloud service along with {@link Response}.
      */
     Response<CloudServiceRole> getWithResponse(
         String roleName, String resourceGroupName, String cloudServiceName, Context context);

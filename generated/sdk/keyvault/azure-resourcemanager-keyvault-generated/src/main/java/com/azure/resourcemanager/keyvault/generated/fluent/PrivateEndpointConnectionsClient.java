@@ -13,6 +13,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnectionsPutResponse;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in PrivateEndpointConnectionsClient. */
 public interface PrivateEndpointConnectionsClient {
@@ -41,7 +42,7 @@ public interface PrivateEndpointConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the key vault.
+     * @return the specified private endpoint connection associated with the key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateEndpointConnectionInner> getWithResponse(
@@ -96,7 +97,8 @@ public interface PrivateEndpointConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginDelete(
@@ -112,7 +114,8 @@ public interface PrivateEndpointConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginDelete(

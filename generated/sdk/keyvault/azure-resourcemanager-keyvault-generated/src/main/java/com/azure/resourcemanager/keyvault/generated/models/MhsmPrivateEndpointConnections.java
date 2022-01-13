@@ -64,7 +64,8 @@ public interface MhsmPrivateEndpointConnections {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link
+     *     Response}.
      */
     Response<MhsmPrivateEndpointConnection> getWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context);
@@ -107,7 +108,8 @@ public interface MhsmPrivateEndpointConnections {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link
+     *     Response}.
      */
     MhsmPrivateEndpointConnection getById(String id);
 
@@ -120,7 +122,8 @@ public interface MhsmPrivateEndpointConnections {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link
+     *     Response}.
      */
     Response<MhsmPrivateEndpointConnection> getByIdWithResponse(String id, Context context);
 

@@ -35,7 +35,7 @@ public interface RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition.
+     * @return role definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RoleDefinitionInner> deleteWithResponse(String scope, String roleDefinitionId, Context context);
@@ -62,7 +62,7 @@ public interface RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition by name (GUID).
+     * @return role definition by name (GUID) along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RoleDefinitionInner> getWithResponse(String scope, String roleDefinitionId, Context context);
@@ -91,7 +91,7 @@ public interface RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition.
+     * @return role definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RoleDefinitionInner> createOrUpdateWithResponse(
@@ -150,7 +150,7 @@ public interface RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role definition by ID.
+     * @return a role definition by ID along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RoleDefinitionInner> getByIdWithResponse(String roleId, Context context);

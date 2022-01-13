@@ -39,7 +39,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return preview for the Static Site Workflow to be generated.
+     * @return preview for the Static Site Workflow to be generated along with {@link Response}.
      */
     Response<StaticSitesWorkflowPreview> previewWorkflowWithResponse(
         String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest, Context context);
@@ -114,7 +114,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource.
+     * @return static Site ARM resource along with {@link Response}.
      */
     Response<StaticSiteArmResource> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context);
@@ -201,7 +201,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteStaticSiteUserWithResponse(
         String resourceGroupName, String name, String authprovider, String userid, Context context);
@@ -240,7 +240,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User ARM resource.
+     * @return static Site User ARM resource along with {@link Response}.
      */
     Response<StaticSiteUserArmResource> updateStaticSiteUserWithResponse(
         String resourceGroupName,
@@ -303,7 +303,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Build ARM resource.
+     * @return static Site Build ARM resource along with {@link Response}.
      */
     Response<StaticSiteBuildArmResource> getStaticSiteBuildWithResponse(
         String resourceGroupName, String name, String environmentName, Context context);
@@ -363,7 +363,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> createOrUpdateStaticSiteBuildAppSettingsWithResponse(
         String resourceGroupName,
@@ -400,7 +400,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponse(
         String resourceGroupName,
@@ -465,7 +465,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> listStaticSiteBuildAppSettingsWithResponse(
         String resourceGroupName, String name, String environmentName, Context context);
@@ -496,7 +496,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> listStaticSiteBuildFunctionAppSettingsWithResponse(
         String resourceGroupName, String name, String environmentName, Context context);
@@ -560,7 +560,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
+     * @return static Site User Provided Function App ARM resource along with {@link Response}.
      */
     Response<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
         String resourceGroupName, String name, String environmentName, String functionAppName, Context context);
@@ -592,7 +592,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(
         String resourceGroupName, String name, String environmentName, String functionAppName, Context context);
@@ -663,7 +663,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> createOrUpdateStaticSiteAppSettingsWithResponse(
         String resourceGroupName, String name, StringDictionaryInner appSettings, Context context);
@@ -694,7 +694,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> createOrUpdateStaticSiteFunctionAppSettingsWithResponse(
         String resourceGroupName, String name, StringDictionaryInner appSettings, Context context);
@@ -727,7 +727,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static sites user roles invitation link resource.
+     * @return static sites user roles invitation link resource along with {@link Response}.
      */
     Response<StaticSiteUserInvitationResponseResource> createUserRolesInvitationLinkWithResponse(
         String resourceGroupName,
@@ -790,7 +790,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Custom Domain Overview ARM resource.
+     * @return static Site Custom Domain Overview ARM resource along with {@link Response}.
      */
     Response<StaticSiteCustomDomainOverviewArmResource> getStaticSiteCustomDomainWithResponse(
         String resourceGroupName, String name, String domainName, Context context);
@@ -938,7 +938,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> listStaticSiteAppSettingsWithResponse(
         String resourceGroupName, String name, Context context);
@@ -966,7 +966,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string list resource.
+     * @return string list resource along with {@link Response}.
      */
     Response<StringList> listStaticSiteConfiguredRolesWithResponse(
         String resourceGroupName, String name, Context context);
@@ -994,7 +994,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> listStaticSiteFunctionAppSettingsWithResponse(
         String resourceGroupName, String name, Context context);
@@ -1022,7 +1022,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> listStaticSiteSecretsWithResponse(
         String resourceGroupName, String name, Context context);
@@ -1082,7 +1082,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response}.
      */
     Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context);
@@ -1180,7 +1180,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources.
+     * @return wrapper for a collection of private link resources along with {@link Response}.
      */
     Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
         String resourceGroupName, String name, Context context);
@@ -1210,7 +1210,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> resetStaticSiteApiKeyWithResponse(
         String resourceGroupName,
@@ -1273,7 +1273,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
+     * @return static Site User Provided Function App ARM resource along with {@link Response}.
      */
     Response<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppForStaticSiteWithResponse(
         String resourceGroupName, String name, String functionAppName, Context context);
@@ -1372,7 +1372,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> detachUserProvidedFunctionAppFromStaticSiteWithResponse(
         String resourceGroupName, String name, String functionAppName, Context context);
@@ -1419,7 +1419,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource.
+     * @return static Site ARM resource along with {@link Response}.
      */
     StaticSiteArmResource getById(String id);
 
@@ -1432,7 +1432,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource.
+     * @return static Site ARM resource along with {@link Response}.
      */
     Response<StaticSiteArmResource> getByIdWithResponse(String id, Context context);
 
@@ -1444,7 +1444,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
+     * @return static Site User Provided Function App ARM resource along with {@link Response}.
      */
     StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSiteBuildById(String id);
 
@@ -1457,7 +1457,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
+     * @return static Site User Provided Function App ARM resource along with {@link Response}.
      */
     Response<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppForStaticSiteBuildByIdWithResponse(
         String id, Context context);
@@ -1470,7 +1470,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Custom Domain Overview ARM resource.
+     * @return static Site Custom Domain Overview ARM resource along with {@link Response}.
      */
     StaticSiteCustomDomainOverviewArmResource getStaticSiteCustomDomainById(String id);
 
@@ -1483,7 +1483,7 @@ public interface StaticSites {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Custom Domain Overview ARM resource.
+     * @return static Site Custom Domain Overview ARM resource along with {@link Response}.
      */
     Response<StaticSiteCustomDomainOverviewArmResource> getStaticSiteCustomDomainByIdWithResponse(
         String id, Context context);

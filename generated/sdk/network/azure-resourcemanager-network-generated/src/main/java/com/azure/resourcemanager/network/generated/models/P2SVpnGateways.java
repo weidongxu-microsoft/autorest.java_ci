@@ -31,7 +31,7 @@ public interface P2SVpnGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response}.
      */
     Response<P2SVpnGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String gatewayName, Context context);
@@ -248,7 +248,7 @@ public interface P2SVpnGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response}.
      */
     P2SVpnGateway getById(String id);
 
@@ -260,7 +260,7 @@ public interface P2SVpnGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response}.
      */
     Response<P2SVpnGateway> getByIdWithResponse(String id, Context context);
 

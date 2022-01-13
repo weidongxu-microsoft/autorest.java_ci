@@ -78,7 +78,8 @@ public final class OperationStatusesClientImpl implements OperationStatusesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a long running azure asynchronous operation.
+     * @return the status of a long running azure asynchronous operation along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OperationStatusInner>> getWithResponseAsync(String location, String asyncOperationId) {
@@ -127,7 +128,8 @@ public final class OperationStatusesClientImpl implements OperationStatusesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a long running azure asynchronous operation.
+     * @return the status of a long running azure asynchronous operation along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OperationStatusInner>> getWithResponseAsync(
@@ -173,7 +175,7 @@ public final class OperationStatusesClientImpl implements OperationStatusesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a long running azure asynchronous operation.
+     * @return the status of a long running azure asynchronous operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<OperationStatusInner> getAsync(String location, String asyncOperationId) {
@@ -212,7 +214,7 @@ public final class OperationStatusesClientImpl implements OperationStatusesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a long running azure asynchronous operation.
+     * @return the status of a long running azure asynchronous operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<OperationStatusInner> getWithResponse(String location, String asyncOperationId, Context context) {

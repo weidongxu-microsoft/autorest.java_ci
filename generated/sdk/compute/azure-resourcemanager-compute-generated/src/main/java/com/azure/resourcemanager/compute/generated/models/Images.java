@@ -55,7 +55,7 @@ public interface Images {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an image.
+     * @return an image along with {@link Response}.
      */
     Response<Image> getByResourceGroupWithResponse(
         String resourceGroupName, String imageName, String expand, Context context);
@@ -112,7 +112,7 @@ public interface Images {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an image.
+     * @return an image along with {@link Response}.
      */
     Image getById(String id);
 
@@ -125,7 +125,7 @@ public interface Images {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an image.
+     * @return an image along with {@link Response}.
      */
     Response<Image> getByIdWithResponse(String id, String expand, Context context);
 

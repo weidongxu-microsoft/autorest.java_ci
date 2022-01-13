@@ -58,7 +58,7 @@ public interface LoadBalancerOutboundRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified load balancer outbound rule.
+     * @return the specified load balancer outbound rule along with {@link Response}.
      */
     Response<OutboundRule> getWithResponse(
         String resourceGroupName, String loadBalancerName, String outboundRuleName, Context context);

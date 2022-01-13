@@ -20,6 +20,7 @@ import com.azure.resourcemanager.resources.generated.models.Deployment;
 import com.azure.resourcemanager.resources.generated.models.DeploymentWhatIf;
 import com.azure.resourcemanager.resources.generated.models.ScopedDeployment;
 import com.azure.resourcemanager.resources.generated.models.ScopedDeploymentWhatIf;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in DeploymentsClient. */
 public interface DeploymentsClient {
@@ -36,7 +37,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteAtScope(String scope, String deploymentName);
@@ -55,7 +56,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteAtScope(String scope, String deploymentName, Context context);
@@ -117,7 +118,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Boolean> checkExistenceAtScopeWithResponse(String scope, String deploymentName, Context context);
@@ -131,7 +132,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtScope(
@@ -147,7 +148,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtScope(
@@ -205,7 +206,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExtendedInner> getAtScopeWithResponse(String scope, String deploymentName, Context context);
@@ -235,7 +236,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> cancelAtScopeWithResponse(String scope, String deploymentName, Context context);
@@ -250,7 +251,8 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidateAtScope(
@@ -267,7 +269,8 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidateAtScope(
@@ -327,7 +330,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExportResultInner> exportTemplateAtScopeWithResponse(
@@ -373,7 +376,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteAtTenantScope(String deploymentName);
@@ -391,7 +394,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteAtTenantScope(String deploymentName, Context context);
@@ -449,7 +452,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Boolean> checkExistenceAtTenantScopeWithResponse(String deploymentName, Context context);
@@ -462,7 +465,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtTenantScope(
@@ -477,7 +480,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtTenantScope(
@@ -531,7 +534,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExtendedInner> getAtTenantScopeWithResponse(String deploymentName, Context context);
@@ -559,7 +562,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> cancelAtTenantScopeWithResponse(String deploymentName, Context context);
@@ -573,7 +576,8 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidateAtTenantScope(
@@ -589,7 +593,8 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidateAtTenantScope(
@@ -633,7 +638,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIfAtTenantScope(
@@ -648,7 +653,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIfAtTenantScope(
@@ -702,7 +707,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExportResultInner> exportTemplateAtTenantScopeWithResponse(
@@ -746,7 +751,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteAtManagementGroupScope(String groupId, String deploymentName);
@@ -765,7 +770,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteAtManagementGroupScope(
@@ -828,7 +833,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Boolean> checkExistenceAtManagementGroupScopeWithResponse(
@@ -843,7 +848,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtManagementGroupScope(
@@ -859,7 +864,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtManagementGroupScope(
@@ -918,7 +923,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExtendedInner> getAtManagementGroupScopeWithResponse(
@@ -949,7 +954,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> cancelAtManagementGroupScopeWithResponse(String groupId, String deploymentName, Context context);
@@ -964,7 +969,8 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -981,7 +987,8 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -1030,7 +1037,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIfAtManagementGroupScope(
@@ -1046,7 +1053,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIfAtManagementGroupScope(
@@ -1105,7 +1112,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExportResultInner> exportTemplateAtManagementGroupScopeWithResponse(
@@ -1152,7 +1159,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteAtSubscriptionScope(String deploymentName);
@@ -1170,7 +1177,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteAtSubscriptionScope(String deploymentName, Context context);
@@ -1228,7 +1235,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Boolean> checkExistenceAtSubscriptionScopeWithResponse(String deploymentName, Context context);
@@ -1241,7 +1248,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtSubscriptionScope(
@@ -1256,7 +1263,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtSubscriptionScope(
@@ -1310,7 +1317,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExtendedInner> getAtSubscriptionScopeWithResponse(String deploymentName, Context context);
@@ -1338,7 +1345,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> cancelAtSubscriptionScopeWithResponse(String deploymentName, Context context);
@@ -1352,7 +1359,8 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -1368,7 +1376,8 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -1412,7 +1421,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIfAtSubscriptionScope(
@@ -1427,7 +1436,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIfAtSubscriptionScope(
@@ -1481,7 +1490,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExportResultInner> exportTemplateAtSubscriptionScopeWithResponse(
@@ -1527,7 +1536,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String deploymentName);
@@ -1548,7 +1557,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String deploymentName, Context context);
@@ -1616,7 +1625,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Boolean> checkExistenceWithResponse(String resourceGroupName, String deploymentName, Context context);
@@ -1631,7 +1640,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdate(
@@ -1648,7 +1657,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdate(
@@ -1708,7 +1717,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExtendedInner> getByResourceGroupWithResponse(
@@ -1739,7 +1748,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> cancelWithResponse(String resourceGroupName, String deploymentName, Context context);
@@ -1755,7 +1764,8 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidate(
@@ -1773,7 +1783,8 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidate(
@@ -1823,7 +1834,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIf(
@@ -1840,7 +1851,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIf(
@@ -1900,7 +1911,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExportResultInner> exportTemplateWithResponse(
@@ -1957,7 +1968,7 @@ public interface DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to calculate template hash.
+     * @return result of the request to calculate template hash along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TemplateHashResultInner> calculateTemplateHashWithResponse(Object template, Context context);

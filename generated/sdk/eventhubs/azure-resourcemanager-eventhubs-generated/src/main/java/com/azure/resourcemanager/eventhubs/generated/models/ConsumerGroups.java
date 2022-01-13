@@ -34,7 +34,7 @@ public interface ConsumerGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName, Context context);
@@ -64,7 +64,7 @@ public interface ConsumerGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified consumer group.
+     * @return a description for the specified consumer group along with {@link Response}.
      */
     Response<ConsumerGroup> getWithResponse(
         String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName, Context context);
@@ -115,7 +115,7 @@ public interface ConsumerGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified consumer group.
+     * @return a description for the specified consumer group along with {@link Response}.
      */
     ConsumerGroup getById(String id);
 
@@ -127,7 +127,7 @@ public interface ConsumerGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified consumer group.
+     * @return a description for the specified consumer group along with {@link Response}.
      */
     Response<ConsumerGroup> getByIdWithResponse(String id, Context context);
 
@@ -149,7 +149,7 @@ public interface ConsumerGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

@@ -14,6 +14,7 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryImageVersionInner;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionUpdate;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatusTypes;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in GalleryImageVersionsClient. */
 public interface GalleryImageVersionsClient {
@@ -31,7 +32,8 @@ public interface GalleryImageVersionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image version that you want to create or update.
+     * @return specifies information about the gallery image version that you want to create or update along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<GalleryImageVersionInner>, GalleryImageVersionInner> beginCreateOrUpdate(
@@ -56,7 +58,8 @@ public interface GalleryImageVersionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image version that you want to create or update.
+     * @return specifies information about the gallery image version that you want to create or update along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<GalleryImageVersionInner>, GalleryImageVersionInner> beginCreateOrUpdate(
@@ -131,7 +134,8 @@ public interface GalleryImageVersionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image version that you want to create or update.
+     * @return specifies information about the gallery image version that you want to create or update along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<GalleryImageVersionInner>, GalleryImageVersionInner> beginUpdate(
@@ -156,7 +160,8 @@ public interface GalleryImageVersionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image version that you want to create or update.
+     * @return specifies information about the gallery image version that you want to create or update along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<GalleryImageVersionInner>, GalleryImageVersionInner> beginUpdate(
@@ -247,7 +252,8 @@ public interface GalleryImageVersionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image version that you want to create or update.
+     * @return specifies information about the gallery image version that you want to create or update along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<GalleryImageVersionInner> getWithResponse(
@@ -269,7 +275,7 @@ public interface GalleryImageVersionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -287,7 +293,7 @@ public interface GalleryImageVersionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(

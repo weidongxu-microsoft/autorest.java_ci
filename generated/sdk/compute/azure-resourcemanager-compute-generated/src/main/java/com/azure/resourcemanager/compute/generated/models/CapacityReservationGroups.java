@@ -36,7 +36,7 @@ public interface CapacityReservationGroups {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String capacityReservationGroupName, Context context);
 
@@ -69,7 +69,7 @@ public interface CapacityReservationGroups {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the capacity reservation group that the capacity reservations should be
-     *     assigned to.
+     *     assigned to along with {@link Response}.
      */
     Response<CapacityReservationGroup> getByResourceGroupWithResponse(
         String resourceGroupName,
@@ -144,7 +144,7 @@ public interface CapacityReservationGroups {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the capacity reservation group that the capacity reservations should be
-     *     assigned to.
+     *     assigned to along with {@link Response}.
      */
     CapacityReservationGroup getById(String id);
 
@@ -162,7 +162,7 @@ public interface CapacityReservationGroups {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the capacity reservation group that the capacity reservations should be
-     *     assigned to.
+     *     assigned to along with {@link Response}.
      */
     Response<CapacityReservationGroup> getByIdWithResponse(
         String id, CapacityReservationGroupInstanceViewTypes expand, Context context);
@@ -191,7 +191,7 @@ public interface CapacityReservationGroups {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

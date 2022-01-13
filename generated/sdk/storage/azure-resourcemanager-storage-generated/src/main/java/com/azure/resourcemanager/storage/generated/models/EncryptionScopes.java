@@ -41,7 +41,7 @@ public interface EncryptionScopes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Encryption Scope resource.
+     * @return the Encryption Scope resource along with {@link Response}.
      */
     Response<EncryptionScope> getWithResponse(
         String resourceGroupName, String accountName, String encryptionScopeName, Context context);
@@ -84,7 +84,7 @@ public interface EncryptionScopes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Encryption Scope resource.
+     * @return the Encryption Scope resource along with {@link Response}.
      */
     EncryptionScope getById(String id);
 
@@ -96,7 +96,7 @@ public interface EncryptionScopes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Encryption Scope resource.
+     * @return the Encryption Scope resource along with {@link Response}.
      */
     Response<EncryptionScope> getByIdWithResponse(String id, Context context);
 

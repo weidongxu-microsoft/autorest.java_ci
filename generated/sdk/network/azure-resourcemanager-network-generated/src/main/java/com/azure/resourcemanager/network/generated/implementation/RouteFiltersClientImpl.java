@@ -186,7 +186,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String routeFilterName) {
@@ -236,7 +236,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -283,7 +283,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String routeFilterName) {
@@ -303,7 +303,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -323,7 +323,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String routeFilterName) {
@@ -339,7 +339,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -355,7 +355,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String routeFilterName) {
@@ -373,7 +373,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String routeFilterName, Context context) {
@@ -420,7 +420,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route filter.
+     * @return the specified route filter along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RouteFilterInner>> getByResourceGroupWithResponseAsync(
@@ -473,7 +473,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route filter.
+     * @return the specified route filter along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RouteFilterInner>> getByResourceGroupWithResponseAsync(
@@ -522,7 +522,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route filter.
+     * @return the specified route filter on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RouteFilterInner> getByResourceGroupAsync(
@@ -546,7 +546,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route filter.
+     * @return the specified route filter on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RouteFilterInner> getByResourceGroupAsync(String resourceGroupName, String routeFilterName) {
@@ -588,7 +588,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route filter.
+     * @return the specified route filter along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RouteFilterInner> getByResourceGroupWithResponse(
@@ -605,7 +605,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
+     * @return route Filter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -664,7 +664,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
+     * @return route Filter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -719,7 +719,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
+     * @return route Filter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<RouteFilterInner>, RouteFilterInner> beginCreateOrUpdateAsync(
@@ -746,7 +746,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
+     * @return route Filter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<RouteFilterInner>, RouteFilterInner> beginCreateOrUpdateAsync(
@@ -769,7 +769,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
+     * @return route Filter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RouteFilterInner>, RouteFilterInner> beginCreateOrUpdate(
@@ -787,7 +787,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
+     * @return route Filter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RouteFilterInner>, RouteFilterInner> beginCreateOrUpdate(
@@ -805,7 +805,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
+     * @return route Filter Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RouteFilterInner> createOrUpdateAsync(
@@ -825,7 +825,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
+     * @return route Filter Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RouteFilterInner> createOrUpdateAsync(
@@ -879,7 +879,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
+     * @return route Filter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RouteFilterInner>> updateTagsWithResponseAsync(
@@ -937,7 +937,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
+     * @return route Filter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RouteFilterInner>> updateTagsWithResponseAsync(
@@ -991,7 +991,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
+     * @return route Filter Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RouteFilterInner> updateTagsAsync(
@@ -1033,7 +1033,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
+     * @return route Filter Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RouteFilterInner> updateTagsWithResponse(
@@ -1048,7 +1048,8 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route filters in a resource group.
+     * @return all route filters in a resource group along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteFilterInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1101,7 +1102,8 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route filters in a resource group.
+     * @return all route filters in a resource group along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteFilterInner>> listByResourceGroupSinglePageAsync(
@@ -1211,7 +1213,8 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route filters in a subscription.
+     * @return all route filters in a subscription along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteFilterInner>> listSinglePageAsync() {
@@ -1253,7 +1256,8 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route filters in a subscription.
+     * @return all route filters in a subscription along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteFilterInner>> listSinglePageAsync(Context context) {
@@ -1345,7 +1349,8 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListRouteFilters API service call.
+     * @return response for the ListRouteFilters API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteFilterInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1382,7 +1387,8 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListRouteFilters API service call.
+     * @return response for the ListRouteFilters API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteFilterInner>> listByResourceGroupNextSinglePageAsync(
@@ -1418,7 +1424,8 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListRouteFilters API service call.
+     * @return response for the ListRouteFilters API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteFilterInner>> listNextSinglePageAsync(String nextLink) {
@@ -1454,7 +1461,8 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListRouteFilters API service call.
+     * @return response for the ListRouteFilters API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteFilterInner>> listNextSinglePageAsync(String nextLink, Context context) {

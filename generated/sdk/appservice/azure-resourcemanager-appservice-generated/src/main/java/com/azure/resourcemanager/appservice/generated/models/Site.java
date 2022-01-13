@@ -1126,7 +1126,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> applySlotConfigToProductionWithResponse(CsmSlotEntity slotSwapEntity, Context context);
 
@@ -1151,7 +1151,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return backup description.
+     * @return backup description along with {@link Response}.
      */
     Response<BackupItem> backupWithResponse(BackupRequestInner request, Context context);
 
@@ -1198,7 +1198,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a restore request.
+     * @return description of a restore request along with {@link Response}.
      */
     Response<RestoreRequest> discoverBackupWithResponse(RestoreRequestInner request, Context context);
 
@@ -1220,7 +1220,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents whether or not an app is cloneable.
+     * @return represents whether or not an app is cloneable along with {@link Response}.
      */
     Response<SiteCloneability> isCloneableWithResponse(Context context);
 
@@ -1264,7 +1264,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function secrets.
+     * @return function secrets along with {@link Response}.
      */
     Response<FunctionSecrets> listSyncFunctionTriggersWithResponse(Context context);
 
@@ -1310,7 +1310,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> generateNewSitePublishingPasswordWithResponse(Context context);
 
@@ -1361,7 +1361,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> resetProductionSlotConfigWithResponse(Context context);
 
@@ -1386,7 +1386,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> restartWithResponse(Boolean softRestart, Boolean synchronous, Context context);
 
@@ -1526,7 +1526,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> startWithResponse(Context context);
 
@@ -1586,7 +1586,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> stopWithResponse(Context context);
 
@@ -1607,7 +1607,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> stopNetworkTraceWithResponse(Context context);
 
@@ -1628,7 +1628,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> syncRepositoryWithResponse(Context context);
 
@@ -1649,7 +1649,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> syncFunctionTriggersWithResponse(Context context);
 }

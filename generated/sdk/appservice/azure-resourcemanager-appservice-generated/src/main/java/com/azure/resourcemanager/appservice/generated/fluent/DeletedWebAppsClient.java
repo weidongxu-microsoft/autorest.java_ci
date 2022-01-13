@@ -88,7 +88,7 @@ public interface DeletedWebAppsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deleted app.
+     * @return a deleted app along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeletedSiteInner> getDeletedWebAppByLocationWithResponse(

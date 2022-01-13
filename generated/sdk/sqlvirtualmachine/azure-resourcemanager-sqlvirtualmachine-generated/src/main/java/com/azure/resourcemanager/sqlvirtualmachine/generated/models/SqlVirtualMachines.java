@@ -82,7 +82,7 @@ public interface SqlVirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine.
+     * @return a SQL virtual machine along with {@link Response}.
      */
     Response<SqlVirtualMachine> getByResourceGroupWithResponse(
         String resourceGroupName, String sqlVirtualMachineName, String expand, Context context);
@@ -144,7 +144,7 @@ public interface SqlVirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine.
+     * @return a SQL virtual machine along with {@link Response}.
      */
     SqlVirtualMachine getById(String id);
 
@@ -157,7 +157,7 @@ public interface SqlVirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine.
+     * @return a SQL virtual machine along with {@link Response}.
      */
     Response<SqlVirtualMachine> getByIdWithResponse(String id, String expand, Context context);
 

@@ -94,7 +94,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the shared keys for a workspace.
+     * @return the shared keys for a workspace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedKeysInner>> getSharedKeysWithResponseAsync(
@@ -144,7 +144,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the shared keys for a workspace.
+     * @return the shared keys for a workspace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedKeysInner>> getSharedKeysWithResponseAsync(
@@ -190,7 +190,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the shared keys for a workspace.
+     * @return the shared keys for a workspace on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedKeysInner> getSharedKeysAsync(String resourceGroupName, String workspaceName) {
@@ -229,7 +229,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the shared keys for a workspace.
+     * @return the shared keys for a workspace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SharedKeysInner> getSharedKeysWithResponse(
@@ -246,7 +246,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the shared keys for a workspace.
+     * @return the shared keys for a workspace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedKeysInner>> regenerateWithResponseAsync(
@@ -297,7 +297,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the shared keys for a workspace.
+     * @return the shared keys for a workspace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedKeysInner>> regenerateWithResponseAsync(
@@ -344,7 +344,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the shared keys for a workspace.
+     * @return the shared keys for a workspace on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedKeysInner> regenerateAsync(String resourceGroupName, String workspaceName) {
@@ -385,7 +385,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the shared keys for a workspace.
+     * @return the shared keys for a workspace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SharedKeysInner> regenerateWithResponse(

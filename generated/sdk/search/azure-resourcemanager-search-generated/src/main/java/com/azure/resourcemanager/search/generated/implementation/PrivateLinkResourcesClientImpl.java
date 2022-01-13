@@ -90,7 +90,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all supported private link resource types for the given service.
+     * @return a list of all supported private link resource types for the given service along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkResourceInner>> listSupportedSinglePageAsync(
@@ -149,7 +150,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all supported private link resource types for the given service.
+     * @return a list of all supported private link resource types for the given service along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkResourceInner>> listSupportedSinglePageAsync(

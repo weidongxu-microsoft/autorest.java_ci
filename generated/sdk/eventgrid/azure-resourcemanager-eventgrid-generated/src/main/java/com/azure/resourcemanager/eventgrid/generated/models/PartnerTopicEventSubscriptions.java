@@ -36,7 +36,7 @@ public interface PartnerTopicEventSubscriptions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an event subscription of a partner topic.
+     * @return an event subscription of a partner topic along with {@link Response}.
      */
     Response<EventSubscription> getWithResponse(
         String resourceGroupName, String partnerTopicName, String eventSubscriptionName, Context context);
@@ -176,7 +176,7 @@ public interface PartnerTopicEventSubscriptions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the full endpoint URL for an event subscription of a partner topic.
+     * @return the full endpoint URL for an event subscription of a partner topic along with {@link Response}.
      */
     Response<EventSubscriptionFullUrl> getFullUrlWithResponse(
         String resourceGroupName, String partnerTopicName, String eventSubscriptionName, Context context);
@@ -241,7 +241,7 @@ public interface PartnerTopicEventSubscriptions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all delivery attributes for an event subscription of a partner topic.
+     * @return all delivery attributes for an event subscription of a partner topic along with {@link Response}.
      */
     Response<DeliveryAttributeListResult> getDeliveryAttributesWithResponse(
         String resourceGroupName, String partnerTopicName, String eventSubscriptionName, Context context);

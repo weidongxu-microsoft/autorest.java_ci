@@ -58,7 +58,7 @@ public interface DefaultSecurityRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified default network security rule.
+     * @return the specified default network security rule along with {@link Response}.
      */
     Response<SecurityRule> getWithResponse(
         String resourceGroupName, String networkSecurityGroupName, String defaultSecurityRuleName, Context context);

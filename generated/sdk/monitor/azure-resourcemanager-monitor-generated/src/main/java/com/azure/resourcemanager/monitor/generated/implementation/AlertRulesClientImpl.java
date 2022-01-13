@@ -161,7 +161,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource.
+     * @return the alert rule resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertRuleResourceInner>> createOrUpdateWithResponseAsync(
@@ -218,7 +218,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource.
+     * @return the alert rule resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertRuleResourceInner>> createOrUpdateWithResponseAsync(
@@ -271,7 +271,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource.
+     * @return the alert rule resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AlertRuleResourceInner> createOrUpdateAsync(
@@ -314,7 +314,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource.
+     * @return the alert rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AlertRuleResourceInner> createOrUpdateWithResponse(
@@ -330,7 +330,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String ruleName) {
@@ -379,7 +379,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String ruleName, Context context) {
@@ -424,7 +424,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String ruleName) {
@@ -454,7 +454,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context) {
@@ -469,7 +469,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a classic metric alert rule.
+     * @return a classic metric alert rule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertRuleResourceInner>> getByResourceGroupWithResponseAsync(
@@ -519,7 +519,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a classic metric alert rule.
+     * @return a classic metric alert rule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertRuleResourceInner>> getByResourceGroupWithResponseAsync(
@@ -565,7 +565,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a classic metric alert rule.
+     * @return a classic metric alert rule on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AlertRuleResourceInner> getByResourceGroupAsync(String resourceGroupName, String ruleName) {
@@ -604,7 +604,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a classic metric alert rule.
+     * @return a classic metric alert rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AlertRuleResourceInner> getByResourceGroupWithResponse(
@@ -621,7 +621,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource.
+     * @return the alert rule resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertRuleResourceInner>> updateWithResponseAsync(
@@ -679,7 +679,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource.
+     * @return the alert rule resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertRuleResourceInner>> updateWithResponseAsync(
@@ -733,7 +733,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource.
+     * @return the alert rule resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AlertRuleResourceInner> updateAsync(
@@ -776,7 +776,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource.
+     * @return the alert rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AlertRuleResourceInner> updateWithResponse(
@@ -791,7 +791,8 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AlertRuleResourceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -839,7 +840,8 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AlertRuleResourceInner>> listByResourceGroupSinglePageAsync(
@@ -940,7 +942,8 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AlertRuleResourceInner>> listSinglePageAsync() {
@@ -977,7 +980,8 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AlertRuleResourceInner>> listSinglePageAsync(Context context) {

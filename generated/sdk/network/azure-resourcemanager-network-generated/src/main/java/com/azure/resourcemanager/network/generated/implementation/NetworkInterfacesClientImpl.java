@@ -412,7 +412,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all network interfaces in a role instance in a cloud service.
+     * @return information about all network interfaces in a role instance in a cloud service along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listCloudServiceRoleInstanceNetworkInterfacesSinglePageAsync(
@@ -478,7 +479,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all network interfaces in a role instance in a cloud service.
+     * @return information about all network interfaces in a role instance in a cloud service along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listCloudServiceRoleInstanceNetworkInterfacesSinglePageAsync(
@@ -620,7 +622,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network interfaces in a cloud service.
+     * @return all network interfaces in a cloud service along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listCloudServiceNetworkInterfacesSinglePageAsync(
@@ -680,7 +683,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network interfaces in a cloud service.
+     * @return all network interfaces in a cloud service along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listCloudServiceNetworkInterfacesSinglePageAsync(
@@ -810,7 +814,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a cloud service.
+     * @return the specified network interface in a cloud service along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkInterfaceInner>> getCloudServiceNetworkInterfaceWithResponseAsync(
@@ -879,7 +884,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a cloud service.
+     * @return the specified network interface in a cloud service along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkInterfaceInner>> getCloudServiceNetworkInterfaceWithResponseAsync(
@@ -945,7 +951,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a cloud service.
+     * @return the specified network interface in a cloud service on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceInner> getCloudServiceNetworkInterfaceAsync(
@@ -976,7 +982,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a cloud service.
+     * @return the specified network interface in a cloud service on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceInner> getCloudServiceNetworkInterfaceAsync(
@@ -1027,7 +1033,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a cloud service.
+     * @return the specified network interface in a cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkInterfaceInner> getCloudServiceNetworkInterfaceWithResponse(
@@ -1050,7 +1056,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -1101,7 +1107,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -1148,7 +1154,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String networkInterfaceName) {
@@ -1168,7 +1174,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1189,7 +1195,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkInterfaceName) {
@@ -1205,7 +1211,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1221,7 +1227,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String networkInterfaceName) {
@@ -1239,7 +1245,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String networkInterfaceName, Context context) {
@@ -1286,7 +1292,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface.
+     * @return information about the specified network interface along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkInterfaceInner>> getByResourceGroupWithResponseAsync(
@@ -1339,7 +1346,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface.
+     * @return information about the specified network interface along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkInterfaceInner>> getByResourceGroupWithResponseAsync(
@@ -1388,7 +1396,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface.
+     * @return information about the specified network interface on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceInner> getByResourceGroupAsync(
@@ -1412,7 +1420,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface.
+     * @return information about the specified network interface on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceInner> getByResourceGroupAsync(String resourceGroupName, String networkInterfaceName) {
@@ -1454,7 +1462,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface.
+     * @return information about the specified network interface along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkInterfaceInner> getByResourceGroupWithResponse(
@@ -1471,7 +1479,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -1529,7 +1538,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -1583,7 +1593,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<NetworkInterfaceInner>, NetworkInterfaceInner> beginCreateOrUpdateAsync(
@@ -1610,7 +1621,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<NetworkInterfaceInner>, NetworkInterfaceInner> beginCreateOrUpdateAsync(
@@ -1633,7 +1645,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<NetworkInterfaceInner>, NetworkInterfaceInner> beginCreateOrUpdate(
@@ -1651,7 +1664,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<NetworkInterfaceInner>, NetworkInterfaceInner> beginCreateOrUpdate(
@@ -1668,7 +1682,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceInner> createOrUpdateAsync(
@@ -1688,7 +1702,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceInner> createOrUpdateAsync(
@@ -1742,7 +1756,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkInterfaceInner>> updateTagsWithResponseAsync(
@@ -1800,7 +1815,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkInterfaceInner>> updateTagsWithResponseAsync(
@@ -1854,7 +1870,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceInner> updateTagsAsync(
@@ -1897,7 +1913,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkInterfaceInner> updateTagsWithResponse(
@@ -1910,7 +1926,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network interfaces in a subscription.
+     * @return all network interfaces in a subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listSinglePageAsync() {
@@ -1952,7 +1969,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network interfaces in a subscription.
+     * @return all network interfaces in a subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listSinglePageAsync(Context context) {
@@ -2044,7 +2062,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network interfaces in a resource group.
+     * @return all network interfaces in a resource group along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -2097,7 +2116,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network interfaces in a resource group.
+     * @return all network interfaces in a resource group along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listByResourceGroupSinglePageAsync(
@@ -2209,7 +2229,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables applied to a network interface.
+     * @return all route tables applied to a network interface along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getEffectiveRouteTableWithResponseAsync(
@@ -2260,7 +2281,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables applied to a network interface.
+     * @return all route tables applied to a network interface along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getEffectiveRouteTableWithResponseAsync(
@@ -2307,7 +2329,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables applied to a network interface.
+     * @return all route tables applied to a network interface along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<EffectiveRouteListResultInner>, EffectiveRouteListResultInner>
@@ -2333,7 +2356,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables applied to a network interface.
+     * @return all route tables applied to a network interface along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<EffectiveRouteListResultInner>, EffectiveRouteListResultInner>
@@ -2359,7 +2383,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables applied to a network interface.
+     * @return all route tables applied to a network interface along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<EffectiveRouteListResultInner>, EffectiveRouteListResultInner>
@@ -2376,7 +2401,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables applied to a network interface.
+     * @return all route tables applied to a network interface along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<EffectiveRouteListResultInner>, EffectiveRouteListResultInner>
@@ -2392,7 +2418,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables applied to a network interface.
+     * @return all route tables applied to a network interface on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EffectiveRouteListResultInner> getEffectiveRouteTableAsync(
@@ -2411,7 +2437,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables applied to a network interface.
+     * @return all route tables applied to a network interface on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EffectiveRouteListResultInner> getEffectiveRouteTableAsync(
@@ -2461,7 +2487,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups applied to a network interface.
+     * @return all network security groups applied to a network interface along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listEffectiveNetworkSecurityGroupsWithResponseAsync(
@@ -2512,7 +2539,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups applied to a network interface.
+     * @return all network security groups applied to a network interface along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listEffectiveNetworkSecurityGroupsWithResponseAsync(
@@ -2559,7 +2587,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups applied to a network interface.
+     * @return all network security groups applied to a network interface along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<
@@ -2586,7 +2615,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups applied to a network interface.
+     * @return all network security groups applied to a network interface along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<
@@ -2614,7 +2644,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups applied to a network interface.
+     * @return all network security groups applied to a network interface along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<
@@ -2632,7 +2663,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups applied to a network interface.
+     * @return all network security groups applied to a network interface along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<
@@ -2651,7 +2683,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups applied to a network interface.
+     * @return all network security groups applied to a network interface on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EffectiveNetworkSecurityGroupListResultInner> listEffectiveNetworkSecurityGroupsAsync(
@@ -2670,7 +2702,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups applied to a network interface.
+     * @return all network security groups applied to a network interface on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EffectiveNetworkSecurityGroupListResultInner> listEffectiveNetworkSecurityGroupsAsync(
@@ -2722,7 +2754,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all network interfaces in a virtual machine in a virtual machine scale set.
+     * @return information about all network interfaces in a virtual machine in a virtual machine scale set along with
+     *     {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listVirtualMachineScaleSetVMNetworkInterfacesSinglePageAsync(
@@ -2790,7 +2823,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all network interfaces in a virtual machine in a virtual machine scale set.
+     * @return information about all network interfaces in a virtual machine in a virtual machine scale set along with
+     *     {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listVirtualMachineScaleSetVMNetworkInterfacesSinglePageAsync(
@@ -2935,7 +2969,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network interfaces in a virtual machine scale set.
+     * @return all network interfaces in a virtual machine scale set along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listVirtualMachineScaleSetNetworkInterfacesSinglePageAsync(
@@ -2997,7 +3032,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network interfaces in a virtual machine scale set.
+     * @return all network interfaces in a virtual machine scale set along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listVirtualMachineScaleSetNetworkInterfacesSinglePageAsync(
@@ -3134,7 +3170,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a virtual machine scale set.
+     * @return the specified network interface in a virtual machine scale set along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkInterfaceInner>> getVirtualMachineScaleSetNetworkInterfaceWithResponseAsync(
@@ -3205,7 +3242,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a virtual machine scale set.
+     * @return the specified network interface in a virtual machine scale set along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkInterfaceInner>> getVirtualMachineScaleSetNetworkInterfaceWithResponseAsync(
@@ -3273,7 +3311,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a virtual machine scale set.
+     * @return the specified network interface in a virtual machine scale set on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceInner> getVirtualMachineScaleSetNetworkInterfaceAsync(
@@ -3304,7 +3342,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a virtual machine scale set.
+     * @return the specified network interface in a virtual machine scale set on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceInner> getVirtualMachineScaleSetNetworkInterfaceAsync(
@@ -3361,7 +3399,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a virtual machine scale set.
+     * @return the specified network interface in a virtual machine scale set along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkInterfaceInner> getVirtualMachineScaleSetNetworkInterfaceWithResponse(
@@ -3392,7 +3430,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set.
+     * @return the specified network interface ip configuration in a virtual machine scale set along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceIpConfigurationInner>>
@@ -3473,7 +3512,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set.
+     * @return the specified network interface ip configuration in a virtual machine scale set along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceIpConfigurationInner>>
@@ -3695,7 +3735,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set.
+     * @return the specified network interface ip configuration in a virtual machine scale set along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkInterfaceIpConfigurationInner>>
@@ -3774,7 +3815,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set.
+     * @return the specified network interface ip configuration in a virtual machine scale set along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkInterfaceIpConfigurationInner>>
@@ -3850,7 +3892,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set.
+     * @return the specified network interface ip configuration in a virtual machine scale set on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceIpConfigurationInner> getVirtualMachineScaleSetIpConfigurationAsync(
@@ -3888,7 +3931,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set.
+     * @return the specified network interface ip configuration in a virtual machine scale set on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceIpConfigurationInner> getVirtualMachineScaleSetIpConfigurationAsync(
@@ -3959,7 +4003,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set.
+     * @return the specified network interface ip configuration in a virtual machine scale set along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkInterfaceIpConfigurationInner> getVirtualMachineScaleSetIpConfigurationWithResponse(
@@ -3988,7 +4033,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListNetworkInterface API service call.
+     * @return response for the ListNetworkInterface API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listCloudServiceRoleInstanceNetworkInterfacesNextSinglePageAsync(
@@ -4029,7 +4075,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListNetworkInterface API service call.
+     * @return response for the ListNetworkInterface API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listCloudServiceRoleInstanceNetworkInterfacesNextSinglePageAsync(
@@ -4065,7 +4112,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListNetworkInterface API service call.
+     * @return response for the ListNetworkInterface API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listCloudServiceNetworkInterfacesNextSinglePageAsync(
@@ -4104,7 +4152,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListNetworkInterface API service call.
+     * @return response for the ListNetworkInterface API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listCloudServiceNetworkInterfacesNextSinglePageAsync(
@@ -4140,7 +4189,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListNetworkInterface API service call.
+     * @return response for the ListNetworkInterface API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -4176,7 +4226,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListNetworkInterface API service call.
+     * @return response for the ListNetworkInterface API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listAllNextSinglePageAsync(String nextLink, Context context) {
@@ -4211,7 +4262,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListNetworkInterface API service call.
+     * @return response for the ListNetworkInterface API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listNextSinglePageAsync(String nextLink) {
@@ -4247,7 +4299,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListNetworkInterface API service call.
+     * @return response for the ListNetworkInterface API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -4282,7 +4335,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListNetworkInterface API service call.
+     * @return response for the ListNetworkInterface API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listVirtualMachineScaleSetVMNetworkInterfacesNextSinglePageAsync(
@@ -4323,7 +4377,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListNetworkInterface API service call.
+     * @return response for the ListNetworkInterface API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listVirtualMachineScaleSetVMNetworkInterfacesNextSinglePageAsync(
@@ -4359,7 +4414,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListNetworkInterface API service call.
+     * @return response for the ListNetworkInterface API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listVirtualMachineScaleSetNetworkInterfacesNextSinglePageAsync(
@@ -4400,7 +4456,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListNetworkInterface API service call.
+     * @return response for the ListNetworkInterface API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceInner>> listVirtualMachineScaleSetNetworkInterfacesNextSinglePageAsync(
@@ -4436,7 +4493,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for list ip configurations API service call.
+     * @return response for list ip configurations API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceIpConfigurationInner>>
@@ -4477,7 +4535,8 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for list ip configurations API service call.
+     * @return response for list ip configurations API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkInterfaceIpConfigurationInner>>

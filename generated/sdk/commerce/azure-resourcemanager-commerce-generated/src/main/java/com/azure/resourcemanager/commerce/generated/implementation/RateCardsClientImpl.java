@@ -81,7 +81,8 @@ public final class RateCardsClientImpl implements RateCardsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return price and Metadata information for resources.
+     * @return price and Metadata information for resources along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceRateCardInfoInner>> getWithResponseAsync(String filter) {
@@ -130,7 +131,8 @@ public final class RateCardsClientImpl implements RateCardsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return price and Metadata information for resources.
+     * @return price and Metadata information for resources along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceRateCardInfoInner>> getWithResponseAsync(String filter, Context context) {
@@ -175,7 +177,7 @@ public final class RateCardsClientImpl implements RateCardsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return price and Metadata information for resources.
+     * @return price and Metadata information for resources on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ResourceRateCardInfoInner> getAsync(String filter) {
@@ -226,7 +228,7 @@ public final class RateCardsClientImpl implements RateCardsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return price and Metadata information for resources.
+     * @return price and Metadata information for resources along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ResourceRateCardInfoInner> getWithResponse(String filter, Context context) {

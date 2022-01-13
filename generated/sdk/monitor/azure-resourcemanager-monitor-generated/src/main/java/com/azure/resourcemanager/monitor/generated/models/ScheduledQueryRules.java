@@ -31,7 +31,7 @@ public interface ScheduledQueryRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Search rule.
+     * @return an Log Search rule along with {@link Response}.
      */
     Response<LogSearchRuleResource> getByResourceGroupWithResponse(
         String resourceGroupName, String ruleName, Context context);
@@ -56,7 +56,7 @@ public interface ScheduledQueryRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context);
 
@@ -114,7 +114,7 @@ public interface ScheduledQueryRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Search rule.
+     * @return an Log Search rule along with {@link Response}.
      */
     LogSearchRuleResource getById(String id);
 
@@ -126,7 +126,7 @@ public interface ScheduledQueryRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Search rule.
+     * @return an Log Search rule along with {@link Response}.
      */
     Response<LogSearchRuleResource> getByIdWithResponse(String id, Context context);
 
@@ -148,7 +148,7 @@ public interface ScheduledQueryRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

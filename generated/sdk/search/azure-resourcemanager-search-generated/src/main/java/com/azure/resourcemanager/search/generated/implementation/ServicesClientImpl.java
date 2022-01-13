@@ -218,7 +218,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -284,7 +285,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -350,7 +352,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SearchServiceInner>, SearchServiceInner> beginCreateOrUpdateAsync(
@@ -385,7 +388,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SearchServiceInner>, SearchServiceInner> beginCreateOrUpdateAsync(
@@ -421,7 +425,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SearchServiceInner>, SearchServiceInner> beginCreateOrUpdate(
@@ -448,7 +453,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SearchServiceInner>, SearchServiceInner> beginCreateOrUpdate(
@@ -478,7 +484,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SearchServiceInner> createOrUpdateAsync(
@@ -503,7 +510,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SearchServiceInner> createOrUpdateAsync(
@@ -532,7 +540,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SearchServiceInner> createOrUpdateAsync(
@@ -638,7 +647,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SearchServiceInner>> updateWithResponseAsync(
@@ -699,7 +709,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SearchServiceInner>> updateWithResponseAsync(
@@ -760,7 +771,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SearchServiceInner> updateAsync(
@@ -786,7 +798,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SearchServiceInner> updateAsync(
@@ -835,7 +848,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SearchServiceInner> updateWithResponse(
@@ -860,7 +873,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group.
+     * @return the search service with the given name in the given resource group along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SearchServiceInner>> getByResourceGroupWithResponseAsync(
@@ -915,7 +929,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group.
+     * @return the search service with the given name in the given resource group along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SearchServiceInner>> getByResourceGroupWithResponseAsync(
@@ -966,7 +981,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group.
+     * @return the search service with the given name in the given resource group on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SearchServiceInner> getByResourceGroupAsync(
@@ -992,7 +1008,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group.
+     * @return the search service with the given name in the given resource group on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SearchServiceInner> getByResourceGroupAsync(String resourceGroupName, String searchServiceName) {
@@ -1039,7 +1056,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group.
+     * @return the search service with the given name in the given resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SearchServiceInner> getByResourceGroupWithResponse(
@@ -1060,7 +1077,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -1115,7 +1132,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -1166,7 +1183,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String searchServiceName, UUID clientRequestId) {
@@ -1184,7 +1201,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String searchServiceName) {
@@ -1223,7 +1240,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -1241,7 +1258,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group.
+     * @return a list of all search services in the given resource group along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SearchServiceInner>> listByResourceGroupSinglePageAsync(
@@ -1298,7 +1316,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group.
+     * @return a list of all search services in the given resource group along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SearchServiceInner>> listByResourceGroupSinglePageAsync(
@@ -1442,7 +1461,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription.
+     * @return a list of all search services in the given subscription along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SearchServiceInner>> listSinglePageAsync(UUID clientRequestId) {
@@ -1491,7 +1511,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription.
+     * @return a list of all search services in the given subscription along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SearchServiceInner>> listSinglePageAsync(UUID clientRequestId, Context context) {
@@ -1617,7 +1638,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
+     * @return output of check name availability API along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityOutputInner>> checkNameAvailabilityWithResponseAsync(
@@ -1669,7 +1691,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
+     * @return output of check name availability API along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityOutputInner>> checkNameAvailabilityWithResponseAsync(
@@ -1717,7 +1740,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
+     * @return output of check name availability API on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<CheckNameAvailabilityOutputInner> checkNameAvailabilityAsync(
@@ -1741,7 +1764,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
+     * @return output of check name availability API on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<CheckNameAvailabilityOutputInner> checkNameAvailabilityAsync(
@@ -1786,7 +1809,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
+     * @return output of check name availability API along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<CheckNameAvailabilityOutputInner> checkNameAvailabilityWithResponse(
@@ -1803,7 +1826,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing a list of Azure Cognitive Search services.
+     * @return response containing a list of Azure Cognitive Search services along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SearchServiceInner>> listByResourceGroupNextSinglePageAsync(
@@ -1845,7 +1869,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing a list of Azure Cognitive Search services.
+     * @return response containing a list of Azure Cognitive Search services along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SearchServiceInner>> listByResourceGroupNextSinglePageAsync(
@@ -1883,7 +1908,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing a list of Azure Cognitive Search services.
+     * @return response containing a list of Azure Cognitive Search services along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SearchServiceInner>> listBySubscriptionNextSinglePageAsync(
@@ -1925,7 +1951,8 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing a list of Azure Cognitive Search services.
+     * @return response containing a list of Azure Cognitive Search services along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SearchServiceInner>> listBySubscriptionNextSinglePageAsync(

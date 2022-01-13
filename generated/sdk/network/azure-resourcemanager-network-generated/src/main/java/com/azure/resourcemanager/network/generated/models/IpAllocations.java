@@ -55,7 +55,7 @@ public interface IpAllocations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified IpAllocation by resource group.
+     * @return the specified IpAllocation by resource group along with {@link Response}.
      */
     Response<IpAllocation> getByResourceGroupWithResponse(
         String resourceGroupName, String ipAllocationName, String expand, Context context);
@@ -110,7 +110,7 @@ public interface IpAllocations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified IpAllocation by resource group.
+     * @return the specified IpAllocation by resource group along with {@link Response}.
      */
     IpAllocation getById(String id);
 
@@ -123,7 +123,7 @@ public interface IpAllocations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified IpAllocation by resource group.
+     * @return the specified IpAllocation by resource group along with {@link Response}.
      */
     Response<IpAllocation> getByIdWithResponse(String id, String expand, Context context);
 

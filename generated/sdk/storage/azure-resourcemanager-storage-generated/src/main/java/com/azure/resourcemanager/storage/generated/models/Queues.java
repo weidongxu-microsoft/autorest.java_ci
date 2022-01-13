@@ -41,7 +41,8 @@ public interface Queues {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the queue with the specified queue name, under the specified account if it exists.
+     * @return the queue with the specified queue name, under the specified account if it exists along with {@link
+     *     Response}.
      */
     Response<StorageQueue> getWithResponse(
         String resourceGroupName, String accountName, String queueName, Context context);
@@ -76,7 +77,7 @@ public interface Queues {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String queueName, Context context);
 
@@ -120,7 +121,8 @@ public interface Queues {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the queue with the specified queue name, under the specified account if it exists.
+     * @return the queue with the specified queue name, under the specified account if it exists along with {@link
+     *     Response}.
      */
     StorageQueue getById(String id);
 
@@ -132,7 +134,8 @@ public interface Queues {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the queue with the specified queue name, under the specified account if it exists.
+     * @return the queue with the specified queue name, under the specified account if it exists along with {@link
+     *     Response}.
      */
     Response<StorageQueue> getByIdWithResponse(String id, Context context);
 
@@ -154,7 +157,7 @@ public interface Queues {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

@@ -54,7 +54,7 @@ public interface AzureFirewalls {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure Firewall.
+     * @return the specified Azure Firewall along with {@link Response}.
      */
     Response<AzureFirewall> getByResourceGroupWithResponse(
         String resourceGroupName, String azureFirewallName, Context context);
@@ -109,7 +109,7 @@ public interface AzureFirewalls {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure Firewall.
+     * @return the specified Azure Firewall along with {@link Response}.
      */
     AzureFirewall getById(String id);
 
@@ -121,7 +121,7 @@ public interface AzureFirewalls {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure Firewall.
+     * @return the specified Azure Firewall along with {@link Response}.
      */
     Response<AzureFirewall> getByIdWithResponse(String id, Context context);
 

@@ -16,6 +16,7 @@ import com.azure.resourcemanager.search.generated.fluent.models.SearchServiceInn
 import com.azure.resourcemanager.search.generated.models.CheckNameAvailabilityInput;
 import com.azure.resourcemanager.search.generated.models.SearchServiceUpdate;
 import java.util.UUID;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ServicesClient. */
 public interface ServicesClient {
@@ -36,7 +37,8 @@ public interface ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<SearchServiceInner>, SearchServiceInner> beginCreateOrUpdate(
@@ -60,7 +62,8 @@ public interface ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<SearchServiceInner>, SearchServiceInner> beginCreateOrUpdate(
@@ -170,7 +173,7 @@ public interface ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SearchServiceInner> updateWithResponse(
@@ -208,7 +211,7 @@ public interface ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group.
+     * @return the search service with the given name in the given resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SearchServiceInner> getByResourceGroupWithResponse(
@@ -241,7 +244,7 @@ public interface ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(
@@ -325,7 +328,7 @@ public interface ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
+     * @return output of check name availability API along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CheckNameAvailabilityOutputInner> checkNameAvailabilityWithResponse(

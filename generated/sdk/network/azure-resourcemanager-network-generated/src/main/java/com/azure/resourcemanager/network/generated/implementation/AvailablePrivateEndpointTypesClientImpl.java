@@ -120,7 +120,8 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailablePrivateEndpointTypeInner>> listSinglePageAsync(String location) {
@@ -172,7 +173,8 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailablePrivateEndpointTypeInner>> listSinglePageAsync(
@@ -275,7 +277,8 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailablePrivateEndpointTypeInner>> listByResourceGroupSinglePageAsync(
@@ -334,7 +337,8 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailablePrivateEndpointTypeInner>> listByResourceGroupSinglePageAsync(
@@ -458,7 +462,8 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailablePrivateEndpointTypeInner>> listNextSinglePageAsync(String nextLink) {
@@ -494,7 +499,8 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailablePrivateEndpointTypeInner>> listNextSinglePageAsync(
@@ -530,7 +536,8 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailablePrivateEndpointTypeInner>> listByResourceGroupNextSinglePageAsync(
@@ -568,7 +575,8 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailablePrivateEndpointTypeInner>> listByResourceGroupNextSinglePageAsync(

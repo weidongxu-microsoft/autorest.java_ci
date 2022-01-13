@@ -59,7 +59,7 @@ public interface NetworkInterfaceTapConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified tap configuration on a network interface.
+     * @return the specified tap configuration on a network interface along with {@link Response}.
      */
     Response<NetworkInterfaceTapConfiguration> getWithResponse(
         String resourceGroupName, String networkInterfaceName, String tapConfigurationName, Context context);
@@ -97,7 +97,7 @@ public interface NetworkInterfaceTapConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified tap configuration on a network interface.
+     * @return the specified tap configuration on a network interface along with {@link Response}.
      */
     NetworkInterfaceTapConfiguration getById(String id);
 
@@ -109,7 +109,7 @@ public interface NetworkInterfaceTapConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified tap configuration on a network interface.
+     * @return the specified tap configuration on a network interface along with {@link Response}.
      */
     Response<NetworkInterfaceTapConfiguration> getByIdWithResponse(String id, Context context);
 

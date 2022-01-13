@@ -29,7 +29,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String policyDefinitionName, Context context);
 
@@ -52,7 +52,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
+     * @return the policy definition along with {@link Response}.
      */
     Response<PolicyDefinition> getWithResponse(String policyDefinitionName, Context context);
 
@@ -75,7 +75,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
+     * @return the policy definition along with {@link Response}.
      */
     Response<PolicyDefinition> getBuiltInWithResponse(String policyDefinitionName, Context context);
 
@@ -103,7 +103,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
+     * @return the policy definition along with {@link Response}.
      */
     Response<PolicyDefinition> createOrUpdateAtManagementGroupWithResponse(
         String policyDefinitionName, String managementGroupId, PolicyDefinitionInner parameters, Context context);
@@ -128,7 +128,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteAtManagementGroupWithResponse(
         String policyDefinitionName, String managementGroupId, Context context);
@@ -154,7 +154,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
+     * @return the policy definition along with {@link Response}.
      */
     Response<PolicyDefinition> getAtManagementGroupWithResponse(
         String policyDefinitionName, String managementGroupId, Context context);
@@ -294,7 +294,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
+     * @return the policy definition along with {@link Response}.
      */
     PolicyDefinition getById(String id);
 
@@ -306,7 +306,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
+     * @return the policy definition along with {@link Response}.
      */
     Response<PolicyDefinition> getByIdWithResponse(String id, Context context);
 
@@ -328,7 +328,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

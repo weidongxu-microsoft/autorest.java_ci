@@ -31,7 +31,7 @@ public interface PartnerRegistrations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a partner registration with the specified parameters.
+     * @return a partner registration with the specified parameters along with {@link Response}.
      */
     Response<PartnerRegistration> getByResourceGroupWithResponse(
         String resourceGroupName, String partnerRegistrationName, Context context);
@@ -56,7 +56,7 @@ public interface PartnerRegistrations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String partnerRegistrationName, Context context);
 
@@ -127,7 +127,7 @@ public interface PartnerRegistrations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a partner registration with the specified parameters.
+     * @return a partner registration with the specified parameters along with {@link Response}.
      */
     PartnerRegistration getById(String id);
 
@@ -139,7 +139,7 @@ public interface PartnerRegistrations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a partner registration with the specified parameters.
+     * @return a partner registration with the specified parameters along with {@link Response}.
      */
     Response<PartnerRegistration> getByIdWithResponse(String id, Context context);
 
@@ -161,7 +161,7 @@ public interface PartnerRegistrations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

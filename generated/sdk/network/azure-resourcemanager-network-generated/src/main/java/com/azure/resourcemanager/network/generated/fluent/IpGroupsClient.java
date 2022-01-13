@@ -13,6 +13,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.IpGroupInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in IpGroupsClient. */
 public interface IpGroupsClient {
@@ -42,7 +43,7 @@ public interface IpGroupsClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ipGroups.
+     * @return the specified ipGroups along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<IpGroupInner> getByResourceGroupWithResponse(
@@ -58,7 +59,7 @@ public interface IpGroupsClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<IpGroupInner>, IpGroupInner> beginCreateOrUpdate(
@@ -75,7 +76,7 @@ public interface IpGroupsClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<IpGroupInner>, IpGroupInner> beginCreateOrUpdate(
@@ -139,7 +140,7 @@ public interface IpGroupsClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<IpGroupInner> updateGroupsWithResponse(
@@ -154,7 +155,7 @@ public interface IpGroupsClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String ipGroupsName);
@@ -169,7 +170,7 @@ public interface IpGroupsClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String ipGroupsName, Context context);

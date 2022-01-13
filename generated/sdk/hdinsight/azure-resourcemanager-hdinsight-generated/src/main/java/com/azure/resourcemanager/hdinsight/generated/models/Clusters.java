@@ -54,7 +54,7 @@ public interface Clusters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified cluster.
+     * @return the specified cluster along with {@link Response}.
      */
     Response<Cluster> getByResourceGroupWithResponse(String resourceGroupName, String clusterName, Context context);
 
@@ -217,7 +217,7 @@ public interface Clusters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the gateway settings for the specified cluster.
+     * @return the gateway settings for the specified cluster along with {@link Response}.
      */
     Response<GatewaySettings> getGatewaySettingsWithResponse(
         String resourceGroupName, String clusterName, Context context);
@@ -272,7 +272,7 @@ public interface Clusters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the azure async operation response.
+     * @return the azure async operation response along with {@link Response}.
      */
     Response<AsyncOperationResult> getAzureAsyncOperationStatusWithResponse(
         String resourceGroupName, String clusterName, String operationId, Context context);
@@ -340,7 +340,7 @@ public interface Clusters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified cluster.
+     * @return the specified cluster along with {@link Response}.
      */
     Cluster getById(String id);
 
@@ -352,7 +352,7 @@ public interface Clusters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified cluster.
+     * @return the specified cluster along with {@link Response}.
      */
     Response<Cluster> getByIdWithResponse(String id, Context context);
 

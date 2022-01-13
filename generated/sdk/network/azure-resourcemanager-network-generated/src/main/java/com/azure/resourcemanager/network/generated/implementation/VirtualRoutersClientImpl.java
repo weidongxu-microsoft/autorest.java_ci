@@ -168,7 +168,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -219,7 +219,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -266,7 +266,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String virtualRouterName) {
@@ -286,7 +286,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -306,7 +306,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String virtualRouterName) {
@@ -322,7 +322,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -338,7 +338,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String virtualRouterName) {
@@ -356,7 +356,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String virtualRouterName, Context context) {
@@ -403,7 +403,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router.
+     * @return the specified Virtual Router along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualRouterInner>> getByResourceGroupWithResponseAsync(
@@ -456,7 +456,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router.
+     * @return the specified Virtual Router along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualRouterInner>> getByResourceGroupWithResponseAsync(
@@ -505,7 +505,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router.
+     * @return the specified Virtual Router on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualRouterInner> getByResourceGroupAsync(
@@ -529,7 +529,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router.
+     * @return the specified Virtual Router on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualRouterInner> getByResourceGroupAsync(String resourceGroupName, String virtualRouterName) {
@@ -571,7 +571,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router.
+     * @return the specified Virtual Router along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VirtualRouterInner> getByResourceGroupWithResponse(
@@ -588,7 +588,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualRouter Resource.
+     * @return virtualRouter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -646,7 +646,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualRouter Resource.
+     * @return virtualRouter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -700,7 +700,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualRouter Resource.
+     * @return virtualRouter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualRouterInner>, VirtualRouterInner> beginCreateOrUpdateAsync(
@@ -727,7 +727,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualRouter Resource.
+     * @return virtualRouter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualRouterInner>, VirtualRouterInner> beginCreateOrUpdateAsync(
@@ -750,7 +750,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualRouter Resource.
+     * @return virtualRouter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualRouterInner>, VirtualRouterInner> beginCreateOrUpdate(
@@ -768,7 +768,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualRouter Resource.
+     * @return virtualRouter Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualRouterInner>, VirtualRouterInner> beginCreateOrUpdate(
@@ -785,7 +785,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualRouter Resource.
+     * @return virtualRouter Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualRouterInner> createOrUpdateAsync(
@@ -805,7 +805,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualRouter Resource.
+     * @return virtualRouter Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualRouterInner> createOrUpdateAsync(
@@ -857,7 +857,8 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouters API service call.
+     * @return response for ListVirtualRouters API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualRouterInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -910,7 +911,8 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouters API service call.
+     * @return response for ListVirtualRouters API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualRouterInner>> listByResourceGroupSinglePageAsync(
@@ -1020,7 +1022,8 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      *
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Virtual Routers in a subscription.
+     * @return all the Virtual Routers in a subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualRouterInner>> listSinglePageAsync() {
@@ -1062,7 +1065,8 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Virtual Routers in a subscription.
+     * @return all the Virtual Routers in a subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualRouterInner>> listSinglePageAsync(Context context) {
@@ -1154,7 +1158,8 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouters API service call.
+     * @return response for ListVirtualRouters API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualRouterInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1191,7 +1196,8 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouters API service call.
+     * @return response for ListVirtualRouters API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualRouterInner>> listByResourceGroupNextSinglePageAsync(
@@ -1227,7 +1233,8 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouters API service call.
+     * @return response for ListVirtualRouters API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualRouterInner>> listNextSinglePageAsync(String nextLink) {
@@ -1263,7 +1270,8 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouters API service call.
+     * @return response for ListVirtualRouters API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualRouterInner>> listNextSinglePageAsync(String nextLink, Context context) {

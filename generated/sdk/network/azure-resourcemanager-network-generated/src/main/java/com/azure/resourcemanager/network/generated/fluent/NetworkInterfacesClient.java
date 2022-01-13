@@ -16,6 +16,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.EffectiveRouteL
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in NetworkInterfacesClient. */
 public interface NetworkInterfacesClient {
@@ -107,7 +108,7 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a cloud service.
+     * @return the specified network interface in a cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<NetworkInterfaceInner> getCloudServiceNetworkInterfaceWithResponse(
@@ -126,7 +127,7 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkInterfaceName);
@@ -140,7 +141,7 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -194,7 +195,7 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface.
+     * @return information about the specified network interface along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<NetworkInterfaceInner> getByResourceGroupWithResponse(
@@ -209,7 +210,8 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<NetworkInterfaceInner>, NetworkInterfaceInner> beginCreateOrUpdate(
@@ -225,7 +227,8 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<NetworkInterfaceInner>, NetworkInterfaceInner> beginCreateOrUpdate(
@@ -286,7 +289,7 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<NetworkInterfaceInner> updateTagsWithResponse(
@@ -347,7 +350,8 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables applied to a network interface.
+     * @return all route tables applied to a network interface along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<EffectiveRouteListResultInner>, EffectiveRouteListResultInner> beginGetEffectiveRouteTable(
@@ -362,7 +366,8 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables applied to a network interface.
+     * @return all route tables applied to a network interface along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<EffectiveRouteListResultInner>, EffectiveRouteListResultInner> beginGetEffectiveRouteTable(
@@ -404,7 +409,8 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups applied to a network interface.
+     * @return all network security groups applied to a network interface along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<EffectiveNetworkSecurityGroupListResultInner>, EffectiveNetworkSecurityGroupListResultInner>
@@ -419,7 +425,8 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups applied to a network interface.
+     * @return all network security groups applied to a network interface along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<EffectiveNetworkSecurityGroupListResultInner>, EffectiveNetworkSecurityGroupListResultInner>
@@ -545,7 +552,7 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a virtual machine scale set.
+     * @return the specified network interface in a virtual machine scale set along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<NetworkInterfaceInner> getVirtualMachineScaleSetNetworkInterfaceWithResponse(
@@ -632,7 +639,8 @@ public interface NetworkInterfacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set.
+     * @return the specified network interface ip configuration in a virtual machine scale set along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<NetworkInterfaceIpConfigurationInner> getVirtualMachineScaleSetIpConfigurationWithResponse(

@@ -103,7 +103,7 @@ public interface VirtualMachineScaleSetRollingUpgrades {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the latest virtual machine scale set rolling upgrade.
+     * @return the status of the latest virtual machine scale set rolling upgrade along with {@link Response}.
      */
     Response<RollingUpgradeStatusInfo> getLatestWithResponse(
         String resourceGroupName, String vmScaleSetName, Context context);

@@ -92,7 +92,8 @@ public final class NodesClientImpl implements NodesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the nodes currently configured under this Data Box Edge device.
+     * @return all the nodes currently configured under this Data Box Edge device along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NodeInner>> listByDataBoxEdgeDeviceSinglePageAsync(
@@ -150,7 +151,8 @@ public final class NodesClientImpl implements NodesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the nodes currently configured under this Data Box Edge device.
+     * @return all the nodes currently configured under this Data Box Edge device along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NodeInner>> listByDataBoxEdgeDeviceSinglePageAsync(
@@ -271,7 +273,7 @@ public final class NodesClientImpl implements NodesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Nodes.
+     * @return collection of Nodes along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NodeInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(String nextLink) {
@@ -308,7 +310,7 @@ public final class NodesClientImpl implements NodesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Nodes.
+     * @return collection of Nodes along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NodeInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(

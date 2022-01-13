@@ -72,7 +72,7 @@ public interface ObjectReplicationPoliciesOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the object replication policy of the storage account by policy ID.
+     * @return the object replication policy of the storage account by policy ID along with {@link Response}.
      */
     Response<ObjectReplicationPolicy> getWithResponse(
         String resourceGroupName, String accountName, String objectReplicationPolicyId, Context context);
@@ -109,7 +109,7 @@ public interface ObjectReplicationPoliciesOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName, String accountName, String objectReplicationPolicyId, Context context);
@@ -121,7 +121,7 @@ public interface ObjectReplicationPoliciesOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the object replication policy of the storage account by policy ID.
+     * @return the object replication policy of the storage account by policy ID along with {@link Response}.
      */
     ObjectReplicationPolicy getById(String id);
 
@@ -133,7 +133,7 @@ public interface ObjectReplicationPoliciesOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the object replication policy of the storage account by policy ID.
+     * @return the object replication policy of the storage account by policy ID along with {@link Response}.
      */
     Response<ObjectReplicationPolicy> getByIdWithResponse(String id, Context context);
 
@@ -155,7 +155,7 @@ public interface ObjectReplicationPoliciesOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

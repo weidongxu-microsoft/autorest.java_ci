@@ -55,7 +55,7 @@ public interface NetworkSecurityGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security group.
+     * @return the specified network security group along with {@link Response}.
      */
     Response<NetworkSecurityGroup> getByResourceGroupWithResponse(
         String resourceGroupName, String networkSecurityGroupName, String expand, Context context);
@@ -110,7 +110,7 @@ public interface NetworkSecurityGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security group.
+     * @return the specified network security group along with {@link Response}.
      */
     NetworkSecurityGroup getById(String id);
 
@@ -123,7 +123,7 @@ public interface NetworkSecurityGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security group.
+     * @return the specified network security group along with {@link Response}.
      */
     Response<NetworkSecurityGroup> getByIdWithResponse(String id, String expand, Context context);
 

@@ -37,7 +37,7 @@ public interface DiskEncryptionSets {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk encryption set.
+     * @return information about a disk encryption set along with {@link Response}.
      */
     Response<DiskEncryptionSet> getByResourceGroupWithResponse(
         String resourceGroupName, String diskEncryptionSetName, Context context);
@@ -158,7 +158,7 @@ public interface DiskEncryptionSets {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk encryption set.
+     * @return information about a disk encryption set along with {@link Response}.
      */
     DiskEncryptionSet getById(String id);
 
@@ -171,7 +171,7 @@ public interface DiskEncryptionSets {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk encryption set.
+     * @return information about a disk encryption set along with {@link Response}.
      */
     Response<DiskEncryptionSet> getByIdWithResponse(String id, Context context);
 

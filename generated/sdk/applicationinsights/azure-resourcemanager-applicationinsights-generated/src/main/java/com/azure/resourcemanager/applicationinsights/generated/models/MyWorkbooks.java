@@ -87,7 +87,7 @@ public interface MyWorkbooks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single private workbook by its resourceName.
+     * @return a single private workbook by its resourceName along with {@link Response}.
      */
     Response<MyWorkbook> getByResourceGroupWithResponse(String resourceGroupName, String resourceName, Context context);
 
@@ -111,7 +111,7 @@ public interface MyWorkbooks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String resourceName, Context context);
 
@@ -122,7 +122,7 @@ public interface MyWorkbooks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single private workbook by its resourceName.
+     * @return a single private workbook by its resourceName along with {@link Response}.
      */
     MyWorkbook getById(String id);
 
@@ -134,7 +134,7 @@ public interface MyWorkbooks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single private workbook by its resourceName.
+     * @return a single private workbook by its resourceName along with {@link Response}.
      */
     Response<MyWorkbook> getByIdWithResponse(String id, Context context);
 
@@ -156,7 +156,7 @@ public interface MyWorkbooks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

@@ -82,7 +82,7 @@ public interface EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AuthorizationRuleInner> createOrUpdateAuthorizationRuleWithResponse(
@@ -120,7 +120,7 @@ public interface EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for an Event Hub by rule name.
+     * @return an AuthorizationRule for an Event Hub by rule name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
@@ -156,7 +156,7 @@ public interface EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteAuthorizationRuleWithResponse(
@@ -193,7 +193,7 @@ public interface EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the ACS and SAS connection strings for the Event Hub.
+     * @return the ACS and SAS connection strings for the Event Hub along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AccessKeysInner> listKeysWithResponse(
@@ -236,7 +236,7 @@ public interface EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return namespace/EventHub Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AccessKeysInner> regenerateKeysWithResponse(
@@ -306,7 +306,7 @@ public interface EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Event Hub operation.
+     * @return single item in List or Get Event Hub operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<EventhubInner> createOrUpdateWithResponse(
@@ -335,7 +335,7 @@ public interface EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(
@@ -365,7 +365,7 @@ public interface EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Event Hubs description for the specified Event Hub.
+     * @return an Event Hubs description for the specified Event Hub along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<EventhubInner> getWithResponse(

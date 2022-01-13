@@ -75,7 +75,8 @@ public final class SkusClientImpl implements SkusClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage SKUs operation.
+     * @return the response from the List Storage SKUs operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SkuInformationInner>> listSinglePageAsync() {
@@ -116,7 +117,8 @@ public final class SkusClientImpl implements SkusClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage SKUs operation.
+     * @return the response from the List Storage SKUs operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SkuInformationInner>> listSinglePageAsync(Context context) {

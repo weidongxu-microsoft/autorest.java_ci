@@ -298,7 +298,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -354,7 +355,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -406,7 +408,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VaultInner>, VaultInner> beginCreateOrUpdateAsync(
@@ -429,7 +432,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VaultInner>, VaultInner> beginCreateOrUpdateAsync(
@@ -452,7 +456,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VaultInner>, VaultInner> beginCreateOrUpdate(
@@ -470,7 +475,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VaultInner>, VaultInner> beginCreateOrUpdate(
@@ -487,7 +493,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultInner> createOrUpdateAsync(
@@ -507,7 +513,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultInner> createOrUpdateAsync(
@@ -561,7 +567,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultInner>> updateWithResponseAsync(
@@ -617,7 +624,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultInner>> updateWithResponseAsync(
@@ -669,7 +677,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultInner> updateAsync(String resourceGroupName, String vaultName, VaultPatchParameters parameters) {
@@ -710,7 +718,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VaultInner> updateWithResponse(
@@ -726,7 +734,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String vaultName) {
@@ -774,7 +782,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String vaultName, Context context) {
@@ -818,7 +826,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String vaultName) {
@@ -848,7 +856,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String vaultName, Context context) {
@@ -863,7 +871,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure key vault.
+     * @return the specified Azure key vault along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultInner>> getByResourceGroupWithResponseAsync(String resourceGroupName, String vaultName) {
@@ -911,7 +919,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure key vault.
+     * @return the specified Azure key vault along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultInner>> getByResourceGroupWithResponseAsync(
@@ -956,7 +964,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure key vault.
+     * @return the specified Azure key vault on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultInner> getByResourceGroupAsync(String resourceGroupName, String vaultName) {
@@ -995,7 +1003,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure key vault.
+     * @return the specified Azure key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VaultInner> getByResourceGroupWithResponse(
@@ -1013,7 +1021,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return parameters for updating the access policy in a vault.
+     * @return parameters for updating the access policy in a vault along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultAccessPolicyParametersInner>> updateAccessPolicyWithResponseAsync(
@@ -1077,7 +1086,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return parameters for updating the access policy in a vault.
+     * @return parameters for updating the access policy in a vault along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultAccessPolicyParametersInner>> updateAccessPolicyWithResponseAsync(
@@ -1138,7 +1148,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return parameters for updating the access policy in a vault.
+     * @return parameters for updating the access policy in a vault on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultAccessPolicyParametersInner> updateAccessPolicyAsync(
@@ -1189,7 +1199,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return parameters for updating the access policy in a vault.
+     * @return parameters for updating the access policy in a vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VaultAccessPolicyParametersInner> updateAccessPolicyWithResponse(
@@ -1211,7 +1221,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VaultInner>> listByResourceGroupSinglePageAsync(String resourceGroupName, Integer top) {
@@ -1266,7 +1276,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VaultInner>> listByResourceGroupSinglePageAsync(
@@ -1404,7 +1414,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VaultInner>> listBySubscriptionSinglePageAsync(Integer top) {
@@ -1452,7 +1462,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VaultInner>> listBySubscriptionSinglePageAsync(Integer top, Context context) {
@@ -1568,7 +1578,8 @@ public final class VaultsClientImpl implements VaultsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the deleted vaults in a subscription.
+     * @return information about the deleted vaults in a subscription along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedVaultInner>> listDeletedSinglePageAsync() {
@@ -1614,7 +1625,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the deleted vaults in a subscription.
+     * @return information about the deleted vaults in a subscription along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedVaultInner>> listDeletedSinglePageAsync(Context context) {
@@ -1712,7 +1724,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deleted Azure key vault.
+     * @return the deleted Azure key vault along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeletedVaultInner>> getDeletedWithResponseAsync(String vaultName, String location) {
@@ -1759,7 +1771,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deleted Azure key vault.
+     * @return the deleted Azure key vault along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeletedVaultInner>> getDeletedWithResponseAsync(
@@ -1803,7 +1815,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deleted Azure key vault.
+     * @return the deleted Azure key vault on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeletedVaultInner> getDeletedAsync(String vaultName, String location) {
@@ -1842,7 +1854,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deleted Azure key vault.
+     * @return the deleted Azure key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeletedVaultInner> getDeletedWithResponse(String vaultName, String location, Context context) {
@@ -1857,7 +1869,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> purgeDeletedWithResponseAsync(String vaultName, String location) {
@@ -1904,7 +1916,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> purgeDeletedWithResponseAsync(
@@ -1948,7 +1960,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginPurgeDeletedAsync(String vaultName, String location) {
@@ -1968,7 +1980,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginPurgeDeletedAsync(
@@ -1988,7 +2000,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPurgeDeleted(String vaultName, String location) {
@@ -2004,7 +2016,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPurgeDeleted(String vaultName, String location, Context context) {
@@ -2019,7 +2031,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> purgeDeletedAsync(String vaultName, String location) {
@@ -2035,7 +2047,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> purgeDeletedAsync(String vaultName, String location, Context context) {
@@ -2080,7 +2092,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vault resources.
+     * @return list of vault resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<Resource>> listSinglePageAsync(Integer top) {
@@ -2131,7 +2143,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vault resources.
+     * @return list of vault resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<Resource>> listSinglePageAsync(Integer top, Context context) {
@@ -2242,7 +2254,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>> checkNameAvailabilityWithResponseAsync(
@@ -2287,7 +2300,8 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>> checkNameAvailabilityWithResponseAsync(
@@ -2328,7 +2342,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<CheckNameAvailabilityResultInner> checkNameAvailabilityAsync(
@@ -2366,7 +2380,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
@@ -2381,7 +2395,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VaultInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -2418,7 +2432,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VaultInner>> listByResourceGroupNextSinglePageAsync(String nextLink, Context context) {
@@ -2453,7 +2467,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VaultInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -2490,7 +2504,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VaultInner>> listBySubscriptionNextSinglePageAsync(String nextLink, Context context) {
@@ -2525,7 +2539,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedVaultInner>> listDeletedNextSinglePageAsync(String nextLink) {
@@ -2561,7 +2575,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedVaultInner>> listDeletedNextSinglePageAsync(String nextLink, Context context) {
@@ -2596,7 +2610,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vault resources.
+     * @return list of vault resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<Resource>> listNextSinglePageAsync(String nextLink) {
@@ -2632,7 +2646,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vault resources.
+     * @return list of vault resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<Resource>> listNextSinglePageAsync(String nextLink, Context context) {

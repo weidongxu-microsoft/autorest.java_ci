@@ -36,7 +36,7 @@ public interface ClusterPrincipalAssignments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request.
+     * @return the result returned from a check name availability request along with {@link Response}.
      */
     Response<CheckNameResult> checkNameAvailabilityWithResponse(
         String resourceGroupName,
@@ -67,7 +67,7 @@ public interface ClusterPrincipalAssignments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kusto cluster principalAssignment.
+     * @return a Kusto cluster principalAssignment along with {@link Response}.
      */
     Response<ClusterPrincipalAssignment> getWithResponse(
         String resourceGroupName, String clusterName, String principalAssignmentName, Context context);
@@ -129,7 +129,7 @@ public interface ClusterPrincipalAssignments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kusto cluster principalAssignment.
+     * @return a Kusto cluster principalAssignment along with {@link Response}.
      */
     ClusterPrincipalAssignment getById(String id);
 
@@ -141,7 +141,7 @@ public interface ClusterPrincipalAssignments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kusto cluster principalAssignment.
+     * @return a Kusto cluster principalAssignment along with {@link Response}.
      */
     Response<ClusterPrincipalAssignment> getByIdWithResponse(String id, Context context);
 

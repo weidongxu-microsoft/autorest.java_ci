@@ -76,7 +76,8 @@ public final class EventCategoriesClientImpl implements EventCategoriesClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list of available event categories supported in the Activity Logs Service.&lt;br&gt;The current list
-     *     includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy.
+     *     includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy along with
+     *     {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LocalizableStringInner>> listSinglePageAsync() {
@@ -106,7 +107,8 @@ public final class EventCategoriesClientImpl implements EventCategoriesClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list of available event categories supported in the Activity Logs Service.&lt;br&gt;The current list
-     *     includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy.
+     *     includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy along with
+     *     {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LocalizableStringInner>> listSinglePageAsync(Context context) {

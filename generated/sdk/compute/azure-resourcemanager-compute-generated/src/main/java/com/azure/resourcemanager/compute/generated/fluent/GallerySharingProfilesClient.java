@@ -6,10 +6,12 @@ package com.azure.resourcemanager.compute.generated.fluent;
 
 import com.azure.core.annotation.ReturnType;
 import com.azure.core.annotation.ServiceMethod;
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.compute.generated.fluent.models.SharingUpdateInner;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in GallerySharingProfilesClient. */
 public interface GallerySharingProfilesClient {
@@ -23,7 +25,8 @@ public interface GallerySharingProfilesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery sharing profile update.
+     * @return specifies information about the gallery sharing profile update along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<SharingUpdateInner>, SharingUpdateInner> beginUpdate(
@@ -40,7 +43,8 @@ public interface GallerySharingProfilesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery sharing profile update.
+     * @return specifies information about the gallery sharing profile update along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<SharingUpdateInner>, SharingUpdateInner> beginUpdate(

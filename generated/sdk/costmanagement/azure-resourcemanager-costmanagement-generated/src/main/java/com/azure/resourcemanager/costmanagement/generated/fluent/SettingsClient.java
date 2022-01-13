@@ -55,7 +55,7 @@ public interface SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting.
+     * @return state of the myscope setting along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SettingInner> getWithResponse(String settingName, Context context);
@@ -82,7 +82,7 @@ public interface SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting.
+     * @return state of the myscope setting along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SettingInner> createOrUpdateWithResponse(String settingName, SettingInner parameters, Context context);
@@ -106,7 +106,7 @@ public interface SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String settingName, Context context);

@@ -58,7 +58,7 @@ public interface FrontendEndpoints {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Frontend endpoint with the specified name within the specified Front Door.
+     * @return a Frontend endpoint with the specified name within the specified Front Door along with {@link Response}.
      */
     Response<FrontendEndpoint> getWithResponse(
         String resourceGroupName, String frontDoorName, String frontendEndpointName, Context context);

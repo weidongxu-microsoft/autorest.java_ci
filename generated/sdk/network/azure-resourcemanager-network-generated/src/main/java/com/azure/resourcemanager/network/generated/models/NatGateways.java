@@ -55,7 +55,7 @@ public interface NatGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified nat gateway in a specified resource group.
+     * @return the specified nat gateway in a specified resource group along with {@link Response}.
      */
     Response<NatGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String natGatewayName, String expand, Context context);
@@ -110,7 +110,7 @@ public interface NatGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified nat gateway in a specified resource group.
+     * @return the specified nat gateway in a specified resource group along with {@link Response}.
      */
     NatGateway getById(String id);
 
@@ -123,7 +123,7 @@ public interface NatGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified nat gateway in a specified resource group.
+     * @return the specified nat gateway in a specified resource group along with {@link Response}.
      */
     Response<NatGateway> getByIdWithResponse(String id, String expand, Context context);
 

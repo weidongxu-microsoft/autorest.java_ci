@@ -33,7 +33,7 @@ public interface ExpressRouteLinks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteLink.
+     * @return expressRouteLink along with {@link Response}.
      */
     Response<ExpressRouteLink> getWithResponse(
         String resourceGroupName, String expressRoutePortName, String linkName, Context context);

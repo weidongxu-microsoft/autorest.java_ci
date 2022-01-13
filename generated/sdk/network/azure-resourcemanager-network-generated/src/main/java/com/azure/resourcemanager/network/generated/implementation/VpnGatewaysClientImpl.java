@@ -235,7 +235,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VpnGatewayInner>> getByResourceGroupWithResponseAsync(
@@ -285,7 +285,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VpnGatewayInner>> getByResourceGroupWithResponseAsync(
@@ -331,7 +331,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnGatewayInner> getByResourceGroupAsync(String resourceGroupName, String gatewayName) {
@@ -370,7 +370,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VpnGatewayInner> getByResourceGroupWithResponse(
@@ -387,7 +387,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -445,7 +445,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -499,7 +499,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VpnGatewayInner>, VpnGatewayInner> beginCreateOrUpdateAsync(
@@ -526,7 +526,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VpnGatewayInner>, VpnGatewayInner> beginCreateOrUpdateAsync(
@@ -549,7 +549,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginCreateOrUpdate(
@@ -567,7 +567,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginCreateOrUpdate(
@@ -584,7 +584,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnGatewayInner> createOrUpdateAsync(
@@ -604,7 +604,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnGatewayInner> createOrUpdateAsync(
@@ -658,7 +658,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateTagsWithResponseAsync(
@@ -716,7 +716,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateTagsWithResponseAsync(
@@ -770,7 +770,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VpnGatewayInner>, VpnGatewayInner> beginUpdateTagsAsync(
@@ -797,7 +797,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VpnGatewayInner>, VpnGatewayInner> beginUpdateTagsAsync(
@@ -820,7 +820,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginUpdateTags(
@@ -838,7 +838,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginUpdateTags(
@@ -855,7 +855,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnGatewayInner> updateTagsAsync(
@@ -875,7 +875,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnGatewayInner> updateTagsAsync(
@@ -927,7 +927,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String gatewayName) {
@@ -976,7 +976,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -1022,7 +1022,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String gatewayName) {
@@ -1042,7 +1042,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1062,7 +1062,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String gatewayName) {
@@ -1078,7 +1078,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1094,7 +1094,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String gatewayName) {
@@ -1110,7 +1110,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String gatewayName, Context context) {
@@ -1156,7 +1156,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> resetWithResponseAsync(String resourceGroupName, String gatewayName) {
@@ -1205,7 +1205,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> resetWithResponseAsync(
@@ -1251,7 +1251,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VpnGatewayInner>, VpnGatewayInner> beginResetAsync(
@@ -1276,7 +1276,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VpnGatewayInner>, VpnGatewayInner> beginResetAsync(
@@ -1297,7 +1297,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginReset(
@@ -1314,7 +1314,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginReset(
@@ -1330,7 +1330,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnGatewayInner> resetAsync(String resourceGroupName, String gatewayName) {
@@ -1346,7 +1346,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
+     * @return vpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnGatewayInner> resetAsync(String resourceGroupName, String gatewayName, Context context) {
@@ -1395,7 +1395,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> startPacketCaptureWithResponseAsync(
@@ -1450,7 +1450,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> startPacketCaptureWithResponseAsync(
@@ -1504,7 +1504,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<String>, String> beginStartPacketCaptureAsync(
@@ -1527,7 +1527,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<String>, String> beginStartPacketCaptureAsync(
@@ -1552,7 +1552,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<String>, String> beginStartPacketCapture(
@@ -1570,7 +1570,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<String>, String> beginStartPacketCapture(
@@ -1590,7 +1590,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<String> startPacketCaptureAsync(
@@ -1608,7 +1608,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<String> startPacketCaptureAsync(String resourceGroupName, String gatewayName) {
@@ -1628,7 +1628,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<String> startPacketCaptureAsync(
@@ -1704,7 +1704,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> stopPacketCaptureWithResponseAsync(
@@ -1759,7 +1759,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> stopPacketCaptureWithResponseAsync(
@@ -1813,7 +1813,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<String>, String> beginStopPacketCaptureAsync(
@@ -1836,7 +1836,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<String>, String> beginStopPacketCaptureAsync(
@@ -1861,7 +1861,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<String>, String> beginStopPacketCapture(
@@ -1879,7 +1879,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<String>, String> beginStopPacketCapture(
@@ -1899,7 +1899,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<String> stopPacketCaptureAsync(
@@ -1917,7 +1917,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<String> stopPacketCaptureAsync(String resourceGroupName, String gatewayName) {
@@ -1937,7 +1937,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<String> stopPacketCaptureAsync(
@@ -2011,7 +2011,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -2064,7 +2065,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listByResourceGroupSinglePageAsync(
@@ -2174,7 +2176,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listSinglePageAsync() {
@@ -2216,7 +2219,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listSinglePageAsync(Context context) {
@@ -2308,7 +2312,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -2345,7 +2350,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listByResourceGroupNextSinglePageAsync(
@@ -2381,7 +2387,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listNextSinglePageAsync(String nextLink) {
@@ -2417,7 +2424,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listNextSinglePageAsync(String nextLink, Context context) {

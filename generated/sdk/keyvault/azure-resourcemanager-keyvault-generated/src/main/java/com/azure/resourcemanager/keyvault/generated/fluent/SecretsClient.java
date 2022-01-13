@@ -44,7 +44,7 @@ public interface SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SecretInner> createOrUpdateWithResponse(
@@ -82,7 +82,7 @@ public interface SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SecretInner> updateWithResponse(
@@ -118,7 +118,7 @@ public interface SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified secret.
+     * @return the specified secret along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SecretInner> getWithResponse(

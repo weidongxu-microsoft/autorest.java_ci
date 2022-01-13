@@ -71,7 +71,7 @@ public interface ExpressRouteConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ExpressRouteConnection.
+     * @return the specified ExpressRouteConnection along with {@link Response}.
      */
     Response<ExpressRouteConnection> getWithResponse(
         String resourceGroupName, String expressRouteGatewayName, String connectionName, Context context);
@@ -122,7 +122,7 @@ public interface ExpressRouteConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteConnection list.
+     * @return expressRouteConnection list along with {@link Response}.
      */
     Response<ExpressRouteConnectionList> listWithResponse(
         String resourceGroupName, String expressRouteGatewayName, Context context);

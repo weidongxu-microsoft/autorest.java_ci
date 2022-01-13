@@ -79,7 +79,8 @@ public final class MhsmPrivateLinkResourcesClientImpl implements MhsmPrivateLink
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources supported for the managed hsm pool.
+     * @return the private link resources supported for the managed hsm pool along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MhsmPrivateLinkResourceListResultInner>> listByMhsmResourceWithResponseAsync(
@@ -128,7 +129,8 @@ public final class MhsmPrivateLinkResourcesClientImpl implements MhsmPrivateLink
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources supported for the managed hsm pool.
+     * @return the private link resources supported for the managed hsm pool along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MhsmPrivateLinkResourceListResultInner>> listByMhsmResourceWithResponseAsync(
@@ -173,7 +175,7 @@ public final class MhsmPrivateLinkResourcesClientImpl implements MhsmPrivateLink
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources supported for the managed hsm pool.
+     * @return the private link resources supported for the managed hsm pool on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MhsmPrivateLinkResourceListResultInner> listByMhsmResourceAsync(
@@ -213,7 +215,7 @@ public final class MhsmPrivateLinkResourcesClientImpl implements MhsmPrivateLink
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources supported for the managed hsm pool.
+     * @return the private link resources supported for the managed hsm pool along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<MhsmPrivateLinkResourceListResultInner> listByMhsmResourceWithResponse(

@@ -42,7 +42,8 @@ public interface AdminKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service.
+     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service along with
+     *     {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AdminKeyResultInner> getWithResponse(
@@ -78,7 +79,8 @@ public interface AdminKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service.
+     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service
+     *     along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AdminKeyResultInner> regenerateWithResponse(

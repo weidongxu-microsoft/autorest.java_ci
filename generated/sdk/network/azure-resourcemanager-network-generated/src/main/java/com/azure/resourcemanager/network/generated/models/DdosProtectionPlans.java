@@ -54,7 +54,7 @@ public interface DdosProtectionPlans {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified DDoS protection plan.
+     * @return information about the specified DDoS protection plan along with {@link Response}.
      */
     Response<DdosProtectionPlan> getByResourceGroupWithResponse(
         String resourceGroupName, String ddosProtectionPlanName, Context context);
@@ -109,7 +109,7 @@ public interface DdosProtectionPlans {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified DDoS protection plan.
+     * @return information about the specified DDoS protection plan along with {@link Response}.
      */
     DdosProtectionPlan getById(String id);
 
@@ -121,7 +121,7 @@ public interface DdosProtectionPlans {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified DDoS protection plan.
+     * @return information about the specified DDoS protection plan along with {@link Response}.
      */
     Response<DdosProtectionPlan> getByIdWithResponse(String id, Context context);
 

@@ -30,7 +30,7 @@ public interface MetricAlertsStatus {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources along with {@link Response}.
      */
     Response<MetricAlertStatusCollection> listWithResponse(String resourceGroupName, String ruleName, Context context);
 
@@ -57,7 +57,7 @@ public interface MetricAlertsStatus {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources.
+     * @return represents a collection of alert rule resources along with {@link Response}.
      */
     Response<MetricAlertStatusCollection> listByNameWithResponse(
         String resourceGroupName, String ruleName, String statusName, Context context);

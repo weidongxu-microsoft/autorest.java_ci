@@ -13,6 +13,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.search.generated.fluent.models.SharedPrivateLinkResourceInner;
 import java.util.UUID;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in SharedPrivateLinkResourcesClient. */
 public interface SharedPrivateLinkResourcesClient {
@@ -32,7 +33,8 @@ public interface SharedPrivateLinkResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service.
+     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<SharedPrivateLinkResourceInner>, SharedPrivateLinkResourceInner> beginCreateOrUpdate(
@@ -59,7 +61,8 @@ public interface SharedPrivateLinkResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service.
+     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<SharedPrivateLinkResourceInner>, SharedPrivateLinkResourceInner> beginCreateOrUpdate(
@@ -181,8 +184,8 @@ public interface SharedPrivateLinkResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource
-     *     group.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     *     along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SharedPrivateLinkResourceInner> getWithResponse(
@@ -206,7 +209,7 @@ public interface SharedPrivateLinkResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -227,7 +230,7 @@ public interface SharedPrivateLinkResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(

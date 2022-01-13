@@ -15,6 +15,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.DiskAccessInner
 import com.azure.resourcemanager.compute.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.PrivateLinkResourceListResultInner;
 import com.azure.resourcemanager.compute.generated.models.DiskAccessUpdate;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in DiskAccessesClient. */
 public interface DiskAccessesClient {
@@ -30,7 +31,7 @@ public interface DiskAccessesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return disk access resource.
+     * @return disk access resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DiskAccessInner>, DiskAccessInner> beginCreateOrUpdate(
@@ -49,7 +50,7 @@ public interface DiskAccessesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return disk access resource.
+     * @return disk access resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DiskAccessInner>, DiskAccessInner> beginCreateOrUpdate(
@@ -103,7 +104,7 @@ public interface DiskAccessesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return disk access resource.
+     * @return disk access resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DiskAccessInner>, DiskAccessInner> beginUpdate(
@@ -122,7 +123,7 @@ public interface DiskAccessesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return disk access resource.
+     * @return disk access resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DiskAccessInner>, DiskAccessInner> beginUpdate(
@@ -192,7 +193,7 @@ public interface DiskAccessesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk access resource.
+     * @return information about a disk access resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DiskAccessInner> getByResourceGroupWithResponse(
@@ -209,7 +210,7 @@ public interface DiskAccessesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String diskAccessName);
@@ -226,7 +227,7 @@ public interface DiskAccessesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String diskAccessName, Context context);
@@ -339,7 +340,7 @@ public interface DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources possible under disk access resource.
+     * @return the private link resources possible under disk access resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateLinkResourceListResultInner> getPrivateLinkResourcesWithResponse(
@@ -360,7 +361,8 @@ public interface DiskAccessesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Private Endpoint Connection resource.
+     * @return the Private Endpoint Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner>
@@ -386,7 +388,8 @@ public interface DiskAccessesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Private Endpoint Connection resource.
+     * @return the Private Endpoint Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner>
@@ -478,7 +481,7 @@ public interface DiskAccessesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a private endpoint connection under a disk access resource.
+     * @return information about a private endpoint connection under a disk access resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateEndpointConnectionInner> getAPrivateEndpointConnectionWithResponse(
@@ -496,7 +499,7 @@ public interface DiskAccessesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteAPrivateEndpointConnection(
@@ -515,7 +518,7 @@ public interface DiskAccessesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeleteAPrivateEndpointConnection(

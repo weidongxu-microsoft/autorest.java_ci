@@ -100,7 +100,8 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an incident associated to an alert rule.
+     * @return an incident associated to an alert rule along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IncidentInner>> getWithResponseAsync(
@@ -155,7 +156,8 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an incident associated to an alert rule.
+     * @return an incident associated to an alert rule along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IncidentInner>> getWithResponseAsync(
@@ -206,7 +208,7 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an incident associated to an alert rule.
+     * @return an incident associated to an alert rule on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<IncidentInner> getAsync(String resourceGroupName, String ruleName, String incidentName) {
@@ -247,7 +249,7 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an incident associated to an alert rule.
+     * @return an incident associated to an alert rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<IncidentInner> getWithResponse(
@@ -263,7 +265,8 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of incidents associated to an alert rule.
+     * @return a list of incidents associated to an alert rule along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IncidentInner>> listByAlertRuleSinglePageAsync(
@@ -317,7 +320,8 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of incidents associated to an alert rule.
+     * @return a list of incidents associated to an alert rule along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IncidentInner>> listByAlertRuleSinglePageAsync(

@@ -141,7 +141,7 @@ public interface DenyAssignments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deny assignment.
+     * @return the specified deny assignment along with {@link Response}.
      */
     Response<DenyAssignment> getWithResponse(String scope, String denyAssignmentId, Context context);
 
@@ -170,7 +170,7 @@ public interface DenyAssignments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deny assignment by ID.
+     * @return a deny assignment by ID along with {@link Response}.
      */
     Response<DenyAssignment> getByIdWithResponse(String denyAssignmentId, Context context);
 

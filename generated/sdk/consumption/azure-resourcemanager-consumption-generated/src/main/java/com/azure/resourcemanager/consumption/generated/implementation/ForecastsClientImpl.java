@@ -83,7 +83,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing forecasts.
+     * @return result of listing forecasts along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ForecastInner>> listSinglePageAsync(String filter) {
@@ -130,7 +130,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing forecasts.
+     * @return result of listing forecasts along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ForecastInner>> listSinglePageAsync(String filter, Context context) {

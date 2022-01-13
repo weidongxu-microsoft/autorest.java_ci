@@ -58,7 +58,7 @@ public interface LoadBalancerBackendAddressPools {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return load balancer backend address pool.
+     * @return load balancer backend address pool along with {@link Response}.
      */
     Response<BackendAddressPool> getWithResponse(
         String resourceGroupName, String loadBalancerName, String backendAddressPoolName, Context context);
@@ -95,7 +95,7 @@ public interface LoadBalancerBackendAddressPools {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return load balancer backend address pool.
+     * @return load balancer backend address pool along with {@link Response}.
      */
     BackendAddressPool getById(String id);
 
@@ -107,7 +107,7 @@ public interface LoadBalancerBackendAddressPools {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return load balancer backend address pool.
+     * @return load balancer backend address pool along with {@link Response}.
      */
     Response<BackendAddressPool> getByIdWithResponse(String id, Context context);
 

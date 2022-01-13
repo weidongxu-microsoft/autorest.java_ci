@@ -13,6 +13,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ExperimentInner;
 import com.azure.resourcemanager.frontdoor.generated.models.ExperimentUpdateModel;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ExperimentsClient. */
 public interface ExperimentsClient {
@@ -67,7 +68,7 @@ public interface ExperimentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Experiment by ExperimentName.
+     * @return an Experiment by ExperimentName along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ExperimentInner> getWithResponse(
@@ -83,7 +84,8 @@ public interface ExperimentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the properties of an Experiment.
+     * @return defines the properties of an Experiment along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExperimentInner>, ExperimentInner> beginCreateOrUpdate(
@@ -100,7 +102,8 @@ public interface ExperimentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the properties of an Experiment.
+     * @return defines the properties of an Experiment along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExperimentInner>, ExperimentInner> beginCreateOrUpdate(
@@ -157,7 +160,8 @@ public interface ExperimentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the properties of an Experiment.
+     * @return defines the properties of an Experiment along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExperimentInner>, ExperimentInner> beginUpdate(
@@ -174,7 +178,8 @@ public interface ExperimentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the properties of an Experiment.
+     * @return defines the properties of an Experiment along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExperimentInner>, ExperimentInner> beginUpdate(
@@ -230,7 +235,7 @@ public interface ExperimentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String profileName, String experimentName);
@@ -245,7 +250,7 @@ public interface ExperimentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(

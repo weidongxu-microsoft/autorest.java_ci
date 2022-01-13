@@ -107,7 +107,8 @@ public final class ActivityLogsClientImpl implements ActivityLogsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents collection of events.
+     * @return represents collection of events along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventDataInner>> listSinglePageAsync(String filter, String select) {
@@ -177,7 +178,8 @@ public final class ActivityLogsClientImpl implements ActivityLogsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents collection of events.
+     * @return represents collection of events along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventDataInner>> listSinglePageAsync(String filter, String select, Context context) {
@@ -372,7 +374,8 @@ public final class ActivityLogsClientImpl implements ActivityLogsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents collection of events.
+     * @return represents collection of events along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventDataInner>> listNextSinglePageAsync(String nextLink) {
@@ -408,7 +411,8 @@ public final class ActivityLogsClientImpl implements ActivityLogsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents collection of events.
+     * @return represents collection of events along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventDataInner>> listNextSinglePageAsync(String nextLink, Context context) {

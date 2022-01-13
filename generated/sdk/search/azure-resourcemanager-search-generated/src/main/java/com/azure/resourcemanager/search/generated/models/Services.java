@@ -38,7 +38,7 @@ public interface Services {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group.
+     * @return the search service with the given name in the given resource group along with {@link Response}.
      */
     Response<SearchService> getByResourceGroupWithResponse(
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context);
@@ -69,7 +69,7 @@ public interface Services {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context);
@@ -146,7 +146,7 @@ public interface Services {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
+     * @return output of check name availability API along with {@link Response}.
      */
     Response<CheckNameAvailabilityOutput> checkNameAvailabilityWithResponse(
         CheckNameAvailabilityInput checkNameAvailabilityInput, UUID clientRequestId, Context context);
@@ -158,7 +158,7 @@ public interface Services {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group.
+     * @return the search service with the given name in the given resource group along with {@link Response}.
      */
     SearchService getById(String id);
 
@@ -172,7 +172,7 @@ public interface Services {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group.
+     * @return the search service with the given name in the given resource group along with {@link Response}.
      */
     Response<SearchService> getByIdWithResponse(String id, UUID clientRequestId, Context context);
 
@@ -196,7 +196,7 @@ public interface Services {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, UUID clientRequestId, Context context);
 

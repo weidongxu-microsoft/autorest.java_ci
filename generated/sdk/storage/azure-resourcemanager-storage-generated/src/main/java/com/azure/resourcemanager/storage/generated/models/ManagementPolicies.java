@@ -36,7 +36,7 @@ public interface ManagementPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the managementpolicy associated with the specified storage account.
+     * @return the managementpolicy associated with the specified storage account along with {@link Response}.
      */
     Response<ManagementPolicy> getWithResponse(
         String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName, Context context);
@@ -67,7 +67,7 @@ public interface ManagementPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName, Context context);
@@ -79,7 +79,7 @@ public interface ManagementPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the managementpolicy associated with the specified storage account.
+     * @return the managementpolicy associated with the specified storage account along with {@link Response}.
      */
     ManagementPolicy getById(String id);
 
@@ -91,7 +91,7 @@ public interface ManagementPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the managementpolicy associated with the specified storage account.
+     * @return the managementpolicy associated with the specified storage account along with {@link Response}.
      */
     Response<ManagementPolicy> getByIdWithResponse(String id, Context context);
 
@@ -113,7 +113,7 @@ public interface ManagementPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

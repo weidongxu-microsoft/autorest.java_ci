@@ -86,7 +86,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return query result.
+     * @return query result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QueryResponseInner>> resourcesWithResponseAsync(QueryRequest query) {
@@ -117,7 +117,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return query result.
+     * @return query result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QueryResponseInner>> resourcesWithResponseAsync(QueryRequest query, Context context) {
@@ -144,7 +144,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return query result.
+     * @return query result on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<QueryResponseInner> resourcesAsync(QueryRequest query) {
@@ -181,7 +181,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return query result.
+     * @return query result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<QueryResponseInner> resourcesWithResponse(QueryRequest query, Context context) {
@@ -195,7 +195,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Object>> resourcesHistoryWithResponseAsync(ResourcesHistoryRequest request) {
@@ -228,7 +228,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Object>> resourcesHistoryWithResponseAsync(ResourcesHistoryRequest request, Context context) {
@@ -256,7 +256,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Object> resourcesHistoryAsync(ResourcesHistoryRequest request) {
@@ -293,7 +293,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Object> resourcesHistoryWithResponse(ResourcesHistoryRequest request, Context context) {

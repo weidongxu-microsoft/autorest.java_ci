@@ -42,7 +42,7 @@ public interface VirtualMachineImagesEdgeZones {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual machine image in an edge zone.
+     * @return a virtual machine image in an edge zone along with {@link Response}.
      */
     Response<VirtualMachineImage> getWithResponse(
         String location,
@@ -90,7 +90,7 @@ public interface VirtualMachineImagesEdgeZones {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of all virtual machine image versions for the specified location, edge zone, publisher, offer, and
-     *     SKU.
+     *     SKU along with {@link Response}.
      */
     Response<List<VirtualMachineImageResource>> listWithResponse(
         String location,
@@ -128,7 +128,8 @@ public interface VirtualMachineImagesEdgeZones {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image offers for the specified location, edge zone and publisher.
+     * @return a list of virtual machine image offers for the specified location, edge zone and publisher along with
+     *     {@link Response}.
      */
     Response<List<VirtualMachineImageResource>> listOffersWithResponse(
         String location, String edgeZone, String publisherName, Context context);
@@ -156,7 +157,8 @@ public interface VirtualMachineImagesEdgeZones {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image publishers for the specified Azure location and edge zone.
+     * @return a list of virtual machine image publishers for the specified Azure location and edge zone along with
+     *     {@link Response}.
      */
     Response<List<VirtualMachineImageResource>> listPublishersWithResponse(
         String location, String edgeZone, Context context);
@@ -188,7 +190,8 @@ public interface VirtualMachineImagesEdgeZones {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image SKUs for the specified location, edge zone, publisher, and offer.
+     * @return a list of virtual machine image SKUs for the specified location, edge zone, publisher, and offer along
+     *     with {@link Response}.
      */
     Response<List<VirtualMachineImageResource>> listSkusWithResponse(
         String location, String edgeZone, String publisherName, String offer, Context context);

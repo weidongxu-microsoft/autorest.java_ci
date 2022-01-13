@@ -57,7 +57,7 @@ public interface Orders {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific order by name.
+     * @return a specific order by name along with {@link Response}.
      */
     Response<Order> getWithResponse(String deviceName, String resourceGroupName, Context context);
 
@@ -132,7 +132,7 @@ public interface Orders {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the DCAccess Code.
+     * @return the DCAccess Code along with {@link Response}.
      */
     Response<DCAccessCode> listDCAccessCodeWithResponse(String deviceName, String resourceGroupName, Context context);
 }

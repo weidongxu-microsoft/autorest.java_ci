@@ -106,7 +106,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> byBillingAccountIdWithResponseAsync(
@@ -153,7 +154,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> byBillingAccountIdWithResponseAsync(
@@ -196,7 +198,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<OperationStatusInner>, OperationStatusInner> beginByBillingAccountIdAsync(
@@ -223,7 +226,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<OperationStatusInner>, OperationStatusInner> beginByBillingAccountIdAsync(
@@ -246,7 +250,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner> beginByBillingAccountId(
@@ -264,7 +269,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner> beginByBillingAccountId(
@@ -281,7 +287,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<OperationStatusInner> byBillingAccountIdAsync(
@@ -301,7 +307,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<OperationStatusInner> byBillingAccountIdAsync(
@@ -355,7 +361,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> byBillingProfileIdWithResponseAsync(
@@ -408,7 +415,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> byBillingProfileIdWithResponseAsync(
@@ -457,7 +465,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<OperationStatusInner>, OperationStatusInner> beginByBillingProfileIdAsync(
@@ -485,7 +494,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<OperationStatusInner>, OperationStatusInner> beginByBillingProfileIdAsync(
@@ -509,7 +519,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner> beginByBillingProfileId(
@@ -528,7 +539,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner> beginByBillingProfileId(
@@ -547,7 +559,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<OperationStatusInner> byBillingProfileIdAsync(
@@ -568,7 +580,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
+     * @return the status of the long running operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<OperationStatusInner> byBillingProfileIdAsync(

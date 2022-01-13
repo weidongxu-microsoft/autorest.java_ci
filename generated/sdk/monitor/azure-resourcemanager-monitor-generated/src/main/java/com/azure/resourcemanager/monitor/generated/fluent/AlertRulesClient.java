@@ -38,7 +38,7 @@ public interface AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource.
+     * @return the alert rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AlertRuleResourceInner> createOrUpdateWithResponse(
@@ -65,7 +65,7 @@ public interface AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context);
@@ -92,7 +92,7 @@ public interface AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a classic metric alert rule.
+     * @return a classic metric alert rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AlertRuleResourceInner> getByResourceGroupWithResponse(
@@ -122,7 +122,7 @@ public interface AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource.
+     * @return the alert rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AlertRuleResourceInner> updateWithResponse(

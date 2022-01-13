@@ -58,7 +58,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteIpFilterRuleWithResponse(
         String resourceGroupName, String namespaceName, String ipFilterRuleName, Context context);
@@ -86,7 +86,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name.
+     * @return an IpFilterRule for a Namespace by rule name along with {@link Response}.
      */
     Response<IpFilterRule> getIpFilterRuleWithResponse(
         String resourceGroupName, String namespaceName, String ipFilterRuleName, Context context);
@@ -178,7 +178,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the description of the specified namespace.
+     * @return the description of the specified namespace along with {@link Response}.
      */
     Response<EHNamespace> getByResourceGroupWithResponse(
         String resourceGroupName, String namespaceName, Context context);
@@ -231,7 +231,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteVirtualNetworkRuleWithResponse(
         String resourceGroupName, String namespaceName, String virtualNetworkRuleName, Context context);
@@ -260,7 +260,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an VirtualNetworkRule for a Namespace by rule name.
+     * @return an VirtualNetworkRule for a Namespace by rule name along with {@link Response}.
      */
     Response<VirtualNetworkRule> getVirtualNetworkRuleWithResponse(
         String resourceGroupName, String namespaceName, String virtualNetworkRuleName, Context context);
@@ -289,7 +289,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of topic resource.
+     * @return description of topic resource along with {@link Response}.
      */
     Response<NetworkRuleSet> createOrUpdateNetworkRuleSetWithResponse(
         String resourceGroupName, String namespaceName, NetworkRuleSetInner parameters, Context context);
@@ -315,7 +315,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkRuleSet for a Namespace.
+     * @return networkRuleSet for a Namespace along with {@link Response}.
      */
     Response<NetworkRuleSet> getNetworkRuleSetWithResponse(
         String resourceGroupName, String namespaceName, Context context);
@@ -368,7 +368,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteAuthorizationRuleWithResponse(
         String resourceGroupName, String namespaceName, String authorizationRuleName, Context context);
@@ -397,7 +397,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response}.
      */
     Response<AuthorizationRule> getAuthorizationRuleWithResponse(
         String resourceGroupName, String namespaceName, String authorizationRuleName, Context context);
@@ -425,7 +425,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return the primary and secondary connection strings for the Namespace along with {@link Response}.
      */
     Response<AccessKeys> listKeysWithResponse(
         String resourceGroupName, String namespaceName, String authorizationRuleName, Context context);
@@ -459,7 +459,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return namespace/EventHub Connection String along with {@link Response}.
      */
     Response<AccessKeys> regenerateKeysWithResponse(
         String resourceGroupName,
@@ -487,7 +487,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation.
+     * @return the Result of the CheckNameAvailability operation along with {@link Response}.
      */
     Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(
         CheckNameAvailabilityParameter parameters, Context context);
@@ -499,7 +499,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the description of the specified namespace.
+     * @return the description of the specified namespace along with {@link Response}.
      */
     EHNamespace getById(String id);
 
@@ -511,7 +511,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the description of the specified namespace.
+     * @return the description of the specified namespace along with {@link Response}.
      */
     Response<EHNamespace> getByIdWithResponse(String id, Context context);
 
@@ -522,7 +522,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name.
+     * @return an IpFilterRule for a Namespace by rule name along with {@link Response}.
      */
     IpFilterRule getIpFilterRuleById(String id);
 
@@ -534,7 +534,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name.
+     * @return an IpFilterRule for a Namespace by rule name along with {@link Response}.
      */
     Response<IpFilterRule> getIpFilterRuleByIdWithResponse(String id, Context context);
 
@@ -545,7 +545,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an VirtualNetworkRule for a Namespace by rule name.
+     * @return an VirtualNetworkRule for a Namespace by rule name along with {@link Response}.
      */
     VirtualNetworkRule getVirtualNetworkRuleById(String id);
 
@@ -557,7 +557,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an VirtualNetworkRule for a Namespace by rule name.
+     * @return an VirtualNetworkRule for a Namespace by rule name along with {@link Response}.
      */
     Response<VirtualNetworkRule> getVirtualNetworkRuleByIdWithResponse(String id, Context context);
 
@@ -568,7 +568,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response}.
      */
     AuthorizationRule getAuthorizationRuleById(String id);
 
@@ -580,7 +580,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response}.
      */
     Response<AuthorizationRule> getAuthorizationRuleByIdWithResponse(String id, Context context);
 
@@ -623,7 +623,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteIpFilterRuleByIdWithResponse(String id, Context context);
 
@@ -645,7 +645,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteVirtualNetworkRuleByIdWithResponse(String id, Context context);
 
@@ -667,7 +667,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteAuthorizationRuleByIdWithResponse(String id, Context context);
 

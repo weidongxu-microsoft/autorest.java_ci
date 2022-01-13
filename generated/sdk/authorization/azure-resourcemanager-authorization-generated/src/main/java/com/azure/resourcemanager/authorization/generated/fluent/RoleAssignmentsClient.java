@@ -112,7 +112,7 @@ public interface RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments.
+     * @return role Assignments along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RoleAssignmentInner> deleteWithResponse(String scope, String roleAssignmentName, Context context);
@@ -149,7 +149,7 @@ public interface RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments.
+     * @return role Assignments along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RoleAssignmentInner> createWithResponse(
@@ -177,7 +177,7 @@ public interface RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified role assignment.
+     * @return the specified role assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RoleAssignmentInner> getWithResponse(String scope, String roleAssignmentName, Context context);
@@ -202,7 +202,7 @@ public interface RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments.
+     * @return role Assignments along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RoleAssignmentInner> deleteByIdWithResponse(String roleId, Context context);
@@ -229,7 +229,7 @@ public interface RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments.
+     * @return role Assignments along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RoleAssignmentInner> createByIdWithResponse(
@@ -255,7 +255,7 @@ public interface RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role assignment by ID.
+     * @return a role assignment by ID along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RoleAssignmentInner> getByIdWithResponse(String roleId, Context context);

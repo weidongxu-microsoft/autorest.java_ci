@@ -32,7 +32,7 @@ public interface ResourceNavigationLinks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of resource navigation links for a subnet.
+     * @return a list of resource navigation links for a subnet along with {@link Response}.
      */
     Response<ResourceNavigationLinksListResult> listWithResponse(
         String resourceGroupName, String virtualNetworkName, String subnetName, Context context);

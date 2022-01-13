@@ -425,7 +425,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listSinglePageAsync() {
@@ -471,7 +472,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listSinglePageAsync(Context context) {
@@ -567,7 +569,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> validatePurchaseInformationWithResponseAsync(
@@ -615,7 +617,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> validatePurchaseInformationWithResponseAsync(
@@ -659,7 +661,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> validatePurchaseInformationAsync(AppServiceCertificateOrderInner appServiceCertificateOrder) {
@@ -688,7 +690,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> validatePurchaseInformationWithResponse(
@@ -703,7 +705,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listByResourceGroupSinglePageAsync(
@@ -756,7 +759,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listByResourceGroupSinglePageAsync(
@@ -870,7 +874,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateOrderInner>> getByResourceGroupWithResponseAsync(
@@ -920,7 +924,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateOrderInner>> getByResourceGroupWithResponseAsync(
@@ -966,7 +970,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateOrderInner> getByResourceGroupAsync(
@@ -1006,7 +1010,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AppServiceCertificateOrderInner> getByResourceGroupWithResponse(
@@ -1023,7 +1027,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -1085,7 +1089,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -1144,7 +1148,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AppServiceCertificateOrderInner>, AppServiceCertificateOrderInner>
@@ -1174,7 +1178,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AppServiceCertificateOrderInner>, AppServiceCertificateOrderInner>
@@ -1206,7 +1210,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServiceCertificateOrderInner>, AppServiceCertificateOrderInner> beginCreateOrUpdate(
@@ -1227,7 +1231,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServiceCertificateOrderInner>, AppServiceCertificateOrderInner> beginCreateOrUpdate(
@@ -1248,7 +1252,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateOrderInner> createOrUpdateAsync(
@@ -1270,7 +1274,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateOrderInner> createOrUpdateAsync(
@@ -1332,7 +1336,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String certificateOrderName) {
@@ -1381,7 +1385,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -1427,7 +1431,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String certificateOrderName) {
@@ -1458,7 +1462,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String certificateOrderName, Context context) {
@@ -1474,7 +1478,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateOrderInner>> updateWithResponseAsync(
@@ -1536,7 +1540,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateOrderInner>> updateWithResponseAsync(
@@ -1595,7 +1599,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateOrderInner> updateAsync(
@@ -1642,7 +1646,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return sSL certificate purchase order along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AppServiceCertificateOrderInner> updateWithResponse(
@@ -1662,7 +1666,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates.
+     * @return collection of certificate order certificates along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateResourceInner>> listCertificatesSinglePageAsync(
@@ -1721,7 +1726,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates.
+     * @return collection of certificate order certificates along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateResourceInner>> listCertificatesSinglePageAsync(
@@ -1847,7 +1853,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateResourceInner>> getCertificateWithResponseAsync(
@@ -1902,7 +1909,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateResourceInner>> getCertificateWithResponseAsync(
@@ -1953,7 +1961,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateResourceInner> getCertificateAsync(
@@ -1996,7 +2005,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AppServiceCertificateResourceInner> getCertificateWithResponse(
@@ -2014,7 +2024,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateCertificateWithResponseAsync(
@@ -2080,7 +2091,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateCertificateWithResponseAsync(
@@ -2143,7 +2155,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -2176,7 +2189,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -2210,7 +2224,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -2234,7 +2249,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -2259,7 +2275,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateResourceInner> createOrUpdateCertificateAsync(
@@ -2283,7 +2300,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateResourceInner> createOrUpdateCertificateAsync(
@@ -2354,7 +2372,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteCertificateWithResponseAsync(
@@ -2409,7 +2427,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteCertificateWithResponseAsync(
@@ -2460,7 +2478,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteCertificateAsync(String resourceGroupName, String certificateOrderName, String name) {
@@ -2493,7 +2511,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteCertificateWithResponse(
@@ -2511,7 +2529,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateResourceInner>> updateCertificateWithResponseAsync(
@@ -2577,7 +2596,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateResourceInner>> updateCertificateWithResponseAsync(
@@ -2640,7 +2660,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateResourceInner> updateCertificateAsync(
@@ -2691,7 +2712,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AppServiceCertificateResourceInner> updateCertificateWithResponse(
@@ -2714,7 +2736,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> reissueWithResponseAsync(
@@ -2776,7 +2798,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> reissueWithResponseAsync(
@@ -2835,7 +2857,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> reissueAsync(
@@ -2874,7 +2896,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> reissueWithResponse(
@@ -2896,7 +2918,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> renewWithResponseAsync(
@@ -2958,7 +2980,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> renewWithResponseAsync(
@@ -3017,7 +3039,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> renewAsync(
@@ -3056,7 +3078,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> renewWithResponse(
@@ -3076,7 +3098,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> resendEmailWithResponseAsync(String resourceGroupName, String certificateOrderName) {
@@ -3125,7 +3147,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> resendEmailWithResponseAsync(
@@ -3171,7 +3193,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> resendEmailAsync(String resourceGroupName, String certificateOrderName) {
@@ -3202,7 +3224,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> resendEmailWithResponse(
@@ -3220,7 +3242,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> resendRequestEmailsWithResponseAsync(
@@ -3278,7 +3300,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> resendRequestEmailsWithResponseAsync(
@@ -3332,7 +3354,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> resendRequestEmailsAsync(
@@ -3369,7 +3391,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> resendRequestEmailsWithResponse(
@@ -3393,7 +3415,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site seal.
+     * @return site seal along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SiteSealInner>> retrieveSiteSealWithResponseAsync(
@@ -3457,7 +3479,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site seal.
+     * @return site seal along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SiteSealInner>> retrieveSiteSealWithResponseAsync(
@@ -3517,7 +3539,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site seal.
+     * @return site seal on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SiteSealInner> retrieveSiteSealAsync(
@@ -3572,7 +3594,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site seal.
+     * @return site seal along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SiteSealInner> retrieveSiteSealWithResponse(
@@ -3589,7 +3611,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> verifyDomainOwnershipWithResponseAsync(
@@ -3639,7 +3661,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> verifyDomainOwnershipWithResponseAsync(
@@ -3685,7 +3707,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> verifyDomainOwnershipAsync(String resourceGroupName, String certificateOrderName) {
@@ -3716,7 +3738,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> verifyDomainOwnershipWithResponse(
@@ -3732,7 +3754,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateOrderAction.
+     * @return array of CertificateOrderAction along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<CertificateOrderActionInner>>> retrieveCertificateActionsWithResponseAsync(
@@ -3781,7 +3803,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateOrderAction.
+     * @return array of CertificateOrderAction along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<CertificateOrderActionInner>>> retrieveCertificateActionsWithResponseAsync(
@@ -3826,7 +3848,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateOrderAction.
+     * @return array of CertificateOrderAction on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<CertificateOrderActionInner>> retrieveCertificateActionsAsync(
@@ -3866,7 +3888,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateOrderAction.
+     * @return array of CertificateOrderAction along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<CertificateOrderActionInner>> retrieveCertificateActionsWithResponse(
@@ -3882,7 +3904,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateEmail.
+     * @return array of CertificateEmail along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<CertificateEmailInner>>> retrieveCertificateEmailHistoryWithResponseAsync(
@@ -3931,7 +3953,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateEmail.
+     * @return array of CertificateEmail along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<CertificateEmailInner>>> retrieveCertificateEmailHistoryWithResponseAsync(
@@ -3976,7 +3998,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateEmail.
+     * @return array of CertificateEmail on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<CertificateEmailInner>> retrieveCertificateEmailHistoryAsync(
@@ -4016,7 +4038,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateEmail.
+     * @return array of CertificateEmail along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<CertificateEmailInner>> retrieveCertificateEmailHistoryWithResponse(
@@ -4031,7 +4053,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listNextSinglePageAsync(String nextLink) {
@@ -4067,7 +4090,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listNextSinglePageAsync(
@@ -4103,7 +4127,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listByResourceGroupNextSinglePageAsync(
@@ -4141,7 +4166,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listByResourceGroupNextSinglePageAsync(
@@ -4177,7 +4203,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates.
+     * @return collection of certificate order certificates along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateResourceInner>> listCertificatesNextSinglePageAsync(
@@ -4214,7 +4241,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates.
+     * @return collection of certificate order certificates along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateResourceInner>> listCertificatesNextSinglePageAsync(

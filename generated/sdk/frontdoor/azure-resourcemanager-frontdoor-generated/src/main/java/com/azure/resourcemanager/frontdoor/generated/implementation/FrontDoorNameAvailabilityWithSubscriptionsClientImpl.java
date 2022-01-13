@@ -84,7 +84,8 @@ public final class FrontDoorNameAvailabilityWithSubscriptionsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
+     * @return output of check name availability API along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityOutputInner>> checkWithResponseAsync(
@@ -133,7 +134,8 @@ public final class FrontDoorNameAvailabilityWithSubscriptionsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
+     * @return output of check name availability API along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityOutputInner>> checkWithResponseAsync(
@@ -178,7 +180,7 @@ public final class FrontDoorNameAvailabilityWithSubscriptionsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
+     * @return output of check name availability API on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<CheckNameAvailabilityOutputInner> checkAsync(
@@ -216,7 +218,7 @@ public final class FrontDoorNameAvailabilityWithSubscriptionsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
+     * @return output of check name availability API along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<CheckNameAvailabilityOutputInner> checkWithResponse(

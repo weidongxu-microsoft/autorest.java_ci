@@ -58,7 +58,7 @@ public interface SecurityRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security rule.
+     * @return the specified network security rule along with {@link Response}.
      */
     Response<SecurityRule> getWithResponse(
         String resourceGroupName, String networkSecurityGroupName, String securityRuleName, Context context);
@@ -95,7 +95,7 @@ public interface SecurityRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security rule.
+     * @return the specified network security rule along with {@link Response}.
      */
     SecurityRule getById(String id);
 
@@ -107,7 +107,7 @@ public interface SecurityRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security rule.
+     * @return the specified network security rule along with {@link Response}.
      */
     Response<SecurityRule> getByIdWithResponse(String id, Context context);
 

@@ -102,7 +102,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service.
+     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service along with
+     *     {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdminKeyResultInner>> getWithResponseAsync(
@@ -157,7 +158,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service.
+     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service along with
+     *     {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdminKeyResultInner>> getWithResponseAsync(
@@ -208,7 +210,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service.
+     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AdminKeyResultInner> getAsync(
@@ -234,7 +237,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service.
+     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AdminKeyResultInner> getAsync(String resourceGroupName, String searchServiceName) {
@@ -281,7 +285,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service.
+     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service along with
+     *     {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AdminKeyResultInner> getWithResponse(
@@ -302,7 +307,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service.
+     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdminKeyResultInner>> regenerateWithResponseAsync(
@@ -362,7 +368,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service.
+     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdminKeyResultInner>> regenerateWithResponseAsync(
@@ -422,7 +429,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service.
+     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AdminKeyResultInner> regenerateAsync(
@@ -449,7 +457,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service.
+     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AdminKeyResultInner> regenerateAsync(
@@ -499,7 +508,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service.
+     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service
+     *     along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AdminKeyResultInner> regenerateWithResponse(

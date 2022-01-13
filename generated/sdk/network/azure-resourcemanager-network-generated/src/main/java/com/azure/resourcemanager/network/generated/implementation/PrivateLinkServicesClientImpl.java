@@ -331,7 +331,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String serviceName) {
@@ -380,7 +380,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -426,7 +426,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String serviceName) {
@@ -446,7 +446,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -466,7 +466,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String serviceName) {
@@ -482,7 +482,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -498,7 +498,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String serviceName) {
@@ -514,7 +514,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String serviceName, Context context) {
@@ -561,7 +561,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private link service by resource group.
+     * @return the specified private link service by resource group along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkServiceInner>> getByResourceGroupWithResponseAsync(
@@ -613,7 +614,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private link service by resource group.
+     * @return the specified private link service by resource group along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkServiceInner>> getByResourceGroupWithResponseAsync(
@@ -661,7 +663,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private link service by resource group.
+     * @return the specified private link service by resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkServiceInner> getByResourceGroupAsync(
@@ -685,7 +687,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private link service by resource group.
+     * @return the specified private link service by resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkServiceInner> getByResourceGroupAsync(String resourceGroupName, String serviceName) {
@@ -727,7 +729,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private link service by resource group.
+     * @return the specified private link service by resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PrivateLinkServiceInner> getByResourceGroupWithResponse(
@@ -744,7 +746,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private link service resource.
+     * @return private link service resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -801,7 +803,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private link service resource.
+     * @return private link service resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -854,7 +856,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private link service resource.
+     * @return private link service resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PrivateLinkServiceInner>, PrivateLinkServiceInner> beginCreateOrUpdateAsync(
@@ -881,7 +883,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private link service resource.
+     * @return private link service resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PrivateLinkServiceInner>, PrivateLinkServiceInner> beginCreateOrUpdateAsync(
@@ -908,7 +910,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private link service resource.
+     * @return private link service resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateLinkServiceInner>, PrivateLinkServiceInner> beginCreateOrUpdate(
@@ -926,7 +928,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private link service resource.
+     * @return private link service resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateLinkServiceInner>, PrivateLinkServiceInner> beginCreateOrUpdate(
@@ -943,7 +945,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private link service resource.
+     * @return private link service resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkServiceInner> createOrUpdateAsync(
@@ -963,7 +965,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private link service resource.
+     * @return private link service resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkServiceInner> createOrUpdateAsync(
@@ -1015,7 +1017,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private link services in a resource group.
+     * @return all private link services in a resource group along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkServiceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1068,7 +1071,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private link services in a resource group.
+     * @return all private link services in a resource group along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkServiceInner>> listByResourceGroupSinglePageAsync(
@@ -1177,7 +1181,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private link service in a subscription.
+     * @return all private link service in a subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkServiceInner>> listSinglePageAsync() {
@@ -1219,7 +1224,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private link service in a subscription.
+     * @return all private link service in a subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkServiceInner>> listSinglePageAsync(Context context) {
@@ -1315,7 +1321,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specific private end point connection by specific private link service in the resource group.
+     * @return the specific private end point connection by specific private link service in the resource group along
+     *     with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateEndpointConnectionInner>> getPrivateEndpointConnectionWithResponseAsync(
@@ -1373,7 +1380,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specific private end point connection by specific private link service in the resource group.
+     * @return the specific private end point connection by specific private link service in the resource group along
+     *     with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateEndpointConnectionInner>> getPrivateEndpointConnectionWithResponseAsync(
@@ -1427,7 +1435,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specific private end point connection by specific private link service in the resource group.
+     * @return the specific private end point connection by specific private link service in the resource group on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateEndpointConnectionInner> getPrivateEndpointConnectionAsync(
@@ -1452,7 +1461,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specific private end point connection by specific private link service in the resource group.
+     * @return the specific private end point connection by specific private link service in the resource group on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateEndpointConnectionInner> getPrivateEndpointConnectionAsync(
@@ -1498,7 +1508,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specific private end point connection by specific private link service in the resource group.
+     * @return the specific private end point connection by specific private link service in the resource group along
+     *     with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PrivateEndpointConnectionInner> getPrivateEndpointConnectionWithResponse(
@@ -1518,7 +1529,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return privateEndpointConnection resource.
+     * @return privateEndpointConnection resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateEndpointConnectionInner>> updatePrivateEndpointConnectionWithResponseAsync(
@@ -1584,7 +1595,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return privateEndpointConnection resource.
+     * @return privateEndpointConnection resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateEndpointConnectionInner>> updatePrivateEndpointConnectionWithResponseAsync(
@@ -1647,7 +1658,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return privateEndpointConnection resource.
+     * @return privateEndpointConnection resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateEndpointConnectionInner> updatePrivateEndpointConnectionAsync(
@@ -1700,7 +1711,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return privateEndpointConnection resource.
+     * @return privateEndpointConnection resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PrivateEndpointConnectionInner> updatePrivateEndpointConnectionWithResponse(
@@ -1723,7 +1734,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deletePrivateEndpointConnectionWithResponseAsync(
@@ -1779,7 +1790,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deletePrivateEndpointConnectionWithResponseAsync(
@@ -1831,7 +1842,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeletePrivateEndpointConnectionAsync(
@@ -1854,7 +1865,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeletePrivateEndpointConnectionAsync(
@@ -1876,7 +1887,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeletePrivateEndpointConnection(
@@ -1895,7 +1906,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeletePrivateEndpointConnection(
@@ -1913,7 +1924,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deletePrivateEndpointConnectionAsync(
@@ -1933,7 +1944,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deletePrivateEndpointConnectionAsync(
@@ -1983,7 +1994,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private end point connections for a specific private link service.
+     * @return all private end point connections for a specific private link service along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointConnectionInner>> listPrivateEndpointConnectionsSinglePageAsync(
@@ -2042,7 +2054,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private end point connections for a specific private link service.
+     * @return all private end point connections for a specific private link service along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointConnectionInner>> listPrivateEndpointConnectionsSinglePageAsync(
@@ -2167,7 +2180,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> checkPrivateLinkServiceVisibilityWithResponseAsync(
@@ -2218,7 +2232,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> checkPrivateLinkServiceVisibilityWithResponseAsync(
@@ -2265,7 +2280,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -2292,7 +2308,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -2319,7 +2336,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -2336,7 +2354,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -2353,7 +2372,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkServiceVisibilityInner> checkPrivateLinkServiceVisibilityAsync(
@@ -2372,7 +2392,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkServiceVisibilityInner> checkPrivateLinkServiceVisibilityAsync(
@@ -2424,7 +2445,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> checkPrivateLinkServiceVisibilityByResourceGroupWithResponseAsync(
@@ -2481,7 +2503,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> checkPrivateLinkServiceVisibilityByResourceGroupWithResponseAsync(
@@ -2537,7 +2560,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -2565,7 +2589,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -2597,7 +2622,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -2617,7 +2643,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -2640,7 +2667,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkServiceVisibilityInner> checkPrivateLinkServiceVisibilityByResourceGroupAsync(
@@ -2660,7 +2688,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkServiceVisibilityInner> checkPrivateLinkServiceVisibilityByResourceGroupAsync(
@@ -2721,7 +2750,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved.
+     * @return an array of private link service id that can be linked to a private end point with auto approved along
+     *     with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoApprovedPrivateLinkServiceInner>> listAutoApprovedPrivateLinkServicesSinglePageAsync(
@@ -2775,7 +2805,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved.
+     * @return an array of private link service id that can be linked to a private end point with auto approved along
+     *     with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoApprovedPrivateLinkServiceInner>> listAutoApprovedPrivateLinkServicesSinglePageAsync(
@@ -2889,7 +2920,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved.
+     * @return an array of private link service id that can be linked to a private end point with auto approved along
+     *     with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoApprovedPrivateLinkServiceInner>>
@@ -2949,7 +2981,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved.
+     * @return an array of private link service id that can be linked to a private end point with auto approved along
+     *     with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoApprovedPrivateLinkServiceInner>>
@@ -3081,7 +3114,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListPrivateLinkService API service call.
+     * @return response for the ListPrivateLinkService API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkServiceInner>> listNextSinglePageAsync(String nextLink) {
@@ -3117,7 +3151,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListPrivateLinkService API service call.
+     * @return response for the ListPrivateLinkService API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkServiceInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -3152,7 +3187,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListPrivateLinkService API service call.
+     * @return response for the ListPrivateLinkService API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkServiceInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -3189,7 +3225,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListPrivateLinkService API service call.
+     * @return response for the ListPrivateLinkService API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkServiceInner>> listBySubscriptionNextSinglePageAsync(
@@ -3225,7 +3262,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListPrivateEndpointConnection API service call.
+     * @return response for the ListPrivateEndpointConnection API service call along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointConnectionInner>> listPrivateEndpointConnectionsNextSinglePageAsync(
@@ -3264,7 +3302,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListPrivateEndpointConnection API service call.
+     * @return response for the ListPrivateEndpointConnection API service call along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointConnectionInner>> listPrivateEndpointConnectionsNextSinglePageAsync(
@@ -3300,7 +3339,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved.
+     * @return an array of private link service id that can be linked to a private end point with auto approved along
+     *     with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoApprovedPrivateLinkServiceInner>>
@@ -3340,7 +3380,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved.
+     * @return an array of private link service id that can be linked to a private end point with auto approved along
+     *     with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoApprovedPrivateLinkServiceInner>>
@@ -3376,7 +3417,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved.
+     * @return an array of private link service id that can be linked to a private end point with auto approved along
+     *     with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoApprovedPrivateLinkServiceInner>>
@@ -3417,7 +3459,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved.
+     * @return an array of private link service id that can be linked to a private end point with auto approved along
+     *     with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AutoApprovedPrivateLinkServiceInner>>

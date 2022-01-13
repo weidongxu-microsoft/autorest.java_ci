@@ -138,7 +138,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return describes an API key for a given Azure Cognitive Search service that has permissions for query operations
-     *     only.
+     *     only along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QueryKeyInner>> createWithResponseAsync(
@@ -199,7 +199,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return describes an API key for a given Azure Cognitive Search service that has permissions for query operations
-     *     only.
+     *     only along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QueryKeyInner>> createWithResponseAsync(
@@ -256,7 +256,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return describes an API key for a given Azure Cognitive Search service that has permissions for query operations
-     *     only.
+     *     only on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<QueryKeyInner> createAsync(
@@ -284,7 +284,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return describes an API key for a given Azure Cognitive Search service that has permissions for query operations
-     *     only.
+     *     only on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<QueryKeyInner> createAsync(String resourceGroupName, String searchServiceName, String name) {
@@ -335,7 +335,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return describes an API key for a given Azure Cognitive Search service that has permissions for query operations
-     *     only.
+     *     only along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<QueryKeyInner> createWithResponse(
@@ -355,7 +355,8 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure Cognitive Search service.
+     * @return response containing the query API keys for a given Azure Cognitive Search service along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<QueryKeyInner>> listBySearchServiceSinglePageAsync(
@@ -419,7 +420,8 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure Cognitive Search service.
+     * @return response containing the query API keys for a given Azure Cognitive Search service along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<QueryKeyInner>> listBySearchServiceSinglePageAsync(
@@ -586,7 +588,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -647,7 +649,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -704,7 +706,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(
@@ -725,7 +727,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String searchServiceName, String key) {
@@ -768,7 +770,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -785,7 +787,8 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure Cognitive Search service.
+     * @return response containing the query API keys for a given Azure Cognitive Search service along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<QueryKeyInner>> listBySearchServiceNextSinglePageAsync(
@@ -827,7 +830,8 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure Cognitive Search service.
+     * @return response containing the query API keys for a given Azure Cognitive Search service along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<QueryKeyInner>> listBySearchServiceNextSinglePageAsync(

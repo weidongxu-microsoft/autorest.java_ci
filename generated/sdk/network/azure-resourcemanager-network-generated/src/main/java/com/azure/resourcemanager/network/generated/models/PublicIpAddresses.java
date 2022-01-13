@@ -114,7 +114,7 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP address in a cloud service.
+     * @return the specified public IP address in a cloud service along with {@link Response}.
      */
     Response<PublicIpAddress> getCloudServicePublicIpAddressWithResponse(
         String resourceGroupName,
@@ -171,7 +171,7 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP address in a specified resource group.
+     * @return the specified public IP address in a specified resource group along with {@link Response}.
      */
     Response<PublicIpAddress> getByResourceGroupWithResponse(
         String resourceGroupName, String publicIpAddressName, String expand, Context context);
@@ -328,7 +328,7 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP address in a virtual machine scale set.
+     * @return the specified public IP address in a virtual machine scale set along with {@link Response}.
      */
     Response<PublicIpAddress> getVirtualMachineScaleSetPublicIpAddressWithResponse(
         String resourceGroupName,
@@ -347,7 +347,7 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP address in a specified resource group.
+     * @return the specified public IP address in a specified resource group along with {@link Response}.
      */
     PublicIpAddress getById(String id);
 
@@ -360,7 +360,7 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP address in a specified resource group.
+     * @return the specified public IP address in a specified resource group along with {@link Response}.
      */
     Response<PublicIpAddress> getByIdWithResponse(String id, String expand, Context context);
 

@@ -41,7 +41,7 @@ public interface DiskRestorePoints {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return disk restorePoint resource.
+     * @return disk restorePoint resource along with {@link Response}.
      */
     Response<DiskRestorePoint> getWithResponse(
         String resourceGroupName,

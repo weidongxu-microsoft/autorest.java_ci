@@ -104,7 +104,7 @@ public final class QueriesClientImpl implements QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QueryResultInner>> usageWithResponseAsync(String scope, QueryDefinition parameters) {
@@ -155,7 +155,7 @@ public final class QueriesClientImpl implements QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QueryResultInner>> usageWithResponseAsync(
@@ -202,7 +202,7 @@ public final class QueriesClientImpl implements QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<QueryResultInner> usageAsync(String scope, QueryDefinition parameters) {
@@ -269,7 +269,7 @@ public final class QueriesClientImpl implements QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<QueryResultInner> usageWithResponse(String scope, QueryDefinition parameters, Context context) {
@@ -288,7 +288,7 @@ public final class QueriesClientImpl implements QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QueryResultInner>> usageByExternalCloudProviderTypeWithResponseAsync(
@@ -346,7 +346,7 @@ public final class QueriesClientImpl implements QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QueryResultInner>> usageByExternalCloudProviderTypeWithResponseAsync(
@@ -401,7 +401,7 @@ public final class QueriesClientImpl implements QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<QueryResultInner> usageByExternalCloudProviderTypeAsync(
@@ -456,7 +456,7 @@ public final class QueriesClientImpl implements QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<QueryResultInner> usageByExternalCloudProviderTypeWithResponse(

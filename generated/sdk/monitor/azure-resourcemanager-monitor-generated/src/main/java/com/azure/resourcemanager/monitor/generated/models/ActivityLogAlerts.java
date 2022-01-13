@@ -31,7 +31,7 @@ public interface ActivityLogAlerts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert.
+     * @return an activity log alert along with {@link Response}.
      */
     Response<ActivityLogAlertResource> getByResourceGroupWithResponse(
         String resourceGroupName, String activityLogAlertName, Context context);
@@ -56,7 +56,7 @@ public interface ActivityLogAlerts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String activityLogAlertName, Context context);
 
@@ -110,7 +110,7 @@ public interface ActivityLogAlerts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert.
+     * @return an activity log alert along with {@link Response}.
      */
     ActivityLogAlertResource getById(String id);
 
@@ -122,7 +122,7 @@ public interface ActivityLogAlerts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert.
+     * @return an activity log alert along with {@link Response}.
      */
     Response<ActivityLogAlertResource> getByIdWithResponse(String id, Context context);
 
@@ -144,7 +144,7 @@ public interface ActivityLogAlerts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

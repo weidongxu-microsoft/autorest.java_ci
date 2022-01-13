@@ -110,7 +110,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
+     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkResourceInner>> listByPrivateLinkScopeSinglePageAsync(
@@ -169,7 +170,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
+     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkResourceInner>> listByPrivateLinkScopeSinglePageAsync(
@@ -294,7 +296,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
+     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceInner>> getWithResponseAsync(
@@ -349,7 +352,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
+     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceInner>> getWithResponseAsync(
@@ -400,7 +404,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
+     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkResourceInner> getAsync(String resourceGroupName, String scopeName, String groupName) {
@@ -441,7 +446,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
+     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PrivateLinkResourceInner> getWithResponse(
@@ -456,7 +462,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of private link resources.
+     * @return a list of private link resources along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkResourceInner>> listByPrivateLinkScopeNextSinglePageAsync(String nextLink) {
@@ -493,7 +500,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of private link resources.
+     * @return a list of private link resources along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateLinkResourceInner>> listByPrivateLinkScopeNextSinglePageAsync(

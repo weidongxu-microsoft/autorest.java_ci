@@ -54,7 +54,7 @@ public interface BastionHosts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Bastion Host.
+     * @return the specified Bastion Host along with {@link Response}.
      */
     Response<BastionHost> getByResourceGroupWithResponse(
         String resourceGroupName, String bastionHostname, Context context);
@@ -109,7 +109,7 @@ public interface BastionHosts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Bastion Host.
+     * @return the specified Bastion Host along with {@link Response}.
      */
     BastionHost getById(String id);
 
@@ -121,7 +121,7 @@ public interface BastionHosts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Bastion Host.
+     * @return the specified Bastion Host along with {@link Response}.
      */
     Response<BastionHost> getByIdWithResponse(String id, Context context);
 

@@ -69,7 +69,7 @@ public interface Zones {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone.
+     * @return a DNS zone along with {@link Response}.
      */
     Response<Zone> getByResourceGroupWithResponse(String resourceGroupName, String zoneName, Context context);
 
@@ -125,7 +125,7 @@ public interface Zones {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone.
+     * @return a DNS zone along with {@link Response}.
      */
     Zone getById(String id);
 
@@ -137,7 +137,7 @@ public interface Zones {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone.
+     * @return a DNS zone along with {@link Response}.
      */
     Response<Zone> getByIdWithResponse(String id, Context context);
 

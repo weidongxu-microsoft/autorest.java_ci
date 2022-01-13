@@ -172,7 +172,8 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified resource group and category.
+     * @return all private workbooks defined within a specified resource group and category along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MyWorkbookInner>> listByResourceGroupSinglePageAsync(
@@ -233,7 +234,8 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified resource group and category.
+     * @return all private workbooks defined within a specified resource group and category along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MyWorkbookInner>> listByResourceGroupSinglePageAsync(
@@ -386,7 +388,8 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified subscription and category.
+     * @return all private workbooks defined within a specified subscription and category along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MyWorkbookInner>> listSinglePageAsync(
@@ -441,7 +444,8 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified subscription and category.
+     * @return all private workbooks defined within a specified subscription and category along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MyWorkbookInner>> listSinglePageAsync(
@@ -577,7 +581,8 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single private workbook by its resourceName.
+     * @return a single private workbook by its resourceName along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MyWorkbookInner>> getByResourceGroupWithResponseAsync(
@@ -627,7 +632,8 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single private workbook by its resourceName.
+     * @return a single private workbook by its resourceName along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MyWorkbookInner>> getByResourceGroupWithResponseAsync(
@@ -673,7 +679,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single private workbook by its resourceName.
+     * @return a single private workbook by its resourceName on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MyWorkbookInner> getByResourceGroupAsync(String resourceGroupName, String resourceName) {
@@ -712,7 +718,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single private workbook by its resourceName.
+     * @return a single private workbook by its resourceName along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<MyWorkbookInner> getByResourceGroupWithResponse(
@@ -728,7 +734,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String resourceName) {
@@ -777,7 +783,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -823,7 +829,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String resourceName) {
@@ -853,7 +859,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String resourceName, Context context) {
@@ -869,7 +875,8 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights private workbook definition.
+     * @return an Application Insights private workbook definition along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MyWorkbookInner>> createOrUpdateWithResponseAsync(
@@ -927,7 +934,8 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights private workbook definition.
+     * @return an Application Insights private workbook definition along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MyWorkbookInner>> createOrUpdateWithResponseAsync(
@@ -981,7 +989,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights private workbook definition.
+     * @return an Application Insights private workbook definition on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MyWorkbookInner> createOrUpdateAsync(
@@ -1024,7 +1032,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights private workbook definition.
+     * @return an Application Insights private workbook definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<MyWorkbookInner> createOrUpdateWithResponse(
@@ -1041,7 +1049,8 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights private workbook definition.
+     * @return an Application Insights private workbook definition along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MyWorkbookInner>> updateWithResponseAsync(
@@ -1099,7 +1108,8 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights private workbook definition.
+     * @return an Application Insights private workbook definition along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MyWorkbookInner>> updateWithResponseAsync(
@@ -1153,7 +1163,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights private workbook definition.
+     * @return an Application Insights private workbook definition on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MyWorkbookInner> updateAsync(
@@ -1195,7 +1205,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights private workbook definition.
+     * @return an Application Insights private workbook definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<MyWorkbookInner> updateWithResponse(

@@ -269,7 +269,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<P2SVpnGatewayInner>> getByResourceGroupWithResponseAsync(
@@ -319,7 +319,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<P2SVpnGatewayInner>> getByResourceGroupWithResponseAsync(
@@ -365,7 +365,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnGatewayInner> getByResourceGroupAsync(String resourceGroupName, String gatewayName) {
@@ -404,7 +404,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<P2SVpnGatewayInner> getByResourceGroupWithResponse(
@@ -421,7 +421,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -480,7 +480,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -535,7 +535,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginCreateOrUpdateAsync(
@@ -562,7 +562,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginCreateOrUpdateAsync(
@@ -585,7 +585,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginCreateOrUpdate(
@@ -603,7 +603,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginCreateOrUpdate(
@@ -621,7 +621,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnGatewayInner> createOrUpdateAsync(
@@ -641,7 +641,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnGatewayInner> createOrUpdateAsync(
@@ -695,7 +695,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateTagsWithResponseAsync(
@@ -754,7 +754,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateTagsWithResponseAsync(
@@ -809,7 +809,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginUpdateTagsAsync(
@@ -836,7 +836,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginUpdateTagsAsync(
@@ -859,7 +859,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginUpdateTags(
@@ -877,7 +877,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginUpdateTags(
@@ -894,7 +894,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnGatewayInner> updateTagsAsync(
@@ -914,7 +914,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnGatewayInner> updateTagsAsync(
@@ -967,7 +967,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String gatewayName) {
@@ -1016,7 +1016,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -1062,7 +1062,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String gatewayName) {
@@ -1082,7 +1082,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1102,7 +1102,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String gatewayName) {
@@ -1118,7 +1118,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1134,7 +1134,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String gatewayName) {
@@ -1150,7 +1150,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String gatewayName, Context context) {
@@ -1195,7 +1195,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1248,7 +1249,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listByResourceGroupSinglePageAsync(
@@ -1358,7 +1360,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listSinglePageAsync() {
@@ -1400,7 +1403,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listSinglePageAsync(Context context) {
@@ -1493,7 +1497,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> resetWithResponseAsync(String resourceGroupName, String gatewayName) {
@@ -1542,7 +1546,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> resetWithResponseAsync(
@@ -1588,7 +1592,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginResetAsync(
@@ -1613,7 +1617,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginResetAsync(
@@ -1634,7 +1638,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginReset(
@@ -1651,7 +1655,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginReset(
@@ -1667,7 +1671,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnGatewayInner> resetAsync(String resourceGroupName, String gatewayName) {
@@ -1683,7 +1687,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return p2SVpnGateway Resource.
+     * @return p2SVpnGateway Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnGatewayInner> resetAsync(String resourceGroupName, String gatewayName, Context context) {
@@ -1732,7 +1736,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> generateVpnProfileWithResponseAsync(
@@ -1789,7 +1794,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> generateVpnProfileWithResponseAsync(
@@ -1842,7 +1848,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner> beginGenerateVpnProfileAsync(
@@ -1869,7 +1876,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner> beginGenerateVpnProfileAsync(
@@ -1896,7 +1904,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner> beginGenerateVpnProfile(
@@ -1914,7 +1923,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner> beginGenerateVpnProfile(
@@ -1931,7 +1941,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnProfileResponseInner> generateVpnProfileAsync(
@@ -1951,7 +1961,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnProfileResponseInner> generateVpnProfileAsync(
@@ -2004,7 +2014,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getP2SVpnConnectionHealthWithResponseAsync(
@@ -2054,7 +2065,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getP2SVpnConnectionHealthWithResponseAsync(
@@ -2100,7 +2112,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginGetP2SVpnConnectionHealthAsync(
@@ -2126,7 +2139,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginGetP2SVpnConnectionHealthAsync(
@@ -2148,7 +2162,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginGetP2SVpnConnectionHealth(
@@ -2165,7 +2180,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner> beginGetP2SVpnConnectionHealth(
@@ -2181,7 +2197,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnGatewayInner> getP2SVpnConnectionHealthAsync(String resourceGroupName, String gatewayName) {
@@ -2199,7 +2216,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnGatewayInner> getP2SVpnConnectionHealthAsync(
@@ -2251,7 +2269,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     *     specified resource group.
+     *     specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getP2SVpnConnectionHealthDetailedWithResponseAsync(
@@ -2310,7 +2328,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     *     specified resource group.
+     *     specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getP2SVpnConnectionHealthDetailedWithResponseAsync(
@@ -2365,7 +2383,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     *     specified resource group.
+     *     specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnConnectionHealthInner>, P2SVpnConnectionHealthInner>
@@ -2395,7 +2413,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     *     specified resource group.
+     *     specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnConnectionHealthInner>, P2SVpnConnectionHealthInner>
@@ -2425,7 +2443,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     *     specified resource group.
+     *     specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnConnectionHealthInner>, P2SVpnConnectionHealthInner>
@@ -2446,7 +2464,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     *     specified resource group.
+     *     specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnConnectionHealthInner>, P2SVpnConnectionHealthInner>
@@ -2467,7 +2485,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     *     specified resource group.
+     *     specified resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnConnectionHealthInner> getP2SVpnConnectionHealthDetailedAsync(
@@ -2489,7 +2507,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
-     *     specified resource group.
+     *     specified resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnConnectionHealthInner> getP2SVpnConnectionHealthDetailedAsync(
@@ -2547,7 +2565,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> disconnectP2SVpnConnectionsWithResponseAsync(
@@ -2605,7 +2623,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> disconnectP2SVpnConnectionsWithResponseAsync(
@@ -2659,7 +2677,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDisconnectP2SVpnConnectionsAsync(
@@ -2682,7 +2700,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDisconnectP2SVpnConnectionsAsync(
@@ -2704,7 +2722,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDisconnectP2SVpnConnections(
@@ -2722,7 +2740,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDisconnectP2SVpnConnections(
@@ -2740,7 +2758,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> disconnectP2SVpnConnectionsAsync(
@@ -2760,7 +2778,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> disconnectP2SVpnConnectionsAsync(
@@ -2810,7 +2828,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -2847,7 +2866,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listByResourceGroupNextSinglePageAsync(
@@ -2883,7 +2903,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listNextSinglePageAsync(String nextLink) {
@@ -2919,7 +2940,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listNextSinglePageAsync(String nextLink, Context context) {

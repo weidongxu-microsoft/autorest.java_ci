@@ -29,7 +29,7 @@ public interface ResourceGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceWithResponse(String resourceGroupName, Context context);
 
@@ -90,7 +90,7 @@ public interface ResourceGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource group.
+     * @return a resource group along with {@link Response}.
      */
     Response<ResourceGroup> getWithResponse(String resourceGroupName, Context context);
 
@@ -150,7 +150,7 @@ public interface ResourceGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource group.
+     * @return a resource group along with {@link Response}.
      */
     ResourceGroup getById(String id);
 
@@ -162,7 +162,7 @@ public interface ResourceGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource group.
+     * @return a resource group along with {@link Response}.
      */
     Response<ResourceGroup> getByIdWithResponse(String id, Context context);
 

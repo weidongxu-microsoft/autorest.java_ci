@@ -131,7 +131,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -184,7 +184,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -233,7 +233,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String workspaceName, String savedSearchId) {
@@ -266,7 +266,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -284,7 +284,8 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return value object for saved search results.
+     * @return value object for saved search results along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SavedSearchInner>> createOrUpdateWithResponseAsync(
@@ -346,7 +347,8 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return value object for saved search results.
+     * @return value object for saved search results along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SavedSearchInner>> createOrUpdateWithResponseAsync(
@@ -408,7 +410,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return value object for saved search results.
+     * @return value object for saved search results on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SavedSearchInner> createOrUpdateAsync(
@@ -453,7 +455,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return value object for saved search results.
+     * @return value object for saved search results along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SavedSearchInner> createOrUpdateWithResponse(
@@ -475,7 +477,8 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified saved search for a given workspace.
+     * @return the specified saved search for a given workspace along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SavedSearchInner>> getWithResponseAsync(
@@ -530,7 +533,8 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified saved search for a given workspace.
+     * @return the specified saved search for a given workspace along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SavedSearchInner>> getWithResponseAsync(
@@ -581,7 +585,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified saved search for a given workspace.
+     * @return the specified saved search for a given workspace on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SavedSearchInner> getAsync(String resourceGroupName, String workspaceName, String savedSearchId) {
@@ -622,7 +626,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified saved search for a given workspace.
+     * @return the specified saved search for a given workspace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SavedSearchInner> getWithResponse(
@@ -638,7 +642,8 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the saved searches for a given Log Analytics Workspace.
+     * @return the saved searches for a given Log Analytics Workspace along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SavedSearchesListResultInner>> listByWorkspaceWithResponseAsync(
@@ -688,7 +693,8 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the saved searches for a given Log Analytics Workspace.
+     * @return the saved searches for a given Log Analytics Workspace along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SavedSearchesListResultInner>> listByWorkspaceWithResponseAsync(
@@ -734,7 +740,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the saved searches for a given Log Analytics Workspace.
+     * @return the saved searches for a given Log Analytics Workspace on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SavedSearchesListResultInner> listByWorkspaceAsync(String resourceGroupName, String workspaceName) {
@@ -773,7 +779,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the saved searches for a given Log Analytics Workspace.
+     * @return the saved searches for a given Log Analytics Workspace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SavedSearchesListResultInner> listByWorkspaceWithResponse(

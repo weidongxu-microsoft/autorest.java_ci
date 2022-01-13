@@ -250,7 +250,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> putBastionShareableLinkSinglePageAsync(
@@ -333,7 +334,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> putBastionShareableLinkSinglePageAsync(
@@ -486,7 +488,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteBastionShareableLinkWithResponseAsync(
@@ -544,7 +546,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteBastionShareableLinkWithResponseAsync(
@@ -598,7 +600,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteBastionShareableLinkAsync(
@@ -621,7 +623,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteBastionShareableLinkAsync(
@@ -643,7 +645,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteBastionShareableLink(
@@ -661,7 +663,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteBastionShareableLink(
@@ -679,7 +681,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteBastionShareableLinkAsync(
@@ -699,7 +701,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteBastionShareableLinkAsync(
@@ -751,7 +753,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> getBastionShareableLinkSinglePageAsync(
@@ -818,7 +821,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> getBastionShareableLinkSinglePageAsync(
@@ -955,7 +959,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetActiveSessions.
+     * @return response for GetActiveSessions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionActiveSessionInner>> getActiveSessionsSinglePageAsync(
@@ -1031,7 +1035,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetActiveSessions.
+     * @return response for GetActiveSessions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionActiveSessionInner>> getActiveSessionsSinglePageAsync(
@@ -1173,7 +1177,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for DisconnectActiveSessions.
+     * @return response for DisconnectActiveSessions along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionSessionStateInner>> disconnectActiveSessionsSinglePageAsync(
@@ -1240,7 +1245,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for DisconnectActiveSessions.
+     * @return response for DisconnectActiveSessions along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionSessionStateInner>> disconnectActiveSessionsSinglePageAsync(
@@ -1378,7 +1384,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckDnsNameAvailability API service call.
+     * @return response for the CheckDnsNameAvailability API service call along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DnsNameAvailabilityResultInner>> checkDnsNameAvailabilityWithResponseAsync(
@@ -1429,7 +1436,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckDnsNameAvailability API service call.
+     * @return response for the CheckDnsNameAvailability API service call along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DnsNameAvailabilityResultInner>> checkDnsNameAvailabilityWithResponseAsync(
@@ -1476,7 +1484,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckDnsNameAvailability API service call.
+     * @return response for the CheckDnsNameAvailability API service call on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DnsNameAvailabilityResultInner> checkDnsNameAvailabilityAsync(
@@ -1518,7 +1526,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckDnsNameAvailability API service call.
+     * @return response for the CheckDnsNameAvailability API service call along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DnsNameAvailabilityResultInner> checkDnsNameAvailabilityWithResponse(
@@ -1534,7 +1542,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SecurityProviders.
+     * @return collection of SecurityProviders along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualWanSecurityProvidersInner>> supportedSecurityProvidersWithResponseAsync(
@@ -1584,7 +1592,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SecurityProviders.
+     * @return collection of SecurityProviders along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualWanSecurityProvidersInner>> supportedSecurityProvidersWithResponseAsync(
@@ -1630,7 +1638,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SecurityProviders.
+     * @return collection of SecurityProviders on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualWanSecurityProvidersInner> supportedSecurityProvidersAsync(
@@ -1671,7 +1679,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SecurityProviders.
+     * @return collection of SecurityProviders along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VirtualWanSecurityProvidersInner> supportedSecurityProvidersWithResponse(
@@ -1689,7 +1697,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> generatevirtualwanvpnserverconfigurationvpnprofileWithResponseAsync(
@@ -1748,7 +1757,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> generatevirtualwanvpnserverconfigurationvpnprofileWithResponseAsync(
@@ -1806,7 +1816,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner>
@@ -1836,7 +1847,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner>
@@ -1869,7 +1881,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner>
@@ -1891,7 +1904,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner>
@@ -1915,7 +1929,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnProfileResponseInner> generatevirtualwanvpnserverconfigurationvpnprofileAsync(
@@ -1937,7 +1951,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation.
+     * @return vpn Profile Response for package generation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnProfileResponseInner> generatevirtualwanvpnserverconfigurationvpnprofileAsync(
@@ -2002,7 +2016,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> putBastionShareableLinkNextSinglePageAsync(String nextLink) {
@@ -2039,7 +2054,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> putBastionShareableLinkNextSinglePageAsync(
@@ -2075,7 +2091,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> getBastionShareableLinkNextSinglePageAsync(String nextLink) {
@@ -2112,7 +2129,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for all the Bastion Shareable Link endpoints.
+     * @return response for all the Bastion Shareable Link endpoints along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionShareableLinkInner>> getBastionShareableLinkNextSinglePageAsync(
@@ -2148,7 +2166,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetActiveSessions.
+     * @return response for GetActiveSessions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionActiveSessionInner>> getActiveSessionsNextSinglePageAsync(String nextLink) {
@@ -2184,7 +2202,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetActiveSessions.
+     * @return response for GetActiveSessions along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionActiveSessionInner>> getActiveSessionsNextSinglePageAsync(
@@ -2220,7 +2238,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for DisconnectActiveSessions.
+     * @return response for DisconnectActiveSessions along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionSessionStateInner>> disconnectActiveSessionsNextSinglePageAsync(String nextLink) {
@@ -2257,7 +2276,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for DisconnectActiveSessions.
+     * @return response for DisconnectActiveSessions along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BastionSessionStateInner>> disconnectActiveSessionsNextSinglePageAsync(

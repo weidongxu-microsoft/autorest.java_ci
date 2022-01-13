@@ -74,7 +74,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response}.
      */
     Response<AuthorizationRule> createOrUpdateAuthorizationRuleWithResponse(
         String resourceGroupName,
@@ -110,7 +110,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for an Event Hub by rule name.
+     * @return an AuthorizationRule for an Event Hub by rule name along with {@link Response}.
      */
     Response<AuthorizationRule> getAuthorizationRuleWithResponse(
         String resourceGroupName,
@@ -144,7 +144,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteAuthorizationRuleWithResponse(
         String resourceGroupName,
@@ -179,7 +179,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the ACS and SAS connection strings for the Event Hub.
+     * @return the ACS and SAS connection strings for the Event Hub along with {@link Response}.
      */
     Response<AccessKeys> listKeysWithResponse(
         String resourceGroupName,
@@ -220,7 +220,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return namespace/EventHub Connection String along with {@link Response}.
      */
     Response<AccessKeys> regenerateKeysWithResponse(
         String resourceGroupName,
@@ -282,7 +282,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName, String namespaceName, String eventHubName, Context context);
@@ -310,7 +310,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Event Hubs description for the specified Event Hub.
+     * @return an Event Hubs description for the specified Event Hub along with {@link Response}.
      */
     Response<Eventhub> getWithResponse(
         String resourceGroupName, String namespaceName, String eventHubName, Context context);
@@ -322,7 +322,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Event Hubs description for the specified Event Hub.
+     * @return an Event Hubs description for the specified Event Hub along with {@link Response}.
      */
     Eventhub getById(String id);
 
@@ -334,7 +334,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Event Hubs description for the specified Event Hub.
+     * @return an Event Hubs description for the specified Event Hub along with {@link Response}.
      */
     Response<Eventhub> getByIdWithResponse(String id, Context context);
 
@@ -356,7 +356,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

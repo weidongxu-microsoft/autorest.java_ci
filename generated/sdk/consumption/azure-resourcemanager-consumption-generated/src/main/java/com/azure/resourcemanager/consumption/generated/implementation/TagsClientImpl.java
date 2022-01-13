@@ -79,7 +79,8 @@ public final class TagsClientImpl implements TagsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available tag keys for the defined scope.
+     * @return all available tag keys for the defined scope along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TagsResultInner>> getWithResponseAsync(String scope) {
@@ -114,7 +115,8 @@ public final class TagsClientImpl implements TagsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available tag keys for the defined scope.
+     * @return all available tag keys for the defined scope along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TagsResultInner>> getWithResponseAsync(String scope, Context context) {
@@ -146,7 +148,7 @@ public final class TagsClientImpl implements TagsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available tag keys for the defined scope.
+     * @return all available tag keys for the defined scope on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TagsResultInner> getAsync(String scope) {
@@ -197,7 +199,7 @@ public final class TagsClientImpl implements TagsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available tag keys for the defined scope.
+     * @return all available tag keys for the defined scope along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<TagsResultInner> getWithResponse(String scope, Context context) {

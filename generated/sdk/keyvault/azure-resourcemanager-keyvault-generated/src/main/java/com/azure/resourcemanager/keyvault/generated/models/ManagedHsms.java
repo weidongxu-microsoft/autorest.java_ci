@@ -58,7 +58,7 @@ public interface ManagedHsms {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified managed HSM Pool.
+     * @return the specified managed HSM Pool along with {@link Response}.
      */
     Response<ManagedHsm> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
 
@@ -158,7 +158,7 @@ public interface ManagedHsms {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deleted managed HSM.
+     * @return the specified deleted managed HSM along with {@link Response}.
      */
     Response<DeletedManagedHsm> getDeletedWithResponse(String name, String location, Context context);
 
@@ -195,7 +195,7 @@ public interface ManagedHsms {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified managed HSM Pool.
+     * @return the specified managed HSM Pool along with {@link Response}.
      */
     ManagedHsm getById(String id);
 
@@ -208,7 +208,7 @@ public interface ManagedHsms {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified managed HSM Pool.
+     * @return the specified managed HSM Pool along with {@link Response}.
      */
     Response<ManagedHsm> getByIdWithResponse(String id, Context context);
 

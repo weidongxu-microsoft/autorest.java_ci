@@ -168,7 +168,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -219,7 +219,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -266,7 +266,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String privateEndpointName) {
@@ -286,7 +286,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -307,7 +307,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String privateEndpointName) {
@@ -323,7 +323,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -339,7 +339,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String privateEndpointName) {
@@ -357,7 +357,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String privateEndpointName, Context context) {
@@ -404,7 +404,8 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint by resource group.
+     * @return the specified private endpoint by resource group along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateEndpointInner>> getByResourceGroupWithResponseAsync(
@@ -457,7 +458,8 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint by resource group.
+     * @return the specified private endpoint by resource group along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateEndpointInner>> getByResourceGroupWithResponseAsync(
@@ -506,7 +508,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint by resource group.
+     * @return the specified private endpoint by resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateEndpointInner> getByResourceGroupAsync(
@@ -530,7 +532,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint by resource group.
+     * @return the specified private endpoint by resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateEndpointInner> getByResourceGroupAsync(String resourceGroupName, String privateEndpointName) {
@@ -572,7 +574,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint by resource group.
+     * @return the specified private endpoint by resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PrivateEndpointInner> getByResourceGroupWithResponse(
@@ -589,7 +591,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint resource.
+     * @return private endpoint resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -647,7 +649,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint resource.
+     * @return private endpoint resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -701,7 +703,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint resource.
+     * @return private endpoint resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PrivateEndpointInner>, PrivateEndpointInner> beginCreateOrUpdateAsync(
@@ -728,7 +730,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint resource.
+     * @return private endpoint resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PrivateEndpointInner>, PrivateEndpointInner> beginCreateOrUpdateAsync(
@@ -751,7 +753,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint resource.
+     * @return private endpoint resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateEndpointInner>, PrivateEndpointInner> beginCreateOrUpdate(
@@ -769,7 +771,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint resource.
+     * @return private endpoint resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateEndpointInner>, PrivateEndpointInner> beginCreateOrUpdate(
@@ -786,7 +788,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint resource.
+     * @return private endpoint resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateEndpointInner> createOrUpdateAsync(
@@ -806,7 +808,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint resource.
+     * @return private endpoint resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateEndpointInner> createOrUpdateAsync(
@@ -858,7 +860,8 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoints in a resource group.
+     * @return all private endpoints in a resource group along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -911,7 +914,8 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoints in a resource group.
+     * @return all private endpoints in a resource group along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointInner>> listByResourceGroupSinglePageAsync(
@@ -1020,7 +1024,8 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      *
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoints in a subscription.
+     * @return all private endpoints in a subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointInner>> listSinglePageAsync() {
@@ -1062,7 +1067,8 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoints in a subscription.
+     * @return all private endpoints in a subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointInner>> listSinglePageAsync(Context context) {
@@ -1155,7 +1161,8 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListPrivateEndpoints API service call.
+     * @return response for the ListPrivateEndpoints API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointInner>> listNextSinglePageAsync(String nextLink) {
@@ -1191,7 +1198,8 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListPrivateEndpoints API service call.
+     * @return response for the ListPrivateEndpoints API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1226,7 +1234,8 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListPrivateEndpoints API service call.
+     * @return response for the ListPrivateEndpoints API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -1263,7 +1272,8 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListPrivateEndpoints API service call.
+     * @return response for the ListPrivateEndpoints API service call along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PrivateEndpointInner>> listBySubscriptionNextSinglePageAsync(

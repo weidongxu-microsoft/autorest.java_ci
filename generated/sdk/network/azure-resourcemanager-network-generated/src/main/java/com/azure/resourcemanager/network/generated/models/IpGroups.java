@@ -35,7 +35,7 @@ public interface IpGroups {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ipGroups.
+     * @return the specified ipGroups along with {@link Response}.
      */
     Response<IpGroup> getByResourceGroupWithResponse(
         String resourceGroupName, String ipGroupsName, String expand, Context context);
@@ -120,7 +120,7 @@ public interface IpGroups {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ipGroups.
+     * @return the specified ipGroups along with {@link Response}.
      */
     IpGroup getById(String id);
 
@@ -135,7 +135,7 @@ public interface IpGroups {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ipGroups.
+     * @return the specified ipGroups along with {@link Response}.
      */
     Response<IpGroup> getByIdWithResponse(String id, String expand, Context context);
 

@@ -93,7 +93,8 @@ public final class AvailableEndpointServicesClientImpl implements AvailableEndpo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListAvailableEndpointServices API service call.
+     * @return response for the ListAvailableEndpointServices API service call along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EndpointServiceResultInner>> listSinglePageAsync(String location) {
@@ -145,7 +146,8 @@ public final class AvailableEndpointServicesClientImpl implements AvailableEndpo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListAvailableEndpointServices API service call.
+     * @return response for the ListAvailableEndpointServices API service call along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EndpointServiceResultInner>> listSinglePageAsync(String location, Context context) {
@@ -246,7 +248,8 @@ public final class AvailableEndpointServicesClientImpl implements AvailableEndpo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListAvailableEndpointServices API service call.
+     * @return response for the ListAvailableEndpointServices API service call along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EndpointServiceResultInner>> listNextSinglePageAsync(String nextLink) {
@@ -282,7 +285,8 @@ public final class AvailableEndpointServicesClientImpl implements AvailableEndpo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListAvailableEndpointServices API service call.
+     * @return response for the ListAvailableEndpointServices API service call along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EndpointServiceResultInner>> listNextSinglePageAsync(String nextLink, Context context) {

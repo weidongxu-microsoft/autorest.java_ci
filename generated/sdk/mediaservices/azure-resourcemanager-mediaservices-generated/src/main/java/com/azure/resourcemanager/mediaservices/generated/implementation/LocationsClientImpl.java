@@ -79,7 +79,8 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request.
+     * @return the response from the check name availability request along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EntityNameAvailabilityCheckOutputInner>> checkNameAvailabilityWithResponseAsync(
@@ -129,7 +130,8 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request.
+     * @return the response from the check name availability request along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EntityNameAvailabilityCheckOutputInner>> checkNameAvailabilityWithResponseAsync(
@@ -175,7 +177,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request.
+     * @return the response from the check name availability request on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EntityNameAvailabilityCheckOutputInner> checkNameAvailabilityAsync(
@@ -216,7 +218,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request.
+     * @return the response from the check name availability request along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<EntityNameAvailabilityCheckOutputInner> checkNameAvailabilityWithResponse(

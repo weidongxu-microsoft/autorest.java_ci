@@ -80,7 +80,7 @@ public interface KubeEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response}.
      */
     Response<KubeEnvironment> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
 
@@ -117,7 +117,7 @@ public interface KubeEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response}.
      */
     KubeEnvironment getById(String id);
 
@@ -130,7 +130,7 @@ public interface KubeEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response}.
      */
     Response<KubeEnvironment> getByIdWithResponse(String id, Context context);
 

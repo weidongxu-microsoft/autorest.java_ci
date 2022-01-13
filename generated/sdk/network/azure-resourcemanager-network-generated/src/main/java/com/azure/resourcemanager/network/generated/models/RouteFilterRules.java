@@ -59,7 +59,7 @@ public interface RouteFilterRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified rule from a route filter.
+     * @return the specified rule from a route filter along with {@link Response}.
      */
     Response<RouteFilterRule> getWithResponse(
         String resourceGroupName, String routeFilterName, String ruleName, Context context);

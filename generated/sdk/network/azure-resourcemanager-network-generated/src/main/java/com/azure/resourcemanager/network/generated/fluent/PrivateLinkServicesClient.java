@@ -16,6 +16,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpoint
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceVisibilityInner;
 import com.azure.resourcemanager.network.generated.models.CheckPrivateLinkServiceVisibilityRequest;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in PrivateLinkServicesClient. */
 public interface PrivateLinkServicesClient {
@@ -28,7 +29,7 @@ public interface PrivateLinkServicesClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String serviceName);
@@ -43,7 +44,7 @@ public interface PrivateLinkServicesClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String serviceName, Context context);
@@ -100,7 +101,7 @@ public interface PrivateLinkServicesClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private link service by resource group.
+     * @return the specified private link service by resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateLinkServiceInner> getByResourceGroupWithResponse(
@@ -116,7 +117,7 @@ public interface PrivateLinkServicesClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private link service resource.
+     * @return private link service resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateLinkServiceInner>, PrivateLinkServiceInner> beginCreateOrUpdate(
@@ -133,7 +134,7 @@ public interface PrivateLinkServicesClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private link service resource.
+     * @return private link service resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateLinkServiceInner>, PrivateLinkServiceInner> beginCreateOrUpdate(
@@ -251,7 +252,8 @@ public interface PrivateLinkServicesClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specific private end point connection by specific private link service in the resource group.
+     * @return the specific private end point connection by specific private link service in the resource group along
+     *     with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateEndpointConnectionInner> getPrivateEndpointConnectionWithResponse(
@@ -289,7 +291,7 @@ public interface PrivateLinkServicesClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return privateEndpointConnection resource.
+     * @return privateEndpointConnection resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateEndpointConnectionInner> updatePrivateEndpointConnectionWithResponse(
@@ -309,7 +311,7 @@ public interface PrivateLinkServicesClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeletePrivateEndpointConnection(
@@ -326,7 +328,7 @@ public interface PrivateLinkServicesClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeletePrivateEndpointConnection(
@@ -401,7 +403,8 @@ public interface PrivateLinkServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -416,7 +419,8 @@ public interface PrivateLinkServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -461,7 +465,8 @@ public interface PrivateLinkServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -478,7 +483,8 @@ public interface PrivateLinkServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return response for the CheckPrivateLinkServiceVisibility API service call along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>

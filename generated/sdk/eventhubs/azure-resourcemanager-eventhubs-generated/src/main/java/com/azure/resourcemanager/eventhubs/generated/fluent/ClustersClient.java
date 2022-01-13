@@ -14,6 +14,7 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AvailableClustersListInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceIdListResultInner;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ClustersClient. */
 public interface ClustersClient {
@@ -34,7 +35,7 @@ public interface ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Available Clusters operation.
+     * @return the response of the List Available Clusters operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AvailableClustersListInner> listAvailableClusterRegionWithResponse(Context context);
@@ -86,7 +87,7 @@ public interface ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the resource description of the specified Event Hubs Cluster.
+     * @return the resource description of the specified Event Hubs Cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ClusterInner> getByResourceGroupWithResponse(
@@ -101,7 +102,8 @@ public interface ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ClusterInner>, ClusterInner> beginCreateOrUpdate(
@@ -117,7 +119,8 @@ public interface ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ClusterInner>, ClusterInner> beginCreateOrUpdate(
@@ -161,7 +164,8 @@ public interface ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(
@@ -177,7 +181,8 @@ public interface ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(
@@ -220,7 +225,7 @@ public interface ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String clusterName);
@@ -234,7 +239,7 @@ public interface ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String clusterName, Context context);
@@ -286,7 +291,7 @@ public interface ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace IDs operation.
+     * @return the response of the List Namespace IDs operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<EHNamespaceIdListResultInner> listNamespacesWithResponse(

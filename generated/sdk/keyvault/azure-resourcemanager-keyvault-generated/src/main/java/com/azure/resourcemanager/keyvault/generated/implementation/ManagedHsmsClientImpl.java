@@ -241,7 +241,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -297,7 +298,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -349,7 +351,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ManagedHsmInner>, ManagedHsmInner> beginCreateOrUpdateAsync(
@@ -375,7 +378,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ManagedHsmInner>, ManagedHsmInner> beginCreateOrUpdateAsync(
@@ -398,7 +402,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ManagedHsmInner>, ManagedHsmInner> beginCreateOrUpdate(
@@ -416,7 +421,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ManagedHsmInner>, ManagedHsmInner> beginCreateOrUpdate(
@@ -433,7 +439,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ManagedHsmInner> createOrUpdateAsync(
@@ -453,7 +459,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ManagedHsmInner> createOrUpdateAsync(
@@ -506,7 +512,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(
@@ -562,7 +569,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(
@@ -614,7 +622,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ManagedHsmInner>, ManagedHsmInner> beginUpdateAsync(
@@ -640,7 +649,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ManagedHsmInner>, ManagedHsmInner> beginUpdateAsync(
@@ -662,7 +672,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ManagedHsmInner>, ManagedHsmInner> beginUpdate(
@@ -680,7 +691,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ManagedHsmInner>, ManagedHsmInner> beginUpdate(
@@ -697,7 +709,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ManagedHsmInner> updateAsync(String resourceGroupName, String name, ManagedHsmInner parameters) {
@@ -716,7 +728,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ManagedHsmInner> updateAsync(
@@ -767,7 +779,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String name) {
@@ -815,7 +827,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -860,7 +872,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String name) {
@@ -880,7 +892,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -900,7 +912,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name) {
@@ -916,7 +928,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name, Context context) {
@@ -931,7 +943,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String name) {
@@ -947,7 +959,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String name, Context context) {
@@ -991,7 +1003,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified managed HSM Pool.
+     * @return the specified managed HSM Pool along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagedHsmInner>> getByResourceGroupWithResponseAsync(String resourceGroupName, String name) {
@@ -1039,7 +1051,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified managed HSM Pool.
+     * @return the specified managed HSM Pool along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagedHsmInner>> getByResourceGroupWithResponseAsync(
@@ -1084,7 +1096,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified managed HSM Pool.
+     * @return the specified managed HSM Pool on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ManagedHsmInner> getByResourceGroupAsync(String resourceGroupName, String name) {
@@ -1123,7 +1135,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified managed HSM Pool.
+     * @return the specified managed HSM Pool along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ManagedHsmInner> getByResourceGroupWithResponse(
@@ -1140,7 +1152,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed HSM Pools.
+     * @return list of managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagedHsmInner>> listByResourceGroupSinglePageAsync(
@@ -1196,7 +1208,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed HSM Pools.
+     * @return list of managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagedHsmInner>> listByResourceGroupSinglePageAsync(
@@ -1335,7 +1347,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed HSM Pools.
+     * @return list of managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagedHsmInner>> listSinglePageAsync(Integer top) {
@@ -1383,7 +1395,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed HSM Pools.
+     * @return list of managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagedHsmInner>> listSinglePageAsync(Integer top, Context context) {
@@ -1499,7 +1511,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      *
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deleted managed HSM Pools.
+     * @return list of deleted managed HSM Pools along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedManagedHsmInner>> listDeletedSinglePageAsync() {
@@ -1545,7 +1558,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deleted managed HSM Pools.
+     * @return list of deleted managed HSM Pools along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedManagedHsmInner>> listDeletedSinglePageAsync(Context context) {
@@ -1643,7 +1657,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deleted managed HSM.
+     * @return the specified deleted managed HSM along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeletedManagedHsmInner>> getDeletedWithResponseAsync(String name, String location) {
@@ -1690,7 +1704,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deleted managed HSM.
+     * @return the specified deleted managed HSM along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeletedManagedHsmInner>> getDeletedWithResponseAsync(
@@ -1734,7 +1748,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deleted managed HSM.
+     * @return the specified deleted managed HSM on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeletedManagedHsmInner> getDeletedAsync(String name, String location) {
@@ -1773,7 +1787,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deleted managed HSM.
+     * @return the specified deleted managed HSM along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeletedManagedHsmInner> getDeletedWithResponse(String name, String location, Context context) {
@@ -1788,7 +1802,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> purgeDeletedWithResponseAsync(String name, String location) {
@@ -1835,7 +1849,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> purgeDeletedWithResponseAsync(
@@ -1879,7 +1893,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginPurgeDeletedAsync(String name, String location) {
@@ -1899,7 +1913,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginPurgeDeletedAsync(String name, String location, Context context) {
@@ -1918,7 +1932,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPurgeDeleted(String name, String location) {
@@ -1934,7 +1948,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPurgeDeleted(String name, String location, Context context) {
@@ -1949,7 +1963,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> purgeDeletedAsync(String name, String location) {
@@ -1965,7 +1979,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> purgeDeletedAsync(String name, String location, Context context) {
@@ -2008,7 +2022,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed HSM Pools.
+     * @return list of managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagedHsmInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -2045,7 +2059,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed HSM Pools.
+     * @return list of managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagedHsmInner>> listByResourceGroupNextSinglePageAsync(
@@ -2081,7 +2095,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed HSM Pools.
+     * @return list of managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagedHsmInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -2118,7 +2132,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed HSM Pools.
+     * @return list of managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagedHsmInner>> listBySubscriptionNextSinglePageAsync(
@@ -2154,7 +2168,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deleted managed HSM Pools.
+     * @return list of deleted managed HSM Pools along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedManagedHsmInner>> listDeletedNextSinglePageAsync(String nextLink) {
@@ -2190,7 +2205,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deleted managed HSM Pools.
+     * @return list of deleted managed HSM Pools along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedManagedHsmInner>> listDeletedNextSinglePageAsync(

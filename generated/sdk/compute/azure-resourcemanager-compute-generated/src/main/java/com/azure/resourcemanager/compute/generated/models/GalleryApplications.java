@@ -37,7 +37,8 @@ public interface GalleryApplications {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update.
+     * @return specifies information about the gallery Application Definition that you want to create or update along
+     *     with {@link Response}.
      */
     Response<GalleryApplication> getWithResponse(
         String resourceGroupName, String galleryName, String galleryApplicationName, Context context);
@@ -108,7 +109,8 @@ public interface GalleryApplications {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update.
+     * @return specifies information about the gallery Application Definition that you want to create or update along
+     *     with {@link Response}.
      */
     GalleryApplication getById(String id);
 
@@ -121,7 +123,8 @@ public interface GalleryApplications {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update.
+     * @return specifies information about the gallery Application Definition that you want to create or update along
+     *     with {@link Response}.
      */
     Response<GalleryApplication> getByIdWithResponse(String id, Context context);
 

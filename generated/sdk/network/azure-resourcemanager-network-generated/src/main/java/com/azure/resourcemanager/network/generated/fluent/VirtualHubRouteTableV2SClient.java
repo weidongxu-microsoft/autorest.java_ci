@@ -12,6 +12,7 @@ import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubRouteTableV2Inner;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in VirtualHubRouteTableV2SClient. */
 public interface VirtualHubRouteTableV2SClient {
@@ -41,7 +42,7 @@ public interface VirtualHubRouteTableV2SClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VirtualHubRouteTableV2Inner> getWithResponse(
@@ -58,7 +59,7 @@ public interface VirtualHubRouteTableV2SClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualHubRouteTableV2Inner>, VirtualHubRouteTableV2Inner> beginCreateOrUpdate(
@@ -79,7 +80,7 @@ public interface VirtualHubRouteTableV2SClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualHubRouteTableV2Inner>, VirtualHubRouteTableV2Inner> beginCreateOrUpdate(
@@ -141,7 +142,7 @@ public interface VirtualHubRouteTableV2SClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -158,7 +159,7 @@ public interface VirtualHubRouteTableV2SClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(

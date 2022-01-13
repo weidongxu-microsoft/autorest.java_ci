@@ -38,7 +38,7 @@ public interface DiskAccesses {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk access resource.
+     * @return information about a disk access resource along with {@link Response}.
      */
     Response<DiskAccess> getByResourceGroupWithResponse(
         String resourceGroupName, String diskAccessName, Context context);
@@ -144,7 +144,7 @@ public interface DiskAccesses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources possible under disk access resource.
+     * @return the private link resources possible under disk access resource along with {@link Response}.
      */
     Response<PrivateLinkResourceListResult> getPrivateLinkResourcesWithResponse(
         String resourceGroupName, String diskAccessName, Context context);
@@ -227,7 +227,7 @@ public interface DiskAccesses {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a private endpoint connection under a disk access resource.
+     * @return information about a private endpoint connection under a disk access resource along with {@link Response}.
      */
     Response<PrivateEndpointConnection> getAPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String diskAccessName, String privateEndpointConnectionName, Context context);
@@ -306,7 +306,7 @@ public interface DiskAccesses {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk access resource.
+     * @return information about a disk access resource along with {@link Response}.
      */
     DiskAccess getById(String id);
 
@@ -319,7 +319,7 @@ public interface DiskAccesses {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk access resource.
+     * @return information about a disk access resource along with {@link Response}.
      */
     Response<DiskAccess> getByIdWithResponse(String id, Context context);
 

@@ -23,6 +23,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.VnetInfoReso
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetRouteInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlanPatchResource;
 import java.util.List;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in AppServicePlansClient. */
 public interface AppServicePlansClient {
@@ -102,7 +103,7 @@ public interface AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AppServicePlanInner> getByResourceGroupWithResponse(
@@ -118,7 +119,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AppServicePlanInner>, AppServicePlanInner> beginCreateOrUpdate(
@@ -135,7 +136,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AppServicePlanInner>, AppServicePlanInner> beginCreateOrUpdate(
@@ -196,7 +197,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context);
@@ -227,7 +228,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AppServicePlanInner> updateWithResponse(
@@ -257,7 +258,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Capability.
+     * @return array of Capability along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<CapabilityInner>> listCapabilitiesWithResponse(
@@ -292,7 +293,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<HybridConnectionInner> getHybridConnectionWithResponse(
@@ -325,7 +326,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteHybridConnectionWithResponse(
@@ -360,7 +361,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection key contract.
+     * @return hybrid Connection key contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<HybridConnectionKeyInner> listHybridConnectionKeysWithResponse(
@@ -425,7 +426,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection limits contract.
+     * @return hybrid Connection limits contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<HybridConnectionLimitsInner> getHybridConnectionPlanLimitWithResponse(
@@ -486,7 +487,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> restartWebAppsWithResponse(
@@ -551,7 +552,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Object> getServerFarmSkusWithResponse(String resourceGroupName, String name, Context context);
@@ -611,7 +612,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetInfoResource.
+     * @return array of VnetInfoResource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<VnetInfoResourceInner>> listVnetsWithResponse(String resourceGroupName, String name, Context context);
@@ -640,7 +641,7 @@ public interface AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource.
+     * @return virtual Network information ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VnetInfoResourceInner> getVnetFromServerFarmWithResponse(
@@ -674,7 +675,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VnetGatewayInner> getVnetGatewayWithResponse(
@@ -715,7 +716,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VnetGatewayInner> updateVnetGatewayWithResponse(
@@ -752,7 +753,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute.
+     * @return array of VnetRoute along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<VnetRouteInner>> listRoutesForVnetWithResponse(
@@ -784,7 +785,7 @@ public interface AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute.
+     * @return array of VnetRoute along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<VnetRouteInner>> getRouteForVnetWithResponse(
@@ -819,7 +820,8 @@ public interface AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VnetRouteInner> createOrUpdateVnetRouteWithResponse(
@@ -855,7 +857,7 @@ public interface AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteVnetRouteWithResponse(
@@ -890,7 +892,8 @@ public interface AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VnetRouteInner> updateVnetRouteWithResponse(
@@ -926,7 +929,7 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> rebootWorkerWithResponse(String resourceGroupName, String name, String workerName, Context context);

@@ -33,7 +33,7 @@ public interface TagOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteValueWithResponse(String tagName, String tagValue, Context context);
 
@@ -60,7 +60,7 @@ public interface TagOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return tag information.
+     * @return tag information along with {@link Response}.
      */
     Response<TagValue> createOrUpdateValueWithResponse(String tagName, String tagValue, Context context);
 
@@ -87,7 +87,7 @@ public interface TagOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return tag details.
+     * @return tag details along with {@link Response}.
      */
     Response<TagDetails> createOrUpdateWithResponse(String tagName, Context context);
 
@@ -113,7 +113,7 @@ public interface TagOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String tagName, Context context);
 
@@ -164,7 +164,7 @@ public interface TagOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper resource for tags API requests and responses.
+     * @return wrapper resource for tags API requests and responses along with {@link Response}.
      */
     Response<TagsResource> createOrUpdateAtScopeWithResponse(
         String scope, TagsResourceInner parameters, Context context);
@@ -198,7 +198,7 @@ public interface TagOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper resource for tags API requests and responses.
+     * @return wrapper resource for tags API requests and responses along with {@link Response}.
      */
     Response<TagsResource> updateAtScopeWithResponse(String scope, TagsPatchResource parameters, Context context);
 
@@ -221,7 +221,7 @@ public interface TagOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the entire set of tags on a resource or subscription.
+     * @return the entire set of tags on a resource or subscription along with {@link Response}.
      */
     Response<TagsResource> getAtScopeWithResponse(String scope, Context context);
 
@@ -243,7 +243,7 @@ public interface TagOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteAtScopeWithResponse(String scope, Context context);
 }

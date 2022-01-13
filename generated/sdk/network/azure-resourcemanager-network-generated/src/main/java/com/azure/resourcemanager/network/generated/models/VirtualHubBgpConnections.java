@@ -33,7 +33,7 @@ public interface VirtualHubBgpConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Appliance Site resource.
+     * @return virtual Appliance Site resource along with {@link Response}.
      */
     Response<BgpConnection> getWithResponse(
         String resourceGroupName, String virtualHubName, String connectionName, Context context);
@@ -150,7 +150,7 @@ public interface VirtualHubBgpConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Appliance Site resource.
+     * @return virtual Appliance Site resource along with {@link Response}.
      */
     BgpConnection getById(String id);
 
@@ -162,7 +162,7 @@ public interface VirtualHubBgpConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Appliance Site resource.
+     * @return virtual Appliance Site resource along with {@link Response}.
      */
     Response<BgpConnection> getByIdWithResponse(String id, Context context);
 

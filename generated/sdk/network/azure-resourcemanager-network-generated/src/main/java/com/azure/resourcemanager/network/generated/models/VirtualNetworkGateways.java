@@ -32,7 +32,7 @@ public interface VirtualNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway by resource group.
+     * @return the specified virtual network gateway by resource group along with {@link Response}.
      */
     Response<VirtualNetworkGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, Context context);
@@ -323,7 +323,7 @@ public interface VirtualNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for supported vpn devices.
+     * @return a xml format representation for supported vpn devices along with {@link Response}.
      */
     Response<String> supportedVpnDevicesWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, Context context);
@@ -474,7 +474,7 @@ public interface VirtualNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for vpn device configuration script.
+     * @return a xml format representation for vpn device configuration script along with {@link Response}.
      */
     Response<String> vpnDeviceConfigurationScriptWithResponse(
         String resourceGroupName,
@@ -628,7 +628,7 @@ public interface VirtualNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway by resource group.
+     * @return the specified virtual network gateway by resource group along with {@link Response}.
      */
     VirtualNetworkGateway getById(String id);
 
@@ -640,7 +640,7 @@ public interface VirtualNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway by resource group.
+     * @return the specified virtual network gateway by resource group along with {@link Response}.
      */
     Response<VirtualNetworkGateway> getByIdWithResponse(String id, Context context);
 

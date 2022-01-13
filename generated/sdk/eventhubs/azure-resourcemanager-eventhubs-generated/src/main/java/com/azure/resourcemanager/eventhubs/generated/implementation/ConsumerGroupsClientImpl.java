@@ -154,7 +154,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Consumer group operation.
+     * @return single item in List or Get Consumer group operation along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ConsumerGroupInner>> createOrUpdateWithResponseAsync(
@@ -225,7 +226,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Consumer group operation.
+     * @return single item in List or Get Consumer group operation along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ConsumerGroupInner>> createOrUpdateWithResponseAsync(
@@ -293,7 +295,7 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Consumer group operation.
+     * @return single item in List or Get Consumer group operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ConsumerGroupInner> createOrUpdateAsync(
@@ -350,7 +352,7 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Consumer group operation.
+     * @return single item in List or Get Consumer group operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ConsumerGroupInner> createOrUpdateWithResponse(
@@ -375,7 +377,7 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -435,7 +437,7 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -495,7 +497,7 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(
@@ -531,7 +533,7 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -554,7 +556,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified consumer group.
+     * @return a description for the specified consumer group along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ConsumerGroupInner>> getWithResponseAsync(
@@ -614,7 +617,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified consumer group.
+     * @return a description for the specified consumer group along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ConsumerGroupInner>> getWithResponseAsync(
@@ -674,7 +678,7 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified consumer group.
+     * @return a description for the specified consumer group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ConsumerGroupInner> getAsync(
@@ -719,7 +723,7 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified consumer group.
+     * @return a description for the specified consumer group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ConsumerGroupInner> getWithResponse(
@@ -745,7 +749,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the consumer groups in a Namespace.
+     * @return all the consumer groups in a Namespace along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ConsumerGroupInner>> listByEventHubSinglePageAsync(
@@ -815,7 +820,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the consumer groups in a Namespace.
+     * @return all the consumer groups in a Namespace along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ConsumerGroupInner>> listByEventHubSinglePageAsync(
@@ -1004,7 +1010,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result to the List Consumer Group operation.
+     * @return the result to the List Consumer Group operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ConsumerGroupInner>> listByEventHubNextSinglePageAsync(String nextLink) {
@@ -1040,7 +1047,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result to the List Consumer Group operation.
+     * @return the result to the List Consumer Group operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ConsumerGroupInner>> listByEventHubNextSinglePageAsync(

@@ -55,7 +55,7 @@ public interface NetworkProfiles {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network profile in a specified resource group.
+     * @return the specified network profile in a specified resource group along with {@link Response}.
      */
     Response<NetworkProfile> getByResourceGroupWithResponse(
         String resourceGroupName, String networkProfileName, String expand, Context context);
@@ -110,7 +110,7 @@ public interface NetworkProfiles {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network profile in a specified resource group.
+     * @return the specified network profile in a specified resource group along with {@link Response}.
      */
     NetworkProfile getById(String id);
 
@@ -123,7 +123,7 @@ public interface NetworkProfiles {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network profile in a specified resource group.
+     * @return the specified network profile in a specified resource group along with {@link Response}.
      */
     Response<NetworkProfile> getByIdWithResponse(String id, String expand, Context context);
 

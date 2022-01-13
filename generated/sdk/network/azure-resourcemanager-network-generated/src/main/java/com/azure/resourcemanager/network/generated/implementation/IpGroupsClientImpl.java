@@ -185,7 +185,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ipGroups.
+     * @return the specified ipGroups along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IpGroupInner>> getByResourceGroupWithResponseAsync(
@@ -238,7 +238,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ipGroups.
+     * @return the specified ipGroups along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IpGroupInner>> getByResourceGroupWithResponseAsync(
@@ -287,7 +287,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ipGroups.
+     * @return the specified ipGroups on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<IpGroupInner> getByResourceGroupAsync(String resourceGroupName, String ipGroupsName, String expand) {
@@ -310,7 +310,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ipGroups.
+     * @return the specified ipGroups on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<IpGroupInner> getByResourceGroupAsync(String resourceGroupName, String ipGroupsName) {
@@ -353,7 +353,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ipGroups.
+     * @return the specified ipGroups along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<IpGroupInner> getByResourceGroupWithResponse(
@@ -370,7 +370,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -427,7 +427,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -480,7 +480,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<IpGroupInner>, IpGroupInner> beginCreateOrUpdateAsync(
@@ -503,7 +503,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<IpGroupInner>, IpGroupInner> beginCreateOrUpdateAsync(
@@ -526,7 +526,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<IpGroupInner>, IpGroupInner> beginCreateOrUpdate(
@@ -544,7 +544,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<IpGroupInner>, IpGroupInner> beginCreateOrUpdate(
@@ -561,7 +561,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<IpGroupInner> createOrUpdateAsync(
@@ -581,7 +581,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<IpGroupInner> createOrUpdateAsync(
@@ -634,7 +634,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IpGroupInner>> updateGroupsWithResponseAsync(
@@ -691,7 +691,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IpGroupInner>> updateGroupsWithResponseAsync(
@@ -744,7 +744,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<IpGroupInner> updateGroupsAsync(String resourceGroupName, String ipGroupsName, TagsObject parameters) {
@@ -785,7 +785,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information.
+     * @return the IpGroups resource information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<IpGroupInner> updateGroupsWithResponse(
@@ -801,7 +801,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String ipGroupsName) {
@@ -850,7 +850,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -896,7 +896,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String ipGroupsName) {
@@ -916,7 +916,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -936,7 +936,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String ipGroupsName) {
@@ -952,7 +952,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -968,7 +968,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String ipGroupsName) {
@@ -984,7 +984,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String ipGroupsName, Context context) {
@@ -1029,7 +1029,8 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all IpGroups in a resource group.
+     * @return all IpGroups in a resource group along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpGroupInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1082,7 +1083,8 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all IpGroups in a resource group.
+     * @return all IpGroups in a resource group along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpGroupInner>> listByResourceGroupSinglePageAsync(
@@ -1192,7 +1194,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all IpGroups in a subscription.
+     * @return all IpGroups in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpGroupInner>> listSinglePageAsync() {
@@ -1234,7 +1236,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all IpGroups in a subscription.
+     * @return all IpGroups in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpGroupInner>> listSinglePageAsync(Context context) {
@@ -1326,7 +1328,8 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListIpGroups API service call.
+     * @return response for the ListIpGroups API service call along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpGroupInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1363,7 +1366,8 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListIpGroups API service call.
+     * @return response for the ListIpGroups API service call along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpGroupInner>> listByResourceGroupNextSinglePageAsync(String nextLink, Context context) {
@@ -1398,7 +1402,8 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListIpGroups API service call.
+     * @return response for the ListIpGroups API service call along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpGroupInner>> listNextSinglePageAsync(String nextLink) {
@@ -1434,7 +1439,8 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListIpGroups API service call.
+     * @return response for the ListIpGroups API service call along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpGroupInner>> listNextSinglePageAsync(String nextLink, Context context) {

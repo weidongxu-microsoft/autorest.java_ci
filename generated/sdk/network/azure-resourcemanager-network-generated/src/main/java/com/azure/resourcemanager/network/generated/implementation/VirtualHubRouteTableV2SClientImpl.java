@@ -153,7 +153,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualHubRouteTableV2Inner>> getWithResponseAsync(
@@ -208,7 +208,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualHubRouteTableV2Inner>> getWithResponseAsync(
@@ -259,7 +259,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualHubRouteTableV2Inner> getAsync(
@@ -301,7 +301,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VirtualHubRouteTableV2Inner> getWithResponse(
@@ -319,7 +319,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -387,7 +387,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -452,7 +452,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualHubRouteTableV2Inner>, VirtualHubRouteTableV2Inner> beginCreateOrUpdateAsync(
@@ -484,7 +484,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualHubRouteTableV2Inner>, VirtualHubRouteTableV2Inner> beginCreateOrUpdateAsync(
@@ -517,7 +517,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualHubRouteTableV2Inner>, VirtualHubRouteTableV2Inner> beginCreateOrUpdate(
@@ -541,7 +541,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualHubRouteTableV2Inner>, VirtualHubRouteTableV2Inner> beginCreateOrUpdate(
@@ -565,7 +565,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualHubRouteTableV2Inner> createOrUpdateAsync(
@@ -590,7 +590,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualHubRouteTableV2Inner> createOrUpdateAsync(
@@ -661,7 +661,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -716,7 +716,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -767,7 +767,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -790,7 +790,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -812,7 +812,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -830,7 +830,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -847,7 +847,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String virtualHubName, String routeTableName) {
@@ -866,7 +866,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(
@@ -915,7 +915,8 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results.
+     * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualHubRouteTableV2Inner>> listSinglePageAsync(
@@ -974,7 +975,8 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results.
+     * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualHubRouteTableV2Inner>> listSinglePageAsync(
@@ -1096,7 +1098,8 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results.
+     * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualHubRouteTableV2Inner>> listNextSinglePageAsync(String nextLink) {
@@ -1132,7 +1135,8 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results.
+     * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualHubRouteTableV2Inner>> listNextSinglePageAsync(String nextLink, Context context) {

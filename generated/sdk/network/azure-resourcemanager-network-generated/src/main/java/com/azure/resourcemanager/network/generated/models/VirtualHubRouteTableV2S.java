@@ -36,7 +36,7 @@ public interface VirtualHubRouteTableV2S {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource.
+     * @return virtualHubRouteTableV2 Resource along with {@link Response}.
      */
     Response<VirtualHubRouteTableV2> getWithResponse(
         String resourceGroupName, String virtualHubName, String routeTableName, Context context);

@@ -64,7 +64,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceAtScopeWithResponse(String scope, String deploymentName, Context context);
 
@@ -117,7 +117,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     Response<DeploymentExtended> getAtScopeWithResponse(String scope, String deploymentName, Context context);
 
@@ -145,7 +145,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> cancelAtScopeWithResponse(String scope, String deploymentName, Context context);
 
@@ -200,7 +200,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     Response<DeploymentExportResult> exportTemplateAtScopeWithResponse(
         String scope, String deploymentName, Context context);
@@ -281,7 +281,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceAtTenantScopeWithResponse(String deploymentName, Context context);
 
@@ -329,7 +329,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     Response<DeploymentExtended> getAtTenantScopeWithResponse(String deploymentName, Context context);
 
@@ -355,7 +355,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> cancelAtTenantScopeWithResponse(String deploymentName, Context context);
 
@@ -431,7 +431,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     Response<DeploymentExportResult> exportTemplateAtTenantScopeWithResponse(String deploymentName, Context context);
 
@@ -512,7 +512,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, Context context);
@@ -567,7 +567,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     Response<DeploymentExtended> getAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, Context context);
@@ -596,7 +596,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> cancelAtManagementGroupScopeWithResponse(String groupId, String deploymentName, Context context);
 
@@ -681,7 +681,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     Response<DeploymentExportResult> exportTemplateAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, Context context);
@@ -763,7 +763,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceAtSubscriptionScopeWithResponse(String deploymentName, Context context);
 
@@ -811,7 +811,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     Response<DeploymentExtended> getAtSubscriptionScopeWithResponse(String deploymentName, Context context);
 
@@ -837,7 +837,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> cancelAtSubscriptionScopeWithResponse(String deploymentName, Context context);
 
@@ -913,7 +913,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     Response<DeploymentExportResult> exportTemplateAtSubscriptionScopeWithResponse(
         String deploymentName, Context context);
@@ -1001,7 +1001,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceWithResponse(String resourceGroupName, String deploymentName, Context context);
 
@@ -1026,7 +1026,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     Response<DeploymentExtended> getByResourceGroupWithResponse(
         String resourceGroupName, String deploymentName, Context context);
@@ -1055,7 +1055,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> cancelWithResponse(String resourceGroupName, String deploymentName, Context context);
 
@@ -1142,7 +1142,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     Response<DeploymentExportResult> exportTemplateWithResponse(
         String resourceGroupName, String deploymentName, Context context);
@@ -1195,7 +1195,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to calculate template hash.
+     * @return result of the request to calculate template hash along with {@link Response}.
      */
     Response<TemplateHashResult> calculateTemplateHashWithResponse(Object template, Context context);
 
@@ -1206,7 +1206,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     DeploymentExtended getById(String id);
 
@@ -1218,7 +1218,7 @@ public interface Deployments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     Response<DeploymentExtended> getByIdWithResponse(String id, Context context);
 

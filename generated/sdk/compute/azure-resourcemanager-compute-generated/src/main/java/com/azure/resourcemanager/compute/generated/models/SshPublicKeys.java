@@ -77,7 +77,7 @@ public interface SshPublicKeys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String sshPublicKeyName, Context context);
 
@@ -102,7 +102,7 @@ public interface SshPublicKeys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the SSH public key.
+     * @return specifies information about the SSH public key along with {@link Response}.
      */
     Response<SshPublicKeyResource> getByResourceGroupWithResponse(
         String resourceGroupName, String sshPublicKeyName, Context context);
@@ -130,7 +130,7 @@ public interface SshPublicKeys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response from generation of an SSH key pair.
+     * @return response from generation of an SSH key pair along with {@link Response}.
      */
     Response<SshPublicKeyGenerateKeyPairResult> generateKeyPairWithResponse(
         String resourceGroupName, String sshPublicKeyName, Context context);
@@ -142,7 +142,7 @@ public interface SshPublicKeys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the SSH public key.
+     * @return specifies information about the SSH public key along with {@link Response}.
      */
     SshPublicKeyResource getById(String id);
 
@@ -154,7 +154,7 @@ public interface SshPublicKeys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the SSH public key.
+     * @return specifies information about the SSH public key along with {@link Response}.
      */
     Response<SshPublicKeyResource> getByIdWithResponse(String id, Context context);
 
@@ -176,7 +176,7 @@ public interface SshPublicKeys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

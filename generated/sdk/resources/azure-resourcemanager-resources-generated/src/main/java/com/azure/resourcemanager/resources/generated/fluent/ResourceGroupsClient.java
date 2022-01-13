@@ -15,6 +15,7 @@ import com.azure.resourcemanager.resources.generated.fluent.models.ResourceGroup
 import com.azure.resourcemanager.resources.generated.fluent.models.ResourceGroupInner;
 import com.azure.resourcemanager.resources.generated.models.ExportTemplateRequest;
 import com.azure.resourcemanager.resources.generated.models.ResourceGroupPatchable;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ResourceGroupsClient. */
 public interface ResourceGroupsClient {
@@ -38,7 +39,7 @@ public interface ResourceGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Boolean> checkExistenceWithResponse(String resourceGroupName, Context context);
@@ -69,7 +70,7 @@ public interface ResourceGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource group information.
+     * @return resource group information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ResourceGroupInner> createOrUpdateWithResponse(
@@ -85,7 +86,7 @@ public interface ResourceGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String forceDeletionTypes);
@@ -101,7 +102,7 @@ public interface ResourceGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -168,7 +169,7 @@ public interface ResourceGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource group.
+     * @return a resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ResourceGroupInner> getWithResponse(String resourceGroupName, Context context);
@@ -197,7 +198,7 @@ public interface ResourceGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource group information.
+     * @return resource group information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ResourceGroupInner> updateWithResponse(
@@ -211,7 +212,7 @@ public interface ResourceGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource group export result.
+     * @return resource group export result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ResourceGroupExportResultInner>, ResourceGroupExportResultInner> beginExportTemplate(
@@ -226,7 +227,7 @@ public interface ResourceGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource group export result.
+     * @return resource group export result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ResourceGroupExportResultInner>, ResourceGroupExportResultInner> beginExportTemplate(

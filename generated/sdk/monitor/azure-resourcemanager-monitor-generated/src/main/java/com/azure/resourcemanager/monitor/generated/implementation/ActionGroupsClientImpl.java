@@ -179,7 +179,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group resource.
+     * @return an action group resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ActionGroupResourceInner>> createOrUpdateWithResponseAsync(
@@ -237,7 +237,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group resource.
+     * @return an action group resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ActionGroupResourceInner>> createOrUpdateWithResponseAsync(
@@ -291,7 +291,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group resource.
+     * @return an action group resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ActionGroupResourceInner> createOrUpdateAsync(
@@ -334,7 +334,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group resource.
+     * @return an action group resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ActionGroupResourceInner> createOrUpdateWithResponse(
@@ -350,7 +350,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group.
+     * @return an action group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ActionGroupResourceInner>> getByResourceGroupWithResponseAsync(
@@ -401,7 +401,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group.
+     * @return an action group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ActionGroupResourceInner>> getByResourceGroupWithResponseAsync(
@@ -448,7 +448,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group.
+     * @return an action group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ActionGroupResourceInner> getByResourceGroupAsync(String resourceGroupName, String actionGroupName) {
@@ -487,7 +487,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group.
+     * @return an action group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ActionGroupResourceInner> getByResourceGroupWithResponse(
@@ -503,7 +503,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String actionGroupName) {
@@ -553,7 +553,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -600,7 +600,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String actionGroupName) {
@@ -631,7 +631,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String actionGroupName, Context context) {
@@ -647,7 +647,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group resource.
+     * @return an action group resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ActionGroupResourceInner>> updateWithResponseAsync(
@@ -706,7 +706,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group resource.
+     * @return an action group resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ActionGroupResourceInner>> updateWithResponseAsync(
@@ -761,7 +761,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group resource.
+     * @return an action group resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ActionGroupResourceInner> updateAsync(
@@ -804,7 +804,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group resource.
+     * @return an action group resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ActionGroupResourceInner> updateWithResponse(
@@ -817,7 +817,8 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all action groups in a subscription.
+     * @return a list of all action groups in a subscription along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ActionGroupResourceInner>> listSinglePageAsync() {
@@ -854,7 +855,8 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all action groups in a subscription.
+     * @return a list of all action groups in a subscription along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ActionGroupResourceInner>> listSinglePageAsync(Context context) {
@@ -940,7 +942,8 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all action groups in a resource group.
+     * @return a list of all action groups in a resource group along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ActionGroupResourceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -988,7 +991,8 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all action groups in a resource group.
+     * @return a list of all action groups in a resource group along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ActionGroupResourceInner>> listByResourceGroupSinglePageAsync(
@@ -1094,7 +1098,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> enableReceiverWithResponseAsync(
@@ -1153,7 +1157,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> enableReceiverWithResponseAsync(
@@ -1208,7 +1212,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> enableReceiverAsync(
@@ -1244,7 +1248,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> enableReceiverWithResponse(

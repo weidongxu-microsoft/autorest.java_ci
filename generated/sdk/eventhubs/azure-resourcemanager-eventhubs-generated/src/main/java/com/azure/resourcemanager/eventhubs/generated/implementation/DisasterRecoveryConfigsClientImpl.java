@@ -262,7 +262,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of authorization rules for a Namespace.
+     * @return a list of authorization rules for a Namespace along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesSinglePageAsync(
@@ -325,7 +326,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of authorization rules for a Namespace.
+     * @return a list of authorization rules for a Namespace along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesSinglePageAsync(
@@ -459,7 +461,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> getAuthorizationRuleWithResponseAsync(
@@ -519,7 +522,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> getAuthorizationRuleWithResponseAsync(
@@ -575,7 +579,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AuthorizationRuleInner> getAuthorizationRuleAsync(
@@ -620,7 +624,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
@@ -640,7 +644,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return the primary and secondary connection strings for the Namespace along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> listKeysWithResponseAsync(
@@ -700,7 +705,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return the primary and secondary connection strings for the Namespace along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccessKeysInner>> listKeysWithResponseAsync(
@@ -756,7 +762,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return the primary and secondary connection strings for the Namespace on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AccessKeysInner> listKeysAsync(
@@ -801,7 +807,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return the primary and secondary connection strings for the Namespace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AccessKeysInner> listKeysWithResponse(
@@ -819,7 +825,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation.
+     * @return the Result of the CheckNameAvailability operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>> checkNameAvailabilityWithResponseAsync(
@@ -875,7 +882,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation.
+     * @return the Result of the CheckNameAvailability operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityResultInner>> checkNameAvailabilityWithResponseAsync(
@@ -927,7 +935,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation.
+     * @return the Result of the CheckNameAvailability operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<CheckNameAvailabilityResultInner> checkNameAvailabilityAsync(
@@ -970,7 +978,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation.
+     * @return the Result of the CheckNameAvailability operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
@@ -986,7 +994,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Alias(Disaster Recovery configurations).
+     * @return all Alias(Disaster Recovery configurations) along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ArmDisasterRecoveryInner>> listSinglePageAsync(
@@ -1044,7 +1053,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Alias(Disaster Recovery configurations).
+     * @return all Alias(Disaster Recovery configurations) along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ArmDisasterRecoveryInner>> listSinglePageAsync(
@@ -1167,7 +1177,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ArmDisasterRecoveryInner>> createOrUpdateWithResponseAsync(
@@ -1228,7 +1239,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ArmDisasterRecoveryInner>> createOrUpdateWithResponseAsync(
@@ -1289,7 +1301,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ArmDisasterRecoveryInner> createOrUpdateAsync(
@@ -1334,7 +1347,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ArmDisasterRecoveryInner> createOrUpdateWithResponse(
@@ -1355,7 +1368,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String namespaceName, String alias) {
@@ -1408,7 +1421,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -1458,7 +1471,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, String alias) {
@@ -1491,7 +1504,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -1508,7 +1521,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ArmDisasterRecoveryInner>> getWithResponseAsync(
@@ -1562,7 +1576,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ArmDisasterRecoveryInner>> getWithResponseAsync(
@@ -1612,7 +1627,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ArmDisasterRecoveryInner> getAsync(String resourceGroupName, String namespaceName, String alias) {
@@ -1653,7 +1669,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ArmDisasterRecoveryInner> getWithResponse(
@@ -1670,7 +1686,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> breakPairingWithResponseAsync(
@@ -1724,7 +1740,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> breakPairingWithResponseAsync(
@@ -1774,7 +1790,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> breakPairingAsync(String resourceGroupName, String namespaceName, String alias) {
@@ -1807,7 +1823,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> breakPairingWithResponse(
@@ -1824,7 +1840,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> failOverWithResponseAsync(
@@ -1878,7 +1894,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> failOverWithResponseAsync(
@@ -1928,7 +1944,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> failOverAsync(String resourceGroupName, String namespaceName, String alias) {
@@ -1961,7 +1977,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> failOverWithResponse(
@@ -1976,7 +1992,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List namespace operation.
+     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesNextSinglePageAsync(String nextLink) {
@@ -2013,7 +2030,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List namespace operation.
+     * @return the response from the List namespace operation along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesNextSinglePageAsync(
@@ -2049,7 +2067,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result of the List Alias(Disaster Recovery configuration) operation.
+     * @return the result of the List Alias(Disaster Recovery configuration) operation along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ArmDisasterRecoveryInner>> listNextSinglePageAsync(String nextLink) {
@@ -2085,7 +2104,8 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result of the List Alias(Disaster Recovery configuration) operation.
+     * @return the result of the List Alias(Disaster Recovery configuration) operation along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ArmDisasterRecoveryInner>> listNextSinglePageAsync(String nextLink, Context context) {

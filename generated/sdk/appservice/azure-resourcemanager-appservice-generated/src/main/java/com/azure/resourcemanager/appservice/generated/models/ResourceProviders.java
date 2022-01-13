@@ -34,7 +34,7 @@ public interface ResourceProviders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return github access token for Appservice CLI github integration.
+     * @return github access token for Appservice CLI github integration along with {@link Response}.
      */
     Response<AppserviceGithubToken> generateGithubAccessTokenForAppserviceCliAsyncWithResponse(
         AppserviceGithubTokenRequest request, Context context);
@@ -57,7 +57,7 @@ public interface ResourceProviders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity.
+     * @return user credentials used for publishing activity along with {@link Response}.
      */
     Response<User> getPublishingUserWithResponse(Context context);
 
@@ -82,7 +82,7 @@ public interface ResourceProviders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity.
+     * @return user credentials used for publishing activity along with {@link Response}.
      */
     Response<User> updatePublishingUserWithResponse(UserInner userDetails, Context context);
 
@@ -129,7 +129,7 @@ public interface ResourceProviders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the source control OAuth token.
+     * @return the source control OAuth token along with {@link Response}.
      */
     Response<SourceControl> getSourceControlWithResponse(String sourceControlType, Context context);
 
@@ -156,7 +156,7 @@ public interface ResourceProviders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the source control OAuth token.
+     * @return the source control OAuth token along with {@link Response}.
      */
     Response<SourceControl> updateSourceControlWithResponse(
         String sourceControlType, SourceControlInner requestMessage, Context context);
@@ -206,7 +206,7 @@ public interface ResourceProviders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information regarding availability of a resource name.
+     * @return information regarding availability of a resource name along with {@link Response}.
      */
     Response<ResourceNameAvailability> checkNameAvailabilityWithResponse(
         ResourceNameAvailabilityRequest request, Context context);
@@ -230,8 +230,8 @@ public interface ResourceProviders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of available locations (regions or App Service Environments) for deployment of App Service
-     *     resources.
+     * @return list of available locations (regions or App Service Environments) for deployment of App Service resources
+     *     along with {@link Response}.
      */
     Response<DeploymentLocations> getSubscriptionDeploymentLocationsWithResponse(Context context);
 
@@ -335,7 +335,7 @@ public interface ResourceProviders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SKU information.
+     * @return collection of SKU information along with {@link Response}.
      */
     Response<SkuInfos> listSkusWithResponse(Context context);
 
@@ -362,7 +362,7 @@ public interface ResourceProviders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a class that describes the reason for a validation failure.
+     * @return a class that describes the reason for a validation failure along with {@link Response}.
      */
     Response<VnetValidationFailureDetails> verifyHostingEnvironmentVnetWithResponse(
         VnetParameters parameters, Context context);
@@ -389,7 +389,7 @@ public interface ResourceProviders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> moveWithResponse(
         String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope, Context context);
@@ -417,7 +417,7 @@ public interface ResourceProviders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the result of resource validation.
+     * @return describes the result of resource validation along with {@link Response}.
      */
     Response<ValidateResponse> validateWithResponse(
         String resourceGroupName, ValidateRequest validateRequest, Context context);
@@ -444,7 +444,7 @@ public interface ResourceProviders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> validateMoveWithResponse(
         String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope, Context context);

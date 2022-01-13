@@ -33,7 +33,7 @@ public interface ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource provider information.
+     * @return resource provider information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ProviderInner> unregisterWithResponse(String resourceProviderNamespace, Context context);
@@ -59,7 +59,7 @@ public interface ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> registerAtManagementGroupScopeWithResponse(
@@ -85,7 +85,7 @@ public interface ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource provider information.
+     * @return resource provider information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ProviderInner> registerWithResponse(String resourceProviderNamespace, Context context);
@@ -164,7 +164,7 @@ public interface ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified resource provider.
+     * @return the specified resource provider along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ProviderInner> getWithResponse(String resourceProviderNamespace, String expand, Context context);
@@ -191,7 +191,7 @@ public interface ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified resource provider at the tenant level.
+     * @return the specified resource provider at the tenant level along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ProviderInner> getAtTenantScopeWithResponse(

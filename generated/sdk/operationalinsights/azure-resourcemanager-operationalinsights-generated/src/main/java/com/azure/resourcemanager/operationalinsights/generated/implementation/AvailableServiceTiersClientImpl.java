@@ -80,7 +80,8 @@ public final class AvailableServiceTiersClientImpl implements AvailableServiceTi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available service tiers for the workspace.
+     * @return the available service tiers for the workspace along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<AvailableServiceTierInner>>> listByWorkspaceWithResponseAsync(
@@ -130,7 +131,8 @@ public final class AvailableServiceTiersClientImpl implements AvailableServiceTi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available service tiers for the workspace.
+     * @return the available service tiers for the workspace along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<AvailableServiceTierInner>>> listByWorkspaceWithResponseAsync(
@@ -176,7 +178,7 @@ public final class AvailableServiceTiersClientImpl implements AvailableServiceTi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available service tiers for the workspace.
+     * @return the available service tiers for the workspace on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<AvailableServiceTierInner>> listByWorkspaceAsync(String resourceGroupName, String workspaceName) {
@@ -215,7 +217,7 @@ public final class AvailableServiceTiersClientImpl implements AvailableServiceTi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available service tiers for the workspace.
+     * @return the available service tiers for the workspace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<AvailableServiceTierInner>> listByWorkspaceWithResponse(

@@ -106,7 +106,7 @@ public final class WorkspacePurgesClientImpl implements WorkspacePurgesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing operationId for a specific purge action.
+     * @return response containing operationId for a specific purge action on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WorkspacePurgesPurgeResponse> purgeWithResponseAsync(
@@ -168,7 +168,7 @@ public final class WorkspacePurgesClientImpl implements WorkspacePurgesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing operationId for a specific purge action.
+     * @return response containing operationId for a specific purge action on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WorkspacePurgesPurgeResponse> purgeWithResponseAsync(
@@ -226,7 +226,7 @@ public final class WorkspacePurgesClientImpl implements WorkspacePurgesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing operationId for a specific purge action.
+     * @return response containing operationId for a specific purge action on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WorkspacePurgeResponseInner> purgeAsync(
@@ -295,7 +295,8 @@ public final class WorkspacePurgesClientImpl implements WorkspacePurgesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return status of an ongoing purge operation.
+     * @return status of an ongoing purge operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkspacePurgeStatusResponseInner>> getPurgeStatusWithResponseAsync(
@@ -350,7 +351,8 @@ public final class WorkspacePurgesClientImpl implements WorkspacePurgesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return status of an ongoing purge operation.
+     * @return status of an ongoing purge operation along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkspacePurgeStatusResponseInner>> getPurgeStatusWithResponseAsync(
@@ -401,7 +403,7 @@ public final class WorkspacePurgesClientImpl implements WorkspacePurgesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return status of an ongoing purge operation.
+     * @return status of an ongoing purge operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WorkspacePurgeStatusResponseInner> getPurgeStatusAsync(
@@ -444,7 +446,7 @@ public final class WorkspacePurgesClientImpl implements WorkspacePurgesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return status of an ongoing purge operation.
+     * @return status of an ongoing purge operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<WorkspacePurgeStatusResponseInner> getPurgeStatusWithResponse(

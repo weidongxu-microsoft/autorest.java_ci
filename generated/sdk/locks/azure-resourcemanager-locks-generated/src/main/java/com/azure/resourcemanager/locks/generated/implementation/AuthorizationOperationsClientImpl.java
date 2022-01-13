@@ -86,7 +86,8 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Microsoft.Authorization operations.
+     * @return result of the request to list Microsoft.Authorization operations along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OperationInner>> listSinglePageAsync() {
@@ -119,7 +120,8 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Microsoft.Authorization operations.
+     * @return result of the request to list Microsoft.Authorization operations along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OperationInner>> listSinglePageAsync(Context context) {
@@ -204,7 +206,8 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Microsoft.Authorization operations.
+     * @return result of the request to list Microsoft.Authorization operations along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OperationInner>> listNextSinglePageAsync(String nextLink) {
@@ -240,7 +243,8 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Microsoft.Authorization operations.
+     * @return result of the request to list Microsoft.Authorization operations along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OperationInner>> listNextSinglePageAsync(String nextLink, Context context) {

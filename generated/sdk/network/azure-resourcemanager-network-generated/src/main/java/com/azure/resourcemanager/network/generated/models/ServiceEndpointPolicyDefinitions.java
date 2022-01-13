@@ -63,7 +63,8 @@ public interface ServiceEndpointPolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service endpoint policy definitions from service endpoint policy.
+     * @return the specified service endpoint policy definitions from service endpoint policy along with {@link
+     *     Response}.
      */
     Response<ServiceEndpointPolicyDefinition> getWithResponse(
         String resourceGroupName,
@@ -105,7 +106,8 @@ public interface ServiceEndpointPolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service endpoint policy definitions from service endpoint policy.
+     * @return the specified service endpoint policy definitions from service endpoint policy along with {@link
+     *     Response}.
      */
     ServiceEndpointPolicyDefinition getById(String id);
 
@@ -117,7 +119,8 @@ public interface ServiceEndpointPolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service endpoint policy definitions from service endpoint policy.
+     * @return the specified service endpoint policy definitions from service endpoint policy along with {@link
+     *     Response}.
      */
     Response<ServiceEndpointPolicyDefinition> getByIdWithResponse(String id, Context context);
 

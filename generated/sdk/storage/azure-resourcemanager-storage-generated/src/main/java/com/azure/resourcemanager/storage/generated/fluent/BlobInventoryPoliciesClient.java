@@ -45,7 +45,7 @@ public interface BlobInventoryPoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the blob inventory policy associated with the specified storage account.
+     * @return the blob inventory policy associated with the specified storage account along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<BlobInventoryPolicyInner> getWithResponse(
@@ -87,7 +87,7 @@ public interface BlobInventoryPoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account blob inventory policy.
+     * @return the storage account blob inventory policy along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<BlobInventoryPolicyInner> createOrUpdateWithResponse(
@@ -126,7 +126,7 @@ public interface BlobInventoryPoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(

@@ -21,6 +21,7 @@ import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDeviceE
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDevicePatch;
 import com.azure.resourcemanager.databoxedge.generated.models.SecuritySettings;
 import com.azure.resourcemanager.databoxedge.generated.models.UploadCertificateRequest;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in DevicesClient. */
 public interface DevicesClient {
@@ -97,7 +98,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Data Box Edge/Data Box Gateway device.
+     * @return the properties of the Data Box Edge/Data Box Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DataBoxEdgeDeviceInner> getByResourceGroupWithResponse(
@@ -128,7 +129,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Data Box Edge/Gateway device.
+     * @return the Data Box Edge/Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DataBoxEdgeDeviceInner> createOrUpdateWithResponse(
@@ -142,7 +143,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String deviceName);
@@ -156,7 +157,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String deviceName, Context context);
@@ -210,7 +211,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Data Box Edge/Gateway device.
+     * @return the Data Box Edge/Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DataBoxEdgeDeviceInner> updateWithResponse(
@@ -224,7 +225,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDownloadUpdates(String deviceName, String resourceGroupName);
@@ -238,7 +239,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDownloadUpdates(
@@ -291,7 +292,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used in activation key generation flow.
+     * @return used in activation key generation flow along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<GenerateCertResponseInner> generateCertificateWithResponse(
@@ -319,7 +320,8 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device.
+     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DataBoxEdgeDeviceExtendedInfoInner> getExtendedInformationWithResponse(
@@ -333,7 +335,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginInstallUpdates(String deviceName, String resourceGroupName);
@@ -347,7 +349,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginInstallUpdates(
@@ -400,7 +402,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the network settings of the specified Data Box Edge/Data Box Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<NetworkSettingsInner> getNetworkSettingsWithResponse(
@@ -414,7 +416,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginScanForUpdates(String deviceName, String resourceGroupName);
@@ -428,7 +430,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginScanForUpdates(
@@ -468,7 +470,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginCreateOrUpdateSecuritySettings(
@@ -484,7 +486,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginCreateOrUpdateSecuritySettings(
@@ -543,7 +545,8 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Data Box Edge/Data Box Gateway device.
+     * @return additional information for the specified Data Box Edge/Data Box Gateway device along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DataBoxEdgeDeviceExtendedInfoInner> updateExtendedInformationWithResponse(
@@ -573,7 +576,8 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the availability of updates based on the last scan of the device.
+     * @return information about the availability of updates based on the last scan of the device along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<UpdateSummaryInner> getUpdateSummaryWithResponse(
@@ -604,7 +608,7 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the upload registration certificate response.
+     * @return the upload registration certificate response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<UploadCertificateResponseInner> uploadCertificateWithResponse(

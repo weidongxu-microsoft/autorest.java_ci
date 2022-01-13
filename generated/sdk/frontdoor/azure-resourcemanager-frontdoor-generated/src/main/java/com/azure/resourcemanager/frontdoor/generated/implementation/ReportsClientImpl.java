@@ -113,7 +113,8 @@ public final class ReportsClientImpl implements ReportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Latency Scorecard for a given Experiment.
+     * @return a Latency Scorecard for a given Experiment along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LatencyScorecardInner>> getLatencyScorecardsWithResponseAsync(
@@ -184,7 +185,8 @@ public final class ReportsClientImpl implements ReportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Latency Scorecard for a given Experiment.
+     * @return a Latency Scorecard for a given Experiment along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LatencyScorecardInner>> getLatencyScorecardsWithResponseAsync(
@@ -252,7 +254,7 @@ public final class ReportsClientImpl implements ReportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Latency Scorecard for a given Experiment.
+     * @return a Latency Scorecard for a given Experiment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LatencyScorecardInner> getLatencyScorecardsAsync(
@@ -284,7 +286,7 @@ public final class ReportsClientImpl implements ReportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Latency Scorecard for a given Experiment.
+     * @return a Latency Scorecard for a given Experiment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LatencyScorecardInner> getLatencyScorecardsAsync(
@@ -345,7 +347,7 @@ public final class ReportsClientImpl implements ReportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Latency Scorecard for a given Experiment.
+     * @return a Latency Scorecard for a given Experiment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<LatencyScorecardInner> getLatencyScorecardsWithResponse(
@@ -377,7 +379,7 @@ public final class ReportsClientImpl implements ReportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Timeseries for a given Experiment.
+     * @return a Timeseries for a given Experiment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TimeseriesInner>> getTimeseriesWithResponseAsync(
@@ -467,7 +469,7 @@ public final class ReportsClientImpl implements ReportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Timeseries for a given Experiment.
+     * @return a Timeseries for a given Experiment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TimeseriesInner>> getTimeseriesWithResponseAsync(
@@ -554,7 +556,7 @@ public final class ReportsClientImpl implements ReportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Timeseries for a given Experiment.
+     * @return a Timeseries for a given Experiment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TimeseriesInner> getTimeseriesAsync(
@@ -600,7 +602,7 @@ public final class ReportsClientImpl implements ReportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Timeseries for a given Experiment.
+     * @return a Timeseries for a given Experiment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TimeseriesInner> getTimeseriesAsync(
@@ -689,7 +691,7 @@ public final class ReportsClientImpl implements ReportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Timeseries for a given Experiment.
+     * @return a Timeseries for a given Experiment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<TimeseriesInner> getTimeseriesWithResponse(

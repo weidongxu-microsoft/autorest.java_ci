@@ -156,7 +156,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools.
+     * @return list of private endpoint connections associated with a managed HSM Pools along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MhsmPrivateEndpointConnectionInner>> listByResourceSinglePageAsync(
@@ -214,7 +215,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools.
+     * @return list of private endpoint connections associated with a managed HSM Pools along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MhsmPrivateEndpointConnectionInner>> listByResourceSinglePageAsync(
@@ -338,7 +340,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MhsmPrivateEndpointConnectionInner>> getWithResponseAsync(
@@ -396,7 +399,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MhsmPrivateEndpointConnectionInner>> getWithResponseAsync(
@@ -450,7 +454,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool.
+     * @return the specified private endpoint connection associated with the managed HSM Pool on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MhsmPrivateEndpointConnectionInner> getAsync(
@@ -495,7 +500,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<MhsmPrivateEndpointConnectionInner> getWithResponse(
@@ -514,7 +520,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MhsmPrivateEndpointConnectionsPutResponse> putWithResponseAsync(
@@ -582,7 +588,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MhsmPrivateEndpointConnectionsPutResponse> putWithResponseAsync(
@@ -647,7 +653,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MhsmPrivateEndpointConnectionInner> putAsync(
@@ -723,7 +729,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -781,7 +788,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -835,7 +843,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<MhsmPrivateEndpointConnectionInner>, MhsmPrivateEndpointConnectionInner>
@@ -863,7 +872,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<MhsmPrivateEndpointConnectionInner>, MhsmPrivateEndpointConnectionInner>
@@ -891,7 +901,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<MhsmPrivateEndpointConnectionInner>, MhsmPrivateEndpointConnectionInner> beginDelete(
@@ -910,7 +921,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<MhsmPrivateEndpointConnectionInner>, MhsmPrivateEndpointConnectionInner> beginDelete(
@@ -928,7 +940,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MhsmPrivateEndpointConnectionInner> deleteAsync(
@@ -949,7 +961,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
+     * @return private endpoint connection resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MhsmPrivateEndpointConnectionInner> deleteAsync(
@@ -1003,7 +1015,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools.
+     * @return list of private endpoint connections associated with a managed HSM Pools along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MhsmPrivateEndpointConnectionInner>> listByResourceNextSinglePageAsync(String nextLink) {
@@ -1039,7 +1052,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools.
+     * @return list of private endpoint connections associated with a managed HSM Pools along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MhsmPrivateEndpointConnectionInner>> listByResourceNextSinglePageAsync(

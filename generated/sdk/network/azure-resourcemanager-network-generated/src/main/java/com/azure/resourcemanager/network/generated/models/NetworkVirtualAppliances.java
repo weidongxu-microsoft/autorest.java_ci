@@ -55,7 +55,7 @@ public interface NetworkVirtualAppliances {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Network Virtual Appliance.
+     * @return the specified Network Virtual Appliance along with {@link Response}.
      */
     Response<NetworkVirtualAppliance> getByResourceGroupWithResponse(
         String resourceGroupName, String networkVirtualApplianceName, String expand, Context context);
@@ -110,7 +110,7 @@ public interface NetworkVirtualAppliances {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Network Virtual Appliance.
+     * @return the specified Network Virtual Appliance along with {@link Response}.
      */
     NetworkVirtualAppliance getById(String id);
 
@@ -123,7 +123,7 @@ public interface NetworkVirtualAppliances {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Network Virtual Appliance.
+     * @return the specified Network Virtual Appliance along with {@link Response}.
      */
     Response<NetworkVirtualAppliance> getByIdWithResponse(String id, String expand, Context context);
 

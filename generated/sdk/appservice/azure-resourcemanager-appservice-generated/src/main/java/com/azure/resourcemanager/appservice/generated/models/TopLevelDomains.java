@@ -53,7 +53,7 @@ public interface TopLevelDomains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a top level domain object.
+     * @return a top level domain object along with {@link Response}.
      */
     Response<TopLevelDomain> getWithResponse(String name, Context context);
 

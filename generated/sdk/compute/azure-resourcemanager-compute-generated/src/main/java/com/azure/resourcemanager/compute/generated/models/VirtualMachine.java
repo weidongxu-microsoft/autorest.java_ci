@@ -1328,7 +1328,7 @@ public interface VirtualMachine {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> generalizeWithResponse(Context context);
 
@@ -1492,7 +1492,7 @@ public interface VirtualMachine {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SAS URIs of the console screenshot and serial log blobs.
+     * @return the SAS URIs of the console screenshot and serial log blobs along with {@link Response}.
      */
     Response<RetrieveBootDiagnosticsDataResult> retrieveBootDiagnosticsDataWithResponse(
         Integer sasUriExpirationTimeInMinutes, Context context);
@@ -1530,7 +1530,7 @@ public interface VirtualMachine {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> simulateEvictionWithResponse(Context context);
 

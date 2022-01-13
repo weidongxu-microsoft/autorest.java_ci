@@ -33,7 +33,7 @@ public interface FlowLogs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a flow log resource by name.
+     * @return a flow log resource by name along with {@link Response}.
      */
     Response<FlowLog> getWithResponse(
         String resourceGroupName, String networkWatcherName, String flowLogName, Context context);
@@ -95,7 +95,7 @@ public interface FlowLogs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a flow log resource by name.
+     * @return a flow log resource by name along with {@link Response}.
      */
     FlowLog getById(String id);
 
@@ -107,7 +107,7 @@ public interface FlowLogs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a flow log resource by name.
+     * @return a flow log resource by name along with {@link Response}.
      */
     Response<FlowLog> getByIdWithResponse(String id, Context context);
 

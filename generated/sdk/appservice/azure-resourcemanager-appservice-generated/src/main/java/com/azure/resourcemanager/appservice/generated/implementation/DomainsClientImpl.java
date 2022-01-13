@@ -343,7 +343,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain availability check result.
+     * @return domain availability check result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainAvailabilityCheckResultInner>> checkAvailabilityWithResponseAsync(
@@ -388,7 +388,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain availability check result.
+     * @return domain availability check result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainAvailabilityCheckResultInner>> checkAvailabilityWithResponseAsync(
@@ -429,7 +429,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain availability check result.
+     * @return domain availability check result on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DomainAvailabilityCheckResultInner> checkAvailabilityAsync(NameIdentifierInner identifier) {
@@ -466,7 +466,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain availability check result.
+     * @return domain availability check result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DomainAvailabilityCheckResultInner> checkAvailabilityWithResponse(
@@ -479,7 +479,7 @@ public final class DomainsClientImpl implements DomainsClient {
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domains.
+     * @return collection of domains along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainInner>> listSinglePageAsync() {
@@ -525,7 +525,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domains.
+     * @return collection of domains along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainInner>> listSinglePageAsync(Context context) {
@@ -619,7 +619,8 @@ public final class DomainsClientImpl implements DomainsClient {
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single sign-on request information for domain management.
+     * @return single sign-on request information for domain management along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainControlCenterSsoRequestInner>> getControlCenterSsoRequestWithResponseAsync() {
@@ -656,7 +657,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single sign-on request information for domain management.
+     * @return single sign-on request information for domain management along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainControlCenterSsoRequestInner>> getControlCenterSsoRequestWithResponseAsync(
@@ -689,7 +691,7 @@ public final class DomainsClientImpl implements DomainsClient {
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single sign-on request information for domain management.
+     * @return single sign-on request information for domain management on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DomainControlCenterSsoRequestInner> getControlCenterSsoRequestAsync() {
@@ -723,7 +725,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single sign-on request information for domain management.
+     * @return single sign-on request information for domain management along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DomainControlCenterSsoRequestInner> getControlCenterSsoRequestWithResponse(Context context) {
@@ -737,7 +739,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain name identifiers.
+     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NameIdentifierInner>> listRecommendationsSinglePageAsync(
@@ -791,7 +794,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain name identifiers.
+     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NameIdentifierInner>> listRecommendationsSinglePageAsync(
@@ -905,7 +909,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domains.
+     * @return collection of domains along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -957,7 +961,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domains.
+     * @return collection of domains along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainInner>> listByResourceGroupSinglePageAsync(
@@ -1069,7 +1073,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainInner>> getByResourceGroupWithResponseAsync(
@@ -1118,7 +1122,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainInner>> getByResourceGroupWithResponseAsync(
@@ -1163,7 +1167,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DomainInner> getByResourceGroupAsync(String resourceGroupName, String domainName) {
@@ -1202,7 +1206,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DomainInner> getByResourceGroupWithResponse(
@@ -1219,7 +1223,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -1275,7 +1279,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -1327,7 +1331,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DomainInner>, DomainInner> beginCreateOrUpdateAsync(
@@ -1349,7 +1353,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DomainInner>, DomainInner> beginCreateOrUpdateAsync(
@@ -1372,7 +1376,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DomainInner>, DomainInner> beginCreateOrUpdate(
@@ -1390,7 +1394,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DomainInner>, DomainInner> beginCreateOrUpdate(
@@ -1407,7 +1411,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DomainInner> createOrUpdateAsync(String resourceGroupName, String domainName, DomainInner domain) {
@@ -1426,7 +1430,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DomainInner> createOrUpdateAsync(
@@ -1480,7 +1484,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -1532,7 +1536,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -1580,7 +1584,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String domainName, Boolean forceHardDeleteDomain) {
@@ -1596,7 +1600,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String domainName) {
@@ -1631,7 +1635,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -1648,7 +1652,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainInner>> updateWithResponseAsync(
@@ -1704,7 +1708,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainInner>> updateWithResponseAsync(
@@ -1756,7 +1760,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DomainInner> updateAsync(String resourceGroupName, String domainName, DomainPatchResource domain) {
@@ -1797,7 +1801,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DomainInner> updateWithResponse(
@@ -1813,7 +1817,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain ownership identifiers.
+     * @return collection of domain ownership identifiers along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainOwnershipIdentifierInner>> listOwnershipIdentifiersSinglePageAsync(
@@ -1871,7 +1876,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain ownership identifiers.
+     * @return collection of domain ownership identifiers along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainOwnershipIdentifierInner>> listOwnershipIdentifiersSinglePageAsync(
@@ -1996,7 +2002,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainOwnershipIdentifierInner>> getOwnershipIdentifierWithResponseAsync(
@@ -2050,7 +2056,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainOwnershipIdentifierInner>> getOwnershipIdentifierWithResponseAsync(
@@ -2100,7 +2106,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DomainOwnershipIdentifierInner> getOwnershipIdentifierAsync(
@@ -2143,7 +2149,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DomainOwnershipIdentifierInner> getOwnershipIdentifierWithResponse(
@@ -2162,7 +2168,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainOwnershipIdentifierInner>> createOrUpdateOwnershipIdentifierWithResponseAsync(
@@ -2230,7 +2236,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainOwnershipIdentifierInner>> createOrUpdateOwnershipIdentifierWithResponseAsync(
@@ -2295,7 +2301,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DomainOwnershipIdentifierInner> createOrUpdateOwnershipIdentifierAsync(
@@ -2350,7 +2356,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DomainOwnershipIdentifierInner> createOrUpdateOwnershipIdentifierWithResponse(
@@ -2373,7 +2379,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteOwnershipIdentifierWithResponseAsync(
@@ -2427,7 +2433,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteOwnershipIdentifierWithResponseAsync(
@@ -2477,7 +2483,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteOwnershipIdentifierAsync(String resourceGroupName, String domainName, String name) {
@@ -2510,7 +2516,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteOwnershipIdentifierWithResponse(
@@ -2529,7 +2535,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainOwnershipIdentifierInner>> updateOwnershipIdentifierWithResponseAsync(
@@ -2597,7 +2603,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainOwnershipIdentifierInner>> updateOwnershipIdentifierWithResponseAsync(
@@ -2662,7 +2668,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DomainOwnershipIdentifierInner> updateOwnershipIdentifierAsync(
@@ -2716,7 +2722,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DomainOwnershipIdentifierInner> updateOwnershipIdentifierWithResponse(
@@ -2738,7 +2744,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> renewWithResponseAsync(String resourceGroupName, String domainName) {
@@ -2786,7 +2792,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> renewWithResponseAsync(String resourceGroupName, String domainName, Context context) {
@@ -2830,7 +2836,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> renewAsync(String resourceGroupName, String domainName) {
@@ -2860,7 +2866,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> renewWithResponse(String resourceGroupName, String domainName, Context context) {
@@ -2874,7 +2880,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domains.
+     * @return collection of domains along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainInner>> listNextSinglePageAsync(String nextLink) {
@@ -2910,7 +2916,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domains.
+     * @return collection of domains along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -2945,7 +2951,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain name identifiers.
+     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NameIdentifierInner>> listRecommendationsNextSinglePageAsync(String nextLink) {
@@ -2982,7 +2989,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain name identifiers.
+     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NameIdentifierInner>> listRecommendationsNextSinglePageAsync(
@@ -3018,7 +3026,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domains.
+     * @return collection of domains along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -3055,7 +3063,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domains.
+     * @return collection of domains along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainInner>> listByResourceGroupNextSinglePageAsync(String nextLink, Context context) {
@@ -3090,7 +3098,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain ownership identifiers.
+     * @return collection of domain ownership identifiers along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainOwnershipIdentifierInner>> listOwnershipIdentifiersNextSinglePageAsync(
@@ -3128,7 +3137,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain ownership identifiers.
+     * @return collection of domain ownership identifiers along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainOwnershipIdentifierInner>> listOwnershipIdentifiersNextSinglePageAsync(

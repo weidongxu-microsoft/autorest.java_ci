@@ -58,7 +58,8 @@ public interface RulesEngines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Rules Engine Configuration with the specified name within the specified Front Door.
+     * @return a Rules Engine Configuration with the specified name within the specified Front Door along with {@link
+     *     Response}.
      */
     Response<RulesEngine> getWithResponse(
         String resourceGroupName, String frontDoorName, String rulesEngineName, Context context);
@@ -95,7 +96,8 @@ public interface RulesEngines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Rules Engine Configuration with the specified name within the specified Front Door.
+     * @return a Rules Engine Configuration with the specified name within the specified Front Door along with {@link
+     *     Response}.
      */
     RulesEngine getById(String id);
 
@@ -107,7 +109,8 @@ public interface RulesEngines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Rules Engine Configuration with the specified name within the specified Front Door.
+     * @return a Rules Engine Configuration with the specified name within the specified Front Door along with {@link
+     *     Response}.
      */
     Response<RulesEngine> getByIdWithResponse(String id, Context context);
 

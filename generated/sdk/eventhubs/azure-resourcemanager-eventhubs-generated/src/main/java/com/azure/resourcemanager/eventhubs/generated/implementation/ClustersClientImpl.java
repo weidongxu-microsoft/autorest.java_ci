@@ -185,7 +185,8 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Available Clusters operation.
+     * @return the response of the List Available Clusters operation along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AvailableClustersListInner>> listAvailableClusterRegionWithResponseAsync() {
@@ -222,7 +223,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Available Clusters operation.
+     * @return the response of the List Available Clusters operation along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AvailableClustersListInner>> listAvailableClusterRegionWithResponseAsync(Context context) {
@@ -254,7 +256,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Available Clusters operation.
+     * @return the response of the List Available Clusters operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AvailableClustersListInner> listAvailableClusterRegionAsync() {
@@ -288,7 +290,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Available Clusters operation.
+     * @return the response of the List Available Clusters operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AvailableClustersListInner> listAvailableClusterRegionWithResponse(Context context) {
@@ -302,7 +304,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Event Hubs Clusters operation.
+     * @return the response of the List Event Hubs Clusters operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClusterInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -354,7 +357,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Event Hubs Clusters operation.
+     * @return the response of the List Event Hubs Clusters operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClusterInner>> listByResourceGroupSinglePageAsync(
@@ -466,7 +470,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the resource description of the specified Event Hubs Cluster.
+     * @return the resource description of the specified Event Hubs Cluster along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ClusterInner>> getByResourceGroupWithResponseAsync(
@@ -515,7 +520,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the resource description of the specified Event Hubs Cluster.
+     * @return the resource description of the specified Event Hubs Cluster along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ClusterInner>> getByResourceGroupWithResponseAsync(
@@ -560,7 +566,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the resource description of the specified Event Hubs Cluster.
+     * @return the resource description of the specified Event Hubs Cluster on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ClusterInner> getByResourceGroupAsync(String resourceGroupName, String clusterName) {
@@ -599,7 +605,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the resource description of the specified Event Hubs Cluster.
+     * @return the resource description of the specified Event Hubs Cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ClusterInner> getByResourceGroupWithResponse(
@@ -616,7 +622,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -672,7 +679,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -724,7 +732,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ClusterInner>, ClusterInner> beginCreateOrUpdateAsync(
@@ -747,7 +756,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ClusterInner>, ClusterInner> beginCreateOrUpdateAsync(
@@ -770,7 +780,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ClusterInner>, ClusterInner> beginCreateOrUpdate(
@@ -788,7 +799,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ClusterInner>, ClusterInner> beginCreateOrUpdate(
@@ -805,7 +817,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ClusterInner> createOrUpdateAsync(
@@ -825,7 +837,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ClusterInner> createOrUpdateAsync(
@@ -878,7 +890,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(
@@ -934,7 +947,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(
@@ -986,7 +1000,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ClusterInner>, ClusterInner> beginUpdateAsync(
@@ -1008,7 +1023,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ClusterInner>, ClusterInner> beginUpdateAsync(
@@ -1031,7 +1047,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(
@@ -1049,7 +1066,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(
@@ -1066,7 +1084,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ClusterInner> updateAsync(String resourceGroupName, String clusterName, ClusterInner parameters) {
@@ -1085,7 +1103,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Event Hubs Cluster resource in List or Get operations.
+     * @return single Event Hubs Cluster resource in List or Get operations on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ClusterInner> updateAsync(
@@ -1136,7 +1154,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String clusterName) {
@@ -1184,7 +1202,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -1229,7 +1247,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String clusterName) {
@@ -1249,7 +1267,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1269,7 +1287,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String clusterName) {
@@ -1285,7 +1303,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1301,7 +1319,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String clusterName) {
@@ -1317,7 +1335,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String clusterName, Context context) {
@@ -1363,7 +1381,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace IDs operation.
+     * @return the response of the List Namespace IDs operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EHNamespaceIdListResultInner>> listNamespacesWithResponseAsync(
@@ -1412,7 +1431,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace IDs operation.
+     * @return the response of the List Namespace IDs operation along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EHNamespaceIdListResultInner>> listNamespacesWithResponseAsync(
@@ -1457,7 +1477,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace IDs operation.
+     * @return the response of the List Namespace IDs operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EHNamespaceIdListResultInner> listNamespacesAsync(String resourceGroupName, String clusterName) {
@@ -1496,7 +1516,7 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace IDs operation.
+     * @return the response of the List Namespace IDs operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<EHNamespaceIdListResultInner> listNamespacesWithResponse(
@@ -1511,7 +1531,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Event Hubs Clusters operation.
+     * @return the response of the List Event Hubs Clusters operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClusterInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1548,7 +1569,8 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Event Hubs Clusters operation.
+     * @return the response of the List Event Hubs Clusters operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ClusterInner>> listByResourceGroupNextSinglePageAsync(String nextLink, Context context) {

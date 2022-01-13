@@ -201,7 +201,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource.
+     * @return deny assignments for a resource along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForResourceSinglePageAsync(
@@ -293,7 +294,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource.
+     * @return deny assignments for a resource along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForResourceSinglePageAsync(
@@ -564,7 +566,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource group.
+     * @return deny assignments for a resource group along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listByResourceGroupSinglePageAsync(
@@ -627,7 +630,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource group.
+     * @return deny assignments for a resource group along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listByResourceGroupSinglePageAsync(
@@ -791,7 +795,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deny assignments for the subscription.
+     * @return all deny assignments for the subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listSinglePageAsync(String filter) {
@@ -847,7 +852,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deny assignments for the subscription.
+     * @return all deny assignments for the subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listSinglePageAsync(String filter, Context context) {
@@ -979,7 +985,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deny assignment.
+     * @return the specified deny assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DenyAssignmentInner>> getWithResponseAsync(String scope, String denyAssignmentId) {
@@ -1013,7 +1019,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deny assignment.
+     * @return the specified deny assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DenyAssignmentInner>> getWithResponseAsync(
@@ -1045,7 +1051,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deny assignment.
+     * @return the specified deny assignment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DenyAssignmentInner> getAsync(String scope, String denyAssignmentId) {
@@ -1084,7 +1090,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deny assignment.
+     * @return the specified deny assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DenyAssignmentInner> getWithResponse(String scope, String denyAssignmentId, Context context) {
@@ -1101,7 +1107,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deny assignment by ID.
+     * @return a deny assignment by ID along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DenyAssignmentInner>> getByIdWithResponseAsync(String denyAssignmentId) {
@@ -1134,7 +1140,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deny assignment by ID.
+     * @return a deny assignment by ID along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DenyAssignmentInner>> getByIdWithResponseAsync(String denyAssignmentId, Context context) {
@@ -1164,7 +1170,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deny assignment by ID.
+     * @return a deny assignment by ID on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DenyAssignmentInner> getByIdAsync(String denyAssignmentId) {
@@ -1207,7 +1213,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deny assignment by ID.
+     * @return a deny assignment by ID along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DenyAssignmentInner> getByIdWithResponse(String denyAssignmentId, Context context) {
@@ -1229,7 +1235,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a scope.
+     * @return deny assignments for a scope along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForScopeSinglePageAsync(String scope, String filter) {
@@ -1275,7 +1281,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a scope.
+     * @return deny assignments for a scope along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForScopeSinglePageAsync(
@@ -1414,7 +1420,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForResourceNextSinglePageAsync(String nextLink) {
@@ -1450,7 +1457,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForResourceNextSinglePageAsync(
@@ -1486,7 +1494,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1523,7 +1532,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForResourceGroupNextSinglePageAsync(
@@ -1559,7 +1569,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listNextSinglePageAsync(String nextLink) {
@@ -1595,7 +1606,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1630,7 +1642,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForScopeNextSinglePageAsync(String nextLink) {
@@ -1666,7 +1679,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForScopeNextSinglePageAsync(String nextLink, Context context) {

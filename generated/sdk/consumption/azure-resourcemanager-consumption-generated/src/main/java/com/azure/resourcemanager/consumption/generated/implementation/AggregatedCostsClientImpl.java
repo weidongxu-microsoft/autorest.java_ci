@@ -93,7 +93,8 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource.
+     * @return a management group aggregated cost resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementGroupAggregatedCostResultInner>> getByManagementGroupWithResponseAsync(
@@ -134,7 +135,8 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource.
+     * @return a management group aggregated cost resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementGroupAggregatedCostResultInner>> getByManagementGroupWithResponseAsync(
@@ -166,7 +168,7 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource.
+     * @return a management group aggregated cost resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ManagementGroupAggregatedCostResultInner> getByManagementGroupAsync(
@@ -189,7 +191,7 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource.
+     * @return a management group aggregated cost resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ManagementGroupAggregatedCostResultInner> getByManagementGroupAsync(String managementGroupId) {
@@ -231,7 +233,7 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource.
+     * @return a management group aggregated cost resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ManagementGroupAggregatedCostResultInner> getByManagementGroupWithResponse(
@@ -247,7 +249,8 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource.
+     * @return a management group aggregated cost resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementGroupAggregatedCostResultInner>>
@@ -290,7 +293,8 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource.
+     * @return a management group aggregated cost resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementGroupAggregatedCostResultInner>>
@@ -330,7 +334,7 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource.
+     * @return a management group aggregated cost resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ManagementGroupAggregatedCostResultInner> getForBillingPeriodByManagementGroupAsync(
@@ -371,7 +375,7 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource.
+     * @return a management group aggregated cost resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ManagementGroupAggregatedCostResultInner> getForBillingPeriodByManagementGroupWithResponse(

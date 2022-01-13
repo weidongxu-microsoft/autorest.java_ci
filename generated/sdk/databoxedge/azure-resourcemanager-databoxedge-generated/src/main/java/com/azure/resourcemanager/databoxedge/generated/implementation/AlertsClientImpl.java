@@ -108,7 +108,8 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the alerts for a Data Box Edge/Data Box Gateway device.
+     * @return all the alerts for a Data Box Edge/Data Box Gateway device along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AlertInner>> listByDataBoxEdgeDeviceSinglePageAsync(
@@ -166,7 +167,8 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the alerts for a Data Box Edge/Data Box Gateway device.
+     * @return all the alerts for a Data Box Edge/Data Box Gateway device along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AlertInner>> listByDataBoxEdgeDeviceSinglePageAsync(
@@ -289,7 +291,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an alert by name.
+     * @return an alert by name along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertInner>> getWithResponseAsync(String deviceName, String name, String resourceGroupName) {
@@ -342,7 +344,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an alert by name.
+     * @return an alert by name along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertInner>> getWithResponseAsync(
@@ -392,7 +394,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an alert by name.
+     * @return an alert by name on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AlertInner> getAsync(String deviceName, String name, String resourceGroupName) {
@@ -433,7 +435,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an alert by name.
+     * @return an alert by name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AlertInner> getWithResponse(
@@ -448,7 +450,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of alerts.
+     * @return collection of alerts along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AlertInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(String nextLink) {
@@ -485,7 +487,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of alerts.
+     * @return collection of alerts along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AlertInner>> listByDataBoxEdgeDeviceNextSinglePageAsync(

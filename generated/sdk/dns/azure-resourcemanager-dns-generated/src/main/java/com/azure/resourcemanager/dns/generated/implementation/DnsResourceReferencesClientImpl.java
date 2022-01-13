@@ -77,7 +77,8 @@ public final class DnsResourceReferencesClientImpl implements DnsResourceReferen
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents the properties of the Dns Resource Reference Result.
+     * @return represents the properties of the Dns Resource Reference Result along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DnsResourceReferenceResultInner>> getByTargetResourcesWithResponseAsync(
@@ -122,7 +123,8 @@ public final class DnsResourceReferencesClientImpl implements DnsResourceReferen
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents the properties of the Dns Resource Reference Result.
+     * @return represents the properties of the Dns Resource Reference Result along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DnsResourceReferenceResultInner>> getByTargetResourcesWithResponseAsync(
@@ -163,7 +165,7 @@ public final class DnsResourceReferencesClientImpl implements DnsResourceReferen
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents the properties of the Dns Resource Reference Result.
+     * @return represents the properties of the Dns Resource Reference Result on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DnsResourceReferenceResultInner> getByTargetResourcesAsync(DnsResourceReferenceRequest parameters) {
@@ -200,7 +202,7 @@ public final class DnsResourceReferencesClientImpl implements DnsResourceReferen
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents the properties of the Dns Resource Reference Result.
+     * @return represents the properties of the Dns Resource Reference Result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DnsResourceReferenceResultInner> getByTargetResourcesWithResponse(

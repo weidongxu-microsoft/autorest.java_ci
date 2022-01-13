@@ -32,7 +32,7 @@ public interface LinkedStorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName, String workspaceName, DataSourceType dataSourceType, Context context);
@@ -60,7 +60,8 @@ public interface LinkedStorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all linked storage account of a specific data source type associated with the specified workspace.
+     * @return all linked storage account of a specific data source type associated with the specified workspace along
+     *     with {@link Response}.
      */
     Response<LinkedStorageAccountsResource> getWithResponse(
         String resourceGroupName, String workspaceName, DataSourceType dataSourceType, Context context);
@@ -102,7 +103,8 @@ public interface LinkedStorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all linked storage account of a specific data source type associated with the specified workspace.
+     * @return all linked storage account of a specific data source type associated with the specified workspace along
+     *     with {@link Response}.
      */
     LinkedStorageAccountsResource getById(String id);
 
@@ -114,7 +116,8 @@ public interface LinkedStorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all linked storage account of a specific data source type associated with the specified workspace.
+     * @return all linked storage account of a specific data source type associated with the specified workspace along
+     *     with {@link Response}.
      */
     Response<LinkedStorageAccountsResource> getByIdWithResponse(String id, Context context);
 
@@ -136,7 +139,7 @@ public interface LinkedStorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

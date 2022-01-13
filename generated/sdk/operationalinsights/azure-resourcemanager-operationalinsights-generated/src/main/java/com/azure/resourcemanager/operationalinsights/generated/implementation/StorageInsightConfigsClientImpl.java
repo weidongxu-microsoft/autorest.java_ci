@@ -147,7 +147,8 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level storage insight resource container.
+     * @return the top level storage insight resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageInsightInner>> createOrUpdateWithResponseAsync(
@@ -210,7 +211,8 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level storage insight resource container.
+     * @return the top level storage insight resource container along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageInsightInner>> createOrUpdateWithResponseAsync(
@@ -273,7 +275,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level storage insight resource container.
+     * @return the top level storage insight resource container on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageInsightInner> createOrUpdateAsync(
@@ -318,7 +320,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level storage insight resource container.
+     * @return the top level storage insight resource container along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StorageInsightInner> createOrUpdateWithResponse(
@@ -341,7 +343,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a storage insight instance.
+     * @return a storage insight instance along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageInsightInner>> getWithResponseAsync(
@@ -397,7 +399,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a storage insight instance.
+     * @return a storage insight instance along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageInsightInner>> getWithResponseAsync(
@@ -449,7 +451,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a storage insight instance.
+     * @return a storage insight instance on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageInsightInner> getAsync(
@@ -491,7 +493,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a storage insight instance.
+     * @return a storage insight instance along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StorageInsightInner> getWithResponse(
@@ -508,7 +510,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -562,7 +564,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -612,7 +614,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String workspaceName, String storageInsightName) {
@@ -645,7 +647,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -661,7 +663,8 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list storage insights operation response.
+     * @return the list storage insights operation response along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageInsightInner>> listByWorkspaceSinglePageAsync(
@@ -720,7 +723,8 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list storage insights operation response.
+     * @return the list storage insights operation response along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageInsightInner>> listByWorkspaceSinglePageAsync(
@@ -842,7 +846,8 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list storage insights operation response.
+     * @return the list storage insights operation response along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageInsightInner>> listByWorkspaceNextSinglePageAsync(String nextLink) {
@@ -878,7 +883,8 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list storage insights operation response.
+     * @return the list storage insights operation response along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StorageInsightInner>> listByWorkspaceNextSinglePageAsync(

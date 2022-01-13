@@ -84,7 +84,7 @@ public interface InboundNatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified load balancer inbound nat rule.
+     * @return the specified load balancer inbound nat rule along with {@link Response}.
      */
     Response<InboundNatRule> getWithResponse(
         String resourceGroupName, String loadBalancerName, String inboundNatRuleName, String expand, Context context);
@@ -96,7 +96,7 @@ public interface InboundNatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified load balancer inbound nat rule.
+     * @return the specified load balancer inbound nat rule along with {@link Response}.
      */
     InboundNatRule getById(String id);
 
@@ -109,7 +109,7 @@ public interface InboundNatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified load balancer inbound nat rule.
+     * @return the specified load balancer inbound nat rule along with {@link Response}.
      */
     Response<InboundNatRule> getByIdWithResponse(String id, String expand, Context context);
 

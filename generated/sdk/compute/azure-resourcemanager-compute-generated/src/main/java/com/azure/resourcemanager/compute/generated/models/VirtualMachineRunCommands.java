@@ -54,7 +54,7 @@ public interface VirtualMachineRunCommands {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specific run command for a subscription in a location.
+     * @return specific run command for a subscription in a location along with {@link Response}.
      */
     Response<RunCommandDocument> getWithResponse(String location, String commandId, Context context);
 
@@ -111,7 +111,7 @@ public interface VirtualMachineRunCommands {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command.
+     * @return describes a Virtual Machine run command along with {@link Response}.
      */
     Response<VirtualMachineRunCommand> getByVirtualMachineWithResponse(
         String resourceGroupName, String vmName, String runCommandName, String expand, Context context);
@@ -153,7 +153,7 @@ public interface VirtualMachineRunCommands {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command.
+     * @return describes a Virtual Machine run command along with {@link Response}.
      */
     VirtualMachineRunCommand getById(String id);
 
@@ -167,7 +167,7 @@ public interface VirtualMachineRunCommands {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command.
+     * @return describes a Virtual Machine run command along with {@link Response}.
      */
     Response<VirtualMachineRunCommand> getByIdWithResponse(String id, String expand, Context context);
 

@@ -54,7 +54,7 @@ public interface VirtualNetworkTaps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified virtual network tap.
+     * @return information about the specified virtual network tap along with {@link Response}.
      */
     Response<VirtualNetworkTap> getByResourceGroupWithResponse(
         String resourceGroupName, String tapName, Context context);
@@ -109,7 +109,7 @@ public interface VirtualNetworkTaps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified virtual network tap.
+     * @return information about the specified virtual network tap along with {@link Response}.
      */
     VirtualNetworkTap getById(String id);
 
@@ -121,7 +121,7 @@ public interface VirtualNetworkTaps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified virtual network tap.
+     * @return information about the specified virtual network tap along with {@link Response}.
      */
     Response<VirtualNetworkTap> getByIdWithResponse(String id, Context context);
 

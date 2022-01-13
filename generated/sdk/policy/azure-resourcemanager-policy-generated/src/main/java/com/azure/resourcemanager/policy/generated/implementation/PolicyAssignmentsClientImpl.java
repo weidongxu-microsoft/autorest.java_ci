@@ -253,7 +253,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PolicyAssignmentInner>> deleteWithResponseAsync(String scope, String policyAssignmentName) {
@@ -294,7 +294,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PolicyAssignmentInner>> deleteWithResponseAsync(
@@ -332,7 +332,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PolicyAssignmentInner> deleteAsync(String scope, String policyAssignmentName) {
@@ -383,7 +383,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PolicyAssignmentInner> deleteWithResponse(
@@ -406,7 +406,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PolicyAssignmentInner>> createWithResponseAsync(
@@ -462,7 +462,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PolicyAssignmentInner>> createWithResponseAsync(
@@ -507,7 +507,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PolicyAssignmentInner> createAsync(
@@ -561,7 +561,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PolicyAssignmentInner> createWithResponse(
@@ -581,7 +581,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PolicyAssignmentInner>> getWithResponseAsync(String scope, String policyAssignmentName) {
@@ -620,7 +620,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PolicyAssignmentInner>> getWithResponseAsync(
@@ -656,7 +656,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PolicyAssignmentInner> getAsync(String scope, String policyAssignmentName) {
@@ -703,7 +703,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PolicyAssignmentInner> getWithResponse(String scope, String policyAssignmentName, Context context) {
@@ -734,7 +734,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listByResourceGroupSinglePageAsync(
@@ -807,7 +807,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listByResourceGroupSinglePageAsync(
@@ -1045,7 +1045,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listForResourceSinglePageAsync(
@@ -1159,7 +1159,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listForResourceSinglePageAsync(
@@ -1553,7 +1553,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listForManagementGroupSinglePageAsync(
@@ -1610,7 +1610,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listForManagementGroupSinglePageAsync(
@@ -1804,7 +1804,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listSinglePageAsync(String filter, Integer top) {
@@ -1870,7 +1870,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listSinglePageAsync(
@@ -2056,7 +2056,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PolicyAssignmentInner>> deleteByIdWithResponseAsync(String policyAssignmentId) {
@@ -2094,7 +2094,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PolicyAssignmentInner>> deleteByIdWithResponseAsync(
@@ -2129,7 +2129,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PolicyAssignmentInner> deleteByIdAsync(String policyAssignmentId) {
@@ -2180,7 +2180,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PolicyAssignmentInner> deleteByIdWithResponse(String policyAssignmentId, Context context) {
@@ -2203,7 +2203,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PolicyAssignmentInner>> createByIdWithResponseAsync(
@@ -2251,7 +2251,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PolicyAssignmentInner>> createByIdWithResponseAsync(
@@ -2294,7 +2294,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PolicyAssignmentInner> createByIdAsync(String policyAssignmentId, PolicyAssignmentInner parameters) {
@@ -2349,7 +2349,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PolicyAssignmentInner> createByIdWithResponse(
@@ -2370,7 +2370,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PolicyAssignmentInner>> getByIdWithResponseAsync(String policyAssignmentId) {
@@ -2406,7 +2406,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PolicyAssignmentInner>> getByIdWithResponseAsync(String policyAssignmentId, Context context) {
@@ -2439,7 +2439,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PolicyAssignmentInner> getByIdAsync(String policyAssignmentId) {
@@ -2488,7 +2488,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PolicyAssignmentInner> getByIdWithResponse(String policyAssignmentId, Context context) {
@@ -2502,7 +2502,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listForResourceGroupNextSinglePageAsync(String nextLink) {
@@ -2539,7 +2539,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listForResourceGroupNextSinglePageAsync(
@@ -2575,7 +2575,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listForResourceNextSinglePageAsync(String nextLink) {
@@ -2611,7 +2611,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listForResourceNextSinglePageAsync(
@@ -2647,7 +2647,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listForManagementGroupNextSinglePageAsync(String nextLink) {
@@ -2684,7 +2684,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listForManagementGroupNextSinglePageAsync(
@@ -2720,7 +2720,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listNextSinglePageAsync(String nextLink) {
@@ -2756,7 +2756,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy assignments.
+     * @return list of policy assignments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicyAssignmentInner>> listNextSinglePageAsync(String nextLink, Context context) {

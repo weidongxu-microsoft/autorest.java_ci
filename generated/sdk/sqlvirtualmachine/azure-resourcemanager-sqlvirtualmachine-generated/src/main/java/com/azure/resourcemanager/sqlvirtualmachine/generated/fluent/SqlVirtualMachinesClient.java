@@ -13,6 +13,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVirtualMachineInner;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMachineUpdate;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in SqlVirtualMachinesClient. */
 public interface SqlVirtualMachinesClient {
@@ -93,7 +94,7 @@ public interface SqlVirtualMachinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine.
+     * @return a SQL virtual machine along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SqlVirtualMachineInner> getByResourceGroupWithResponse(
@@ -109,7 +110,7 @@ public interface SqlVirtualMachinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine.
+     * @return a SQL virtual machine along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginCreateOrUpdate(
@@ -126,7 +127,7 @@ public interface SqlVirtualMachinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine.
+     * @return a SQL virtual machine along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginCreateOrUpdate(
@@ -174,7 +175,7 @@ public interface SqlVirtualMachinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String sqlVirtualMachineName);
@@ -189,7 +190,7 @@ public interface SqlVirtualMachinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -232,7 +233,7 @@ public interface SqlVirtualMachinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine.
+     * @return a SQL virtual machine along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginUpdate(
@@ -249,7 +250,7 @@ public interface SqlVirtualMachinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine.
+     * @return a SQL virtual machine along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginUpdate(

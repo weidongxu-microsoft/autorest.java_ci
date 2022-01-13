@@ -30,7 +30,7 @@ public interface ProximityPlacementGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String proximityPlacementGroupName, Context context);
 
@@ -57,7 +57,7 @@ public interface ProximityPlacementGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the proximity placement group.
+     * @return specifies information about the proximity placement group along with {@link Response}.
      */
     Response<ProximityPlacementGroup> getByResourceGroupWithResponse(
         String resourceGroupName, String proximityPlacementGroupName, String includeColocationStatus, Context context);
@@ -112,7 +112,7 @@ public interface ProximityPlacementGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the proximity placement group.
+     * @return specifies information about the proximity placement group along with {@link Response}.
      */
     ProximityPlacementGroup getById(String id);
 
@@ -126,7 +126,7 @@ public interface ProximityPlacementGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the proximity placement group.
+     * @return specifies information about the proximity placement group along with {@link Response}.
      */
     Response<ProximityPlacementGroup> getByIdWithResponse(String id, String includeColocationStatus, Context context);
 
@@ -148,7 +148,7 @@ public interface ProximityPlacementGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

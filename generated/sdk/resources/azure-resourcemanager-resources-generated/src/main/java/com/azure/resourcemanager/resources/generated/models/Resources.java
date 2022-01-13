@@ -182,7 +182,7 @@ public interface Resources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceWithResponse(
         String resourceGroupName,
@@ -376,7 +376,7 @@ public interface Resources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource.
+     * @return a resource along with {@link Response}.
      */
     Response<GenericResource> getWithResponse(
         String resourceGroupName,
@@ -412,7 +412,7 @@ public interface Resources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceByIdWithResponse(String resourceId, String apiVersion, Context context);
 
@@ -531,7 +531,7 @@ public interface Resources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource by ID.
+     * @return a resource by ID along with {@link Response}.
      */
     Response<GenericResource> getByIdWithResponse(String resourceId, String apiVersion, Context context);
 }

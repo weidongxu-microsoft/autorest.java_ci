@@ -148,7 +148,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return datasources under OMS Workspace.
+     * @return datasources under OMS Workspace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataSourceInner>> createOrUpdateWithResponseAsync(
@@ -210,7 +210,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return datasources under OMS Workspace.
+     * @return datasources under OMS Workspace along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataSourceInner>> createOrUpdateWithResponseAsync(
@@ -272,7 +272,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return datasources under OMS Workspace.
+     * @return datasources under OMS Workspace on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DataSourceInner> createOrUpdateAsync(
@@ -317,7 +317,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return datasources under OMS Workspace.
+     * @return datasources under OMS Workspace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DataSourceInner> createOrUpdateWithResponse(
@@ -339,7 +339,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -392,7 +392,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -441,7 +441,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String workspaceName, String dataSourceName) {
@@ -474,7 +474,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -491,7 +491,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a datasource instance.
+     * @return a datasource instance along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataSourceInner>> getWithResponseAsync(
@@ -546,7 +546,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a datasource instance.
+     * @return a datasource instance along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataSourceInner>> getWithResponseAsync(
@@ -597,7 +597,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a datasource instance.
+     * @return a datasource instance on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DataSourceInner> getAsync(String resourceGroupName, String workspaceName, String dataSourceName) {
@@ -638,7 +638,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a datasource instance.
+     * @return a datasource instance along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DataSourceInner> getWithResponse(
@@ -656,7 +656,8 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the first page of data source instances in a workspace with the link to the next page.
+     * @return the first page of data source instances in a workspace with the link to the next page along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataSourceInner>> listByWorkspaceSinglePageAsync(
@@ -722,7 +723,8 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the first page of data source instances in a workspace with the link to the next page.
+     * @return the first page of data source instances in a workspace with the link to the next page along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataSourceInner>> listByWorkspaceSinglePageAsync(
@@ -879,7 +881,8 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list data source by workspace operation response.
+     * @return the list data source by workspace operation response along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataSourceInner>> listByWorkspaceNextSinglePageAsync(String nextLink) {
@@ -915,7 +918,8 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list data source by workspace operation response.
+     * @return the list data source by workspace operation response along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataSourceInner>> listByWorkspaceNextSinglePageAsync(String nextLink, Context context) {

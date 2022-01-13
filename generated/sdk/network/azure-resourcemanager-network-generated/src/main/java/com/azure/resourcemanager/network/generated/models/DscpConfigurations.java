@@ -54,7 +54,7 @@ public interface DscpConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DSCP Configuration.
+     * @return a DSCP Configuration along with {@link Response}.
      */
     Response<DscpConfiguration> getByResourceGroupWithResponse(
         String resourceGroupName, String dscpConfigurationName, Context context);
@@ -109,7 +109,7 @@ public interface DscpConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DSCP Configuration.
+     * @return a DSCP Configuration along with {@link Response}.
      */
     DscpConfiguration getById(String id);
 
@@ -121,7 +121,7 @@ public interface DscpConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DSCP Configuration.
+     * @return a DSCP Configuration along with {@link Response}.
      */
     Response<DscpConfiguration> getByIdWithResponse(String id, Context context);
 

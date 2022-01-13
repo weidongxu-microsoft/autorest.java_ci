@@ -32,7 +32,7 @@ public interface NetworkWatchers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network watcher by resource group.
+     * @return the specified network watcher by resource group along with {@link Response}.
      */
     Response<NetworkWatcher> getByResourceGroupWithResponse(
         String resourceGroupName, String networkWatcherName, Context context);
@@ -126,7 +126,7 @@ public interface NetworkWatchers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current network topology by resource group.
+     * @return the current network topology by resource group along with {@link Response}.
      */
     Response<Topology> getTopologyWithResponse(
         String resourceGroupName, String networkWatcherName, TopologyParameters parameters, Context context);
@@ -480,7 +480,7 @@ public interface NetworkWatchers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network watcher by resource group.
+     * @return the specified network watcher by resource group along with {@link Response}.
      */
     NetworkWatcher getById(String id);
 
@@ -492,7 +492,7 @@ public interface NetworkWatchers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network watcher by resource group.
+     * @return the specified network watcher by resource group along with {@link Response}.
      */
     Response<NetworkWatcher> getByIdWithResponse(String id, Context context);
 

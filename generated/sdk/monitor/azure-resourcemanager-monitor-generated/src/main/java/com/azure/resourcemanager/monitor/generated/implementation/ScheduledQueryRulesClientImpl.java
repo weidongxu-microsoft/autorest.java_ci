@@ -163,7 +163,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource.
+     * @return the Log Search Rule resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LogSearchRuleResourceInner>> createOrUpdateWithResponseAsync(
@@ -220,7 +220,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource.
+     * @return the Log Search Rule resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LogSearchRuleResourceInner>> createOrUpdateWithResponseAsync(
@@ -273,7 +273,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource.
+     * @return the Log Search Rule resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LogSearchRuleResourceInner> createOrUpdateAsync(
@@ -316,7 +316,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource.
+     * @return the Log Search Rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<LogSearchRuleResourceInner> createOrUpdateWithResponse(
@@ -332,7 +332,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Search rule.
+     * @return an Log Search rule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LogSearchRuleResourceInner>> getByResourceGroupWithResponseAsync(
@@ -382,7 +382,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Search rule.
+     * @return an Log Search rule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LogSearchRuleResourceInner>> getByResourceGroupWithResponseAsync(
@@ -428,7 +428,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Search rule.
+     * @return an Log Search rule on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LogSearchRuleResourceInner> getByResourceGroupAsync(String resourceGroupName, String ruleName) {
@@ -467,7 +467,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Search rule.
+     * @return an Log Search rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<LogSearchRuleResourceInner> getByResourceGroupWithResponse(
@@ -484,7 +484,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource.
+     * @return the Log Search Rule resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LogSearchRuleResourceInner>> updateWithResponseAsync(
@@ -541,7 +541,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource.
+     * @return the Log Search Rule resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LogSearchRuleResourceInner>> updateWithResponseAsync(
@@ -594,7 +594,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource.
+     * @return the Log Search Rule resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LogSearchRuleResourceInner> updateAsync(
@@ -637,7 +637,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource.
+     * @return the Log Search Rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<LogSearchRuleResourceInner> updateWithResponse(
@@ -653,7 +653,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String ruleName) {
@@ -702,7 +702,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String ruleName, Context context) {
@@ -747,7 +747,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String ruleName) {
@@ -777,7 +777,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context) {
@@ -792,7 +792,8 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LogSearchRuleResourceInner>> listSinglePageAsync(String filter) {
@@ -837,7 +838,8 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LogSearchRuleResourceInner>> listSinglePageAsync(String filter, Context context) {
@@ -946,7 +948,8 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LogSearchRuleResourceInner>> listByResourceGroupSinglePageAsync(
@@ -998,7 +1001,8 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LogSearchRuleResourceInner>> listByResourceGroupSinglePageAsync(

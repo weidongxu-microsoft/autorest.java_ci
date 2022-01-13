@@ -408,7 +408,7 @@ public interface BlobContainer {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the LegalHold property of a blob container.
+     * @return the LegalHold property of a blob container along with {@link Response}.
      */
     Response<LegalHold> setLegalHoldWithResponse(LegalHoldInner legalHold, Context context);
 
@@ -433,7 +433,7 @@ public interface BlobContainer {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the LegalHold property of a blob container.
+     * @return the LegalHold property of a blob container along with {@link Response}.
      */
     Response<LegalHold> clearLegalHoldWithResponse(LegalHoldInner legalHold, Context context);
 
@@ -456,7 +456,7 @@ public interface BlobContainer {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lease Container response schema.
+     * @return lease Container response schema along with {@link Response}.
      */
     Response<LeaseContainerResponse> leaseWithResponse(LeaseContainerRequest parameters, Context context);
 

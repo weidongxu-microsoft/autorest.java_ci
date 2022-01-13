@@ -34,7 +34,7 @@ public interface QueueServices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     Response<ListQueueServices> listWithResponse(String resourceGroupName, String accountName, Context context);
 
@@ -67,7 +67,7 @@ public interface QueueServices {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of a storage account’s Queue service, including properties for Storage Analytics and CORS
-     *     (Cross-Origin Resource Sharing) rules.
+     *     (Cross-Origin Resource Sharing) rules along with {@link Response}.
      */
     Response<QueueServiceProperties> getServicePropertiesWithResponse(
         String resourceGroupName, String accountName, Context context);
@@ -81,7 +81,7 @@ public interface QueueServices {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of a storage account’s Queue service, including properties for Storage Analytics and CORS
-     *     (Cross-Origin Resource Sharing) rules.
+     *     (Cross-Origin Resource Sharing) rules along with {@link Response}.
      */
     QueueServiceProperties getServicePropertiesById(String id);
 
@@ -95,7 +95,7 @@ public interface QueueServices {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of a storage account’s Queue service, including properties for Storage Analytics and CORS
-     *     (Cross-Origin Resource Sharing) rules.
+     *     (Cross-Origin Resource Sharing) rules along with {@link Response}.
      */
     Response<QueueServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context);
 

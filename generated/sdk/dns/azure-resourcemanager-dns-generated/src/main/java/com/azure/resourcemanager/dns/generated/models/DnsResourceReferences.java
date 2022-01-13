@@ -28,7 +28,7 @@ public interface DnsResourceReferences {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents the properties of the Dns Resource Reference Result.
+     * @return represents the properties of the Dns Resource Reference Result along with {@link Response}.
      */
     Response<DnsResourceReferenceResult> getByTargetResourcesWithResponse(
         DnsResourceReferenceRequest parameters, Context context);

@@ -111,7 +111,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a web app, a mobile app backend, or an API app.
+     * @return a web app, a mobile app backend, or an API app along with {@link Response}.
      */
     Response<Site> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
 
@@ -138,7 +138,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName, String name, Boolean deleteMetrics, Boolean deleteEmptyServerFarm, Context context);
@@ -167,7 +167,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return custom domain analysis.
+     * @return custom domain analysis along with {@link Response}.
      */
     Response<CustomHostnameAnalysisResult> analyzeCustomHostnameWithResponse(
         String resourceGroupName, String name, String hostname, Context context);
@@ -196,7 +196,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> applySlotConfigToProductionWithResponse(
         String resourceGroupName, String name, CsmSlotEntity slotSwapEntity, Context context);
@@ -226,7 +226,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return backup description.
+     * @return backup description along with {@link Response}.
      */
     Response<BackupItem> backupWithResponse(
         String resourceGroupName, String name, BackupRequestInner request, Context context);
@@ -283,7 +283,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return backup description.
+     * @return backup description along with {@link Response}.
      */
     Response<BackupItem> getBackupStatusWithResponse(
         String resourceGroupName, String name, String backupId, Context context);
@@ -310,7 +310,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteBackupWithResponse(String resourceGroupName, String name, String backupId, Context context);
 
@@ -346,7 +346,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return backup description.
+     * @return backup description along with {@link Response}.
      */
     Response<BackupItem> listBackupStatusSecretsWithResponse(
         String resourceGroupName, String name, String backupId, BackupRequestInner request, Context context);
@@ -432,7 +432,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return publishing Credentials Policies parameters.
+     * @return publishing Credentials Policies parameters along with {@link Response}.
      */
     Response<CsmPublishingCredentialsPoliciesEntity> getFtpAllowedWithResponse(
         String resourceGroupName, String name, Context context);
@@ -465,7 +465,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return publishing Credentials Policies parameters.
+     * @return publishing Credentials Policies parameters along with {@link Response}.
      */
     Response<CsmPublishingCredentialsPoliciesEntity> updateFtpAllowedWithResponse(
         String resourceGroupName,
@@ -496,7 +496,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return publishing Credentials Policies parameters.
+     * @return publishing Credentials Policies parameters along with {@link Response}.
      */
     Response<CsmPublishingCredentialsPoliciesEntity> getScmAllowedWithResponse(
         String resourceGroupName, String name, Context context);
@@ -529,7 +529,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return publishing Credentials Policies parameters.
+     * @return publishing Credentials Policies parameters along with {@link Response}.
      */
     Response<CsmPublishingCredentialsPoliciesEntity> updateScmAllowedWithResponse(
         String resourceGroupName,
@@ -590,7 +590,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> updateApplicationSettingsWithResponse(
         String resourceGroupName, String name, StringDictionaryInner appSettings, Context context);
@@ -618,7 +618,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> listApplicationSettingsWithResponse(
         String resourceGroupName, String name, Context context);
@@ -648,7 +648,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @return configuration settings for the Azure App Service Authentication / Authorization feature along with {@link
+     *     Response}.
      */
     Response<SiteAuthSettings> updateAuthSettingsWithResponse(
         String resourceGroupName, String name, SiteAuthSettingsInner siteAuthSettings, Context context);
@@ -676,7 +677,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @return configuration settings for the Azure App Service Authentication / Authorization feature along with {@link
+     *     Response}.
      */
     Response<SiteAuthSettings> getAuthSettingsWithResponse(String resourceGroupName, String name, Context context);
 
@@ -706,7 +708,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature along with
+     *     {@link Response}.
      */
     Response<SiteAuthSettingsV2> updateAuthSettingsV2WithResponse(
         String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2, Context context);
@@ -734,7 +737,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature along with
+     *     {@link Response}.
      */
     Response<SiteAuthSettingsV2> getAuthSettingsV2WithResponse(String resourceGroupName, String name, Context context);
 
@@ -764,7 +768,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return azureStorageInfo dictionary resource.
+     * @return azureStorageInfo dictionary resource along with {@link Response}.
      */
     Response<AzureStoragePropertyDictionaryResource> updateAzureStorageAccountsWithResponse(
         String resourceGroupName,
@@ -795,7 +799,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return azureStorageInfo dictionary resource.
+     * @return azureStorageInfo dictionary resource along with {@link Response}.
      */
     Response<AzureStoragePropertyDictionaryResource> listAzureStorageAccountsWithResponse(
         String resourceGroupName, String name, Context context);
@@ -825,7 +829,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a backup which will be performed.
+     * @return description of a backup which will be performed along with {@link Response}.
      */
     Response<BackupRequest> updateBackupConfigurationWithResponse(
         String resourceGroupName, String name, BackupRequestInner request, Context context);
@@ -852,7 +856,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteBackupConfigurationWithResponse(String resourceGroupName, String name, Context context);
 
@@ -879,7 +883,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a backup which will be performed.
+     * @return description of a backup which will be performed along with {@link Response}.
      */
     Response<BackupRequest> getBackupConfigurationWithResponse(String resourceGroupName, String name, Context context);
 
@@ -936,7 +940,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of site key vault references.
+     * @return description of site key vault references along with {@link Response}.
      */
     Response<ApiKVReference> getAppSettingKeyVaultReferenceWithResponse(
         String resourceGroupName, String name, String appSettingKey, Context context);
@@ -995,7 +999,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of site key vault references.
+     * @return description of site key vault references along with {@link Response}.
      */
     Response<ApiKVReference> getSiteConnectionStringKeyVaultReferenceWithResponse(
         String resourceGroupName, String name, String connectionStringKey, Context context);
@@ -1026,7 +1030,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<ConnectionStringDictionary> updateConnectionStringsWithResponse(
         String resourceGroupName, String name, ConnectionStringDictionaryInner connectionStrings, Context context);
@@ -1054,7 +1058,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<ConnectionStringDictionary> listConnectionStringsWithResponse(
         String resourceGroupName, String name, Context context);
@@ -1082,7 +1086,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return configuration of App Service site logs.
+     * @return configuration of App Service site logs along with {@link Response}.
      */
     Response<SiteLogsConfig> getDiagnosticLogsConfigurationWithResponse(
         String resourceGroupName, String name, Context context);
@@ -1115,7 +1119,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return configuration of App Service site logs.
+     * @return configuration of App Service site logs along with {@link Response}.
      */
     Response<SiteLogsConfig> updateDiagnosticLogsConfigWithResponse(
         String resourceGroupName, String name, SiteLogsConfigInner siteLogsConfig, Context context);
@@ -1145,7 +1149,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> updateMetadataWithResponse(
         String resourceGroupName, String name, StringDictionaryInner metadata, Context context);
@@ -1173,7 +1177,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> listMetadataWithResponse(String resourceGroupName, String name, Context context);
 
@@ -1229,7 +1233,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return push settings for the App.
+     * @return push settings for the App along with {@link Response}.
      */
     Response<PushSettings> updateSitePushSettingsWithResponse(
         String resourceGroupName, String name, PushSettingsInner pushSettings, Context context);
@@ -1257,7 +1261,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return push settings for the App.
+     * @return push settings for the App along with {@link Response}.
      */
     Response<PushSettings> listSitePushSettingsWithResponse(String resourceGroupName, String name, Context context);
 
@@ -1284,7 +1288,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return slot Config names azure resource.
+     * @return slot Config names azure resource along with {@link Response}.
      */
     Response<SlotConfigNamesResource> listSlotConfigurationNamesWithResponse(
         String resourceGroupName, String name, Context context);
@@ -1317,7 +1321,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return slot Config names azure resource.
+     * @return slot Config names azure resource along with {@link Response}.
      */
     Response<SlotConfigNamesResource> updateSlotConfigurationNamesWithResponse(
         String resourceGroupName, String name, SlotConfigNamesResourceInner slotConfigNames, Context context);
@@ -1347,7 +1351,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app configuration ARM resource.
+     * @return web app configuration ARM resource along with {@link Response}.
      */
     Response<SiteConfigResource> getConfigurationWithResponse(String resourceGroupName, String name, Context context);
 
@@ -1377,7 +1381,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app configuration ARM resource.
+     * @return web app configuration ARM resource along with {@link Response}.
      */
     Response<SiteConfigResource> createOrUpdateConfigurationWithResponse(
         String resourceGroupName, String name, SiteConfigResourceInner siteConfig, Context context);
@@ -1407,7 +1411,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app configuration ARM resource.
+     * @return web app configuration ARM resource along with {@link Response}.
      */
     Response<SiteConfigResource> updateConfigurationWithResponse(
         String resourceGroupName, String name, SiteConfigResourceInner siteConfig, Context context);
@@ -1467,7 +1471,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app configuration ARM resource.
+     * @return web app configuration ARM resource along with {@link Response}.
      */
     Response<SiteConfigResource> getConfigurationSnapshotWithResponse(
         String resourceGroupName, String name, String snapshotId, Context context);
@@ -1496,7 +1500,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> recoverSiteConfigurationSnapshotWithResponse(
         String resourceGroupName, String name, String snapshotId, Context context);
@@ -1601,7 +1605,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return continuous Web Job Information.
+     * @return continuous Web Job Information along with {@link Response}.
      */
     Response<ContinuousWebJob> getContinuousWebJobWithResponse(
         String resourceGroupName, String name, String webJobName, Context context);
@@ -1630,7 +1634,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteContinuousWebJobWithResponse(
         String resourceGroupName, String name, String webJobName, Context context);
@@ -1657,7 +1661,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> startContinuousWebJobWithResponse(
         String resourceGroupName, String name, String webJobName, Context context);
@@ -1684,7 +1688,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> stopContinuousWebJobWithResponse(
         String resourceGroupName, String name, String webJobName, Context context);
@@ -1741,7 +1745,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity.
+     * @return user credentials used for publishing activity along with {@link Response}.
      */
     Response<Deployment> getDeploymentWithResponse(String resourceGroupName, String name, String id, Context context);
 
@@ -1769,7 +1773,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteDeploymentWithResponse(String resourceGroupName, String name, String id, Context context);
 
@@ -1800,7 +1804,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity.
+     * @return user credentials used for publishing activity along with {@link Response}.
      */
     Response<Deployment> listDeploymentLogWithResponse(
         String resourceGroupName, String name, String id, Context context);
@@ -1832,7 +1836,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a restore request.
+     * @return description of a restore request along with {@link Response}.
      */
     Response<RestoreRequest> discoverBackupWithResponse(
         String resourceGroupName, String name, RestoreRequestInner request, Context context);
@@ -1890,7 +1894,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain specific resource identifier.
+     * @return a domain specific resource identifier along with {@link Response}.
      */
     Response<Identifier> getDomainOwnershipIdentifierWithResponse(
         String resourceGroupName, String name, String domainOwnershipIdentifierName, Context context);
@@ -1919,7 +1923,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteDomainOwnershipIdentifierWithResponse(
         String resourceGroupName, String name, String domainOwnershipIdentifierName, Context context);
@@ -1947,7 +1951,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return mSDeploy ARM response.
+     * @return mSDeploy ARM response along with {@link Response}.
      */
     Response<MSDeployStatus> getMSDeployStatusWithResponse(String resourceGroupName, String name, Context context);
 
@@ -1999,7 +2003,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return mSDeploy log.
+     * @return mSDeploy log along with {@link Response}.
      */
     Response<MSDeployLog> getMSDeployLogWithResponse(String resourceGroupName, String name, Context context);
 
@@ -2051,7 +2055,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     Response<String> getFunctionsAdminTokenWithResponse(String resourceGroupName, String name, Context context);
 
@@ -2078,7 +2082,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function information.
+     * @return function information along with {@link Response}.
      */
     Response<FunctionEnvelope> getFunctionWithResponse(
         String resourceGroupName, String name, String functionName, Context context);
@@ -2105,7 +2109,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteFunctionWithResponse(
         String resourceGroupName, String name, String functionName, Context context);
@@ -2140,7 +2144,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function key info.
+     * @return function key info along with {@link Response}.
      */
     Response<KeyInfo> createOrUpdateFunctionSecretWithResponse(
         String resourceGroupName, String name, String functionName, String keyName, KeyInfoInner key, Context context);
@@ -2169,7 +2173,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteFunctionSecretWithResponse(
         String resourceGroupName, String name, String functionName, String keyName, Context context);
@@ -2199,7 +2203,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> listFunctionKeysWithResponse(
         String resourceGroupName, String name, String functionName, Context context);
@@ -2229,7 +2233,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function secrets.
+     * @return function secrets along with {@link Response}.
      */
     Response<FunctionSecrets> listFunctionSecretsWithResponse(
         String resourceGroupName, String name, String functionName, Context context);
@@ -2257,7 +2261,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return functions host level keys.
+     * @return functions host level keys along with {@link Response}.
      */
     Response<HostKeys> listHostKeysWithResponse(String resourceGroupName, String name, Context context);
 
@@ -2283,7 +2287,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> listSyncStatusWithResponse(String resourceGroupName, String name, Context context);
 
@@ -2309,7 +2313,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> syncFunctionsWithResponse(String resourceGroupName, String name, Context context);
 
@@ -2343,7 +2347,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function key info.
+     * @return function key info along with {@link Response}.
      */
     Response<KeyInfo> createOrUpdateHostSecretWithResponse(
         String resourceGroupName, String name, String keyType, String keyName, KeyInfoInner key, Context context);
@@ -2372,7 +2376,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteHostSecretWithResponse(
         String resourceGroupName, String name, String keyType, String keyName, Context context);
@@ -2429,7 +2433,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a hostname binding object.
+     * @return a hostname binding object along with {@link Response}.
      */
     Response<HostnameBinding> getHostnameBindingWithResponse(
         String resourceGroupName, String name, String hostname, Context context);
@@ -2458,7 +2462,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteHostnameBindingWithResponse(
         String resourceGroupName, String name, String hostname, Context context);
@@ -2490,7 +2494,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract along with {@link Response}.
      */
     Response<HybridConnection> getHybridConnectionWithResponse(
         String resourceGroupName, String name, String namespaceName, String relayName, Context context);
@@ -2519,7 +2523,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteHybridConnectionWithResponse(
         String resourceGroupName, String name, String namespaceName, String relayName, Context context);
@@ -2547,7 +2551,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract along with {@link Response}.
      */
     Response<HybridConnection> listHybridConnectionsWithResponse(
         String resourceGroupName, String name, Context context);
@@ -2575,7 +2579,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection for an App Service app.
+     * @return hybrid Connection for an App Service app along with {@link Response}.
      */
     Response<RelayServiceConnectionEntity> listRelayServiceConnectionsWithResponse(
         String resourceGroupName, String name, Context context);
@@ -2605,7 +2609,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection for an App Service app.
+     * @return hybrid Connection for an App Service app along with {@link Response}.
      */
     Response<RelayServiceConnectionEntity> getRelayServiceConnectionWithResponse(
         String resourceGroupName, String name, String entityName, Context context);
@@ -2632,7 +2636,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteRelayServiceConnectionWithResponse(
         String resourceGroupName, String name, String entityName, Context context);
@@ -2690,7 +2694,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     Response<WebSiteInstanceStatus> getInstanceInfoWithResponse(
         String resourceGroupName, String name, String instanceId, Context context);
@@ -2720,7 +2724,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return mSDeploy ARM response.
+     * @return mSDeploy ARM response along with {@link Response}.
      */
     Response<MSDeployStatus> getInstanceMsDeployStatusWithResponse(
         String resourceGroupName, String name, String instanceId, Context context);
@@ -2779,7 +2783,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return mSDeploy log.
+     * @return mSDeploy log along with {@link Response}.
      */
     Response<MSDeployLog> getInstanceMSDeployLogWithResponse(
         String resourceGroupName, String name, String instanceId, Context context);
@@ -2843,7 +2847,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return process Information.
+     * @return process Information along with {@link Response}.
      */
     Response<ProcessInfo> getInstanceProcessWithResponse(
         String resourceGroupName, String name, String processId, String instanceId, Context context);
@@ -2876,7 +2880,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteInstanceProcessWithResponse(
         String resourceGroupName, String name, String processId, String instanceId, Context context);
@@ -2976,7 +2980,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return process Module Information.
+     * @return process Module Information along with {@link Response}.
      */
     Response<ProcessModuleInfo> getInstanceProcessModuleWithResponse(
         String resourceGroupName,
@@ -3042,7 +3046,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents whether or not an app is cloneable.
+     * @return represents whether or not an app is cloneable along with {@link Response}.
      */
     Response<SiteCloneability> isCloneableWithResponse(String resourceGroupName, String name, Context context);
 
@@ -3096,7 +3100,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function secrets.
+     * @return function secrets along with {@link Response}.
      */
     Response<FunctionSecrets> listSyncFunctionTriggersWithResponse(
         String resourceGroupName, String name, Context context);
@@ -3193,7 +3197,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return mySQL migration status.
+     * @return mySQL migration status along with {@link Response}.
      */
     Response<MigrateMySqlStatus> getMigrateMySqlStatusWithResponse(
         String resourceGroupName, String name, Context context);
@@ -3221,7 +3225,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return swift Virtual Network Contract.
+     * @return swift Virtual Network Contract along with {@link Response}.
      */
     Response<SwiftVirtualNetwork> getSwiftVirtualNetworkConnectionWithResponse(
         String resourceGroupName, String name, Context context);
@@ -3256,7 +3260,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return swift Virtual Network Contract.
+     * @return swift Virtual Network Contract along with {@link Response}.
      */
     Response<SwiftVirtualNetwork> createOrUpdateSwiftVirtualNetworkConnectionWithCheckWithResponse(
         String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope, Context context);
@@ -3281,7 +3285,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteSwiftVirtualNetworkWithResponse(String resourceGroupName, String name, Context context);
 
@@ -3315,7 +3319,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return swift Virtual Network Contract.
+     * @return swift Virtual Network Contract along with {@link Response}.
      */
     Response<SwiftVirtualNetwork> updateSwiftVirtualNetworkConnectionWithCheckWithResponse(
         String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope, Context context);
@@ -3343,7 +3347,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of network features for an app (presently VNET integration and Hybrid Connections).
+     * @return full view of network features for an app (presently VNET integration and Hybrid Connections) along with
+     *     {@link Response}.
      */
     Response<NetworkFeatures> listNetworkFeaturesWithResponse(
         String resourceGroupName, String name, String view, Context context);
@@ -3373,7 +3378,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
+     * @return array of NetworkTrace along with {@link Response}.
      */
     Response<Object> getNetworkTraceOperationWithResponse(
         String resourceGroupName, String name, String operationId, Context context);
@@ -3404,7 +3409,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     Response<String> startWebSiteNetworkTraceWithResponse(
         String resourceGroupName,
@@ -3489,7 +3494,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> stopWebSiteNetworkTraceWithResponse(String resourceGroupName, String name, Context context);
 
@@ -3518,7 +3523,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
+     * @return array of NetworkTrace along with {@link Response}.
      */
     Response<List<NetworkTrace>> getNetworkTracesWithResponse(
         String resourceGroupName, String name, String operationId, Context context);
@@ -3548,7 +3553,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
+     * @return array of NetworkTrace along with {@link Response}.
      */
     Response<Object> getNetworkTraceOperationV2WithResponse(
         String resourceGroupName, String name, String operationId, Context context);
@@ -3578,7 +3583,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
+     * @return array of NetworkTrace along with {@link Response}.
      */
     Response<List<NetworkTrace>> getNetworkTracesV2WithResponse(
         String resourceGroupName, String name, String operationId, Context context);
@@ -3605,7 +3610,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> generateNewSitePublishingPasswordWithResponse(
         String resourceGroupName, String name, Context context);
@@ -3664,7 +3669,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting PHP error logging flag.
+     * @return used for getting PHP error logging flag along with {@link Response}.
      */
     Response<SitePhpErrorLogFlag> getSitePhpErrorLogFlagWithResponse(
         String resourceGroupName, String name, Context context);
@@ -3692,7 +3697,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return premier add-on.
+     * @return premier add-on along with {@link Response}.
      */
     Response<PremierAddOn> listPremierAddOnsWithResponse(String resourceGroupName, String name, Context context);
 
@@ -3721,7 +3726,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return premier add-on.
+     * @return premier add-on along with {@link Response}.
      */
     Response<PremierAddOn> getPremierAddOnWithResponse(
         String resourceGroupName, String name, String premierAddOnName, Context context);
@@ -3750,7 +3755,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deletePremierAddOnWithResponse(
         String resourceGroupName, String name, String premierAddOnName, Context context);
@@ -3780,7 +3785,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the parameters of Private Access for a Web Site.
+     * @return description of the parameters of Private Access for a Web Site along with {@link Response}.
      */
     Response<PrivateAccess> getPrivateAccessWithResponse(String resourceGroupName, String name, Context context);
 
@@ -3811,7 +3816,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the parameters of Private Access for a Web Site.
+     * @return description of the parameters of Private Access for a Web Site along with {@link Response}.
      */
     Response<PrivateAccess> putPrivateAccessVnetWithResponse(
         String resourceGroupName, String name, PrivateAccessInner access, Context context);
@@ -3871,7 +3876,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response}.
      */
     Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context);
@@ -3969,7 +3974,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources.
+     * @return wrapper for a collection of private link resources along with {@link Response}.
      */
     Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
         String resourceGroupName, String name, Context context);
@@ -4024,7 +4029,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return process Information.
+     * @return process Information along with {@link Response}.
      */
     Response<ProcessInfo> getProcessWithResponse(
         String resourceGroupName, String name, String processId, Context context);
@@ -4053,7 +4058,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteProcessWithResponse(String resourceGroupName, String name, String processId, Context context);
 
@@ -4137,7 +4142,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return process Module Information.
+     * @return process Module Information along with {@link Response}.
      */
     Response<ProcessModuleInfo> getProcessModuleWithResponse(
         String resourceGroupName, String name, String processId, String baseAddress, Context context);
@@ -4222,7 +4227,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public certificate object.
+     * @return public certificate object along with {@link Response}.
      */
     Response<PublicCertificate> getPublicCertificateWithResponse(
         String resourceGroupName, String name, String publicCertificateName, Context context);
@@ -4251,7 +4256,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deletePublicCertificateWithResponse(
         String resourceGroupName, String name, String publicCertificateName, Context context);
@@ -4313,7 +4318,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> resetProductionSlotConfigWithResponse(String resourceGroupName, String name, Context context);
 
@@ -4343,7 +4348,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> restartWithResponse(
         String resourceGroupName, String name, Boolean softRestart, Boolean synchronous, Context context);
@@ -4480,7 +4485,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site Extension Information.
+     * @return site Extension Information along with {@link Response}.
      */
     Response<SiteExtensionInfo> getSiteExtensionWithResponse(
         String resourceGroupName, String name, String siteExtensionId, Context context);
@@ -4535,7 +4540,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteSiteExtensionWithResponse(
         String resourceGroupName, String name, String siteExtensionId, Context context);
@@ -4590,7 +4595,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a web app, a mobile app backend, or an API app.
+     * @return a web app, a mobile app backend, or an API app along with {@link Response}.
      */
     Response<Site> getSlotWithResponse(String resourceGroupName, String name, String slot, Context context);
 
@@ -4655,7 +4660,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteSlotWithResponse(
         String resourceGroupName,
@@ -4696,7 +4701,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a web app, a mobile app backend, or an API app.
+     * @return a web app, a mobile app backend, or an API app along with {@link Response}.
      */
     Response<Site> updateSlotWithResponse(
         String resourceGroupName, String name, String slot, SitePatchResourceInner siteEnvelope, Context context);
@@ -4727,7 +4732,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return custom domain analysis.
+     * @return custom domain analysis along with {@link Response}.
      */
     Response<CustomHostnameAnalysisResult> analyzeCustomHostnameSlotWithResponse(
         String resourceGroupName, String name, String slot, String hostname, Context context);
@@ -4758,7 +4763,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> applySlotConfigurationSlotWithResponse(
         String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity, Context context);
@@ -4792,7 +4797,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return backup description.
+     * @return backup description along with {@link Response}.
      */
     Response<BackupItem> backupSlotWithResponse(
         String resourceGroupName, String name, String slot, BackupRequestInner request, Context context);
@@ -4857,7 +4862,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return backup description.
+     * @return backup description along with {@link Response}.
      */
     Response<BackupItem> getBackupStatusSlotWithResponse(
         String resourceGroupName, String name, String backupId, String slot, Context context);
@@ -4888,7 +4893,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteBackupSlotWithResponse(
         String resourceGroupName, String name, String backupId, String slot, Context context);
@@ -4927,7 +4932,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return backup description.
+     * @return backup description along with {@link Response}.
      */
     Response<BackupItem> listBackupStatusSecretsSlotWithResponse(
         String resourceGroupName,
@@ -5032,7 +5037,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return publishing Credentials Policies parameters.
+     * @return publishing Credentials Policies parameters along with {@link Response}.
      */
     Response<CsmPublishingCredentialsPoliciesEntity> getFtpAllowedSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -5068,7 +5073,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return publishing Credentials Policies parameters.
+     * @return publishing Credentials Policies parameters along with {@link Response}.
      */
     Response<CsmPublishingCredentialsPoliciesEntity> updateFtpAllowedSlotWithResponse(
         String resourceGroupName,
@@ -5102,7 +5107,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return publishing Credentials Policies parameters.
+     * @return publishing Credentials Policies parameters along with {@link Response}.
      */
     Response<CsmPublishingCredentialsPoliciesEntity> getScmAllowedSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -5138,7 +5143,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return publishing Credentials Policies parameters.
+     * @return publishing Credentials Policies parameters along with {@link Response}.
      */
     Response<CsmPublishingCredentialsPoliciesEntity> updateScmAllowedSlotWithResponse(
         String resourceGroupName,
@@ -5209,7 +5214,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> updateApplicationSettingsSlotWithResponse(
         String resourceGroupName, String name, String slot, StringDictionaryInner appSettings, Context context);
@@ -5241,7 +5246,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> listApplicationSettingsSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -5274,7 +5279,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @return configuration settings for the Azure App Service Authentication / Authorization feature along with {@link
+     *     Response}.
      */
     Response<SiteAuthSettings> updateAuthSettingsSlotWithResponse(
         String resourceGroupName, String name, String slot, SiteAuthSettingsInner siteAuthSettings, Context context);
@@ -5306,7 +5312,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @return configuration settings for the Azure App Service Authentication / Authorization feature along with {@link
+     *     Response}.
      */
     Response<SiteAuthSettings> getAuthSettingsSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -5339,7 +5346,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature along with
+     *     {@link Response}.
      */
     Response<SiteAuthSettingsV2> updateAuthSettingsV2SlotWithResponse(
         String resourceGroupName,
@@ -5375,7 +5383,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature along with
+     *     {@link Response}.
      */
     Response<SiteAuthSettingsV2> getAuthSettingsV2SlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -5413,7 +5422,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return azureStorageInfo dictionary resource.
+     * @return azureStorageInfo dictionary resource along with {@link Response}.
      */
     Response<AzureStoragePropertyDictionaryResource> updateAzureStorageAccountsSlotWithResponse(
         String resourceGroupName,
@@ -5450,7 +5459,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return azureStorageInfo dictionary resource.
+     * @return azureStorageInfo dictionary resource along with {@link Response}.
      */
     Response<AzureStoragePropertyDictionaryResource> listAzureStorageAccountsSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -5485,7 +5494,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a backup which will be performed.
+     * @return description of a backup which will be performed along with {@link Response}.
      */
     Response<BackupRequest> updateBackupConfigurationSlotWithResponse(
         String resourceGroupName, String name, String slot, BackupRequestInner request, Context context);
@@ -5516,7 +5525,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteBackupConfigurationSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -5548,7 +5557,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a backup which will be performed.
+     * @return description of a backup which will be performed along with {@link Response}.
      */
     Response<BackupRequest> getBackupConfigurationSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -5612,7 +5621,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of site key vault references.
+     * @return description of site key vault references along with {@link Response}.
      */
     Response<ApiKVReference> getAppSettingKeyVaultReferenceSlotWithResponse(
         String resourceGroupName, String name, String appSettingKey, String slot, Context context);
@@ -5676,7 +5685,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of site key vault references.
+     * @return description of site key vault references along with {@link Response}.
      */
     Response<ApiKVReference> getSiteConnectionStringKeyVaultReferenceSlotWithResponse(
         String resourceGroupName, String name, String connectionStringKey, String slot, Context context);
@@ -5711,7 +5720,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<ConnectionStringDictionary> updateConnectionStringsSlotWithResponse(
         String resourceGroupName,
@@ -5747,7 +5756,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<ConnectionStringDictionary> listConnectionStringsSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -5779,7 +5788,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return configuration of App Service site logs.
+     * @return configuration of App Service site logs along with {@link Response}.
      */
     Response<SiteLogsConfig> getDiagnosticLogsConfigurationSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -5816,7 +5825,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return configuration of App Service site logs.
+     * @return configuration of App Service site logs along with {@link Response}.
      */
     Response<SiteLogsConfig> updateDiagnosticLogsConfigSlotWithResponse(
         String resourceGroupName, String name, String slot, SiteLogsConfigInner siteLogsConfig, Context context);
@@ -5851,7 +5860,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> updateMetadataSlotWithResponse(
         String resourceGroupName, String name, String slot, StringDictionaryInner metadata, Context context);
@@ -5883,7 +5892,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> listMetadataSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -5947,7 +5956,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return push settings for the App.
+     * @return push settings for the App along with {@link Response}.
      */
     Response<PushSettings> updateSitePushSettingsSlotWithResponse(
         String resourceGroupName, String name, String slot, PushSettingsInner pushSettings, Context context);
@@ -5977,7 +5986,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return push settings for the App.
+     * @return push settings for the App along with {@link Response}.
      */
     Response<PushSettings> listSitePushSettingsSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -6011,7 +6020,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app configuration ARM resource.
+     * @return web app configuration ARM resource along with {@link Response}.
      */
     Response<SiteConfigResource> getConfigurationSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -6046,7 +6055,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app configuration ARM resource.
+     * @return web app configuration ARM resource along with {@link Response}.
      */
     Response<SiteConfigResource> createOrUpdateConfigurationSlotWithResponse(
         String resourceGroupName, String name, String slot, SiteConfigResourceInner siteConfig, Context context);
@@ -6081,7 +6090,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app configuration ARM resource.
+     * @return web app configuration ARM resource along with {@link Response}.
      */
     Response<SiteConfigResource> updateConfigurationSlotWithResponse(
         String resourceGroupName, String name, String slot, SiteConfigResourceInner siteConfig, Context context);
@@ -6151,7 +6160,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app configuration ARM resource.
+     * @return web app configuration ARM resource along with {@link Response}.
      */
     Response<SiteConfigResource> getConfigurationSnapshotSlotWithResponse(
         String resourceGroupName, String name, String snapshotId, String slot, Context context);
@@ -6184,7 +6193,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> recoverSiteConfigurationSnapshotSlotWithResponse(
         String resourceGroupName, String name, String snapshotId, String slot, Context context);
@@ -6304,7 +6313,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return continuous Web Job Information.
+     * @return continuous Web Job Information along with {@link Response}.
      */
     Response<ContinuousWebJob> getContinuousWebJobSlotWithResponse(
         String resourceGroupName, String name, String webJobName, String slot, Context context);
@@ -6337,7 +6346,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteContinuousWebJobSlotWithResponse(
         String resourceGroupName, String name, String webJobName, String slot, Context context);
@@ -6368,7 +6377,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> startContinuousWebJobSlotWithResponse(
         String resourceGroupName, String name, String webJobName, String slot, Context context);
@@ -6399,7 +6408,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> stopContinuousWebJobSlotWithResponse(
         String resourceGroupName, String name, String webJobName, String slot, Context context);
@@ -6464,7 +6473,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity.
+     * @return user credentials used for publishing activity along with {@link Response}.
      */
     Response<Deployment> getDeploymentSlotWithResponse(
         String resourceGroupName, String name, String id, String slot, Context context);
@@ -6501,7 +6510,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity.
+     * @return user credentials used for publishing activity along with {@link Response}.
      */
     Response<Deployment> createDeploymentSlotWithResponse(
         String resourceGroupName, String name, String id, String slot, DeploymentInner deployment, Context context);
@@ -6534,7 +6543,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteDeploymentSlotWithResponse(
         String resourceGroupName, String name, String id, String slot, Context context);
@@ -6570,7 +6579,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity.
+     * @return user credentials used for publishing activity along with {@link Response}.
      */
     Response<Deployment> listDeploymentLogSlotWithResponse(
         String resourceGroupName, String name, String id, String slot, Context context);
@@ -6606,7 +6615,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a restore request.
+     * @return description of a restore request along with {@link Response}.
      */
     Response<RestoreRequest> discoverBackupSlotWithResponse(
         String resourceGroupName, String name, String slot, RestoreRequestInner request, Context context);
@@ -6673,7 +6682,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain specific resource identifier.
+     * @return a domain specific resource identifier along with {@link Response}.
      */
     Response<Identifier> getDomainOwnershipIdentifierSlotWithResponse(
         String resourceGroupName, String name, String domainOwnershipIdentifierName, String slot, Context context);
@@ -6714,7 +6723,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain specific resource identifier.
+     * @return a domain specific resource identifier along with {@link Response}.
      */
     Response<Identifier> createOrUpdateDomainOwnershipIdentifierSlotWithResponse(
         String resourceGroupName,
@@ -6753,7 +6762,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteDomainOwnershipIdentifierSlotWithResponse(
         String resourceGroupName, String name, String domainOwnershipIdentifierName, String slot, Context context);
@@ -6794,7 +6803,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain specific resource identifier.
+     * @return a domain specific resource identifier along with {@link Response}.
      */
     Response<Identifier> updateDomainOwnershipIdentifierSlotWithResponse(
         String resourceGroupName,
@@ -6829,7 +6838,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return mSDeploy ARM response.
+     * @return mSDeploy ARM response along with {@link Response}.
      */
     Response<MSDeployStatus> getMSDeployStatusSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -6887,7 +6896,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return mSDeploy log.
+     * @return mSDeploy log along with {@link Response}.
      */
     Response<MSDeployLog> getMSDeployLogSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -6945,7 +6954,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     Response<String> getFunctionsAdminTokenSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -6975,7 +6984,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function information.
+     * @return function information along with {@link Response}.
      */
     Response<FunctionEnvelope> getInstanceFunctionSlotWithResponse(
         String resourceGroupName, String name, String functionName, String slot, Context context);
@@ -7048,7 +7057,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteInstanceFunctionSlotWithResponse(
         String resourceGroupName, String name, String functionName, String slot, Context context);
@@ -7085,7 +7094,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function key info.
+     * @return function key info along with {@link Response}.
      */
     Response<KeyInfo> createOrUpdateFunctionSecretSlotWithResponse(
         String resourceGroupName,
@@ -7123,7 +7132,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteFunctionSecretSlotWithResponse(
         String resourceGroupName, String name, String functionName, String keyName, String slot, Context context);
@@ -7155,7 +7164,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string dictionary resource along with {@link Response}.
      */
     Response<StringDictionary> listFunctionKeysSlotWithResponse(
         String resourceGroupName, String name, String functionName, String slot, Context context);
@@ -7187,7 +7196,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function secrets.
+     * @return function secrets along with {@link Response}.
      */
     Response<FunctionSecrets> listFunctionSecretsSlotWithResponse(
         String resourceGroupName, String name, String functionName, String slot, Context context);
@@ -7217,7 +7226,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return functions host level keys.
+     * @return functions host level keys along with {@link Response}.
      */
     Response<HostKeys> listHostKeysSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -7246,7 +7255,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> listSyncStatusSlotWithResponse(String resourceGroupName, String name, String slot, Context context);
 
@@ -7274,7 +7283,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> syncFunctionsSlotWithResponse(String resourceGroupName, String name, String slot, Context context);
 
@@ -7310,7 +7319,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function key info.
+     * @return function key info along with {@link Response}.
      */
     Response<KeyInfo> createOrUpdateHostSecretSlotWithResponse(
         String resourceGroupName,
@@ -7347,7 +7356,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteHostSecretSlotWithResponse(
         String resourceGroupName, String name, String keyType, String keyName, String slot, Context context);
@@ -7413,7 +7422,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a hostname binding object.
+     * @return a hostname binding object along with {@link Response}.
      */
     Response<HostnameBinding> getHostnameBindingSlotWithResponse(
         String resourceGroupName, String name, String slot, String hostname, Context context);
@@ -7450,7 +7459,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a hostname binding object.
+     * @return a hostname binding object along with {@link Response}.
      */
     Response<HostnameBinding> createOrUpdateHostnameBindingSlotWithResponse(
         String resourceGroupName,
@@ -7488,7 +7497,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteHostnameBindingSlotWithResponse(
         String resourceGroupName, String name, String slot, String hostname, Context context);
@@ -7523,7 +7532,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract along with {@link Response}.
      */
     Response<HybridConnection> getHybridConnectionSlotWithResponse(
         String resourceGroupName, String name, String namespaceName, String relayName, String slot, Context context);
@@ -7565,7 +7574,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract along with {@link Response}.
      */
     Response<HybridConnection> createOrUpdateHybridConnectionSlotWithResponse(
         String resourceGroupName,
@@ -7603,7 +7612,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteHybridConnectionSlotWithResponse(
         String resourceGroupName, String name, String namespaceName, String relayName, String slot, Context context);
@@ -7645,7 +7654,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract along with {@link Response}.
      */
     Response<HybridConnection> updateHybridConnectionSlotWithResponse(
         String resourceGroupName,
@@ -7681,7 +7690,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract along with {@link Response}.
      */
     Response<HybridConnection> listHybridConnectionsSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -7713,7 +7722,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection for an App Service app.
+     * @return hybrid Connection for an App Service app along with {@link Response}.
      */
     Response<RelayServiceConnectionEntity> listRelayServiceConnectionsSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -7748,7 +7757,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection for an App Service app.
+     * @return hybrid Connection for an App Service app along with {@link Response}.
      */
     Response<RelayServiceConnectionEntity> getRelayServiceConnectionSlotWithResponse(
         String resourceGroupName, String name, String entityName, String slot, Context context);
@@ -7789,7 +7798,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection for an App Service app.
+     * @return hybrid Connection for an App Service app along with {@link Response}.
      */
     Response<RelayServiceConnectionEntity> createOrUpdateRelayServiceConnectionSlotWithResponse(
         String resourceGroupName,
@@ -7825,7 +7834,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteRelayServiceConnectionSlotWithResponse(
         String resourceGroupName, String name, String entityName, String slot, Context context);
@@ -7866,7 +7875,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection for an App Service app.
+     * @return hybrid Connection for an App Service app along with {@link Response}.
      */
     Response<RelayServiceConnectionEntity> updateRelayServiceConnectionSlotWithResponse(
         String resourceGroupName,
@@ -7934,7 +7943,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     Response<WebSiteInstanceStatus> getInstanceInfoSlotWithResponse(
         String resourceGroupName, String name, String instanceId, String slot, Context context);
@@ -7966,7 +7975,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return mSDeploy ARM response.
+     * @return mSDeploy ARM response along with {@link Response}.
      */
     Response<MSDeployStatus> getInstanceMsDeployStatusSlotWithResponse(
         String resourceGroupName, String name, String slot, String instanceId, Context context);
@@ -8029,7 +8038,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return mSDeploy log.
+     * @return mSDeploy log along with {@link Response}.
      */
     Response<MSDeployLog> getInstanceMSDeployLogSlotWithResponse(
         String resourceGroupName, String name, String slot, String instanceId, Context context);
@@ -8103,7 +8112,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return process Information.
+     * @return process Information along with {@link Response}.
      */
     Response<ProcessInfo> getInstanceProcessSlotWithResponse(
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context);
@@ -8141,7 +8150,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteInstanceProcessSlotWithResponse(
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context);
@@ -8254,7 +8263,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return process Module Information.
+     * @return process Module Information along with {@link Response}.
      */
     Response<ProcessModuleInfo> getInstanceProcessModuleSlotWithResponse(
         String resourceGroupName,
@@ -8327,7 +8336,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents whether or not an app is cloneable.
+     * @return represents whether or not an app is cloneable along with {@link Response}.
      */
     Response<SiteCloneability> isCloneableSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -8388,7 +8397,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function secrets.
+     * @return function secrets along with {@link Response}.
      */
     Response<FunctionSecrets> listSyncFunctionTriggersSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -8420,7 +8429,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return mySQL migration status.
+     * @return mySQL migration status along with {@link Response}.
      */
     Response<MigrateMySqlStatus> getMigrateMySqlStatusSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -8452,7 +8461,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return swift Virtual Network Contract.
+     * @return swift Virtual Network Contract along with {@link Response}.
      */
     Response<SwiftVirtualNetwork> getSwiftVirtualNetworkConnectionSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -8491,7 +8500,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return swift Virtual Network Contract.
+     * @return swift Virtual Network Contract along with {@link Response}.
      */
     Response<SwiftVirtualNetwork> createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(
         String resourceGroupName,
@@ -8524,7 +8533,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteSwiftVirtualNetworkSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -8563,7 +8572,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return swift Virtual Network Contract.
+     * @return swift Virtual Network Contract along with {@link Response}.
      */
     Response<SwiftVirtualNetwork> updateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(
         String resourceGroupName,
@@ -8599,7 +8608,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of network features for an app (presently VNET integration and Hybrid Connections).
+     * @return full view of network features for an app (presently VNET integration and Hybrid Connections) along with
+     *     {@link Response}.
      */
     Response<NetworkFeatures> listNetworkFeaturesSlotWithResponse(
         String resourceGroupName, String name, String view, String slot, Context context);
@@ -8633,7 +8643,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
+     * @return array of NetworkTrace along with {@link Response}.
      */
     Response<Object> getNetworkTraceOperationSlotWithResponse(
         String resourceGroupName, String name, String operationId, String slot, Context context);
@@ -8666,7 +8676,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     Response<String> startWebSiteNetworkTraceSlotWithResponse(
         String resourceGroupName,
@@ -8763,7 +8773,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> stopWebSiteNetworkTraceSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -8797,7 +8807,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
+     * @return array of NetworkTrace along with {@link Response}.
      */
     Response<List<NetworkTrace>> getNetworkTracesSlotWithResponse(
         String resourceGroupName, String name, String operationId, String slot, Context context);
@@ -8831,7 +8841,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
+     * @return array of NetworkTrace along with {@link Response}.
      */
     Response<Object> getNetworkTraceOperationSlotV2WithResponse(
         String resourceGroupName, String name, String operationId, String slot, Context context);
@@ -8865,7 +8875,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
+     * @return array of NetworkTrace along with {@link Response}.
      */
     Response<List<NetworkTrace>> getNetworkTracesSlotV2WithResponse(
         String resourceGroupName, String name, String operationId, String slot, Context context);
@@ -8896,7 +8906,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> generateNewSitePublishingPasswordSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -8959,7 +8969,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting PHP error logging flag.
+     * @return used for getting PHP error logging flag along with {@link Response}.
      */
     Response<SitePhpErrorLogFlag> getSitePhpErrorLogFlagSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -8991,7 +9001,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return premier add-on.
+     * @return premier add-on along with {@link Response}.
      */
     Response<PremierAddOn> listPremierAddOnsSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -9025,7 +9035,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return premier add-on.
+     * @return premier add-on along with {@link Response}.
      */
     Response<PremierAddOn> getPremierAddOnSlotWithResponse(
         String resourceGroupName, String name, String premierAddOnName, String slot, Context context);
@@ -9062,7 +9072,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return premier add-on.
+     * @return premier add-on along with {@link Response}.
      */
     Response<PremierAddOn> addPremierAddOnSlotWithResponse(
         String resourceGroupName,
@@ -9100,7 +9110,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deletePremierAddOnSlotWithResponse(
         String resourceGroupName, String name, String premierAddOnName, String slot, Context context);
@@ -9141,7 +9151,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return premier add-on.
+     * @return premier add-on along with {@link Response}.
      */
     Response<PremierAddOn> updatePremierAddOnSlotWithResponse(
         String resourceGroupName,
@@ -9178,7 +9188,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the parameters of Private Access for a Web Site.
+     * @return description of the parameters of Private Access for a Web Site along with {@link Response}.
      */
     Response<PrivateAccess> getPrivateAccessSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -9213,7 +9223,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the parameters of Private Access for a Web Site.
+     * @return description of the parameters of Private Access for a Web Site along with {@link Response}.
      */
     Response<PrivateAccess> putPrivateAccessVnetSlotWithResponse(
         String resourceGroupName, String name, String slot, PrivateAccessInner access, Context context);
@@ -9277,7 +9287,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response}.
      */
     Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionSlotWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot, Context context);
@@ -9384,7 +9394,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources.
+     * @return wrapper for a collection of private link resources along with {@link Response}.
      */
     Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -9447,7 +9457,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return process Information.
+     * @return process Information along with {@link Response}.
      */
     Response<ProcessInfo> getProcessSlotWithResponse(
         String resourceGroupName, String name, String processId, String slot, Context context);
@@ -9480,7 +9490,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteProcessSlotWithResponse(
         String resourceGroupName, String name, String processId, String slot, Context context);
@@ -9580,7 +9590,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return process Module Information.
+     * @return process Module Information along with {@link Response}.
      */
     Response<ProcessModuleInfo> getProcessModuleSlotWithResponse(
         String resourceGroupName, String name, String processId, String baseAddress, String slot, Context context);
@@ -9680,7 +9690,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public certificate object.
+     * @return public certificate object along with {@link Response}.
      */
     Response<PublicCertificate> getPublicCertificateSlotWithResponse(
         String resourceGroupName, String name, String slot, String publicCertificateName, Context context);
@@ -9723,7 +9733,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public certificate object.
+     * @return public certificate object along with {@link Response}.
      */
     Response<PublicCertificate> createOrUpdatePublicCertificateSlotWithResponse(
         String resourceGroupName,
@@ -9761,7 +9771,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deletePublicCertificateSlotWithResponse(
         String resourceGroupName, String name, String slot, String publicCertificateName, Context context);
@@ -9835,7 +9845,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> resetSlotConfigurationSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -9868,7 +9878,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> restartSlotWithResponse(
         String resourceGroupName, String name, String slot, Boolean softRestart, Boolean synchronous, Context context);
@@ -10021,7 +10031,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site Extension Information.
+     * @return site Extension Information along with {@link Response}.
      */
     Response<SiteExtensionInfo> getSiteExtensionSlotWithResponse(
         String resourceGroupName, String name, String siteExtensionId, String slot, Context context);
@@ -10083,7 +10093,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteSiteExtensionSlotWithResponse(
         String resourceGroupName, String name, String siteExtensionId, String slot, Context context);
@@ -10236,7 +10246,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return source control configuration for an app.
+     * @return source control configuration for an app along with {@link Response}.
      */
     Response<SiteSourceControl> getSourceControlSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -10301,7 +10311,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteSourceControlSlotWithResponse(
         String resourceGroupName, String name, String slot, String additionalFlags, Context context);
@@ -10336,7 +10346,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return source control configuration for an app.
+     * @return source control configuration for an app along with {@link Response}.
      */
     Response<SiteSourceControl> updateSourceControlSlotWithResponse(
         String resourceGroupName, String name, String slot, SiteSourceControlInner siteSourceControl, Context context);
@@ -10365,7 +10375,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> startSlotWithResponse(String resourceGroupName, String name, String slot, Context context);
 
@@ -10455,7 +10465,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> stopSlotWithResponse(String resourceGroupName, String name, String slot, Context context);
 
@@ -10483,7 +10493,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> stopNetworkTraceSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -10512,7 +10522,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> syncRepositorySlotWithResponse(String resourceGroupName, String name, String slot, Context context);
 
@@ -10540,7 +10550,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> syncFunctionTriggersSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -10602,7 +10612,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return triggered Web Job Information.
+     * @return triggered Web Job Information along with {@link Response}.
      */
     Response<TriggeredWebJob> getTriggeredWebJobSlotWithResponse(
         String resourceGroupName, String name, String webJobName, String slot, Context context);
@@ -10635,7 +10645,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteTriggeredWebJobSlotWithResponse(
         String resourceGroupName, String name, String webJobName, String slot, Context context);
@@ -10699,7 +10709,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return triggered Web Job History.
+     * @return triggered Web Job History along with {@link Response}.
      */
     Response<TriggeredJobHistory> getTriggeredWebJobHistorySlotWithResponse(
         String resourceGroupName, String name, String webJobName, String id, String slot, Context context);
@@ -10728,7 +10738,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> runTriggeredWebJobSlotWithResponse(
         String resourceGroupName, String name, String webJobName, String slot, Context context);
@@ -10795,7 +10805,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetInfoResource.
+     * @return array of VnetInfoResource along with {@link Response}.
      */
     Response<List<VnetInfoResource>> listVnetConnectionsSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
@@ -10829,7 +10839,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource.
+     * @return virtual Network information ARM resource along with {@link Response}.
      */
     Response<VnetInfoResource> getVnetConnectionSlotWithResponse(
         String resourceGroupName, String name, String vnetName, String slot, Context context);
@@ -10860,7 +10870,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteVnetConnectionSlotWithResponse(
         String resourceGroupName, String name, String vnetName, String slot, Context context);
@@ -10895,7 +10905,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response}.
      */
     Response<VnetGateway> getVnetConnectionGatewaySlotWithResponse(
         String resourceGroupName, String name, String vnetName, String gatewayName, String slot, Context context);
@@ -10960,7 +10970,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web Job Information.
+     * @return web Job Information along with {@link Response}.
      */
     Response<WebJob> getWebJobSlotWithResponse(
         String resourceGroupName, String name, String webJobName, String slot, Context context);
@@ -11100,7 +11110,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return source control configuration for an app.
+     * @return source control configuration for an app along with {@link Response}.
      */
     Response<SiteSourceControl> getSourceControlWithResponse(String resourceGroupName, String name, Context context);
 
@@ -11156,7 +11166,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteSourceControlWithResponse(
         String resourceGroupName, String name, String additionalFlags, Context context);
@@ -11187,7 +11197,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return source control configuration for an app.
+     * @return source control configuration for an app along with {@link Response}.
      */
     Response<SiteSourceControl> updateSourceControlWithResponse(
         String resourceGroupName, String name, SiteSourceControlInner siteSourceControl, Context context);
@@ -11214,7 +11224,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> startWithResponse(String resourceGroupName, String name, Context context);
 
@@ -11293,7 +11303,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> stopWithResponse(String resourceGroupName, String name, Context context);
 
@@ -11319,7 +11329,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> stopNetworkTraceWithResponse(String resourceGroupName, String name, Context context);
 
@@ -11345,7 +11355,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> syncRepositoryWithResponse(String resourceGroupName, String name, Context context);
 
@@ -11371,7 +11381,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> syncFunctionTriggersWithResponse(String resourceGroupName, String name, Context context);
 
@@ -11425,7 +11435,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return triggered Web Job Information.
+     * @return triggered Web Job Information along with {@link Response}.
      */
     Response<TriggeredWebJob> getTriggeredWebJobWithResponse(
         String resourceGroupName, String name, String webJobName, Context context);
@@ -11454,7 +11464,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteTriggeredWebJobWithResponse(
         String resourceGroupName, String name, String webJobName, Context context);
@@ -11513,7 +11523,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return triggered Web Job History.
+     * @return triggered Web Job History along with {@link Response}.
      */
     Response<TriggeredJobHistory> getTriggeredWebJobHistoryWithResponse(
         String resourceGroupName, String name, String webJobName, String id, Context context);
@@ -11540,7 +11550,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> runTriggeredWebJobWithResponse(
         String resourceGroupName, String name, String webJobName, Context context);
@@ -11598,7 +11608,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetInfoResource.
+     * @return array of VnetInfoResource along with {@link Response}.
      */
     Response<List<VnetInfoResource>> listVnetConnectionsWithResponse(
         String resourceGroupName, String name, Context context);
@@ -11628,7 +11638,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource.
+     * @return virtual Network information ARM resource along with {@link Response}.
      */
     Response<VnetInfoResource> getVnetConnectionWithResponse(
         String resourceGroupName, String name, String vnetName, Context context);
@@ -11663,7 +11673,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource.
+     * @return virtual Network information ARM resource along with {@link Response}.
      */
     Response<VnetInfoResource> createOrUpdateVnetConnectionWithResponse(
         String resourceGroupName,
@@ -11694,7 +11704,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteVnetConnectionWithResponse(
         String resourceGroupName, String name, String vnetName, Context context);
@@ -11729,7 +11739,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource.
+     * @return virtual Network information ARM resource along with {@link Response}.
      */
     Response<VnetInfoResource> updateVnetConnectionWithResponse(
         String resourceGroupName,
@@ -11763,7 +11773,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response}.
      */
     Response<VnetGateway> getVnetConnectionGatewayWithResponse(
         String resourceGroupName, String name, String vnetName, String gatewayName, Context context);
@@ -11802,7 +11812,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response}.
      */
     Response<VnetGateway> createOrUpdateVnetConnectionGatewayWithResponse(
         String resourceGroupName,
@@ -11846,7 +11856,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response}.
      */
     Response<VnetGateway> updateVnetConnectionGatewayWithResponse(
         String resourceGroupName,
@@ -11908,7 +11918,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web Job Information.
+     * @return web Job Information along with {@link Response}.
      */
     Response<WebJob> getWebJobWithResponse(String resourceGroupName, String name, String webJobName, Context context);
 
@@ -11919,7 +11929,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a web app, a mobile app backend, or an API app.
+     * @return a web app, a mobile app backend, or an API app along with {@link Response}.
      */
     Site getById(String id);
 
@@ -11931,7 +11941,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a web app, a mobile app backend, or an API app.
+     * @return a web app, a mobile app backend, or an API app along with {@link Response}.
      */
     Response<Site> getByIdWithResponse(String id, Context context);
 
@@ -11943,7 +11953,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity.
+     * @return user credentials used for publishing activity along with {@link Response}.
      */
     Deployment getDeploymentById(String id);
 
@@ -11956,7 +11966,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity.
+     * @return user credentials used for publishing activity along with {@link Response}.
      */
     Response<Deployment> getDeploymentByIdWithResponse(String id, Context context);
 
@@ -11968,7 +11978,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain specific resource identifier.
+     * @return a domain specific resource identifier along with {@link Response}.
      */
     Identifier getDomainOwnershipIdentifierById(String id);
 
@@ -11981,7 +11991,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain specific resource identifier.
+     * @return a domain specific resource identifier along with {@link Response}.
      */
     Response<Identifier> getDomainOwnershipIdentifierByIdWithResponse(String id, Context context);
 
@@ -11992,7 +12002,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function information.
+     * @return function information along with {@link Response}.
      */
     FunctionEnvelope getFunctionById(String id);
 
@@ -12004,7 +12014,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function information.
+     * @return function information along with {@link Response}.
      */
     Response<FunctionEnvelope> getFunctionByIdWithResponse(String id, Context context);
 
@@ -12016,7 +12026,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a hostname binding object.
+     * @return a hostname binding object along with {@link Response}.
      */
     HostnameBinding getHostnameBindingById(String id);
 
@@ -12029,7 +12039,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a hostname binding object.
+     * @return a hostname binding object along with {@link Response}.
      */
     Response<HostnameBinding> getHostnameBindingByIdWithResponse(String id, Context context);
 
@@ -12041,7 +12051,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract along with {@link Response}.
      */
     HybridConnection getHybridConnectionById(String id);
 
@@ -12054,7 +12064,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract along with {@link Response}.
      */
     Response<HybridConnection> getHybridConnectionByIdWithResponse(String id, Context context);
 
@@ -12066,7 +12076,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection for an App Service app.
+     * @return hybrid Connection for an App Service app along with {@link Response}.
      */
     RelayServiceConnectionEntity getRelayServiceConnectionById(String id);
 
@@ -12079,7 +12089,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection for an App Service app.
+     * @return hybrid Connection for an App Service app along with {@link Response}.
      */
     Response<RelayServiceConnectionEntity> getRelayServiceConnectionByIdWithResponse(String id, Context context);
 
@@ -12091,7 +12101,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return premier add-on.
+     * @return premier add-on along with {@link Response}.
      */
     PremierAddOn getPremierAddOnById(String id);
 
@@ -12104,7 +12114,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return premier add-on.
+     * @return premier add-on along with {@link Response}.
      */
     Response<PremierAddOn> getPremierAddOnByIdWithResponse(String id, Context context);
 
@@ -12116,7 +12126,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public certificate object.
+     * @return public certificate object along with {@link Response}.
      */
     PublicCertificate getPublicCertificateById(String id);
 
@@ -12129,7 +12139,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public certificate object.
+     * @return public certificate object along with {@link Response}.
      */
     Response<PublicCertificate> getPublicCertificateByIdWithResponse(String id, Context context);
 
@@ -12141,7 +12151,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource.
+     * @return virtual Network information ARM resource along with {@link Response}.
      */
     VnetInfoResource getVnetConnectionSlotById(String id);
 
@@ -12154,7 +12164,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource.
+     * @return virtual Network information ARM resource along with {@link Response}.
      */
     Response<VnetInfoResource> getVnetConnectionSlotByIdWithResponse(String id, Context context);
 
@@ -12165,7 +12175,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response}.
      */
     VnetGateway getVnetConnectionGatewaySlotById(String id);
 
@@ -12177,7 +12187,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response}.
      */
     Response<VnetGateway> getVnetConnectionGatewaySlotByIdWithResponse(String id, Context context);
 
@@ -12202,7 +12212,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(
         String id, Boolean deleteMetrics, Boolean deleteEmptyServerFarm, Context context);
@@ -12227,7 +12237,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteDeploymentByIdWithResponse(String id, Context context);
 
@@ -12251,7 +12261,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteDomainOwnershipIdentifierByIdWithResponse(String id, Context context);
 
@@ -12273,7 +12283,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteFunctionByIdWithResponse(String id, Context context);
 
@@ -12297,7 +12307,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteHostnameBindingByIdWithResponse(String id, Context context);
 
@@ -12319,7 +12329,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteHybridConnectionByIdWithResponse(String id, Context context);
 
@@ -12341,7 +12351,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteRelayServiceConnectionByIdWithResponse(String id, Context context);
 
@@ -12365,7 +12375,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deletePremierAddOnByIdWithResponse(String id, Context context);
 
@@ -12389,7 +12399,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deletePublicCertificateByIdWithResponse(String id, Context context);
 
@@ -12411,7 +12421,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteVnetConnectionSlotByIdWithResponse(String id, Context context);
 

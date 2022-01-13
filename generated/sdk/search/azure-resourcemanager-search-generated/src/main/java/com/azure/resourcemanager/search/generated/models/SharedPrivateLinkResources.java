@@ -44,8 +44,8 @@ public interface SharedPrivateLinkResources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource
-     *     group.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     *     along with {@link Response}.
      */
     Response<SharedPrivateLinkResource> getWithResponse(
         String resourceGroupName,
@@ -149,8 +149,8 @@ public interface SharedPrivateLinkResources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource
-     *     group.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     *     along with {@link Response}.
      */
     SharedPrivateLinkResource getById(String id);
 
@@ -164,8 +164,8 @@ public interface SharedPrivateLinkResources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource
-     *     group.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     *     along with {@link Response}.
      */
     Response<SharedPrivateLinkResource> getByIdWithResponse(String id, UUID clientRequestId, Context context);
 

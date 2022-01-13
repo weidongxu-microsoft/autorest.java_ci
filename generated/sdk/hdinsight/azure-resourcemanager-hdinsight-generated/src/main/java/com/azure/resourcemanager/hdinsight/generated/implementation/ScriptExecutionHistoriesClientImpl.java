@@ -111,7 +111,8 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list script execution history response.
+     * @return the list script execution history response along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RuntimeScriptActionDetailInner>> listByClusterSinglePageAsync(
@@ -169,7 +170,8 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list script execution history response.
+     * @return the list script execution history response along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RuntimeScriptActionDetailInner>> listByClusterSinglePageAsync(
@@ -292,7 +294,7 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> promoteWithResponseAsync(
@@ -347,7 +349,7 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> promoteWithResponseAsync(
@@ -398,7 +400,7 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> promoteAsync(String resourceGroupName, String clusterName, String scriptExecutionId) {
@@ -431,7 +433,7 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> promoteWithResponse(
@@ -446,7 +448,8 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list script execution history response.
+     * @return the list script execution history response along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RuntimeScriptActionDetailInner>> listByClusterNextSinglePageAsync(String nextLink) {
@@ -482,7 +485,8 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list script execution history response.
+     * @return the list script execution history response along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RuntimeScriptActionDetailInner>> listByClusterNextSinglePageAsync(

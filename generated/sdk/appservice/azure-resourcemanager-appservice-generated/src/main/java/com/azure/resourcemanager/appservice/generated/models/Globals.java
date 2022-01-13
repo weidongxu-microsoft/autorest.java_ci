@@ -31,7 +31,7 @@ public interface Globals {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deleted app.
+     * @return a deleted app along with {@link Response}.
      */
     Response<DeletedSite> getDeletedWebAppWithResponse(String deletedSiteId, Context context);
 
@@ -56,7 +56,7 @@ public interface Globals {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Snapshot.
+     * @return array of Snapshot along with {@link Response}.
      */
     Response<List<Snapshot>> getDeletedWebAppSnapshotsWithResponse(String deletedSiteId, Context context);
 
@@ -82,7 +82,7 @@ public interface Globals {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> getSubscriptionOperationWithAsyncResponseWithResponse(
         String location, String operationId, Context context);

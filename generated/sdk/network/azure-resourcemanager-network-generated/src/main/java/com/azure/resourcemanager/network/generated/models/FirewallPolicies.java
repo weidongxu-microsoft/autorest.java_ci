@@ -55,7 +55,7 @@ public interface FirewallPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Firewall Policy.
+     * @return the specified Firewall Policy along with {@link Response}.
      */
     Response<FirewallPolicy> getByResourceGroupWithResponse(
         String resourceGroupName, String firewallPolicyName, String expand, Context context);
@@ -110,7 +110,7 @@ public interface FirewallPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Firewall Policy.
+     * @return the specified Firewall Policy along with {@link Response}.
      */
     FirewallPolicy getById(String id);
 
@@ -123,7 +123,7 @@ public interface FirewallPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Firewall Policy.
+     * @return the specified Firewall Policy along with {@link Response}.
      */
     Response<FirewallPolicy> getByIdWithResponse(String id, String expand, Context context);
 

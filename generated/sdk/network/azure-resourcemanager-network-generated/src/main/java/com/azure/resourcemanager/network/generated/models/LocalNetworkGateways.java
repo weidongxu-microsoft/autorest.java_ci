@@ -31,7 +31,7 @@ public interface LocalNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified local network gateway in a resource group.
+     * @return the specified local network gateway in a resource group along with {@link Response}.
      */
     Response<LocalNetworkGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String localNetworkGatewayName, Context context);
@@ -89,7 +89,7 @@ public interface LocalNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified local network gateway in a resource group.
+     * @return the specified local network gateway in a resource group along with {@link Response}.
      */
     LocalNetworkGateway getById(String id);
 
@@ -101,7 +101,7 @@ public interface LocalNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified local network gateway in a resource group.
+     * @return the specified local network gateway in a resource group along with {@link Response}.
      */
     Response<LocalNetworkGateway> getByIdWithResponse(String id, Context context);
 

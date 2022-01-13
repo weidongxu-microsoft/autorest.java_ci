@@ -139,7 +139,8 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return linked storage accounts top level resource container.
+     * @return linked storage accounts top level resource container along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LinkedStorageAccountsResourceInner>> createOrUpdateWithResponseAsync(
@@ -205,7 +206,8 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return linked storage accounts top level resource container.
+     * @return linked storage accounts top level resource container along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LinkedStorageAccountsResourceInner>> createOrUpdateWithResponseAsync(
@@ -268,7 +270,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return linked storage accounts top level resource container.
+     * @return linked storage accounts top level resource container on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LinkedStorageAccountsResourceInner> createOrUpdateAsync(
@@ -321,7 +323,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return linked storage accounts top level resource container.
+     * @return linked storage accounts top level resource container along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<LinkedStorageAccountsResourceInner> createOrUpdateWithResponse(
@@ -343,7 +345,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -396,7 +398,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -445,7 +447,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String workspaceName, DataSourceType dataSourceType) {
@@ -478,7 +480,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -495,7 +497,8 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all linked storage account of a specific data source type associated with the specified workspace.
+     * @return all linked storage account of a specific data source type associated with the specified workspace along
+     *     with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LinkedStorageAccountsResourceInner>> getWithResponseAsync(
@@ -550,7 +553,8 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all linked storage account of a specific data source type associated with the specified workspace.
+     * @return all linked storage account of a specific data source type associated with the specified workspace along
+     *     with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LinkedStorageAccountsResourceInner>> getWithResponseAsync(
@@ -601,7 +605,8 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all linked storage account of a specific data source type associated with the specified workspace.
+     * @return all linked storage account of a specific data source type associated with the specified workspace on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LinkedStorageAccountsResourceInner> getAsync(
@@ -644,7 +649,8 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all linked storage account of a specific data source type associated with the specified workspace.
+     * @return all linked storage account of a specific data source type associated with the specified workspace along
+     *     with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<LinkedStorageAccountsResourceInner> getWithResponse(
@@ -662,7 +668,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all linked storage accounts associated with the specified workspace, storage accounts will be sorted by
-     *     their data source type.
+     *     their data source type along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LinkedStorageAccountsResourceInner>> listByWorkspaceSinglePageAsync(
@@ -718,7 +724,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all linked storage accounts associated with the specified workspace, storage accounts will be sorted by
-     *     their data source type.
+     *     their data source type along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LinkedStorageAccountsResourceInner>> listByWorkspaceSinglePageAsync(

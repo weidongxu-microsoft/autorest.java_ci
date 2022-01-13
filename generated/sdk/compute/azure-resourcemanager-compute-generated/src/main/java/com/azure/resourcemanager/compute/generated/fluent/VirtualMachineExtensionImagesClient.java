@@ -39,7 +39,7 @@ public interface VirtualMachineExtensionImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual machine extension image.
+     * @return a virtual machine extension image along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VirtualMachineExtensionImageInner> getWithResponse(
@@ -67,7 +67,7 @@ public interface VirtualMachineExtensionImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine extension image types.
+     * @return a list of virtual machine extension image types along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<VirtualMachineExtensionImageInner>> listTypesWithResponse(
@@ -100,7 +100,7 @@ public interface VirtualMachineExtensionImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine extension image versions.
+     * @return a list of virtual machine extension image versions along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<VirtualMachineExtensionImageInner>> listVersionsWithResponse(

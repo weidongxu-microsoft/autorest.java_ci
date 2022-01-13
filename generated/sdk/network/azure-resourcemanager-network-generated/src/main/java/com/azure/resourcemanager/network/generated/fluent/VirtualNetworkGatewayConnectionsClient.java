@@ -17,6 +17,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkG
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VpnPacketCaptureStartParameters;
 import com.azure.resourcemanager.network.generated.models.VpnPacketCaptureStopParameters;
+import reactor.core.publisher.Mono;
 
 /**
  * An instance of this class provides access to all the operations defined in VirtualNetworkGatewayConnectionsClient.
@@ -31,7 +32,8 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkGatewayConnectionInner>, VirtualNetworkGatewayConnectionInner>
@@ -50,7 +52,8 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkGatewayConnectionInner>, VirtualNetworkGatewayConnectionInner>
@@ -119,7 +122,7 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway connection by resource group.
+     * @return the specified virtual network gateway connection by resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VirtualNetworkGatewayConnectionInner> getByResourceGroupWithResponse(
@@ -133,7 +136,7 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -148,7 +151,7 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -188,7 +191,8 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkGatewayConnectionInner>, VirtualNetworkGatewayConnectionInner> beginUpdateTags(
@@ -204,7 +208,8 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkGatewayConnectionInner>, VirtualNetworkGatewayConnectionInner> beginUpdateTags(
@@ -252,7 +257,8 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetConnectionSharedKey API service call.
+     * @return response for GetConnectionSharedKey API service call along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ConnectionSharedKeyInner>, ConnectionSharedKeyInner> beginSetSharedKey(
@@ -270,7 +276,8 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetConnectionSharedKey API service call.
+     * @return response for GetConnectionSharedKey API service call along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ConnectionSharedKeyInner>, ConnectionSharedKeyInner> beginSetSharedKey(
@@ -341,7 +348,7 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetConnectionSharedKey API service call.
+     * @return response for GetConnectionSharedKey API service call along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ConnectionSharedKeyInner> getSharedKeyWithResponse(
@@ -386,7 +393,8 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the virtual network connection reset shared key.
+     * @return the virtual network connection reset shared key along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ConnectionResetSharedKeyInner>, ConnectionResetSharedKeyInner> beginResetSharedKey(
@@ -405,7 +413,8 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the virtual network connection reset shared key.
+     * @return the virtual network connection reset shared key along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ConnectionResetSharedKeyInner>, ConnectionResetSharedKeyInner> beginResetSharedKey(
@@ -465,7 +474,7 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginStartPacketCapture(
@@ -485,7 +494,7 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginStartPacketCapture(
@@ -559,7 +568,7 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginStopPacketCapture(
@@ -579,7 +588,7 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginStopPacketCapture(
@@ -636,7 +645,7 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginGetIkeSas(
@@ -651,7 +660,7 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginGetIkeSas(
@@ -692,7 +701,7 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginResetConnection(
@@ -707,7 +716,7 @@ public interface VirtualNetworkGatewayConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginResetConnection(

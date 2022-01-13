@@ -80,7 +80,7 @@ public interface ObjectReplicationPoliciesOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the object replication policy of the storage account by policy ID.
+     * @return the object replication policy of the storage account by policy ID along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ObjectReplicationPolicyInner> getWithResponse(
@@ -128,7 +128,7 @@ public interface ObjectReplicationPoliciesOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the replication policy between two storage accounts.
+     * @return the replication policy between two storage accounts along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ObjectReplicationPolicyInner> createOrUpdateWithResponse(
@@ -171,7 +171,7 @@ public interface ObjectReplicationPoliciesOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(

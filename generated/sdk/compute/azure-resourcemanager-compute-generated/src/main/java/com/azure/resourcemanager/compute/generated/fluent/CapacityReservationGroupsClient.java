@@ -47,7 +47,7 @@ public interface CapacityReservationGroupsClient {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the capacity reservation group that the capacity reservations should be
-     *     assigned to.
+     *     assigned to along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CapacityReservationGroupInner> createOrUpdateWithResponse(
@@ -87,7 +87,7 @@ public interface CapacityReservationGroupsClient {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the capacity reservation group that the capacity reservations should be
-     *     assigned to.
+     *     assigned to along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CapacityReservationGroupInner> updateWithResponse(
@@ -123,7 +123,7 @@ public interface CapacityReservationGroupsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String capacityReservationGroupName, Context context);
@@ -158,7 +158,7 @@ public interface CapacityReservationGroupsClient {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the capacity reservation group that the capacity reservations should be
-     *     assigned to.
+     *     assigned to along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CapacityReservationGroupInner> getByResourceGroupWithResponse(

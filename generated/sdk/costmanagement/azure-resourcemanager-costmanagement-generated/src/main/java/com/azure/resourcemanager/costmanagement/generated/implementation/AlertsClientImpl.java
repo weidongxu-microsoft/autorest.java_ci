@@ -127,7 +127,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of alerts.
+     * @return result of alerts along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertsResultInner>> listWithResponseAsync(String scope) {
@@ -168,7 +168,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of alerts.
+     * @return result of alerts along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertsResultInner>> listWithResponseAsync(String scope, Context context) {
@@ -206,7 +206,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of alerts.
+     * @return result of alerts on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AlertsResultInner> listAsync(String scope) {
@@ -269,7 +269,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of alerts.
+     * @return result of alerts along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AlertsResultInner> listWithResponse(String scope, Context context) {
@@ -297,7 +297,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert for the scope by alert ID.
+     * @return the alert for the scope by alert ID along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertInner>> getWithResponseAsync(String scope, String alertId) {
@@ -344,7 +344,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert for the scope by alert ID.
+     * @return the alert for the scope by alert ID along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertInner>> getWithResponseAsync(String scope, String alertId, Context context) {
@@ -386,7 +386,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert for the scope by alert ID.
+     * @return the alert for the scope by alert ID on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AlertInner> getAsync(String scope, String alertId) {
@@ -451,7 +451,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert for the scope by alert ID.
+     * @return the alert for the scope by alert ID along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AlertInner> getWithResponse(String scope, String alertId, Context context) {
@@ -480,7 +480,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an individual alert.
+     * @return an individual alert along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertInner>> dismissWithResponseAsync(
@@ -541,7 +541,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an individual alert.
+     * @return an individual alert along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertInner>> dismissWithResponseAsync(
@@ -592,7 +592,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an individual alert.
+     * @return an individual alert on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AlertInner> dismissAsync(String scope, String alertId, DismissAlertPayload parameters) {
@@ -659,7 +659,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an individual alert.
+     * @return an individual alert along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AlertInner> dismissWithResponse(
@@ -678,7 +678,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of alerts.
+     * @return result of alerts along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertsResultInner>> listExternalWithResponseAsync(
@@ -727,7 +727,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of alerts.
+     * @return result of alerts along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AlertsResultInner>> listExternalWithResponseAsync(
@@ -772,7 +772,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of alerts.
+     * @return result of alerts on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AlertsResultInner> listExternalAsync(
@@ -819,7 +819,7 @@ public final class AlertsClientImpl implements AlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of alerts.
+     * @return result of alerts along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AlertsResultInner> listExternalWithResponse(

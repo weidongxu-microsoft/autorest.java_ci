@@ -55,7 +55,7 @@ public interface VirtualNetworks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network by resource group.
+     * @return the specified virtual network by resource group along with {@link Response}.
      */
     Response<VirtualNetwork> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualNetworkName, String expand, Context context);
@@ -127,7 +127,7 @@ public interface VirtualNetworks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for CheckIPAddressAvailability API service call.
+     * @return response for CheckIPAddressAvailability API service call along with {@link Response}.
      */
     Response<IpAddressAvailabilityResult> checkIpAddressAvailabilityWithResponse(
         String resourceGroupName, String virtualNetworkName, String ipAddress, Context context);
@@ -164,7 +164,7 @@ public interface VirtualNetworks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network by resource group.
+     * @return the specified virtual network by resource group along with {@link Response}.
      */
     VirtualNetwork getById(String id);
 
@@ -177,7 +177,7 @@ public interface VirtualNetworks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network by resource group.
+     * @return the specified virtual network by resource group along with {@link Response}.
      */
     Response<VirtualNetwork> getByIdWithResponse(String id, String expand, Context context);
 

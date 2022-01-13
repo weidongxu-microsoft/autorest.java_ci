@@ -587,7 +587,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listSinglePageAsync(Boolean detailed) {
@@ -637,7 +638,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listSinglePageAsync(Boolean detailed, Context context) {
@@ -758,7 +760,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -810,7 +813,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listByResourceGroupSinglePageAsync(
@@ -922,7 +926,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServicePlanInner>> getByResourceGroupWithResponseAsync(
@@ -971,7 +975,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServicePlanInner>> getByResourceGroupWithResponseAsync(
@@ -1016,7 +1020,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServicePlanInner> getByResourceGroupAsync(String resourceGroupName, String name) {
@@ -1055,7 +1059,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AppServicePlanInner> getByResourceGroupWithResponse(
@@ -1072,7 +1076,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -1128,7 +1132,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -1180,7 +1184,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AppServicePlanInner>, AppServicePlanInner> beginCreateOrUpdateAsync(
@@ -1207,7 +1211,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AppServicePlanInner>, AppServicePlanInner> beginCreateOrUpdateAsync(
@@ -1230,7 +1234,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServicePlanInner>, AppServicePlanInner> beginCreateOrUpdate(
@@ -1248,7 +1252,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServicePlanInner>, AppServicePlanInner> beginCreateOrUpdate(
@@ -1265,7 +1269,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServicePlanInner> createOrUpdateAsync(
@@ -1285,7 +1289,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServicePlanInner> createOrUpdateAsync(
@@ -1338,7 +1342,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String name) {
@@ -1386,7 +1390,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String name, Context context) {
@@ -1430,7 +1434,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String name) {
@@ -1460,7 +1464,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context) {
@@ -1476,7 +1480,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServicePlanInner>> updateWithResponseAsync(
@@ -1532,7 +1536,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServicePlanInner>> updateWithResponseAsync(
@@ -1584,7 +1588,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServicePlanInner> updateAsync(
@@ -1627,7 +1631,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
+     * @return app Service plan along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AppServicePlanInner> updateWithResponse(
@@ -1643,7 +1647,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Capability.
+     * @return array of Capability along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<CapabilityInner>>> listCapabilitiesWithResponseAsync(
@@ -1692,7 +1696,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Capability.
+     * @return array of Capability along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<CapabilityInner>>> listCapabilitiesWithResponseAsync(
@@ -1737,7 +1741,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Capability.
+     * @return array of Capability on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<CapabilityInner>> listCapabilitiesAsync(String resourceGroupName, String name) {
@@ -1776,7 +1780,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Capability.
+     * @return array of Capability along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<CapabilityInner>> listCapabilitiesWithResponse(
@@ -1794,7 +1798,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionInner>> getHybridConnectionWithResponseAsync(
@@ -1853,7 +1857,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionInner>> getHybridConnectionWithResponseAsync(
@@ -1908,7 +1912,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<HybridConnectionInner> getHybridConnectionAsync(
@@ -1953,7 +1957,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return hybrid Connection contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<HybridConnectionInner> getHybridConnectionWithResponse(
@@ -1971,7 +1975,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteHybridConnectionWithResponseAsync(
@@ -2030,7 +2034,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteHybridConnectionWithResponseAsync(
@@ -2085,7 +2089,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteHybridConnectionAsync(
@@ -2121,7 +2125,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteHybridConnectionWithResponse(
@@ -2140,7 +2144,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection key contract.
+     * @return hybrid Connection key contract along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionKeyInner>> listHybridConnectionKeysWithResponseAsync(
@@ -2199,7 +2203,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection key contract.
+     * @return hybrid Connection key contract along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionKeyInner>> listHybridConnectionKeysWithResponseAsync(
@@ -2254,7 +2258,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection key contract.
+     * @return hybrid Connection key contract on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<HybridConnectionKeyInner> listHybridConnectionKeysAsync(
@@ -2299,7 +2303,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection key contract.
+     * @return hybrid Connection key contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<HybridConnectionKeyInner> listHybridConnectionKeysWithResponse(
@@ -2318,7 +2322,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resources.
+     * @return collection of resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<String>> listWebAppsByHybridConnectionSinglePageAsync(
@@ -2386,7 +2390,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resources.
+     * @return collection of resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<String>> listWebAppsByHybridConnectionSinglePageAsync(
@@ -2530,7 +2534,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection limits contract.
+     * @return hybrid Connection limits contract along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionLimitsInner>> getHybridConnectionPlanLimitWithResponseAsync(
@@ -2579,7 +2583,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection limits contract.
+     * @return hybrid Connection limits contract along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionLimitsInner>> getHybridConnectionPlanLimitWithResponseAsync(
@@ -2624,7 +2628,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection limits contract.
+     * @return hybrid Connection limits contract on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<HybridConnectionLimitsInner> getHybridConnectionPlanLimitAsync(String resourceGroupName, String name) {
@@ -2663,7 +2667,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection limits contract.
+     * @return hybrid Connection limits contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<HybridConnectionLimitsInner> getHybridConnectionPlanLimitWithResponse(
@@ -2679,7 +2683,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings.
+     * @return collection of hostname bindings along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HybridConnectionInner>> listHybridConnectionsSinglePageAsync(
@@ -2737,7 +2742,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings.
+     * @return collection of hostname bindings along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HybridConnectionInner>> listHybridConnectionsSinglePageAsync(
@@ -2862,7 +2868,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> restartWebAppsWithResponseAsync(
@@ -2915,7 +2921,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> restartWebAppsWithResponseAsync(
@@ -2964,7 +2970,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> restartWebAppsAsync(String resourceGroupName, String name, Boolean softRestart) {
@@ -2980,7 +2986,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> restartWebAppsAsync(String resourceGroupName, String name) {
@@ -3016,7 +3022,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> restartWebAppsWithResponse(
@@ -3037,7 +3043,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SiteInner>> listWebAppsSinglePageAsync(
@@ -3103,7 +3109,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SiteInner>> listWebAppsSinglePageAsync(
@@ -3267,7 +3273,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Object>> getServerFarmSkusWithResponseAsync(String resourceGroupName, String name) {
@@ -3315,7 +3321,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Object>> getServerFarmSkusWithResponseAsync(
@@ -3360,7 +3366,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Object> getServerFarmSkusAsync(String resourceGroupName, String name) {
@@ -3399,7 +3405,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Object> getServerFarmSkusWithResponse(String resourceGroupName, String name, Context context) {
@@ -3416,7 +3422,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of CSM usage quotas.
+     * @return collection of CSM usage quotas along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmUsageQuotaInner>> listUsagesSinglePageAsync(
@@ -3477,7 +3483,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of CSM usage quotas.
+     * @return collection of CSM usage quotas along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmUsageQuotaInner>> listUsagesSinglePageAsync(
@@ -3625,7 +3631,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetInfoResource.
+     * @return array of VnetInfoResource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VnetInfoResourceInner>>> listVnetsWithResponseAsync(
@@ -3674,7 +3680,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetInfoResource.
+     * @return array of VnetInfoResource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VnetInfoResourceInner>>> listVnetsWithResponseAsync(
@@ -3719,7 +3725,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetInfoResource.
+     * @return array of VnetInfoResource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VnetInfoResourceInner>> listVnetsAsync(String resourceGroupName, String name) {
@@ -3758,7 +3764,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetInfoResource.
+     * @return array of VnetInfoResource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VnetInfoResourceInner>> listVnetsWithResponse(
@@ -3775,7 +3781,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource.
+     * @return virtual Network information ARM resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetInfoResourceInner>> getVnetFromServerFarmWithResponseAsync(
@@ -3829,7 +3836,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource.
+     * @return virtual Network information ARM resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetInfoResourceInner>> getVnetFromServerFarmWithResponseAsync(
@@ -3879,7 +3887,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource.
+     * @return virtual Network information ARM resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VnetInfoResourceInner> getVnetFromServerFarmAsync(
@@ -3921,7 +3929,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource.
+     * @return virtual Network information ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VnetInfoResourceInner> getVnetFromServerFarmWithResponse(
@@ -3939,7 +3947,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetGatewayInner>> getVnetGatewayWithResponseAsync(
@@ -3998,7 +4007,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetGatewayInner>> getVnetGatewayWithResponseAsync(
@@ -4053,7 +4063,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VnetGatewayInner> getVnetGatewayAsync(
@@ -4097,7 +4107,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VnetGatewayInner> getVnetGatewayWithResponse(
@@ -4116,7 +4126,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetGatewayInner>> updateVnetGatewayWithResponseAsync(
@@ -4187,7 +4198,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetGatewayInner>> updateVnetGatewayWithResponseAsync(
@@ -4255,7 +4267,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VnetGatewayInner> updateVnetGatewayAsync(
@@ -4310,7 +4322,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return the Virtual Network gateway contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VnetGatewayInner> updateVnetGatewayWithResponse(
@@ -4334,7 +4346,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute.
+     * @return array of VnetRoute along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VnetRouteInner>>> listRoutesForVnetWithResponseAsync(
@@ -4388,7 +4400,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute.
+     * @return array of VnetRoute along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VnetRouteInner>>> listRoutesForVnetWithResponseAsync(
@@ -4438,7 +4450,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute.
+     * @return array of VnetRoute on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VnetRouteInner>> listRoutesForVnetAsync(String resourceGroupName, String name, String vnetName) {
@@ -4479,7 +4491,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute.
+     * @return array of VnetRoute along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VnetRouteInner>> listRoutesForVnetWithResponse(
@@ -4497,7 +4509,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute.
+     * @return array of VnetRoute along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VnetRouteInner>>> getRouteForVnetWithResponseAsync(
@@ -4556,7 +4568,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute.
+     * @return array of VnetRoute along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VnetRouteInner>>> getRouteForVnetWithResponseAsync(
@@ -4611,7 +4623,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute.
+     * @return array of VnetRoute on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VnetRouteInner>> getRouteForVnetAsync(
@@ -4656,7 +4668,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute.
+     * @return array of VnetRoute along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VnetRouteInner>> getRouteForVnetWithResponse(
@@ -4675,7 +4687,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetRouteInner>> createOrUpdateVnetRouteWithResponseAsync(
@@ -4741,7 +4754,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetRouteInner>> createOrUpdateVnetRouteWithResponseAsync(
@@ -4808,7 +4822,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VnetRouteInner> createOrUpdateVnetRouteAsync(
@@ -4855,7 +4870,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VnetRouteInner> createOrUpdateVnetRouteWithResponse(
@@ -4879,7 +4895,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteVnetRouteWithResponseAsync(
@@ -4938,7 +4954,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteVnetRouteWithResponseAsync(
@@ -4993,7 +5009,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteVnetRouteAsync(String resourceGroupName, String name, String vnetName, String routeName) {
@@ -5028,7 +5044,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteVnetRouteWithResponse(
@@ -5047,7 +5063,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetRouteInner>> updateVnetRouteWithResponseAsync(
@@ -5113,7 +5130,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetRouteInner>> updateVnetRouteWithResponseAsync(
@@ -5180,7 +5198,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VnetRouteInner> updateVnetRouteAsync(
@@ -5227,7 +5246,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VnetRouteInner> updateVnetRouteWithResponse(
@@ -5249,7 +5269,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> rebootWorkerWithResponseAsync(
@@ -5303,7 +5323,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> rebootWorkerWithResponseAsync(
@@ -5353,7 +5373,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> rebootWorkerAsync(String resourceGroupName, String name, String workerName) {
@@ -5386,7 +5406,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> rebootWorkerWithResponse(
@@ -5401,7 +5421,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listNextSinglePageAsync(String nextLink) {
@@ -5437,7 +5458,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -5472,7 +5494,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -5509,7 +5532,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listByResourceGroupNextSinglePageAsync(
@@ -5545,7 +5569,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resources.
+     * @return collection of resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<String>> listWebAppsByHybridConnectionNextSinglePageAsync(String nextLink) {
@@ -5583,7 +5607,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resources.
+     * @return collection of resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<String>> listWebAppsByHybridConnectionNextSinglePageAsync(
@@ -5619,7 +5643,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings.
+     * @return collection of hostname bindings along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HybridConnectionInner>> listHybridConnectionsNextSinglePageAsync(String nextLink) {
@@ -5656,7 +5681,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings.
+     * @return collection of hostname bindings along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HybridConnectionInner>> listHybridConnectionsNextSinglePageAsync(
@@ -5692,7 +5718,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SiteInner>> listWebAppsNextSinglePageAsync(String nextLink) {
@@ -5728,7 +5754,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SiteInner>> listWebAppsNextSinglePageAsync(String nextLink, Context context) {
@@ -5763,7 +5789,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of CSM usage quotas.
+     * @return collection of CSM usage quotas along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmUsageQuotaInner>> listUsagesNextSinglePageAsync(String nextLink) {
@@ -5799,7 +5825,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of CSM usage quotas.
+     * @return collection of CSM usage quotas along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmUsageQuotaInner>> listUsagesNextSinglePageAsync(String nextLink, Context context) {

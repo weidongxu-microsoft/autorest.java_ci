@@ -34,7 +34,7 @@ public interface ResourceProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return query result.
+     * @return query result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<QueryResponseInner> resourcesWithResponse(QueryRequest query, Context context);
@@ -59,7 +59,7 @@ public interface ResourceProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Object> resourcesHistoryWithResponse(ResourcesHistoryRequest request, Context context);

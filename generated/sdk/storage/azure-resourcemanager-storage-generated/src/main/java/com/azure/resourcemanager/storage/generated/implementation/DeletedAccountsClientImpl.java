@@ -101,7 +101,8 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Deleted Accounts operation.
+     * @return the response from the List Deleted Accounts operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedAccountInner>> listSinglePageAsync() {
@@ -147,7 +148,8 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Deleted Accounts operation.
+     * @return the response from the List Deleted Accounts operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedAccountInner>> listSinglePageAsync(Context context) {
@@ -244,7 +246,8 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of specified deleted account resource.
+     * @return properties of specified deleted account resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeletedAccountInner>> getWithResponseAsync(String deletedAccountName, String location) {
@@ -292,7 +295,8 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of specified deleted account resource.
+     * @return properties of specified deleted account resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeletedAccountInner>> getWithResponseAsync(
@@ -337,7 +341,7 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of specified deleted account resource.
+     * @return properties of specified deleted account resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeletedAccountInner> getAsync(String deletedAccountName, String location) {
@@ -376,7 +380,7 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of specified deleted account resource.
+     * @return properties of specified deleted account resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeletedAccountInner> getWithResponse(String deletedAccountName, String location, Context context) {
@@ -390,7 +394,8 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Deleted Accounts operation.
+     * @return the response from the List Deleted Accounts operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedAccountInner>> listNextSinglePageAsync(String nextLink) {
@@ -426,7 +431,8 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Deleted Accounts operation.
+     * @return the response from the List Deleted Accounts operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedAccountInner>> listNextSinglePageAsync(String nextLink, Context context) {

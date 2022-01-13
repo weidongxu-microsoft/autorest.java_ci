@@ -32,7 +32,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain availability check result.
+     * @return domain availability check result along with {@link Response}.
      */
     Response<DomainAvailabilityCheckResult> checkAvailabilityWithResponse(
         NameIdentifierInner identifier, Context context);
@@ -77,7 +77,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single sign-on request information for domain management.
+     * @return single sign-on request information for domain management along with {@link Response}.
      */
     Response<DomainControlCenterSsoRequest> getControlCenterSsoRequestWithResponse(Context context);
 
@@ -154,7 +154,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response}.
      */
     Response<Domain> getByResourceGroupWithResponse(String resourceGroupName, String domainName, Context context);
 
@@ -182,7 +182,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName, String domainName, Boolean forceHardDeleteDomain, Context context);
@@ -240,7 +240,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier along with {@link Response}.
      */
     Response<DomainOwnershipIdentifier> getOwnershipIdentifierWithResponse(
         String resourceGroupName, String domainName, String name, Context context);
@@ -269,7 +269,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteOwnershipIdentifierWithResponse(
         String resourceGroupName, String domainName, String name, Context context);
@@ -296,7 +296,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> renewWithResponse(String resourceGroupName, String domainName, Context context);
 
@@ -308,7 +308,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response}.
      */
     Domain getById(String id);
 
@@ -321,7 +321,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain.
+     * @return information about a domain along with {@link Response}.
      */
     Response<Domain> getByIdWithResponse(String id, Context context);
 
@@ -333,7 +333,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier along with {@link Response}.
      */
     DomainOwnershipIdentifier getOwnershipIdentifierById(String id);
 
@@ -346,7 +346,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier.
+     * @return domain ownership Identifier along with {@link Response}.
      */
     Response<DomainOwnershipIdentifier> getOwnershipIdentifierByIdWithResponse(String id, Context context);
 
@@ -372,7 +372,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Boolean forceHardDeleteDomain, Context context);
 
@@ -396,7 +396,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteOwnershipIdentifierByIdWithResponse(String id, Context context);
 

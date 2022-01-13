@@ -16,6 +16,7 @@ import com.azure.resourcemanager.azurekusto.generated.fluent.models.DataConnecti
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DataConnectionValidationInner;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DataConnectionValidationListResultInner;
 import com.azure.resourcemanager.azurekusto.generated.models.DataConnectionCheckNameRequest;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in DataConnectionsClient. */
 public interface DataConnectionsClient {
@@ -60,7 +61,8 @@ public interface DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto data connection validation result.
+     * @return the list Kusto data connection validation result along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DataConnectionValidationListResultInner>, DataConnectionValidationListResultInner>
@@ -81,7 +83,8 @@ public interface DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto data connection validation result.
+     * @return the list Kusto data connection validation result along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DataConnectionValidationListResultInner>, DataConnectionValidationListResultInner>
@@ -159,7 +162,7 @@ public interface DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request.
+     * @return the result returned from a check name availability request along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CheckNameResultInner> checkNameAvailabilityWithResponse(
@@ -196,7 +199,7 @@ public interface DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an data connection.
+     * @return class representing an data connection along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DataConnectionInner> getWithResponse(
@@ -213,7 +216,8 @@ public interface DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an data connection.
+     * @return class representing an data connection along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DataConnectionInner>, DataConnectionInner> beginCreateOrUpdate(
@@ -235,7 +239,8 @@ public interface DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an data connection.
+     * @return class representing an data connection along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DataConnectionInner>, DataConnectionInner> beginCreateOrUpdate(
@@ -301,7 +306,8 @@ public interface DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an data connection.
+     * @return class representing an data connection along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DataConnectionInner>, DataConnectionInner> beginUpdate(
@@ -323,7 +329,8 @@ public interface DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an data connection.
+     * @return class representing an data connection along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DataConnectionInner>, DataConnectionInner> beginUpdate(
@@ -388,7 +395,7 @@ public interface DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -405,7 +412,7 @@ public interface DataConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(

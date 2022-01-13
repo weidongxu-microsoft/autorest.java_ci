@@ -152,7 +152,8 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a scoped resource in a private link scope.
+     * @return a scoped resource in a private link scope along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ScopedResourceInner>> getWithResponseAsync(
@@ -207,7 +208,8 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a scoped resource in a private link scope.
+     * @return a scoped resource in a private link scope along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ScopedResourceInner>> getWithResponseAsync(
@@ -258,7 +260,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a scoped resource in a private link scope.
+     * @return a scoped resource in a private link scope on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ScopedResourceInner> getAsync(String resourceGroupName, String scopeName, String name) {
@@ -299,7 +301,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a scoped resource in a private link scope.
+     * @return a scoped resource in a private link scope along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ScopedResourceInner> getWithResponse(
@@ -317,7 +319,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private link scoped resource.
+     * @return a private link scoped resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -379,7 +381,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private link scoped resource.
+     * @return a private link scoped resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -437,7 +439,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private link scoped resource.
+     * @return a private link scoped resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ScopedResourceInner>, ScopedResourceInner> beginCreateOrUpdateAsync(
@@ -465,7 +467,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private link scoped resource.
+     * @return a private link scoped resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ScopedResourceInner>, ScopedResourceInner> beginCreateOrUpdateAsync(
@@ -489,7 +491,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private link scoped resource.
+     * @return a private link scoped resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ScopedResourceInner>, ScopedResourceInner> beginCreateOrUpdate(
@@ -508,7 +510,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private link scoped resource.
+     * @return a private link scoped resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ScopedResourceInner>, ScopedResourceInner> beginCreateOrUpdate(
@@ -526,7 +528,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private link scoped resource.
+     * @return a private link scoped resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ScopedResourceInner> createOrUpdateAsync(
@@ -547,7 +549,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private link scoped resource.
+     * @return a private link scoped resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ScopedResourceInner> createOrUpdateAsync(
@@ -603,7 +605,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -656,7 +658,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -705,7 +707,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -727,7 +729,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -748,7 +750,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String scopeName, String name) {
@@ -765,7 +767,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -782,7 +784,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String scopeName, String name) {
@@ -801,7 +803,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String scopeName, String name, Context context) {
@@ -849,7 +851,8 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoint connections on a private link scope.
+     * @return all private endpoint connections on a private link scope along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ScopedResourceInner>> listByPrivateLinkScopeSinglePageAsync(
@@ -908,7 +911,8 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoint connections on a private link scope.
+     * @return all private endpoint connections on a private link scope along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ScopedResourceInner>> listByPrivateLinkScopeSinglePageAsync(
@@ -1030,7 +1034,8 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of scoped resources in a private link scope.
+     * @return a list of scoped resources in a private link scope along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ScopedResourceInner>> listByPrivateLinkScopeNextSinglePageAsync(String nextLink) {
@@ -1067,7 +1072,8 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of scoped resources in a private link scope.
+     * @return a list of scoped resources in a private link scope along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ScopedResourceInner>> listByPrivateLinkScopeNextSinglePageAsync(

@@ -111,7 +111,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> disableWithResponseAsync(
@@ -165,7 +165,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> disableWithResponseAsync(
@@ -215,7 +215,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> disableAsync(String resourceGroupName, String workspaceName, String intelligencePackName) {
@@ -248,7 +248,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> disableWithResponse(
@@ -265,7 +265,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> enableWithResponseAsync(
@@ -319,7 +319,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> enableWithResponseAsync(
@@ -369,7 +369,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> enableAsync(String resourceGroupName, String workspaceName, String intelligencePackName) {
@@ -402,7 +402,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> enableWithResponse(
@@ -418,7 +418,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of IntelligencePack.
+     * @return array of IntelligencePack along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<IntelligencePackInner>>> listWithResponseAsync(
@@ -468,7 +468,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of IntelligencePack.
+     * @return array of IntelligencePack along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<IntelligencePackInner>>> listWithResponseAsync(
@@ -514,7 +514,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of IntelligencePack.
+     * @return array of IntelligencePack on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<IntelligencePackInner>> listAsync(String resourceGroupName, String workspaceName) {
@@ -553,7 +553,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of IntelligencePack.
+     * @return array of IntelligencePack along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<IntelligencePackInner>> listWithResponse(

@@ -31,7 +31,7 @@ public interface VirtualHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHub Resource.
+     * @return virtualHub Resource along with {@link Response}.
      */
     Response<VirtualHub> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualHubName, Context context);
@@ -150,7 +150,7 @@ public interface VirtualHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHub Resource.
+     * @return virtualHub Resource along with {@link Response}.
      */
     VirtualHub getById(String id);
 
@@ -162,7 +162,7 @@ public interface VirtualHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHub Resource.
+     * @return virtualHub Resource along with {@link Response}.
      */
     Response<VirtualHub> getByIdWithResponse(String id, Context context);
 

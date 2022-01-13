@@ -32,6 +32,7 @@ import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironme
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.VirtualNetworkProfile;
 import java.util.List;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in AppServiceEnvironmentsClient. */
 public interface AppServiceEnvironmentsClient {
@@ -110,7 +111,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource.
+     * @return app Service Environment ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AppServiceEnvironmentResourceInner> getByResourceGroupWithResponse(
@@ -126,7 +127,8 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource.
+     * @return app Service Environment ARM resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AppServiceEnvironmentResourceInner>, AppServiceEnvironmentResourceInner> beginCreateOrUpdate(
@@ -143,7 +145,8 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource.
+     * @return app Service Environment ARM resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AppServiceEnvironmentResourceInner>, AppServiceEnvironmentResourceInner> beginCreateOrUpdate(
@@ -199,7 +202,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name, Boolean forceDelete);
@@ -216,7 +219,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -293,7 +296,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource.
+     * @return app Service Environment ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AppServiceEnvironmentResourceInner> updateWithResponse(
@@ -355,7 +358,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes main public IP address and any extra virtual IPs.
+     * @return describes main public IP address and any extra virtual IPs along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AddressResponseInner> getVipInfoWithResponse(String resourceGroupName, String name, Context context);
@@ -416,7 +419,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of networking configuration for an ASE.
+     * @return full view of networking configuration for an ASE along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AseV3NetworkingConfigurationInner> getAseV3NetworkingConfigurationWithResponse(
@@ -449,7 +452,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of networking configuration for an ASE.
+     * @return full view of networking configuration for an ASE along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AseV3NetworkingConfigurationInner> updateAseNetworkingConfigurationWithResponse(
@@ -482,7 +485,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of HostingEnvironmentDiagnostics.
+     * @return array of HostingEnvironmentDiagnostics along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<HostingEnvironmentDiagnosticsInner>> listDiagnosticsWithResponse(
@@ -515,7 +518,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics for an App Service Environment.
+     * @return diagnostics for an App Service Environment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<HostingEnvironmentDiagnosticsInner> getDiagnosticsItemWithResponse(
@@ -605,7 +608,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<WorkerPoolResourceInner> getMultiRolePoolWithResponse(
@@ -621,7 +624,8 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<WorkerPoolResourceInner>, WorkerPoolResourceInner> beginCreateOrUpdateMultiRolePool(
@@ -638,7 +642,8 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<WorkerPoolResourceInner>, WorkerPoolResourceInner> beginCreateOrUpdateMultiRolePool(
@@ -704,7 +709,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<WorkerPoolResourceInner> updateMultiRolePoolWithResponse(
@@ -857,7 +862,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Operation.
+     * @return array of Operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<OperationInner>> listOperationsWithResponse(String resourceGroupName, String name, Context context);
@@ -951,7 +956,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionWithResponse(
@@ -968,7 +973,8 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<
@@ -992,7 +998,8 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<
@@ -1057,7 +1064,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Object>, Object> beginDeletePrivateEndpointConnection(
@@ -1074,7 +1081,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Object>, Object> beginDeletePrivateEndpointConnection(
@@ -1136,7 +1143,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources.
+     * @return wrapper for a collection of private link resources along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateLinkResourcesWrapperInner> getPrivateLinkResourcesWithResponse(
@@ -1165,7 +1172,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> rebootWithResponse(String resourceGroupName, String name, Context context);
@@ -1375,7 +1382,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<WorkerPoolResourceInner> getWorkerPoolWithResponse(
@@ -1392,7 +1399,8 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<WorkerPoolResourceInner>, WorkerPoolResourceInner> beginCreateOrUpdateWorkerPool(
@@ -1410,7 +1418,8 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<WorkerPoolResourceInner>, WorkerPoolResourceInner> beginCreateOrUpdateWorkerPool(
@@ -1488,7 +1497,7 @@ public interface AppServiceEnvironmentsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<WorkerPoolResourceInner> updateWorkerPoolWithResponse(

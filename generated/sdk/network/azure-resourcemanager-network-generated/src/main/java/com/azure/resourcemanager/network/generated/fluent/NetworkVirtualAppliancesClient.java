@@ -13,6 +13,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in NetworkVirtualAppliancesClient. */
 public interface NetworkVirtualAppliancesClient {
@@ -24,7 +25,7 @@ public interface NetworkVirtualAppliancesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkVirtualApplianceName);
@@ -38,7 +39,7 @@ public interface NetworkVirtualAppliancesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -92,7 +93,7 @@ public interface NetworkVirtualAppliancesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Network Virtual Appliance.
+     * @return the specified Network Virtual Appliance along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<NetworkVirtualApplianceInner> getByResourceGroupWithResponse(
@@ -123,7 +124,7 @@ public interface NetworkVirtualAppliancesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkVirtualAppliance Resource.
+     * @return networkVirtualAppliance Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<NetworkVirtualApplianceInner> updateTagsWithResponse(
@@ -138,7 +139,7 @@ public interface NetworkVirtualAppliancesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkVirtualAppliance Resource.
+     * @return networkVirtualAppliance Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<NetworkVirtualApplianceInner>, NetworkVirtualApplianceInner> beginCreateOrUpdate(
@@ -154,7 +155,7 @@ public interface NetworkVirtualAppliancesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkVirtualAppliance Resource.
+     * @return networkVirtualAppliance Resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<NetworkVirtualApplianceInner>, NetworkVirtualApplianceInner> beginCreateOrUpdate(

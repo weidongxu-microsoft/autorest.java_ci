@@ -39,7 +39,7 @@ public interface ScheduledQueryRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource.
+     * @return the Log Search Rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<LogSearchRuleResourceInner> createOrUpdateWithResponse(
@@ -67,7 +67,7 @@ public interface ScheduledQueryRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Search rule.
+     * @return an Log Search rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<LogSearchRuleResourceInner> getByResourceGroupWithResponse(
@@ -97,7 +97,7 @@ public interface ScheduledQueryRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource.
+     * @return the Log Search Rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<LogSearchRuleResourceInner> updateWithResponse(
@@ -124,7 +124,7 @@ public interface ScheduledQueryRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context);

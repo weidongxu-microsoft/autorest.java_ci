@@ -86,7 +86,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server configurations.
+     * @return a list of server configurations along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listUpdateConfigurationsWithResponseAsync(
@@ -143,7 +143,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server configurations.
+     * @return a list of server configurations along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listUpdateConfigurationsWithResponseAsync(
@@ -196,7 +196,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server configurations.
+     * @return a list of server configurations along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ConfigurationListResultInner>, ConfigurationListResultInner>
@@ -224,7 +224,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server configurations.
+     * @return a list of server configurations along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ConfigurationListResultInner>, ConfigurationListResultInner>
@@ -252,7 +252,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server configurations.
+     * @return a list of server configurations along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ConfigurationListResultInner>, ConfigurationListResultInner>
@@ -270,7 +270,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server configurations.
+     * @return a list of server configurations along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ConfigurationListResultInner>, ConfigurationListResultInner>
@@ -288,7 +288,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server configurations.
+     * @return a list of server configurations on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ConfigurationListResultInner> listUpdateConfigurationsAsync(
@@ -308,7 +308,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server configurations.
+     * @return a list of server configurations on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ConfigurationListResultInner> listUpdateConfigurationsAsync(

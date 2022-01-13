@@ -187,7 +187,8 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of StreamingLocator items.
+     * @return a collection of StreamingLocator items along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StreamingLocatorInner>> listSinglePageAsync(
@@ -252,7 +253,8 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of StreamingLocator items.
+     * @return a collection of StreamingLocator items along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StreamingLocatorInner>> listSinglePageAsync(
@@ -414,7 +416,8 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a Streaming Locator in the Media Services account.
+     * @return the details of a Streaming Locator in the Media Services account along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StreamingLocatorInner>> getWithResponseAsync(
@@ -469,7 +472,8 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a Streaming Locator in the Media Services account.
+     * @return the details of a Streaming Locator in the Media Services account along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StreamingLocatorInner>> getWithResponseAsync(
@@ -520,7 +524,8 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a Streaming Locator in the Media Services account.
+     * @return the details of a Streaming Locator in the Media Services account on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StreamingLocatorInner> getAsync(
@@ -562,7 +567,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a Streaming Locator in the Media Services account.
+     * @return the details of a Streaming Locator in the Media Services account along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StreamingLocatorInner> getWithResponse(
@@ -580,7 +585,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Streaming Locator resource.
+     * @return a Streaming Locator resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StreamingLocatorInner>> createWithResponseAsync(
@@ -642,7 +647,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Streaming Locator resource.
+     * @return a Streaming Locator resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StreamingLocatorInner>> createWithResponseAsync(
@@ -704,7 +709,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Streaming Locator resource.
+     * @return a Streaming Locator resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StreamingLocatorInner> createAsync(
@@ -749,7 +754,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Streaming Locator resource.
+     * @return a Streaming Locator resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StreamingLocatorInner> createWithResponse(
@@ -771,7 +776,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -826,7 +831,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -877,7 +882,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String accountName, String streamingLocatorName) {
@@ -910,7 +915,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -927,7 +932,8 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class of response for listContentKeys action.
+     * @return class of response for listContentKeys action along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ListContentKeysResponseInner>> listContentKeysWithResponseAsync(
@@ -982,7 +988,8 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class of response for listContentKeys action.
+     * @return class of response for listContentKeys action along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ListContentKeysResponseInner>> listContentKeysWithResponseAsync(
@@ -1033,7 +1040,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class of response for listContentKeys action.
+     * @return class of response for listContentKeys action on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ListContentKeysResponseInner> listContentKeysAsync(
@@ -1076,7 +1083,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class of response for listContentKeys action.
+     * @return class of response for listContentKeys action along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ListContentKeysResponseInner> listContentKeysWithResponse(
@@ -1093,7 +1100,8 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class of response for listPaths action.
+     * @return class of response for listPaths action along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ListPathsResponseInner>> listPathsWithResponseAsync(
@@ -1148,7 +1156,8 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class of response for listPaths action.
+     * @return class of response for listPaths action along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ListPathsResponseInner>> listPathsWithResponseAsync(
@@ -1199,7 +1208,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class of response for listPaths action.
+     * @return class of response for listPaths action on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ListPathsResponseInner> listPathsAsync(
@@ -1241,7 +1250,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class of response for listPaths action.
+     * @return class of response for listPaths action along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ListPathsResponseInner> listPathsWithResponse(
@@ -1256,7 +1265,8 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of StreamingLocator items.
+     * @return a collection of StreamingLocator items along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StreamingLocatorInner>> listNextSinglePageAsync(String nextLink) {
@@ -1292,7 +1302,8 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of StreamingLocator items.
+     * @return a collection of StreamingLocator items along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StreamingLocatorInner>> listNextSinglePageAsync(String nextLink, Context context) {

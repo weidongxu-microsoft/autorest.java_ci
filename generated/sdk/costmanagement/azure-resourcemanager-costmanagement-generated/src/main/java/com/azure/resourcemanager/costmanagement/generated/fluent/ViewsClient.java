@@ -108,7 +108,7 @@ public interface ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the view by view name.
+     * @return the view by view name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ViewInner> getWithResponse(String viewName, Context context);
@@ -137,7 +137,7 @@ public interface ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return states and configurations of Cost Analysis.
+     * @return states and configurations of Cost Analysis along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ViewInner> createOrUpdateWithResponse(String viewName, ViewInner parameters, Context context);
@@ -161,7 +161,7 @@ public interface ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String viewName, Context context);
@@ -216,7 +216,7 @@ public interface ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the view for the defined scope by view name.
+     * @return the view for the defined scope by view name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ViewInner> getByScopeWithResponse(String scope, String viewName, Context context);
@@ -275,7 +275,7 @@ public interface ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return states and configurations of Cost Analysis.
+     * @return states and configurations of Cost Analysis along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ViewInner> createOrUpdateByScopeWithResponse(
@@ -330,7 +330,7 @@ public interface ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteByScopeWithResponse(String scope, String viewName, Context context);

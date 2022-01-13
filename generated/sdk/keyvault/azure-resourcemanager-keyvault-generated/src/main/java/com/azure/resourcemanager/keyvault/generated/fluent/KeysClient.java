@@ -45,7 +45,7 @@ public interface KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the key resource.
+     * @return the key resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<KeyInner> createIfNotExistWithResponse(
@@ -75,7 +75,7 @@ public interface KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault.
+     * @return the current version of the specified key from the specified key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<KeyInner> getWithResponse(String resourceGroupName, String vaultName, String keyName, Context context);
@@ -133,7 +133,7 @@ public interface KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified key vault.
+     * @return the specified version of the specified key in the specified key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<KeyInner> getVersionWithResponse(

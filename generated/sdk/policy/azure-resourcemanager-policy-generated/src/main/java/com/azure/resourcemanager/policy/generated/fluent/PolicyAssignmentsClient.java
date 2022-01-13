@@ -47,7 +47,7 @@ public interface PolicyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PolicyAssignmentInner> deleteWithResponse(String scope, String policyAssignmentName, Context context);
@@ -88,7 +88,7 @@ public interface PolicyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PolicyAssignmentInner> createWithResponse(
@@ -124,7 +124,7 @@ public interface PolicyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PolicyAssignmentInner> getWithResponse(String scope, String policyAssignmentName, Context context);
@@ -403,7 +403,7 @@ public interface PolicyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PolicyAssignmentInner> deleteByIdWithResponse(String policyAssignmentId, Context context);
@@ -446,7 +446,7 @@ public interface PolicyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PolicyAssignmentInner> createByIdWithResponse(
@@ -484,7 +484,7 @@ public interface PolicyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PolicyAssignmentInner> getByIdWithResponse(String policyAssignmentId, Context context);

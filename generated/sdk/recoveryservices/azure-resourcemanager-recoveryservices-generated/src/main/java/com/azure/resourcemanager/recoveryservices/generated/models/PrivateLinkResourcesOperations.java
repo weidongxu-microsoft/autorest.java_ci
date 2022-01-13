@@ -58,7 +58,7 @@ public interface PrivateLinkResourcesOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information of the private link resource.
+     * @return information of the private link resource along with {@link Response}.
      */
     Response<PrivateLinkResource> getWithResponse(
         String resourceGroupName, String vaultName, String privateLinkResourceName, Context context);

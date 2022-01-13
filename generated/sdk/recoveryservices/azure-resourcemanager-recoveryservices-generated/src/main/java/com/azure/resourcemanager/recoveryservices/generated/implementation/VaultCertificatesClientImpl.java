@@ -84,7 +84,8 @@ public final class VaultCertificatesClientImpl implements VaultCertificatesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return certificate corresponding to a vault that can be used by clients to register themselves with the vault.
+     * @return certificate corresponding to a vault that can be used by clients to register themselves with the vault
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultCertificateResponseInner>> createWithResponseAsync(
@@ -147,7 +148,8 @@ public final class VaultCertificatesClientImpl implements VaultCertificatesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return certificate corresponding to a vault that can be used by clients to register themselves with the vault.
+     * @return certificate corresponding to a vault that can be used by clients to register themselves with the vault
+     *     along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VaultCertificateResponseInner>> createWithResponseAsync(
@@ -210,7 +212,8 @@ public final class VaultCertificatesClientImpl implements VaultCertificatesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return certificate corresponding to a vault that can be used by clients to register themselves with the vault.
+     * @return certificate corresponding to a vault that can be used by clients to register themselves with the vault on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultCertificateResponseInner> createAsync(
@@ -255,7 +258,8 @@ public final class VaultCertificatesClientImpl implements VaultCertificatesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return certificate corresponding to a vault that can be used by clients to register themselves with the vault.
+     * @return certificate corresponding to a vault that can be used by clients to register themselves with the vault
+     *     along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VaultCertificateResponseInner> createWithResponse(

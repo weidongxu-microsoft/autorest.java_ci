@@ -31,7 +31,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response along with {@link Response}.
      */
     Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(
         StorageAccountCheckNameAvailabilityParameters accountName, Context context);
@@ -60,7 +60,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String accountName, Context context);
 
@@ -93,7 +93,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response}.
      */
     Response<StorageAccount> getByResourceGroupWithResponse(
         String resourceGroupName, String accountName, StorageAccountExpand expand, Context context);
@@ -173,7 +173,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response}.
      */
     Response<StorageAccountListKeysResult> listKeysWithResponse(
         String resourceGroupName, String accountName, ListKeyExpand expand, Context context);
@@ -206,7 +206,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response}.
      */
     Response<StorageAccountListKeysResult> regenerateKeyWithResponse(
         String resourceGroupName,
@@ -242,7 +242,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List SAS credentials operation response.
+     * @return the List SAS credentials operation response along with {@link Response}.
      */
     Response<ListAccountSasResponse> listAccountSasWithResponse(
         String resourceGroupName, String accountName, AccountSasParameters parameters, Context context);
@@ -275,7 +275,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List service SAS credentials operation response.
+     * @return the List service SAS credentials operation response along with {@link Response}.
      */
     Response<ListServiceSasResponse> listServiceSasWithResponse(
         String resourceGroupName, String accountName, ServiceSasParameters parameters, Context context);
@@ -367,7 +367,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> revokeUserDelegationKeysWithResponse(String resourceGroupName, String accountName, Context context);
 
@@ -379,7 +379,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response}.
      */
     StorageAccount getById(String id);
 
@@ -394,7 +394,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response}.
      */
     Response<StorageAccount> getByIdWithResponse(String id, StorageAccountExpand expand, Context context);
 
@@ -416,7 +416,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

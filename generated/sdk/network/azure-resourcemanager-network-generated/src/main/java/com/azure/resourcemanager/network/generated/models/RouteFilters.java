@@ -55,7 +55,7 @@ public interface RouteFilters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route filter.
+     * @return the specified route filter along with {@link Response}.
      */
     Response<RouteFilter> getByResourceGroupWithResponse(
         String resourceGroupName, String routeFilterName, String expand, Context context);
@@ -110,7 +110,7 @@ public interface RouteFilters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route filter.
+     * @return the specified route filter along with {@link Response}.
      */
     RouteFilter getById(String id);
 
@@ -123,7 +123,7 @@ public interface RouteFilters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route filter.
+     * @return the specified route filter along with {@link Response}.
      */
     Response<RouteFilter> getByIdWithResponse(String id, String expand, Context context);
 

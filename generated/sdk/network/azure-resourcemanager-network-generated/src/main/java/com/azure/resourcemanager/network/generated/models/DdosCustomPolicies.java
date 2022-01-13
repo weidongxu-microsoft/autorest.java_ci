@@ -53,7 +53,7 @@ public interface DdosCustomPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified DDoS custom policy.
+     * @return information about the specified DDoS custom policy along with {@link Response}.
      */
     Response<DdosCustomPolicy> getByResourceGroupWithResponse(
         String resourceGroupName, String ddosCustomPolicyName, Context context);
@@ -65,7 +65,7 @@ public interface DdosCustomPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified DDoS custom policy.
+     * @return information about the specified DDoS custom policy along with {@link Response}.
      */
     DdosCustomPolicy getById(String id);
 
@@ -77,7 +77,7 @@ public interface DdosCustomPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified DDoS custom policy.
+     * @return information about the specified DDoS custom policy along with {@link Response}.
      */
     Response<DdosCustomPolicy> getByIdWithResponse(String id, Context context);
 

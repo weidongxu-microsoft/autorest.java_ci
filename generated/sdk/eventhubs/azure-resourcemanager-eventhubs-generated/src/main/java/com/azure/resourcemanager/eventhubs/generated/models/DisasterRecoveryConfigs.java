@@ -65,7 +65,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
+     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response}.
      */
     Response<AuthorizationRule> getAuthorizationRuleWithResponse(
         String resourceGroupName, String namespaceName, String alias, String authorizationRuleName, Context context);
@@ -95,7 +95,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return the primary and secondary connection strings for the Namespace along with {@link Response}.
      */
     Response<AccessKeys> listKeysWithResponse(
         String resourceGroupName, String namespaceName, String alias, String authorizationRuleName, Context context);
@@ -124,7 +124,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation.
+     * @return the Result of the CheckNameAvailability operation along with {@link Response}.
      */
     Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(
         String resourceGroupName, String namespaceName, CheckNameAvailabilityParameter parameters, Context context);
@@ -176,7 +176,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String alias, Context context);
 
@@ -203,7 +203,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}.
      */
     Response<ArmDisasterRecovery> getWithResponse(
         String resourceGroupName, String namespaceName, String alias, Context context);
@@ -230,7 +230,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> breakPairingWithResponse(
         String resourceGroupName, String namespaceName, String alias, Context context);
@@ -257,7 +257,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> failOverWithResponse(String resourceGroupName, String namespaceName, String alias, Context context);
 
@@ -268,7 +268,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}.
      */
     ArmDisasterRecovery getById(String id);
 
@@ -280,7 +280,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}.
      */
     Response<ArmDisasterRecovery> getByIdWithResponse(String id, Context context);
 
@@ -302,7 +302,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

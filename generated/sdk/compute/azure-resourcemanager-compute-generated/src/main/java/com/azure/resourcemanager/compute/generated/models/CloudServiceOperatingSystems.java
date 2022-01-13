@@ -37,7 +37,7 @@ public interface CloudServiceOperatingSystems {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return properties of a guest operating system version that can be specified in the XML service configuration
-     *     (.cscfg) for a cloud service.
+     *     (.cscfg) for a cloud service along with {@link Response}.
      */
     Response<OSVersion> getOSVersionWithResponse(String location, String osVersionName, Context context);
 
@@ -99,7 +99,7 @@ public interface CloudServiceOperatingSystems {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return properties of a guest operating system family that can be specified in the XML service configuration
-     *     (.cscfg) for a cloud service.
+     *     (.cscfg) for a cloud service along with {@link Response}.
      */
     Response<OSFamily> getOSFamilyWithResponse(String location, String osFamilyName, Context context);
 

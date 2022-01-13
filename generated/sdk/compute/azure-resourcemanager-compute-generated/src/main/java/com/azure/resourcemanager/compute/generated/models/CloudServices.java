@@ -58,7 +58,7 @@ public interface CloudServices {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the cloud service.
+     * @return describes the cloud service along with {@link Response}.
      */
     Response<CloudService> getByResourceGroupWithResponse(
         String resourceGroupName, String cloudServiceName, Context context);
@@ -86,7 +86,7 @@ public interface CloudServices {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a cloud service.
+     * @return the status of a cloud service along with {@link Response}.
      */
     Response<CloudServiceInstanceView> getInstanceViewWithResponse(
         String resourceGroupName, String cloudServiceName, Context context);
@@ -366,7 +366,7 @@ public interface CloudServices {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the cloud service.
+     * @return describes the cloud service along with {@link Response}.
      */
     CloudService getById(String id);
 
@@ -379,7 +379,7 @@ public interface CloudServices {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the cloud service.
+     * @return describes the cloud service along with {@link Response}.
      */
     Response<CloudService> getByIdWithResponse(String id, Context context);
 

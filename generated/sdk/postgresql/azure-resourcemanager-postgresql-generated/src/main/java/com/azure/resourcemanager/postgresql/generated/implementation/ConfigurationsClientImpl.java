@@ -125,7 +125,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Configuration.
+     * @return represents a Configuration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -188,7 +188,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Configuration.
+     * @return represents a Configuration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -251,7 +251,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Configuration.
+     * @return represents a Configuration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ConfigurationInner>, ConfigurationInner> beginCreateOrUpdateAsync(
@@ -279,7 +279,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Configuration.
+     * @return represents a Configuration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ConfigurationInner>, ConfigurationInner> beginCreateOrUpdateAsync(
@@ -307,7 +307,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Configuration.
+     * @return represents a Configuration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ConfigurationInner>, ConfigurationInner> beginCreateOrUpdate(
@@ -326,7 +326,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Configuration.
+     * @return represents a Configuration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ConfigurationInner>, ConfigurationInner> beginCreateOrUpdate(
@@ -349,7 +349,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Configuration.
+     * @return represents a Configuration on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ConfigurationInner> createOrUpdateAsync(
@@ -370,7 +370,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Configuration.
+     * @return represents a Configuration on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ConfigurationInner> createOrUpdateAsync(
@@ -434,7 +434,8 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a configuration of server.
+     * @return information about a configuration of server along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ConfigurationInner>> getWithResponseAsync(
@@ -490,7 +491,8 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a configuration of server.
+     * @return information about a configuration of server along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ConfigurationInner>> getWithResponseAsync(
@@ -542,7 +544,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a configuration of server.
+     * @return information about a configuration of server on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ConfigurationInner> getAsync(String resourceGroupName, String serverName, String configurationName) {
@@ -583,7 +585,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a configuration of server.
+     * @return information about a configuration of server along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ConfigurationInner> getWithResponse(
@@ -599,7 +601,8 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server configurations.
+     * @return a list of server configurations along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ConfigurationInner>> listByServerSinglePageAsync(
@@ -653,7 +656,8 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server configurations.
+     * @return a list of server configurations along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ConfigurationInner>> listByServerSinglePageAsync(

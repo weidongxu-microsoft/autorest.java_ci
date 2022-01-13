@@ -58,7 +58,7 @@ public interface Routes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route from a route table.
+     * @return the specified route from a route table along with {@link Response}.
      */
     Response<Route> getWithResponse(String resourceGroupName, String routeTableName, String routeName, Context context);
 
@@ -94,7 +94,7 @@ public interface Routes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route from a route table.
+     * @return the specified route from a route table along with {@link Response}.
      */
     Route getById(String id);
 
@@ -106,7 +106,7 @@ public interface Routes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route from a route table.
+     * @return the specified route from a route table along with {@link Response}.
      */
     Response<Route> getByIdWithResponse(String id, Context context);
 

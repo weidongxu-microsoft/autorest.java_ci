@@ -175,7 +175,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the key resource.
+     * @return the key resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KeyInner>> createIfNotExistWithResponseAsync(
@@ -238,7 +238,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the key resource.
+     * @return the key resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KeyInner>> createIfNotExistWithResponseAsync(
@@ -297,7 +297,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the key resource.
+     * @return the key resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<KeyInner> createIfNotExistAsync(
@@ -346,7 +346,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the key resource.
+     * @return the key resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<KeyInner> createIfNotExistWithResponse(
@@ -363,7 +363,8 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault.
+     * @return the current version of the specified key from the specified key vault along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KeyInner>> getWithResponseAsync(String resourceGroupName, String vaultName, String keyName) {
@@ -416,7 +417,8 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault.
+     * @return the current version of the specified key from the specified key vault along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KeyInner>> getWithResponseAsync(
@@ -466,7 +468,8 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault.
+     * @return the current version of the specified key from the specified key vault on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<KeyInner> getAsync(String resourceGroupName, String vaultName, String keyName) {
@@ -507,7 +510,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault.
+     * @return the current version of the specified key from the specified key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<KeyInner> getWithResponse(
@@ -523,7 +526,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the page of keys.
+     * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KeyInner>> listSinglePageAsync(String resourceGroupName, String vaultName) {
@@ -580,7 +583,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the page of keys.
+     * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KeyInner>> listSinglePageAsync(
@@ -701,7 +704,8 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified key vault.
+     * @return the specified version of the specified key in the specified key vault along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KeyInner>> getVersionWithResponseAsync(
@@ -760,7 +764,8 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified key vault.
+     * @return the specified version of the specified key in the specified key vault along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KeyInner>> getVersionWithResponseAsync(
@@ -815,7 +820,8 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified key vault.
+     * @return the specified version of the specified key in the specified key vault on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<KeyInner> getVersionAsync(
@@ -859,7 +865,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified key vault.
+     * @return the specified version of the specified key in the specified key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<KeyInner> getVersionWithResponse(
@@ -876,7 +882,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the page of keys.
+     * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KeyInner>> listVersionsSinglePageAsync(
@@ -939,7 +945,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the page of keys.
+     * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KeyInner>> listVersionsSinglePageAsync(
@@ -1068,7 +1074,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the page of keys.
+     * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KeyInner>> listNextSinglePageAsync(String nextLink) {
@@ -1104,7 +1110,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the page of keys.
+     * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KeyInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1139,7 +1145,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the page of keys.
+     * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KeyInner>> listVersionsNextSinglePageAsync(String nextLink) {
@@ -1175,7 +1181,7 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the page of keys.
+     * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KeyInner>> listVersionsNextSinglePageAsync(String nextLink, Context context) {

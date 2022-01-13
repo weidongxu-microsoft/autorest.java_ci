@@ -348,7 +348,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Data Box Edge/Data Box Gateway devices in a subscription.
+     * @return all the Data Box Edge/Data Box Gateway devices in a subscription along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataBoxEdgeDeviceInner>> listSinglePageAsync(String expand) {
@@ -397,7 +398,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Data Box Edge/Data Box Gateway devices in a subscription.
+     * @return all the Data Box Edge/Data Box Gateway devices in a subscription along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataBoxEdgeDeviceInner>> listSinglePageAsync(String expand, Context context) {
@@ -520,7 +522,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Data Box Edge/Data Box Gateway devices in a resource group.
+     * @return all the Data Box Edge/Data Box Gateway devices in a resource group along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataBoxEdgeDeviceInner>> listByResourceGroupSinglePageAsync(
@@ -576,7 +579,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Data Box Edge/Data Box Gateway devices in a resource group.
+     * @return all the Data Box Edge/Data Box Gateway devices in a resource group along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataBoxEdgeDeviceInner>> listByResourceGroupSinglePageAsync(
@@ -715,7 +719,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Data Box Edge/Data Box Gateway device.
+     * @return the properties of the Data Box Edge/Data Box Gateway device along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataBoxEdgeDeviceInner>> getByResourceGroupWithResponseAsync(
@@ -764,7 +769,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Data Box Edge/Data Box Gateway device.
+     * @return the properties of the Data Box Edge/Data Box Gateway device along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataBoxEdgeDeviceInner>> getByResourceGroupWithResponseAsync(
@@ -809,7 +815,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Data Box Edge/Data Box Gateway device.
+     * @return the properties of the Data Box Edge/Data Box Gateway device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DataBoxEdgeDeviceInner> getByResourceGroupAsync(String resourceGroupName, String deviceName) {
@@ -848,7 +854,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Data Box Edge/Data Box Gateway device.
+     * @return the properties of the Data Box Edge/Data Box Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DataBoxEdgeDeviceInner> getByResourceGroupWithResponse(
@@ -865,7 +871,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Data Box Edge/Gateway device.
+     * @return the Data Box Edge/Gateway device along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataBoxEdgeDeviceInner>> createOrUpdateWithResponseAsync(
@@ -922,7 +928,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Data Box Edge/Gateway device.
+     * @return the Data Box Edge/Gateway device along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataBoxEdgeDeviceInner>> createOrUpdateWithResponseAsync(
@@ -975,7 +981,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Data Box Edge/Gateway device.
+     * @return the Data Box Edge/Gateway device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DataBoxEdgeDeviceInner> createOrUpdateAsync(
@@ -1018,7 +1024,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Data Box Edge/Gateway device.
+     * @return the Data Box Edge/Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DataBoxEdgeDeviceInner> createOrUpdateWithResponse(
@@ -1034,7 +1040,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String deviceName) {
@@ -1082,7 +1088,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -1127,7 +1133,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String deviceName) {
@@ -1147,7 +1153,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1167,7 +1173,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String deviceName) {
@@ -1183,7 +1189,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1199,7 +1205,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String deviceName) {
@@ -1215,7 +1221,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String deviceName, Context context) {
@@ -1262,7 +1268,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Data Box Edge/Gateway device.
+     * @return the Data Box Edge/Gateway device along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataBoxEdgeDeviceInner>> updateWithResponseAsync(
@@ -1318,7 +1324,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Data Box Edge/Gateway device.
+     * @return the Data Box Edge/Gateway device along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataBoxEdgeDeviceInner>> updateWithResponseAsync(
@@ -1370,7 +1376,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Data Box Edge/Gateway device.
+     * @return the Data Box Edge/Gateway device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DataBoxEdgeDeviceInner> updateAsync(
@@ -1413,7 +1419,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Data Box Edge/Gateway device.
+     * @return the Data Box Edge/Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DataBoxEdgeDeviceInner> updateWithResponse(
@@ -1429,7 +1435,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> downloadUpdatesWithResponseAsync(
@@ -1478,7 +1484,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> downloadUpdatesWithResponseAsync(
@@ -1523,7 +1529,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDownloadUpdatesAsync(String deviceName, String resourceGroupName) {
@@ -1543,7 +1549,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDownloadUpdatesAsync(
@@ -1564,7 +1570,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDownloadUpdates(String deviceName, String resourceGroupName) {
@@ -1580,7 +1586,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDownloadUpdates(
@@ -1596,7 +1602,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> downloadUpdatesAsync(String deviceName, String resourceGroupName) {
@@ -1614,7 +1620,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> downloadUpdatesAsync(String deviceName, String resourceGroupName, Context context) {
@@ -1660,7 +1666,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used in activation key generation flow.
+     * @return used in activation key generation flow along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<GenerateCertResponseInner>> generateCertificateWithResponseAsync(
@@ -1709,7 +1716,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used in activation key generation flow.
+     * @return used in activation key generation flow along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<GenerateCertResponseInner>> generateCertificateWithResponseAsync(
@@ -1754,7 +1762,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used in activation key generation flow.
+     * @return used in activation key generation flow on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GenerateCertResponseInner> generateCertificateAsync(String deviceName, String resourceGroupName) {
@@ -1793,7 +1801,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used in activation key generation flow.
+     * @return used in activation key generation flow along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<GenerateCertResponseInner> generateCertificateWithResponse(
@@ -1809,7 +1817,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device.
+     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataBoxEdgeDeviceExtendedInfoInner>> getExtendedInformationWithResponseAsync(
@@ -1858,7 +1867,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device.
+     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataBoxEdgeDeviceExtendedInfoInner>> getExtendedInformationWithResponseAsync(
@@ -1903,7 +1913,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device.
+     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DataBoxEdgeDeviceExtendedInfoInner> getExtendedInformationAsync(
@@ -1943,7 +1954,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device.
+     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DataBoxEdgeDeviceExtendedInfoInner> getExtendedInformationWithResponse(
@@ -1959,7 +1971,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> installUpdatesWithResponseAsync(
@@ -2008,7 +2020,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> installUpdatesWithResponseAsync(
@@ -2053,7 +2065,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginInstallUpdatesAsync(String deviceName, String resourceGroupName) {
@@ -2073,7 +2085,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginInstallUpdatesAsync(
@@ -2093,7 +2105,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginInstallUpdates(String deviceName, String resourceGroupName) {
@@ -2109,7 +2121,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginInstallUpdates(
@@ -2125,7 +2137,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> installUpdatesAsync(String deviceName, String resourceGroupName) {
@@ -2143,7 +2155,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> installUpdatesAsync(String deviceName, String resourceGroupName, Context context) {
@@ -2189,7 +2201,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the network settings of the specified Data Box Edge/Data Box Gateway device along with {@link Response}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkSettingsInner>> getNetworkSettingsWithResponseAsync(
@@ -2238,7 +2251,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the network settings of the specified Data Box Edge/Data Box Gateway device along with {@link Response}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkSettingsInner>> getNetworkSettingsWithResponseAsync(
@@ -2283,7 +2297,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the network settings of the specified Data Box Edge/Data Box Gateway device on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkSettingsInner> getNetworkSettingsAsync(String deviceName, String resourceGroupName) {
@@ -2322,7 +2337,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the network settings of the specified Data Box Edge/Data Box Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<NetworkSettingsInner> getNetworkSettingsWithResponse(
@@ -2338,7 +2353,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> scanForUpdatesWithResponseAsync(
@@ -2387,7 +2402,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> scanForUpdatesWithResponseAsync(
@@ -2432,7 +2447,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginScanForUpdatesAsync(String deviceName, String resourceGroupName) {
@@ -2452,7 +2467,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginScanForUpdatesAsync(
@@ -2472,7 +2487,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginScanForUpdates(String deviceName, String resourceGroupName) {
@@ -2488,7 +2503,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginScanForUpdates(
@@ -2504,7 +2519,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> scanForUpdatesAsync(String deviceName, String resourceGroupName) {
@@ -2522,7 +2537,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> scanForUpdatesAsync(String deviceName, String resourceGroupName, Context context) {
@@ -2569,7 +2584,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateSecuritySettingsWithResponseAsync(
@@ -2626,7 +2641,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateSecuritySettingsWithResponseAsync(
@@ -2679,7 +2694,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginCreateOrUpdateSecuritySettingsAsync(
@@ -2702,7 +2717,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginCreateOrUpdateSecuritySettingsAsync(
@@ -2724,7 +2739,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreateOrUpdateSecuritySettings(
@@ -2743,7 +2758,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreateOrUpdateSecuritySettings(
@@ -2761,7 +2776,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> createOrUpdateSecuritySettingsAsync(
@@ -2781,7 +2796,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> createOrUpdateSecuritySettingsAsync(
@@ -2833,7 +2848,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Data Box Edge/Data Box Gateway device.
+     * @return additional information for the specified Data Box Edge/Data Box Gateway device along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataBoxEdgeDeviceExtendedInfoInner>> updateExtendedInformationWithResponseAsync(
@@ -2889,7 +2905,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Data Box Edge/Data Box Gateway device.
+     * @return additional information for the specified Data Box Edge/Data Box Gateway device along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DataBoxEdgeDeviceExtendedInfoInner>> updateExtendedInformationWithResponseAsync(
@@ -2941,7 +2958,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Data Box Edge/Data Box Gateway device.
+     * @return additional information for the specified Data Box Edge/Data Box Gateway device on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DataBoxEdgeDeviceExtendedInfoInner> updateExtendedInformationAsync(
@@ -2984,7 +3002,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Data Box Edge/Data Box Gateway device.
+     * @return additional information for the specified Data Box Edge/Data Box Gateway device along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DataBoxEdgeDeviceExtendedInfoInner> updateExtendedInformationWithResponse(
@@ -3001,7 +3020,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the availability of updates based on the last scan of the device.
+     * @return information about the availability of updates based on the last scan of the device along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UpdateSummaryInner>> getUpdateSummaryWithResponseAsync(
@@ -3051,7 +3071,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the availability of updates based on the last scan of the device.
+     * @return information about the availability of updates based on the last scan of the device along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UpdateSummaryInner>> getUpdateSummaryWithResponseAsync(
@@ -3097,7 +3118,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the availability of updates based on the last scan of the device.
+     * @return information about the availability of updates based on the last scan of the device on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<UpdateSummaryInner> getUpdateSummaryAsync(String deviceName, String resourceGroupName) {
@@ -3138,7 +3160,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the availability of updates based on the last scan of the device.
+     * @return information about the availability of updates based on the last scan of the device along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<UpdateSummaryInner> getUpdateSummaryWithResponse(
@@ -3155,7 +3178,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the upload registration certificate response.
+     * @return the upload registration certificate response along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UploadCertificateResponseInner>> uploadCertificateWithResponseAsync(
@@ -3211,7 +3235,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the upload registration certificate response.
+     * @return the upload registration certificate response along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UploadCertificateResponseInner>> uploadCertificateWithResponseAsync(
@@ -3263,7 +3288,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the upload registration certificate response.
+     * @return the upload registration certificate response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<UploadCertificateResponseInner> uploadCertificateAsync(
@@ -3306,7 +3331,7 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the upload registration certificate response.
+     * @return the upload registration certificate response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<UploadCertificateResponseInner> uploadCertificateWithResponse(
@@ -3321,7 +3346,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the collection of Data Box Edge/Gateway devices.
+     * @return the collection of Data Box Edge/Gateway devices along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataBoxEdgeDeviceInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -3358,7 +3384,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the collection of Data Box Edge/Gateway devices.
+     * @return the collection of Data Box Edge/Gateway devices along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataBoxEdgeDeviceInner>> listBySubscriptionNextSinglePageAsync(
@@ -3394,7 +3421,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the collection of Data Box Edge/Gateway devices.
+     * @return the collection of Data Box Edge/Gateway devices along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataBoxEdgeDeviceInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -3431,7 +3459,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the collection of Data Box Edge/Gateway devices.
+     * @return the collection of Data Box Edge/Gateway devices along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DataBoxEdgeDeviceInner>> listByResourceGroupNextSinglePageAsync(

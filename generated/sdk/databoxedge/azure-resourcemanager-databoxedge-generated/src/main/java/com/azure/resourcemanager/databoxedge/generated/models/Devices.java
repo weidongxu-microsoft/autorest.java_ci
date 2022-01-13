@@ -78,7 +78,7 @@ public interface Devices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Data Box Edge/Data Box Gateway device.
+     * @return the properties of the Data Box Edge/Data Box Gateway device along with {@link Response}.
      */
     Response<DataBoxEdgeDevice> getByResourceGroupWithResponse(
         String resourceGroupName, String deviceName, Context context);
@@ -150,7 +150,7 @@ public interface Devices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used in activation key generation flow.
+     * @return used in activation key generation flow along with {@link Response}.
      */
     Response<GenerateCertResponse> generateCertificateWithResponse(
         String deviceName, String resourceGroupName, Context context);
@@ -176,7 +176,8 @@ public interface Devices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device.
+     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device along with {@link
+     *     Response}.
      */
     Response<DataBoxEdgeDeviceExtendedInfo> getExtendedInformationWithResponse(
         String deviceName, String resourceGroupName, Context context);
@@ -225,7 +226,7 @@ public interface Devices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the network settings of the specified Data Box Edge/Data Box Gateway device along with {@link Response}.
      */
     Response<NetworkSettings> getNetworkSettingsWithResponse(
         String deviceName, String resourceGroupName, Context context);
@@ -303,7 +304,8 @@ public interface Devices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Data Box Edge/Data Box Gateway device.
+     * @return additional information for the specified Data Box Edge/Data Box Gateway device along with {@link
+     *     Response}.
      */
     Response<DataBoxEdgeDeviceExtendedInfo> updateExtendedInformationWithResponse(
         String deviceName, String resourceGroupName, DataBoxEdgeDeviceExtendedInfoPatch parameters, Context context);
@@ -331,7 +333,8 @@ public interface Devices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the availability of updates based on the last scan of the device.
+     * @return information about the availability of updates based on the last scan of the device along with {@link
+     *     Response}.
      */
     Response<UpdateSummary> getUpdateSummaryWithResponse(String deviceName, String resourceGroupName, Context context);
 
@@ -359,7 +362,7 @@ public interface Devices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the upload registration certificate response.
+     * @return the upload registration certificate response along with {@link Response}.
      */
     Response<UploadCertificateResponse> uploadCertificateWithResponse(
         String deviceName, String resourceGroupName, UploadCertificateRequest parameters, Context context);
@@ -371,7 +374,7 @@ public interface Devices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Data Box Edge/Data Box Gateway device.
+     * @return the properties of the Data Box Edge/Data Box Gateway device along with {@link Response}.
      */
     DataBoxEdgeDevice getById(String id);
 
@@ -383,7 +386,7 @@ public interface Devices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Data Box Edge/Data Box Gateway device.
+     * @return the properties of the Data Box Edge/Data Box Gateway device along with {@link Response}.
      */
     Response<DataBoxEdgeDevice> getByIdWithResponse(String id, Context context);
 

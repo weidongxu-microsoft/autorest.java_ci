@@ -44,7 +44,7 @@ public interface PolicyAssignments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     Response<PolicyAssignment> deleteWithResponse(String scope, String policyAssignmentName, Context context);
 
@@ -77,7 +77,7 @@ public interface PolicyAssignments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     Response<PolicyAssignment> getWithResponse(String scope, String policyAssignmentName, Context context);
 
@@ -346,7 +346,7 @@ public interface PolicyAssignments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     Response<PolicyAssignment> deleteByIdWithResponse(String policyAssignmentId, Context context);
 
@@ -387,7 +387,7 @@ public interface PolicyAssignments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     Response<PolicyAssignment> createByIdWithResponse(
         String policyAssignmentId, PolicyAssignmentInner parameters, Context context);
@@ -423,7 +423,7 @@ public interface PolicyAssignments {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
     Response<PolicyAssignment> getByIdWithResponse(String policyAssignmentId, Context context);
 

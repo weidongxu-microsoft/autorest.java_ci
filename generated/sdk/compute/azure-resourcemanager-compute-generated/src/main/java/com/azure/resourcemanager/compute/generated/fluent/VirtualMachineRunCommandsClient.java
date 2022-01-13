@@ -15,6 +15,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandDocum
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandDocumentInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineRunCommandInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommandUpdate;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in VirtualMachineRunCommandsClient. */
 public interface VirtualMachineRunCommandsClient {
@@ -65,7 +66,7 @@ public interface VirtualMachineRunCommandsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specific run command for a subscription in a location.
+     * @return specific run command for a subscription in a location along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RunCommandDocumentInner> getWithResponse(String location, String commandId, Context context);
@@ -81,7 +82,8 @@ public interface VirtualMachineRunCommandsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualMachineRunCommandInner>, VirtualMachineRunCommandInner> beginCreateOrUpdate(
@@ -99,7 +101,8 @@ public interface VirtualMachineRunCommandsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualMachineRunCommandInner>, VirtualMachineRunCommandInner> beginCreateOrUpdate(
@@ -159,7 +162,8 @@ public interface VirtualMachineRunCommandsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualMachineRunCommandInner>, VirtualMachineRunCommandInner> beginUpdate(
@@ -177,7 +181,8 @@ public interface VirtualMachineRunCommandsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualMachineRunCommandInner>, VirtualMachineRunCommandInner> beginUpdate(
@@ -236,7 +241,7 @@ public interface VirtualMachineRunCommandsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String vmName, String runCommandName);
@@ -252,7 +257,7 @@ public interface VirtualMachineRunCommandsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -314,7 +319,7 @@ public interface VirtualMachineRunCommandsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command.
+     * @return describes a Virtual Machine run command along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VirtualMachineRunCommandInner> getByVirtualMachineWithResponse(

@@ -33,7 +33,7 @@ public interface VirtualNetworkGatewayNatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualNetworkGatewayNatRule Resource.
+     * @return virtualNetworkGatewayNatRule Resource along with {@link Response}.
      */
     Response<VirtualNetworkGatewayNatRule> getWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, String natRuleName, Context context);
@@ -97,7 +97,7 @@ public interface VirtualNetworkGatewayNatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualNetworkGatewayNatRule Resource.
+     * @return virtualNetworkGatewayNatRule Resource along with {@link Response}.
      */
     VirtualNetworkGatewayNatRule getById(String id);
 
@@ -109,7 +109,7 @@ public interface VirtualNetworkGatewayNatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualNetworkGatewayNatRule Resource.
+     * @return virtualNetworkGatewayNatRule Resource along with {@link Response}.
      */
     Response<VirtualNetworkGatewayNatRule> getByIdWithResponse(String id, Context context);
 

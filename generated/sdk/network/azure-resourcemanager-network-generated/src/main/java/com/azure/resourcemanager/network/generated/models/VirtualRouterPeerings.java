@@ -62,7 +62,7 @@ public interface VirtualRouterPeerings {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router Peering.
+     * @return the specified Virtual Router Peering along with {@link Response}.
      */
     Response<VirtualRouterPeering> getWithResponse(
         String resourceGroupName, String virtualRouterName, String peeringName, Context context);
@@ -102,7 +102,7 @@ public interface VirtualRouterPeerings {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router Peering.
+     * @return the specified Virtual Router Peering along with {@link Response}.
      */
     VirtualRouterPeering getById(String id);
 
@@ -115,7 +115,7 @@ public interface VirtualRouterPeerings {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router Peering.
+     * @return the specified Virtual Router Peering along with {@link Response}.
      */
     Response<VirtualRouterPeering> getByIdWithResponse(String id, Context context);
 

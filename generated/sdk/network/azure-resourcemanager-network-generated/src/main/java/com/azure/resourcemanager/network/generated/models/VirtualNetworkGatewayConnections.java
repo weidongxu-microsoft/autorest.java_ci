@@ -34,7 +34,7 @@ public interface VirtualNetworkGatewayConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway connection by resource group.
+     * @return the specified virtual network gateway connection by resource group along with {@link Response}.
      */
     Response<VirtualNetworkGatewayConnection> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualNetworkGatewayConnectionName, Context context);
@@ -121,7 +121,7 @@ public interface VirtualNetworkGatewayConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetConnectionSharedKey API service call.
+     * @return response for GetConnectionSharedKey API service call along with {@link Response}.
      */
     Response<ConnectionSharedKey> getSharedKeyWithResponse(
         String resourceGroupName, String virtualNetworkGatewayConnectionName, Context context);
@@ -333,7 +333,7 @@ public interface VirtualNetworkGatewayConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway connection by resource group.
+     * @return the specified virtual network gateway connection by resource group along with {@link Response}.
      */
     VirtualNetworkGatewayConnection getById(String id);
 
@@ -345,7 +345,7 @@ public interface VirtualNetworkGatewayConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway connection by resource group.
+     * @return the specified virtual network gateway connection by resource group along with {@link Response}.
      */
     Response<VirtualNetworkGatewayConnection> getByIdWithResponse(String id, Context context);
 

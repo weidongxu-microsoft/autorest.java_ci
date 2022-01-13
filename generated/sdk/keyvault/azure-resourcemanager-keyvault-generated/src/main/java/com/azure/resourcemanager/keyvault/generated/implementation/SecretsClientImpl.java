@@ -151,7 +151,8 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecretInner>> createOrUpdateWithResponseAsync(
@@ -213,7 +214,8 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecretInner>> createOrUpdateWithResponseAsync(
@@ -275,7 +277,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SecretInner> createOrUpdateAsync(
@@ -322,7 +324,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SecretInner> createOrUpdateWithResponse(
@@ -345,7 +347,8 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecretInner>> updateWithResponseAsync(
@@ -407,7 +410,8 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecretInner>> updateWithResponseAsync(
@@ -469,7 +473,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SecretInner> updateAsync(
@@ -516,7 +520,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SecretInner> updateWithResponse(
@@ -538,7 +542,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified secret.
+     * @return the specified secret along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecretInner>> getWithResponseAsync(
@@ -593,7 +597,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified secret.
+     * @return the specified secret along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SecretInner>> getWithResponseAsync(
@@ -644,7 +648,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified secret.
+     * @return the specified secret on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SecretInner> getAsync(String resourceGroupName, String vaultName, String secretName) {
@@ -687,7 +691,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified secret.
+     * @return the specified secret along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SecretInner> getWithResponse(
@@ -705,7 +709,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of secrets.
+     * @return list of secrets along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecretInner>> listSinglePageAsync(
@@ -766,7 +770,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of secrets.
+     * @return list of secrets along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecretInner>> listSinglePageAsync(
@@ -913,7 +917,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of secrets.
+     * @return list of secrets along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecretInner>> listNextSinglePageAsync(String nextLink) {
@@ -949,7 +953,7 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of secrets.
+     * @return list of secrets along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecretInner>> listNextSinglePageAsync(String nextLink, Context context) {

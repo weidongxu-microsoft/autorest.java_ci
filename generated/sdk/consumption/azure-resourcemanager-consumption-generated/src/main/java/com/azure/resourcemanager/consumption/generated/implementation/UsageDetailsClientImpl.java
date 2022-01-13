@@ -123,7 +123,8 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing usage details.
+     * @return result of listing usage details along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageDetailInner>> listSinglePageAsync(
@@ -202,7 +203,8 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing usage details.
+     * @return result of listing usage details along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageDetailInner>> listSinglePageAsync(
@@ -460,7 +462,8 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing usage details.
+     * @return result of listing usage details along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageDetailInner>> listNextSinglePageAsync(String nextLink) {
@@ -496,7 +499,8 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing usage details.
+     * @return result of listing usage details along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageDetailInner>> listNextSinglePageAsync(String nextLink, Context context) {

@@ -14,6 +14,7 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.compute.generated.fluent.models.RestorePointCollectionInner;
 import com.azure.resourcemanager.compute.generated.models.RestorePointCollectionExpandOptions;
 import com.azure.resourcemanager.compute.generated.models.RestorePointCollectionUpdate;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in RestorePointCollectionsClient. */
 public interface RestorePointCollectionsClient {
@@ -46,7 +47,7 @@ public interface RestorePointCollectionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters.
+     * @return create or update Restore Point collection parameters along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RestorePointCollectionInner> createOrUpdateWithResponse(
@@ -82,7 +83,7 @@ public interface RestorePointCollectionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters.
+     * @return create or update Restore Point collection parameters along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RestorePointCollectionInner> updateWithResponse(
@@ -101,7 +102,7 @@ public interface RestorePointCollectionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String restorePointCollectionName);
@@ -117,7 +118,7 @@ public interface RestorePointCollectionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -178,7 +179,7 @@ public interface RestorePointCollectionsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters.
+     * @return create or update Restore Point collection parameters along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RestorePointCollectionInner> getByResourceGroupWithResponse(

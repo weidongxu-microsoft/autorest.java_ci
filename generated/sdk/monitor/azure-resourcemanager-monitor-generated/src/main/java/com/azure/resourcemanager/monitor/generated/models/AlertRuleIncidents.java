@@ -33,7 +33,7 @@ public interface AlertRuleIncidents {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an incident associated to an alert rule.
+     * @return an incident associated to an alert rule along with {@link Response}.
      */
     Response<Incident> getWithResponse(String resourceGroupName, String ruleName, String incidentName, Context context);
 

@@ -26,6 +26,7 @@ import com.azure.resourcemanager.storage.generated.models.StorageAccountCreatePa
 import com.azure.resourcemanager.storage.generated.models.StorageAccountExpand;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountRegenerateKeyParameters;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountUpdateParameters;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in StorageAccountsClient. */
 public interface StorageAccountsClient {
@@ -51,7 +52,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
@@ -71,7 +72,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<StorageAccountInner>, StorageAccountInner> beginCreate(
@@ -92,7 +93,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<StorageAccountInner>, StorageAccountInner> beginCreate(
@@ -163,7 +164,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String accountName, Context context);
@@ -198,7 +199,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StorageAccountInner> getByResourceGroupWithResponse(
@@ -242,7 +243,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StorageAccountInner> updateWithResponse(
@@ -328,7 +329,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StorageAccountListKeysResultInner> listKeysWithResponse(
@@ -363,7 +364,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StorageAccountListKeysResultInner> regenerateKeyWithResponse(
@@ -401,7 +402,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List SAS credentials operation response.
+     * @return the List SAS credentials operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ListAccountSasResponseInner> listAccountSasWithResponse(
@@ -436,7 +437,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List service SAS credentials operation response.
+     * @return the List service SAS credentials operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ListServiceSasResponseInner> listServiceSasWithResponse(
@@ -454,7 +455,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginFailover(String resourceGroupName, String accountName);
@@ -472,7 +473,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginFailover(String resourceGroupName, String accountName, Context context);
@@ -521,7 +522,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return blob restore status.
+     * @return blob restore status along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<BlobRestoreStatusInner>, BlobRestoreStatusInner> beginRestoreBlobRanges(
@@ -539,7 +540,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return blob restore status.
+     * @return blob restore status along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<BlobRestoreStatusInner>, BlobRestoreStatusInner> beginRestoreBlobRanges(
@@ -605,7 +606,7 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> revokeUserDelegationKeysWithResponse(String resourceGroupName, String accountName, Context context);

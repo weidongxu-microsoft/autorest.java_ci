@@ -87,7 +87,7 @@ public final class IotHubsClientImpl implements IotHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> manualFailoverWithResponseAsync(
@@ -145,7 +145,7 @@ public final class IotHubsClientImpl implements IotHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> manualFailoverWithResponseAsync(
@@ -199,7 +199,7 @@ public final class IotHubsClientImpl implements IotHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginManualFailoverAsync(
@@ -224,7 +224,7 @@ public final class IotHubsClientImpl implements IotHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginManualFailoverAsync(
@@ -248,7 +248,7 @@ public final class IotHubsClientImpl implements IotHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginManualFailover(
@@ -268,7 +268,7 @@ public final class IotHubsClientImpl implements IotHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginManualFailover(
@@ -287,7 +287,7 @@ public final class IotHubsClientImpl implements IotHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> manualFailoverAsync(String iotHubName, String resourceGroupName, FailoverInput failoverInput) {
@@ -308,7 +308,7 @@ public final class IotHubsClientImpl implements IotHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> manualFailoverAsync(

@@ -68,7 +68,7 @@ public interface VirtualMachineScaleSetVMExtensions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a VMSS VM Extension.
+     * @return describes a VMSS VM Extension along with {@link Response}.
      */
     Response<VirtualMachineScaleSetVMExtension> getWithResponse(
         String resourceGroupName,
@@ -105,7 +105,7 @@ public interface VirtualMachineScaleSetVMExtensions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List VMSS VM Extension operation response.
+     * @return the List VMSS VM Extension operation response along with {@link Response}.
      */
     Response<VirtualMachineScaleSetVMExtensionsListResult> listWithResponse(
         String resourceGroupName, String vmScaleSetName, String instanceId, String expand, Context context);
@@ -118,7 +118,7 @@ public interface VirtualMachineScaleSetVMExtensions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a VMSS VM Extension.
+     * @return describes a VMSS VM Extension along with {@link Response}.
      */
     VirtualMachineScaleSetVMExtension getById(String id);
 
@@ -132,7 +132,7 @@ public interface VirtualMachineScaleSetVMExtensions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a VMSS VM Extension.
+     * @return describes a VMSS VM Extension along with {@link Response}.
      */
     Response<VirtualMachineScaleSetVMExtension> getByIdWithResponse(String id, String expand, Context context);
 

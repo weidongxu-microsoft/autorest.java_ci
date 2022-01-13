@@ -13,6 +13,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.DeletedManagedHsmInner;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.ManagedHsmInner;
+import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ManagedHsmsClient. */
 public interface ManagedHsmsClient {
@@ -26,7 +27,8 @@ public interface ManagedHsmsClient {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ManagedHsmInner>, ManagedHsmInner> beginCreateOrUpdate(
@@ -43,7 +45,8 @@ public interface ManagedHsmsClient {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ManagedHsmInner>, ManagedHsmInner> beginCreateOrUpdate(
@@ -90,7 +93,8 @@ public interface ManagedHsmsClient {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ManagedHsmInner>, ManagedHsmInner> beginUpdate(
@@ -107,7 +111,8 @@ public interface ManagedHsmsClient {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details.
+     * @return resource information with extended details along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ManagedHsmInner>, ManagedHsmInner> beginUpdate(
@@ -153,7 +158,7 @@ public interface ManagedHsmsClient {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name);
@@ -168,7 +173,7 @@ public interface ManagedHsmsClient {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name, Context context);
@@ -224,7 +229,7 @@ public interface ManagedHsmsClient {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified managed HSM Pool.
+     * @return the specified managed HSM Pool along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ManagedHsmInner> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
@@ -332,7 +337,7 @@ public interface ManagedHsmsClient {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deleted managed HSM.
+     * @return the specified deleted managed HSM along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeletedManagedHsmInner> getDeletedWithResponse(String name, String location, Context context);
@@ -346,7 +351,7 @@ public interface ManagedHsmsClient {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginPurgeDeleted(String name, String location);
@@ -361,7 +366,7 @@ public interface ManagedHsmsClient {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginPurgeDeleted(String name, String location, Context context);

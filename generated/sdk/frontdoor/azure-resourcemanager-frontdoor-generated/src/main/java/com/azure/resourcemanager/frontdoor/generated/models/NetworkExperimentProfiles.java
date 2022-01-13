@@ -74,7 +74,7 @@ public interface NetworkExperimentProfiles {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an NetworkExperiment Profile by ProfileName.
+     * @return an NetworkExperiment Profile by ProfileName along with {@link Response}.
      */
     Response<Profile> getByResourceGroupWithResponse(String resourceGroupName, String profileName, Context context);
 
@@ -108,7 +108,7 @@ public interface NetworkExperimentProfiles {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an NetworkExperiment Profile by ProfileName.
+     * @return an NetworkExperiment Profile by ProfileName along with {@link Response}.
      */
     Profile getById(String id);
 
@@ -120,7 +120,7 @@ public interface NetworkExperimentProfiles {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an NetworkExperiment Profile by ProfileName.
+     * @return an NetworkExperiment Profile by ProfileName along with {@link Response}.
      */
     Response<Profile> getByIdWithResponse(String id, Context context);
 

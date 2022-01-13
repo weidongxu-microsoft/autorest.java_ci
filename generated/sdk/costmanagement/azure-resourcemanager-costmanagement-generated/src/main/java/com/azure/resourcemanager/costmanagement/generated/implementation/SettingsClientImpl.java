@@ -121,7 +121,7 @@ public final class SettingsClientImpl implements SettingsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing settings.
+     * @return result of listing settings along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SettingInner>> listSinglePageAsync() {
@@ -154,7 +154,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing settings.
+     * @return result of listing settings along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SettingInner>> listSinglePageAsync(Context context) {
@@ -239,7 +239,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting.
+     * @return state of the myscope setting along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SettingInner>> getWithResponseAsync(String settingName) {
@@ -268,7 +268,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting.
+     * @return state of the myscope setting along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SettingInner>> getWithResponseAsync(String settingName, Context context) {
@@ -293,7 +293,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting.
+     * @return state of the myscope setting on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SettingInner> getAsync(String settingName) {
@@ -330,7 +330,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting.
+     * @return state of the myscope setting along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SettingInner> getWithResponse(String settingName, Context context) {
@@ -345,7 +345,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting.
+     * @return state of the myscope setting along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SettingInner>> createOrUpdateWithResponseAsync(String settingName, SettingInner parameters) {
@@ -387,7 +387,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting.
+     * @return state of the myscope setting along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SettingInner>> createOrUpdateWithResponseAsync(
@@ -421,7 +421,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting.
+     * @return state of the myscope setting on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SettingInner> createOrUpdateAsync(String settingName, SettingInner parameters) {
@@ -460,7 +460,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting.
+     * @return state of the myscope setting along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SettingInner> createOrUpdateWithResponse(
@@ -475,7 +475,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String settingName) {
@@ -505,7 +505,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String settingName, Context context) {
@@ -530,7 +530,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String settingName) {
@@ -558,7 +558,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String settingName, Context context) {
@@ -572,7 +572,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing settings.
+     * @return result of listing settings along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SettingInner>> listNextSinglePageAsync(String nextLink) {
@@ -608,7 +608,7 @@ public final class SettingsClientImpl implements SettingsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing settings.
+     * @return result of listing settings along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SettingInner>> listNextSinglePageAsync(String nextLink, Context context) {

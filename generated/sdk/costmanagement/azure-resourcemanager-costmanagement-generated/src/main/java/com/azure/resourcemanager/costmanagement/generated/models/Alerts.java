@@ -54,7 +54,7 @@ public interface Alerts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of alerts.
+     * @return result of alerts along with {@link Response}.
      */
     Response<AlertsResult> listWithResponse(String scope, Context context);
 
@@ -105,7 +105,7 @@ public interface Alerts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert for the scope by alert ID.
+     * @return the alert for the scope by alert ID along with {@link Response}.
      */
     Response<Alert> getWithResponse(String scope, String alertId, Context context);
 
@@ -158,7 +158,7 @@ public interface Alerts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an individual alert.
+     * @return an individual alert along with {@link Response}.
      */
     Response<Alert> dismissWithResponse(String scope, String alertId, DismissAlertPayload parameters, Context context);
 
@@ -189,7 +189,7 @@ public interface Alerts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of alerts.
+     * @return result of alerts along with {@link Response}.
      */
     Response<AlertsResult> listExternalWithResponse(
         ExternalCloudProviderType externalCloudProviderType, String externalCloudProviderId, Context context);

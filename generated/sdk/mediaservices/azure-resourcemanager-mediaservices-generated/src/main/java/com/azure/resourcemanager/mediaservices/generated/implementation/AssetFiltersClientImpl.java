@@ -169,7 +169,8 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of AssetFilter items.
+     * @return a collection of AssetFilter items along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AssetFilterInner>> listSinglePageAsync(
@@ -232,7 +233,8 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of AssetFilter items.
+     * @return a collection of AssetFilter items along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AssetFilterInner>> listSinglePageAsync(
@@ -364,7 +366,8 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an Asset Filter associated with the specified Asset.
+     * @return the details of an Asset Filter associated with the specified Asset along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AssetFilterInner>> getWithResponseAsync(
@@ -423,7 +426,8 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an Asset Filter associated with the specified Asset.
+     * @return the details of an Asset Filter associated with the specified Asset along with {@link Response} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AssetFilterInner>> getWithResponseAsync(
@@ -478,7 +482,8 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an Asset Filter associated with the specified Asset.
+     * @return the details of an Asset Filter associated with the specified Asset on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AssetFilterInner> getAsync(
@@ -522,7 +527,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an Asset Filter associated with the specified Asset.
+     * @return the details of an Asset Filter associated with the specified Asset along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AssetFilterInner> getWithResponse(
@@ -541,7 +546,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Asset Filter.
+     * @return an Asset Filter along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AssetFilterInner>> createOrUpdateWithResponseAsync(
@@ -611,7 +616,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Asset Filter.
+     * @return an Asset Filter along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AssetFilterInner>> createOrUpdateWithResponseAsync(
@@ -678,7 +683,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Asset Filter.
+     * @return an Asset Filter on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AssetFilterInner> createOrUpdateAsync(
@@ -733,7 +738,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Asset Filter.
+     * @return an Asset Filter along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AssetFilterInner> createOrUpdateWithResponse(
@@ -758,7 +763,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -817,7 +822,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(
@@ -872,7 +877,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String accountName, String assetName, String filterName) {
@@ -907,7 +912,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(
@@ -926,7 +931,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Asset Filter.
+     * @return an Asset Filter along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AssetFilterInner>> updateWithResponseAsync(
@@ -996,7 +1001,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Asset Filter.
+     * @return an Asset Filter along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AssetFilterInner>> updateWithResponseAsync(
@@ -1063,7 +1068,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Asset Filter.
+     * @return an Asset Filter on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AssetFilterInner> updateAsync(
@@ -1118,7 +1123,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Asset Filter.
+     * @return an Asset Filter along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AssetFilterInner> updateWithResponse(
@@ -1139,7 +1144,8 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of AssetFilter items.
+     * @return a collection of AssetFilter items along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AssetFilterInner>> listNextSinglePageAsync(String nextLink) {
@@ -1175,7 +1181,8 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of AssetFilter items.
+     * @return a collection of AssetFilter items along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AssetFilterInner>> listNextSinglePageAsync(String nextLink, Context context) {

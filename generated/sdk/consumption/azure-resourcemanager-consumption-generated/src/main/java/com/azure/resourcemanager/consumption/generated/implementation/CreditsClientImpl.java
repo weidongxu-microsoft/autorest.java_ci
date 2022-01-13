@@ -76,7 +76,7 @@ public final class CreditsClientImpl implements CreditsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a credit summary resource.
+     * @return a credit summary resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CreditSummaryInner>> getWithResponseAsync(String billingAccountId, String billingProfileId) {
@@ -118,7 +118,7 @@ public final class CreditsClientImpl implements CreditsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a credit summary resource.
+     * @return a credit summary resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CreditSummaryInner>> getWithResponseAsync(
@@ -157,7 +157,7 @@ public final class CreditsClientImpl implements CreditsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a credit summary resource.
+     * @return a credit summary resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<CreditSummaryInner> getAsync(String billingAccountId, String billingProfileId) {
@@ -196,7 +196,7 @@ public final class CreditsClientImpl implements CreditsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a credit summary resource.
+     * @return a credit summary resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<CreditSummaryInner> getWithResponse(

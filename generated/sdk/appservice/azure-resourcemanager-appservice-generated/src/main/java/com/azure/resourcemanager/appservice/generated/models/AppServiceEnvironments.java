@@ -83,7 +83,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource.
+     * @return app Service Environment ARM resource along with {@link Response}.
      */
     Response<AppServiceEnvironmentResource> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context);
@@ -179,7 +179,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes main public IP address and any extra virtual IPs.
+     * @return describes main public IP address and any extra virtual IPs along with {@link Response}.
      */
     Response<AddressResponse> getVipInfoWithResponse(String resourceGroupName, String name, Context context);
 
@@ -236,7 +236,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of networking configuration for an ASE.
+     * @return full view of networking configuration for an ASE along with {@link Response}.
      */
     Response<AseV3NetworkingConfiguration> getAseV3NetworkingConfigurationWithResponse(
         String resourceGroupName, String name, Context context);
@@ -267,7 +267,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of networking configuration for an ASE.
+     * @return full view of networking configuration for an ASE along with {@link Response}.
      */
     Response<AseV3NetworkingConfiguration> updateAseNetworkingConfigurationWithResponse(
         String resourceGroupName,
@@ -298,7 +298,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of HostingEnvironmentDiagnostics.
+     * @return array of HostingEnvironmentDiagnostics along with {@link Response}.
      */
     Response<List<HostingEnvironmentDiagnostics>> listDiagnosticsWithResponse(
         String resourceGroupName, String name, Context context);
@@ -328,7 +328,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics for an App Service Environment.
+     * @return diagnostics for an App Service Environment along with {@link Response}.
      */
     Response<HostingEnvironmentDiagnostics> getDiagnosticsItemWithResponse(
         String resourceGroupName, String name, String diagnosticsName, Context context);
@@ -412,7 +412,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
      */
     Response<WorkerPoolResource> getMultiRolePoolWithResponse(String resourceGroupName, String name, Context context);
 
@@ -473,7 +473,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
      */
     Response<WorkerPoolResource> updateMultiRolePoolWithResponse(
         String resourceGroupName, String name, WorkerPoolResourceInner multiRolePoolEnvelope, Context context);
@@ -616,7 +616,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Operation.
+     * @return array of Operation along with {@link Response}.
      */
     Response<List<Operation>> listOperationsWithResponse(String resourceGroupName, String name, Context context);
 
@@ -704,7 +704,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response}.
      */
     Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context);
@@ -762,7 +762,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources.
+     * @return wrapper for a collection of private link resources along with {@link Response}.
      */
     Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
         String resourceGroupName, String name, Context context);
@@ -789,7 +789,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> rebootWithResponse(String resourceGroupName, String name, Context context);
 
@@ -984,7 +984,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
      */
     Response<WorkerPoolResource> getWorkerPoolWithResponse(
         String resourceGroupName, String name, String workerPoolName, Context context);
@@ -1121,7 +1121,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource.
+     * @return app Service Environment ARM resource along with {@link Response}.
      */
     AppServiceEnvironmentResource getById(String id);
 
@@ -1134,7 +1134,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource.
+     * @return app Service Environment ARM resource along with {@link Response}.
      */
     Response<AppServiceEnvironmentResource> getByIdWithResponse(String id, Context context);
 
@@ -1146,7 +1146,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response}.
      */
     RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnectionById(String id);
 
@@ -1159,7 +1159,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response}.
      */
     Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionByIdWithResponse(
         String id, Context context);
@@ -1172,7 +1172,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
      */
     WorkerPoolResource getWorkerPoolById(String id);
 
@@ -1185,7 +1185,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
      */
     Response<WorkerPoolResource> getWorkerPoolByIdWithResponse(String id, Context context);
 

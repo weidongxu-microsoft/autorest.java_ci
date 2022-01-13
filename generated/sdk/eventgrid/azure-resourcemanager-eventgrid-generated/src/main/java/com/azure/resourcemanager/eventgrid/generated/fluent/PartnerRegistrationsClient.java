@@ -36,7 +36,7 @@ public interface PartnerRegistrationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a partner registration with the specified parameters.
+     * @return a partner registration with the specified parameters along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PartnerRegistrationInner> getByResourceGroupWithResponse(
@@ -67,7 +67,7 @@ public interface PartnerRegistrationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a partner registration.
+     * @return information about a partner registration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PartnerRegistrationInner> createOrUpdateWithResponse(
@@ -97,7 +97,7 @@ public interface PartnerRegistrationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String partnerRegistrationName, Context context);
@@ -129,7 +129,7 @@ public interface PartnerRegistrationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PartnerRegistrationInner> updateWithResponse(

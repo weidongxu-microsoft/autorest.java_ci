@@ -64,7 +64,7 @@ public interface Containers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a container by name.
+     * @return a container by name along with {@link Response}.
      */
     Response<Container> getWithResponse(
         String deviceName, String storageAccountName, String containerName, String resourceGroupName, Context context);
@@ -132,7 +132,7 @@ public interface Containers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a container by name.
+     * @return a container by name along with {@link Response}.
      */
     Container getById(String id);
 
@@ -144,7 +144,7 @@ public interface Containers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a container by name.
+     * @return a container by name along with {@link Response}.
      */
     Response<Container> getByIdWithResponse(String id, Context context);
 

@@ -97,7 +97,7 @@ public interface MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single private workbook by its resourceName.
+     * @return a single private workbook by its resourceName along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<MyWorkbookInner> getByResourceGroupWithResponse(
@@ -124,7 +124,7 @@ public interface MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String resourceName, Context context);
@@ -153,7 +153,7 @@ public interface MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights private workbook definition.
+     * @return an Application Insights private workbook definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<MyWorkbookInner> createOrUpdateWithResponse(
@@ -183,7 +183,7 @@ public interface MyWorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights private workbook definition.
+     * @return an Application Insights private workbook definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<MyWorkbookInner> updateWithResponse(

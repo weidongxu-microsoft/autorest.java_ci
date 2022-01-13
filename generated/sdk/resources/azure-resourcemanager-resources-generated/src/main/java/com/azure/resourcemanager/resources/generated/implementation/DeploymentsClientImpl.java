@@ -734,7 +734,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteAtScopeWithResponseAsync(String scope, String deploymentName) {
@@ -779,7 +779,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteAtScopeWithResponseAsync(
@@ -816,7 +816,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAtScopeAsync(String scope, String deploymentName) {
@@ -841,7 +841,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAtScopeAsync(
@@ -866,7 +866,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtScope(String scope, String deploymentName) {
@@ -887,7 +887,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtScope(String scope, String deploymentName, Context context) {
@@ -907,7 +907,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAtScopeAsync(String scope, String deploymentName) {
@@ -928,7 +928,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAtScopeAsync(String scope, String deploymentName, Context context) {
@@ -984,7 +984,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Boolean>> checkExistenceAtScopeWithResponseAsync(String scope, String deploymentName) {
@@ -1024,7 +1024,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Boolean>> checkExistenceAtScopeWithResponseAsync(
@@ -1056,7 +1056,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Boolean> checkExistenceAtScopeAsync(String scope, String deploymentName) {
@@ -1100,7 +1100,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Boolean> checkExistenceAtScopeWithResponse(String scope, String deploymentName, Context context) {
@@ -1116,7 +1116,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateAtScopeWithResponseAsync(
@@ -1164,7 +1164,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateAtScopeWithResponseAsync(
@@ -1208,7 +1208,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtScopeAsync(
@@ -1235,7 +1235,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtScopeAsync(
@@ -1262,7 +1262,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtScope(
@@ -1280,7 +1280,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtScope(
@@ -1297,7 +1297,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> createOrUpdateAtScopeAsync(
@@ -1317,7 +1317,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> createOrUpdateAtScopeAsync(
@@ -1369,7 +1369,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExtendedInner>> getAtScopeWithResponseAsync(String scope, String deploymentName) {
@@ -1409,7 +1409,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExtendedInner>> getAtScopeWithResponseAsync(
@@ -1440,7 +1440,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> getAtScopeAsync(String scope, String deploymentName) {
@@ -1479,7 +1479,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentExtendedInner> getAtScopeWithResponse(
@@ -1497,7 +1497,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> cancelAtScopeWithResponseAsync(String scope, String deploymentName) {
@@ -1539,7 +1539,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> cancelAtScopeWithResponseAsync(String scope, String deploymentName, Context context) {
@@ -1572,7 +1572,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> cancelAtScopeAsync(String scope, String deploymentName) {
@@ -1606,7 +1606,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> cancelAtScopeWithResponse(String scope, String deploymentName, Context context) {
@@ -1623,7 +1623,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> validateAtScopeWithResponseAsync(
@@ -1672,7 +1673,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> validateAtScopeWithResponseAsync(
@@ -1717,7 +1719,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -1744,7 +1747,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -1772,7 +1776,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidateAtScope(
@@ -1791,7 +1796,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidateAtScope(
@@ -1809,7 +1815,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentValidateResultInner> validateAtScopeAsync(
@@ -1830,7 +1836,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentValidateResultInner> validateAtScopeAsync(
@@ -1884,7 +1890,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExportResultInner>> exportTemplateAtScopeWithResponseAsync(
@@ -1925,7 +1931,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExportResultInner>> exportTemplateAtScopeWithResponseAsync(
@@ -1957,7 +1963,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExportResultInner> exportTemplateAtScopeAsync(String scope, String deploymentName) {
@@ -1996,7 +2002,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentExportResultInner> exportTemplateAtScopeWithResponse(
@@ -2014,7 +2020,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the deployments at the given scope.
+     * @return all the deployments at the given scope along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtScopeSinglePageAsync(
@@ -2064,7 +2071,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the deployments at the given scope.
+     * @return all the deployments at the given scope along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtScopeSinglePageAsync(
@@ -2196,7 +2204,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteAtTenantScopeWithResponseAsync(String deploymentName) {
@@ -2232,7 +2240,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteAtTenantScopeWithResponseAsync(
@@ -2265,7 +2273,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAtTenantScopeAsync(String deploymentName) {
@@ -2289,7 +2297,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAtTenantScopeAsync(String deploymentName, Context context) {
@@ -2312,7 +2320,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtTenantScope(String deploymentName) {
@@ -2332,7 +2340,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtTenantScope(String deploymentName, Context context) {
@@ -2351,7 +2359,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAtTenantScopeAsync(String deploymentName) {
@@ -2371,7 +2379,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAtTenantScopeAsync(String deploymentName, Context context) {
@@ -2424,7 +2432,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Boolean>> checkExistenceAtTenantScopeWithResponseAsync(String deploymentName) {
@@ -2455,7 +2463,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Boolean>> checkExistenceAtTenantScopeWithResponseAsync(
@@ -2483,7 +2491,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Boolean> checkExistenceAtTenantScopeAsync(String deploymentName) {
@@ -2525,7 +2533,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Boolean> checkExistenceAtTenantScopeWithResponse(String deploymentName, Context context) {
@@ -2540,7 +2548,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateAtTenantScopeWithResponseAsync(
@@ -2583,7 +2591,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateAtTenantScopeWithResponseAsync(
@@ -2617,7 +2625,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
@@ -2643,7 +2651,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
@@ -2669,7 +2677,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtTenantScope(
@@ -2686,7 +2694,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtTenantScope(
@@ -2702,7 +2710,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> createOrUpdateAtTenantScopeAsync(
@@ -2721,7 +2729,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> createOrUpdateAtTenantScopeAsync(
@@ -2770,7 +2778,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExtendedInner>> getAtTenantScopeWithResponseAsync(String deploymentName) {
@@ -2801,7 +2809,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExtendedInner>> getAtTenantScopeWithResponseAsync(
@@ -2828,7 +2836,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> getAtTenantScopeAsync(String deploymentName) {
@@ -2865,7 +2873,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentExtendedInner> getAtTenantScopeWithResponse(String deploymentName, Context context) {
@@ -2881,7 +2889,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> cancelAtTenantScopeWithResponseAsync(String deploymentName) {
@@ -2914,7 +2922,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> cancelAtTenantScopeWithResponseAsync(String deploymentName, Context context) {
@@ -2943,7 +2951,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> cancelAtTenantScopeAsync(String deploymentName) {
@@ -2975,7 +2983,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> cancelAtTenantScopeWithResponse(String deploymentName, Context context) {
@@ -2991,7 +2999,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> validateAtTenantScopeWithResponseAsync(
@@ -3035,7 +3044,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> validateAtTenantScopeWithResponseAsync(
@@ -3070,7 +3080,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -3096,7 +3107,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -3123,7 +3135,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -3141,7 +3154,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -3158,7 +3172,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentValidateResultInner> validateAtTenantScopeAsync(
@@ -3178,7 +3192,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentValidateResultInner> validateAtTenantScopeAsync(
@@ -3230,7 +3244,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> whatIfAtTenantScopeWithResponseAsync(
@@ -3273,7 +3287,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> whatIfAtTenantScopeWithResponseAsync(
@@ -3307,7 +3321,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
@@ -3332,7 +3346,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
@@ -3358,7 +3372,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIfAtTenantScope(
@@ -3375,7 +3389,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIfAtTenantScope(
@@ -3391,7 +3405,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WhatIfOperationResultInner> whatIfAtTenantScopeAsync(
@@ -3410,7 +3424,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WhatIfOperationResultInner> whatIfAtTenantScopeAsync(
@@ -3459,7 +3473,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExportResultInner>> exportTemplateAtTenantScopeWithResponseAsync(
@@ -3491,7 +3505,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExportResultInner>> exportTemplateAtTenantScopeWithResponseAsync(
@@ -3519,7 +3533,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExportResultInner> exportTemplateAtTenantScopeAsync(String deploymentName) {
@@ -3556,7 +3570,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentExportResultInner> exportTemplateAtTenantScopeWithResponse(
@@ -3573,7 +3587,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the deployments at the tenant scope.
+     * @return all the deployments at the tenant scope along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtTenantScopeSinglePageAsync(String filter, Integer top) {
@@ -3612,7 +3627,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the deployments at the tenant scope.
+     * @return all the deployments at the tenant scope along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtTenantScopeSinglePageAsync(
@@ -3735,7 +3751,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteAtManagementGroupScopeWithResponseAsync(
@@ -3781,7 +3797,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteAtManagementGroupScopeWithResponseAsync(
@@ -3818,7 +3834,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAtManagementGroupScopeAsync(
@@ -3844,7 +3860,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAtManagementGroupScopeAsync(
@@ -3870,7 +3886,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtManagementGroupScope(String groupId, String deploymentName) {
@@ -3891,7 +3907,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtManagementGroupScope(
@@ -3912,7 +3928,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAtManagementGroupScopeAsync(String groupId, String deploymentName) {
@@ -3935,7 +3951,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAtManagementGroupScopeAsync(String groupId, String deploymentName, Context context) {
@@ -3991,7 +4007,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Boolean>> checkExistenceAtManagementGroupScopeWithResponseAsync(
@@ -4032,7 +4048,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Boolean>> checkExistenceAtManagementGroupScopeWithResponseAsync(
@@ -4064,7 +4080,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Boolean> checkExistenceAtManagementGroupScopeAsync(String groupId, String deploymentName) {
@@ -4108,7 +4124,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Boolean> checkExistenceAtManagementGroupScopeWithResponse(
@@ -4125,7 +4141,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateAtManagementGroupScopeWithResponseAsync(
@@ -4173,7 +4189,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateAtManagementGroupScopeWithResponseAsync(
@@ -4217,7 +4233,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
@@ -4245,7 +4261,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
@@ -4273,7 +4289,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
@@ -4291,7 +4307,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
@@ -4310,7 +4326,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> createOrUpdateAtManagementGroupScopeAsync(
@@ -4330,7 +4346,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> createOrUpdateAtManagementGroupScopeAsync(
@@ -4383,7 +4399,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExtendedInner>> getAtManagementGroupScopeWithResponseAsync(
@@ -4424,7 +4440,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExtendedInner>> getAtManagementGroupScopeWithResponseAsync(
@@ -4456,7 +4472,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> getAtManagementGroupScopeAsync(String groupId, String deploymentName) {
@@ -4495,7 +4511,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentExtendedInner> getAtManagementGroupScopeWithResponse(
@@ -4513,7 +4529,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> cancelAtManagementGroupScopeWithResponseAsync(String groupId, String deploymentName) {
@@ -4555,7 +4571,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> cancelAtManagementGroupScopeWithResponseAsync(
@@ -4589,7 +4605,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> cancelAtManagementGroupScopeAsync(String groupId, String deploymentName) {
@@ -4624,7 +4640,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> cancelAtManagementGroupScopeWithResponse(
@@ -4642,7 +4658,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> validateAtManagementGroupScopeWithResponseAsync(
@@ -4691,7 +4708,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> validateAtManagementGroupScopeWithResponseAsync(
@@ -4736,7 +4754,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -4764,7 +4783,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -4793,7 +4813,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -4812,7 +4833,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -4831,7 +4853,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentValidateResultInner> validateAtManagementGroupScopeAsync(
@@ -4852,7 +4874,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentValidateResultInner> validateAtManagementGroupScopeAsync(
@@ -4908,7 +4930,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> whatIfAtManagementGroupScopeWithResponseAsync(
@@ -4956,7 +4978,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> whatIfAtManagementGroupScopeWithResponseAsync(
@@ -5000,7 +5022,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
@@ -5028,7 +5050,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
@@ -5056,7 +5078,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
@@ -5074,7 +5096,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
@@ -5092,7 +5114,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WhatIfOperationResultInner> whatIfAtManagementGroupScopeAsync(
@@ -5112,7 +5134,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WhatIfOperationResultInner> whatIfAtManagementGroupScopeAsync(
@@ -5165,7 +5187,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExportResultInner>> exportTemplateAtManagementGroupScopeWithResponseAsync(
@@ -5206,7 +5228,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExportResultInner>> exportTemplateAtManagementGroupScopeWithResponseAsync(
@@ -5238,7 +5260,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExportResultInner> exportTemplateAtManagementGroupScopeAsync(
@@ -5278,7 +5300,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentExportResultInner> exportTemplateAtManagementGroupScopeWithResponse(
@@ -5296,7 +5318,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the deployments for a management group.
+     * @return all the deployments for a management group along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtManagementGroupScopeSinglePageAsync(
@@ -5346,7 +5369,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the deployments for a management group.
+     * @return all the deployments for a management group along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtManagementGroupScopeSinglePageAsync(
@@ -5482,7 +5506,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteAtSubscriptionScopeWithResponseAsync(String deploymentName) {
@@ -5529,7 +5553,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteAtSubscriptionScopeWithResponseAsync(
@@ -5573,7 +5597,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAtSubscriptionScopeAsync(String deploymentName) {
@@ -5597,7 +5621,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAtSubscriptionScopeAsync(
@@ -5621,7 +5645,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtSubscriptionScope(String deploymentName) {
@@ -5641,7 +5665,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtSubscriptionScope(String deploymentName, Context context) {
@@ -5660,7 +5684,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAtSubscriptionScopeAsync(String deploymentName) {
@@ -5682,7 +5706,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAtSubscriptionScopeAsync(String deploymentName, Context context) {
@@ -5735,7 +5759,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Boolean>> checkExistenceAtSubscriptionScopeWithResponseAsync(String deploymentName) {
@@ -5777,7 +5801,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Boolean>> checkExistenceAtSubscriptionScopeWithResponseAsync(
@@ -5816,7 +5840,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Boolean> checkExistenceAtSubscriptionScopeAsync(String deploymentName) {
@@ -5858,7 +5882,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Boolean> checkExistenceAtSubscriptionScopeWithResponse(String deploymentName, Context context) {
@@ -5873,7 +5897,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateAtSubscriptionScopeWithResponseAsync(
@@ -5923,7 +5947,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateAtSubscriptionScopeWithResponseAsync(
@@ -5969,7 +5993,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
@@ -5995,7 +6019,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
@@ -6021,7 +6045,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
@@ -6038,7 +6062,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
@@ -6054,7 +6078,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> createOrUpdateAtSubscriptionScopeAsync(
@@ -6073,7 +6097,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> createOrUpdateAtSubscriptionScopeAsync(
@@ -6122,7 +6146,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExtendedInner>> getAtSubscriptionScopeWithResponseAsync(String deploymentName) {
@@ -6164,7 +6188,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExtendedInner>> getAtSubscriptionScopeWithResponseAsync(
@@ -6203,7 +6227,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> getAtSubscriptionScopeAsync(String deploymentName) {
@@ -6240,7 +6264,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentExtendedInner> getAtSubscriptionScopeWithResponse(
@@ -6257,7 +6281,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> cancelAtSubscriptionScopeWithResponseAsync(String deploymentName) {
@@ -6301,7 +6325,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> cancelAtSubscriptionScopeWithResponseAsync(String deploymentName, Context context) {
@@ -6341,7 +6365,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> cancelAtSubscriptionScopeAsync(String deploymentName) {
@@ -6373,7 +6397,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> cancelAtSubscriptionScopeWithResponse(String deploymentName, Context context) {
@@ -6389,7 +6413,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> validateAtSubscriptionScopeWithResponseAsync(
@@ -6440,7 +6465,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> validateAtSubscriptionScopeWithResponseAsync(
@@ -6487,7 +6513,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -6514,7 +6541,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -6541,7 +6569,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -6559,7 +6588,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
@@ -6576,7 +6606,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentValidateResultInner> validateAtSubscriptionScopeAsync(
@@ -6596,7 +6626,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentValidateResultInner> validateAtSubscriptionScopeAsync(
@@ -6648,7 +6678,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> whatIfAtSubscriptionScopeWithResponseAsync(
@@ -6698,7 +6728,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> whatIfAtSubscriptionScopeWithResponseAsync(
@@ -6744,7 +6774,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
@@ -6769,7 +6799,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
@@ -6795,7 +6825,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
@@ -6812,7 +6842,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
@@ -6828,7 +6858,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WhatIfOperationResultInner> whatIfAtSubscriptionScopeAsync(
@@ -6847,7 +6877,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WhatIfOperationResultInner> whatIfAtSubscriptionScopeAsync(
@@ -6896,7 +6926,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExportResultInner>> exportTemplateAtSubscriptionScopeWithResponseAsync(
@@ -6939,7 +6969,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExportResultInner>> exportTemplateAtSubscriptionScopeWithResponseAsync(
@@ -6978,7 +7008,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExportResultInner> exportTemplateAtSubscriptionScopeAsync(String deploymentName) {
@@ -7015,7 +7045,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentExportResultInner> exportTemplateAtSubscriptionScopeWithResponse(
@@ -7032,7 +7062,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the deployments for a subscription.
+     * @return all the deployments for a subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listSinglePageAsync(String filter, Integer top) {
@@ -7083,7 +7114,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the deployments for a subscription.
+     * @return all the deployments for a subscription along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listSinglePageAsync(
@@ -7219,7 +7251,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String deploymentName) {
@@ -7274,7 +7306,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
@@ -7326,7 +7358,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String deploymentName) {
@@ -7353,7 +7385,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -7380,7 +7412,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String deploymentName) {
@@ -7403,7 +7435,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -7426,7 +7458,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String deploymentName) {
@@ -7451,7 +7483,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String deploymentName, Context context) {
@@ -7512,7 +7544,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Boolean>> checkExistenceWithResponseAsync(String resourceGroupName, String deploymentName) {
@@ -7561,7 +7593,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Boolean>> checkExistenceWithResponseAsync(
@@ -7607,7 +7639,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Boolean> checkExistenceAsync(String resourceGroupName, String deploymentName) {
@@ -7653,7 +7685,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Boolean> checkExistenceWithResponse(
@@ -7671,7 +7703,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -7728,7 +7760,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
@@ -7781,7 +7813,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAsync(
@@ -7809,7 +7841,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAsync(
@@ -7837,7 +7869,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdate(
@@ -7856,7 +7888,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdate(
@@ -7874,7 +7906,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> createOrUpdateAsync(
@@ -7895,7 +7927,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deployment information.
+     * @return deployment information on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> createOrUpdateAsync(
@@ -7950,7 +7982,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExtendedInner>> getByResourceGroupWithResponseAsync(
@@ -7999,7 +8031,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExtendedInner>> getByResourceGroupWithResponseAsync(
@@ -8044,7 +8076,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExtendedInner> getByResourceGroupAsync(String resourceGroupName, String deploymentName) {
@@ -8083,7 +8115,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentExtendedInner> getByResourceGroupWithResponse(
@@ -8101,7 +8133,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> cancelWithResponseAsync(String resourceGroupName, String deploymentName) {
@@ -8151,7 +8183,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> cancelWithResponseAsync(
@@ -8198,7 +8230,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> cancelAsync(String resourceGroupName, String deploymentName) {
@@ -8232,7 +8264,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> cancelWithResponse(String resourceGroupName, String deploymentName, Context context) {
@@ -8250,7 +8282,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> validateWithResponseAsync(
@@ -8308,7 +8341,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> validateWithResponseAsync(
@@ -8362,7 +8396,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidateAsync(
@@ -8391,7 +8426,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidateAsync(
@@ -8420,7 +8456,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidate(
@@ -8440,7 +8477,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidate(
@@ -8459,7 +8497,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentValidateResultInner> validateAsync(
@@ -8481,7 +8519,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information from validate template deployment response.
+     * @return information from validate template deployment response on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentValidateResultInner> validateAsync(
@@ -8540,7 +8578,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> whatIfWithResponseAsync(
@@ -8597,7 +8635,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> whatIfWithResponseAsync(
@@ -8650,7 +8688,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIfAsync(
@@ -8677,7 +8715,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIfAsync(
@@ -8705,7 +8743,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIf(
@@ -8724,7 +8762,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIf(
@@ -8742,7 +8780,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WhatIfOperationResultInner> whatIfAsync(
@@ -8763,7 +8801,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the What-If operation.
+     * @return result of the What-If operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WhatIfOperationResultInner> whatIfAsync(
@@ -8818,7 +8856,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExportResultInner>> exportTemplateWithResponseAsync(
@@ -8867,7 +8905,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DeploymentExportResultInner>> exportTemplateWithResponseAsync(
@@ -8912,7 +8950,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentExportResultInner> exportTemplateAsync(String resourceGroupName, String deploymentName) {
@@ -8951,7 +8989,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentExportResultInner> exportTemplateWithResponse(
@@ -8970,7 +9008,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the deployments for a resource group.
+     * @return all the deployments for a resource group along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listByResourceGroupSinglePageAsync(
@@ -9029,7 +9068,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the deployments for a resource group.
+     * @return all the deployments for a resource group along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listByResourceGroupSinglePageAsync(
@@ -9179,7 +9219,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to calculate template hash.
+     * @return result of the request to calculate template hash along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TemplateHashResultInner>> calculateTemplateHashWithResponseAsync(Object template) {
@@ -9210,7 +9251,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to calculate template hash.
+     * @return result of the request to calculate template hash along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TemplateHashResultInner>> calculateTemplateHashWithResponseAsync(
@@ -9237,7 +9279,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to calculate template hash.
+     * @return result of the request to calculate template hash on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TemplateHashResultInner> calculateTemplateHashAsync(Object template) {
@@ -9274,7 +9316,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to calculate template hash.
+     * @return result of the request to calculate template hash along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<TemplateHashResultInner> calculateTemplateHashWithResponse(Object template, Context context) {
@@ -9288,7 +9330,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployments.
+     * @return list of deployments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtScopeNextSinglePageAsync(String nextLink) {
@@ -9324,7 +9366,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployments.
+     * @return list of deployments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtScopeNextSinglePageAsync(
@@ -9360,7 +9402,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployments.
+     * @return list of deployments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtTenantScopeNextSinglePageAsync(String nextLink) {
@@ -9396,7 +9438,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployments.
+     * @return list of deployments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtTenantScopeNextSinglePageAsync(
@@ -9432,7 +9474,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployments.
+     * @return list of deployments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtManagementGroupScopeNextSinglePageAsync(
@@ -9470,7 +9512,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployments.
+     * @return list of deployments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtManagementGroupScopeNextSinglePageAsync(
@@ -9506,7 +9548,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployments.
+     * @return list of deployments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtSubscriptionScopeNextSinglePageAsync(String nextLink) {
@@ -9543,7 +9585,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployments.
+     * @return list of deployments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listAtSubscriptionScopeNextSinglePageAsync(
@@ -9579,7 +9621,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployments.
+     * @return list of deployments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -9616,7 +9658,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deployments.
+     * @return list of deployments along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeploymentExtendedInner>> listByResourceGroupNextSinglePageAsync(

@@ -133,7 +133,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device along with
+     *     {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticProactiveLogCollectionSettingsInner>>
@@ -182,7 +183,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device along with
+     *     {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticProactiveLogCollectionSettingsInner>>
@@ -228,7 +230,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiagnosticProactiveLogCollectionSettingsInner> getDiagnosticProactiveLogCollectionSettingsAsync(
@@ -269,7 +272,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device along with
+     *     {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DiagnosticProactiveLogCollectionSettingsInner>
@@ -288,7 +292,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
@@ -349,7 +353,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
@@ -407,7 +411,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
@@ -433,7 +437,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
@@ -459,7 +463,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginUpdateDiagnosticProactiveLogCollectionSettings(
@@ -481,7 +485,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginUpdateDiagnosticProactiveLogCollectionSettings(
@@ -503,7 +507,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> updateDiagnosticProactiveLogCollectionSettingsAsync(
@@ -526,7 +530,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> updateDiagnosticProactiveLogCollectionSettingsAsync(
@@ -590,7 +594,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device along with
+     *     {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticRemoteSupportSettingsInner>> getDiagnosticRemoteSupportSettingsWithResponseAsync(
@@ -639,7 +644,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device along with
+     *     {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticRemoteSupportSettingsInner>> getDiagnosticRemoteSupportSettingsWithResponseAsync(
@@ -684,7 +690,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiagnosticRemoteSupportSettingsInner> getDiagnosticRemoteSupportSettingsAsync(
@@ -725,7 +732,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device along with
+     *     {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DiagnosticRemoteSupportSettingsInner> getDiagnosticRemoteSupportSettingsWithResponse(
@@ -742,7 +750,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticRemoteSupportSettingsWithResponseAsync(
@@ -803,7 +811,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticRemoteSupportSettingsWithResponseAsync(
@@ -861,7 +869,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginUpdateDiagnosticRemoteSupportSettingsAsync(
@@ -887,7 +895,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginUpdateDiagnosticRemoteSupportSettingsAsync(
@@ -913,7 +921,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginUpdateDiagnosticRemoteSupportSettings(
@@ -935,7 +943,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginUpdateDiagnosticRemoteSupportSettings(
@@ -957,7 +965,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> updateDiagnosticRemoteSupportSettingsAsync(
@@ -980,7 +988,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
+     * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> updateDiagnosticRemoteSupportSettingsAsync(

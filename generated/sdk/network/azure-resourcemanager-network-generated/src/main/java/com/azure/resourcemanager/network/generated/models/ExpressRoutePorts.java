@@ -54,7 +54,7 @@ public interface ExpressRoutePorts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute Port.
+     * @return expressRoute Port along with {@link Response}.
      */
     Response<ExpressRoutePort> getByResourceGroupWithResponse(
         String resourceGroupName, String expressRoutePortName, Context context);
@@ -126,7 +126,7 @@ public interface ExpressRoutePorts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GenerateExpressRoutePortsLOA API service call.
+     * @return response for GenerateExpressRoutePortsLOA API service call along with {@link Response}.
      */
     Response<GenerateExpressRoutePortsLoaResult> generateLoaWithResponse(
         String resourceGroupName,
@@ -141,7 +141,7 @@ public interface ExpressRoutePorts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute Port.
+     * @return expressRoute Port along with {@link Response}.
      */
     ExpressRoutePort getById(String id);
 
@@ -153,7 +153,7 @@ public interface ExpressRoutePorts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute Port.
+     * @return expressRoute Port along with {@link Response}.
      */
     Response<ExpressRoutePort> getByIdWithResponse(String id, Context context);
 

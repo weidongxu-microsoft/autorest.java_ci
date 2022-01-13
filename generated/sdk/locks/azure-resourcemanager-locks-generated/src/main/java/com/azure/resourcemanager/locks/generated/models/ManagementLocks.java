@@ -33,7 +33,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String resourceGroupName, String lockName, Context context);
 
@@ -58,7 +58,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the resource group level.
+     * @return a management lock at the resource group level along with {@link Response}.
      */
     Response<ManagementLockObject> getByResourceGroupWithResponse(
         String resourceGroupName, String lockName, Context context);
@@ -94,7 +94,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the lock information along with {@link Response}.
      */
     Response<ManagementLockObject> createOrUpdateByScopeWithResponse(
         String scope, String lockName, ManagementLockObjectInner parameters, Context context);
@@ -119,7 +119,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByScopeWithResponse(String scope, String lockName, Context context);
 
@@ -144,7 +144,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock by scope.
+     * @return a management lock by scope along with {@link Response}.
      */
     Response<ManagementLockObject> getByScopeWithResponse(String scope, String lockName, Context context);
 
@@ -192,7 +192,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the lock information along with {@link Response}.
      */
     Response<ManagementLockObject> createOrUpdateAtResourceLevelWithResponse(
         String resourceGroupName,
@@ -240,7 +240,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteAtResourceLevelWithResponse(
         String resourceGroupName,
@@ -286,7 +286,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the management lock of a resource or any level below resource.
+     * @return the management lock of a resource or any level below resource along with {@link Response}.
      */
     Response<ManagementLockObject> getAtResourceLevelWithResponse(
         String resourceGroupName,
@@ -324,7 +324,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the lock information along with {@link Response}.
      */
     Response<ManagementLockObject> createOrUpdateAtSubscriptionLevelWithResponse(
         String lockName, ManagementLockObjectInner parameters, Context context);
@@ -349,7 +349,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteAtSubscriptionLevelWithResponse(String lockName, Context context);
 
@@ -372,7 +372,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the subscription level.
+     * @return a management lock at the subscription level along with {@link Response}.
      */
     Response<ManagementLockObject> getAtSubscriptionLevelWithResponse(String lockName, Context context);
 
@@ -506,7 +506,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the resource group level.
+     * @return a management lock at the resource group level along with {@link Response}.
      */
     ManagementLockObject getById(String id);
 
@@ -518,7 +518,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the resource group level.
+     * @return a management lock at the resource group level along with {@link Response}.
      */
     Response<ManagementLockObject> getByIdWithResponse(String id, Context context);
 
@@ -542,7 +542,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the {@link Response}.
      */
     Response<Void> deleteByIdWithResponse(String id, Context context);
 

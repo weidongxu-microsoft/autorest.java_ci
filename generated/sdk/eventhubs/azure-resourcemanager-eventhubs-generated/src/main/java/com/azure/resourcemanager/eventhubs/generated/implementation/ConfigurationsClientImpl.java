@@ -98,7 +98,8 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return contains all settings for the cluster.
+     * @return contains all settings for the cluster along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ClusterQuotaConfigurationPropertiesInner>> patchWithResponseAsync(
@@ -155,7 +156,8 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return contains all settings for the cluster.
+     * @return contains all settings for the cluster along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ClusterQuotaConfigurationPropertiesInner>> patchWithResponseAsync(
@@ -211,7 +213,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return contains all settings for the cluster.
+     * @return contains all settings for the cluster on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ClusterQuotaConfigurationPropertiesInner> patchAsync(
@@ -256,7 +258,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return contains all settings for the cluster.
+     * @return contains all settings for the cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ClusterQuotaConfigurationPropertiesInner> patchWithResponse(
@@ -277,7 +279,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
-     *     imposed on the cluster.
+     *     imposed on the cluster along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ClusterQuotaConfigurationPropertiesInner>> getWithResponseAsync(
@@ -328,7 +330,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
-     *     imposed on the cluster.
+     *     imposed on the cluster along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ClusterQuotaConfigurationPropertiesInner>> getWithResponseAsync(
@@ -375,7 +377,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
-     *     imposed on the cluster.
+     *     imposed on the cluster on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ClusterQuotaConfigurationPropertiesInner> getAsync(String resourceGroupName, String clusterName) {
@@ -418,7 +420,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
-     *     imposed on the cluster.
+     *     imposed on the cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ClusterQuotaConfigurationPropertiesInner> getWithResponse(

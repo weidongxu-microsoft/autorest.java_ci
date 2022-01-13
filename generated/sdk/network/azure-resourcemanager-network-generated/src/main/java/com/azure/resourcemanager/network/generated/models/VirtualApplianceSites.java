@@ -58,7 +58,7 @@ public interface VirtualApplianceSites {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Appliance Site.
+     * @return the specified Virtual Appliance Site along with {@link Response}.
      */
     Response<VirtualApplianceSite> getWithResponse(
         String resourceGroupName, String networkVirtualApplianceName, String siteName, Context context);
@@ -96,7 +96,7 @@ public interface VirtualApplianceSites {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Appliance Site.
+     * @return the specified Virtual Appliance Site along with {@link Response}.
      */
     VirtualApplianceSite getById(String id);
 
@@ -108,7 +108,7 @@ public interface VirtualApplianceSites {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Appliance Site.
+     * @return the specified Virtual Appliance Site along with {@link Response}.
      */
     Response<VirtualApplianceSite> getByIdWithResponse(String id, Context context);
 

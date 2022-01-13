@@ -37,7 +37,7 @@ public interface VirtualMachineImages {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual machine image.
+     * @return a virtual machine image along with {@link Response}.
      */
     Response<VirtualMachineImage> getWithResponse(
         String location, String publisherName, String offer, String skus, String version, Context context);
@@ -70,7 +70,8 @@ public interface VirtualMachineImages {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU.
+     * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU along
+     *     with {@link Response}.
      */
     Response<List<VirtualMachineImageResource>> listWithResponse(
         String location,
@@ -103,7 +104,8 @@ public interface VirtualMachineImages {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image offers for the specified location and publisher.
+     * @return a list of virtual machine image offers for the specified location and publisher along with {@link
+     *     Response}.
      */
     Response<List<VirtualMachineImageResource>> listOffersWithResponse(
         String location, String publisherName, Context context);
@@ -127,7 +129,7 @@ public interface VirtualMachineImages {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image publishers for the specified Azure location.
+     * @return a list of virtual machine image publishers for the specified Azure location along with {@link Response}.
      */
     Response<List<VirtualMachineImageResource>> listPublishersWithResponse(String location, Context context);
 
@@ -154,7 +156,8 @@ public interface VirtualMachineImages {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer.
+     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer along with {@link
+     *     Response}.
      */
     Response<List<VirtualMachineImageResource>> listSkusWithResponse(
         String location, String publisherName, String offer, Context context);

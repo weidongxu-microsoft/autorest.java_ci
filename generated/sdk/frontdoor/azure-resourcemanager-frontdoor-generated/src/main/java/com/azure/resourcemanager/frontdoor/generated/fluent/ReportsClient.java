@@ -50,7 +50,7 @@ public interface ReportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Latency Scorecard for a given Experiment.
+     * @return a Latency Scorecard for a given Experiment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<LatencyScorecardInner> getLatencyScorecardsWithResponse(
@@ -104,7 +104,7 @@ public interface ReportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Timeseries for a given Experiment.
+     * @return a Timeseries for a given Experiment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TimeseriesInner> getTimeseriesWithResponse(

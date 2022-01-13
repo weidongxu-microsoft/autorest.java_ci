@@ -88,7 +88,8 @@ public final class RegionsClientImpl implements RegionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available Regions for a given sku.
+     * @return the available Regions for a given sku along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MessagingRegionsInner>> listBySkuSinglePageAsync(String sku) {
@@ -139,7 +140,8 @@ public final class RegionsClientImpl implements RegionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available Regions for a given sku.
+     * @return the available Regions for a given sku along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MessagingRegionsInner>> listBySkuSinglePageAsync(String sku, Context context) {
@@ -245,7 +247,8 @@ public final class RegionsClientImpl implements RegionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List MessagingRegions operation.
+     * @return the response of the List MessagingRegions operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MessagingRegionsInner>> listBySkuNextSinglePageAsync(String nextLink) {
@@ -281,7 +284,8 @@ public final class RegionsClientImpl implements RegionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List MessagingRegions operation.
+     * @return the response of the List MessagingRegions operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MessagingRegionsInner>> listBySkuNextSinglePageAsync(String nextLink, Context context) {
