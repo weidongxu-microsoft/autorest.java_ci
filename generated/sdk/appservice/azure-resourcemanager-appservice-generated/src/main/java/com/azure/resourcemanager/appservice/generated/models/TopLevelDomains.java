@@ -16,7 +16,7 @@ public interface TopLevelDomains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Top-level domains.
+     * @return collection of Top-level domains as paginated response with {@link PagedIterable}.
      */
     PagedIterable<TopLevelDomain> list();
 
@@ -28,7 +28,7 @@ public interface TopLevelDomains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Top-level domains.
+     * @return collection of Top-level domains as paginated response with {@link PagedIterable}.
      */
     PagedIterable<TopLevelDomain> list(Context context);
 
@@ -66,7 +66,7 @@ public interface TopLevelDomains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of top-level domain legal agreements.
+     * @return collection of top-level domain legal agreements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<TldLegalAgreement> listAgreements(String name, TopLevelDomainAgreementOption agreementOption);
 
@@ -80,7 +80,7 @@ public interface TopLevelDomains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of top-level domain legal agreements.
+     * @return collection of top-level domain legal agreements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<TldLegalAgreement> listAgreements(
         String name, TopLevelDomainAgreementOption agreementOption, Context context);

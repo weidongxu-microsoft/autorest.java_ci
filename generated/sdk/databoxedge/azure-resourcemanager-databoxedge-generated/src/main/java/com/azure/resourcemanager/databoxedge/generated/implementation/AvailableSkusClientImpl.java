@@ -175,7 +175,7 @@ public final class AvailableSkusClientImpl implements AvailableSkusClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of SKU Information objects.
+     * @return list of SKU Information objects as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DataBoxEdgeSkuInner> listAsync() {
@@ -189,7 +189,7 @@ public final class AvailableSkusClientImpl implements AvailableSkusClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of SKU Information objects.
+     * @return list of SKU Information objects as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DataBoxEdgeSkuInner> listAsync(Context context) {
@@ -202,7 +202,7 @@ public final class AvailableSkusClientImpl implements AvailableSkusClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of SKU Information objects.
+     * @return list of SKU Information objects as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DataBoxEdgeSkuInner> list() {
@@ -216,7 +216,7 @@ public final class AvailableSkusClientImpl implements AvailableSkusClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of SKU Information objects.
+     * @return list of SKU Information objects as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DataBoxEdgeSkuInner> list(Context context) {

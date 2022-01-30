@@ -12,7 +12,6 @@ import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.StorageAccountCredentialInner;
-import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in StorageAccountCredentialsClient. */
 public interface StorageAccountCredentialsClient {
@@ -24,7 +23,8 @@ public interface StorageAccountCredentialsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the storage account credentials in a Data Box Edge/Data Box Gateway device.
+     * @return all the storage account credentials in a Data Box Edge/Data Box Gateway device as paginated response with
+     *     {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<StorageAccountCredentialInner> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName);
@@ -38,7 +38,8 @@ public interface StorageAccountCredentialsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the storage account credentials in a Data Box Edge/Data Box Gateway device.
+     * @return all the storage account credentials in a Data Box Edge/Data Box Gateway device as paginated response with
+     *     {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<StorageAccountCredentialInner> listByDataBoxEdgeDevice(
@@ -84,7 +85,7 @@ public interface StorageAccountCredentialsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account credential along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of the storage account credential.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<StorageAccountCredentialInner>, StorageAccountCredentialInner> beginCreateOrUpdate(
@@ -104,7 +105,7 @@ public interface StorageAccountCredentialsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account credential along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of the storage account credential.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<StorageAccountCredentialInner>, StorageAccountCredentialInner> beginCreateOrUpdate(
@@ -163,7 +164,7 @@ public interface StorageAccountCredentialsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String name, String resourceGroupName);
@@ -178,7 +179,7 @@ public interface StorageAccountCredentialsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(

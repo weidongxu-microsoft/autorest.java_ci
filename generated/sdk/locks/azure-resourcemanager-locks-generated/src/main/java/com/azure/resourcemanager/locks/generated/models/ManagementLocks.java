@@ -383,7 +383,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource group.
+     * @return all the management locks for a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ManagementLockObject> listByResourceGroup(String resourceGroupName);
 
@@ -396,7 +396,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource group.
+     * @return all the management locks for a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ManagementLockObject> listByResourceGroup(String resourceGroupName, String filter, Context context);
 
@@ -412,7 +412,8 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource.
+     * @return all the management locks for a resource or any level below resource as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ManagementLockObject> listAtResourceLevel(
         String resourceGroupName,
@@ -435,7 +436,8 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource.
+     * @return all the management locks for a resource or any level below resource as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ManagementLockObject> listAtResourceLevel(
         String resourceGroupName,
@@ -451,7 +453,7 @@ public interface ManagementLocks {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a subscription.
+     * @return all the management locks for a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ManagementLockObject> list();
 
@@ -463,7 +465,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a subscription.
+     * @return all the management locks for a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ManagementLockObject> list(String filter, Context context);
 
@@ -478,7 +480,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a scope.
+     * @return all the management locks for a scope as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ManagementLockObject> listByScope(String scope);
 
@@ -495,7 +497,7 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a scope.
+     * @return all the management locks for a scope as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ManagementLockObject> listByScope(String scope, String filter, Context context);
 

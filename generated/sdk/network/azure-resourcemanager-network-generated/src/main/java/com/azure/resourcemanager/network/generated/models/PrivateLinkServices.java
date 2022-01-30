@@ -73,7 +73,7 @@ public interface PrivateLinkServices {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private link services in a resource group.
+     * @return all private link services in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PrivateLinkService> listByResourceGroup(String resourceGroupName);
 
@@ -86,7 +86,7 @@ public interface PrivateLinkServices {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private link services in a resource group.
+     * @return all private link services in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PrivateLinkService> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -96,7 +96,7 @@ public interface PrivateLinkServices {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private link service in a subscription.
+     * @return all private link service in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PrivateLinkService> list();
 
@@ -108,7 +108,7 @@ public interface PrivateLinkServices {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private link service in a subscription.
+     * @return all private link service in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PrivateLinkService> list(Context context);
 
@@ -222,7 +222,8 @@ public interface PrivateLinkServices {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private end point connections for a specific private link service.
+     * @return all private end point connections for a specific private link service as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(
         String resourceGroupName, String serviceName);
@@ -237,7 +238,8 @@ public interface PrivateLinkServices {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private end point connections for a specific private link service.
+     * @return all private end point connections for a specific private link service as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(
         String resourceGroupName, String serviceName, Context context);
@@ -309,7 +311,8 @@ public interface PrivateLinkServices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved.
+     * @return an array of private link service id that can be linked to a private end point with auto approved as
+     *     paginated response with {@link PagedIterable}.
      */
     PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServices(String location);
 
@@ -322,7 +325,8 @@ public interface PrivateLinkServices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved.
+     * @return an array of private link service id that can be linked to a private end point with auto approved as
+     *     paginated response with {@link PagedIterable}.
      */
     PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServices(String location, Context context);
 
@@ -335,7 +339,8 @@ public interface PrivateLinkServices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved.
+     * @return an array of private link service id that can be linked to a private end point with auto approved as
+     *     paginated response with {@link PagedIterable}.
      */
     PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServicesByResourceGroup(
         String location, String resourceGroupName);
@@ -350,7 +355,8 @@ public interface PrivateLinkServices {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved.
+     * @return an array of private link service id that can be linked to a private end point with auto approved as
+     *     paginated response with {@link PagedIterable}.
      */
     PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServicesByResourceGroup(
         String location, String resourceGroupName, Context context);

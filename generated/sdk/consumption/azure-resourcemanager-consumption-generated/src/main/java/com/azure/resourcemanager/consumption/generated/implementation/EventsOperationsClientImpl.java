@@ -243,7 +243,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<EventSummaryInner> listByBillingProfileAsync(
@@ -265,7 +265,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<EventSummaryInner> listByBillingProfileAsync(
@@ -286,7 +286,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<EventSummaryInner> listByBillingProfile(
@@ -306,7 +306,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<EventSummaryInner> listByBillingProfile(
@@ -421,7 +421,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<EventSummaryInner> listByBillingAccountAsync(String billingAccountId, String filter) {
@@ -438,7 +438,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<EventSummaryInner> listByBillingAccountAsync(String billingAccountId) {
@@ -460,7 +460,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<EventSummaryInner> listByBillingAccountAsync(
@@ -478,7 +478,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<EventSummaryInner> listByBillingAccount(String billingAccountId) {
@@ -498,7 +498,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary.
+     * @return result of listing event summary as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<EventSummaryInner> listByBillingAccount(

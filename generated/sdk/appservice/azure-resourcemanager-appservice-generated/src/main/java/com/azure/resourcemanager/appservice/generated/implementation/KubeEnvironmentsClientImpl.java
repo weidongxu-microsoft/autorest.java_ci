@@ -271,7 +271,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments.
+     * @return collection of Kubernetes Environments as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<KubeEnvironmentInner> listAsync() {
@@ -286,7 +286,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments.
+     * @return collection of Kubernetes Environments as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<KubeEnvironmentInner> listAsync(Context context) {
@@ -299,7 +299,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments.
+     * @return collection of Kubernetes Environments as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<KubeEnvironmentInner> list() {
@@ -313,7 +313,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments.
+     * @return collection of Kubernetes Environments as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<KubeEnvironmentInner> list(Context context) {
@@ -430,7 +430,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments.
+     * @return collection of Kubernetes Environments as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<KubeEnvironmentInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -447,7 +447,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments.
+     * @return collection of Kubernetes Environments as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<KubeEnvironmentInner> listByResourceGroupAsync(String resourceGroupName, Context context) {
@@ -463,7 +463,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments.
+     * @return collection of Kubernetes Environments as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<KubeEnvironmentInner> listByResourceGroup(String resourceGroupName) {
@@ -478,7 +478,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments.
+     * @return collection of Kubernetes Environments as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<KubeEnvironmentInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -760,8 +760,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of a Kubernetes cluster specialized for web workloads by Azure App
+     *     Service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<KubeEnvironmentInner>, KubeEnvironmentInner> beginCreateOrUpdateAsync(
@@ -788,8 +788,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of a Kubernetes cluster specialized for web workloads by Azure App
+     *     Service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<KubeEnvironmentInner>, KubeEnvironmentInner> beginCreateOrUpdateAsync(
@@ -812,8 +812,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of a Kubernetes cluster specialized for web workloads by Azure App
+     *     Service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<KubeEnvironmentInner>, KubeEnvironmentInner> beginCreateOrUpdate(
@@ -831,8 +831,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of a Kubernetes cluster specialized for web workloads by Azure App
+     *     Service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<KubeEnvironmentInner>, KubeEnvironmentInner> beginCreateOrUpdate(
@@ -1017,7 +1017,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String name) {
@@ -1037,7 +1037,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1057,7 +1057,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name) {
@@ -1073,7 +1073,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name, Context context) {

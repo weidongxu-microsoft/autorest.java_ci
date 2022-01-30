@@ -23,7 +23,7 @@ public interface SharedGalleryImagesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Shared Gallery Images operation response.
+     * @return the List Shared Gallery Images operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<SharedGalleryImageInner> list(String location, String galleryUniqueName);
@@ -39,7 +39,7 @@ public interface SharedGalleryImagesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Shared Gallery Images operation response.
+     * @return the List Shared Gallery Images operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<SharedGalleryImageInner> list(

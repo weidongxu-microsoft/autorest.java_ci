@@ -565,7 +565,7 @@ public interface AppServiceEnvironmentResource {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> changeVnet(VirtualNetworkProfile vnetInfo);
 
@@ -578,7 +578,7 @@ public interface AppServiceEnvironmentResource {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> changeVnet(VirtualNetworkProfile vnetInfo, Context context);
 
@@ -609,7 +609,7 @@ public interface AppServiceEnvironmentResource {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> resume();
 
@@ -621,7 +621,7 @@ public interface AppServiceEnvironmentResource {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> resume(Context context);
 
@@ -631,7 +631,7 @@ public interface AppServiceEnvironmentResource {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> suspend();
 
@@ -643,7 +643,7 @@ public interface AppServiceEnvironmentResource {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> suspend(Context context);
 }

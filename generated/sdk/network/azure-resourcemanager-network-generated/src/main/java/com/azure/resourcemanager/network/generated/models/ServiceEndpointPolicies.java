@@ -65,7 +65,7 @@ public interface ServiceEndpointPolicies {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the service endpoint policies in a subscription.
+     * @return all the service endpoint policies in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ServiceEndpointPolicy> list();
 
@@ -76,7 +76,7 @@ public interface ServiceEndpointPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the service endpoint policies in a subscription.
+     * @return all the service endpoint policies in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ServiceEndpointPolicy> list(Context context);
 
@@ -87,7 +87,7 @@ public interface ServiceEndpointPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all service endpoint Policies in a resource group.
+     * @return all service endpoint Policies in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ServiceEndpointPolicy> listByResourceGroup(String resourceGroupName);
 
@@ -99,7 +99,7 @@ public interface ServiceEndpointPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all service endpoint Policies in a resource group.
+     * @return all service endpoint Policies in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ServiceEndpointPolicy> listByResourceGroup(String resourceGroupName, Context context);
 

@@ -241,7 +241,7 @@ public final class DataExportsClientImpl implements DataExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list data exports.
+     * @return result of the request to list data exports as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DataExportInner> listByWorkspaceAsync(String resourceGroupName, String workspaceName) {
@@ -257,7 +257,7 @@ public final class DataExportsClientImpl implements DataExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list data exports.
+     * @return result of the request to list data exports as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DataExportInner> listByWorkspaceAsync(
@@ -273,7 +273,7 @@ public final class DataExportsClientImpl implements DataExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list data exports.
+     * @return result of the request to list data exports as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DataExportInner> listByWorkspace(String resourceGroupName, String workspaceName) {
@@ -289,7 +289,7 @@ public final class DataExportsClientImpl implements DataExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list data exports.
+     * @return result of the request to list data exports as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DataExportInner> listByWorkspace(

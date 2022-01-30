@@ -14,7 +14,7 @@ public interface BgpServiceCommunities {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the available bgp service communities.
+     * @return all the available bgp service communities as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BgpServiceCommunity> list();
 
@@ -25,7 +25,7 @@ public interface BgpServiceCommunities {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the available bgp service communities.
+     * @return all the available bgp service communities as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BgpServiceCommunity> list(Context context);
 }

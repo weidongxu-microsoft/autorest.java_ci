@@ -277,7 +277,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category.
+     * @return all Workbooks defined within a specified resource group and category as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkbookInner> listByResourceGroupAsync(
@@ -294,7 +295,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category.
+     * @return all Workbooks defined within a specified resource group and category as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkbookInner> listByResourceGroupAsync(String resourceGroupName, CategoryType category) {
@@ -316,7 +318,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category.
+     * @return all Workbooks defined within a specified resource group and category as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkbookInner> listByResourceGroupAsync(
@@ -333,7 +336,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category.
+     * @return all Workbooks defined within a specified resource group and category as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WorkbookInner> listByResourceGroup(String resourceGroupName, CategoryType category) {
@@ -354,7 +358,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category.
+     * @return all Workbooks defined within a specified resource group and category as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WorkbookInner> listByResourceGroup(

@@ -407,7 +407,7 @@ public final class WaitStatisticsClientImpl implements WaitStatisticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of wait statistics.
+     * @return a list of wait statistics as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WaitStatisticInner> listByServerAsync(
@@ -427,7 +427,7 @@ public final class WaitStatisticsClientImpl implements WaitStatisticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of wait statistics.
+     * @return a list of wait statistics as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WaitStatisticInner> listByServerAsync(
@@ -446,7 +446,7 @@ public final class WaitStatisticsClientImpl implements WaitStatisticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of wait statistics.
+     * @return a list of wait statistics as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WaitStatisticInner> listByServer(
@@ -464,7 +464,7 @@ public final class WaitStatisticsClientImpl implements WaitStatisticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of wait statistics.
+     * @return a list of wait statistics as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WaitStatisticInner> listByServer(

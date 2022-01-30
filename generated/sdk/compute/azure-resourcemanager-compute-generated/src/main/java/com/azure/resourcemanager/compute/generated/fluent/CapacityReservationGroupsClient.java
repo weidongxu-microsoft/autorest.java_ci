@@ -176,7 +176,8 @@ public interface CapacityReservationGroupsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List capacity reservation group with resource group response.
+     * @return the List capacity reservation group with resource group response as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<CapacityReservationGroupInner> listByResourceGroup(String resourceGroupName);
@@ -194,7 +195,8 @@ public interface CapacityReservationGroupsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List capacity reservation group with resource group response.
+     * @return the List capacity reservation group with resource group response as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<CapacityReservationGroupInner> listByResourceGroup(
@@ -207,7 +209,8 @@ public interface CapacityReservationGroupsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List capacity reservation group with resource group response.
+     * @return the List capacity reservation group with resource group response as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<CapacityReservationGroupInner> list();
@@ -224,7 +227,8 @@ public interface CapacityReservationGroupsClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List capacity reservation group with resource group response.
+     * @return the List capacity reservation group with resource group response as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<CapacityReservationGroupInner> list(

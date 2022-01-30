@@ -17,7 +17,7 @@ public interface AutoscaleSettings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AutoscaleSettingResource> listByResourceGroup(String resourceGroupName);
 
@@ -29,7 +29,7 @@ public interface AutoscaleSettings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AutoscaleSettingResource> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -88,7 +88,7 @@ public interface AutoscaleSettings {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AutoscaleSettingResource> list();
 
@@ -99,7 +99,7 @@ public interface AutoscaleSettings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AutoscaleSettingResource> list(Context context);
 

@@ -64,7 +64,7 @@ public interface BastionHosts {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListBastionHosts API service call.
+     * @return response for ListBastionHosts API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BastionHost> list();
 
@@ -75,7 +75,7 @@ public interface BastionHosts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListBastionHosts API service call.
+     * @return response for ListBastionHosts API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BastionHost> list(Context context);
 
@@ -86,7 +86,7 @@ public interface BastionHosts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListBastionHosts API service call.
+     * @return response for ListBastionHosts API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BastionHost> listByResourceGroup(String resourceGroupName);
 
@@ -98,7 +98,7 @@ public interface BastionHosts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListBastionHosts API service call.
+     * @return response for ListBastionHosts API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BastionHost> listByResourceGroup(String resourceGroupName, Context context);
 

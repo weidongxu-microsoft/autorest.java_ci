@@ -114,7 +114,7 @@ public interface CloudServiceRoleInstances {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of all role instances in a cloud service.
+     * @return the list of all role instances in a cloud service as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RoleInstance> list(String resourceGroupName, String cloudServiceName);
 
@@ -130,7 +130,7 @@ public interface CloudServiceRoleInstances {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of all role instances in a cloud service.
+     * @return the list of all role instances in a cloud service as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RoleInstance> list(
         String resourceGroupName, String cloudServiceName, InstanceViewTypes expand, Context context);

@@ -64,7 +64,7 @@ public interface DdosProtectionPlans {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all DDoS protection plans in a subscription.
+     * @return all DDoS protection plans in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DdosProtectionPlan> list();
 
@@ -75,7 +75,7 @@ public interface DdosProtectionPlans {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all DDoS protection plans in a subscription.
+     * @return all DDoS protection plans in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DdosProtectionPlan> list(Context context);
 
@@ -86,7 +86,7 @@ public interface DdosProtectionPlans {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the DDoS protection plans in a resource group.
+     * @return all the DDoS protection plans in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DdosProtectionPlan> listByResourceGroup(String resourceGroupName);
 
@@ -98,7 +98,7 @@ public interface DdosProtectionPlans {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the DDoS protection plans in a resource group.
+     * @return all the DDoS protection plans in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DdosProtectionPlan> listByResourceGroup(String resourceGroupName, Context context);
 

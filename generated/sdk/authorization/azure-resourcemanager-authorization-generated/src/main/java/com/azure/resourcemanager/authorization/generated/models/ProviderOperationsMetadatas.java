@@ -40,7 +40,7 @@ public interface ProviderOperationsMetadatas {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for all resource providers.
+     * @return provider operations metadata for all resource providers as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProviderOperationsMetadata> list();
 
@@ -52,7 +52,7 @@ public interface ProviderOperationsMetadatas {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for all resource providers.
+     * @return provider operations metadata for all resource providers as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProviderOperationsMetadata> list(String expand, Context context);
 }

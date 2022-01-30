@@ -82,7 +82,8 @@ public interface Services {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group.
+     * @return a list of all search services in the given resource group as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<SearchService> listByResourceGroup(String resourceGroupName);
 
@@ -97,7 +98,8 @@ public interface Services {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group.
+     * @return a list of all search services in the given resource group as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<SearchService> listByResourceGroup(String resourceGroupName, UUID clientRequestId, Context context);
 
@@ -106,7 +108,7 @@ public interface Services {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription.
+     * @return a list of all search services in the given subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SearchService> list();
 
@@ -119,7 +121,7 @@ public interface Services {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription.
+     * @return a list of all search services in the given subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SearchService> list(UUID clientRequestId, Context context);
 

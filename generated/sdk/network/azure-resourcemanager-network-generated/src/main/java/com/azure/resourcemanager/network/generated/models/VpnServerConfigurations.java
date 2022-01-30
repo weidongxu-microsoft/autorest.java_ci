@@ -66,7 +66,8 @@ public interface VpnServerConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<VpnServerConfiguration> listByResourceGroup(String resourceGroupName);
 
@@ -78,7 +79,8 @@ public interface VpnServerConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<VpnServerConfiguration> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -87,7 +89,8 @@ public interface VpnServerConfigurations {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<VpnServerConfiguration> list();
 
@@ -98,7 +101,8 @@ public interface VpnServerConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<VpnServerConfiguration> list(Context context);
 

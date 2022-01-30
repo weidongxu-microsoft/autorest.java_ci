@@ -14,7 +14,6 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontDoorInner;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ValidateCustomDomainOutputInner;
 import com.azure.resourcemanager.frontdoor.generated.models.ValidateCustomDomainInput;
-import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in FrontDoorsClient. */
 public interface FrontDoorsClient {
@@ -23,7 +22,7 @@ public interface FrontDoorsClient {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors.
+     * @return result of the request to list Front Doors as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<FrontDoorInner> list();
@@ -35,7 +34,7 @@ public interface FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors.
+     * @return result of the request to list Front Doors as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<FrontDoorInner> list(Context context);
@@ -47,7 +46,7 @@ public interface FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors.
+     * @return result of the request to list Front Doors as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<FrontDoorInner> listByResourceGroup(String resourceGroupName);
@@ -60,7 +59,7 @@ public interface FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors.
+     * @return result of the request to list Front Doors as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<FrontDoorInner> listByResourceGroup(String resourceGroupName, Context context);
@@ -103,8 +102,8 @@ public interface FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify
-     *     how traffic is sent there along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of front Door represents a collection of backend endpoints to route
+     *     traffic to along with rules that specify how traffic is sent there.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<FrontDoorInner>, FrontDoorInner> beginCreateOrUpdate(
@@ -120,8 +119,8 @@ public interface FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify
-     *     how traffic is sent there along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of front Door represents a collection of backend endpoints to route
+     *     traffic to along with rules that specify how traffic is sent there.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<FrontDoorInner>, FrontDoorInner> beginCreateOrUpdate(
@@ -167,7 +166,7 @@ public interface FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String frontDoorName);
@@ -181,7 +180,7 @@ public interface FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String frontDoorName, Context context);

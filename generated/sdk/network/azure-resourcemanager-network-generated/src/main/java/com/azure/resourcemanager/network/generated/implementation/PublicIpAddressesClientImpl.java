@@ -456,7 +456,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a cloud service level.
+     * @return information about all public IP addresses on a cloud service level as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PublicIpAddressInner> listCloudServicePublicIpAddressesAsync(
@@ -475,7 +476,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a cloud service level.
+     * @return information about all public IP addresses on a cloud service level as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PublicIpAddressInner> listCloudServicePublicIpAddressesAsync(
@@ -493,7 +495,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a cloud service level.
+     * @return information about all public IP addresses on a cloud service level as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PublicIpAddressInner> listCloudServicePublicIpAddresses(
@@ -510,7 +513,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a cloud service level.
+     * @return information about all public IP addresses on a cloud service level as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PublicIpAddressInner> listCloudServicePublicIpAddresses(
@@ -693,7 +697,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses in a role instance IP configuration in a cloud service.
+     * @return information about all public IP addresses in a role instance IP configuration in a cloud service as
+     *     paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PublicIpAddressInner> listCloudServiceRoleInstancePublicIpAddressesAsync(
@@ -721,7 +726,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses in a role instance IP configuration in a cloud service.
+     * @return information about all public IP addresses in a role instance IP configuration in a cloud service as
+     *     paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PublicIpAddressInner> listCloudServiceRoleInstancePublicIpAddressesAsync(
@@ -754,7 +760,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses in a role instance IP configuration in a cloud service.
+     * @return information about all public IP addresses in a role instance IP configuration in a cloud service as
+     *     paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PublicIpAddressInner> listCloudServiceRoleInstancePublicIpAddresses(
@@ -780,7 +787,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses in a role instance IP configuration in a cloud service.
+     * @return information about all public IP addresses in a role instance IP configuration in a cloud service as
+     *     paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PublicIpAddressInner> listCloudServiceRoleInstancePublicIpAddresses(
@@ -1226,7 +1234,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String publicIpAddressName) {
@@ -1246,7 +1254,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1267,7 +1275,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String publicIpAddressName) {
@@ -1283,7 +1291,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1663,7 +1671,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public IP address resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of public IP address resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PublicIpAddressInner>, PublicIpAddressInner> beginCreateOrUpdateAsync(
@@ -1690,7 +1698,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public IP address resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of public IP address resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PublicIpAddressInner>, PublicIpAddressInner> beginCreateOrUpdateAsync(
@@ -1713,7 +1721,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public IP address resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of public IP address resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PublicIpAddressInner>, PublicIpAddressInner> beginCreateOrUpdate(
@@ -1731,7 +1739,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public IP address resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of public IP address resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PublicIpAddressInner>, PublicIpAddressInner> beginCreateOrUpdate(
@@ -2071,7 +2079,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the public IP addresses in a subscription.
+     * @return all the public IP addresses in a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PublicIpAddressInner> listAsync() {
@@ -2085,7 +2093,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the public IP addresses in a subscription.
+     * @return all the public IP addresses in a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PublicIpAddressInner> listAsync(Context context) {
@@ -2098,7 +2106,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the public IP addresses in a subscription.
+     * @return all the public IP addresses in a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PublicIpAddressInner> list() {
@@ -2112,7 +2120,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the public IP addresses in a subscription.
+     * @return all the public IP addresses in a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PublicIpAddressInner> list(Context context) {
@@ -2231,7 +2239,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all public IP addresses in a resource group.
+     * @return all public IP addresses in a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PublicIpAddressInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -2247,7 +2255,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all public IP addresses in a resource group.
+     * @return all public IP addresses in a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PublicIpAddressInner> listByResourceGroupAsync(String resourceGroupName, Context context) {
@@ -2263,7 +2271,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all public IP addresses in a resource group.
+     * @return all public IP addresses in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PublicIpAddressInner> listByResourceGroup(String resourceGroupName) {
@@ -2278,7 +2286,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all public IP addresses in a resource group.
+     * @return all public IP addresses in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PublicIpAddressInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -2415,7 +2423,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a virtual machine scale set level.
+     * @return information about all public IP addresses on a virtual machine scale set level as paginated response with
+     *     {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PublicIpAddressInner> listVirtualMachineScaleSetPublicIpAddressesAsync(
@@ -2436,7 +2445,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a virtual machine scale set level.
+     * @return information about all public IP addresses on a virtual machine scale set level as paginated response with
+     *     {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PublicIpAddressInner> listVirtualMachineScaleSetPublicIpAddressesAsync(
@@ -2456,7 +2466,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a virtual machine scale set level.
+     * @return information about all public IP addresses on a virtual machine scale set level as paginated response with
+     *     {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PublicIpAddressInner> listVirtualMachineScaleSetPublicIpAddresses(
@@ -2474,7 +2485,8 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a virtual machine scale set level.
+     * @return information about all public IP addresses on a virtual machine scale set level as paginated response with
+     *     {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PublicIpAddressInner> listVirtualMachineScaleSetPublicIpAddresses(
@@ -2665,7 +2677,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all public IP addresses in a virtual machine IP configuration in a virtual machine
-     *     scale set.
+     *     scale set as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PublicIpAddressInner> listVirtualMachineScaleSetVMPublicIpAddressesAsync(
@@ -2699,7 +2711,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all public IP addresses in a virtual machine IP configuration in a virtual machine
-     *     scale set.
+     *     scale set as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PublicIpAddressInner> listVirtualMachineScaleSetVMPublicIpAddressesAsync(
@@ -2734,7 +2746,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all public IP addresses in a virtual machine IP configuration in a virtual machine
-     *     scale set.
+     *     scale set as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PublicIpAddressInner> listVirtualMachineScaleSetVMPublicIpAddresses(
@@ -2766,7 +2778,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all public IP addresses in a virtual machine IP configuration in a virtual machine
-     *     scale set.
+     *     scale set as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PublicIpAddressInner> listVirtualMachineScaleSetVMPublicIpAddresses(

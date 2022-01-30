@@ -16,7 +16,7 @@ public interface DeletedWebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of deleted apps.
+     * @return collection of deleted apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeletedSite> list();
 
@@ -28,7 +28,7 @@ public interface DeletedWebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of deleted apps.
+     * @return collection of deleted apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeletedSite> list(Context context);
 
@@ -40,7 +40,7 @@ public interface DeletedWebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of deleted apps.
+     * @return collection of deleted apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeletedSite> listByLocation(String location);
 
@@ -53,7 +53,7 @@ public interface DeletedWebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of deleted apps.
+     * @return collection of deleted apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeletedSite> listByLocation(String location, Context context);
 

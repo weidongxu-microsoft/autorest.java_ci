@@ -16,7 +16,7 @@ public interface Regions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available Regions for a given sku.
+     * @return the available Regions for a given sku as paginated response with {@link PagedIterable}.
      */
     PagedIterable<MessagingRegions> listBySku(String sku);
 
@@ -28,7 +28,7 @@ public interface Regions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available Regions for a given sku.
+     * @return the available Regions for a given sku as paginated response with {@link PagedIterable}.
      */
     PagedIterable<MessagingRegions> listBySku(String sku, Context context);
 }

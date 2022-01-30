@@ -18,7 +18,8 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a cloud service level.
+     * @return information about all public IP addresses on a cloud service level as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<PublicIpAddress> listCloudServicePublicIpAddresses(String resourceGroupName, String cloudServiceName);
 
@@ -31,7 +32,8 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a cloud service level.
+     * @return information about all public IP addresses on a cloud service level as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<PublicIpAddress> listCloudServicePublicIpAddresses(
         String resourceGroupName, String cloudServiceName, Context context);
@@ -47,7 +49,8 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses in a role instance IP configuration in a cloud service.
+     * @return information about all public IP addresses in a role instance IP configuration in a cloud service as
+     *     paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(
         String resourceGroupName,
@@ -68,7 +71,8 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses in a role instance IP configuration in a cloud service.
+     * @return information about all public IP addresses in a role instance IP configuration in a cloud service as
+     *     paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(
         String resourceGroupName,
@@ -181,7 +185,7 @@ public interface PublicIpAddresses {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the public IP addresses in a subscription.
+     * @return all the public IP addresses in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicIpAddress> list();
 
@@ -192,7 +196,7 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the public IP addresses in a subscription.
+     * @return all the public IP addresses in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicIpAddress> list(Context context);
 
@@ -203,7 +207,7 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all public IP addresses in a resource group.
+     * @return all public IP addresses in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicIpAddress> listByResourceGroup(String resourceGroupName);
 
@@ -215,7 +219,7 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all public IP addresses in a resource group.
+     * @return all public IP addresses in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicIpAddress> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -227,7 +231,8 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a virtual machine scale set level.
+     * @return information about all public IP addresses on a virtual machine scale set level as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<PublicIpAddress> listVirtualMachineScaleSetPublicIpAddresses(
         String resourceGroupName, String virtualMachineScaleSetName);
@@ -241,7 +246,8 @@ public interface PublicIpAddresses {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a virtual machine scale set level.
+     * @return information about all public IP addresses on a virtual machine scale set level as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<PublicIpAddress> listVirtualMachineScaleSetPublicIpAddresses(
         String resourceGroupName, String virtualMachineScaleSetName, Context context);
@@ -259,7 +265,7 @@ public interface PublicIpAddresses {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all public IP addresses in a virtual machine IP configuration in a virtual machine
-     *     scale set.
+     *     scale set as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicIpAddress> listVirtualMachineScaleSetVMPublicIpAddresses(
         String resourceGroupName,
@@ -282,7 +288,7 @@ public interface PublicIpAddresses {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all public IP addresses in a virtual machine IP configuration in a virtual machine
-     *     scale set.
+     *     scale set as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicIpAddress> listVirtualMachineScaleSetVMPublicIpAddresses(
         String resourceGroupName,

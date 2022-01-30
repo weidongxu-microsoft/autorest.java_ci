@@ -215,7 +215,7 @@ public interface ExpressRouteCircuits {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the express route circuits in a resource group.
+     * @return all the express route circuits in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCircuit> listByResourceGroup(String resourceGroupName);
 
@@ -227,7 +227,7 @@ public interface ExpressRouteCircuits {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the express route circuits in a resource group.
+     * @return all the express route circuits in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCircuit> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -236,7 +236,7 @@ public interface ExpressRouteCircuits {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the express route circuits in a subscription.
+     * @return all the express route circuits in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCircuit> list();
 
@@ -247,7 +247,7 @@ public interface ExpressRouteCircuits {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the express route circuits in a subscription.
+     * @return all the express route circuits in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCircuit> list(Context context);
 

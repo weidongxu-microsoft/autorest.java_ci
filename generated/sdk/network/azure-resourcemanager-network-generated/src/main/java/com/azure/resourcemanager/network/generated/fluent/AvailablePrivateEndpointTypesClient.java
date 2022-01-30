@@ -19,7 +19,7 @@ public interface AvailablePrivateEndpointTypesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AvailablePrivateEndpointTypeInner> list(String location);
@@ -32,7 +32,7 @@ public interface AvailablePrivateEndpointTypesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AvailablePrivateEndpointTypeInner> list(String location, Context context);
@@ -45,7 +45,7 @@ public interface AvailablePrivateEndpointTypesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AvailablePrivateEndpointTypeInner> listByResourceGroup(String location, String resourceGroupName);
@@ -59,7 +59,7 @@ public interface AvailablePrivateEndpointTypesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AvailablePrivateEndpointTypeInner> listByResourceGroup(

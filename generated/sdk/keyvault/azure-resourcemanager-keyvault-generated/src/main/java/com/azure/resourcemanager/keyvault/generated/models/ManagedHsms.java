@@ -71,7 +71,7 @@ public interface ManagedHsms {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed HSM Pools.
+     * @return list of managed HSM Pools as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ManagedHsm> listByResourceGroup(String resourceGroupName);
 
@@ -86,7 +86,7 @@ public interface ManagedHsms {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed HSM Pools.
+     * @return list of managed HSM Pools as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ManagedHsm> listByResourceGroup(String resourceGroupName, Integer top, Context context);
 
@@ -96,7 +96,7 @@ public interface ManagedHsms {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed HSM Pools.
+     * @return list of managed HSM Pools as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ManagedHsm> list();
 
@@ -109,7 +109,7 @@ public interface ManagedHsms {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed HSM Pools.
+     * @return list of managed HSM Pools as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ManagedHsm> list(Integer top, Context context);
 
@@ -119,7 +119,7 @@ public interface ManagedHsms {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deleted managed HSM Pools.
+     * @return list of deleted managed HSM Pools as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeletedManagedHsm> listDeleted();
 
@@ -131,7 +131,7 @@ public interface ManagedHsms {
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deleted managed HSM Pools.
+     * @return list of deleted managed HSM Pools as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeletedManagedHsm> listDeleted(Context context);
 

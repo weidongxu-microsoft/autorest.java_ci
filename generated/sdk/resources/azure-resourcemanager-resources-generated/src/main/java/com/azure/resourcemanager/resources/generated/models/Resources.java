@@ -18,7 +18,7 @@ public interface Resources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the resources for a resource group.
+     * @return all the resources for a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<GenericResourceExpanded> listByResourceGroup(String resourceGroupName);
 
@@ -46,7 +46,7 @@ public interface Resources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the resources for a resource group.
+     * @return all the resources for a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<GenericResourceExpanded> listByResourceGroup(
         String resourceGroupName, String filter, String expand, Integer top, Context context);
@@ -114,7 +114,7 @@ public interface Resources {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the resources in a subscription.
+     * @return all the resources in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<GenericResourceExpanded> list();
 
@@ -141,7 +141,7 @@ public interface Resources {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the resources in a subscription.
+     * @return all the resources in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<GenericResourceExpanded> list(String filter, String expand, Integer top, Context context);
 

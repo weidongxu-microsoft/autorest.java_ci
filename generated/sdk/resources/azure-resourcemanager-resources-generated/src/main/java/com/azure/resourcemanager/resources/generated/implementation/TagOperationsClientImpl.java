@@ -845,7 +845,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of subscription tags.
+     * @return list of subscription tags as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<TagDetailsInner> listAsync() {
@@ -861,7 +861,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of subscription tags.
+     * @return list of subscription tags as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<TagDetailsInner> listAsync(Context context) {
@@ -876,7 +876,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of subscription tags.
+     * @return list of subscription tags as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<TagDetailsInner> list() {
@@ -892,7 +892,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of subscription tags.
+     * @return list of subscription tags as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<TagDetailsInner> list(Context context) {

@@ -840,7 +840,8 @@ public final class BlobInventoryPoliciesClientImpl implements BlobInventoryPolic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the blob inventory policy associated with the specified storage account.
+     * @return the blob inventory policy associated with the specified storage account as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<BlobInventoryPolicyInner> listAsync(String resourceGroupName, String accountName) {
@@ -858,7 +859,8 @@ public final class BlobInventoryPoliciesClientImpl implements BlobInventoryPolic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the blob inventory policy associated with the specified storage account.
+     * @return the blob inventory policy associated with the specified storage account as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<BlobInventoryPolicyInner> listAsync(
@@ -876,7 +878,8 @@ public final class BlobInventoryPoliciesClientImpl implements BlobInventoryPolic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the blob inventory policy associated with the specified storage account.
+     * @return the blob inventory policy associated with the specified storage account as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<BlobInventoryPolicyInner> list(String resourceGroupName, String accountName) {
@@ -894,7 +897,8 @@ public final class BlobInventoryPoliciesClientImpl implements BlobInventoryPolic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the blob inventory policy associated with the specified storage account.
+     * @return the blob inventory policy associated with the specified storage account as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<BlobInventoryPolicyInner> list(String resourceGroupName, String accountName, Context context) {

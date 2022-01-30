@@ -23,7 +23,6 @@ import com.azure.resourcemanager.appservice.generated.models.ReissueCertificateO
 import com.azure.resourcemanager.appservice.generated.models.RenewCertificateOrderRequest;
 import com.azure.resourcemanager.appservice.generated.models.SiteSealRequest;
 import java.util.List;
-import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in AppServiceCertificateOrdersClient. */
 public interface AppServiceCertificateOrdersClient {
@@ -33,7 +32,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AppServiceCertificateOrderInner> list();
@@ -46,7 +45,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AppServiceCertificateOrderInner> list(Context context);
@@ -86,7 +85,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AppServiceCertificateOrderInner> listByResourceGroup(String resourceGroupName);
@@ -100,7 +99,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AppServiceCertificateOrderInner> listByResourceGroup(String resourceGroupName, Context context);
@@ -145,7 +144,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of sSL certificate purchase order.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AppServiceCertificateOrderInner>, AppServiceCertificateOrderInner> beginCreateOrUpdate(
@@ -164,7 +163,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of sSL certificate purchase order.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AppServiceCertificateOrderInner>, AppServiceCertificateOrderInner> beginCreateOrUpdate(
@@ -286,7 +285,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates.
+     * @return collection of certificate order certificates as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AppServiceCertificateResourceInner> listCertificates(
@@ -302,7 +301,7 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates.
+     * @return collection of certificate order certificates as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AppServiceCertificateResourceInner> listCertificates(
@@ -353,8 +352,8 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
-     *     Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of key Vault container ARM resource for a certificate that is
+     *     purchased through Azure.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -376,8 +375,8 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
-     *     Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of key Vault container ARM resource for a certificate that is
+     *     purchased through Azure.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>

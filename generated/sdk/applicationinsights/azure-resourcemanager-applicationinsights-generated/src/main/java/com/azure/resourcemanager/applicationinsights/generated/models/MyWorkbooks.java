@@ -19,7 +19,8 @@ public interface MyWorkbooks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified resource group and category.
+     * @return all private workbooks defined within a specified resource group and category as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<MyWorkbook> listByResourceGroup(String resourceGroupName, CategoryType category);
 
@@ -35,7 +36,8 @@ public interface MyWorkbooks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified resource group and category.
+     * @return all private workbooks defined within a specified resource group and category as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<MyWorkbook> listByResourceGroup(
         String resourceGroupName, CategoryType category, List<String> tags, Boolean canFetchContent, Context context);
@@ -47,7 +49,8 @@ public interface MyWorkbooks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified subscription and category.
+     * @return all private workbooks defined within a specified subscription and category as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<MyWorkbook> list(CategoryType category);
 
@@ -62,7 +65,8 @@ public interface MyWorkbooks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified subscription and category.
+     * @return all private workbooks defined within a specified subscription and category as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<MyWorkbook> list(CategoryType category, List<String> tags, Boolean canFetchContent, Context context);
 

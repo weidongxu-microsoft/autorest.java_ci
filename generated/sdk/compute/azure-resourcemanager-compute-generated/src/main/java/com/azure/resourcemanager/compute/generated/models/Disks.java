@@ -73,7 +73,7 @@ public interface Disks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Disks operation response.
+     * @return the List Disks operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Disk> listByResourceGroup(String resourceGroupName);
 
@@ -85,7 +85,7 @@ public interface Disks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Disks operation response.
+     * @return the List Disks operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Disk> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -94,7 +94,7 @@ public interface Disks {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Disks operation response.
+     * @return the List Disks operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Disk> list();
 
@@ -105,7 +105,7 @@ public interface Disks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Disks operation response.
+     * @return the List Disks operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Disk> list(Context context);
 

@@ -62,7 +62,8 @@ public interface QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure Cognitive Search service.
+     * @return response containing the query API keys for a given Azure Cognitive Search service as paginated response
+     *     with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<QueryKeyInner> listBySearchService(String resourceGroupName, String searchServiceName);
@@ -80,7 +81,8 @@ public interface QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure Cognitive Search service.
+     * @return response containing the query API keys for a given Azure Cognitive Search service as paginated response
+     *     with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<QueryKeyInner> listBySearchService(

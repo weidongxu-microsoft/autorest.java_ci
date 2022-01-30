@@ -21,7 +21,7 @@ public interface LoadBalancerOutboundRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the outbound rules in a load balancer.
+     * @return all the outbound rules in a load balancer as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<OutboundRuleInner> list(String resourceGroupName, String loadBalancerName);
@@ -35,7 +35,7 @@ public interface LoadBalancerOutboundRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the outbound rules in a load balancer.
+     * @return all the outbound rules in a load balancer as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<OutboundRuleInner> list(String resourceGroupName, String loadBalancerName, Context context);

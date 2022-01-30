@@ -45,7 +45,7 @@ public interface AlertRuleIncidents {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of incidents associated to an alert rule.
+     * @return a list of incidents associated to an alert rule as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Incident> listByAlertRule(String resourceGroupName, String ruleName);
 
@@ -58,7 +58,7 @@ public interface AlertRuleIncidents {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of incidents associated to an alert rule.
+     * @return a list of incidents associated to an alert rule as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Incident> listByAlertRule(String resourceGroupName, String ruleName, Context context);
 }

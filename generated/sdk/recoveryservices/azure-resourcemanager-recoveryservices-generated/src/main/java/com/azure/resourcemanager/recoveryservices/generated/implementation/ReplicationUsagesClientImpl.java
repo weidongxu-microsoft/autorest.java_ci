@@ -184,7 +184,7 @@ public final class ReplicationUsagesClientImpl implements ReplicationUsagesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return replication usages for vault.
+     * @return replication usages for vault as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReplicationUsageInner> listAsync(String resourceGroupName, String vaultName) {
@@ -200,7 +200,7 @@ public final class ReplicationUsagesClientImpl implements ReplicationUsagesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return replication usages for vault.
+     * @return replication usages for vault as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReplicationUsageInner> listAsync(String resourceGroupName, String vaultName, Context context) {
@@ -215,7 +215,7 @@ public final class ReplicationUsagesClientImpl implements ReplicationUsagesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return replication usages for vault.
+     * @return replication usages for vault as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ReplicationUsageInner> list(String resourceGroupName, String vaultName) {
@@ -231,7 +231,7 @@ public final class ReplicationUsagesClientImpl implements ReplicationUsagesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return replication usages for vault.
+     * @return replication usages for vault as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ReplicationUsageInner> list(String resourceGroupName, String vaultName, Context context) {

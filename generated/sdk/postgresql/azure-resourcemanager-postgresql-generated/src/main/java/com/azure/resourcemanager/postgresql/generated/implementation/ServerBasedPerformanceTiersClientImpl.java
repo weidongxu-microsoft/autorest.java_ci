@@ -189,7 +189,7 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of performance tiers.
+     * @return a list of performance tiers as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PerformanceTierPropertiesInner> listAsync(String resourceGroupName, String serverName) {
@@ -205,7 +205,7 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of performance tiers.
+     * @return a list of performance tiers as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PerformanceTierPropertiesInner> listAsync(
@@ -221,7 +221,7 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of performance tiers.
+     * @return a list of performance tiers as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PerformanceTierPropertiesInner> list(String resourceGroupName, String serverName) {
@@ -237,7 +237,7 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of performance tiers.
+     * @return a list of performance tiers as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PerformanceTierPropertiesInner> list(

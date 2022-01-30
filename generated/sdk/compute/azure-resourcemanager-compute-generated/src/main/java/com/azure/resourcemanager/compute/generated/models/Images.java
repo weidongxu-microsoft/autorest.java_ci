@@ -67,7 +67,7 @@ public interface Images {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of images under a resource group.
+     * @return the list of images under a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Image> listByResourceGroup(String resourceGroupName);
 
@@ -79,7 +79,7 @@ public interface Images {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of images under a resource group.
+     * @return the list of images under a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Image> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -89,7 +89,7 @@ public interface Images {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of Images in the subscription.
+     * @return the list of Images in the subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Image> list();
 
@@ -101,7 +101,7 @@ public interface Images {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of Images in the subscription.
+     * @return the list of Images in the subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Image> list(Context context);
 

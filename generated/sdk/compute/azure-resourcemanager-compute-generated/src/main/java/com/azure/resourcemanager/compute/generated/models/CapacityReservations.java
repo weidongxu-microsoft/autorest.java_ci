@@ -90,7 +90,7 @@ public interface CapacityReservations {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list capacity reservation operation response.
+     * @return the list capacity reservation operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CapacityReservation> listByCapacityReservationGroup(
         String resourceGroupName, String capacityReservationGroupName);
@@ -106,7 +106,7 @@ public interface CapacityReservations {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list capacity reservation operation response.
+     * @return the list capacity reservation operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CapacityReservation> listByCapacityReservationGroup(
         String resourceGroupName, String capacityReservationGroupName, Context context);

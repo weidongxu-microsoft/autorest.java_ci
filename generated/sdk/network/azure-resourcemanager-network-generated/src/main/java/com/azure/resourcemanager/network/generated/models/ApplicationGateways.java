@@ -67,7 +67,7 @@ public interface ApplicationGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListApplicationGateways API service call.
+     * @return response for ListApplicationGateways API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationGateway> listByResourceGroup(String resourceGroupName);
 
@@ -79,7 +79,7 @@ public interface ApplicationGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListApplicationGateways API service call.
+     * @return response for ListApplicationGateways API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationGateway> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -88,7 +88,7 @@ public interface ApplicationGateways {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the application gateways in a subscription.
+     * @return all the application gateways in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationGateway> list();
 
@@ -99,7 +99,7 @@ public interface ApplicationGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the application gateways in a subscription.
+     * @return all the application gateways in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationGateway> list(Context context);
 
@@ -359,7 +359,8 @@ public interface ApplicationGateways {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableSslOptions API service call.
+     * @return response for ApplicationGatewayAvailableSslOptions API service call as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ApplicationGatewaySslPredefinedPolicy> listAvailableSslPredefinedPolicies();
 
@@ -370,7 +371,8 @@ public interface ApplicationGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableSslOptions API service call.
+     * @return response for ApplicationGatewayAvailableSslOptions API service call as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ApplicationGatewaySslPredefinedPolicy> listAvailableSslPredefinedPolicies(Context context);
 

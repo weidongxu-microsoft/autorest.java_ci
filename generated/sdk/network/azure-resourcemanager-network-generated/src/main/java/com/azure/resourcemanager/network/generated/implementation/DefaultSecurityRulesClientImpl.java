@@ -230,7 +230,7 @@ public final class DefaultSecurityRulesClientImpl implements DefaultSecurityRule
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all default security rules in a network security group.
+     * @return all default security rules in a network security group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SecurityRuleInner> listAsync(String resourceGroupName, String networkSecurityGroupName) {
@@ -248,7 +248,7 @@ public final class DefaultSecurityRulesClientImpl implements DefaultSecurityRule
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all default security rules in a network security group.
+     * @return all default security rules in a network security group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SecurityRuleInner> listAsync(
@@ -266,7 +266,7 @@ public final class DefaultSecurityRulesClientImpl implements DefaultSecurityRule
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all default security rules in a network security group.
+     * @return all default security rules in a network security group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SecurityRuleInner> list(String resourceGroupName, String networkSecurityGroupName) {
@@ -282,7 +282,7 @@ public final class DefaultSecurityRulesClientImpl implements DefaultSecurityRule
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all default security rules in a network security group.
+     * @return all default security rules in a network security group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SecurityRuleInner> list(

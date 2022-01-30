@@ -78,7 +78,8 @@ public interface RestorePointCollections {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in a resource group.
+     * @return the list of restore point collections in a resource group as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<RestorePointCollection> listByResourceGroup(String resourceGroupName);
 
@@ -91,7 +92,8 @@ public interface RestorePointCollections {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in a resource group.
+     * @return the list of restore point collections in a resource group as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<RestorePointCollection> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -103,7 +105,8 @@ public interface RestorePointCollections {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in the subscription.
+     * @return the list of restore point collections in the subscription as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<RestorePointCollection> list();
 
@@ -117,7 +120,8 @@ public interface RestorePointCollections {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in the subscription.
+     * @return the list of restore point collections in the subscription as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<RestorePointCollection> list(Context context);
 

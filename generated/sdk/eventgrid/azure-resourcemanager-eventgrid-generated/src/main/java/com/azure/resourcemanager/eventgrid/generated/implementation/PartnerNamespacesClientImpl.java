@@ -489,7 +489,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return eventGrid Partner Namespace along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of eventGrid Partner Namespace.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PartnerNamespaceInner>, PartnerNamespaceInner> beginCreateOrUpdateAsync(
@@ -516,7 +516,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return eventGrid Partner Namespace along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of eventGrid Partner Namespace.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PartnerNamespaceInner>, PartnerNamespaceInner> beginCreateOrUpdateAsync(
@@ -542,7 +542,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return eventGrid Partner Namespace along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of eventGrid Partner Namespace.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PartnerNamespaceInner>, PartnerNamespaceInner> beginCreateOrUpdate(
@@ -560,7 +560,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return eventGrid Partner Namespace along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of eventGrid Partner Namespace.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PartnerNamespaceInner>, PartnerNamespaceInner> beginCreateOrUpdate(
@@ -752,7 +752,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String partnerNamespaceName) {
@@ -772,7 +772,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -793,7 +793,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String partnerNamespaceName) {
@@ -809,7 +809,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1011,7 +1011,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PartnerNamespaceInner>, PartnerNamespaceInner> beginUpdateAsync(
@@ -1040,7 +1040,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<PartnerNamespaceInner>, PartnerNamespaceInner> beginUpdateAsync(
@@ -1066,7 +1066,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PartnerNamespaceInner>, PartnerNamespaceInner> beginUpdate(
@@ -1087,7 +1087,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response body along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PartnerNamespaceInner>, PartnerNamespaceInner> beginUpdate(
@@ -1308,7 +1308,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PartnerNamespaceInner> listAsync(String filter, Integer top) {
@@ -1321,7 +1321,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PartnerNamespaceInner> listAsync() {
@@ -1346,7 +1346,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PartnerNamespaceInner> listAsync(String filter, Integer top, Context context) {
@@ -1360,7 +1360,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PartnerNamespaceInner> list() {
@@ -1384,7 +1384,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PartnerNamespaceInner> list(String filter, Integer top, Context context) {
@@ -1530,7 +1530,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PartnerNamespaceInner> listByResourceGroupAsync(
@@ -1547,7 +1547,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PartnerNamespaceInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -1574,7 +1574,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PartnerNamespaceInner> listByResourceGroupAsync(
@@ -1591,7 +1591,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PartnerNamespaceInner> listByResourceGroup(String resourceGroupName) {
@@ -1616,7 +1616,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PartnerNamespaceInner> listByResourceGroup(

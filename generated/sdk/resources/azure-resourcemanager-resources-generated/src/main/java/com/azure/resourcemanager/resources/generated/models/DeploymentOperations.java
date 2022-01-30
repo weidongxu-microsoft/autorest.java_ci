@@ -46,7 +46,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeploymentOperation> listAtScope(String scope, String deploymentName);
 
@@ -60,7 +60,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeploymentOperation> listAtScope(String scope, String deploymentName, Integer top, Context context);
 
@@ -97,7 +97,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeploymentOperation> listAtTenantScope(String deploymentName);
 
@@ -110,7 +110,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeploymentOperation> listAtTenantScope(String deploymentName, Integer top, Context context);
 
@@ -150,7 +150,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeploymentOperation> listAtManagementGroupScope(String groupId, String deploymentName);
 
@@ -164,7 +164,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeploymentOperation> listAtManagementGroupScope(
         String groupId, String deploymentName, Integer top, Context context);
@@ -202,7 +202,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeploymentOperation> listAtSubscriptionScope(String deploymentName);
 
@@ -215,7 +215,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeploymentOperation> listAtSubscriptionScope(String deploymentName, Integer top, Context context);
 
@@ -255,7 +255,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeploymentOperation> listByResourceGroup(String resourceGroupName, String deploymentName);
 
@@ -269,7 +269,7 @@ public interface DeploymentOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deployments operations for a deployment.
+     * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeploymentOperation> listByResourceGroup(
         String resourceGroupName, String deploymentName, Integer top, Context context);

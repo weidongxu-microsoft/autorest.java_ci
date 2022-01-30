@@ -71,7 +71,7 @@ public interface VirtualNetworkRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual network rules in a server.
+     * @return a list of virtual network rules in a server as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualNetworkRule> listByServer(String resourceGroupName, String serverName);
 
@@ -84,7 +84,7 @@ public interface VirtualNetworkRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual network rules in a server.
+     * @return a list of virtual network rules in a server as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualNetworkRule> listByServer(String resourceGroupName, String serverName, Context context);
 

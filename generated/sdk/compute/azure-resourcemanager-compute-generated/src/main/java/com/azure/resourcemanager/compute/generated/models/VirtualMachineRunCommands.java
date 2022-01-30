@@ -17,7 +17,7 @@ public interface VirtualMachineRunCommands {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Virtual Machine operation response.
+     * @return the List Virtual Machine operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RunCommandDocumentBase> list(String location);
 
@@ -29,7 +29,7 @@ public interface VirtualMachineRunCommands {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Virtual Machine operation response.
+     * @return the List Virtual Machine operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RunCommandDocumentBase> list(String location, Context context);
 
@@ -125,7 +125,7 @@ public interface VirtualMachineRunCommands {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List run command operation response.
+     * @return the List run command operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineRunCommand> listByVirtualMachine(String resourceGroupName, String vmName);
 
@@ -140,7 +140,7 @@ public interface VirtualMachineRunCommands {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List run command operation response.
+     * @return the List run command operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineRunCommand> listByVirtualMachine(
         String resourceGroupName, String vmName, String expand, Context context);

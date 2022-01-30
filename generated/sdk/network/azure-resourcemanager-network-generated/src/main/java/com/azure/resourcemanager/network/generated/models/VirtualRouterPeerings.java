@@ -76,7 +76,7 @@ public interface VirtualRouterPeerings {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouterPeerings API service call.
+     * @return response for ListVirtualRouterPeerings API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualRouterPeering> list(String resourceGroupName, String virtualRouterName);
 
@@ -90,7 +90,7 @@ public interface VirtualRouterPeerings {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouterPeerings API service call.
+     * @return response for ListVirtualRouterPeerings API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualRouterPeering> list(String resourceGroupName, String virtualRouterName, Context context);
 

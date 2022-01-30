@@ -72,7 +72,7 @@ public interface VirtualRouters {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouters API service call.
+     * @return response for ListVirtualRouters API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualRouter> listByResourceGroup(String resourceGroupName);
 
@@ -85,7 +85,7 @@ public interface VirtualRouters {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualRouters API service call.
+     * @return response for ListVirtualRouters API service call as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualRouter> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -95,7 +95,7 @@ public interface VirtualRouters {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Virtual Routers in a subscription.
+     * @return all the Virtual Routers in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualRouter> list();
 
@@ -107,7 +107,7 @@ public interface VirtualRouters {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Virtual Routers in a subscription.
+     * @return all the Virtual Routers in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualRouter> list(Context context);
 

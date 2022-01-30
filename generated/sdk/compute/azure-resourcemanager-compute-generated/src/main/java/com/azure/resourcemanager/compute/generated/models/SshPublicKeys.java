@@ -16,7 +16,7 @@ public interface SshPublicKeys {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list SSH public keys operation response.
+     * @return the list SSH public keys operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SshPublicKeyResource> list();
 
@@ -28,7 +28,7 @@ public interface SshPublicKeys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list SSH public keys operation response.
+     * @return the list SSH public keys operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SshPublicKeyResource> list(Context context);
 
@@ -40,7 +40,7 @@ public interface SshPublicKeys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list SSH public keys operation response.
+     * @return the list SSH public keys operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SshPublicKeyResource> listByResourceGroup(String resourceGroupName);
 
@@ -53,7 +53,7 @@ public interface SshPublicKeys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list SSH public keys operation response.
+     * @return the list SSH public keys operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SshPublicKeyResource> listByResourceGroup(String resourceGroupName, Context context);
 

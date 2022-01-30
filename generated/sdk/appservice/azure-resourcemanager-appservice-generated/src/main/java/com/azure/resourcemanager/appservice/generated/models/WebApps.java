@@ -47,7 +47,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> list();
 
@@ -59,7 +59,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> list(Context context);
 
@@ -71,7 +71,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> listByResourceGroup(String resourceGroupName);
 
@@ -86,7 +86,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> listByResourceGroup(String resourceGroupName, Boolean includeSlots, Context context);
 
@@ -240,7 +240,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of backup items.
+     * @return collection of backup items as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BackupItem> listBackups(String resourceGroupName, String name);
 
@@ -254,7 +254,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of backup items.
+     * @return collection of backup items as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BackupItem> listBackups(String resourceGroupName, String name, Context context);
 
@@ -389,7 +389,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return publishing Credentials Policies entity collection ARM resource.
+     * @return publishing Credentials Policies entity collection ARM resource as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<CsmPublishingCredentialsPoliciesEntity> listBasicPublishingCredentialsPolicies(
         String resourceGroupName, String name);
@@ -404,7 +405,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return publishing Credentials Policies entity collection ARM resource.
+     * @return publishing Credentials Policies entity collection ARM resource as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<CsmPublishingCredentialsPoliciesEntity> listBasicPublishingCredentialsPolicies(
         String resourceGroupName, String name, Context context);
@@ -546,7 +548,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of site configurations.
+     * @return collection of site configurations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SiteConfigResource> listConfigurations(String resourceGroupName, String name);
 
@@ -560,7 +562,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of site configurations.
+     * @return collection of site configurations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SiteConfigResource> listConfigurations(String resourceGroupName, String name, Context context);
 
@@ -896,7 +898,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApiKVReference> getAppSettingsKeyVaultReferences(String resourceGroupName, String name);
 
@@ -910,7 +912,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApiKVReference> getAppSettingsKeyVaultReferences(
         String resourceGroupName, String name, Context context);
@@ -954,7 +956,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApiKVReference> getSiteConnectionStringKeyVaultReferences(String resourceGroupName, String name);
 
@@ -968,7 +970,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApiKVReference> getSiteConnectionStringKeyVaultReferences(
         String resourceGroupName, String name, Context context);
@@ -1426,7 +1428,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metadata for the app configuration snapshots that can be restored.
+     * @return collection of metadata for the app configuration snapshots that can be restored as paginated response
+     *     with {@link PagedIterable}.
      */
     PagedIterable<SiteConfigurationSnapshotInfo> listConfigurationSnapshotInfo(String resourceGroupName, String name);
 
@@ -1441,7 +1444,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metadata for the app configuration snapshots that can be restored.
+     * @return collection of metadata for the app configuration snapshots that can be restored as paginated response
+     *     with {@link PagedIterable}.
      */
     PagedIterable<SiteConfigurationSnapshotInfo> listConfigurationSnapshotInfo(
         String resourceGroupName, String name, Context context);
@@ -1564,7 +1568,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu continuous web job information elements.
+     * @return collection of Kudu continuous web job information elements as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ContinuousWebJob> listContinuousWebJobs(String resourceGroupName, String name);
 
@@ -1578,7 +1583,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu continuous web job information elements.
+     * @return collection of Kudu continuous web job information elements as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ContinuousWebJob> listContinuousWebJobs(String resourceGroupName, String name, Context context);
 
@@ -1702,7 +1708,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of app deployments.
+     * @return collection of app deployments as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Deployment> listDeployments(String resourceGroupName, String name);
 
@@ -1716,7 +1722,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of app deployments.
+     * @return collection of app deployments as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Deployment> listDeployments(String resourceGroupName, String name, Context context);
 
@@ -1850,7 +1856,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of identifiers.
+     * @return collection of identifiers as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Identifier> listDomainOwnershipIdentifiers(String resourceGroupName, String name);
 
@@ -1864,7 +1870,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of identifiers.
+     * @return collection of identifiers as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Identifier> listDomainOwnershipIdentifiers(String resourceGroupName, String name, Context context);
 
@@ -2015,7 +2021,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu function information elements.
+     * @return collection of Kudu function information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FunctionEnvelope> listFunctions(String resourceGroupName, String name);
 
@@ -2028,7 +2034,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu function information elements.
+     * @return collection of Kudu function information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FunctionEnvelope> listFunctions(String resourceGroupName, String name, Context context);
 
@@ -2390,7 +2396,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings.
+     * @return collection of hostname bindings as paginated response with {@link PagedIterable}.
      */
     PagedIterable<HostnameBinding> listHostnameBindings(String resourceGroupName, String name);
 
@@ -2404,7 +2410,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings.
+     * @return collection of hostname bindings as paginated response with {@link PagedIterable}.
      */
     PagedIterable<HostnameBinding> listHostnameBindings(String resourceGroupName, String name, Context context);
 
@@ -2650,7 +2656,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of app instances.
+     * @return collection of app instances as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiers(String resourceGroupName, String name);
 
@@ -2664,7 +2670,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of app instances.
+     * @return collection of app instances as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiers(
         String resourceGroupName, String name, Context context);
@@ -2799,7 +2805,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu process information elements.
+     * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessInfo> listInstanceProcesses(String resourceGroupName, String name, String instanceId);
 
@@ -2815,7 +2821,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu process information elements.
+     * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessInfo> listInstanceProcesses(
         String resourceGroupName, String name, String instanceId, Context context);
@@ -2928,7 +2934,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessModuleInfo> listInstanceProcessModules(
         String resourceGroupName, String name, String processId, String instanceId);
@@ -2945,7 +2951,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessModuleInfo> listInstanceProcessModules(
         String resourceGroupName, String name, String processId, String instanceId, Context context);
@@ -3001,7 +3007,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessThreadInfo> listInstanceProcessThreads(
         String resourceGroupName, String name, String processId, String instanceId);
@@ -3018,7 +3024,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessThreadInfo> listInstanceProcessThreads(
         String resourceGroupName, String name, String processId, String instanceId, Context context);
@@ -3059,7 +3065,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of backup items.
+     * @return collection of backup items as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BackupItem> listSiteBackups(String resourceGroupName, String name);
 
@@ -3073,7 +3079,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of backup items.
+     * @return collection of backup items as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BackupItem> listSiteBackups(String resourceGroupName, String name, Context context);
 
@@ -3624,7 +3630,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of performance monitor counters.
+     * @return collection of performance monitor counters as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PerfMonResponse> listPerfMonCounters(String resourceGroupName, String name);
 
@@ -3641,7 +3647,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of performance monitor counters.
+     * @return collection of performance monitor counters as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PerfMonResponse> listPerfMonCounters(
         String resourceGroupName, String name, String filter, Context context);
@@ -3830,7 +3836,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
         String resourceGroupName, String name);
@@ -3845,7 +3851,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
         String resourceGroupName, String name, Context context);
@@ -3988,7 +3994,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu process information elements.
+     * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessInfo> listProcesses(String resourceGroupName, String name);
 
@@ -4002,7 +4008,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu process information elements.
+     * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessInfo> listProcesses(String resourceGroupName, String name, Context context);
 
@@ -4098,7 +4104,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessModuleInfo> listProcessModules(String resourceGroupName, String name, String processId);
 
@@ -4112,7 +4118,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessModuleInfo> listProcessModules(
         String resourceGroupName, String name, String processId, Context context);
@@ -4156,7 +4162,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessThreadInfo> listProcessThreads(String resourceGroupName, String name, String processId);
 
@@ -4170,7 +4176,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessThreadInfo> listProcessThreads(
         String resourceGroupName, String name, String processId, Context context);
@@ -4184,7 +4190,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of public certificates.
+     * @return collection of public certificates as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicCertificate> listPublicCertificates(String resourceGroupName, String name);
 
@@ -4198,7 +4204,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of public certificates.
+     * @return collection of public certificates as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicCertificate> listPublicCertificates(String resourceGroupName, String name, Context context);
 
@@ -4445,7 +4451,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu site extension information elements.
+     * @return collection of Kudu site extension information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SiteExtensionInfo> listSiteExtensions(String resourceGroupName, String name);
 
@@ -4458,7 +4464,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu site extension information elements.
+     * @return collection of Kudu site extension information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SiteExtensionInfo> listSiteExtensions(String resourceGroupName, String name, Context context);
 
@@ -4554,7 +4560,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> listSlots(String resourceGroupName, String name);
 
@@ -4568,7 +4574,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> listSlots(String resourceGroupName, String name, Context context);
 
@@ -4813,7 +4819,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of backup items.
+     * @return collection of backup items as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BackupItem> listBackupsSlot(String resourceGroupName, String name, String slot);
 
@@ -4829,7 +4835,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of backup items.
+     * @return collection of backup items as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BackupItem> listBackupsSlot(String resourceGroupName, String name, String slot, Context context);
 
@@ -4991,7 +4997,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return publishing Credentials Policies entity collection ARM resource.
+     * @return publishing Credentials Policies entity collection ARM resource as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<CsmPublishingCredentialsPoliciesEntity> listBasicPublishingCredentialsPoliciesSlot(
         String resourceGroupName, String name, String slot);
@@ -5007,7 +5014,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return publishing Credentials Policies entity collection ARM resource.
+     * @return publishing Credentials Policies entity collection ARM resource as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<CsmPublishingCredentialsPoliciesEntity> listBasicPublishingCredentialsPoliciesSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -5163,7 +5171,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of site configurations.
+     * @return collection of site configurations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SiteConfigResource> listConfigurationsSlot(String resourceGroupName, String name, String slot);
 
@@ -5179,7 +5187,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of site configurations.
+     * @return collection of site configurations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SiteConfigResource> listConfigurationsSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -5572,7 +5580,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApiKVReference> getAppSettingsKeyVaultReferencesSlot(
         String resourceGroupName, String name, String slot);
@@ -5588,7 +5596,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApiKVReference> getAppSettingsKeyVaultReferencesSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -5636,7 +5644,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApiKVReference> getSiteConnectionStringKeyVaultReferencesSlot(
         String resourceGroupName, String name, String slot);
@@ -5652,7 +5660,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApiKVReference> getSiteConnectionStringKeyVaultReferencesSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -6107,7 +6115,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metadata for the app configuration snapshots that can be restored.
+     * @return collection of metadata for the app configuration snapshots that can be restored as paginated response
+     *     with {@link PagedIterable}.
      */
     PagedIterable<SiteConfigurationSnapshotInfo> listConfigurationSnapshotInfoSlot(
         String resourceGroupName, String name, String slot);
@@ -6125,7 +6134,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metadata for the app configuration snapshots that can be restored.
+     * @return collection of metadata for the app configuration snapshots that can be restored as paginated response
+     *     with {@link PagedIterable}.
      */
     PagedIterable<SiteConfigurationSnapshotInfo> listConfigurationSnapshotInfoSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -6265,7 +6275,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu continuous web job information elements.
+     * @return collection of Kudu continuous web job information elements as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ContinuousWebJob> listContinuousWebJobsSlot(String resourceGroupName, String name, String slot);
 
@@ -6281,7 +6292,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu continuous web job information elements.
+     * @return collection of Kudu continuous web job information elements as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ContinuousWebJob> listContinuousWebJobsSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -6424,7 +6436,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of app deployments.
+     * @return collection of app deployments as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Deployment> listDeploymentsSlot(String resourceGroupName, String name, String slot);
 
@@ -6440,7 +6452,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of app deployments.
+     * @return collection of app deployments as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Deployment> listDeploymentsSlot(String resourceGroupName, String name, String slot, Context context);
 
@@ -6631,7 +6643,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of identifiers.
+     * @return collection of identifiers as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Identifier> listDomainOwnershipIdentifiersSlot(String resourceGroupName, String name, String slot);
 
@@ -6647,7 +6659,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of identifiers.
+     * @return collection of identifiers as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Identifier> listDomainOwnershipIdentifiersSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -6910,7 +6922,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu function information elements.
+     * @return collection of Kudu function information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FunctionEnvelope> listInstanceFunctionsSlot(String resourceGroupName, String name, String slot);
 
@@ -6924,7 +6936,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu function information elements.
+     * @return collection of Kudu function information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FunctionEnvelope> listInstanceFunctionsSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -7372,7 +7384,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings.
+     * @return collection of hostname bindings as paginated response with {@link PagedIterable}.
      */
     PagedIterable<HostnameBinding> listHostnameBindingsSlot(String resourceGroupName, String name, String slot);
 
@@ -7388,7 +7400,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings.
+     * @return collection of hostname bindings as paginated response with {@link PagedIterable}.
      */
     PagedIterable<HostnameBinding> listHostnameBindingsSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -7895,7 +7907,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of app instances.
+     * @return collection of app instances as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiersSlot(
         String resourceGroupName, String name, String slot);
@@ -7911,7 +7923,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of app instances.
+     * @return collection of app instances as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiersSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -8056,7 +8068,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu process information elements.
+     * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessInfo> listInstanceProcessesSlot(
         String resourceGroupName, String name, String slot, String instanceId);
@@ -8075,7 +8087,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu process information elements.
+     * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessInfo> listInstanceProcessesSlot(
         String resourceGroupName, String name, String slot, String instanceId, Context context);
@@ -8205,7 +8217,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessModuleInfo> listInstanceProcessModulesSlot(
         String resourceGroupName, String name, String processId, String slot, String instanceId);
@@ -8224,7 +8236,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessModuleInfo> listInstanceProcessModulesSlot(
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context);
@@ -8287,7 +8299,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessThreadInfo> listInstanceProcessThreadsSlot(
         String resourceGroupName, String name, String processId, String slot, String instanceId);
@@ -8306,7 +8318,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessThreadInfo> listInstanceProcessThreadsSlot(
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context);
@@ -8352,7 +8364,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of backup items.
+     * @return collection of backup items as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BackupItem> listSiteBackupsSlot(String resourceGroupName, String name, String slot);
 
@@ -8368,7 +8380,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of backup items.
+     * @return collection of backup items as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BackupItem> listSiteBackupsSlot(String resourceGroupName, String name, String slot, Context context);
 
@@ -8921,7 +8933,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of performance monitor counters.
+     * @return collection of performance monitor counters as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PerfMonResponse> listPerfMonCountersSlot(String resourceGroupName, String name, String slot);
 
@@ -8939,7 +8951,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of performance monitor counters.
+     * @return collection of performance monitor counters as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PerfMonResponse> listPerfMonCountersSlot(
         String resourceGroupName, String name, String slot, String filter, Context context);
@@ -9238,7 +9250,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionListSlot(
         String resourceGroupName, String name, String slot);
@@ -9254,7 +9266,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionListSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -9410,7 +9422,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu process information elements.
+     * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessInfo> listProcessesSlot(String resourceGroupName, String name, String slot);
 
@@ -9426,7 +9438,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu process information elements.
+     * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessInfo> listProcessesSlot(String resourceGroupName, String name, String slot, Context context);
 
@@ -9538,7 +9550,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessModuleInfo> listProcessModulesSlot(
         String resourceGroupName, String name, String processId, String slot);
@@ -9555,7 +9567,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessModuleInfo> listProcessModulesSlot(
         String resourceGroupName, String name, String processId, String slot, Context context);
@@ -9606,7 +9618,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessThreadInfo> listProcessThreadsSlot(
         String resourceGroupName, String name, String processId, String slot);
@@ -9623,7 +9635,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu thread information elements.
+     * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ProcessThreadInfo> listProcessThreadsSlot(
         String resourceGroupName, String name, String processId, String slot, Context context);
@@ -9639,7 +9651,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of public certificates.
+     * @return collection of public certificates as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicCertificate> listPublicCertificatesSlot(String resourceGroupName, String name, String slot);
 
@@ -9655,7 +9667,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of public certificates.
+     * @return collection of public certificates as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicCertificate> listPublicCertificatesSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -9987,7 +9999,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu site extension information elements.
+     * @return collection of Kudu site extension information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SiteExtensionInfo> listSiteExtensionsSlot(String resourceGroupName, String name, String slot);
 
@@ -10001,7 +10013,7 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu site extension information elements.
+     * @return collection of Kudu site extension information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SiteExtensionInfo> listSiteExtensionsSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -10109,7 +10121,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of slot differences.
+     * @return collection of slot differences as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SlotDifference> listSlotDifferencesSlot(
         String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity);
@@ -10126,7 +10138,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of slot differences.
+     * @return collection of slot differences as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SlotDifference> listSlotDifferencesSlot(
         String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity, Context context);
@@ -10170,7 +10182,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of snapshots which can be used to revert an app to a previous time.
+     * @return collection of snapshots which can be used to revert an app to a previous time as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<Snapshot> listSnapshotsSlot(String resourceGroupName, String name, String slot);
 
@@ -10185,7 +10198,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of snapshots which can be used to revert an app to a previous time.
+     * @return collection of snapshots which can be used to revert an app to a previous time as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<Snapshot> listSnapshotsSlot(String resourceGroupName, String name, String slot, Context context);
 
@@ -10199,7 +10213,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of snapshots which can be used to revert an app to a previous time.
+     * @return collection of snapshots which can be used to revert an app to a previous time as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<Snapshot> listSnapshotsFromDRSecondarySlot(String resourceGroupName, String name, String slot);
 
@@ -10214,7 +10229,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of snapshots which can be used to revert an app to a previous time.
+     * @return collection of snapshots which can be used to revert an app to a previous time as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<Snapshot> listSnapshotsFromDRSecondarySlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -10566,7 +10582,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu continuous web job information elements.
+     * @return collection of Kudu continuous web job information elements as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<TriggeredWebJob> listTriggeredWebJobsSlot(String resourceGroupName, String name, String slot);
 
@@ -10582,7 +10599,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu continuous web job information elements.
+     * @return collection of Kudu continuous web job information elements as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<TriggeredWebJob> listTriggeredWebJobsSlot(
         String resourceGroupName, String name, String slot, Context context);
@@ -10660,7 +10678,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu continuous web job information elements.
+     * @return collection of Kudu continuous web job information elements as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<TriggeredJobHistory> listTriggeredWebJobHistorySlot(
         String resourceGroupName, String name, String webJobName, String slot);
@@ -10676,7 +10695,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu continuous web job information elements.
+     * @return collection of Kudu continuous web job information elements as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<TriggeredJobHistory> listTriggeredWebJobHistorySlot(
         String resourceGroupName, String name, String webJobName, String slot, Context context);
@@ -10754,7 +10774,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of CSM usage quotas.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CsmUsageQuota> listUsagesSlot(String resourceGroupName, String name, String slot);
 
@@ -10773,7 +10793,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of CSM usage quotas.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CsmUsageQuota> listUsagesSlot(
         String resourceGroupName, String name, String slot, String filter, Context context);
@@ -10921,7 +10941,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu web job information elements.
+     * @return collection of Kudu web job information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebJob> listWebJobsSlot(String resourceGroupName, String name, String slot);
 
@@ -10937,7 +10957,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu web job information elements.
+     * @return collection of Kudu web job information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebJob> listWebJobsSlot(String resourceGroupName, String name, String slot, Context context);
 
@@ -10985,7 +11005,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of slot differences.
+     * @return collection of slot differences as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SlotDifference> listSlotDifferencesFromProduction(
         String resourceGroupName, String name, CsmSlotEntity slotSwapEntity);
@@ -11001,7 +11021,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of slot differences.
+     * @return collection of slot differences as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SlotDifference> listSlotDifferencesFromProduction(
         String resourceGroupName, String name, CsmSlotEntity slotSwapEntity, Context context);
@@ -11042,7 +11062,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of snapshots which can be used to revert an app to a previous time.
+     * @return collection of snapshots which can be used to revert an app to a previous time as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<Snapshot> listSnapshots(String resourceGroupName, String name);
 
@@ -11056,7 +11077,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of snapshots which can be used to revert an app to a previous time.
+     * @return collection of snapshots which can be used to revert an app to a previous time as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<Snapshot> listSnapshots(String resourceGroupName, String name, Context context);
 
@@ -11069,7 +11091,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of snapshots which can be used to revert an app to a previous time.
+     * @return collection of snapshots which can be used to revert an app to a previous time as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<Snapshot> listSnapshotsFromDRSecondary(String resourceGroupName, String name);
 
@@ -11083,7 +11106,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of snapshots which can be used to revert an app to a previous time.
+     * @return collection of snapshots which can be used to revert an app to a previous time as paginated response with
+     *     {@link PagedIterable}.
      */
     PagedIterable<Snapshot> listSnapshotsFromDRSecondary(String resourceGroupName, String name, Context context);
 
@@ -11394,7 +11418,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu continuous web job information elements.
+     * @return collection of Kudu continuous web job information elements as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<TriggeredWebJob> listTriggeredWebJobs(String resourceGroupName, String name);
 
@@ -11408,7 +11433,8 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu continuous web job information elements.
+     * @return collection of Kudu continuous web job information elements as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<TriggeredWebJob> listTriggeredWebJobs(String resourceGroupName, String name, Context context);
 
@@ -11478,7 +11504,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu continuous web job information elements.
+     * @return collection of Kudu continuous web job information elements as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<TriggeredJobHistory> listTriggeredWebJobHistory(
         String resourceGroupName, String name, String webJobName);
@@ -11493,7 +11520,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu continuous web job information elements.
+     * @return collection of Kudu continuous web job information elements as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<TriggeredJobHistory> listTriggeredWebJobHistory(
         String resourceGroupName, String name, String webJobName, Context context);
@@ -11564,7 +11592,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of CSM usage quotas.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name);
 
@@ -11581,7 +11609,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of CSM usage quotas.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name, String filter, Context context);
 
@@ -11875,7 +11903,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu web job information elements.
+     * @return collection of Kudu web job information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebJob> listWebJobs(String resourceGroupName, String name);
 
@@ -11889,7 +11917,7 @@ public interface WebApps {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kudu web job information elements.
+     * @return collection of Kudu web job information elements as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebJob> listWebJobs(String resourceGroupName, String name, Context context);
 

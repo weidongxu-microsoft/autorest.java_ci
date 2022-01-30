@@ -125,7 +125,7 @@ public interface ResourceGroups {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the resource groups for a subscription.
+     * @return all the resource groups for a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceGroup> list();
 
@@ -139,7 +139,7 @@ public interface ResourceGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the resource groups for a subscription.
+     * @return all the resource groups for a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceGroup> list(String filter, Integer top, Context context);
 

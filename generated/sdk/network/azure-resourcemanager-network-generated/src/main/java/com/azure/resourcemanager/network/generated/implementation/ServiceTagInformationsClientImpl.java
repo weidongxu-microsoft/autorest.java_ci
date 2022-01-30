@@ -212,7 +212,7 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources with pagination.
+     * @return a list of service tag information resources with pagination as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ServiceTagInformationInner> listAsync(
@@ -231,7 +231,7 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources with pagination.
+     * @return a list of service tag information resources with pagination as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ServiceTagInformationInner> listAsync(String location) {
@@ -254,7 +254,7 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources with pagination.
+     * @return a list of service tag information resources with pagination as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ServiceTagInformationInner> listAsync(
@@ -273,7 +273,8 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources with pagination.
+     * @return a list of service tag information resources with pagination as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ServiceTagInformationInner> list(String location) {
@@ -294,7 +295,8 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources with pagination.
+     * @return a list of service tag information resources with pagination as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ServiceTagInformationInner> list(

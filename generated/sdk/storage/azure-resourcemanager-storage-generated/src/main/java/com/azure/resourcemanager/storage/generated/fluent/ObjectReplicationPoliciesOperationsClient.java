@@ -25,7 +25,7 @@ public interface ObjectReplicationPoliciesOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account object replication policies.
+     * @return list storage account object replication policies as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ObjectReplicationPolicyInner> list(String resourceGroupName, String accountName);
@@ -41,7 +41,7 @@ public interface ObjectReplicationPoliciesOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account object replication policies.
+     * @return list storage account object replication policies as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ObjectReplicationPolicyInner> list(String resourceGroupName, String accountName, Context context);

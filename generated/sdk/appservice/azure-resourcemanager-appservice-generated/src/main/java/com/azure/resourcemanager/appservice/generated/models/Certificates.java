@@ -16,7 +16,7 @@ public interface Certificates {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificates.
+     * @return collection of certificates as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Certificate> list();
 
@@ -30,7 +30,7 @@ public interface Certificates {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificates.
+     * @return collection of certificates as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Certificate> list(String filter, Context context);
 
@@ -42,7 +42,7 @@ public interface Certificates {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificates.
+     * @return collection of certificates as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Certificate> listByResourceGroup(String resourceGroupName);
 
@@ -55,7 +55,7 @@ public interface Certificates {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificates.
+     * @return collection of certificates as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Certificate> listByResourceGroup(String resourceGroupName, Context context);
 

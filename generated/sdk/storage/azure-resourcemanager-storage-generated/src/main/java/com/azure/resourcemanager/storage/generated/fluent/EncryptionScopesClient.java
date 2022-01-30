@@ -158,7 +158,7 @@ public interface EncryptionScopesClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of encryption scopes requested, and if paging is required, a URL to the next page of encryption
-     *     scopes.
+     *     scopes as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<EncryptionScopeInner> list(String resourceGroupName, String accountName);
@@ -175,7 +175,7 @@ public interface EncryptionScopesClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of encryption scopes requested, and if paging is required, a URL to the next page of encryption
-     *     scopes.
+     *     scopes as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<EncryptionScopeInner> list(String resourceGroupName, String accountName, Context context);

@@ -278,7 +278,8 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list WebApplicationFirewallPolicies.
+     * @return result of the request to list WebApplicationFirewallPolicies as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WebApplicationFirewallPolicyInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -294,7 +295,8 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list WebApplicationFirewallPolicies.
+     * @return result of the request to list WebApplicationFirewallPolicies as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WebApplicationFirewallPolicyInner> listByResourceGroupAsync(
@@ -311,7 +313,8 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list WebApplicationFirewallPolicies.
+     * @return result of the request to list WebApplicationFirewallPolicies as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WebApplicationFirewallPolicyInner> listByResourceGroup(String resourceGroupName) {
@@ -326,7 +329,8 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list WebApplicationFirewallPolicies.
+     * @return result of the request to list WebApplicationFirewallPolicies as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WebApplicationFirewallPolicyInner> listByResourceGroup(
@@ -420,7 +424,7 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the WAF policies in a subscription.
+     * @return all the WAF policies in a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WebApplicationFirewallPolicyInner> listAsync() {
@@ -434,7 +438,7 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the WAF policies in a subscription.
+     * @return all the WAF policies in a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WebApplicationFirewallPolicyInner> listAsync(Context context) {
@@ -447,7 +451,7 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the WAF policies in a subscription.
+     * @return all the WAF policies in a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WebApplicationFirewallPolicyInner> list() {
@@ -461,7 +465,7 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the WAF policies in a subscription.
+     * @return all the WAF policies in a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WebApplicationFirewallPolicyInner> list(Context context) {
@@ -897,7 +901,7 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String policyName) {
@@ -917,7 +921,7 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -937,7 +941,7 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String policyName) {
@@ -953,7 +957,7 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(

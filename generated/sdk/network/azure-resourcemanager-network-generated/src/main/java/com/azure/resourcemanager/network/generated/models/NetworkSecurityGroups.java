@@ -65,7 +65,7 @@ public interface NetworkSecurityGroups {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups in a subscription.
+     * @return all network security groups in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkSecurityGroup> list();
 
@@ -76,7 +76,7 @@ public interface NetworkSecurityGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups in a subscription.
+     * @return all network security groups in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkSecurityGroup> list(Context context);
 
@@ -87,7 +87,7 @@ public interface NetworkSecurityGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups in a resource group.
+     * @return all network security groups in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkSecurityGroup> listByResourceGroup(String resourceGroupName);
 
@@ -99,7 +99,7 @@ public interface NetworkSecurityGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security groups in a resource group.
+     * @return all network security groups in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkSecurityGroup> listByResourceGroup(String resourceGroupName, Context context);
 

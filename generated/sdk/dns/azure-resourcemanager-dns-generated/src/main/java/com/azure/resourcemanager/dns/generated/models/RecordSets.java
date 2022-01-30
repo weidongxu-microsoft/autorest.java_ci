@@ -189,7 +189,7 @@ public interface RecordSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RecordSet> listByType(String resourceGroupName, String zoneName, RecordType recordType);
 
@@ -207,7 +207,7 @@ public interface RecordSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RecordSet> listByType(
         String resourceGroupName,
@@ -225,7 +225,7 @@ public interface RecordSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RecordSet> listByDnsZone(String resourceGroupName, String zoneName);
 
@@ -242,7 +242,7 @@ public interface RecordSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RecordSet> listByDnsZone(
         String resourceGroupName, String zoneName, Integer top, String recordsetnamesuffix, Context context);
@@ -255,7 +255,7 @@ public interface RecordSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RecordSet> listAllByDnsZone(String resourceGroupName, String zoneName);
 
@@ -272,7 +272,7 @@ public interface RecordSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation.
+     * @return the response to a record set List operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RecordSet> listAllByDnsZone(
         String resourceGroupName, String zoneName, Integer top, String recordSetNameSuffix, Context context);

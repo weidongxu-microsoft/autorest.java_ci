@@ -433,7 +433,7 @@ public final class RecommendedActionsClientImpl implements RecommendedActionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of recommendation actions.
+     * @return a list of recommendation actions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationActionInner> listByServerAsync(
@@ -452,7 +452,7 @@ public final class RecommendedActionsClientImpl implements RecommendedActionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of recommendation actions.
+     * @return a list of recommendation actions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationActionInner> listByServerAsync(
@@ -474,7 +474,7 @@ public final class RecommendedActionsClientImpl implements RecommendedActionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of recommendation actions.
+     * @return a list of recommendation actions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationActionInner> listByServerAsync(
@@ -493,7 +493,7 @@ public final class RecommendedActionsClientImpl implements RecommendedActionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of recommendation actions.
+     * @return a list of recommendation actions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RecommendationActionInner> listByServer(
@@ -513,7 +513,7 @@ public final class RecommendedActionsClientImpl implements RecommendedActionsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of recommendation actions.
+     * @return a list of recommendation actions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RecommendationActionInner> listByServer(

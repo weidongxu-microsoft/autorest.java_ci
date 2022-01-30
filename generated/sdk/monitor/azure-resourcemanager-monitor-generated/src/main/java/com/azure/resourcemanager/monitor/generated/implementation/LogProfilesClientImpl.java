@@ -759,7 +759,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of log profiles.
+     * @return represents a collection of log profiles as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LogProfileResourceInner> listAsync() {
@@ -773,7 +773,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of log profiles.
+     * @return represents a collection of log profiles as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LogProfileResourceInner> listAsync(Context context) {
@@ -785,7 +785,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of log profiles.
+     * @return represents a collection of log profiles as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<LogProfileResourceInner> list() {
@@ -799,7 +799,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of log profiles.
+     * @return represents a collection of log profiles as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<LogProfileResourceInner> list(Context context) {

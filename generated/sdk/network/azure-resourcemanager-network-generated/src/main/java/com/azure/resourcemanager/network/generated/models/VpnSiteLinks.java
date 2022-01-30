@@ -46,7 +46,7 @@ public interface VpnSiteLinks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSiteLinks.
+     * @return result of the request to list VpnSiteLinks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnSiteLink> listByVpnSite(String resourceGroupName, String vpnSiteName);
 
@@ -59,7 +59,7 @@ public interface VpnSiteLinks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSiteLinks.
+     * @return result of the request to list VpnSiteLinks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnSiteLink> listByVpnSite(String resourceGroupName, String vpnSiteName, Context context);
 }

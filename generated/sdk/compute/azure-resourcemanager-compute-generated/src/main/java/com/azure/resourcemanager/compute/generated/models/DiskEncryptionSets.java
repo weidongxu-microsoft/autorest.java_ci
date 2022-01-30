@@ -79,7 +79,7 @@ public interface DiskEncryptionSets {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk encryption set operation response.
+     * @return the List disk encryption set operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiskEncryptionSet> listByResourceGroup(String resourceGroupName);
 
@@ -92,7 +92,7 @@ public interface DiskEncryptionSets {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk encryption set operation response.
+     * @return the List disk encryption set operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiskEncryptionSet> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -102,7 +102,7 @@ public interface DiskEncryptionSets {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk encryption set operation response.
+     * @return the List disk encryption set operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiskEncryptionSet> list();
 
@@ -114,7 +114,7 @@ public interface DiskEncryptionSets {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk encryption set operation response.
+     * @return the List disk encryption set operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiskEncryptionSet> list(Context context);
 
@@ -129,7 +129,8 @@ public interface DiskEncryptionSets {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List resources which are encrypted with the disk encryption set.
+     * @return the List resources which are encrypted with the disk encryption set as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<String> listAssociatedResources(String resourceGroupName, String diskEncryptionSetName);
 
@@ -145,7 +146,8 @@ public interface DiskEncryptionSets {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List resources which are encrypted with the disk encryption set.
+     * @return the List resources which are encrypted with the disk encryption set as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<String> listAssociatedResources(
         String resourceGroupName, String diskEncryptionSetName, Context context);

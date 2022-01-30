@@ -333,7 +333,8 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of sql virtual machines in a SQL virtual machine group.
+     * @return the list of sql virtual machines in a SQL virtual machine group as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SqlVirtualMachineInner> listBySqlVmGroupAsync(
@@ -353,7 +354,8 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of sql virtual machines in a SQL virtual machine group.
+     * @return the list of sql virtual machines in a SQL virtual machine group as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SqlVirtualMachineInner> listBySqlVmGroupAsync(
@@ -372,7 +374,8 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of sql virtual machines in a SQL virtual machine group.
+     * @return the list of sql virtual machines in a SQL virtual machine group as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SqlVirtualMachineInner> listBySqlVmGroup(
@@ -390,7 +393,8 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of sql virtual machines in a SQL virtual machine group.
+     * @return the list of sql virtual machines in a SQL virtual machine group as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SqlVirtualMachineInner> listBySqlVmGroup(
@@ -492,7 +496,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all SQL virtual machines in a subscription.
+     * @return all SQL virtual machines in a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SqlVirtualMachineInner> listAsync() {
@@ -506,7 +510,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all SQL virtual machines in a subscription.
+     * @return all SQL virtual machines in a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SqlVirtualMachineInner> listAsync(Context context) {
@@ -519,7 +523,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all SQL virtual machines in a subscription.
+     * @return all SQL virtual machines in a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SqlVirtualMachineInner> list() {
@@ -533,7 +537,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all SQL virtual machines in a subscription.
+     * @return all SQL virtual machines in a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SqlVirtualMachineInner> list(Context context) {
@@ -852,7 +856,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of a SQL virtual machine.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginCreateOrUpdateAsync(
@@ -880,7 +884,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of a SQL virtual machine.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginCreateOrUpdateAsync(
@@ -908,7 +912,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of a SQL virtual machine.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginCreateOrUpdate(
@@ -927,7 +931,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of a SQL virtual machine.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginCreateOrUpdate(
@@ -1116,7 +1120,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1138,7 +1142,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -1160,7 +1164,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String sqlVirtualMachineName) {
@@ -1177,7 +1181,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -1375,7 +1379,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of a SQL virtual machine.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginUpdateAsync(
@@ -1403,7 +1407,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of a SQL virtual machine.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginUpdateAsync(
@@ -1431,7 +1435,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of a SQL virtual machine.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginUpdate(
@@ -1450,7 +1454,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of a SQL virtual machine.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginUpdate(
@@ -1649,7 +1653,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all SQL virtual machines in a resource group.
+     * @return all SQL virtual machines in a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SqlVirtualMachineInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -1667,7 +1671,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all SQL virtual machines in a resource group.
+     * @return all SQL virtual machines in a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SqlVirtualMachineInner> listByResourceGroupAsync(String resourceGroupName, Context context) {
@@ -1684,7 +1688,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all SQL virtual machines in a resource group.
+     * @return all SQL virtual machines in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SqlVirtualMachineInner> listByResourceGroup(String resourceGroupName) {
@@ -1700,7 +1704,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all SQL virtual machines in a resource group.
+     * @return all SQL virtual machines in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SqlVirtualMachineInner> listByResourceGroup(String resourceGroupName, Context context) {

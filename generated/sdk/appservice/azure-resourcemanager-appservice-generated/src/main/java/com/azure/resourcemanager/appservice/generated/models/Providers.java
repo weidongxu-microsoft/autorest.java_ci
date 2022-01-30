@@ -15,7 +15,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks.
+     * @return collection of Application Stacks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationStackResource> getAvailableStacks();
 
@@ -28,7 +28,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks.
+     * @return collection of Application Stacks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationStackResource> getAvailableStacks(ProviderOsTypeSelected osTypeSelected, Context context);
 
@@ -38,7 +38,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks.
+     * @return collection of Function app Stacks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FunctionAppStack> getFunctionAppStacks();
 
@@ -51,7 +51,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks.
+     * @return collection of Function app Stacks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FunctionAppStack> getFunctionAppStacks(ProviderStackOsType stackOsType, Context context);
 
@@ -63,7 +63,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks.
+     * @return collection of Function app Stacks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FunctionAppStack> getFunctionAppStacksForLocation(String location);
 
@@ -77,7 +77,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks.
+     * @return collection of Function app Stacks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FunctionAppStack> getFunctionAppStacksForLocation(
         String location, ProviderStackOsType stackOsType, Context context);
@@ -90,7 +90,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Web app Stacks.
+     * @return collection of Web app Stacks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebAppStack> getWebAppStacksForLocation(String location);
 
@@ -104,7 +104,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Web app Stacks.
+     * @return collection of Web app Stacks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebAppStack> getWebAppStacksForLocation(
         String location, ProviderStackOsType stackOsType, Context context);
@@ -116,7 +116,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Azure resource manager operation metadata.
+     * @return collection of Azure resource manager operation metadata as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CsmOperationDescription> listOperations();
 
@@ -129,7 +129,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Azure resource manager operation metadata.
+     * @return collection of Azure resource manager operation metadata as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CsmOperationDescription> listOperations(Context context);
 
@@ -139,7 +139,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Web app Stacks.
+     * @return collection of Web app Stacks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebAppStack> getWebAppStacks();
 
@@ -152,7 +152,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Web app Stacks.
+     * @return collection of Web app Stacks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebAppStack> getWebAppStacks(ProviderStackOsType stackOsType, Context context);
 
@@ -162,7 +162,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks.
+     * @return collection of Application Stacks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationStackResource> list();
 
@@ -175,7 +175,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks.
+     * @return collection of Application Stacks as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationStackResource> list(ProviderOsTypeSelected osTypeSelected, Context context);
 }

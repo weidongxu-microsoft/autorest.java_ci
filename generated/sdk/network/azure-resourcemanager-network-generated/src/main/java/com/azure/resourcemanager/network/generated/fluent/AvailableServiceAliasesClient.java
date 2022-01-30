@@ -19,7 +19,8 @@ public interface AvailableServiceAliasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available service aliases for this subscription in this region.
+     * @return all available service aliases for this subscription in this region as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AvailableServiceAliasInner> list(String location);
@@ -32,7 +33,8 @@ public interface AvailableServiceAliasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available service aliases for this subscription in this region.
+     * @return all available service aliases for this subscription in this region as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AvailableServiceAliasInner> list(String location, Context context);
@@ -45,7 +47,8 @@ public interface AvailableServiceAliasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available service aliases for this resource group in this region.
+     * @return all available service aliases for this resource group in this region as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AvailableServiceAliasInner> listByResourceGroup(String resourceGroupName, String location);
@@ -59,7 +62,8 @@ public interface AvailableServiceAliasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available service aliases for this resource group in this region.
+     * @return all available service aliases for this resource group in this region as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AvailableServiceAliasInner> listByResourceGroup(

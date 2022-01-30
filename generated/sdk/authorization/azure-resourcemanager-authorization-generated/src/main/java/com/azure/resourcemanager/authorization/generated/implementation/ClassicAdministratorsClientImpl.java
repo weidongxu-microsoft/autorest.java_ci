@@ -168,7 +168,8 @@ public final class ClassicAdministratorsClientImpl implements ClassicAdministrat
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return service administrator, account administrator, and co-administrators for the subscription.
+     * @return service administrator, account administrator, and co-administrators for the subscription as paginated
+     *     response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ClassicAdministratorInner> listAsync() {
@@ -182,7 +183,8 @@ public final class ClassicAdministratorsClientImpl implements ClassicAdministrat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return service administrator, account administrator, and co-administrators for the subscription.
+     * @return service administrator, account administrator, and co-administrators for the subscription as paginated
+     *     response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ClassicAdministratorInner> listAsync(Context context) {
@@ -195,7 +197,8 @@ public final class ClassicAdministratorsClientImpl implements ClassicAdministrat
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return service administrator, account administrator, and co-administrators for the subscription.
+     * @return service administrator, account administrator, and co-administrators for the subscription as paginated
+     *     response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ClassicAdministratorInner> list() {
@@ -209,7 +212,8 @@ public final class ClassicAdministratorsClientImpl implements ClassicAdministrat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return service administrator, account administrator, and co-administrators for the subscription.
+     * @return service administrator, account administrator, and co-administrators for the subscription as paginated
+     *     response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ClassicAdministratorInner> list(Context context) {

@@ -72,7 +72,7 @@ public interface PrivateEndpoints {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoints in a resource group.
+     * @return all private endpoints in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PrivateEndpoint> listByResourceGroup(String resourceGroupName);
 
@@ -85,7 +85,7 @@ public interface PrivateEndpoints {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoints in a resource group.
+     * @return all private endpoints in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PrivateEndpoint> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -95,7 +95,7 @@ public interface PrivateEndpoints {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoints in a subscription.
+     * @return all private endpoints in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PrivateEndpoint> list();
 
@@ -107,7 +107,7 @@ public interface PrivateEndpoints {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private endpoints in a subscription.
+     * @return all private endpoints in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PrivateEndpoint> list(Context context);
 

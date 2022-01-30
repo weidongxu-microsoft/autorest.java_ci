@@ -98,7 +98,8 @@ public interface ServerAdministrators {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request.
+     * @return the response to a list Active Directory Administrators request as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ServerAdministratorResource> list(String resourceGroupName, String serverName);
 
@@ -111,7 +112,8 @@ public interface ServerAdministrators {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request.
+     * @return the response to a list Active Directory Administrators request as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ServerAdministratorResource> list(String resourceGroupName, String serverName, Context context);
 }

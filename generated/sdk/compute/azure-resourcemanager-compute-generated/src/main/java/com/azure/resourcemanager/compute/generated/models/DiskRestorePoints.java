@@ -60,7 +60,7 @@ public interface DiskRestorePoints {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Disk Restore Points operation response.
+     * @return the List Disk Restore Points operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiskRestorePoint> listByRestorePoint(
         String resourceGroupName, String restorePointCollectionName, String vmRestorePointName);
@@ -76,7 +76,7 @@ public interface DiskRestorePoints {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Disk Restore Points operation response.
+     * @return the List Disk Restore Points operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiskRestorePoint> listByRestorePoint(
         String resourceGroupName, String restorePointCollectionName, String vmRestorePointName, Context context);

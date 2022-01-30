@@ -99,7 +99,8 @@ public interface CloudServices {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all cloud services in the subscription, regardless of the associated resource group.
+     * @return a list of all cloud services in the subscription, regardless of the associated resource group as
+     *     paginated response with {@link PagedIterable}.
      */
     PagedIterable<CloudService> list();
 
@@ -113,7 +114,8 @@ public interface CloudServices {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all cloud services in the subscription, regardless of the associated resource group.
+     * @return a list of all cloud services in the subscription, regardless of the associated resource group as
+     *     paginated response with {@link PagedIterable}.
      */
     PagedIterable<CloudService> list(Context context);
 
@@ -126,7 +128,7 @@ public interface CloudServices {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all cloud services under a resource group.
+     * @return a list of all cloud services under a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CloudService> listByResourceGroup(String resourceGroupName);
 
@@ -140,7 +142,7 @@ public interface CloudServices {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all cloud services under a resource group.
+     * @return a list of all cloud services under a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CloudService> listByResourceGroup(String resourceGroupName, Context context);
 

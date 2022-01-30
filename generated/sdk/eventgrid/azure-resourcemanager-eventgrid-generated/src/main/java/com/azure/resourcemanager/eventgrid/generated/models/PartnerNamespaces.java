@@ -64,7 +64,7 @@ public interface PartnerNamespaces {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PartnerNamespace> list();
 
@@ -83,7 +83,7 @@ public interface PartnerNamespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PartnerNamespace> list(String filter, Integer top, Context context);
 
@@ -94,7 +94,7 @@ public interface PartnerNamespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PartnerNamespace> listByResourceGroup(String resourceGroupName);
 
@@ -114,7 +114,7 @@ public interface PartnerNamespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Namespaces operation.
+     * @return result of the List Partner Namespaces operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PartnerNamespace> listByResourceGroup(
         String resourceGroupName, String filter, Integer top, Context context);

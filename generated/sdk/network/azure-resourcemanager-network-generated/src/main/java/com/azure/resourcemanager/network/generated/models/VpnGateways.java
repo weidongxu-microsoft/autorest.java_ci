@@ -178,7 +178,7 @@ public interface VpnGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways.
+     * @return result of the request to list VpnGateways as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnGateway> listByResourceGroup(String resourceGroupName);
 
@@ -190,7 +190,7 @@ public interface VpnGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways.
+     * @return result of the request to list VpnGateways as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnGateway> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -199,7 +199,7 @@ public interface VpnGateways {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways.
+     * @return result of the request to list VpnGateways as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnGateway> list();
 
@@ -210,7 +210,7 @@ public interface VpnGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways.
+     * @return result of the request to list VpnGateways as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnGateway> list(Context context);
 

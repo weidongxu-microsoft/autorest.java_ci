@@ -169,7 +169,8 @@ public final class ManagedRuleSetsClientImpl implements ManagedRuleSetsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed rule set definitions available for use in a policy.
+     * @return list of managed rule set definitions available for use in a policy as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagedRuleSetDefinitionInner> listAsync() {
@@ -183,7 +184,8 @@ public final class ManagedRuleSetsClientImpl implements ManagedRuleSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed rule set definitions available for use in a policy.
+     * @return list of managed rule set definitions available for use in a policy as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagedRuleSetDefinitionInner> listAsync(Context context) {
@@ -196,7 +198,8 @@ public final class ManagedRuleSetsClientImpl implements ManagedRuleSetsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed rule set definitions available for use in a policy.
+     * @return list of managed rule set definitions available for use in a policy as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ManagedRuleSetDefinitionInner> list() {
@@ -210,7 +213,8 @@ public final class ManagedRuleSetsClientImpl implements ManagedRuleSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of managed rule set definitions available for use in a policy.
+     * @return list of managed rule set definitions available for use in a policy as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ManagedRuleSetDefinitionInner> list(Context context) {

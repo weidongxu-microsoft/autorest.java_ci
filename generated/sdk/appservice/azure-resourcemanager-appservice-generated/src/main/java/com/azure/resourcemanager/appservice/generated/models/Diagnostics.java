@@ -20,7 +20,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses.
+     * @return collection of detector responses as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DetectorResponse> listHostingEnvironmentDetectorResponses(String resourceGroupName, String name);
 
@@ -34,7 +34,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses.
+     * @return collection of detector responses as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DetectorResponse> listHostingEnvironmentDetectorResponses(
         String resourceGroupName, String name, Context context);
@@ -87,7 +87,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses.
+     * @return collection of detector responses as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DetectorResponse> listSiteDetectorResponses(String resourceGroupName, String siteName);
 
@@ -101,7 +101,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses.
+     * @return collection of detector responses as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DetectorResponse> listSiteDetectorResponses(
         String resourceGroupName, String siteName, Context context);
@@ -154,7 +154,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Categories.
+     * @return collection of Diagnostic Categories as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiagnosticCategory> listSiteDiagnosticCategories(String resourceGroupName, String siteName);
 
@@ -168,7 +168,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Categories.
+     * @return collection of Diagnostic Categories as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiagnosticCategory> listSiteDiagnosticCategories(
         String resourceGroupName, String siteName, Context context);
@@ -213,7 +213,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Analyses.
+     * @return collection of Diagnostic Analyses as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AnalysisDefinition> listSiteAnalyses(
         String resourceGroupName, String siteName, String diagnosticCategory);
@@ -229,7 +229,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Analyses.
+     * @return collection of Diagnostic Analyses as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AnalysisDefinition> listSiteAnalyses(
         String resourceGroupName, String siteName, String diagnosticCategory, Context context);
@@ -320,7 +320,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Detectors.
+     * @return collection of Diagnostic Detectors as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DetectorDefinitionResource> listSiteDetectors(
         String resourceGroupName, String siteName, String diagnosticCategory);
@@ -336,7 +336,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Detectors.
+     * @return collection of Diagnostic Detectors as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DetectorDefinitionResource> listSiteDetectors(
         String resourceGroupName, String siteName, String diagnosticCategory, Context context);
@@ -427,7 +427,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses.
+     * @return collection of detector responses as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DetectorResponse> listSiteDetectorResponsesSlot(
         String resourceGroupName, String siteName, String slot);
@@ -443,7 +443,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses.
+     * @return collection of detector responses as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DetectorResponse> listSiteDetectorResponsesSlot(
         String resourceGroupName, String siteName, String slot, Context context);
@@ -501,7 +501,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Categories.
+     * @return collection of Diagnostic Categories as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiagnosticCategory> listSiteDiagnosticCategoriesSlot(
         String resourceGroupName, String siteName, String slot);
@@ -517,7 +517,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Categories.
+     * @return collection of Diagnostic Categories as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiagnosticCategory> listSiteDiagnosticCategoriesSlot(
         String resourceGroupName, String siteName, String slot, Context context);
@@ -566,7 +566,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Analyses.
+     * @return collection of Diagnostic Analyses as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AnalysisDefinition> listSiteAnalysesSlot(
         String resourceGroupName, String siteName, String diagnosticCategory, String slot);
@@ -583,7 +583,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Analyses.
+     * @return collection of Diagnostic Analyses as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AnalysisDefinition> listSiteAnalysesSlot(
         String resourceGroupName, String siteName, String diagnosticCategory, String slot, Context context);
@@ -685,7 +685,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Detectors.
+     * @return collection of Diagnostic Detectors as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DetectorDefinitionResource> listSiteDetectorsSlot(
         String resourceGroupName, String siteName, String diagnosticCategory, String slot);
@@ -702,7 +702,7 @@ public interface Diagnostics {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Detectors.
+     * @return collection of Diagnostic Detectors as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DetectorDefinitionResource> listSiteDetectorsSlot(
         String resourceGroupName, String siteName, String diagnosticCategory, String slot, Context context);

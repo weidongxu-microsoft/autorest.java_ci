@@ -23,7 +23,8 @@ public interface TenantActivityLogsClient {
      * @return the Activity Logs for the Tenant.&lt;br&gt;Everything that is applicable to the API to get the Activity
      *     Logs for the subscription is applicable to this API (the parameters, $filter, etc.).&lt;br&gt;One thing to
      *     point out here is that this API does *not* retrieve the logs at the individual subscription of the tenant but
-     *     only surfaces the logs that were generated at the tenant level.
+     *     only surfaces the logs that were generated at the tenant level as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<EventDataInner> list();
@@ -59,7 +60,8 @@ public interface TenantActivityLogsClient {
      * @return the Activity Logs for the Tenant.&lt;br&gt;Everything that is applicable to the API to get the Activity
      *     Logs for the subscription is applicable to this API (the parameters, $filter, etc.).&lt;br&gt;One thing to
      *     point out here is that this API does *not* retrieve the logs at the individual subscription of the tenant but
-     *     only surfaces the logs that were generated at the tenant level.
+     *     only surfaces the logs that were generated at the tenant level as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<EventDataInner> list(String filter, String select, Context context);

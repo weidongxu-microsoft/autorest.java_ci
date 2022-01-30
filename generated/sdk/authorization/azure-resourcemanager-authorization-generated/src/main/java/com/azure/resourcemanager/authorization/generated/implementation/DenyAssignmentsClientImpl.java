@@ -384,7 +384,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource.
+     * @return deny assignments for a resource as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listForResourceAsync(
@@ -417,7 +417,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource.
+     * @return deny assignments for a resource as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listForResourceAsync(
@@ -459,7 +459,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource.
+     * @return deny assignments for a resource as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listForResourceAsync(
@@ -494,7 +494,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource.
+     * @return deny assignments for a resource as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DenyAssignmentInner> listForResource(
@@ -529,7 +529,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource.
+     * @return deny assignments for a resource as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DenyAssignmentInner> listForResource(
@@ -690,7 +690,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource group.
+     * @return deny assignments for a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listByResourceGroupAsync(String resourceGroupName, String filter) {
@@ -706,7 +706,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource group.
+     * @return deny assignments for a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -732,7 +732,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource group.
+     * @return deny assignments for a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listByResourceGroupAsync(
@@ -749,7 +749,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource group.
+     * @return deny assignments for a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DenyAssignmentInner> listByResourceGroup(String resourceGroupName) {
@@ -773,7 +773,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource group.
+     * @return deny assignments for a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DenyAssignmentInner> listByResourceGroup(
@@ -899,7 +899,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deny assignments for the subscription.
+     * @return all deny assignments for the subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listAsync(String filter) {
@@ -911,7 +911,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deny assignments for the subscription.
+     * @return all deny assignments for the subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listAsync() {
@@ -934,7 +934,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deny assignments for the subscription.
+     * @return all deny assignments for the subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listAsync(String filter, Context context) {
@@ -947,7 +947,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deny assignments for the subscription.
+     * @return all deny assignments for the subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DenyAssignmentInner> list() {
@@ -970,7 +970,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all deny assignments for the subscription.
+     * @return all deny assignments for the subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DenyAssignmentInner> list(String filter, Context context) {
@@ -1326,7 +1326,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a scope.
+     * @return deny assignments for a scope as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listForScopeAsync(String scope, String filter) {
@@ -1341,7 +1341,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a scope.
+     * @return deny assignments for a scope as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listForScopeAsync(String scope) {
@@ -1366,7 +1366,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a scope.
+     * @return deny assignments for a scope as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listForScopeAsync(String scope, String filter, Context context) {
@@ -1382,7 +1382,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a scope.
+     * @return deny assignments for a scope as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DenyAssignmentInner> listForScope(String scope) {
@@ -1406,7 +1406,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a scope.
+     * @return deny assignments for a scope as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DenyAssignmentInner> listForScope(String scope, String filter, Context context) {

@@ -67,7 +67,7 @@ public interface VirtualNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all virtual network gateways by resource group.
+     * @return all virtual network gateways by resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualNetworkGateway> listByResourceGroup(String resourceGroupName);
 
@@ -79,7 +79,7 @@ public interface VirtualNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all virtual network gateways by resource group.
+     * @return all virtual network gateways by resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualNetworkGateway> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -91,7 +91,7 @@ public interface VirtualNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the connections in a virtual network gateway.
+     * @return all the connections in a virtual network gateway as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualNetworkGatewayConnectionListEntity> listConnections(
         String resourceGroupName, String virtualNetworkGatewayName);
@@ -105,7 +105,7 @@ public interface VirtualNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the connections in a virtual network gateway.
+     * @return all the connections in a virtual network gateway as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualNetworkGatewayConnectionListEntity> listConnections(
         String resourceGroupName, String virtualNetworkGatewayName, Context context);

@@ -802,7 +802,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicyExemptionInner> listAsync(String filter) {
@@ -818,7 +818,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicyExemptionInner> listAsync() {
@@ -847,7 +847,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicyExemptionInner> listAsync(String filter, Context context) {
@@ -864,7 +864,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicyExemptionInner> list() {
@@ -893,7 +893,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicyExemptionInner> list(String filter, Context context) {
@@ -1055,7 +1055,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicyExemptionInner> listByResourceGroupAsync(String resourceGroupName, String filter) {
@@ -1075,7 +1075,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicyExemptionInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -1107,7 +1107,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicyExemptionInner> listByResourceGroupAsync(
@@ -1128,7 +1128,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicyExemptionInner> listByResourceGroup(String resourceGroupName) {
@@ -1158,7 +1158,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicyExemptionInner> listByResourceGroup(
@@ -1420,7 +1420,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicyExemptionInner> listForResourceAsync(
@@ -1469,7 +1469,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicyExemptionInner> listForResourceAsync(
@@ -1529,7 +1529,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicyExemptionInner> listForResourceAsync(
@@ -1580,7 +1580,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicyExemptionInner> listForResource(
@@ -1633,7 +1633,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicyExemptionInner> listForResource(
@@ -1782,7 +1782,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicyExemptionInner> listForManagementGroupAsync(String managementGroupId, String filter) {
@@ -1801,7 +1801,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicyExemptionInner> listForManagementGroupAsync(String managementGroupId) {
@@ -1832,7 +1832,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicyExemptionInner> listForManagementGroupAsync(
@@ -1852,7 +1852,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicyExemptionInner> listForManagementGroup(String managementGroupId) {
@@ -1881,7 +1881,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicyExemptionInner> listForManagementGroup(

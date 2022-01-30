@@ -178,7 +178,7 @@ public interface VirtualMachineScaleSetVMRunCommands {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List run command operation response.
+     * @return the List run command operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineRunCommand> list(String resourceGroupName, String vmScaleSetName, String instanceId);
 
@@ -194,7 +194,7 @@ public interface VirtualMachineScaleSetVMRunCommands {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List run command operation response.
+     * @return the List run command operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineRunCommand> list(
         String resourceGroupName, String vmScaleSetName, String instanceId, String expand, Context context);

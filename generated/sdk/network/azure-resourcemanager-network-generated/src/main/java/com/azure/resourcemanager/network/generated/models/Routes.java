@@ -70,7 +70,7 @@ public interface Routes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all routes in a route table.
+     * @return all routes in a route table as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Route> list(String resourceGroupName, String routeTableName);
 
@@ -83,7 +83,7 @@ public interface Routes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all routes in a route table.
+     * @return all routes in a route table as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Route> list(String resourceGroupName, String routeTableName, Context context);
 

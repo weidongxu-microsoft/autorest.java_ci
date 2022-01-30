@@ -188,7 +188,7 @@ public final class RegionsClientImpl implements RegionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available Regions for a given sku.
+     * @return the available Regions for a given sku as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MessagingRegionsInner> listBySkuAsync(String sku) {
@@ -203,7 +203,7 @@ public final class RegionsClientImpl implements RegionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available Regions for a given sku.
+     * @return the available Regions for a given sku as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MessagingRegionsInner> listBySkuAsync(String sku, Context context) {
@@ -218,7 +218,7 @@ public final class RegionsClientImpl implements RegionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available Regions for a given sku.
+     * @return the available Regions for a given sku as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<MessagingRegionsInner> listBySku(String sku) {
@@ -233,7 +233,7 @@ public final class RegionsClientImpl implements RegionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available Regions for a given sku.
+     * @return the available Regions for a given sku as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<MessagingRegionsInner> listBySku(String sku, Context context) {

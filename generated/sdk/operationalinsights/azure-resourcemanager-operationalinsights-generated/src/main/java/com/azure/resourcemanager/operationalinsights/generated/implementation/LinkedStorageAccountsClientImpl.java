@@ -776,7 +776,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all linked storage accounts associated with the specified workspace, storage accounts will be sorted by
-     *     their data source type.
+     *     their data source type as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LinkedStorageAccountsResourceInner> listByWorkspaceAsync(
@@ -795,7 +795,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all linked storage accounts associated with the specified workspace, storage accounts will be sorted by
-     *     their data source type.
+     *     their data source type as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LinkedStorageAccountsResourceInner> listByWorkspaceAsync(
@@ -813,7 +813,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all linked storage accounts associated with the specified workspace, storage accounts will be sorted by
-     *     their data source type.
+     *     their data source type as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<LinkedStorageAccountsResourceInner> listByWorkspace(
@@ -832,7 +832,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all linked storage accounts associated with the specified workspace, storage accounts will be sorted by
-     *     their data source type.
+     *     their data source type as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<LinkedStorageAccountsResourceInner> listByWorkspace(

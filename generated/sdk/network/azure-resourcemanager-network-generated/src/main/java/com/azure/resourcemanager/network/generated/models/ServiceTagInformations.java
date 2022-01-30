@@ -18,7 +18,8 @@ public interface ServiceTagInformations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources with pagination.
+     * @return a list of service tag information resources with pagination as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ServiceTagInformation> list(String location);
 
@@ -34,7 +35,8 @@ public interface ServiceTagInformations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources with pagination.
+     * @return a list of service tag information resources with pagination as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ServiceTagInformation> list(
         String location, Boolean noAddressPrefixes, String tagName, Context context);

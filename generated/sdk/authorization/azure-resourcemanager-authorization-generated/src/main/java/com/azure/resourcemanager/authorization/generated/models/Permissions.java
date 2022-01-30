@@ -16,7 +16,7 @@ public interface Permissions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all permissions the caller has for a resource group.
+     * @return all permissions the caller has for a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Permission> listByResourceGroup(String resourceGroupName);
 
@@ -28,7 +28,7 @@ public interface Permissions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all permissions the caller has for a resource group.
+     * @return all permissions the caller has for a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Permission> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -43,7 +43,7 @@ public interface Permissions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all permissions the caller has for a resource.
+     * @return all permissions the caller has for a resource as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Permission> listForResource(
         String resourceGroupName,
@@ -64,7 +64,7 @@ public interface Permissions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all permissions the caller has for a resource.
+     * @return all permissions the caller has for a resource as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Permission> listForResource(
         String resourceGroupName,

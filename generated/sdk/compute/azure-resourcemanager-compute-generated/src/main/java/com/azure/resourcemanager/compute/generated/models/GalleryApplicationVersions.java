@@ -106,7 +106,7 @@ public interface GalleryApplicationVersions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Gallery Application version operation response.
+     * @return the List Gallery Application version operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<GalleryApplicationVersion> listByGalleryApplication(
         String resourceGroupName, String galleryName, String galleryApplicationName);
@@ -123,7 +123,7 @@ public interface GalleryApplicationVersions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Gallery Application version operation response.
+     * @return the List Gallery Application version operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<GalleryApplicationVersion> listByGalleryApplication(
         String resourceGroupName, String galleryName, String galleryApplicationName, Context context);

@@ -16,7 +16,7 @@ public interface KubeEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments.
+     * @return collection of Kubernetes Environments as paginated response with {@link PagedIterable}.
      */
     PagedIterable<KubeEnvironment> list();
 
@@ -28,7 +28,7 @@ public interface KubeEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments.
+     * @return collection of Kubernetes Environments as paginated response with {@link PagedIterable}.
      */
     PagedIterable<KubeEnvironment> list(Context context);
 
@@ -40,7 +40,7 @@ public interface KubeEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments.
+     * @return collection of Kubernetes Environments as paginated response with {@link PagedIterable}.
      */
     PagedIterable<KubeEnvironment> listByResourceGroup(String resourceGroupName);
 
@@ -53,7 +53,7 @@ public interface KubeEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments.
+     * @return collection of Kubernetes Environments as paginated response with {@link PagedIterable}.
      */
     PagedIterable<KubeEnvironment> listByResourceGroup(String resourceGroupName, Context context);
 

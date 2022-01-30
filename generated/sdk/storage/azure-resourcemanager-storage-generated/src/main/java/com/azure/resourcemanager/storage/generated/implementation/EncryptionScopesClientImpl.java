@@ -913,7 +913,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of encryption scopes requested, and if paging is required, a URL to the next page of encryption
-     *     scopes.
+     *     scopes as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<EncryptionScopeInner> listAsync(String resourceGroupName, String accountName) {
@@ -933,7 +933,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of encryption scopes requested, and if paging is required, a URL to the next page of encryption
-     *     scopes.
+     *     scopes as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<EncryptionScopeInner> listAsync(String resourceGroupName, String accountName, Context context) {
@@ -953,7 +953,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of encryption scopes requested, and if paging is required, a URL to the next page of encryption
-     *     scopes.
+     *     scopes as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<EncryptionScopeInner> list(String resourceGroupName, String accountName) {
@@ -972,7 +972,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of encryption scopes requested, and if paging is required, a URL to the next page of encryption
-     *     scopes.
+     *     scopes as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<EncryptionScopeInner> list(String resourceGroupName, String accountName, Context context) {

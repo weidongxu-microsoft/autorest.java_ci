@@ -66,7 +66,7 @@ public interface DscpConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DSCP Configuration.
+     * @return a DSCP Configuration as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DscpConfiguration> listByResourceGroup(String resourceGroupName);
 
@@ -78,7 +78,7 @@ public interface DscpConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DSCP Configuration.
+     * @return a DSCP Configuration as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DscpConfiguration> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -87,7 +87,7 @@ public interface DscpConfigurations {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all dscp configurations in a subscription.
+     * @return all dscp configurations in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DscpConfiguration> list();
 
@@ -98,7 +98,7 @@ public interface DscpConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all dscp configurations in a subscription.
+     * @return all dscp configurations in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DscpConfiguration> list(Context context);
 

@@ -185,7 +185,7 @@ public final class LogFilesClientImpl implements LogFilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of log files.
+     * @return a list of log files as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LogFileInner> listByServerAsync(String resourceGroupName, String serverName) {
@@ -201,7 +201,7 @@ public final class LogFilesClientImpl implements LogFilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of log files.
+     * @return a list of log files as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LogFileInner> listByServerAsync(String resourceGroupName, String serverName, Context context) {
@@ -216,7 +216,7 @@ public final class LogFilesClientImpl implements LogFilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of log files.
+     * @return a list of log files as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<LogFileInner> listByServer(String resourceGroupName, String serverName) {
@@ -232,7 +232,7 @@ public final class LogFilesClientImpl implements LogFilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of log files.
+     * @return a list of log files as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<LogFileInner> listByServer(String resourceGroupName, String serverName, Context context) {

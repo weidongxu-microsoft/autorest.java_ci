@@ -874,7 +874,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LogSearchRuleResourceInner> listAsync(String filter) {
@@ -886,7 +886,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LogSearchRuleResourceInner> listAsync() {
@@ -903,7 +903,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LogSearchRuleResourceInner> listAsync(String filter, Context context) {
@@ -915,7 +915,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<LogSearchRuleResourceInner> list() {
@@ -932,7 +932,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<LogSearchRuleResourceInner> list(String filter, Context context) {
@@ -1050,7 +1050,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LogSearchRuleResourceInner> listByResourceGroupAsync(String resourceGroupName, String filter) {
@@ -1064,7 +1064,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LogSearchRuleResourceInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -1082,7 +1082,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LogSearchRuleResourceInner> listByResourceGroupAsync(
@@ -1097,7 +1097,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<LogSearchRuleResourceInner> listByResourceGroup(String resourceGroupName) {
@@ -1115,7 +1115,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<LogSearchRuleResourceInner> listByResourceGroup(

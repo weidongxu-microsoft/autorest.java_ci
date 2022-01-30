@@ -256,7 +256,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReservationSummaryInner> listByReservationOrderAsync(
@@ -274,7 +274,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReservationSummaryInner> listByReservationOrderAsync(String reservationOrderId, Datagrain grain) {
@@ -295,7 +295,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReservationSummaryInner> listByReservationOrderAsync(
@@ -313,7 +313,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ReservationSummaryInner> listByReservationOrder(String reservationOrderId, Datagrain grain) {
@@ -332,7 +332,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ReservationSummaryInner> listByReservationOrder(
@@ -467,7 +467,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReservationSummaryInner> listByReservationOrderAndReservationAsync(
@@ -486,7 +486,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReservationSummaryInner> listByReservationOrderAndReservationAsync(
@@ -509,7 +509,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReservationSummaryInner> listByReservationOrderAndReservationAsync(
@@ -530,7 +530,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ReservationSummaryInner> listByReservationOrderAndReservation(
@@ -552,7 +552,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ReservationSummaryInner> listByReservationOrderAndReservation(
@@ -723,7 +723,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReservationSummaryInner> listAsync(
@@ -750,7 +750,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReservationSummaryInner> listAsync(String scope, Datagrain grain) {
@@ -784,7 +784,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReservationSummaryInner> listAsync(
@@ -814,7 +814,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ReservationSummaryInner> list(String scope, Datagrain grain) {
@@ -847,7 +847,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation summaries.
+     * @return result of listing reservation summaries as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ReservationSummaryInner> list(

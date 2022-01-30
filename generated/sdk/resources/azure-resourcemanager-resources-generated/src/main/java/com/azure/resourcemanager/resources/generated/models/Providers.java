@@ -86,7 +86,7 @@ public interface Providers {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all resource providers for a subscription.
+     * @return all resource providers for a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Provider> list();
 
@@ -101,7 +101,7 @@ public interface Providers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all resource providers for a subscription.
+     * @return all resource providers for a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Provider> list(Integer top, String expand, Context context);
 
@@ -110,7 +110,7 @@ public interface Providers {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all resource providers for the tenant.
+     * @return all resource providers for the tenant as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Provider> listAtTenantScope();
 
@@ -125,7 +125,7 @@ public interface Providers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all resource providers for the tenant.
+     * @return all resource providers for the tenant as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Provider> listAtTenantScope(Integer top, String expand, Context context);
 

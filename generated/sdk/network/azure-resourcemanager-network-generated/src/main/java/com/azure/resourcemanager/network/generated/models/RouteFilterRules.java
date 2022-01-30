@@ -110,7 +110,7 @@ public interface RouteFilterRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all RouteFilterRules in a route filter.
+     * @return all RouteFilterRules in a route filter as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RouteFilterRule> listByRouteFilter(String resourceGroupName, String routeFilterName);
 
@@ -123,7 +123,7 @@ public interface RouteFilterRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all RouteFilterRules in a route filter.
+     * @return all RouteFilterRules in a route filter as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RouteFilterRule> listByRouteFilter(String resourceGroupName, String routeFilterName, Context context);
 }

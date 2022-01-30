@@ -64,7 +64,7 @@ public interface VirtualNetworkTaps {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the VirtualNetworkTaps in a subscription.
+     * @return all the VirtualNetworkTaps in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualNetworkTap> list();
 
@@ -75,7 +75,7 @@ public interface VirtualNetworkTaps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the VirtualNetworkTaps in a subscription.
+     * @return all the VirtualNetworkTaps in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualNetworkTap> list(Context context);
 
@@ -86,7 +86,7 @@ public interface VirtualNetworkTaps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the VirtualNetworkTaps in a subscription.
+     * @return all the VirtualNetworkTaps in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualNetworkTap> listByResourceGroup(String resourceGroupName);
 
@@ -98,7 +98,7 @@ public interface VirtualNetworkTaps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the VirtualNetworkTaps in a subscription.
+     * @return all the VirtualNetworkTaps in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualNetworkTap> listByResourceGroup(String resourceGroupName, Context context);
 

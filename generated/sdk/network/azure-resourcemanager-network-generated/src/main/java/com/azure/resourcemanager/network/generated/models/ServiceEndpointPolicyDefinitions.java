@@ -80,7 +80,8 @@ public interface ServiceEndpointPolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all service endpoint policy definitions in a service end point policy.
+     * @return all service endpoint policy definitions in a service end point policy as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ServiceEndpointPolicyDefinition> listByResourceGroup(
         String resourceGroupName, String serviceEndpointPolicyName);
@@ -94,7 +95,8 @@ public interface ServiceEndpointPolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all service endpoint policy definitions in a service end point policy.
+     * @return all service endpoint policy definitions in a service end point policy as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<ServiceEndpointPolicyDefinition> listByResourceGroup(
         String resourceGroupName, String serviceEndpointPolicyName, Context context);

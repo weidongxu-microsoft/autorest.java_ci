@@ -72,7 +72,7 @@ public interface NetworkInterfaceTapConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Tap configurations in a network interface.
+     * @return all Tap configurations in a network interface as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkInterfaceTapConfiguration> list(String resourceGroupName, String networkInterfaceName);
 
@@ -85,7 +85,7 @@ public interface NetworkInterfaceTapConfigurations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Tap configurations in a network interface.
+     * @return all Tap configurations in a network interface as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkInterfaceTapConfiguration> list(
         String resourceGroupName, String networkInterfaceName, Context context);

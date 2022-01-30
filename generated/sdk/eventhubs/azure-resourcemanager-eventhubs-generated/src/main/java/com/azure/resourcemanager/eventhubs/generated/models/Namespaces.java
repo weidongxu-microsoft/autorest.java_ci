@@ -19,7 +19,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of IP Filter rules for a Namespace.
+     * @return a list of IP Filter rules for a Namespace as paginated response with {@link PagedIterable}.
      */
     PagedIterable<IpFilterRule> listIpFilterRules(String resourceGroupName, String namespaceName);
 
@@ -32,7 +32,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of IP Filter rules for a Namespace.
+     * @return a list of IP Filter rules for a Namespace as paginated response with {@link PagedIterable}.
      */
     PagedIterable<IpFilterRule> listIpFilterRules(String resourceGroupName, String namespaceName, Context context);
 
@@ -96,7 +96,7 @@ public interface Namespaces {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation.
+     * @return the response of the List Namespace operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<EHNamespace> list();
 
@@ -107,7 +107,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation.
+     * @return the response of the List Namespace operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<EHNamespace> list(Context context);
 
@@ -118,7 +118,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation.
+     * @return the response of the List Namespace operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<EHNamespace> listByResourceGroup(String resourceGroupName);
 
@@ -130,7 +130,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace operation.
+     * @return the response of the List Namespace operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<EHNamespace> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -191,7 +191,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of VirtualNetwork rules for a Namespace.
+     * @return a list of VirtualNetwork rules for a Namespace as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualNetworkRule> listVirtualNetworkRules(String resourceGroupName, String namespaceName);
 
@@ -204,7 +204,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of VirtualNetwork rules for a Namespace.
+     * @return a list of VirtualNetwork rules for a Namespace as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualNetworkRule> listVirtualNetworkRules(
         String resourceGroupName, String namespaceName, Context context);
@@ -328,7 +328,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of authorization rules for a Namespace.
+     * @return a list of authorization rules for a Namespace as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName);
 
@@ -341,7 +341,7 @@ public interface Namespaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of authorization rules for a Namespace.
+     * @return a list of authorization rules for a Namespace as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, Context context);

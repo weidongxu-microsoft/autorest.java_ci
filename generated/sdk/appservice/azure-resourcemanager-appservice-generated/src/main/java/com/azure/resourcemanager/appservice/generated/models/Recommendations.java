@@ -16,7 +16,7 @@ public interface Recommendations {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations.
+     * @return collection of recommendations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Recommendation> list();
 
@@ -33,7 +33,7 @@ public interface Recommendations {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations.
+     * @return collection of recommendations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Recommendation> list(Boolean featured, String filter, Context context);
 
@@ -91,7 +91,7 @@ public interface Recommendations {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations.
+     * @return collection of recommendations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Recommendation> listHistoryForHostingEnvironment(
         String resourceGroupName, String hostingEnvironmentName);
@@ -111,7 +111,7 @@ public interface Recommendations {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations.
+     * @return collection of recommendations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Recommendation> listHistoryForHostingEnvironment(
         String resourceGroupName, String hostingEnvironmentName, Boolean expiredOnly, String filter, Context context);
@@ -125,7 +125,7 @@ public interface Recommendations {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations.
+     * @return collection of recommendations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Recommendation> listRecommendedRulesForHostingEnvironment(
         String resourceGroupName, String hostingEnvironmentName);
@@ -144,7 +144,7 @@ public interface Recommendations {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations.
+     * @return collection of recommendations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Recommendation> listRecommendedRulesForHostingEnvironment(
         String resourceGroupName, String hostingEnvironmentName, Boolean featured, String filter, Context context);
@@ -290,7 +290,7 @@ public interface Recommendations {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations.
+     * @return collection of recommendations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Recommendation> listHistoryForWebApp(String resourceGroupName, String siteName);
 
@@ -309,7 +309,7 @@ public interface Recommendations {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations.
+     * @return collection of recommendations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Recommendation> listHistoryForWebApp(
         String resourceGroupName, String siteName, Boolean expiredOnly, String filter, Context context);
@@ -323,7 +323,7 @@ public interface Recommendations {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations.
+     * @return collection of recommendations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Recommendation> listRecommendedRulesForWebApp(String resourceGroupName, String siteName);
 
@@ -341,7 +341,7 @@ public interface Recommendations {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations.
+     * @return collection of recommendations as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Recommendation> listRecommendedRulesForWebApp(
         String resourceGroupName, String siteName, Boolean featured, String filter, Context context);

@@ -150,7 +150,7 @@ public final class MetricDefinitionsClientImpl implements MetricDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents collection of metric definitions.
+     * @return represents collection of metric definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MetricDefinitionInner> listAsync(String resourceUri, String metricnamespace) {
@@ -164,7 +164,7 @@ public final class MetricDefinitionsClientImpl implements MetricDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents collection of metric definitions.
+     * @return represents collection of metric definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MetricDefinitionInner> listAsync(String resourceUri) {
@@ -181,7 +181,7 @@ public final class MetricDefinitionsClientImpl implements MetricDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents collection of metric definitions.
+     * @return represents collection of metric definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MetricDefinitionInner> listAsync(String resourceUri, String metricnamespace, Context context) {
@@ -195,7 +195,7 @@ public final class MetricDefinitionsClientImpl implements MetricDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents collection of metric definitions.
+     * @return represents collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<MetricDefinitionInner> list(String resourceUri) {
@@ -212,7 +212,7 @@ public final class MetricDefinitionsClientImpl implements MetricDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents collection of metric definitions.
+     * @return represents collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<MetricDefinitionInner> list(String resourceUri, String metricnamespace, Context context) {

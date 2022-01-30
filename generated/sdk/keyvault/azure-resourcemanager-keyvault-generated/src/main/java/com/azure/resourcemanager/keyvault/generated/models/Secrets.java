@@ -48,7 +48,7 @@ public interface Secrets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of secrets.
+     * @return list of secrets as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Secret> list(String resourceGroupName, String vaultName);
 
@@ -63,7 +63,7 @@ public interface Secrets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of secrets.
+     * @return list of secrets as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Secret> list(String resourceGroupName, String vaultName, Integer top, Context context);
 

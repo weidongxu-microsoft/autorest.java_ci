@@ -320,7 +320,7 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for all resource providers.
+     * @return provider operations metadata for all resource providers as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ProviderOperationsMetadataInner> listAsync(String expand) {
@@ -332,7 +332,7 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for all resource providers.
+     * @return provider operations metadata for all resource providers as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ProviderOperationsMetadataInner> listAsync() {
@@ -348,7 +348,7 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for all resource providers.
+     * @return provider operations metadata for all resource providers as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ProviderOperationsMetadataInner> listAsync(String expand, Context context) {
@@ -361,7 +361,7 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for all resource providers.
+     * @return provider operations metadata for all resource providers as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ProviderOperationsMetadataInner> list() {
@@ -377,7 +377,7 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for all resource providers.
+     * @return provider operations metadata for all resource providers as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ProviderOperationsMetadataInner> list(String expand, Context context) {

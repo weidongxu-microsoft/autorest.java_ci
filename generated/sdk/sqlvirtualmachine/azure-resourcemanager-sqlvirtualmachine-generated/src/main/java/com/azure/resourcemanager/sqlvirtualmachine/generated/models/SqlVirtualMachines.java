@@ -19,7 +19,8 @@ public interface SqlVirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of sql virtual machines in a SQL virtual machine group.
+     * @return the list of sql virtual machines in a SQL virtual machine group as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<SqlVirtualMachine> listBySqlVmGroup(String resourceGroupName, String sqlVirtualMachineGroupName);
 
@@ -33,7 +34,8 @@ public interface SqlVirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of sql virtual machines in a SQL virtual machine group.
+     * @return the list of sql virtual machines in a SQL virtual machine group as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<SqlVirtualMachine> listBySqlVmGroup(
         String resourceGroupName, String sqlVirtualMachineGroupName, Context context);
@@ -43,7 +45,7 @@ public interface SqlVirtualMachines {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all SQL virtual machines in a subscription.
+     * @return all SQL virtual machines in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SqlVirtualMachine> list();
 
@@ -54,7 +56,7 @@ public interface SqlVirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all SQL virtual machines in a subscription.
+     * @return all SQL virtual machines in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SqlVirtualMachine> list(Context context);
 
@@ -120,7 +122,7 @@ public interface SqlVirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all SQL virtual machines in a resource group.
+     * @return all SQL virtual machines in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SqlVirtualMachine> listByResourceGroup(String resourceGroupName);
 
@@ -133,7 +135,7 @@ public interface SqlVirtualMachines {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all SQL virtual machines in a resource group.
+     * @return all SQL virtual machines in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SqlVirtualMachine> listByResourceGroup(String resourceGroupName, Context context);
 

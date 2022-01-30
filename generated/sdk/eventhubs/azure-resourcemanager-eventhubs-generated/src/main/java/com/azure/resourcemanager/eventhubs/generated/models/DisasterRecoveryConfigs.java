@@ -19,7 +19,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of authorization rules for a Namespace.
+     * @return a list of authorization rules for a Namespace as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, String alias);
@@ -34,7 +34,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of authorization rules for a Namespace.
+     * @return a list of authorization rules for a Namespace as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, String alias, Context context);
@@ -137,7 +137,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Alias(Disaster Recovery configurations).
+     * @return all Alias(Disaster Recovery configurations) as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ArmDisasterRecovery> list(String resourceGroupName, String namespaceName);
 
@@ -150,7 +150,7 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Alias(Disaster Recovery configurations).
+     * @return all Alias(Disaster Recovery configurations) as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ArmDisasterRecovery> list(String resourceGroupName, String namespaceName, Context context);
 

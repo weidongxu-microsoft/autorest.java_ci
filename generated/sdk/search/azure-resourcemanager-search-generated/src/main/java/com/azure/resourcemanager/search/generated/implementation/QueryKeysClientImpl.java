@@ -481,7 +481,8 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure Cognitive Search service.
+     * @return response containing the query API keys for a given Azure Cognitive Search service as paginated response
+     *     with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<QueryKeyInner> listBySearchServiceAsync(
@@ -501,7 +502,8 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure Cognitive Search service.
+     * @return response containing the query API keys for a given Azure Cognitive Search service as paginated response
+     *     with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<QueryKeyInner> listBySearchServiceAsync(String resourceGroupName, String searchServiceName) {
@@ -524,7 +526,8 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure Cognitive Search service.
+     * @return response containing the query API keys for a given Azure Cognitive Search service as paginated response
+     *     with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<QueryKeyInner> listBySearchServiceAsync(
@@ -544,7 +547,8 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure Cognitive Search service.
+     * @return response containing the query API keys for a given Azure Cognitive Search service as paginated response
+     *     with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<QueryKeyInner> listBySearchService(String resourceGroupName, String searchServiceName) {
@@ -565,7 +569,8 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure Cognitive Search service.
+     * @return response containing the query API keys for a given Azure Cognitive Search service as paginated response
+     *     with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<QueryKeyInner> listBySearchService(

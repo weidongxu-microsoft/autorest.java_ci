@@ -779,7 +779,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list storage insights operation response.
+     * @return the list storage insights operation response as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StorageInsightInner> listByWorkspaceAsync(String resourceGroupName, String workspaceName) {
@@ -797,7 +797,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list storage insights operation response.
+     * @return the list storage insights operation response as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StorageInsightInner> listByWorkspaceAsync(
@@ -815,7 +815,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list storage insights operation response.
+     * @return the list storage insights operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StorageInsightInner> listByWorkspace(String resourceGroupName, String workspaceName) {
@@ -831,7 +831,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list storage insights operation response.
+     * @return the list storage insights operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StorageInsightInner> listByWorkspace(

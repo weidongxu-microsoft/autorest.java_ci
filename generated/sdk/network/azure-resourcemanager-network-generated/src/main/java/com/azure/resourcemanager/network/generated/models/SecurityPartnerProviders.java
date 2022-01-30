@@ -66,7 +66,8 @@ public interface SecurityPartnerProviders {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call.
+     * @return response for ListSecurityPartnerProviders API service call as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<SecurityPartnerProvider> listByResourceGroup(String resourceGroupName);
 
@@ -78,7 +79,8 @@ public interface SecurityPartnerProviders {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call.
+     * @return response for ListSecurityPartnerProviders API service call as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<SecurityPartnerProvider> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -87,7 +89,7 @@ public interface SecurityPartnerProviders {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Security Partner Providers in a subscription.
+     * @return all the Security Partner Providers in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SecurityPartnerProvider> list();
 
@@ -98,7 +100,7 @@ public interface SecurityPartnerProviders {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Security Partner Providers in a subscription.
+     * @return all the Security Partner Providers in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SecurityPartnerProvider> list(Context context);
 

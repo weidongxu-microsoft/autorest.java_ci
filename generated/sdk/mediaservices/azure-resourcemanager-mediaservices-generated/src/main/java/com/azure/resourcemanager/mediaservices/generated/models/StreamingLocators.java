@@ -18,7 +18,7 @@ public interface StreamingLocators {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of StreamingLocator items.
+     * @return a collection of StreamingLocator items as paginated response with {@link PagedIterable}.
      */
     PagedIterable<StreamingLocator> list(String resourceGroupName, String accountName);
 
@@ -35,7 +35,7 @@ public interface StreamingLocators {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of StreamingLocator items.
+     * @return a collection of StreamingLocator items as paginated response with {@link PagedIterable}.
      */
     PagedIterable<StreamingLocator> list(
         String resourceGroupName, String accountName, String filter, Integer top, String orderby, Context context);

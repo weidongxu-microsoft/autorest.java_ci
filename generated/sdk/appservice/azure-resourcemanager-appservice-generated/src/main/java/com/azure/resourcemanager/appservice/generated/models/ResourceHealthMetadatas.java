@@ -16,7 +16,7 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata.
+     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceHealthMetadata> list();
 
@@ -28,7 +28,7 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata.
+     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceHealthMetadata> list(Context context);
 
@@ -40,7 +40,7 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata.
+     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceHealthMetadata> listByResourceGroup(String resourceGroupName);
 
@@ -53,7 +53,7 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata.
+     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceHealthMetadata> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -66,7 +66,7 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata.
+     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceHealthMetadata> listBySite(String resourceGroupName, String name);
 
@@ -80,7 +80,7 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata.
+     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceHealthMetadata> listBySite(String resourceGroupName, String name, Context context);
 
@@ -121,7 +121,7 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata.
+     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceHealthMetadata> listBySiteSlot(String resourceGroupName, String name, String slot);
 
@@ -136,7 +136,7 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata.
+     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceHealthMetadata> listBySiteSlot(
         String resourceGroupName, String name, String slot, Context context);

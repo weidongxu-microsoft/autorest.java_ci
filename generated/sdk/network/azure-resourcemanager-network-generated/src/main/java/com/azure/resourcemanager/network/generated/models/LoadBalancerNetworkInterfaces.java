@@ -17,7 +17,7 @@ public interface LoadBalancerNetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return associated load balancer network interfaces.
+     * @return associated load balancer network interfaces as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkInterface> list(String resourceGroupName, String loadBalancerName);
 
@@ -30,7 +30,7 @@ public interface LoadBalancerNetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return associated load balancer network interfaces.
+     * @return associated load balancer network interfaces as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkInterface> list(String resourceGroupName, String loadBalancerName, Context context);
 }

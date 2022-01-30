@@ -107,7 +107,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Vault> listByResourceGroup(String resourceGroupName);
 
@@ -121,7 +121,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Vault> listByResourceGroup(String resourceGroupName, Integer top, Context context);
 
@@ -130,7 +130,7 @@ public interface Vaults {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Vault> listBySubscription();
 
@@ -142,7 +142,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vaults.
+     * @return list of vaults as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Vault> listBySubscription(Integer top, Context context);
 
@@ -151,7 +151,7 @@ public interface Vaults {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the deleted vaults in a subscription.
+     * @return information about the deleted vaults in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeletedVault> listDeleted();
 
@@ -162,7 +162,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the deleted vaults in a subscription.
+     * @return information about the deleted vaults in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DeletedVault> listDeleted(Context context);
 
@@ -219,7 +219,7 @@ public interface Vaults {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vault resources.
+     * @return list of vault resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Resource> list();
 
@@ -231,7 +231,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of vault resources.
+     * @return list of vault resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Resource> list(Integer top, Context context);
 

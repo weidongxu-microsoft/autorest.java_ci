@@ -80,7 +80,7 @@ public interface Zones {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation.
+     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Zone> listByResourceGroup(String resourceGroupName);
 
@@ -93,7 +93,7 @@ public interface Zones {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation.
+     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Zone> listByResourceGroup(String resourceGroupName, Integer top, Context context);
 
@@ -102,7 +102,7 @@ public interface Zones {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation.
+     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Zone> list();
 
@@ -114,7 +114,7 @@ public interface Zones {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation.
+     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Zone> list(Integer top, Context context);
 

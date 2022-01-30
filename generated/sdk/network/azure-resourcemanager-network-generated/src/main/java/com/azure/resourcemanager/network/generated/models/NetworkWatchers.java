@@ -67,7 +67,7 @@ public interface NetworkWatchers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network watchers by resource group.
+     * @return all network watchers by resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkWatcher> listByResourceGroup(String resourceGroupName);
 
@@ -79,7 +79,7 @@ public interface NetworkWatchers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network watchers by resource group.
+     * @return all network watchers by resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkWatcher> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -88,7 +88,7 @@ public interface NetworkWatchers {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network watchers by subscription.
+     * @return all network watchers by subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkWatcher> list();
 
@@ -99,7 +99,7 @@ public interface NetworkWatchers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network watchers by subscription.
+     * @return all network watchers by subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NetworkWatcher> list(Context context);
 

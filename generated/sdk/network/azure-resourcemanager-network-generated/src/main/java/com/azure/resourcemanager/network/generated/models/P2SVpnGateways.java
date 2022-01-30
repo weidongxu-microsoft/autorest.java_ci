@@ -66,7 +66,7 @@ public interface P2SVpnGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways.
+     * @return result of the request to list P2SVpnGateways as paginated response with {@link PagedIterable}.
      */
     PagedIterable<P2SVpnGateway> listByResourceGroup(String resourceGroupName);
 
@@ -78,7 +78,7 @@ public interface P2SVpnGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways.
+     * @return result of the request to list P2SVpnGateways as paginated response with {@link PagedIterable}.
      */
     PagedIterable<P2SVpnGateway> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -87,7 +87,7 @@ public interface P2SVpnGateways {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways.
+     * @return result of the request to list P2SVpnGateways as paginated response with {@link PagedIterable}.
      */
     PagedIterable<P2SVpnGateway> list();
 
@@ -98,7 +98,7 @@ public interface P2SVpnGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways.
+     * @return result of the request to list P2SVpnGateways as paginated response with {@link PagedIterable}.
      */
     PagedIterable<P2SVpnGateway> list(Context context);
 

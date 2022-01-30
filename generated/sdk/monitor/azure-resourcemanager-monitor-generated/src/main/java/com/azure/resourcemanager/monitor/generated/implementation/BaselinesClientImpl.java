@@ -256,7 +256,7 @@ public final class BaselinesClientImpl implements BaselinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of metric baselines.
+     * @return a list of metric baselines as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SingleMetricBaselineInner> listAsync(
@@ -290,7 +290,7 @@ public final class BaselinesClientImpl implements BaselinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of metric baselines.
+     * @return a list of metric baselines as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SingleMetricBaselineInner> listAsync(String resourceUri) {
@@ -343,7 +343,7 @@ public final class BaselinesClientImpl implements BaselinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of metric baselines.
+     * @return a list of metric baselines as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SingleMetricBaselineInner> listAsync(
@@ -379,7 +379,7 @@ public final class BaselinesClientImpl implements BaselinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of metric baselines.
+     * @return a list of metric baselines as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SingleMetricBaselineInner> list(String resourceUri) {
@@ -431,7 +431,7 @@ public final class BaselinesClientImpl implements BaselinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of metric baselines.
+     * @return a list of metric baselines as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SingleMetricBaselineInner> list(

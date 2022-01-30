@@ -150,7 +150,7 @@ public interface ConnectionMonitors {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of connection monitors.
+     * @return list of connection monitors as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ConnectionMonitorResult> list(String resourceGroupName, String networkWatcherName);
 
@@ -163,7 +163,7 @@ public interface ConnectionMonitors {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of connection monitors.
+     * @return list of connection monitors as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ConnectionMonitorResult> list(String resourceGroupName, String networkWatcherName, Context context);
 

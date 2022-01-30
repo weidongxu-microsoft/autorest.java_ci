@@ -18,7 +18,7 @@ public interface AppServicePlans {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServicePlan> list();
 
@@ -33,7 +33,7 @@ public interface AppServicePlans {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServicePlan> list(Boolean detailed, Context context);
 
@@ -45,7 +45,7 @@ public interface AppServicePlans {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServicePlan> listByResourceGroup(String resourceGroupName);
 
@@ -58,7 +58,7 @@ public interface AppServicePlans {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServicePlan> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -247,7 +247,7 @@ public interface AppServicePlans {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resources.
+     * @return collection of resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<String> listWebAppsByHybridConnection(
         String resourceGroupName, String name, String namespaceName, String relayName);
@@ -264,7 +264,7 @@ public interface AppServicePlans {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resources.
+     * @return collection of resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<String> listWebAppsByHybridConnection(
         String resourceGroupName, String name, String namespaceName, String relayName, Context context);
@@ -306,7 +306,7 @@ public interface AppServicePlans {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings.
+     * @return collection of hostname bindings as paginated response with {@link PagedIterable}.
      */
     PagedIterable<HybridConnection> listHybridConnections(String resourceGroupName, String name);
 
@@ -320,7 +320,7 @@ public interface AppServicePlans {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings.
+     * @return collection of hostname bindings as paginated response with {@link PagedIterable}.
      */
     PagedIterable<HybridConnection> listHybridConnections(String resourceGroupName, String name, Context context);
 
@@ -363,7 +363,7 @@ public interface AppServicePlans {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> listWebApps(String resourceGroupName, String name);
 
@@ -382,7 +382,7 @@ public interface AppServicePlans {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> listWebApps(
         String resourceGroupName, String name, String skipToken, String filter, String top, Context context);
@@ -423,7 +423,7 @@ public interface AppServicePlans {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of CSM usage quotas.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name);
 
@@ -439,7 +439,7 @@ public interface AppServicePlans {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of CSM usage quotas.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name, String filter, Context context);
 

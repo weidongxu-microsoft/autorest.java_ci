@@ -16,7 +16,8 @@ public interface EventCategories {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list of available event categories supported in the Activity Logs Service.&lt;br&gt;The current list
-     *     includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy.
+     *     includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy as paginated
+     *     response with {@link PagedIterable}.
      */
     PagedIterable<LocalizableString> list();
 
@@ -29,7 +30,8 @@ public interface EventCategories {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list of available event categories supported in the Activity Logs Service.&lt;br&gt;The current list
-     *     includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy.
+     *     includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy as paginated
+     *     response with {@link PagedIterable}.
      */
     PagedIterable<LocalizableString> list(Context context);
 }

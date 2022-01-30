@@ -270,7 +270,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools.
+     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with
+     *     {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MhsmPrivateEndpointConnectionInner> listByResourceAsync(String resourceGroupName, String name) {
@@ -288,7 +289,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools.
+     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with
+     *     {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MhsmPrivateEndpointConnectionInner> listByResourceAsync(
@@ -306,7 +308,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools.
+     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with
+     *     {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<MhsmPrivateEndpointConnectionInner> listByResource(String resourceGroupName, String name) {
@@ -322,7 +325,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools.
+     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with
+     *     {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<MhsmPrivateEndpointConnectionInner> listByResource(
@@ -843,8 +847,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return the {@link PollerFlux} for polling of private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<MhsmPrivateEndpointConnectionInner>, MhsmPrivateEndpointConnectionInner>
@@ -872,8 +875,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return the {@link PollerFlux} for polling of private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<MhsmPrivateEndpointConnectionInner>, MhsmPrivateEndpointConnectionInner>
@@ -901,8 +903,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return the {@link SyncPoller} for polling of private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<MhsmPrivateEndpointConnectionInner>, MhsmPrivateEndpointConnectionInner> beginDelete(
@@ -921,8 +922,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return the {@link SyncPoller} for polling of private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<MhsmPrivateEndpointConnectionInner>, MhsmPrivateEndpointConnectionInner> beginDelete(

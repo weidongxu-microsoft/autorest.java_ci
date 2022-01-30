@@ -19,7 +19,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service Environments.
+     * @return collection of App Service Environments as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServiceEnvironmentResource> list();
 
@@ -31,7 +31,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service Environments.
+     * @return collection of App Service Environments as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServiceEnvironmentResource> list(Context context);
 
@@ -43,7 +43,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service Environments.
+     * @return collection of App Service Environments as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServiceEnvironmentResource> listByResourceGroup(String resourceGroupName);
 
@@ -56,7 +56,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service Environments.
+     * @return collection of App Service Environments as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServiceEnvironmentResource> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -138,7 +138,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of stamp capacities.
+     * @return collection of stamp capacities as paginated response with {@link PagedIterable}.
      */
     PagedIterable<StampCapacity> listCapacities(String resourceGroupName, String name);
 
@@ -152,7 +152,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of stamp capacities.
+     * @return collection of stamp capacities as paginated response with {@link PagedIterable}.
      */
     PagedIterable<StampCapacity> listCapacities(String resourceGroupName, String name, Context context);
 
@@ -193,7 +193,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> changeVnet(String resourceGroupName, String name, VirtualNetworkProfile vnetInfo);
 
@@ -208,7 +208,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> changeVnet(
         String resourceGroupName, String name, VirtualNetworkProfile vnetInfo, Context context);
@@ -342,7 +342,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Inbound Environment Endpoints.
+     * @return collection of Inbound Environment Endpoints as paginated response with {@link PagedIterable}.
      */
     PagedIterable<InboundEnvironmentEndpoint> getInboundNetworkDependenciesEndpoints(
         String resourceGroupName, String name);
@@ -357,7 +357,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Inbound Environment Endpoints.
+     * @return collection of Inbound Environment Endpoints as paginated response with {@link PagedIterable}.
      */
     PagedIterable<InboundEnvironmentEndpoint> getInboundNetworkDependenciesEndpoints(
         String resourceGroupName, String name, Context context);
@@ -371,7 +371,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of worker pools.
+     * @return collection of worker pools as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WorkerPoolResource> listMultiRolePools(String resourceGroupName, String name);
 
@@ -385,7 +385,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of worker pools.
+     * @return collection of worker pools as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WorkerPoolResource> listMultiRolePools(String resourceGroupName, String name, Context context);
 
@@ -489,7 +489,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceMetricDefinition> listMultiRolePoolInstanceMetricDefinitions(
         String resourceGroupName, String name, String instance);
@@ -506,7 +506,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceMetricDefinition> listMultiRolePoolInstanceMetricDefinitions(
         String resourceGroupName, String name, String instance, Context context);
@@ -520,7 +520,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceMetricDefinition> listMultiRoleMetricDefinitions(String resourceGroupName, String name);
 
@@ -534,7 +534,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceMetricDefinition> listMultiRoleMetricDefinitions(
         String resourceGroupName, String name, Context context);
@@ -548,7 +548,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SKU information.
+     * @return collection of SKU information as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SkuInfo> listMultiRolePoolSkus(String resourceGroupName, String name);
 
@@ -562,7 +562,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SKU information.
+     * @return collection of SKU information as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SkuInfo> listMultiRolePoolSkus(String resourceGroupName, String name, Context context);
 
@@ -575,7 +575,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of usages.
+     * @return collection of usages as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Usage> listMultiRoleUsages(String resourceGroupName, String name);
 
@@ -589,7 +589,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of usages.
+     * @return collection of usages as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Usage> listMultiRoleUsages(String resourceGroupName, String name, Context context);
 
@@ -629,7 +629,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Outbound Environment Endpoints.
+     * @return collection of Outbound Environment Endpoints as paginated response with {@link PagedIterable}.
      */
     PagedIterable<OutboundEnvironmentEndpoint> getOutboundNetworkDependenciesEndpoints(
         String resourceGroupName, String name);
@@ -644,7 +644,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Outbound Environment Endpoints.
+     * @return collection of Outbound Environment Endpoints as paginated response with {@link PagedIterable}.
      */
     PagedIterable<OutboundEnvironmentEndpoint> getOutboundNetworkDependenciesEndpoints(
         String resourceGroupName, String name, Context context);
@@ -658,7 +658,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
         String resourceGroupName, String name);
@@ -673,7 +673,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the paginated response with {@link PagedIterable}.
      */
     PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
         String resourceGroupName, String name, Context context);
@@ -802,7 +802,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> resume(String resourceGroupName, String name);
 
@@ -816,7 +816,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> resume(String resourceGroupName, String name, Context context);
 
@@ -829,7 +829,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServicePlan> listAppServicePlans(String resourceGroupName, String name);
 
@@ -843,7 +843,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans.
+     * @return collection of App Service plans as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServicePlan> listAppServicePlans(String resourceGroupName, String name, Context context);
 
@@ -856,7 +856,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> listWebApps(String resourceGroupName, String name);
 
@@ -871,7 +871,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> listWebApps(String resourceGroupName, String name, String propertiesToInclude, Context context);
 
@@ -884,7 +884,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> suspend(String resourceGroupName, String name);
 
@@ -898,7 +898,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service apps.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Site> suspend(String resourceGroupName, String name, Context context);
 
@@ -911,7 +911,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of CSM usage quotas.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name);
 
@@ -928,7 +928,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of CSM usage quotas.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedIterable}.
      */
     PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name, String filter, Context context);
 
@@ -941,7 +941,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of worker pools.
+     * @return collection of worker pools as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WorkerPoolResource> listWorkerPools(String resourceGroupName, String name);
 
@@ -955,7 +955,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of worker pools.
+     * @return collection of worker pools as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WorkerPoolResource> listWorkerPools(String resourceGroupName, String name, Context context);
 
@@ -1000,7 +1000,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceMetricDefinition> listWorkerPoolInstanceMetricDefinitions(
         String resourceGroupName, String name, String workerPoolName, String instance);
@@ -1017,7 +1017,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceMetricDefinition> listWorkerPoolInstanceMetricDefinitions(
         String resourceGroupName, String name, String workerPoolName, String instance, Context context);
@@ -1032,7 +1032,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceMetricDefinition> listWebWorkerMetricDefinitions(
         String resourceGroupName, String name, String workerPoolName);
@@ -1048,7 +1048,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of metric definitions.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ResourceMetricDefinition> listWebWorkerMetricDefinitions(
         String resourceGroupName, String name, String workerPoolName, Context context);
@@ -1063,7 +1063,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SKU information.
+     * @return collection of SKU information as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SkuInfo> listWorkerPoolSkus(String resourceGroupName, String name, String workerPoolName);
 
@@ -1078,7 +1078,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SKU information.
+     * @return collection of SKU information as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SkuInfo> listWorkerPoolSkus(
         String resourceGroupName, String name, String workerPoolName, Context context);
@@ -1093,7 +1093,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of usages.
+     * @return collection of usages as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Usage> listWebWorkerUsages(String resourceGroupName, String name, String workerPoolName);
 
@@ -1108,7 +1108,7 @@ public interface AppServiceEnvironments {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of usages.
+     * @return collection of usages as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Usage> listWebWorkerUsages(
         String resourceGroupName, String name, String workerPoolName, Context context);

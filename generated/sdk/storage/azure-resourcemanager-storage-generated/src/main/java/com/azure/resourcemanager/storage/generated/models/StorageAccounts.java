@@ -104,7 +104,7 @@ public interface StorageAccounts {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage Accounts operation.
+     * @return the response from the List Storage Accounts operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<StorageAccount> list();
 
@@ -116,7 +116,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage Accounts operation.
+     * @return the response from the List Storage Accounts operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<StorageAccount> list(Context context);
 
@@ -129,7 +129,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage Accounts operation.
+     * @return the response from the List Storage Accounts operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<StorageAccount> listByResourceGroup(String resourceGroupName);
 
@@ -143,7 +143,7 @@ public interface StorageAccounts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Storage Accounts operation.
+     * @return the response from the List Storage Accounts operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<StorageAccount> listByResourceGroup(String resourceGroupName, Context context);
 

@@ -67,7 +67,7 @@ public interface RouteFilters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route filters in a resource group.
+     * @return all route filters in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RouteFilter> listByResourceGroup(String resourceGroupName);
 
@@ -79,7 +79,7 @@ public interface RouteFilters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route filters in a resource group.
+     * @return all route filters in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RouteFilter> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -88,7 +88,7 @@ public interface RouteFilters {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route filters in a subscription.
+     * @return all route filters in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RouteFilter> list();
 
@@ -99,7 +99,7 @@ public interface RouteFilters {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route filters in a subscription.
+     * @return all route filters in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<RouteFilter> list(Context context);
 

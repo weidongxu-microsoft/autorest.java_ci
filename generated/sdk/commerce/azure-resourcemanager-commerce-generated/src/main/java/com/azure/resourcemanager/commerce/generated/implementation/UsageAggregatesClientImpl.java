@@ -257,7 +257,7 @@ public final class UsageAggregatesClientImpl implements UsageAggregatesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Get UsageAggregates operation response.
+     * @return the Get UsageAggregates operation response as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<UsageAggregationInner> listAsync(
@@ -281,7 +281,7 @@ public final class UsageAggregatesClientImpl implements UsageAggregatesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Get UsageAggregates operation response.
+     * @return the Get UsageAggregates operation response as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<UsageAggregationInner> listAsync(
@@ -315,7 +315,7 @@ public final class UsageAggregatesClientImpl implements UsageAggregatesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Get UsageAggregates operation response.
+     * @return the Get UsageAggregates operation response as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<UsageAggregationInner> listAsync(
@@ -345,7 +345,7 @@ public final class UsageAggregatesClientImpl implements UsageAggregatesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Get UsageAggregates operation response.
+     * @return the Get UsageAggregates operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<UsageAggregationInner> list(OffsetDateTime reportedStartTime, OffsetDateTime reportedEndTime) {
@@ -375,7 +375,7 @@ public final class UsageAggregatesClientImpl implements UsageAggregatesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Get UsageAggregates operation response.
+     * @return the Get UsageAggregates operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<UsageAggregationInner> list(

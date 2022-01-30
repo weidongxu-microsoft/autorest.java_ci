@@ -1230,7 +1230,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of backup items.
+     * @return collection of backup items as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BackupItem> listSiteBackups();
 
@@ -1242,7 +1242,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of backup items.
+     * @return collection of backup items as paginated response with {@link PagedIterable}.
      */
     PagedIterable<BackupItem> listSiteBackups(Context context);
 
@@ -1469,7 +1469,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of slot differences.
+     * @return collection of slot differences as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SlotDifference> listSlotDifferencesFromProduction(CsmSlotEntity slotSwapEntity);
 
@@ -1482,7 +1482,7 @@ public interface Site {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of slot differences.
+     * @return collection of slot differences as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SlotDifference> listSlotDifferencesFromProduction(CsmSlotEntity slotSwapEntity, Context context);
 

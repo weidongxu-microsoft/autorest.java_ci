@@ -172,7 +172,7 @@ public interface PolicyDefinitions {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy definitions.
+     * @return list of policy definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyDefinition> list();
 
@@ -199,7 +199,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy definitions.
+     * @return list of policy definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyDefinition> list(String filter, Integer top, Context context);
 
@@ -212,7 +212,7 @@ public interface PolicyDefinitions {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy definitions.
+     * @return list of policy definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyDefinition> listBuiltIn();
 
@@ -235,7 +235,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy definitions.
+     * @return list of policy definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyDefinition> listBuiltIn(String filter, Integer top, Context context);
 
@@ -254,7 +254,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy definitions.
+     * @return list of policy definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyDefinition> listByManagementGroup(String managementGroupId);
 
@@ -282,7 +282,7 @@ public interface PolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy definitions.
+     * @return list of policy definitions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyDefinition> listByManagementGroup(
         String managementGroupId, String filter, Integer top, Context context);

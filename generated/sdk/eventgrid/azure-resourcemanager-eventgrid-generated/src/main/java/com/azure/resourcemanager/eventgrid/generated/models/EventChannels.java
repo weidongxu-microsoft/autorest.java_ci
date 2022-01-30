@@ -71,7 +71,7 @@ public interface EventChannels {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Event Channels operation.
+     * @return result of the List Event Channels operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<EventChannel> listByPartnerNamespace(String resourceGroupName, String partnerNamespaceName);
 
@@ -92,7 +92,7 @@ public interface EventChannels {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Event Channels operation.
+     * @return result of the List Event Channels operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<EventChannel> listByPartnerNamespace(
         String resourceGroupName, String partnerNamespaceName, String filter, Integer top, Context context);

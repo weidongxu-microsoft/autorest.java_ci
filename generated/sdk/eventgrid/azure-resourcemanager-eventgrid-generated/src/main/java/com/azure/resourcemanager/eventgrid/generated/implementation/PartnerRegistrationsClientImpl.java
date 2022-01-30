@@ -975,7 +975,7 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PartnerRegistrationInner> listAsync(String filter, Integer top) {
@@ -988,7 +988,7 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PartnerRegistrationInner> listAsync() {
@@ -1013,7 +1013,7 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PartnerRegistrationInner> listAsync(String filter, Integer top, Context context) {
@@ -1027,7 +1027,7 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PartnerRegistrationInner> list() {
@@ -1051,7 +1051,7 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PartnerRegistrationInner> list(String filter, Integer top, Context context) {
@@ -1197,7 +1197,7 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PartnerRegistrationInner> listByResourceGroupAsync(
@@ -1214,7 +1214,7 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PartnerRegistrationInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -1241,7 +1241,7 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PartnerRegistrationInner> listByResourceGroupAsync(
@@ -1258,7 +1258,7 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PartnerRegistrationInner> listByResourceGroup(String resourceGroupName) {
@@ -1283,7 +1283,7 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PartnerRegistrationInner> listByResourceGroup(

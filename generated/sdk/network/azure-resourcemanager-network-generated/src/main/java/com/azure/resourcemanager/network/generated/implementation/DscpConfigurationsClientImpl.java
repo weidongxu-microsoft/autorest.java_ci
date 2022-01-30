@@ -282,8 +282,8 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return differentiated Services Code Point configuration for any given network interface along with {@link
-     *     Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of differentiated Services Code Point configuration for any given
+     *     network interface.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdateAsync(
@@ -310,8 +310,8 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return differentiated Services Code Point configuration for any given network interface along with {@link
-     *     Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of differentiated Services Code Point configuration for any given
+     *     network interface.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdateAsync(
@@ -338,8 +338,8 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return differentiated Services Code Point configuration for any given network interface along with {@link
-     *     Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of differentiated Services Code Point configuration for any given
+     *     network interface.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdate(
@@ -357,8 +357,8 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return differentiated Services Code Point configuration for any given network interface along with {@link
-     *     Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of differentiated Services Code Point configuration for any given
+     *     network interface.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdate(
@@ -548,7 +548,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -569,7 +569,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
@@ -590,7 +590,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String dscpConfigurationName) {
@@ -606,7 +606,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -942,7 +942,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DSCP Configuration.
+     * @return a DSCP Configuration as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DscpConfigurationInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -958,7 +958,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DSCP Configuration.
+     * @return a DSCP Configuration as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DscpConfigurationInner> listByResourceGroupAsync(String resourceGroupName, Context context) {
@@ -974,7 +974,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DSCP Configuration.
+     * @return a DSCP Configuration as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DscpConfigurationInner> listByResourceGroup(String resourceGroupName) {
@@ -989,7 +989,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DSCP Configuration.
+     * @return a DSCP Configuration as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DscpConfigurationInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -1082,7 +1082,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all dscp configurations in a subscription.
+     * @return all dscp configurations in a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DscpConfigurationInner> listAsync() {
@@ -1096,7 +1096,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all dscp configurations in a subscription.
+     * @return all dscp configurations in a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DscpConfigurationInner> listAsync(Context context) {
@@ -1109,7 +1109,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all dscp configurations in a subscription.
+     * @return all dscp configurations in a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DscpConfigurationInner> list() {
@@ -1123,7 +1123,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all dscp configurations in a subscription.
+     * @return all dscp configurations in a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DscpConfigurationInner> list(Context context) {

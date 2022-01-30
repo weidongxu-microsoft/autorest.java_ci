@@ -43,7 +43,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domains.
+     * @return collection of domains as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Domain> list();
 
@@ -55,7 +55,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domains.
+     * @return collection of domains as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Domain> list(Context context);
 
@@ -89,7 +89,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain name identifiers.
+     * @return collection of domain name identifiers as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NameIdentifier> listRecommendations(DomainRecommendationSearchParameters parameters);
 
@@ -102,7 +102,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain name identifiers.
+     * @return collection of domain name identifiers as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NameIdentifier> listRecommendations(DomainRecommendationSearchParameters parameters, Context context);
 
@@ -114,7 +114,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domains.
+     * @return collection of domains as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Domain> listByResourceGroup(String resourceGroupName);
 
@@ -127,7 +127,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domains.
+     * @return collection of domains as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Domain> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -196,7 +196,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain ownership identifiers.
+     * @return collection of domain ownership identifiers as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DomainOwnershipIdentifier> listOwnershipIdentifiers(String resourceGroupName, String domainName);
 
@@ -210,7 +210,7 @@ public interface Domains {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain ownership identifiers.
+     * @return collection of domain ownership identifiers as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DomainOwnershipIdentifier> listOwnershipIdentifiers(
         String resourceGroupName, String domainName, Context context);

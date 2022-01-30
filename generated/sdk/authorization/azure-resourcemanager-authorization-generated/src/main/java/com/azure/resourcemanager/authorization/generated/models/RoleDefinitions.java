@@ -67,7 +67,8 @@ public interface RoleDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above.
+     * @return all role definitions that are applicable at scope and above as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<RoleDefinition> list(String scope);
 
@@ -81,7 +82,8 @@ public interface RoleDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above.
+     * @return all role definitions that are applicable at scope and above as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<RoleDefinition> list(String scope, String filter, Context context);
 

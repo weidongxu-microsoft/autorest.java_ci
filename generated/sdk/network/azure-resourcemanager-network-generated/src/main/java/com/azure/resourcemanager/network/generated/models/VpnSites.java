@@ -65,7 +65,7 @@ public interface VpnSites {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSites.
+     * @return result of the request to list VpnSites as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnSite> listByResourceGroup(String resourceGroupName);
 
@@ -77,7 +77,7 @@ public interface VpnSites {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSites.
+     * @return result of the request to list VpnSites as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnSite> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -86,7 +86,7 @@ public interface VpnSites {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSites.
+     * @return result of the request to list VpnSites as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnSite> list();
 
@@ -97,7 +97,7 @@ public interface VpnSites {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSites.
+     * @return result of the request to list VpnSites as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VpnSite> list(Context context);
 

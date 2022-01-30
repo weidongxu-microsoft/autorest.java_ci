@@ -19,7 +19,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServiceCertificateOrder> list();
 
@@ -31,7 +31,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServiceCertificateOrder> list(Context context);
 
@@ -68,7 +68,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName);
 
@@ -81,7 +81,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -148,7 +148,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates.
+     * @return collection of certificate order certificates as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServiceCertificateResource> listCertificates(
         String resourceGroupName, String certificateOrderName);
@@ -163,7 +163,7 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates.
+     * @return collection of certificate order certificates as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServiceCertificateResource> listCertificates(
         String resourceGroupName, String certificateOrderName, Context context);

@@ -514,7 +514,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServiceCertificateOrderInner> listAsync() {
@@ -528,7 +528,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServiceCertificateOrderInner> listAsync(Context context) {
@@ -541,7 +541,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServiceCertificateOrderInner> list() {
@@ -555,7 +555,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServiceCertificateOrderInner> list(Context context) {
@@ -809,7 +809,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServiceCertificateOrderInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -826,7 +826,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServiceCertificateOrderInner> listByResourceGroupAsync(
@@ -843,7 +843,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServiceCertificateOrderInner> listByResourceGroup(String resourceGroupName) {
@@ -858,7 +858,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServiceCertificateOrderInner> listByResourceGroup(
@@ -1148,7 +1148,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of sSL certificate purchase order.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AppServiceCertificateOrderInner>, AppServiceCertificateOrderInner>
@@ -1178,7 +1178,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of sSL certificate purchase order.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AppServiceCertificateOrderInner>, AppServiceCertificateOrderInner>
@@ -1210,7 +1210,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of sSL certificate purchase order.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServiceCertificateOrderInner>, AppServiceCertificateOrderInner> beginCreateOrUpdate(
@@ -1231,7 +1231,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of sSL certificate purchase order.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServiceCertificateOrderInner>, AppServiceCertificateOrderInner> beginCreateOrUpdate(
@@ -1782,7 +1782,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates.
+     * @return collection of certificate order certificates as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServiceCertificateResourceInner> listCertificatesAsync(
@@ -1801,7 +1801,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates.
+     * @return collection of certificate order certificates as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServiceCertificateResourceInner> listCertificatesAsync(
@@ -1819,7 +1819,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates.
+     * @return collection of certificate order certificates as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServiceCertificateResourceInner> listCertificates(
@@ -1836,7 +1836,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate order certificates.
+     * @return collection of certificate order certificates as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServiceCertificateResourceInner> listCertificates(
@@ -2155,8 +2155,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
-     *     Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of key Vault container ARM resource for a certificate that is
+     *     purchased through Azure.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -2189,8 +2189,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
-     *     Response} on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of key Vault container ARM resource for a certificate that is
+     *     purchased through Azure.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -2224,8 +2224,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
-     *     Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of key Vault container ARM resource for a certificate that is
+     *     purchased through Azure.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>
@@ -2249,8 +2249,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
-     *     Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of key Vault container ARM resource for a certificate that is
+     *     purchased through Azure.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServiceCertificateResourceInner>, AppServiceCertificateResourceInner>

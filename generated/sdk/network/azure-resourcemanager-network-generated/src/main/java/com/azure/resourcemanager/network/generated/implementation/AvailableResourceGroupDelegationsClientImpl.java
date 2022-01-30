@@ -215,7 +215,8 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this resource group in this region.
+     * @return all of the available subnet delegations for this resource group in this region as paginated response with
+     *     {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AvailableDelegationInner> listAsync(String location, String resourceGroupName) {
@@ -232,7 +233,8 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this resource group in this region.
+     * @return all of the available subnet delegations for this resource group in this region as paginated response with
+     *     {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AvailableDelegationInner> listAsync(String location, String resourceGroupName, Context context) {
@@ -249,7 +251,8 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this resource group in this region.
+     * @return all of the available subnet delegations for this resource group in this region as paginated response with
+     *     {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AvailableDelegationInner> list(String location, String resourceGroupName) {
@@ -265,7 +268,8 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this resource group in this region.
+     * @return all of the available subnet delegations for this resource group in this region as paginated response with
+     *     {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AvailableDelegationInner> list(String location, String resourceGroupName, Context context) {

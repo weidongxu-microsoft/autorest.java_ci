@@ -111,7 +111,7 @@ public interface PrivateDnsZoneGroups {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private dns zone groups in a private endpoint.
+     * @return all private dns zone groups in a private endpoint as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PrivateDnsZoneGroup> list(String privateEndpointName, String resourceGroupName);
 
@@ -125,7 +125,7 @@ public interface PrivateDnsZoneGroups {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private dns zone groups in a private endpoint.
+     * @return all private dns zone groups in a private endpoint as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PrivateDnsZoneGroup> list(String privateEndpointName, String resourceGroupName, Context context);
 }

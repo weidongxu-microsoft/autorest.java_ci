@@ -190,7 +190,7 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Deleted Accounts operation.
+     * @return the response from the List Deleted Accounts operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DeletedAccountInner> listAsync() {
@@ -204,7 +204,7 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Deleted Accounts operation.
+     * @return the response from the List Deleted Accounts operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DeletedAccountInner> listAsync(Context context) {
@@ -217,7 +217,7 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Deleted Accounts operation.
+     * @return the response from the List Deleted Accounts operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DeletedAccountInner> list() {
@@ -231,7 +231,7 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Deleted Accounts operation.
+     * @return the response from the List Deleted Accounts operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DeletedAccountInner> list(Context context) {

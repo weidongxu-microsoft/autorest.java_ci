@@ -15,7 +15,7 @@ public interface FrontDoors {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors.
+     * @return result of the request to list Front Doors as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FrontDoor> list();
 
@@ -26,7 +26,7 @@ public interface FrontDoors {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors.
+     * @return result of the request to list Front Doors as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FrontDoor> list(Context context);
 
@@ -37,7 +37,7 @@ public interface FrontDoors {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors.
+     * @return result of the request to list Front Doors as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FrontDoor> listByResourceGroup(String resourceGroupName);
 
@@ -49,7 +49,7 @@ public interface FrontDoors {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors.
+     * @return result of the request to list Front Doors as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FrontDoor> listByResourceGroup(String resourceGroupName, Context context);
 

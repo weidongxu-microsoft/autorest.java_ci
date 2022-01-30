@@ -66,7 +66,7 @@ public interface AvailabilitySets {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Availability Set operation response.
+     * @return the List Availability Set operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AvailabilitySet> list();
 
@@ -78,7 +78,7 @@ public interface AvailabilitySets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Availability Set operation response.
+     * @return the List Availability Set operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AvailabilitySet> list(String expand, Context context);
 
@@ -89,7 +89,7 @@ public interface AvailabilitySets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Availability Set operation response.
+     * @return the List Availability Set operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AvailabilitySet> listByResourceGroup(String resourceGroupName);
 
@@ -101,7 +101,7 @@ public interface AvailabilitySets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Availability Set operation response.
+     * @return the List Availability Set operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AvailabilitySet> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -114,7 +114,7 @@ public interface AvailabilitySets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Virtual Machine operation response.
+     * @return the List Virtual Machine operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineSize> listAvailableSizes(String resourceGroupName, String availabilitySetName);
 
@@ -128,7 +128,7 @@ public interface AvailabilitySets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Virtual Machine operation response.
+     * @return the List Virtual Machine operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineSize> listAvailableSizes(
         String resourceGroupName, String availabilitySetName, Context context);

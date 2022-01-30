@@ -65,7 +65,7 @@ public interface PartnerRegistrations {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PartnerRegistration> list();
 
@@ -84,7 +84,7 @@ public interface PartnerRegistrations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PartnerRegistration> list(String filter, Integer top, Context context);
 
@@ -95,7 +95,7 @@ public interface PartnerRegistrations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PartnerRegistration> listByResourceGroup(String resourceGroupName);
 
@@ -115,7 +115,7 @@ public interface PartnerRegistrations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Registrations operation.
+     * @return result of the List Partner Registrations operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PartnerRegistration> listByResourceGroup(
         String resourceGroupName, String filter, Integer top, Context context);

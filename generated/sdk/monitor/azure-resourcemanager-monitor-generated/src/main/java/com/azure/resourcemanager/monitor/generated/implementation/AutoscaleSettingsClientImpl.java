@@ -285,7 +285,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AutoscaleSettingResourceInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -302,7 +302,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AutoscaleSettingResourceInner> listByResourceGroupAsync(
@@ -319,7 +319,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AutoscaleSettingResourceInner> listByResourceGroup(String resourceGroupName) {
@@ -334,7 +334,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AutoscaleSettingResourceInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -1085,7 +1085,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AutoscaleSettingResourceInner> listAsync() {
@@ -1100,7 +1100,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AutoscaleSettingResourceInner> listAsync(Context context) {
@@ -1113,7 +1113,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AutoscaleSettingResourceInner> list() {
@@ -1127,7 +1127,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of autoscale setting resources.
+     * @return represents a collection of autoscale setting resources as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AutoscaleSettingResourceInner> list(Context context) {

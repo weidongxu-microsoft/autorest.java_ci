@@ -16,7 +16,7 @@ public interface AvailablePrivateEndpointTypes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AvailablePrivateEndpointType> list(String location);
 
@@ -28,7 +28,7 @@ public interface AvailablePrivateEndpointTypes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AvailablePrivateEndpointType> list(String location, Context context);
 
@@ -40,7 +40,7 @@ public interface AvailablePrivateEndpointTypes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AvailablePrivateEndpointType> listByResourceGroup(String location, String resourceGroupName);
 
@@ -53,7 +53,7 @@ public interface AvailablePrivateEndpointTypes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of available PrivateEndpoint types.
+     * @return an array of available PrivateEndpoint types as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AvailablePrivateEndpointType> listByResourceGroup(
         String location, String resourceGroupName, Context context);

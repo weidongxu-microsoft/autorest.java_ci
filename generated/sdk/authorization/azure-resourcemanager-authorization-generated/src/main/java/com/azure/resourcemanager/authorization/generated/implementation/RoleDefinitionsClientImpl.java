@@ -612,7 +612,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above.
+     * @return all role definitions that are applicable at scope and above as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RoleDefinitionInner> listAsync(String scope, String filter) {
@@ -626,7 +626,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above.
+     * @return all role definitions that are applicable at scope and above as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RoleDefinitionInner> listAsync(String scope) {
@@ -644,7 +644,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above.
+     * @return all role definitions that are applicable at scope and above as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RoleDefinitionInner> listAsync(String scope, String filter, Context context) {
@@ -659,7 +659,8 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above.
+     * @return all role definitions that are applicable at scope and above as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RoleDefinitionInner> list(String scope) {
@@ -677,7 +678,8 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above.
+     * @return all role definitions that are applicable at scope and above as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RoleDefinitionInner> list(String scope, String filter, Context context) {

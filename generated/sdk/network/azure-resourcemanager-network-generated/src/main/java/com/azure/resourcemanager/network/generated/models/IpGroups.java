@@ -73,7 +73,7 @@ public interface IpGroups {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all IpGroups in a resource group.
+     * @return all IpGroups in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<IpGroup> listByResourceGroup(String resourceGroupName);
 
@@ -86,7 +86,7 @@ public interface IpGroups {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all IpGroups in a resource group.
+     * @return all IpGroups in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<IpGroup> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -96,7 +96,7 @@ public interface IpGroups {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all IpGroups in a subscription.
+     * @return all IpGroups in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<IpGroup> list();
 
@@ -108,7 +108,7 @@ public interface IpGroups {
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all IpGroups in a subscription.
+     * @return all IpGroups in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<IpGroup> list(Context context);
 

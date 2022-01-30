@@ -2537,7 +2537,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource group.
+     * @return all the management locks for a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listByResourceGroupAsync(String resourceGroupName, String filter) {
@@ -2553,7 +2553,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource group.
+     * @return all the management locks for a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -2572,7 +2572,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource group.
+     * @return all the management locks for a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listByResourceGroupAsync(
@@ -2589,7 +2589,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource group.
+     * @return all the management locks for a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ManagementLockObjectInner> listByResourceGroup(String resourceGroupName) {
@@ -2606,7 +2606,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource group.
+     * @return all the management locks for a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ManagementLockObjectInner> listByResourceGroup(
@@ -2796,7 +2796,8 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource.
+     * @return all the management locks for a resource or any level below resource as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listAtResourceLevelAsync(
@@ -2830,7 +2831,8 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource.
+     * @return all the management locks for a resource or any level below resource as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listAtResourceLevelAsync(
@@ -2866,7 +2868,8 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource.
+     * @return all the management locks for a resource or any level below resource as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listAtResourceLevelAsync(
@@ -2902,7 +2905,8 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource.
+     * @return all the management locks for a resource or any level below resource as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ManagementLockObjectInner> listAtResourceLevel(
@@ -2931,7 +2935,8 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource.
+     * @return all the management locks for a resource or any level below resource as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ManagementLockObjectInner> listAtResourceLevel(
@@ -3054,7 +3059,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a subscription.
+     * @return all the management locks for a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listAsync(String filter) {
@@ -3067,7 +3072,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a subscription.
+     * @return all the management locks for a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listAsync() {
@@ -3084,7 +3089,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a subscription.
+     * @return all the management locks for a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listAsync(String filter, Context context) {
@@ -3098,7 +3103,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a subscription.
+     * @return all the management locks for a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ManagementLockObjectInner> list() {
@@ -3114,7 +3119,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a subscription.
+     * @return all the management locks for a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ManagementLockObjectInner> list(String filter, Context context) {
@@ -3221,7 +3226,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a scope.
+     * @return all the management locks for a scope as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listByScopeAsync(String scope, String filter) {
@@ -3240,7 +3245,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a scope.
+     * @return all the management locks for a scope as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listByScopeAsync(String scope) {
@@ -3262,7 +3267,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a scope.
+     * @return all the management locks for a scope as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagementLockObjectInner> listByScopeAsync(String scope, String filter, Context context) {
@@ -3282,7 +3287,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a scope.
+     * @return all the management locks for a scope as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ManagementLockObjectInner> listByScope(String scope) {
@@ -3303,7 +3308,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a scope.
+     * @return all the management locks for a scope as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ManagementLockObjectInner> listByScope(String scope, String filter, Context context) {

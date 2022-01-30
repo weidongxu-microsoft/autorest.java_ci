@@ -173,7 +173,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing forecasts.
+     * @return result of listing forecasts as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ForecastInner> listAsync(String filter) {
@@ -187,7 +187,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing forecasts.
+     * @return result of listing forecasts as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ForecastInner> listAsync() {
@@ -207,7 +207,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing forecasts.
+     * @return result of listing forecasts as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ForecastInner> listAsync(String filter, Context context) {
@@ -221,7 +221,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing forecasts.
+     * @return result of listing forecasts as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ForecastInner> list() {
@@ -241,7 +241,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing forecasts.
+     * @return result of listing forecasts as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ForecastInner> list(String filter, Context context) {

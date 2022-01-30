@@ -96,7 +96,7 @@ public interface PartnerTopics {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Topics operation.
+     * @return result of the List Partner Topics operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PartnerTopic> list();
 
@@ -115,7 +115,7 @@ public interface PartnerTopics {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Topics operation.
+     * @return result of the List Partner Topics operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PartnerTopic> list(String filter, Integer top, Context context);
 
@@ -126,7 +126,7 @@ public interface PartnerTopics {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Topics operation.
+     * @return result of the List Partner Topics operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PartnerTopic> listByResourceGroup(String resourceGroupName);
 
@@ -146,7 +146,7 @@ public interface PartnerTopics {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the List Partner Topics operation.
+     * @return result of the List Partner Topics operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PartnerTopic> listByResourceGroup(
         String resourceGroupName, String filter, Integer top, Context context);

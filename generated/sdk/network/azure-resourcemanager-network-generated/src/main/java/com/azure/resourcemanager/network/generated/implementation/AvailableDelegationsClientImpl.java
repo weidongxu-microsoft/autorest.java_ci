@@ -186,7 +186,8 @@ public final class AvailableDelegationsClientImpl implements AvailableDelegation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this subscription in this region.
+     * @return all of the available subnet delegations for this subscription in this region as paginated response with
+     *     {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AvailableDelegationInner> listAsync(String location) {
@@ -201,7 +202,8 @@ public final class AvailableDelegationsClientImpl implements AvailableDelegation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this subscription in this region.
+     * @return all of the available subnet delegations for this subscription in this region as paginated response with
+     *     {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AvailableDelegationInner> listAsync(String location, Context context) {
@@ -216,7 +218,8 @@ public final class AvailableDelegationsClientImpl implements AvailableDelegation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this subscription in this region.
+     * @return all of the available subnet delegations for this subscription in this region as paginated response with
+     *     {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AvailableDelegationInner> list(String location) {
@@ -231,7 +234,8 @@ public final class AvailableDelegationsClientImpl implements AvailableDelegation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all of the available subnet delegations for this subscription in this region.
+     * @return all of the available subnet delegations for this subscription in this region as paginated response with
+     *     {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AvailableDelegationInner> list(String location, Context context) {

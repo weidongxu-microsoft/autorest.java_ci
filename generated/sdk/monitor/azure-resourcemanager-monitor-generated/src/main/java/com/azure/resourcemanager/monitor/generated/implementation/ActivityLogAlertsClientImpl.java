@@ -886,7 +886,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a subscription.
+     * @return a list of all activity log alerts in a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ActivityLogAlertResourceInner> listAsync() {
@@ -900,7 +900,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a subscription.
+     * @return a list of all activity log alerts in a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ActivityLogAlertResourceInner> listAsync(Context context) {
@@ -912,7 +912,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a subscription.
+     * @return a list of all activity log alerts in a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ActivityLogAlertResourceInner> list() {
@@ -926,7 +926,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a subscription.
+     * @return a list of all activity log alerts in a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ActivityLogAlertResourceInner> list(Context context) {
@@ -1036,7 +1036,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a resource group.
+     * @return a list of all activity log alerts in a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ActivityLogAlertResourceInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -1051,7 +1051,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a resource group.
+     * @return a list of all activity log alerts in a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ActivityLogAlertResourceInner> listByResourceGroupAsync(
@@ -1066,7 +1066,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a resource group.
+     * @return a list of all activity log alerts in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ActivityLogAlertResourceInner> listByResourceGroup(String resourceGroupName) {
@@ -1081,7 +1081,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a resource group.
+     * @return a list of all activity log alerts in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ActivityLogAlertResourceInner> listByResourceGroup(String resourceGroupName, Context context) {

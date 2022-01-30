@@ -74,7 +74,7 @@ public interface DedicatedHosts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list dedicated host operation response.
+     * @return the list dedicated host operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DedicatedHost> listByHostGroup(String resourceGroupName, String hostGroupName);
 
@@ -88,7 +88,7 @@ public interface DedicatedHosts {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list dedicated host operation response.
+     * @return the list dedicated host operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DedicatedHost> listByHostGroup(String resourceGroupName, String hostGroupName, Context context);
 

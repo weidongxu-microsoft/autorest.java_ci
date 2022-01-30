@@ -23,7 +23,6 @@ import com.azure.resourcemanager.storage.generated.models.BlobContainersGetImmut
 import com.azure.resourcemanager.storage.generated.models.BlobContainersLockImmutabilityPolicyResponse;
 import com.azure.resourcemanager.storage.generated.models.LeaseContainerRequest;
 import com.azure.resourcemanager.storage.generated.models.ListContainersInclude;
-import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in BlobContainersClient. */
 public interface BlobContainersClient {
@@ -38,7 +37,7 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response schema.
+     * @return response schema as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ListContainerItemInner> list(String resourceGroupName, String accountName);
@@ -58,7 +57,7 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response schema.
+     * @return response schema as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ListContainerItemInner> list(
@@ -626,7 +625,7 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginObjectLevelWorm(
@@ -648,7 +647,7 @@ public interface BlobContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginObjectLevelWorm(

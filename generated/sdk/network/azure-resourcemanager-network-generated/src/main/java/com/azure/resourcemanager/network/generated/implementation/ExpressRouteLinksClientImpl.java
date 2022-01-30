@@ -392,7 +392,7 @@ public final class ExpressRouteLinksClientImpl implements ExpressRouteLinksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteLink List Result.
+     * @return expressRouteLink List Result as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ExpressRouteLinkInner> listAsync(String resourceGroupName, String expressRoutePortName) {
@@ -410,7 +410,7 @@ public final class ExpressRouteLinksClientImpl implements ExpressRouteLinksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteLink List Result.
+     * @return expressRouteLink List Result as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ExpressRouteLinkInner> listAsync(
@@ -428,7 +428,7 @@ public final class ExpressRouteLinksClientImpl implements ExpressRouteLinksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteLink List Result.
+     * @return expressRouteLink List Result as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ExpressRouteLinkInner> list(String resourceGroupName, String expressRoutePortName) {
@@ -444,7 +444,7 @@ public final class ExpressRouteLinksClientImpl implements ExpressRouteLinksClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteLink List Result.
+     * @return expressRouteLink List Result as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ExpressRouteLinkInner> list(

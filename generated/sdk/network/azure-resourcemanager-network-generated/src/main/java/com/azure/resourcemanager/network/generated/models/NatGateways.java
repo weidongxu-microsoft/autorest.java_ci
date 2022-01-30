@@ -65,7 +65,7 @@ public interface NatGateways {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Nat Gateways in a subscription.
+     * @return all the Nat Gateways in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NatGateway> list();
 
@@ -76,7 +76,7 @@ public interface NatGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Nat Gateways in a subscription.
+     * @return all the Nat Gateways in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NatGateway> list(Context context);
 
@@ -87,7 +87,7 @@ public interface NatGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all nat gateways in a resource group.
+     * @return all nat gateways in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NatGateway> listByResourceGroup(String resourceGroupName);
 
@@ -99,7 +99,7 @@ public interface NatGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all nat gateways in a resource group.
+     * @return all nat gateways in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<NatGateway> listByResourceGroup(String resourceGroupName, Context context);
 

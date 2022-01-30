@@ -71,7 +71,7 @@ public interface ExpressRouteCircuitPeerings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all peerings in a specified express route circuit.
+     * @return all peerings in a specified express route circuit as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCircuitPeering> list(String resourceGroupName, String circuitName);
 
@@ -84,7 +84,7 @@ public interface ExpressRouteCircuitPeerings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all peerings in a specified express route circuit.
+     * @return all peerings in a specified express route circuit as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCircuitPeering> list(String resourceGroupName, String circuitName, Context context);
 

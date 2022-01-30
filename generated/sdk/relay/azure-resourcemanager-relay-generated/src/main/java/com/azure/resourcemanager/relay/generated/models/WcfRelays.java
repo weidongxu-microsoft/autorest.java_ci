@@ -19,7 +19,7 @@ public interface WcfRelays {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation.
+     * @return the response of the list WCF relay operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName);
 
@@ -32,7 +32,7 @@ public interface WcfRelays {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation.
+     * @return the response of the list WCF relay operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName, Context context);
 
@@ -100,7 +100,7 @@ public interface WcfRelays {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the list namespace operation.
+     * @return the response from the list namespace operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, String relayName);
@@ -115,7 +115,7 @@ public interface WcfRelays {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the list namespace operation.
+     * @return the response from the list namespace operation as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, String relayName, Context context);

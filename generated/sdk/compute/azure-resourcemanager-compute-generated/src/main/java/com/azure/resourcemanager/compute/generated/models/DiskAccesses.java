@@ -80,7 +80,7 @@ public interface DiskAccesses {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk access operation response.
+     * @return the List disk access operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiskAccess> listByResourceGroup(String resourceGroupName);
 
@@ -93,7 +93,7 @@ public interface DiskAccesses {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk access operation response.
+     * @return the List disk access operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiskAccess> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -103,7 +103,7 @@ public interface DiskAccesses {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk access operation response.
+     * @return the List disk access operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiskAccess> list();
 
@@ -115,7 +115,7 @@ public interface DiskAccesses {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List disk access operation response.
+     * @return the List disk access operation response as paginated response with {@link PagedIterable}.
      */
     PagedIterable<DiskAccess> list(Context context);
 
@@ -276,7 +276,7 @@ public interface DiskAccesses {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of private link resources.
+     * @return a list of private link resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(
         String resourceGroupName, String diskAccessName);
@@ -293,7 +293,7 @@ public interface DiskAccesses {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of private link resources.
+     * @return a list of private link resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(
         String resourceGroupName, String diskAccessName, Context context);

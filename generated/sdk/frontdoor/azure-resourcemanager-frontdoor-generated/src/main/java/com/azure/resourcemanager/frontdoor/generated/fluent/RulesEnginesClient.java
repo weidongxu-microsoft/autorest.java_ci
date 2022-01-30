@@ -12,7 +12,6 @@ import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.RulesEngineInner;
-import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in RulesEnginesClient. */
 public interface RulesEnginesClient {
@@ -24,7 +23,8 @@ public interface RulesEnginesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Rules Engine Configurations.
+     * @return result of the request to list Rules Engine Configurations as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<RulesEngineInner> listByFrontDoor(String resourceGroupName, String frontDoorName);
@@ -38,7 +38,8 @@ public interface RulesEnginesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Rules Engine Configurations.
+     * @return result of the request to list Rules Engine Configurations as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<RulesEngineInner> listByFrontDoor(String resourceGroupName, String frontDoorName, Context context);
@@ -85,8 +86,8 @@ public interface RulesEnginesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a rules engine configuration containing a list of rules that will run to modify the runtime behavior of
-     *     the request and response along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of a rules engine configuration containing a list of rules that will
+     *     run to modify the runtime behavior of the request and response.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<RulesEngineInner>, RulesEngineInner> beginCreateOrUpdate(
@@ -104,8 +105,8 @@ public interface RulesEnginesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a rules engine configuration containing a list of rules that will run to modify the runtime behavior of
-     *     the request and response along with {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of a rules engine configuration containing a list of rules that will
+     *     run to modify the runtime behavior of the request and response.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<RulesEngineInner>, RulesEngineInner> beginCreateOrUpdate(
@@ -165,7 +166,7 @@ public interface RulesEnginesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
@@ -181,7 +182,7 @@ public interface RulesEnginesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(

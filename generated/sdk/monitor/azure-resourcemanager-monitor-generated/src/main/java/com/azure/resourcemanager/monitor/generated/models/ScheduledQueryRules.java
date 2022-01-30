@@ -65,7 +65,7 @@ public interface ScheduledQueryRules {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<LogSearchRuleResource> list();
 
@@ -78,7 +78,7 @@ public interface ScheduledQueryRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<LogSearchRuleResource> list(String filter, Context context);
 
@@ -89,7 +89,7 @@ public interface ScheduledQueryRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<LogSearchRuleResource> listByResourceGroup(String resourceGroupName);
 
@@ -103,7 +103,7 @@ public interface ScheduledQueryRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of Log Search rule resources.
+     * @return represents a collection of Log Search rule resources as paginated response with {@link PagedIterable}.
      */
     PagedIterable<LogSearchRuleResource> listByResourceGroup(String resourceGroupName, String filter, Context context);
 

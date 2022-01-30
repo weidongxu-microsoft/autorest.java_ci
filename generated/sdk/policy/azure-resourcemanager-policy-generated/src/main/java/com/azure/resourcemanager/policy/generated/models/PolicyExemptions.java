@@ -88,7 +88,7 @@ public interface PolicyExemptions {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyExemption> list();
 
@@ -113,7 +113,7 @@ public interface PolicyExemptions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyExemption> list(String filter, Context context);
 
@@ -128,7 +128,7 @@ public interface PolicyExemptions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyExemption> listByResourceGroup(String resourceGroupName);
 
@@ -154,7 +154,7 @@ public interface PolicyExemptions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyExemption> listByResourceGroup(String resourceGroupName, String filter, Context context);
 
@@ -185,7 +185,7 @@ public interface PolicyExemptions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyExemption> listForResource(
         String resourceGroupName,
@@ -232,7 +232,7 @@ public interface PolicyExemptions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyExemption> listForResource(
         String resourceGroupName,
@@ -253,7 +253,7 @@ public interface PolicyExemptions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyExemption> listForManagementGroup(String managementGroupId);
 
@@ -278,7 +278,7 @@ public interface PolicyExemptions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy exemptions.
+     * @return list of policy exemptions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PolicyExemption> listForManagementGroup(String managementGroupId, String filter, Context context);
 

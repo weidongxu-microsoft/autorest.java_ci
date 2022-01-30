@@ -15,7 +15,7 @@ public interface Vaults {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response model for a list of Vaults.
+     * @return the response model for a list of Vaults as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Vault> list();
 
@@ -26,7 +26,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response model for a list of Vaults.
+     * @return the response model for a list of Vaults as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Vault> list(Context context);
 
@@ -37,7 +37,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response model for a list of Vaults.
+     * @return the response model for a list of Vaults as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Vault> listByResourceGroup(String resourceGroupName);
 
@@ -49,7 +49,7 @@ public interface Vaults {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response model for a list of Vaults.
+     * @return the response model for a list of Vaults as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Vault> listByResourceGroup(String resourceGroupName, Context context);
 

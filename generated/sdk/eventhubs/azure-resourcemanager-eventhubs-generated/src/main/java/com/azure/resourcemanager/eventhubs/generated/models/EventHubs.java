@@ -20,7 +20,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the authorization rules for an Event Hub.
+     * @return the authorization rules for an Event Hub as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, String eventHubName);
@@ -35,7 +35,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the authorization rules for an Event Hub.
+     * @return the authorization rules for an Event Hub as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, String eventHubName, Context context);
@@ -238,7 +238,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Event Hubs in a Namespace.
+     * @return all the Event Hubs in a Namespace as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Eventhub> listByNamespace(String resourceGroupName, String namespaceName);
 
@@ -255,7 +255,7 @@ public interface EventHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Event Hubs in a Namespace.
+     * @return all the Event Hubs in a Namespace as paginated response with {@link PagedIterable}.
      */
     PagedIterable<Eventhub> listByNamespace(
         String resourceGroupName, String namespaceName, Integer skip, Integer top, Context context);

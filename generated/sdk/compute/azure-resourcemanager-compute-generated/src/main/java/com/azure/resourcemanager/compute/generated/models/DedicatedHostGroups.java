@@ -72,7 +72,8 @@ public interface DedicatedHostGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response.
+     * @return the List Dedicated Host Group with resource group response as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<DedicatedHostGroup> listByResourceGroup(String resourceGroupName);
 
@@ -85,7 +86,8 @@ public interface DedicatedHostGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response.
+     * @return the List Dedicated Host Group with resource group response as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<DedicatedHostGroup> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -95,7 +97,8 @@ public interface DedicatedHostGroups {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response.
+     * @return the List Dedicated Host Group with resource group response as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<DedicatedHostGroup> list();
 
@@ -107,7 +110,8 @@ public interface DedicatedHostGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response.
+     * @return the List Dedicated Host Group with resource group response as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<DedicatedHostGroup> list(Context context);
 

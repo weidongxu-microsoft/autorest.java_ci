@@ -65,7 +65,7 @@ public interface PublicIpPrefixes {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the public IP prefixes in a subscription.
+     * @return all the public IP prefixes in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicIpPrefix> list();
 
@@ -76,7 +76,7 @@ public interface PublicIpPrefixes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the public IP prefixes in a subscription.
+     * @return all the public IP prefixes in a subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicIpPrefix> list(Context context);
 
@@ -87,7 +87,7 @@ public interface PublicIpPrefixes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all public IP prefixes in a resource group.
+     * @return all public IP prefixes in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicIpPrefix> listByResourceGroup(String resourceGroupName);
 
@@ -99,7 +99,7 @@ public interface PublicIpPrefixes {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all public IP prefixes in a resource group.
+     * @return all public IP prefixes in a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<PublicIpPrefix> listByResourceGroup(String resourceGroupName, Context context);
 

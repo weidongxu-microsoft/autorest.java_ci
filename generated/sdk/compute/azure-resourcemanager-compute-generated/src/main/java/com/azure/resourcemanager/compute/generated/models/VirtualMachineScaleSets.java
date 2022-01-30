@@ -18,7 +18,8 @@ public interface VirtualMachineScaleSets {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the VM scale sets under the specified subscription for the specified location.
+     * @return all the VM scale sets under the specified subscription for the specified location as paginated response
+     *     with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineScaleSet> listByLocation(String location);
 
@@ -31,7 +32,8 @@ public interface VirtualMachineScaleSets {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the VM scale sets under the specified subscription for the specified location.
+     * @return all the VM scale sets under the specified subscription for the specified location as paginated response
+     *     with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineScaleSet> listByLocation(String location, Context context);
 
@@ -226,7 +228,7 @@ public interface VirtualMachineScaleSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all VM scale sets under a resource group.
+     * @return a list of all VM scale sets under a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineScaleSet> listByResourceGroup(String resourceGroupName);
 
@@ -238,7 +240,7 @@ public interface VirtualMachineScaleSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all VM scale sets under a resource group.
+     * @return a list of all VM scale sets under a resource group as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineScaleSet> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -249,7 +251,8 @@ public interface VirtualMachineScaleSets {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all VM Scale Sets in the subscription, regardless of the associated resource group.
+     * @return a list of all VM Scale Sets in the subscription, regardless of the associated resource group as paginated
+     *     response with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineScaleSet> list();
 
@@ -262,7 +265,8 @@ public interface VirtualMachineScaleSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all VM Scale Sets in the subscription, regardless of the associated resource group.
+     * @return a list of all VM Scale Sets in the subscription, regardless of the associated resource group as paginated
+     *     response with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineScaleSet> list(Context context);
 
@@ -276,7 +280,7 @@ public interface VirtualMachineScaleSets {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of SKUs available for your VM scale set, including the minimum and maximum VM instances allowed
-     *     for each SKU.
+     *     for each SKU as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineScaleSetSku> listSkus(String resourceGroupName, String vmScaleSetName);
 
@@ -291,7 +295,7 @@ public interface VirtualMachineScaleSets {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of SKUs available for your VM scale set, including the minimum and maximum VM instances allowed
-     *     for each SKU.
+     *     for each SKU as paginated response with {@link PagedIterable}.
      */
     PagedIterable<VirtualMachineScaleSetSku> listSkus(String resourceGroupName, String vmScaleSetName, Context context);
 
@@ -303,7 +307,7 @@ public interface VirtualMachineScaleSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of OS upgrades on a VM scale set instance.
+     * @return list of OS upgrades on a VM scale set instance as paginated response with {@link PagedIterable}.
      */
     PagedIterable<UpgradeOperationHistoricalStatusInfo> getOSUpgradeHistory(
         String resourceGroupName, String vmScaleSetName);
@@ -317,7 +321,7 @@ public interface VirtualMachineScaleSets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of OS upgrades on a VM scale set instance.
+     * @return list of OS upgrades on a VM scale set instance as paginated response with {@link PagedIterable}.
      */
     PagedIterable<UpgradeOperationHistoricalStatusInfo> getOSUpgradeHistory(
         String resourceGroupName, String vmScaleSetName, Context context);

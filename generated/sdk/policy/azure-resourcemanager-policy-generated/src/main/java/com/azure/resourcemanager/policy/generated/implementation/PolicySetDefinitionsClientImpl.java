@@ -910,7 +910,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicySetDefinitionInner> listAsync(String filter, Integer top) {
@@ -930,7 +930,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicySetDefinitionInner> listAsync() {
@@ -962,7 +962,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicySetDefinitionInner> listAsync(String filter, Integer top, Context context) {
@@ -983,7 +983,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicySetDefinitionInner> list() {
@@ -1015,7 +1015,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicySetDefinitionInner> list(String filter, Integer top, Context context) {
@@ -1125,7 +1125,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicySetDefinitionInner> listBuiltInAsync(String filter, Integer top) {
@@ -1140,7 +1140,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicySetDefinitionInner> listBuiltInAsync() {
@@ -1167,7 +1167,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicySetDefinitionInner> listBuiltInAsync(String filter, Integer top, Context context) {
@@ -1183,7 +1183,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicySetDefinitionInner> listBuiltIn() {
@@ -1209,7 +1209,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicySetDefinitionInner> listBuiltIn(String filter, Integer top, Context context) {
@@ -1786,7 +1786,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicySetDefinitionInner> listByManagementGroupAsync(
@@ -1811,7 +1811,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicySetDefinitionInner> listByManagementGroupAsync(String managementGroupId) {
@@ -1846,7 +1846,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicySetDefinitionInner> listByManagementGroupAsync(
@@ -1871,7 +1871,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicySetDefinitionInner> listByManagementGroup(String managementGroupId) {
@@ -1904,7 +1904,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of policy set definitions.
+     * @return list of policy set definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicySetDefinitionInner> listByManagementGroup(

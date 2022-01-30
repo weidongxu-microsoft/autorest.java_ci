@@ -391,7 +391,7 @@ public final class VpnSiteLinksClientImpl implements VpnSiteLinksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSiteLinks.
+     * @return result of the request to list VpnSiteLinks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<VpnSiteLinkInner> listByVpnSiteAsync(String resourceGroupName, String vpnSiteName) {
@@ -409,7 +409,7 @@ public final class VpnSiteLinksClientImpl implements VpnSiteLinksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSiteLinks.
+     * @return result of the request to list VpnSiteLinks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<VpnSiteLinkInner> listByVpnSiteAsync(
@@ -427,7 +427,7 @@ public final class VpnSiteLinksClientImpl implements VpnSiteLinksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSiteLinks.
+     * @return result of the request to list VpnSiteLinks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VpnSiteLinkInner> listByVpnSite(String resourceGroupName, String vpnSiteName) {
@@ -443,7 +443,7 @@ public final class VpnSiteLinksClientImpl implements VpnSiteLinksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSiteLinks.
+     * @return result of the request to list VpnSiteLinks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VpnSiteLinkInner> listByVpnSite(

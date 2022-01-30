@@ -19,7 +19,7 @@ public interface ExpressRouteCrossConnectionPeerings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all peerings in a specified ExpressRouteCrossConnection.
+     * @return all peerings in a specified ExpressRouteCrossConnection as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCrossConnectionPeering> list(String resourceGroupName, String crossConnectionName);
 
@@ -32,7 +32,7 @@ public interface ExpressRouteCrossConnectionPeerings {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all peerings in a specified ExpressRouteCrossConnection.
+     * @return all peerings in a specified ExpressRouteCrossConnection as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCrossConnectionPeering> list(
         String resourceGroupName, String crossConnectionName, Context context);
