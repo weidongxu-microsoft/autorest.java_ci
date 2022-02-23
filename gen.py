@@ -32,7 +32,7 @@ def parse_args() -> argparse.Namespace:
         '-s',
         '--specs',
         default =
-        'https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/',
+        'https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/',
         help = 'specs folder (default github)',
     )
     parser.add_argument(
