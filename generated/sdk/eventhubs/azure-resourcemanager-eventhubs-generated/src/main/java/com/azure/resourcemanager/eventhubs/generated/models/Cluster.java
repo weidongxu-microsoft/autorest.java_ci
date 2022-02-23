@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterInner;
 import java.util.Map;
@@ -52,6 +53,13 @@ public interface Cluster {
      * @return the sku value.
      */
     ClusterSku sku();
+
+    /**
+     * Gets the systemData property: The system meta data relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
 
     /**
      * Gets the createdAt property: The UTC time when the Event Hubs Cluster was created.

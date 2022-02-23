@@ -912,7 +912,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
      *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
      *     for a resource.
-     * @param roleAssignmentName The name of the role assignment to create. It can be any valid GUID.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     *     each role assignment.
      * @param parameters Parameters for the role assignment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -965,7 +966,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
      *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
      *     for a resource.
-     * @param roleAssignmentName The name of the role assignment to create. It can be any valid GUID.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     *     each role assignment.
      * @param parameters Parameters for the role assignment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1009,7 +1011,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
      *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
      *     for a resource.
-     * @param roleAssignmentName The name of the role assignment to create. It can be any valid GUID.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     *     each role assignment.
      * @param parameters Parameters for the role assignment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1038,7 +1041,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
      *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
      *     for a resource.
-     * @param roleAssignmentName The name of the role assignment to create. It can be any valid GUID.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     *     each role assignment.
      * @param parameters Parameters for the role assignment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1059,7 +1063,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
      *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
      *     for a resource.
-     * @param roleAssignmentName The name of the role assignment to create. It can be any valid GUID.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     *     each role assignment.
      * @param parameters Parameters for the role assignment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

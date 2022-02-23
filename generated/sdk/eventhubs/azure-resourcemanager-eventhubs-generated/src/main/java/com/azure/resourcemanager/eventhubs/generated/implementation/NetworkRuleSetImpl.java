@@ -4,11 +4,13 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkRuleSetInner;
 import com.azure.resourcemanager.eventhubs.generated.models.DefaultAction;
 import com.azure.resourcemanager.eventhubs.generated.models.NWRuleSetIpRules;
 import com.azure.resourcemanager.eventhubs.generated.models.NWRuleSetVirtualNetworkRules;
 import com.azure.resourcemanager.eventhubs.generated.models.NetworkRuleSet;
+import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccessFlag;
 import java.util.Collections;
 import java.util.List;
 
@@ -36,6 +38,14 @@ public final class NetworkRuleSetImpl implements NetworkRuleSet {
         return this.innerModel().type();
     }
 
+    public SystemData systemData() {
+        return this.innerModel().systemData();
+    }
+
+    public String location() {
+        return this.innerModel().location();
+    }
+
     public Boolean trustedServiceAccessEnabled() {
         return this.innerModel().trustedServiceAccessEnabled();
     }
@@ -60,6 +70,10 @@ public final class NetworkRuleSetImpl implements NetworkRuleSet {
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public PublicNetworkAccessFlag publicNetworkAccess() {
+        return this.innerModel().publicNetworkAccess();
     }
 
     public NetworkRuleSetInner innerModel() {

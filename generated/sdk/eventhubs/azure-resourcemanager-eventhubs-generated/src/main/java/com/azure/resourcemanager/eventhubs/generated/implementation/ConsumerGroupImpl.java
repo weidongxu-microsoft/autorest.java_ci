@@ -4,6 +4,8 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
+import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ConsumerGroupInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ConsumerGroup;
@@ -26,6 +28,14 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
         return this.innerModel().type();
     }
 
+    public SystemData systemData() {
+        return this.innerModel().systemData();
+    }
+
+    public String location() {
+        return this.innerModel().location();
+    }
+
     public OffsetDateTime createdAt() {
         return this.innerModel().createdAt();
     }
@@ -36,6 +46,14 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
 
     public String userMetadata() {
         return this.innerModel().userMetadata();
+    }
+
+    public Region region() {
+        return Region.fromName(this.regionName());
+    }
+
+    public String regionName() {
+        return this.location();
     }
 
     public ConsumerGroupInner innerModel() {

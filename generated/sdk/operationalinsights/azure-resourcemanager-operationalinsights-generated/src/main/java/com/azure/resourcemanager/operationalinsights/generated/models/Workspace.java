@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspaceInner;
 import java.util.List;
@@ -46,6 +47,13 @@ public interface Workspace {
      * @return the tags value.
      */
     Map<String, String> tags();
+
+    /**
+     * Gets the systemData property: Metadata pertaining to creation and last modification of the resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
 
     /**
      * Gets the etag property: The ETag of the workspace.
@@ -140,6 +148,15 @@ public interface Workspace {
     WorkspaceFeatures features();
 
     /**
+     * Gets the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use
+     * for this workspace. Expected format is -
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+     *
+     * @return the defaultDataCollectionRuleResourceId value.
+     */
+    String defaultDataCollectionRuleResourceId();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -207,14 +224,14 @@ public interface Workspace {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithEtag,
-                DefinitionStages.WithProvisioningState,
                 DefinitionStages.WithSku,
                 DefinitionStages.WithRetentionInDays,
                 DefinitionStages.WithWorkspaceCapping,
                 DefinitionStages.WithPublicNetworkAccessForIngestion,
                 DefinitionStages.WithPublicNetworkAccessForQuery,
                 DefinitionStages.WithForceCmkForQuery,
-                DefinitionStages.WithFeatures {
+                DefinitionStages.WithFeatures,
+                DefinitionStages.WithDefaultDataCollectionRuleResourceId {
             /**
              * Executes the create request.
              *
@@ -249,16 +266,6 @@ public interface Workspace {
              * @return the next definition stage.
              */
             WithCreate withEtag(String etag);
-        }
-        /** The stage of the Workspace definition allowing to specify provisioningState. */
-        interface WithProvisioningState {
-            /**
-             * Specifies the provisioningState property: The provisioning state of the workspace..
-             *
-             * @param provisioningState The provisioning state of the workspace.
-             * @return the next definition stage.
-             */
-            WithCreate withProvisioningState(WorkspaceEntityStatus provisioningState);
         }
         /** The stage of the Workspace definition allowing to specify sku. */
         interface WithSku {
@@ -335,6 +342,20 @@ public interface Workspace {
              */
             WithCreate withFeatures(WorkspaceFeatures features);
         }
+        /** The stage of the Workspace definition allowing to specify defaultDataCollectionRuleResourceId. */
+        interface WithDefaultDataCollectionRuleResourceId {
+            /**
+             * Specifies the defaultDataCollectionRuleResourceId property: The resource ID of the default Data
+             * Collection Rule to use for this workspace. Expected format is -
+             * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}..
+             *
+             * @param defaultDataCollectionRuleResourceId The resource ID of the default Data Collection Rule to use for
+             *     this workspace. Expected format is -
+             *     /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+             * @return the next definition stage.
+             */
+            WithCreate withDefaultDataCollectionRuleResourceId(String defaultDataCollectionRuleResourceId);
+        }
     }
     /**
      * Begins update for the Workspace resource.
@@ -346,14 +367,14 @@ public interface Workspace {
     /** The template for Workspace update. */
     interface Update
         extends UpdateStages.WithTags,
-            UpdateStages.WithProvisioningState,
             UpdateStages.WithSku,
             UpdateStages.WithRetentionInDays,
             UpdateStages.WithWorkspaceCapping,
             UpdateStages.WithPublicNetworkAccessForIngestion,
             UpdateStages.WithPublicNetworkAccessForQuery,
             UpdateStages.WithForceCmkForQuery,
-            UpdateStages.WithFeatures {
+            UpdateStages.WithFeatures,
+            UpdateStages.WithDefaultDataCollectionRuleResourceId {
         /**
          * Executes the update request.
          *
@@ -380,16 +401,6 @@ public interface Workspace {
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
-        }
-        /** The stage of the Workspace update allowing to specify provisioningState. */
-        interface WithProvisioningState {
-            /**
-             * Specifies the provisioningState property: The provisioning state of the workspace..
-             *
-             * @param provisioningState The provisioning state of the workspace.
-             * @return the next definition stage.
-             */
-            Update withProvisioningState(WorkspaceEntityStatus provisioningState);
         }
         /** The stage of the Workspace update allowing to specify sku. */
         interface WithSku {
@@ -465,6 +476,20 @@ public interface Workspace {
              * @return the next definition stage.
              */
             Update withFeatures(WorkspaceFeatures features);
+        }
+        /** The stage of the Workspace update allowing to specify defaultDataCollectionRuleResourceId. */
+        interface WithDefaultDataCollectionRuleResourceId {
+            /**
+             * Specifies the defaultDataCollectionRuleResourceId property: The resource ID of the default Data
+             * Collection Rule to use for this workspace. Expected format is -
+             * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}..
+             *
+             * @param defaultDataCollectionRuleResourceId The resource ID of the default Data Collection Rule to use for
+             *     this workspace. Expected format is -
+             *     /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+             * @return the next definition stage.
+             */
+            Update withDefaultDataCollectionRuleResourceId(String defaultDataCollectionRuleResourceId);
         }
     }
     /**

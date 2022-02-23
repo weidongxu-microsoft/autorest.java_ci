@@ -130,6 +130,15 @@ public final class CreditSummaryInner extends ProxyResource {
     }
 
     /**
+     * Get the etag property: The eTag for the resource.
+     *
+     * @return the etag value.
+     */
+    public String etagPropertiesEtag() {
+        return this.innerProperties() == null ? null : this.innerProperties().etag();
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

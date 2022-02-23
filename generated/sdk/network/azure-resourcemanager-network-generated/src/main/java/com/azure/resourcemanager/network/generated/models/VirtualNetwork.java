@@ -147,6 +147,14 @@ public interface VirtualNetwork {
     VirtualNetworkBgpCommunities bgpCommunities();
 
     /**
+     * Gets the encryption property: Indicates if encryption is enabled on virtual network and if VM without encryption
+     * is allowed in encrypted VNet.
+     *
+     * @return the encryption value.
+     */
+    VirtualNetworkEncryption encryption();
+
+    /**
      * Gets the ipAllocations property: Array of IpAllocation which reference this VNET.
      *
      * @return the ipAllocations value.
@@ -230,6 +238,7 @@ public interface VirtualNetwork {
                 DefinitionStages.WithEnableVmProtection,
                 DefinitionStages.WithDdosProtectionPlan,
                 DefinitionStages.WithBgpCommunities,
+                DefinitionStages.WithEncryption,
                 DefinitionStages.WithIpAllocations {
             /**
              * Executes the create request.
@@ -366,6 +375,18 @@ public interface VirtualNetwork {
              * @return the next definition stage.
              */
             WithCreate withBgpCommunities(VirtualNetworkBgpCommunities bgpCommunities);
+        }
+        /** The stage of the VirtualNetwork definition allowing to specify encryption. */
+        interface WithEncryption {
+            /**
+             * Specifies the encryption property: Indicates if encryption is enabled on virtual network and if VM
+             * without encryption is allowed in encrypted VNet..
+             *
+             * @param encryption Indicates if encryption is enabled on virtual network and if VM without encryption is
+             *     allowed in encrypted VNet.
+             * @return the next definition stage.
+             */
+            WithCreate withEncryption(VirtualNetworkEncryption encryption);
         }
         /** The stage of the VirtualNetwork definition allowing to specify ipAllocations. */
         interface WithIpAllocations {

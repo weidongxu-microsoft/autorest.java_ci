@@ -32,6 +32,12 @@ public final class KeyVaultProperties {
     @JsonProperty(value = "keyVersion")
     private String keyVersion;
 
+    /*
+     * The identity property.
+     */
+    @JsonProperty(value = "identity")
+    private UserAssignedIdentityProperties identity;
+
     /**
      * Get the keyName property: Name of the Key from KeyVault.
      *
@@ -93,10 +99,33 @@ public final class KeyVaultProperties {
     }
 
     /**
+     * Get the identity property: The identity property.
+     *
+     * @return the identity value.
+     */
+    public UserAssignedIdentityProperties identity() {
+        return this.identity;
+    }
+
+    /**
+     * Set the identity property: The identity property.
+     *
+     * @param identity the identity value to set.
+     * @return the KeyVaultProperties object itself.
+     */
+    public KeyVaultProperties withIdentity(UserAssignedIdentityProperties identity) {
+        this.identity = identity;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (identity() != null) {
+            identity().validate();
+        }
     }
 }

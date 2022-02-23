@@ -99,6 +99,10 @@ public final class NetworkInterfacePropertiesFormatImpl implements NetworkInterf
         return this.innerModel().primary();
     }
 
+    public Boolean vnetEncryptionSupported() {
+        return this.innerModel().vnetEncryptionSupported();
+    }
+
     public Boolean enableAcceleratedNetworking() {
         return this.innerModel().enableAcceleratedNetworking();
     }

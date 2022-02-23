@@ -9,8 +9,8 @@ import com.azure.core.annotation.ServiceMethod;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.fluent.models.AppserviceGithubTokenInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BillingMeterInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.CustomHostnameSitesInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeploymentLocationsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.GeoRegionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.IdentifierInner;
@@ -22,7 +22,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.SourceContro
 import com.azure.resourcemanager.appservice.generated.fluent.models.UserInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResponseInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
-import com.azure.resourcemanager.appservice.generated.models.AppserviceGithubTokenRequest;
 import com.azure.resourcemanager.appservice.generated.models.CsmMoveResourceEnvelope;
 import com.azure.resourcemanager.appservice.generated.models.ResourceNameAvailabilityRequest;
 import com.azure.resourcemanager.appservice.generated.models.SkuName;
@@ -31,34 +30,6 @@ import com.azure.resourcemanager.appservice.generated.models.VnetParameters;
 
 /** An instance of this class provides access to all the operations defined in ResourceProvidersClient. */
 public interface ResourceProvidersClient {
-    /**
-     * Description for Exchange code for GitHub access token for AppService CLI.
-     *
-     * @param request Appservice Github token request content.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return github access token for Appservice CLI github integration.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    AppserviceGithubTokenInner generateGithubAccessTokenForAppserviceCliAsync(AppserviceGithubTokenRequest request);
-
-    /**
-     * Description for Exchange code for GitHub access token for AppService CLI.
-     *
-     * @param request Appservice Github token request content.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return github access token for Appservice CLI github integration along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AppserviceGithubTokenInner> generateGithubAccessTokenForAppserviceCliAsyncWithResponse(
-        AppserviceGithubTokenRequest request, Context context);
-
     /**
      * Description for Gets publishing user.
      *
@@ -244,6 +215,30 @@ public interface ResourceProvidersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ResourceNameAvailabilityInner> checkNameAvailabilityWithResponse(
         ResourceNameAvailabilityRequest request, Context context);
+
+    /**
+     * Get custom hostnames under this subscription.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return custom hostnames under this subscription as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    PagedIterable<CustomHostnameSitesInner> listCustomHostnameSites();
+
+    /**
+     * Get custom hostnames under this subscription.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return custom hostnames under this subscription as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    PagedIterable<CustomHostnameSitesInner> listCustomHostnameSites(Context context);
 
     /**
      * Description for Gets list of available geo regions plus ministamps.

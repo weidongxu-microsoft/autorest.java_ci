@@ -26,12 +26,12 @@ import com.azure.core.http.rest.PagedResponse;
 import com.azure.core.http.rest.PagedResponseBase;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.RestProxy;
-import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.ProximityPlacementGroupsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.ProximityPlacementGroupInner;
+import com.azure.resourcemanager.compute.generated.models.ApiErrorException;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupListResult;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupUpdate;
 import reactor.core.publisher.Mono;
@@ -70,7 +70,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute"
                 + "/proximityPlacementGroups/{proximityPlacementGroupName}")
         @ExpectedResponses({200, 201})
-        @UnexpectedResponseExceptionType(ManagementException.class)
+        @UnexpectedResponseExceptionType(ApiErrorException.class)
         Mono<Response<ProximityPlacementGroupInner>> createOrUpdate(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
@@ -86,7 +86,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute"
                 + "/proximityPlacementGroups/{proximityPlacementGroupName}")
         @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
+        @UnexpectedResponseExceptionType(ApiErrorException.class)
         Mono<Response<ProximityPlacementGroupInner>> update(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
@@ -97,18 +97,19 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
             @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
+        @Headers({"Content-Type: application/json"})
         @Delete(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute"
                 + "/proximityPlacementGroups/{proximityPlacementGroupName}")
         @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
+        @UnexpectedResponseExceptionType(ApiErrorException.class)
         Mono<Response<Void>> delete(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("proximityPlacementGroupName") String proximityPlacementGroupName,
             @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
+            @HeaderParam("Accept") String accept,
             Context context);
 
         @Headers({"Content-Type: application/json"})
@@ -116,7 +117,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute"
                 + "/proximityPlacementGroups/{proximityPlacementGroupName}")
         @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
+        @UnexpectedResponseExceptionType(ApiErrorException.class)
         Mono<Response<ProximityPlacementGroupInner>> getByResourceGroup(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
@@ -130,7 +131,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Compute/proximityPlacementGroups")
         @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
+        @UnexpectedResponseExceptionType(ApiErrorException.class)
         Mono<Response<ProximityPlacementGroupListResult>> list(
             @HostParam("$host") String endpoint,
             @QueryParam("api-version") String apiVersion,
@@ -143,7 +144,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute"
                 + "/proximityPlacementGroups")
         @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
+        @UnexpectedResponseExceptionType(ApiErrorException.class)
         Mono<Response<ProximityPlacementGroupListResult>> listByResourceGroup(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
@@ -155,7 +156,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
         @Headers({"Content-Type: application/json"})
         @Get("{nextLink}")
         @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
+        @UnexpectedResponseExceptionType(ApiErrorException.class)
         Mono<Response<ProximityPlacementGroupListResult>> listBySubscriptionNext(
             @PathParam(value = "nextLink", encoded = true) String nextLink,
             @HostParam("$host") String endpoint,
@@ -165,7 +166,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
         @Headers({"Content-Type: application/json"})
         @Get("{nextLink}")
         @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
+        @UnexpectedResponseExceptionType(ApiErrorException.class)
         Mono<Response<ProximityPlacementGroupListResult>> listByResourceGroupNext(
             @PathParam(value = "nextLink", encoded = true) String nextLink,
             @HostParam("$host") String endpoint,
@@ -180,7 +181,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param parameters Parameters supplied to the Create Proximity Placement Group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group along with {@link Response} on successful
      *     completion of {@link Mono}.
@@ -215,7 +216,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-07-01";
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -241,7 +242,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param parameters Parameters supplied to the Create Proximity Placement Group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group along with {@link Response} on successful
      *     completion of {@link Mono}.
@@ -279,7 +280,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-07-01";
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -301,7 +302,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param parameters Parameters supplied to the Create Proximity Placement Group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group on successful completion of {@link Mono}.
      */
@@ -326,7 +327,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param parameters Parameters supplied to the Create Proximity Placement Group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group.
      */
@@ -344,7 +345,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param parameters Parameters supplied to the Create Proximity Placement Group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group along with {@link Response}.
      */
@@ -365,7 +366,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param parameters Parameters supplied to the Update Proximity Placement Group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group along with {@link Response} on successful
      *     completion of {@link Mono}.
@@ -400,7 +401,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-07-01";
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -426,7 +427,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param parameters Parameters supplied to the Update Proximity Placement Group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group along with {@link Response} on successful
      *     completion of {@link Mono}.
@@ -464,7 +465,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-07-01";
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -486,7 +487,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param parameters Parameters supplied to the Update Proximity Placement Group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group on successful completion of {@link Mono}.
      */
@@ -511,7 +512,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param parameters Parameters supplied to the Update Proximity Placement Group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group.
      */
@@ -529,7 +530,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param parameters Parameters supplied to the Update Proximity Placement Group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group along with {@link Response}.
      */
@@ -548,7 +549,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
@@ -576,7 +577,8 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-07-01";
+        final String apiVersion = "2021-11-01";
+        final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
@@ -587,6 +589,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
                             proximityPlacementGroupName,
                             apiVersion,
                             this.client.getSubscriptionId(),
+                            accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
@@ -598,7 +601,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
@@ -627,7 +630,8 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-07-01";
+        final String apiVersion = "2021-11-01";
+        final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .delete(
@@ -636,6 +640,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
                 proximityPlacementGroupName,
                 apiVersion,
                 this.client.getSubscriptionId(),
+                accept,
                 context);
     }
 
@@ -645,7 +650,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return A {@link Mono} that completes when a successful response is received.
      */
@@ -661,7 +666,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -676,7 +681,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -694,7 +699,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param includeColocationStatus includeColocationStatus=true enables fetching the colocation status of all the
      *     resources in the proximity placement group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group along with {@link Response} on successful
      *     completion of {@link Mono}.
@@ -724,7 +729,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-07-01";
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -751,7 +756,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      *     resources in the proximity placement group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group along with {@link Response} on successful
      *     completion of {@link Mono}.
@@ -781,7 +786,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-07-01";
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -804,7 +809,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param includeColocationStatus includeColocationStatus=true enables fetching the colocation status of all the
      *     resources in the proximity placement group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group on successful completion of {@link Mono}.
      */
@@ -829,7 +834,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group on successful completion of {@link Mono}.
      */
@@ -855,7 +860,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group.
      */
@@ -875,7 +880,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      *     resources in the proximity placement group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group along with {@link Response}.
      */
@@ -890,7 +895,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
     /**
      * Lists all proximity placement groups in a subscription.
      *
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
@@ -909,7 +914,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-07-01";
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -933,7 +938,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
@@ -952,7 +957,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-07-01";
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -971,7 +976,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
     /**
      * Lists all proximity placement groups in a subscription.
      *
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response as paginated response with {@link PagedFlux}.
      */
@@ -986,7 +991,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response as paginated response with {@link PagedFlux}.
      */
@@ -999,7 +1004,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
     /**
      * Lists all proximity placement groups in a subscription.
      *
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response as paginated response with {@link PagedIterable}.
      */
@@ -1013,7 +1018,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response as paginated response with {@link PagedIterable}.
      */
@@ -1027,7 +1032,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      *
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
@@ -1051,7 +1056,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-07-01";
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1082,7 +1087,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
@@ -1106,7 +1111,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-07-01";
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1133,7 +1138,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      *
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response as paginated response with {@link PagedFlux}.
      */
@@ -1150,7 +1155,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response as paginated response with {@link PagedFlux}.
      */
@@ -1167,7 +1172,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      *
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response as paginated response with {@link PagedIterable}.
      */
@@ -1182,7 +1187,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response as paginated response with {@link PagedIterable}.
      */
@@ -1196,7 +1201,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      *
      * @param nextLink The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
@@ -1234,7 +1239,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param nextLink The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
@@ -1271,7 +1276,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      *
      * @param nextLink The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
@@ -1309,7 +1314,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param nextLink The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.

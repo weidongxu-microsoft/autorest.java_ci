@@ -9,12 +9,14 @@ import com.azure.resourcemanager.storage.generated.fluent.models.PrivateEndpoint
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountPropertiesInner;
 import com.azure.resourcemanager.storage.generated.models.AccessTier;
 import com.azure.resourcemanager.storage.generated.models.AccountStatus;
+import com.azure.resourcemanager.storage.generated.models.AllowedCopyScope;
 import com.azure.resourcemanager.storage.generated.models.AzureFilesIdentityBasedAuthentication;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreStatus;
 import com.azure.resourcemanager.storage.generated.models.CustomDomain;
 import com.azure.resourcemanager.storage.generated.models.Encryption;
 import com.azure.resourcemanager.storage.generated.models.Endpoints;
 import com.azure.resourcemanager.storage.generated.models.GeoReplicationStats;
+import com.azure.resourcemanager.storage.generated.models.ImmutableStorageAccount;
 import com.azure.resourcemanager.storage.generated.models.KeyCreationTime;
 import com.azure.resourcemanager.storage.generated.models.KeyPolicy;
 import com.azure.resourcemanager.storage.generated.models.LargeFileSharesState;
@@ -22,6 +24,7 @@ import com.azure.resourcemanager.storage.generated.models.MinimumTlsVersion;
 import com.azure.resourcemanager.storage.generated.models.NetworkRuleSet;
 import com.azure.resourcemanager.storage.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.storage.generated.models.ProvisioningState;
+import com.azure.resourcemanager.storage.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.storage.generated.models.RoutingPreference;
 import com.azure.resourcemanager.storage.generated.models.SasPolicy;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountProperties;
@@ -114,6 +117,14 @@ public final class StorageAccountPropertiesImpl implements StorageAccountPropert
         return this.innerModel().networkRuleSet();
     }
 
+    public Boolean isSftpEnabled() {
+        return this.innerModel().isSftpEnabled();
+    }
+
+    public Boolean isLocalUserEnabled() {
+        return this.innerModel().isLocalUserEnabled();
+    }
+
     public Boolean isHnsEnabled() {
         return this.innerModel().isHnsEnabled();
     }
@@ -175,6 +186,22 @@ public final class StorageAccountPropertiesImpl implements StorageAccountPropert
 
     public Boolean allowCrossTenantReplication() {
         return this.innerModel().allowCrossTenantReplication();
+    }
+
+    public Boolean defaultToOAuthAuthentication() {
+        return this.innerModel().defaultToOAuthAuthentication();
+    }
+
+    public PublicNetworkAccess publicNetworkAccess() {
+        return this.innerModel().publicNetworkAccess();
+    }
+
+    public ImmutableStorageAccount immutableStorageWithVersioning() {
+        return this.innerModel().immutableStorageWithVersioning();
+    }
+
+    public AllowedCopyScope allowedCopyScope() {
+        return this.innerModel().allowedCopyScope();
     }
 
     public StorageAccountPropertiesInner innerModel() {

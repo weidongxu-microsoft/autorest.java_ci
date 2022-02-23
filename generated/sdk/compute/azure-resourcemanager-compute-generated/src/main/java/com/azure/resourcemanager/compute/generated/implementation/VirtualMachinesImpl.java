@@ -171,8 +171,9 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VirtualMachine> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<VirtualMachineInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
+    public PagedIterable<VirtualMachine> listByResourceGroup(String resourceGroupName, String filter, Context context) {
+        PagedIterable<VirtualMachineInner> inner =
+            this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
         return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 
@@ -181,8 +182,8 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VirtualMachine> list(String statusOnly, Context context) {
-        PagedIterable<VirtualMachineInner> inner = this.serviceClient().list(statusOnly, context);
+    public PagedIterable<VirtualMachine> list(String statusOnly, String filter, Context context) {
+        PagedIterable<VirtualMachineInner> inner = this.serviceClient().list(statusOnly, filter, context);
         return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 

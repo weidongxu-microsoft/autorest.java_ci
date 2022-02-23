@@ -5,8 +5,10 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.implementation;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVirtualMachineInner;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AssessmentSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoBackupSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoPatchingSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.KeyVaultCredentialSettings;
@@ -55,6 +57,10 @@ public final class SqlVirtualMachineImpl
 
     public ResourceIdentity identity() {
         return this.innerModel().identity();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String virtualMachineResourceId() {
@@ -107,6 +113,10 @@ public final class SqlVirtualMachineImpl
 
     public StorageConfigurationSettings storageConfigurationSettings() {
         return this.innerModel().storageConfigurationSettings();
+    }
+
+    public AssessmentSettings assessmentSettings() {
+        return this.innerModel().assessmentSettings();
     }
 
     public Region region() {
@@ -215,6 +225,22 @@ public final class SqlVirtualMachineImpl
         return this;
     }
 
+    public void redeploy() {
+        serviceManager.sqlVirtualMachines().redeploy(resourceGroupName, sqlVirtualMachineName);
+    }
+
+    public void redeploy(Context context) {
+        serviceManager.sqlVirtualMachines().redeploy(resourceGroupName, sqlVirtualMachineName, context);
+    }
+
+    public void startAssessment() {
+        serviceManager.sqlVirtualMachines().startAssessment(resourceGroupName, sqlVirtualMachineName);
+    }
+
+    public void startAssessment(Context context) {
+        serviceManager.sqlVirtualMachines().startAssessment(resourceGroupName, sqlVirtualMachineName, context);
+    }
+
     public SqlVirtualMachineImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -294,6 +320,11 @@ public final class SqlVirtualMachineImpl
     public SqlVirtualMachineImpl withStorageConfigurationSettings(
         StorageConfigurationSettings storageConfigurationSettings) {
         this.innerModel().withStorageConfigurationSettings(storageConfigurationSettings);
+        return this;
+    }
+
+    public SqlVirtualMachineImpl withAssessmentSettings(AssessmentSettings assessmentSettings) {
+        this.innerModel().withAssessmentSettings(assessmentSettings);
         return this;
     }
 

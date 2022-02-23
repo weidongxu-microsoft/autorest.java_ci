@@ -13,6 +13,7 @@ import com.azure.resourcemanager.compute.generated.fluent.GalleriesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryInner;
 import com.azure.resourcemanager.compute.generated.models.Galleries;
 import com.azure.resourcemanager.compute.generated.models.Gallery;
+import com.azure.resourcemanager.compute.generated.models.GalleryExpandParams;
 import com.azure.resourcemanager.compute.generated.models.SelectPermissions;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -39,9 +40,15 @@ public final class GalleriesImpl implements Galleries {
     }
 
     public Response<Gallery> getByResourceGroupWithResponse(
-        String resourceGroupName, String galleryName, SelectPermissions select, Context context) {
+        String resourceGroupName,
+        String galleryName,
+        SelectPermissions select,
+        GalleryExpandParams expand,
+        Context context) {
         Response<GalleryInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, galleryName, select, context);
+            this
+                .serviceClient()
+                .getByResourceGroupWithResponse(resourceGroupName, galleryName, select, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
@@ -98,12 +105,14 @@ public final class GalleriesImpl implements Galleries {
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
         SelectPermissions localSelect = null;
+        GalleryExpandParams localExpand = null;
         return this
-            .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, Context.NONE)
+            .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, localExpand, Context.NONE)
             .getValue();
     }
 
-    public Response<Gallery> getByIdWithResponse(String id, SelectPermissions select, Context context) {
+    public Response<Gallery> getByIdWithResponse(
+        String id, SelectPermissions select, GalleryExpandParams expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw logger
@@ -119,7 +128,7 @@ public final class GalleriesImpl implements Galleries {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
-        return this.getByResourceGroupWithResponse(resourceGroupName, galleryName, select, context);
+        return this.getByResourceGroupWithResponse(resourceGroupName, galleryName, select, expand, context);
     }
 
     public void deleteById(String id) {

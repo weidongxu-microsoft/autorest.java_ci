@@ -12,86 +12,6 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkRuleSe
 /** Resource collection API of Namespaces. */
 public interface Namespaces {
     /**
-     * Gets a list of IP Filter rules for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of IP Filter rules for a Namespace as paginated response with {@link PagedIterable}.
-     */
-    PagedIterable<IpFilterRule> listIpFilterRules(String resourceGroupName, String namespaceName);
-
-    /**
-     * Gets a list of IP Filter rules for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of IP Filter rules for a Namespace as paginated response with {@link PagedIterable}.
-     */
-    PagedIterable<IpFilterRule> listIpFilterRules(String resourceGroupName, String namespaceName, Context context);
-
-    /**
-     * Deletes an IpFilterRule for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param ipFilterRuleName The IP Filter Rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteIpFilterRule(String resourceGroupName, String namespaceName, String ipFilterRuleName);
-
-    /**
-     * Deletes an IpFilterRule for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param ipFilterRuleName The IP Filter Rule name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    Response<Void> deleteIpFilterRuleWithResponse(
-        String resourceGroupName, String namespaceName, String ipFilterRuleName, Context context);
-
-    /**
-     * Gets an IpFilterRule for a Namespace by rule name.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param ipFilterRuleName The IP Filter Rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name.
-     */
-    IpFilterRule getIpFilterRule(String resourceGroupName, String namespaceName, String ipFilterRuleName);
-
-    /**
-     * Gets an IpFilterRule for a Namespace by rule name.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param ipFilterRuleName The IP Filter Rule name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name along with {@link Response}.
-     */
-    Response<IpFilterRule> getIpFilterRuleWithResponse(
-        String resourceGroupName, String namespaceName, String ipFilterRuleName, Context context);
-
-    /**
      * Lists all the available Namespaces within a subscription, irrespective of the resource groups.
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -184,88 +104,6 @@ public interface Namespaces {
         String resourceGroupName, String namespaceName, Context context);
 
     /**
-     * Gets a list of VirtualNetwork rules for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of VirtualNetwork rules for a Namespace as paginated response with {@link PagedIterable}.
-     */
-    PagedIterable<VirtualNetworkRule> listVirtualNetworkRules(String resourceGroupName, String namespaceName);
-
-    /**
-     * Gets a list of VirtualNetwork rules for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of VirtualNetwork rules for a Namespace as paginated response with {@link PagedIterable}.
-     */
-    PagedIterable<VirtualNetworkRule> listVirtualNetworkRules(
-        String resourceGroupName, String namespaceName, Context context);
-
-    /**
-     * Deletes an VirtualNetworkRule for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param virtualNetworkRuleName The Virtual Network Rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteVirtualNetworkRule(String resourceGroupName, String namespaceName, String virtualNetworkRuleName);
-
-    /**
-     * Deletes an VirtualNetworkRule for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param virtualNetworkRuleName The Virtual Network Rule name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    Response<Void> deleteVirtualNetworkRuleWithResponse(
-        String resourceGroupName, String namespaceName, String virtualNetworkRuleName, Context context);
-
-    /**
-     * Gets an VirtualNetworkRule for a Namespace by rule name.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param virtualNetworkRuleName The Virtual Network Rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an VirtualNetworkRule for a Namespace by rule name.
-     */
-    VirtualNetworkRule getVirtualNetworkRule(
-        String resourceGroupName, String namespaceName, String virtualNetworkRuleName);
-
-    /**
-     * Gets an VirtualNetworkRule for a Namespace by rule name.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param virtualNetworkRuleName The Virtual Network Rule name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an VirtualNetworkRule for a Namespace by rule name along with {@link Response}.
-     */
-    Response<VirtualNetworkRule> getVirtualNetworkRuleWithResponse(
-        String resourceGroupName, String namespaceName, String virtualNetworkRuleName, Context context);
-
-    /**
      * Create or update NetworkRuleSet for a Namespace.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
@@ -318,6 +156,32 @@ public interface Namespaces {
      * @return networkRuleSet for a Namespace along with {@link Response}.
      */
     Response<NetworkRuleSet> getNetworkRuleSetWithResponse(
+        String resourceGroupName, String namespaceName, Context context);
+
+    /**
+     * Gets NetworkRuleSet for a Namespace.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return networkRuleSet for a Namespace.
+     */
+    NetworkRuleSetListResult listNetworkRuleSet(String resourceGroupName, String namespaceName);
+
+    /**
+     * Gets NetworkRuleSet for a Namespace.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return networkRuleSet for a Namespace along with {@link Response}.
+     */
+    Response<NetworkRuleSetListResult> listNetworkRuleSetWithResponse(
         String resourceGroupName, String namespaceName, Context context);
 
     /**
@@ -516,52 +380,6 @@ public interface Namespaces {
     Response<EHNamespace> getByIdWithResponse(String id, Context context);
 
     /**
-     * Gets an IpFilterRule for a Namespace by rule name.
-     *
-     * @param id the resource ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name along with {@link Response}.
-     */
-    IpFilterRule getIpFilterRuleById(String id);
-
-    /**
-     * Gets an IpFilterRule for a Namespace by rule name.
-     *
-     * @param id the resource ID.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name along with {@link Response}.
-     */
-    Response<IpFilterRule> getIpFilterRuleByIdWithResponse(String id, Context context);
-
-    /**
-     * Gets an VirtualNetworkRule for a Namespace by rule name.
-     *
-     * @param id the resource ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an VirtualNetworkRule for a Namespace by rule name along with {@link Response}.
-     */
-    VirtualNetworkRule getVirtualNetworkRuleById(String id);
-
-    /**
-     * Gets an VirtualNetworkRule for a Namespace by rule name.
-     *
-     * @param id the resource ID.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an VirtualNetworkRule for a Namespace by rule name along with {@link Response}.
-     */
-    Response<VirtualNetworkRule> getVirtualNetworkRuleByIdWithResponse(String id, Context context);
-
-    /**
      * Gets an AuthorizationRule for a Namespace by rule name.
      *
      * @param id the resource ID.
@@ -606,50 +424,6 @@ public interface Namespaces {
     void deleteByIdWithResponse(String id, Context context);
 
     /**
-     * Deletes an IpFilterRule for a Namespace.
-     *
-     * @param id the resource ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteIpFilterRuleById(String id);
-
-    /**
-     * Deletes an IpFilterRule for a Namespace.
-     *
-     * @param id the resource ID.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    Response<Void> deleteIpFilterRuleByIdWithResponse(String id, Context context);
-
-    /**
-     * Deletes an VirtualNetworkRule for a Namespace.
-     *
-     * @param id the resource ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteVirtualNetworkRuleById(String id);
-
-    /**
-     * Deletes an VirtualNetworkRule for a Namespace.
-     *
-     * @param id the resource ID.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    Response<Void> deleteVirtualNetworkRuleByIdWithResponse(String id, Context context);
-
-    /**
      * Deletes an AuthorizationRule for a Namespace.
      *
      * @param id the resource ID.
@@ -678,22 +452,6 @@ public interface Namespaces {
      * @return the first stage of the new EHNamespace definition.
      */
     EHNamespace.DefinitionStages.Blank define(String name);
-
-    /**
-     * Begins definition for a new IpFilterRule resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new IpFilterRule definition.
-     */
-    IpFilterRule.DefinitionStages.Blank defineIpFilterRule(String name);
-
-    /**
-     * Begins definition for a new VirtualNetworkRule resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new VirtualNetworkRule definition.
-     */
-    VirtualNetworkRule.DefinitionStages.Blank defineVirtualNetworkRule(String name);
 
     /**
      * Begins definition for a new AuthorizationRule resource.

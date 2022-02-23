@@ -22,6 +22,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineEviction
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachinePriorityTypes;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineProperties;
+import java.time.OffsetDateTime;
 
 public final class VirtualMachinePropertiesImpl implements VirtualMachineProperties {
     private VirtualMachinePropertiesInner innerObject;
@@ -138,6 +139,10 @@ public final class VirtualMachinePropertiesImpl implements VirtualMachinePropert
 
     public ApplicationProfile applicationProfile() {
         return this.innerModel().applicationProfile();
+    }
+
+    public OffsetDateTime timeCreated() {
+        return this.innerModel().timeCreated();
     }
 
     public VirtualMachinePropertiesInner innerModel() {

@@ -11,6 +11,7 @@ import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.compute.generated.fluent.models.RestorePointInner;
+import com.azure.resourcemanager.compute.generated.models.RestorePointExpandOptions;
 
 /** An instance of this class provides access to all the operations defined in RestorePointsClient. */
 public interface RestorePointsClient {
@@ -181,6 +182,8 @@ public interface RestorePointsClient {
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param restorePointName The name of the restore point.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves information about the
+     *     run-time state of a restore point.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -190,5 +193,9 @@ public interface RestorePointsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RestorePointInner> getWithResponse(
-        String resourceGroupName, String restorePointCollectionName, String restorePointName, Context context);
+        String resourceGroupName,
+        String restorePointCollectionName,
+        String restorePointName,
+        RestorePointExpandOptions expand,
+        Context context);
 }

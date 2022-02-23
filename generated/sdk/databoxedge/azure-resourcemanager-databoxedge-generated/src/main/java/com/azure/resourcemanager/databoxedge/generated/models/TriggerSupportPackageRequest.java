@@ -32,7 +32,7 @@ public final class TriggerSupportPackageRequest extends ArmBaseModel {
     }
 
     /**
-     * Get the minimumTimestamp property: MinimumTimeStamp from where logs need to be collected.
+     * Get the minimumTimestamp property: Start of the timespan of the log collection.
      *
      * @return the minimumTimestamp value.
      */
@@ -41,7 +41,7 @@ public final class TriggerSupportPackageRequest extends ArmBaseModel {
     }
 
     /**
-     * Set the minimumTimestamp property: MinimumTimeStamp from where logs need to be collected.
+     * Set the minimumTimestamp property: Start of the timespan of the log collection.
      *
      * @param minimumTimestamp the minimumTimestamp value to set.
      * @return the TriggerSupportPackageRequest object itself.

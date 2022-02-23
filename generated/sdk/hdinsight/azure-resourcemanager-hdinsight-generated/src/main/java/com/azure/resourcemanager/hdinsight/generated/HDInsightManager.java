@@ -29,6 +29,8 @@ import com.azure.resourcemanager.hdinsight.generated.implementation.ExtensionsIm
 import com.azure.resourcemanager.hdinsight.generated.implementation.HDInsightManagementClientBuilder;
 import com.azure.resourcemanager.hdinsight.generated.implementation.LocationsImpl;
 import com.azure.resourcemanager.hdinsight.generated.implementation.OperationsImpl;
+import com.azure.resourcemanager.hdinsight.generated.implementation.PrivateEndpointConnectionsImpl;
+import com.azure.resourcemanager.hdinsight.generated.implementation.PrivateLinkResourcesImpl;
 import com.azure.resourcemanager.hdinsight.generated.implementation.ScriptActionsImpl;
 import com.azure.resourcemanager.hdinsight.generated.implementation.ScriptExecutionHistoriesImpl;
 import com.azure.resourcemanager.hdinsight.generated.implementation.VirtualMachinesImpl;
@@ -38,6 +40,8 @@ import com.azure.resourcemanager.hdinsight.generated.models.Configurations;
 import com.azure.resourcemanager.hdinsight.generated.models.Extensions;
 import com.azure.resourcemanager.hdinsight.generated.models.Locations;
 import com.azure.resourcemanager.hdinsight.generated.models.Operations;
+import com.azure.resourcemanager.hdinsight.generated.models.PrivateEndpointConnections;
+import com.azure.resourcemanager.hdinsight.generated.models.PrivateLinkResources;
 import com.azure.resourcemanager.hdinsight.generated.models.ScriptActions;
 import com.azure.resourcemanager.hdinsight.generated.models.ScriptExecutionHistories;
 import com.azure.resourcemanager.hdinsight.generated.models.VirtualMachines;
@@ -67,6 +71,10 @@ public final class HDInsightManager {
     private Operations operations;
 
     private VirtualMachines virtualMachines;
+
+    private PrivateEndpointConnections privateEndpointConnections;
+
+    private PrivateLinkResources privateLinkResources;
 
     private final HDInsightManagementClient clientObject;
 
@@ -327,6 +335,23 @@ public final class HDInsightManager {
             this.virtualMachines = new VirtualMachinesImpl(clientObject.getVirtualMachines(), this);
         }
         return virtualMachines;
+    }
+
+    /** @return Resource collection API of PrivateEndpointConnections. */
+    public PrivateEndpointConnections privateEndpointConnections() {
+        if (this.privateEndpointConnections == null) {
+            this.privateEndpointConnections =
+                new PrivateEndpointConnectionsImpl(clientObject.getPrivateEndpointConnections(), this);
+        }
+        return privateEndpointConnections;
+    }
+
+    /** @return Resource collection API of PrivateLinkResources. */
+    public PrivateLinkResources privateLinkResources() {
+        if (this.privateLinkResources == null) {
+            this.privateLinkResources = new PrivateLinkResourcesImpl(clientObject.getPrivateLinkResources(), this);
+        }
+        return privateLinkResources;
     }
 
     /**

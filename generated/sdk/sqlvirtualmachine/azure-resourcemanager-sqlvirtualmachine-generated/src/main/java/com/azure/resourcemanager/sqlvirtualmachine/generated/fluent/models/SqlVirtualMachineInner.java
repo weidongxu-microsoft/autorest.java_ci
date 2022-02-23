@@ -6,7 +6,9 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AssessmentSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoBackupSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoPatchingSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.KeyVaultCredentialSettings;
@@ -38,6 +40,12 @@ public final class SqlVirtualMachineInner extends Resource {
     @JsonProperty(value = "properties")
     private SqlVirtualMachineProperties innerProperties;
 
+    /*
+     * Metadata pertaining to creation and last modification of the resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
+
     /**
      * Get the identity property: Azure Active Directory identity of the server.
      *
@@ -65,6 +73,15 @@ public final class SqlVirtualMachineInner extends Resource {
      */
     private SqlVirtualMachineProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of the resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /** {@inheritDoc} */
@@ -374,6 +391,29 @@ public final class SqlVirtualMachineInner extends Resource {
             this.innerProperties = new SqlVirtualMachineProperties();
         }
         this.innerProperties().withStorageConfigurationSettings(storageConfigurationSettings);
+        return this;
+    }
+
+    /**
+     * Get the assessmentSettings property: Assessment Settings.
+     *
+     * @return the assessmentSettings value.
+     */
+    public AssessmentSettings assessmentSettings() {
+        return this.innerProperties() == null ? null : this.innerProperties().assessmentSettings();
+    }
+
+    /**
+     * Set the assessmentSettings property: Assessment Settings.
+     *
+     * @param assessmentSettings the assessmentSettings value to set.
+     * @return the SqlVirtualMachineInner object itself.
+     */
+    public SqlVirtualMachineInner withAssessmentSettings(AssessmentSettings assessmentSettings) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SqlVirtualMachineProperties();
+        }
+        this.innerProperties().withAssessmentSettings(assessmentSettings);
         return this;
     }
 

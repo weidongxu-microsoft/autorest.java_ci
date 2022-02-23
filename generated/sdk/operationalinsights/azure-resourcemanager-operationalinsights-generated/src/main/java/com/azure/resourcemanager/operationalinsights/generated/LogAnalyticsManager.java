@@ -39,6 +39,7 @@ import com.azure.resourcemanager.operationalinsights.generated.implementation.Sa
 import com.azure.resourcemanager.operationalinsights.generated.implementation.SchemasImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.SharedKeysOperationsImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.StorageInsightConfigsImpl;
+import com.azure.resourcemanager.operationalinsights.generated.implementation.TablesImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.UsagesImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.WorkspacePurgesImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.WorkspacesImpl;
@@ -58,6 +59,7 @@ import com.azure.resourcemanager.operationalinsights.generated.models.SavedSearc
 import com.azure.resourcemanager.operationalinsights.generated.models.Schemas;
 import com.azure.resourcemanager.operationalinsights.generated.models.SharedKeysOperations;
 import com.azure.resourcemanager.operationalinsights.generated.models.StorageInsightConfigs;
+import com.azure.resourcemanager.operationalinsights.generated.models.Tables;
 import com.azure.resourcemanager.operationalinsights.generated.models.Usages;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePurges;
 import com.azure.resourcemanager.operationalinsights.generated.models.Workspaces;
@@ -70,6 +72,14 @@ import java.util.stream.Collectors;
 
 /** Entry point to LogAnalyticsManager. Operational Insights Client. */
 public final class LogAnalyticsManager {
+    private Operations operations;
+
+    private Workspaces workspaces;
+
+    private DeletedWorkspaces deletedWorkspaces;
+
+    private Tables tables;
+
     private DataExports dataExports;
 
     private DataSources dataSources;
@@ -100,13 +110,7 @@ public final class LogAnalyticsManager {
 
     private WorkspacePurges workspacePurges;
 
-    private Operations operations;
-
     private Clusters clusters;
-
-    private Workspaces workspaces;
-
-    private DeletedWorkspaces deletedWorkspaces;
 
     private final OperationalInsightsManagementClient clientObject;
 
@@ -296,6 +300,38 @@ public final class LogAnalyticsManager {
         }
     }
 
+    /** @return Resource collection API of Operations. */
+    public Operations operations() {
+        if (this.operations == null) {
+            this.operations = new OperationsImpl(clientObject.getOperations(), this);
+        }
+        return operations;
+    }
+
+    /** @return Resource collection API of Workspaces. */
+    public Workspaces workspaces() {
+        if (this.workspaces == null) {
+            this.workspaces = new WorkspacesImpl(clientObject.getWorkspaces(), this);
+        }
+        return workspaces;
+    }
+
+    /** @return Resource collection API of DeletedWorkspaces. */
+    public DeletedWorkspaces deletedWorkspaces() {
+        if (this.deletedWorkspaces == null) {
+            this.deletedWorkspaces = new DeletedWorkspacesImpl(clientObject.getDeletedWorkspaces(), this);
+        }
+        return deletedWorkspaces;
+    }
+
+    /** @return Resource collection API of Tables. */
+    public Tables tables() {
+        if (this.tables == null) {
+            this.tables = new TablesImpl(clientObject.getTables(), this);
+        }
+        return tables;
+    }
+
     /** @return Resource collection API of DataExports. */
     public DataExports dataExports() {
         if (this.dataExports == null) {
@@ -416,36 +452,12 @@ public final class LogAnalyticsManager {
         return workspacePurges;
     }
 
-    /** @return Resource collection API of Operations. */
-    public Operations operations() {
-        if (this.operations == null) {
-            this.operations = new OperationsImpl(clientObject.getOperations(), this);
-        }
-        return operations;
-    }
-
     /** @return Resource collection API of Clusters. */
     public Clusters clusters() {
         if (this.clusters == null) {
             this.clusters = new ClustersImpl(clientObject.getClusters(), this);
         }
         return clusters;
-    }
-
-    /** @return Resource collection API of Workspaces. */
-    public Workspaces workspaces() {
-        if (this.workspaces == null) {
-            this.workspaces = new WorkspacesImpl(clientObject.getWorkspaces(), this);
-        }
-        return workspaces;
-    }
-
-    /** @return Resource collection API of DeletedWorkspaces. */
-    public DeletedWorkspaces deletedWorkspaces() {
-        if (this.deletedWorkspaces == null) {
-            this.deletedWorkspaces = new DeletedWorkspacesImpl(clientObject.getDeletedWorkspaces(), this);
-        }
-        return deletedWorkspaces;
     }
 
     /**

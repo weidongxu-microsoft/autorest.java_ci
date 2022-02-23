@@ -70,20 +70,6 @@ public final class WorkspacePatch extends AzureEntityResource {
     }
 
     /**
-     * Set the provisioningState property: The provisioning state of the workspace.
-     *
-     * @param provisioningState the provisioningState value to set.
-     * @return the WorkspacePatch object itself.
-     */
-    public WorkspacePatch withProvisioningState(WorkspaceEntityStatus provisioningState) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new WorkspaceProperties();
-        }
-        this.innerProperties().withProvisioningState(provisioningState);
-        return this;
-    }
-
-    /**
      * Get the customerId property: This is a read-only property. Represents the ID associated with the workspace.
      *
      * @return the customerId value.
@@ -279,6 +265,33 @@ public final class WorkspacePatch extends AzureEntityResource {
             this.innerProperties = new WorkspaceProperties();
         }
         this.innerProperties().withFeatures(features);
+        return this;
+    }
+
+    /**
+     * Get the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use
+     * for this workspace. Expected format is -
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+     *
+     * @return the defaultDataCollectionRuleResourceId value.
+     */
+    public String defaultDataCollectionRuleResourceId() {
+        return this.innerProperties() == null ? null : this.innerProperties().defaultDataCollectionRuleResourceId();
+    }
+
+    /**
+     * Set the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use
+     * for this workspace. Expected format is -
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+     *
+     * @param defaultDataCollectionRuleResourceId the defaultDataCollectionRuleResourceId value to set.
+     * @return the WorkspacePatch object itself.
+     */
+    public WorkspacePatch withDefaultDataCollectionRuleResourceId(String defaultDataCollectionRuleResourceId) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new WorkspaceProperties();
+        }
+        this.innerProperties().withDefaultDataCollectionRuleResourceId(defaultDataCollectionRuleResourceId);
         return this;
     }
 

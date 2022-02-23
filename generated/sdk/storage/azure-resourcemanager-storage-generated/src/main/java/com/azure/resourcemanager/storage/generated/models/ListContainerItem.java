@@ -166,6 +166,20 @@ public interface ListContainerItem {
     ImmutableStorageWithVersioning immutableStorageWithVersioning();
 
     /**
+     * Gets the enableNfsV3RootSquash property: Enable NFSv3 root squash on blob container.
+     *
+     * @return the enableNfsV3RootSquash value.
+     */
+    Boolean enableNfsV3RootSquash();
+
+    /**
+     * Gets the enableNfsV3AllSquash property: Enable NFSv3 all squash on blob container.
+     *
+     * @return the enableNfsV3AllSquash value.
+     */
+    Boolean enableNfsV3AllSquash();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.ListContainerItemInner object.
      *
      * @return the inner object.

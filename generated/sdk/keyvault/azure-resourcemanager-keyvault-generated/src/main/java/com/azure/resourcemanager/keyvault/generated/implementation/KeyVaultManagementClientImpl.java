@@ -253,7 +253,7 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2021-06-01-preview";
+        this.apiVersion = "2021-11-01-preview";
         this.keys = new KeysClientImpl(this);
         this.vaults = new VaultsClientImpl(this);
         this.privateEndpointConnections = new PrivateEndpointConnectionsClientImpl(this);

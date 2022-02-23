@@ -33,6 +33,10 @@ public final class LegalHoldImpl implements LegalHold {
         }
     }
 
+    public Boolean allowProtectedAppendWritesAll() {
+        return this.innerModel().allowProtectedAppendWritesAll();
+    }
+
     public LegalHoldInner innerModel() {
         return this.innerObject;
     }

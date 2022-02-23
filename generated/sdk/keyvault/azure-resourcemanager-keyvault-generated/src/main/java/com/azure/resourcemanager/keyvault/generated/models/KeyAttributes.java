@@ -53,6 +53,12 @@ public final class KeyAttributes {
     @JsonProperty(value = "recoveryLevel", access = JsonProperty.Access.WRITE_ONLY)
     private DeletionRecoveryLevel recoveryLevel;
 
+    /*
+     * Indicates if the private key can be exported.
+     */
+    @JsonProperty(value = "exportable")
+    private Boolean exportable;
+
     /**
      * Get the enabled property: Determines whether or not the object is enabled.
      *
@@ -140,6 +146,26 @@ public final class KeyAttributes {
      */
     public DeletionRecoveryLevel recoveryLevel() {
         return this.recoveryLevel;
+    }
+
+    /**
+     * Get the exportable property: Indicates if the private key can be exported.
+     *
+     * @return the exportable value.
+     */
+    public Boolean exportable() {
+        return this.exportable;
+    }
+
+    /**
+     * Set the exportable property: Indicates if the private key can be exported.
+     *
+     * @param exportable the exportable value to set.
+     * @return the KeyAttributes object itself.
+     */
+    public KeyAttributes withExportable(Boolean exportable) {
+        this.exportable = exportable;
+        return this;
     }
 
     /**

@@ -10,6 +10,7 @@ import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyCurveName;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyOperation;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyType;
 import com.azure.resourcemanager.keyvault.generated.models.KeyAttributes;
+import com.azure.resourcemanager.keyvault.generated.models.KeyReleasePolicy;
 import com.azure.resourcemanager.keyvault.generated.models.RotationPolicy;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -68,6 +69,13 @@ public final class KeyProperties {
      */
     @JsonProperty(value = "rotationPolicy")
     private RotationPolicy rotationPolicy;
+
+    /*
+     * Key release policy in response. It will be used for both output and
+     * input. Omitted if empty
+     */
+    @JsonProperty(value = "release_policy")
+    private KeyReleasePolicy releasePolicy;
 
     /**
      * Get the attributes property: The attributes of the key.
@@ -210,6 +218,28 @@ public final class KeyProperties {
     }
 
     /**
+     * Get the releasePolicy property: Key release policy in response. It will be used for both output and input.
+     * Omitted if empty.
+     *
+     * @return the releasePolicy value.
+     */
+    public KeyReleasePolicy releasePolicy() {
+        return this.releasePolicy;
+    }
+
+    /**
+     * Set the releasePolicy property: Key release policy in response. It will be used for both output and input.
+     * Omitted if empty.
+     *
+     * @param releasePolicy the releasePolicy value to set.
+     * @return the KeyProperties object itself.
+     */
+    public KeyProperties withReleasePolicy(KeyReleasePolicy releasePolicy) {
+        this.releasePolicy = releasePolicy;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -220,6 +250,9 @@ public final class KeyProperties {
         }
         if (rotationPolicy() != null) {
             rotationPolicy().validate();
+        }
+        if (releasePolicy() != null) {
+            releasePolicy().validate();
         }
     }
 }

@@ -27,6 +27,8 @@ import com.azure.resourcemanager.appservice.generated.fluent.AppServicePlansClie
 import com.azure.resourcemanager.appservice.generated.fluent.CertificateOrdersDiagnosticsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.CertificateRegistrationProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.CertificatesClient;
+import com.azure.resourcemanager.appservice.generated.fluent.ContainerAppsClient;
+import com.azure.resourcemanager.appservice.generated.fluent.ContainerAppsRevisionsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.DeletedWebAppsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.DiagnosticsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.DomainRegistrationProvidersClient;
@@ -236,6 +238,30 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
         return this.certificates;
     }
 
+    /** The ContainerAppsClient object to access its operations. */
+    private final ContainerAppsClient containerApps;
+
+    /**
+     * Gets the ContainerAppsClient object to access its operations.
+     *
+     * @return the ContainerAppsClient object.
+     */
+    public ContainerAppsClient getContainerApps() {
+        return this.containerApps;
+    }
+
+    /** The ContainerAppsRevisionsClient object to access its operations. */
+    private final ContainerAppsRevisionsClient containerAppsRevisions;
+
+    /**
+     * Gets the ContainerAppsRevisionsClient object to access its operations.
+     *
+     * @return the ContainerAppsRevisionsClient object.
+     */
+    public ContainerAppsRevisionsClient getContainerAppsRevisions() {
+        return this.containerAppsRevisions;
+    }
+
     /** The DeletedWebAppsClient object to access its operations. */
     private final DeletedWebAppsClient deletedWebApps;
 
@@ -379,7 +405,7 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2021-02-01";
+        this.apiVersion = "2021-03-01";
         this.appServiceCertificateOrders = new AppServiceCertificateOrdersClientImpl(this);
         this.certificateOrdersDiagnostics = new CertificateOrdersDiagnosticsClientImpl(this);
         this.certificateRegistrationProviders = new CertificateRegistrationProvidersClientImpl(this);
@@ -389,6 +415,8 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
         this.appServiceEnvironments = new AppServiceEnvironmentsClientImpl(this);
         this.appServicePlans = new AppServicePlansClientImpl(this);
         this.certificates = new CertificatesClientImpl(this);
+        this.containerApps = new ContainerAppsClientImpl(this);
+        this.containerAppsRevisions = new ContainerAppsRevisionsClientImpl(this);
         this.deletedWebApps = new DeletedWebAppsClientImpl(this);
         this.diagnostics = new DiagnosticsClientImpl(this);
         this.globals = new GlobalsClientImpl(this);

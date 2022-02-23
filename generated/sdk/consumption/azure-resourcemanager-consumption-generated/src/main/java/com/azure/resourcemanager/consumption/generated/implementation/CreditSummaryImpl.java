@@ -77,6 +77,10 @@ public final class CreditSummaryImpl implements CreditSummary {
         return this.innerModel().reseller();
     }
 
+    public String etagPropertiesEtag() {
+        return this.innerModel().etagPropertiesEtag();
+    }
+
     public CreditSummaryInner innerModel() {
         return this.innerObject;
     }

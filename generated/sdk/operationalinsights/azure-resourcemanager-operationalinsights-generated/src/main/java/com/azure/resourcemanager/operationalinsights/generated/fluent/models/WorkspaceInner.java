@@ -6,6 +6,7 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.PrivateLinkScopedResource;
 import com.azure.resourcemanager.operationalinsights.generated.models.PublicNetworkAccessType;
@@ -30,6 +31,12 @@ public final class WorkspaceInner extends Resource {
     private WorkspaceProperties innerProperties;
 
     /*
+     * Metadata pertaining to creation and last modification of the resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
+
+    /*
      * The ETag of the workspace.
      */
     @JsonProperty(value = "eTag")
@@ -42,6 +49,15 @@ public final class WorkspaceInner extends Resource {
      */
     private WorkspaceProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of the resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**
@@ -85,20 +101,6 @@ public final class WorkspaceInner extends Resource {
      */
     public WorkspaceEntityStatus provisioningState() {
         return this.innerProperties() == null ? null : this.innerProperties().provisioningState();
-    }
-
-    /**
-     * Set the provisioningState property: The provisioning state of the workspace.
-     *
-     * @param provisioningState the provisioningState value to set.
-     * @return the WorkspaceInner object itself.
-     */
-    public WorkspaceInner withProvisioningState(WorkspaceEntityStatus provisioningState) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new WorkspaceProperties();
-        }
-        this.innerProperties().withProvisioningState(provisioningState);
-        return this;
     }
 
     /**
@@ -297,6 +299,33 @@ public final class WorkspaceInner extends Resource {
             this.innerProperties = new WorkspaceProperties();
         }
         this.innerProperties().withFeatures(features);
+        return this;
+    }
+
+    /**
+     * Get the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use
+     * for this workspace. Expected format is -
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+     *
+     * @return the defaultDataCollectionRuleResourceId value.
+     */
+    public String defaultDataCollectionRuleResourceId() {
+        return this.innerProperties() == null ? null : this.innerProperties().defaultDataCollectionRuleResourceId();
+    }
+
+    /**
+     * Set the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use
+     * for this workspace. Expected format is -
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+     *
+     * @param defaultDataCollectionRuleResourceId the defaultDataCollectionRuleResourceId value to set.
+     * @return the WorkspaceInner object itself.
+     */
+    public WorkspaceInner withDefaultDataCollectionRuleResourceId(String defaultDataCollectionRuleResourceId) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new WorkspaceProperties();
+        }
+        this.innerProperties().withDefaultDataCollectionRuleResourceId(defaultDataCollectionRuleResourceId);
         return this;
     }
 

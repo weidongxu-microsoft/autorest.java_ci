@@ -163,6 +163,12 @@ public final class EventProperties {
     @JsonProperty(value = "closedBalanceInBillingCurrency", access = JsonProperty.Access.WRITE_ONLY)
     private AmountWithExchangeRate closedBalanceInBillingCurrency;
 
+    /*
+     * The eTag for the resource.
+     */
+    @JsonProperty(value = "eTag", access = JsonProperty.Access.WRITE_ONLY)
+    private String etag;
+
     /**
      * Get the transactionDate property: The date of the event.
      *
@@ -377,6 +383,15 @@ public final class EventProperties {
      */
     public AmountWithExchangeRate closedBalanceInBillingCurrency() {
         return this.closedBalanceInBillingCurrency;
+    }
+
+    /**
+     * Get the etag property: The eTag for the resource.
+     *
+     * @return the etag value.
+     */
+    public String etag() {
+        return this.etag;
     }
 
     /**

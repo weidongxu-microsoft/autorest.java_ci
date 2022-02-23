@@ -29,6 +29,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceRequiredIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMProfile;
+import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -151,6 +152,10 @@ public final class VirtualMachineScaleSetImpl
 
     public SpotRestorePolicy spotRestorePolicy() {
         return this.innerModel().spotRestorePolicy();
+    }
+
+    public OffsetDateTime timeCreated() {
+        return this.innerModel().timeCreated();
     }
 
     public Region region() {

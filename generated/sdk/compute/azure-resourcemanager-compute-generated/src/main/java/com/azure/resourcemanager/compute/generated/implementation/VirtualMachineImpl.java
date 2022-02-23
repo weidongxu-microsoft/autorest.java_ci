@@ -41,6 +41,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstallP
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachinePriorityTypes;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineReimageParameters;
+import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -214,6 +215,10 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
 
     public ApplicationProfile applicationProfile() {
         return this.innerModel().applicationProfile();
+    }
+
+    public OffsetDateTime timeCreated() {
+        return this.innerModel().timeCreated();
     }
 
     public Region region() {

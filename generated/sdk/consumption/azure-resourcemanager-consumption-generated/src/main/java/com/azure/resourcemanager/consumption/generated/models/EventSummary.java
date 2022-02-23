@@ -6,7 +6,6 @@ package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.resourcemanager.consumption.generated.fluent.models.EventSummaryInner;
 import java.time.OffsetDateTime;
-import java.util.Map;
 
 /** An immutable client-side representation of EventSummary. */
 public interface EventSummary {
@@ -32,18 +31,12 @@ public interface EventSummary {
     String type();
 
     /**
-     * Gets the etag property: The etag for the resource.
+     * Gets the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
+     * determine whether the user is updating the latest version or not.
      *
      * @return the etag value.
      */
     String etag();
-
-    /**
-     * Gets the tags property: Resource tags.
-     *
-     * @return the tags value.
-     */
-    Map<String, String> tags();
 
     /**
      * Gets the transactionDate property: The date of the event.
@@ -205,6 +198,13 @@ public interface EventSummary {
      * @return the closedBalanceInBillingCurrency value.
      */
     AmountWithExchangeRate closedBalanceInBillingCurrency();
+
+    /**
+     * Gets the etagPropertiesEtag property: The eTag for the resource.
+     *
+     * @return the etagPropertiesEtag value.
+     */
+    String etagPropertiesEtag();
 
     /**
      * Gets the inner com.azure.resourcemanager.consumption.generated.fluent.models.EventSummaryInner object.

@@ -6,6 +6,7 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.ClusterSku;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,6 +23,12 @@ public final class ClusterInner extends Resource {
      */
     @JsonProperty(value = "sku")
     private ClusterSku sku;
+
+    /*
+     * The system meta data relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /*
      * Event Hubs Cluster properties supplied in responses in List or Get
@@ -48,6 +55,15 @@ public final class ClusterInner extends Resource {
     public ClusterInner withSku(ClusterSku sku) {
         this.sku = sku;
         return this;
+    }
+
+    /**
+     * Get the systemData property: The system meta data relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**

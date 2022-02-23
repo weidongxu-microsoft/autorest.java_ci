@@ -11,6 +11,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.RestorePointsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.RestorePointInner;
 import com.azure.resourcemanager.compute.generated.models.RestorePoint;
+import com.azure.resourcemanager.compute.generated.models.RestorePointExpandOptions;
 import com.azure.resourcemanager.compute.generated.models.RestorePoints;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -47,11 +48,15 @@ public final class RestorePointsImpl implements RestorePoints {
     }
 
     public Response<RestorePoint> getWithResponse(
-        String resourceGroupName, String restorePointCollectionName, String restorePointName, Context context) {
+        String resourceGroupName,
+        String restorePointCollectionName,
+        String restorePointName,
+        RestorePointExpandOptions expand,
+        Context context) {
         Response<RestorePointInner> inner =
             this
                 .serviceClient()
-                .getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, context);
+                .getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
@@ -89,12 +94,13 @@ public final class RestorePointsImpl implements RestorePoints {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'restorePoints'.", id)));
         }
+        RestorePointExpandOptions localExpand = null;
         return this
-            .getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, Context.NONE)
+            .getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, localExpand, Context.NONE)
             .getValue();
     }
 
-    public Response<RestorePoint> getByIdWithResponse(String id, Context context) {
+    public Response<RestorePoint> getByIdWithResponse(String id, RestorePointExpandOptions expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw logger
@@ -120,7 +126,7 @@ public final class RestorePointsImpl implements RestorePoints {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'restorePoints'.", id)));
         }
-        return this.getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, context);
+        return this.getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, expand, context);
     }
 
     public void deleteById(String id) {

@@ -5,6 +5,8 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.http.rest.Response;
+import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ArmDisasterRecoveryInner;
 
@@ -30,6 +32,20 @@ public interface ArmDisasterRecovery {
      * @return the type value.
      */
     String type();
+
+    /**
+     * Gets the systemData property: The system meta data relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
+     * Gets the location property: The geo-location where the resource lives.
+     *
+     * @return the location value.
+     */
+    String location();
 
     /**
      * Gets the provisioningState property: Provisioning state of the Alias(Disaster Recovery configuration) - possible
@@ -68,6 +84,20 @@ public interface ArmDisasterRecovery {
      * @return the pendingReplicationOperationsCount value.
      */
     Long pendingReplicationOperationsCount();
+
+    /**
+     * Gets the region of the resource.
+     *
+     * @return the region of the resource.
+     */
+    Region region();
+
+    /**
+     * Gets the name of the resource region.
+     *
+     * @return the name of the resource region.
+     */
+    String regionName();
 
     /**
      * Gets the inner com.azure.resourcemanager.eventhubs.generated.fluent.models.ArmDisasterRecoveryInner object.

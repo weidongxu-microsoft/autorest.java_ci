@@ -105,6 +105,13 @@ public interface VirtualNetworkPeering {
     VirtualNetworkBgpCommunities remoteBgpCommunities();
 
     /**
+     * Gets the remoteVirtualNetworkEncryption property: The reference to the remote virtual network's encryption.
+     *
+     * @return the remoteVirtualNetworkEncryption value.
+     */
+    VirtualNetworkEncryption remoteVirtualNetworkEncryption();
+
+    /**
      * Gets the peeringState property: The status of the virtual network peering.
      *
      * @return the peeringState value.

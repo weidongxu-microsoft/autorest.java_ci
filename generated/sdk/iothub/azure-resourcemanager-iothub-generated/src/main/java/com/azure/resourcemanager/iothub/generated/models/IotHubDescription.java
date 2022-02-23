@@ -7,6 +7,7 @@ package com.azure.resourcemanager.iothub.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.iothub.generated.fluent.models.IotHubDescriptionInner;
 import java.util.Map;
@@ -76,6 +77,13 @@ public interface IotHubDescription {
      * @return the identity value.
      */
     ArmIdentity identity();
+
+    /**
+     * Gets the systemData property: The system meta data relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
 
     /**
      * Gets the region of the resource.

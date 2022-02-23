@@ -117,6 +117,14 @@ public final class ListContainerItemImpl implements ListContainerItem {
         return this.innerModel().immutableStorageWithVersioning();
     }
 
+    public Boolean enableNfsV3RootSquash() {
+        return this.innerModel().enableNfsV3RootSquash();
+    }
+
+    public Boolean enableNfsV3AllSquash() {
+        return this.innerModel().enableNfsV3AllSquash();
+    }
+
     public ListContainerItemInner innerModel() {
         return this.innerObject;
     }

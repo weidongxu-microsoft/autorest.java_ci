@@ -53,6 +53,14 @@ public final class SqlVirtualMachinesImpl implements SqlVirtualMachines {
         return Utils.mapPage(inner, inner1 -> new SqlVirtualMachineImpl(inner1, this.manager()));
     }
 
+    public void redeploy(String resourceGroupName, String sqlVirtualMachineName) {
+        this.serviceClient().redeploy(resourceGroupName, sqlVirtualMachineName);
+    }
+
+    public void redeploy(String resourceGroupName, String sqlVirtualMachineName, Context context) {
+        this.serviceClient().redeploy(resourceGroupName, sqlVirtualMachineName, context);
+    }
+
     public SqlVirtualMachine getByResourceGroup(String resourceGroupName, String sqlVirtualMachineName) {
         SqlVirtualMachineInner inner =
             this.serviceClient().getByResourceGroup(resourceGroupName, sqlVirtualMachineName);
@@ -97,6 +105,14 @@ public final class SqlVirtualMachinesImpl implements SqlVirtualMachines {
         PagedIterable<SqlVirtualMachineInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new SqlVirtualMachineImpl(inner1, this.manager()));
+    }
+
+    public void startAssessment(String resourceGroupName, String sqlVirtualMachineName) {
+        this.serviceClient().startAssessment(resourceGroupName, sqlVirtualMachineName);
+    }
+
+    public void startAssessment(String resourceGroupName, String sqlVirtualMachineName, Context context) {
+        this.serviceClient().startAssessment(resourceGroupName, sqlVirtualMachineName, context);
     }
 
     public SqlVirtualMachine getById(String id) {

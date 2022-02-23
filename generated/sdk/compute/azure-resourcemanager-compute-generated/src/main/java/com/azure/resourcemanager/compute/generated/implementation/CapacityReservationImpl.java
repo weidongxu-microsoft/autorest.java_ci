@@ -87,6 +87,10 @@ public final class CapacityReservationImpl
         return this.innerModel().instanceView();
     }
 
+    public OffsetDateTime timeCreated() {
+        return this.innerModel().timeCreated();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }

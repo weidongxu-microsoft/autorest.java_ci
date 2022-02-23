@@ -118,6 +118,14 @@ public interface DedicatedHost {
     DedicatedHostInstanceView instanceView();
 
     /**
+     * Gets the timeCreated property: Specifies the time at which the Dedicated Host resource was
+     * created.&lt;br&gt;&lt;br&gt;Minimum api-version: 2021-11-01.
+     *
+     * @return the timeCreated value.
+     */
+    OffsetDateTime timeCreated();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -360,4 +368,30 @@ public interface DedicatedHost {
      * @return the refreshed resource.
      */
     DedicatedHost refresh(Context context);
+
+    /**
+     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is
+     * running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource
+     * Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/en-us/azure/service-health/resource-health-overview for more details.
+     *
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void restart();
+
+    /**
+     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is
+     * running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource
+     * Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/en-us/azure/service-health/resource-health-overview for more details.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void restart(Context context);
 }

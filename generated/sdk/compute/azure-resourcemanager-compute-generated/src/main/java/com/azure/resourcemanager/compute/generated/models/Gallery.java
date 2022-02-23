@@ -83,6 +83,13 @@ public interface Gallery {
     SoftDeletePolicy softDeletePolicy();
 
     /**
+     * Gets the sharingStatus property: Sharing status of current gallery.
+     *
+     * @return the sharingStatus value.
+     */
+    SharingStatus sharingStatus();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.

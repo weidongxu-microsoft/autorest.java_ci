@@ -9,8 +9,10 @@ import com.azure.resourcemanager.compute.generated.fluent.models.RestorePointInn
 import com.azure.resourcemanager.compute.generated.models.ApiEntityReference;
 import com.azure.resourcemanager.compute.generated.models.ConsistencyModeTypes;
 import com.azure.resourcemanager.compute.generated.models.RestorePoint;
-import com.azure.resourcemanager.compute.generated.models.RestorePointProvisioningDetails;
+import com.azure.resourcemanager.compute.generated.models.RestorePointExpandOptions;
+import com.azure.resourcemanager.compute.generated.models.RestorePointInstanceView;
 import com.azure.resourcemanager.compute.generated.models.RestorePointSourceMetadata;
+import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
 
@@ -58,8 +60,16 @@ public final class RestorePointImpl implements RestorePoint, RestorePoint.Defini
         return this.innerModel().consistencyMode();
     }
 
-    public RestorePointProvisioningDetails provisioningDetails() {
-        return this.innerModel().provisioningDetails();
+    public OffsetDateTime timeCreated() {
+        return this.innerModel().timeCreated();
+    }
+
+    public ApiEntityReference sourceRestorePoint() {
+        return this.innerModel().sourceRestorePoint();
+    }
+
+    public RestorePointInstanceView instanceView() {
+        return this.innerModel().instanceView();
     }
 
     public RestorePointInner innerModel() {
@@ -109,27 +119,40 @@ public final class RestorePointImpl implements RestorePoint, RestorePoint.Defini
     }
 
     public RestorePoint refresh() {
+        RestorePointExpandOptions localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getRestorePoints()
-                .getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, Context.NONE)
+                .getWithResponse(
+                    resourceGroupName, restorePointCollectionName, restorePointName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public RestorePoint refresh(Context context) {
+        RestorePointExpandOptions localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getRestorePoints()
-                .getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, context)
+                .getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, localExpand, context)
                 .getValue();
         return this;
     }
 
     public RestorePointImpl withExcludeDisks(List<ApiEntityReference> excludeDisks) {
         this.innerModel().withExcludeDisks(excludeDisks);
+        return this;
+    }
+
+    public RestorePointImpl withTimeCreated(OffsetDateTime timeCreated) {
+        this.innerModel().withTimeCreated(timeCreated);
+        return this;
+    }
+
+    public RestorePointImpl withSourceRestorePoint(ApiEntityReference sourceRestorePoint) {
+        this.innerModel().withSourceRestorePoint(sourceRestorePoint);
         return this;
     }
 }

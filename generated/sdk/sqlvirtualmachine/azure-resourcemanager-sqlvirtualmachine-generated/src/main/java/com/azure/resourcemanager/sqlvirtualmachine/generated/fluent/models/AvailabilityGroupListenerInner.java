@@ -6,7 +6,9 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AgConfiguration;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.LoadBalancerConfiguration;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -23,6 +25,12 @@ public final class AvailabilityGroupListenerInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private AvailabilityGroupListenerProperties innerProperties;
 
+    /*
+     * Metadata pertaining to creation and last modification of the resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
+
     /**
      * Get the innerProperties property: Resource properties.
      *
@@ -30,6 +38,15 @@ public final class AvailabilityGroupListenerInner extends ProxyResource {
      */
     private AvailabilityGroupListenerProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of the resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**
@@ -138,6 +155,30 @@ public final class AvailabilityGroupListenerInner extends ProxyResource {
             this.innerProperties = new AvailabilityGroupListenerProperties();
         }
         this.innerProperties().withPort(port);
+        return this;
+    }
+
+    /**
+     * Get the availabilityGroupConfiguration property: Availability Group configuration.
+     *
+     * @return the availabilityGroupConfiguration value.
+     */
+    public AgConfiguration availabilityGroupConfiguration() {
+        return this.innerProperties() == null ? null : this.innerProperties().availabilityGroupConfiguration();
+    }
+
+    /**
+     * Set the availabilityGroupConfiguration property: Availability Group configuration.
+     *
+     * @param availabilityGroupConfiguration the availabilityGroupConfiguration value to set.
+     * @return the AvailabilityGroupListenerInner object itself.
+     */
+    public AvailabilityGroupListenerInner withAvailabilityGroupConfiguration(
+        AgConfiguration availabilityGroupConfiguration) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new AvailabilityGroupListenerProperties();
+        }
+        this.innerProperties().withAvailabilityGroupConfiguration(availabilityGroupConfiguration);
         return this;
     }
 

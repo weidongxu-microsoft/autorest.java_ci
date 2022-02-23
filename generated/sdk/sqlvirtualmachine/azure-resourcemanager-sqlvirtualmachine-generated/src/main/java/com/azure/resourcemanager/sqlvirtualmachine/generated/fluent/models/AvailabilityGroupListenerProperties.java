@@ -6,6 +6,7 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AgConfiguration;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.LoadBalancerConfiguration;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -45,6 +46,12 @@ public final class AvailabilityGroupListenerProperties {
      */
     @JsonProperty(value = "port")
     private Integer port;
+
+    /*
+     * Availability Group configuration.
+     */
+    @JsonProperty(value = "availabilityGroupConfiguration")
+    private AgConfiguration availabilityGroupConfiguration;
 
     /**
      * Get the provisioningState property: Provisioning state to track the async operation status.
@@ -142,6 +149,27 @@ public final class AvailabilityGroupListenerProperties {
     }
 
     /**
+     * Get the availabilityGroupConfiguration property: Availability Group configuration.
+     *
+     * @return the availabilityGroupConfiguration value.
+     */
+    public AgConfiguration availabilityGroupConfiguration() {
+        return this.availabilityGroupConfiguration;
+    }
+
+    /**
+     * Set the availabilityGroupConfiguration property: Availability Group configuration.
+     *
+     * @param availabilityGroupConfiguration the availabilityGroupConfiguration value to set.
+     * @return the AvailabilityGroupListenerProperties object itself.
+     */
+    public AvailabilityGroupListenerProperties withAvailabilityGroupConfiguration(
+        AgConfiguration availabilityGroupConfiguration) {
+        this.availabilityGroupConfiguration = availabilityGroupConfiguration;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -149,6 +177,9 @@ public final class AvailabilityGroupListenerProperties {
     public void validate() {
         if (loadBalancerConfigurations() != null) {
             loadBalancerConfigurations().forEach(e -> e.validate());
+        }
+        if (availabilityGroupConfiguration() != null) {
+            availabilityGroupConfiguration().validate();
         }
     }
 }

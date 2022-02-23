@@ -6,6 +6,7 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ClusterConfiguration;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ClusterManagerType;
@@ -27,6 +28,12 @@ public final class SqlVirtualMachineGroupInner extends Resource {
     @JsonProperty(value = "properties")
     private SqlVirtualMachineGroupProperties innerProperties;
 
+    /*
+     * Metadata pertaining to creation and last modification of the resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
+
     /**
      * Get the innerProperties property: Resource properties.
      *
@@ -34,6 +41,15 @@ public final class SqlVirtualMachineGroupInner extends Resource {
      */
     private SqlVirtualMachineGroupProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of the resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /** {@inheritDoc} */

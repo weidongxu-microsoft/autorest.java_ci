@@ -292,7 +292,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the diagnostic proactive log collection settings of a device along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
@@ -353,7 +354,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the diagnostic proactive log collection settings of a device along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
@@ -411,20 +413,26 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of long-running operation.
+     * @return the {@link PollerFlux} for polling of the diagnostic proactive log collection settings of a device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
+    private PollerFlux<
+            PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
+        beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
+            String deviceName,
+            String resourceGroupName,
+            DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
         Mono<Response<Flux<ByteBuffer>>> mono =
             updateDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
                 deviceName, resourceGroupName, proactiveLogCollectionSettings);
         return this
             .client
-            .<Void, Void>getLroResult(
-                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+            .<DiagnosticProactiveLogCollectionSettingsInner, DiagnosticProactiveLogCollectionSettingsInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                DiagnosticProactiveLogCollectionSettingsInner.class,
+                DiagnosticProactiveLogCollectionSettingsInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -437,21 +445,28 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of long-running operation.
+     * @return the {@link PollerFlux} for polling of the diagnostic proactive log collection settings of a device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
-        Context context) {
+    private PollerFlux<
+            PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
+        beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
+            String deviceName,
+            String resourceGroupName,
+            DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
+            Context context) {
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono =
             updateDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
                 deviceName, resourceGroupName, proactiveLogCollectionSettings, context);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, context);
+            .<DiagnosticProactiveLogCollectionSettingsInner, DiagnosticProactiveLogCollectionSettingsInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                DiagnosticProactiveLogCollectionSettingsInner.class,
+                DiagnosticProactiveLogCollectionSettingsInner.class,
+                context);
     }
 
     /**
@@ -463,13 +478,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of long-running operation.
+     * @return the {@link SyncPoller} for polling of the diagnostic proactive log collection settings of a device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginUpdateDiagnosticProactiveLogCollectionSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
+    public SyncPoller<
+            PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
+        beginUpdateDiagnosticProactiveLogCollectionSettings(
+            String deviceName,
+            String resourceGroupName,
+            DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
         return beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
                 deviceName, resourceGroupName, proactiveLogCollectionSettings)
             .getSyncPoller();
@@ -485,14 +502,16 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of long-running operation.
+     * @return the {@link SyncPoller} for polling of the diagnostic proactive log collection settings of a device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginUpdateDiagnosticProactiveLogCollectionSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
-        Context context) {
+    public SyncPoller<
+            PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
+        beginUpdateDiagnosticProactiveLogCollectionSettings(
+            String deviceName,
+            String resourceGroupName,
+            DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
+            Context context) {
         return beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
                 deviceName, resourceGroupName, proactiveLogCollectionSettings, context)
             .getSyncPoller();
@@ -507,10 +526,10 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return A {@link Mono} that completes when a successful response is received.
+     * @return the diagnostic proactive log collection settings of a device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> updateDiagnosticProactiveLogCollectionSettingsAsync(
+    private Mono<DiagnosticProactiveLogCollectionSettingsInner> updateDiagnosticProactiveLogCollectionSettingsAsync(
         String deviceName,
         String resourceGroupName,
         DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
@@ -530,10 +549,10 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return A {@link Mono} that completes when a successful response is received.
+     * @return the diagnostic proactive log collection settings of a device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> updateDiagnosticProactiveLogCollectionSettingsAsync(
+    private Mono<DiagnosticProactiveLogCollectionSettingsInner> updateDiagnosticProactiveLogCollectionSettingsAsync(
         String deviceName,
         String resourceGroupName,
         DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
@@ -553,13 +572,14 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the diagnostic proactive log collection settings of a device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void updateDiagnosticProactiveLogCollectionSettings(
+    public DiagnosticProactiveLogCollectionSettingsInner updateDiagnosticProactiveLogCollectionSettings(
         String deviceName,
         String resourceGroupName,
         DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
-        updateDiagnosticProactiveLogCollectionSettingsAsync(
+        return updateDiagnosticProactiveLogCollectionSettingsAsync(
                 deviceName, resourceGroupName, proactiveLogCollectionSettings)
             .block();
     }
@@ -574,14 +594,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the diagnostic proactive log collection settings of a device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void updateDiagnosticProactiveLogCollectionSettings(
+    public DiagnosticProactiveLogCollectionSettingsInner updateDiagnosticProactiveLogCollectionSettings(
         String deviceName,
         String resourceGroupName,
         DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
         Context context) {
-        updateDiagnosticProactiveLogCollectionSettingsAsync(
+        return updateDiagnosticProactiveLogCollectionSettingsAsync(
                 deviceName, resourceGroupName, proactiveLogCollectionSettings, context)
             .block();
     }
@@ -750,7 +771,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the remote support settings of a device along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticRemoteSupportSettingsWithResponseAsync(
@@ -811,7 +833,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
+     * @return the remote support settings of a device along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticRemoteSupportSettingsWithResponseAsync(
@@ -869,20 +892,25 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of long-running operation.
+     * @return the {@link PollerFlux} for polling of the remote support settings of a device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginUpdateDiagnosticRemoteSupportSettingsAsync(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
+    private PollerFlux<PollResult<DiagnosticRemoteSupportSettingsInner>, DiagnosticRemoteSupportSettingsInner>
+        beginUpdateDiagnosticRemoteSupportSettingsAsync(
+            String deviceName,
+            String resourceGroupName,
+            DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
         Mono<Response<Flux<ByteBuffer>>> mono =
             updateDiagnosticRemoteSupportSettingsWithResponseAsync(
                 deviceName, resourceGroupName, diagnosticRemoteSupportSettings);
         return this
             .client
-            .<Void, Void>getLroResult(
-                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+            .<DiagnosticRemoteSupportSettingsInner, DiagnosticRemoteSupportSettingsInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                DiagnosticRemoteSupportSettingsInner.class,
+                DiagnosticRemoteSupportSettingsInner.class,
+                this.client.getContext());
     }
 
     /**
@@ -895,21 +923,27 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of long-running operation.
+     * @return the {@link PollerFlux} for polling of the remote support settings of a device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginUpdateDiagnosticRemoteSupportSettingsAsync(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
-        Context context) {
+    private PollerFlux<PollResult<DiagnosticRemoteSupportSettingsInner>, DiagnosticRemoteSupportSettingsInner>
+        beginUpdateDiagnosticRemoteSupportSettingsAsync(
+            String deviceName,
+            String resourceGroupName,
+            DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
+            Context context) {
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono =
             updateDiagnosticRemoteSupportSettingsWithResponseAsync(
                 deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context);
         return this
             .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, context);
+            .<DiagnosticRemoteSupportSettingsInner, DiagnosticRemoteSupportSettingsInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                DiagnosticRemoteSupportSettingsInner.class,
+                DiagnosticRemoteSupportSettingsInner.class,
+                context);
     }
 
     /**
@@ -921,13 +955,14 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of long-running operation.
+     * @return the {@link SyncPoller} for polling of the remote support settings of a device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginUpdateDiagnosticRemoteSupportSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
+    public SyncPoller<PollResult<DiagnosticRemoteSupportSettingsInner>, DiagnosticRemoteSupportSettingsInner>
+        beginUpdateDiagnosticRemoteSupportSettings(
+            String deviceName,
+            String resourceGroupName,
+            DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
         return beginUpdateDiagnosticRemoteSupportSettingsAsync(
                 deviceName, resourceGroupName, diagnosticRemoteSupportSettings)
             .getSyncPoller();
@@ -943,14 +978,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of long-running operation.
+     * @return the {@link SyncPoller} for polling of the remote support settings of a device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginUpdateDiagnosticRemoteSupportSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
-        Context context) {
+    public SyncPoller<PollResult<DiagnosticRemoteSupportSettingsInner>, DiagnosticRemoteSupportSettingsInner>
+        beginUpdateDiagnosticRemoteSupportSettings(
+            String deviceName,
+            String resourceGroupName,
+            DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
+            Context context) {
         return beginUpdateDiagnosticRemoteSupportSettingsAsync(
                 deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context)
             .getSyncPoller();
@@ -965,10 +1001,10 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return A {@link Mono} that completes when a successful response is received.
+     * @return the remote support settings of a device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> updateDiagnosticRemoteSupportSettingsAsync(
+    private Mono<DiagnosticRemoteSupportSettingsInner> updateDiagnosticRemoteSupportSettingsAsync(
         String deviceName,
         String resourceGroupName,
         DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
@@ -988,10 +1024,10 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return A {@link Mono} that completes when a successful response is received.
+     * @return the remote support settings of a device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> updateDiagnosticRemoteSupportSettingsAsync(
+    private Mono<DiagnosticRemoteSupportSettingsInner> updateDiagnosticRemoteSupportSettingsAsync(
         String deviceName,
         String resourceGroupName,
         DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
@@ -1011,13 +1047,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the remote support settings of a device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void updateDiagnosticRemoteSupportSettings(
+    public DiagnosticRemoteSupportSettingsInner updateDiagnosticRemoteSupportSettings(
         String deviceName,
         String resourceGroupName,
         DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
-        updateDiagnosticRemoteSupportSettingsAsync(deviceName, resourceGroupName, diagnosticRemoteSupportSettings)
+        return updateDiagnosticRemoteSupportSettingsAsync(
+                deviceName, resourceGroupName, diagnosticRemoteSupportSettings)
             .block();
     }
 
@@ -1031,14 +1069,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the remote support settings of a device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void updateDiagnosticRemoteSupportSettings(
+    public DiagnosticRemoteSupportSettingsInner updateDiagnosticRemoteSupportSettings(
         String deviceName,
         String resourceGroupName,
         DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
         Context context) {
-        updateDiagnosticRemoteSupportSettingsAsync(
+        return updateDiagnosticRemoteSupportSettingsAsync(
                 deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context)
             .block();
     }

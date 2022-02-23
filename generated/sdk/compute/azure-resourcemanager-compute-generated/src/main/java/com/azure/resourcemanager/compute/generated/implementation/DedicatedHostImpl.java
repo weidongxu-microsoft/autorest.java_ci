@@ -90,6 +90,10 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
         return this.innerModel().instanceView();
     }
 
+    public OffsetDateTime timeCreated() {
+        return this.innerModel().timeCreated();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -196,6 +200,14 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
                 .getWithResponse(resourceGroupName, hostGroupName, hostname, localExpand, context)
                 .getValue();
         return this;
+    }
+
+    public void restart() {
+        serviceManager.dedicatedHosts().restart(resourceGroupName, hostGroupName, hostname);
+    }
+
+    public void restart(Context context) {
+        serviceManager.dedicatedHosts().restart(resourceGroupName, hostGroupName, hostname, context);
     }
 
     public DedicatedHostImpl withRegion(Region location) {

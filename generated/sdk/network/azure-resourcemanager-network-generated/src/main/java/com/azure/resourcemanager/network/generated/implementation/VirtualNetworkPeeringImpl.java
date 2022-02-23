@@ -11,6 +11,7 @@ import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.SyncRemoteAddressSpace;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkBgpCommunities;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkEncryption;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeering;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeeringLevel;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeeringState;
@@ -67,6 +68,10 @@ public final class VirtualNetworkPeeringImpl
 
     public VirtualNetworkBgpCommunities remoteBgpCommunities() {
         return this.innerModel().remoteBgpCommunities();
+    }
+
+    public VirtualNetworkEncryption remoteVirtualNetworkEncryption() {
+        return this.innerModel().remoteVirtualNetworkEncryption();
     }
 
     public VirtualNetworkPeeringState peeringState() {

@@ -35,6 +35,13 @@ public final class LegacyChargeSummary extends ChargeSummary {
         return this.innerProperties;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public LegacyChargeSummary withEtag(String etag) {
+        super.withEtag(etag);
+        return this;
+    }
+
     /**
      * Get the billingPeriodId property: The id of the billing period resource that the charge belongs to.
      *

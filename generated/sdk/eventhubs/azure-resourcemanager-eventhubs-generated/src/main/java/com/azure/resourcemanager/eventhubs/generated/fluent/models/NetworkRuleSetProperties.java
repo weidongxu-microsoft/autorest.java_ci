@@ -9,6 +9,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.DefaultAction;
 import com.azure.resourcemanager.eventhubs.generated.models.NWRuleSetIpRules;
 import com.azure.resourcemanager.eventhubs.generated.models.NWRuleSetVirtualNetworkRules;
+import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccessFlag;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -41,6 +42,13 @@ public final class NetworkRuleSetProperties {
      */
     @JsonProperty(value = "ipRules")
     private List<NWRuleSetIpRules> ipRules;
+
+    /*
+     * This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     */
+    @JsonProperty(value = "publicNetworkAccess")
+    private PublicNetworkAccessFlag publicNetworkAccess;
 
     /**
      * Get the trustedServiceAccessEnabled property: Value that indicates whether Trusted Service Access is Enabled or
@@ -121,6 +129,28 @@ public final class NetworkRuleSetProperties {
      */
     public NetworkRuleSetProperties withIpRules(List<NWRuleSetIpRules> ipRules) {
         this.ipRules = ipRules;
+        return this;
+    }
+
+    /**
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    public PublicNetworkAccessFlag publicNetworkAccess() {
+        return this.publicNetworkAccess;
+    }
+
+    /**
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     *
+     * @param publicNetworkAccess the publicNetworkAccess value to set.
+     * @return the NetworkRuleSetProperties object itself.
+     */
+    public NetworkRuleSetProperties withPublicNetworkAccess(PublicNetworkAccessFlag publicNetworkAccess) {
+        this.publicNetworkAccess = publicNetworkAccess;
         return this;
     }
 

@@ -88,6 +88,10 @@ public final class VirtualMachineExtensionImpl
         return this.innerModel().suppressFailures();
     }
 
+    public Object protectedSettingsFromKeyVault() {
+        return this.innerModel().protectedSettingsFromKeyVault();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -304,6 +308,16 @@ public final class VirtualMachineExtensionImpl
             return this;
         } else {
             this.updateExtensionParameters.withSuppressFailures(suppressFailures);
+            return this;
+        }
+    }
+
+    public VirtualMachineExtensionImpl withProtectedSettingsFromKeyVault(Object protectedSettingsFromKeyVault) {
+        if (isInCreateMode()) {
+            this.innerModel().withProtectedSettingsFromKeyVault(protectedSettingsFromKeyVault);
+            return this;
+        } else {
+            this.updateExtensionParameters.withProtectedSettingsFromKeyVault(protectedSettingsFromKeyVault);
             return this;
         }
     }

@@ -12,6 +12,7 @@ import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryInner;
+import com.azure.resourcemanager.compute.generated.models.GalleryExpandParams;
 import com.azure.resourcemanager.compute.generated.models.GalleryUpdate;
 import com.azure.resourcemanager.compute.generated.models.SelectPermissions;
 
@@ -177,6 +178,7 @@ public interface GalleriesClient {
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
      * @param select The select expression to apply on the operation.
+     * @param expand The expand query option to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -187,7 +189,11 @@ public interface GalleriesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<GalleryInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String galleryName, SelectPermissions select, Context context);
+        String resourceGroupName,
+        String galleryName,
+        SelectPermissions select,
+        GalleryExpandParams expand,
+        Context context);
 
     /**
      * Delete a Shared Image Gallery.

@@ -27,6 +27,12 @@ public final class Encryption {
     @JsonProperty(value = "keySource")
     private KeySource keySource;
 
+    /*
+     * Enable Infrastructure Encryption (Double Encryption)
+     */
+    @JsonProperty(value = "requireInfrastructureEncryption")
+    private Boolean requireInfrastructureEncryption;
+
     /**
      * Get the keyVaultProperties property: Properties of KeyVault.
      *
@@ -64,6 +70,26 @@ public final class Encryption {
      */
     public Encryption withKeySource(KeySource keySource) {
         this.keySource = keySource;
+        return this;
+    }
+
+    /**
+     * Get the requireInfrastructureEncryption property: Enable Infrastructure Encryption (Double Encryption).
+     *
+     * @return the requireInfrastructureEncryption value.
+     */
+    public Boolean requireInfrastructureEncryption() {
+        return this.requireInfrastructureEncryption;
+    }
+
+    /**
+     * Set the requireInfrastructureEncryption property: Enable Infrastructure Encryption (Double Encryption).
+     *
+     * @param requireInfrastructureEncryption the requireInfrastructureEncryption value to set.
+     * @return the Encryption object itself.
+     */
+    public Encryption withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption) {
+        this.requireInfrastructureEncryption = requireInfrastructureEncryption;
         return this;
     }
 

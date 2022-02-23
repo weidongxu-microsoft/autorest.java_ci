@@ -24,6 +24,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineIdentity
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachinePriorityTypes;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineUpdate;
+import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -169,6 +170,10 @@ public final class VirtualMachineUpdateImpl implements VirtualMachineUpdate {
 
     public ApplicationProfile applicationProfile() {
         return this.innerModel().applicationProfile();
+    }
+
+    public OffsetDateTime timeCreated() {
+        return this.innerModel().timeCreated();
     }
 
     public VirtualMachineUpdateInner innerModel() {

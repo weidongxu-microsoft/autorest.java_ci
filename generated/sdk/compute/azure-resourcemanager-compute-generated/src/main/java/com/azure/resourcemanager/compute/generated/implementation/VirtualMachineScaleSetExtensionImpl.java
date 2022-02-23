@@ -80,6 +80,10 @@ public final class VirtualMachineScaleSetExtensionImpl
         return this.innerModel().suppressFailures();
     }
 
+    public Object protectedSettingsFromKeyVault() {
+        return this.innerModel().protectedSettingsFromKeyVault();
+    }
+
     public VirtualMachineScaleSetExtensionInner innerModel() {
         return this.innerObject;
     }
@@ -284,6 +288,16 @@ public final class VirtualMachineScaleSetExtensionImpl
             return this;
         } else {
             this.updateExtensionParameters.withSuppressFailures(suppressFailures);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetExtensionImpl withProtectedSettingsFromKeyVault(Object protectedSettingsFromKeyVault) {
+        if (isInCreateMode()) {
+            this.innerModel().withProtectedSettingsFromKeyVault(protectedSettingsFromKeyVault);
+            return this;
+        } else {
+            this.updateExtensionParameters.withProtectedSettingsFromKeyVault(protectedSettingsFromKeyVault);
             return this;
         }
     }

@@ -18,6 +18,7 @@ import com.azure.resourcemanager.network.generated.models.Subnet;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VirtualNetwork;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkBgpCommunities;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkEncryption;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeering;
 import java.util.Collections;
 import java.util.List;
@@ -121,6 +122,10 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
 
     public VirtualNetworkBgpCommunities bgpCommunities() {
         return this.innerModel().bgpCommunities();
+    }
+
+    public VirtualNetworkEncryption encryption() {
+        return this.innerModel().encryption();
     }
 
     public List<SubResource> ipAllocations() {
@@ -305,6 +310,11 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
 
     public VirtualNetworkImpl withBgpCommunities(VirtualNetworkBgpCommunities bgpCommunities) {
         this.innerModel().withBgpCommunities(bgpCommunities);
+        return this;
+    }
+
+    public VirtualNetworkImpl withEncryption(VirtualNetworkEncryption encryption) {
+        this.innerModel().withEncryption(encryption);
         return this;
     }
 

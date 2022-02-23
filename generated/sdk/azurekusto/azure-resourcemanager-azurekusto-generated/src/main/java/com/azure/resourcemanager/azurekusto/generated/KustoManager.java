@@ -32,6 +32,7 @@ import com.azure.resourcemanager.azurekusto.generated.implementation.KustoManage
 import com.azure.resourcemanager.azurekusto.generated.implementation.ManagedPrivateEndpointsImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.OperationsResultsImpl;
+import com.azure.resourcemanager.azurekusto.generated.implementation.OperationsResultsLocationsImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.PrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.PrivateLinkResourcesImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.ScriptsImpl;
@@ -44,6 +45,7 @@ import com.azure.resourcemanager.azurekusto.generated.models.Databases;
 import com.azure.resourcemanager.azurekusto.generated.models.ManagedPrivateEndpoints;
 import com.azure.resourcemanager.azurekusto.generated.models.Operations;
 import com.azure.resourcemanager.azurekusto.generated.models.OperationsResults;
+import com.azure.resourcemanager.azurekusto.generated.models.OperationsResultsLocations;
 import com.azure.resourcemanager.azurekusto.generated.models.PrivateEndpointConnections;
 import com.azure.resourcemanager.azurekusto.generated.models.PrivateLinkResources;
 import com.azure.resourcemanager.azurekusto.generated.models.Scripts;
@@ -83,6 +85,8 @@ public final class KustoManager {
     private Operations operations;
 
     private OperationsResults operationsResults;
+
+    private OperationsResultsLocations operationsResultsLocations;
 
     private final KustoManagementClient clientObject;
 
@@ -371,6 +375,15 @@ public final class KustoManager {
             this.operationsResults = new OperationsResultsImpl(clientObject.getOperationsResults(), this);
         }
         return operationsResults;
+    }
+
+    /** @return Resource collection API of OperationsResultsLocations. */
+    public OperationsResultsLocations operationsResultsLocations() {
+        if (this.operationsResultsLocations == null) {
+            this.operationsResultsLocations =
+                new OperationsResultsLocationsImpl(clientObject.getOperationsResultsLocations(), this);
+        }
+        return operationsResultsLocations;
     }
 
     /**

@@ -94,6 +94,14 @@ public final class DiskRestorePointImpl implements DiskRestorePoint {
         return this.innerModel().completionPercent();
     }
 
+    public String replicationState() {
+        return this.innerModel().replicationState();
+    }
+
+    public String sourceResourceLocation() {
+        return this.innerModel().sourceResourceLocation();
+    }
+
     public DiskRestorePointInner innerModel() {
         return this.innerObject;
     }

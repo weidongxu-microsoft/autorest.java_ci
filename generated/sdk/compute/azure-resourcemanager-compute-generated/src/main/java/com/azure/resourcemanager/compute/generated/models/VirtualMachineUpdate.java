@@ -6,6 +6,7 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineUpdateInner;
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -263,6 +264,14 @@ public interface VirtualMachineUpdate {
      * @return the applicationProfile value.
      */
     ApplicationProfile applicationProfile();
+
+    /**
+     * Gets the timeCreated property: Specifies the time at which the Virtual Machine resource was
+     * created.&lt;br&gt;&lt;br&gt;Minimum api-version: 2021-11-01.
+     *
+     * @return the timeCreated value.
+     */
+    OffsetDateTime timeCreated();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineUpdateInner object.

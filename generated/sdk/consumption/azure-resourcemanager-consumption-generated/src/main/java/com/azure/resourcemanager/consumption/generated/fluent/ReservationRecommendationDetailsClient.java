@@ -10,7 +10,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationDetailsModelInner;
 import com.azure.resourcemanager.consumption.generated.models.LookBackPeriod;
-import com.azure.resourcemanager.consumption.generated.models.Scope;
 import com.azure.resourcemanager.consumption.generated.models.Term;
 
 /**
@@ -26,7 +25,6 @@ public interface ReservationRecommendationDetailsClient {
      *     /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope.
-     * @param scope1 Scope of the reservation.
      * @param region Used to select the region the recommendation should be generated for.
      * @param term Specify length of reservation recommendation term.
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
@@ -39,7 +37,7 @@ public interface ReservationRecommendationDetailsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     ReservationRecommendationDetailsModelInner get(
-        String scope, Scope scope1, String region, Term term, LookBackPeriod lookBackPeriod, String product);
+        String scope, String region, Term term, LookBackPeriod lookBackPeriod, String product);
 
     /**
      * Details of a reservation recommendation for what-if analysis of reserved instances.
@@ -50,7 +48,6 @@ public interface ReservationRecommendationDetailsClient {
      *     /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope.
-     * @param scope1 Scope of the reservation.
      * @param region Used to select the region the recommendation should be generated for.
      * @param term Specify length of reservation recommendation term.
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
@@ -64,11 +61,5 @@ public interface ReservationRecommendationDetailsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ReservationRecommendationDetailsModelInner> getWithResponse(
-        String scope,
-        Scope scope1,
-        String region,
-        Term term,
-        LookBackPeriod lookBackPeriod,
-        String product,
-        Context context);
+        String scope, String region, Term term, LookBackPeriod lookBackPeriod, String product, Context context);
 }

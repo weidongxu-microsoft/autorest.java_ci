@@ -11,19 +11,19 @@ import com.azure.core.util.Context;
 /** Resource collection API of InboundNatRules. */
 public interface InboundNatRules {
     /**
-     * Gets all the inbound nat rules in a load balancer.
+     * Gets all the inbound NAT rules in a load balancer.
      *
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the inbound nat rules in a load balancer as paginated response with {@link PagedIterable}.
+     * @return all the inbound NAT rules in a load balancer as paginated response with {@link PagedIterable}.
      */
     PagedIterable<InboundNatRule> list(String resourceGroupName, String loadBalancerName);
 
     /**
-     * Gets all the inbound nat rules in a load balancer.
+     * Gets all the inbound NAT rules in a load balancer.
      *
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
@@ -31,16 +31,16 @@ public interface InboundNatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the inbound nat rules in a load balancer as paginated response with {@link PagedIterable}.
+     * @return all the inbound NAT rules in a load balancer as paginated response with {@link PagedIterable}.
      */
     PagedIterable<InboundNatRule> list(String resourceGroupName, String loadBalancerName, Context context);
 
     /**
-     * Deletes the specified load balancer inbound nat rule.
+     * Deletes the specified load balancer inbound NAT rule.
      *
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
-     * @param inboundNatRuleName The name of the inbound nat rule.
+     * @param inboundNatRuleName The name of the inbound NAT rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -48,11 +48,11 @@ public interface InboundNatRules {
     void delete(String resourceGroupName, String loadBalancerName, String inboundNatRuleName);
 
     /**
-     * Deletes the specified load balancer inbound nat rule.
+     * Deletes the specified load balancer inbound NAT rule.
      *
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
-     * @param inboundNatRuleName The name of the inbound nat rule.
+     * @param inboundNatRuleName The name of the inbound NAT rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -61,47 +61,47 @@ public interface InboundNatRules {
     void delete(String resourceGroupName, String loadBalancerName, String inboundNatRuleName, Context context);
 
     /**
-     * Gets the specified load balancer inbound nat rule.
+     * Gets the specified load balancer inbound NAT rule.
      *
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
-     * @param inboundNatRuleName The name of the inbound nat rule.
+     * @param inboundNatRuleName The name of the inbound NAT rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified load balancer inbound nat rule.
+     * @return the specified load balancer inbound NAT rule.
      */
     InboundNatRule get(String resourceGroupName, String loadBalancerName, String inboundNatRuleName);
 
     /**
-     * Gets the specified load balancer inbound nat rule.
+     * Gets the specified load balancer inbound NAT rule.
      *
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
-     * @param inboundNatRuleName The name of the inbound nat rule.
+     * @param inboundNatRuleName The name of the inbound NAT rule.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified load balancer inbound nat rule along with {@link Response}.
+     * @return the specified load balancer inbound NAT rule along with {@link Response}.
      */
     Response<InboundNatRule> getWithResponse(
         String resourceGroupName, String loadBalancerName, String inboundNatRuleName, String expand, Context context);
 
     /**
-     * Gets the specified load balancer inbound nat rule.
+     * Gets the specified load balancer inbound NAT rule.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified load balancer inbound nat rule along with {@link Response}.
+     * @return the specified load balancer inbound NAT rule along with {@link Response}.
      */
     InboundNatRule getById(String id);
 
     /**
-     * Gets the specified load balancer inbound nat rule.
+     * Gets the specified load balancer inbound NAT rule.
      *
      * @param id the resource ID.
      * @param expand Expands referenced resources.
@@ -109,12 +109,12 @@ public interface InboundNatRules {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified load balancer inbound nat rule along with {@link Response}.
+     * @return the specified load balancer inbound NAT rule along with {@link Response}.
      */
     Response<InboundNatRule> getByIdWithResponse(String id, String expand, Context context);
 
     /**
-     * Deletes the specified load balancer inbound nat rule.
+     * Deletes the specified load balancer inbound NAT rule.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -124,7 +124,7 @@ public interface InboundNatRules {
     void deleteById(String id);
 
     /**
-     * Deletes the specified load balancer inbound nat rule.
+     * Deletes the specified load balancer inbound NAT rule.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.

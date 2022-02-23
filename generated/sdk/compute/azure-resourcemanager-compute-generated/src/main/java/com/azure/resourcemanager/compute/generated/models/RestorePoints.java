@@ -56,6 +56,8 @@ public interface RestorePoints {
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param restorePointName The name of the restore point.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves information about the
+     *     run-time state of a restore point.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -64,7 +66,11 @@ public interface RestorePoints {
      * @return restore Point details along with {@link Response}.
      */
     Response<RestorePoint> getWithResponse(
-        String resourceGroupName, String restorePointCollectionName, String restorePointName, Context context);
+        String resourceGroupName,
+        String restorePointCollectionName,
+        String restorePointName,
+        RestorePointExpandOptions expand,
+        Context context);
 
     /**
      * The operation to get the restore point.
@@ -82,6 +88,8 @@ public interface RestorePoints {
      * The operation to get the restore point.
      *
      * @param id the resource ID.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves information about the
+     *     run-time state of a restore point.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -89,7 +97,7 @@ public interface RestorePoints {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return restore Point details along with {@link Response}.
      */
-    Response<RestorePoint> getByIdWithResponse(String id, Context context);
+    Response<RestorePoint> getByIdWithResponse(String id, RestorePointExpandOptions expand, Context context);
 
     /**
      * The operation to delete the restore point.

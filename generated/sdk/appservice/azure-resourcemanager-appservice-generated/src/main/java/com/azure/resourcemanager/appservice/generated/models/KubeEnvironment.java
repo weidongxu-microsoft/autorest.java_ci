@@ -96,6 +96,14 @@ public interface KubeEnvironment {
     String staticIp();
 
     /**
+     * Gets the environmentType property: Type of Kubernetes Environment. Only supported for Container App Environments
+     * with value as Managed.
+     *
+     * @return the environmentType value.
+     */
+    String environmentType();
+
+    /**
      * Gets the arcConfiguration property: Cluster configuration which determines the ARC cluster components types. Eg:
      * Choosing between BuildService kind, FrontEnd Service ArtifactsStorageType etc.
      *
@@ -110,6 +118,14 @@ public interface KubeEnvironment {
      * @return the appLogsConfiguration value.
      */
     AppLogsConfiguration appLogsConfiguration();
+
+    /**
+     * Gets the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure
+     * Dapr Instrumentation Key and VNET Configuration.
+     *
+     * @return the containerAppsConfiguration value.
+     */
+    ContainerAppsConfiguration containerAppsConfiguration();
 
     /**
      * Gets the aksResourceId property: The aksResourceID property.
@@ -189,8 +205,10 @@ public interface KubeEnvironment {
                 DefinitionStages.WithKind,
                 DefinitionStages.WithInternalLoadBalancerEnabled,
                 DefinitionStages.WithStaticIp,
+                DefinitionStages.WithEnvironmentType,
                 DefinitionStages.WithArcConfiguration,
                 DefinitionStages.WithAppLogsConfiguration,
+                DefinitionStages.WithContainerAppsConfiguration,
                 DefinitionStages.WithAksResourceId {
             /**
              * Executes the create request.
@@ -257,6 +275,18 @@ public interface KubeEnvironment {
              */
             WithCreate withStaticIp(String staticIp);
         }
+        /** The stage of the KubeEnvironment definition allowing to specify environmentType. */
+        interface WithEnvironmentType {
+            /**
+             * Specifies the environmentType property: Type of Kubernetes Environment. Only supported for Container App
+             * Environments with value as Managed.
+             *
+             * @param environmentType Type of Kubernetes Environment. Only supported for Container App Environments with
+             *     value as Managed.
+             * @return the next definition stage.
+             */
+            WithCreate withEnvironmentType(String environmentType);
+        }
         /** The stage of the KubeEnvironment definition allowing to specify arcConfiguration. */
         interface WithArcConfiguration {
             /**
@@ -281,6 +311,18 @@ public interface KubeEnvironment {
              */
             WithCreate withAppLogsConfiguration(AppLogsConfiguration appLogsConfiguration);
         }
+        /** The stage of the KubeEnvironment definition allowing to specify containerAppsConfiguration. */
+        interface WithContainerAppsConfiguration {
+            /**
+             * Specifies the containerAppsConfiguration property: Cluster configuration for Container Apps Environments
+             * to configure Dapr Instrumentation Key and VNET Configuration.
+             *
+             * @param containerAppsConfiguration Cluster configuration for Container Apps Environments to configure Dapr
+             *     Instrumentation Key and VNET Configuration.
+             * @return the next definition stage.
+             */
+            WithCreate withContainerAppsConfiguration(ContainerAppsConfiguration containerAppsConfiguration);
+        }
         /** The stage of the KubeEnvironment definition allowing to specify aksResourceId. */
         interface WithAksResourceId {
             /**
@@ -301,7 +343,10 @@ public interface KubeEnvironment {
 
     /** The template for KubeEnvironment update. */
     interface Update
-        extends UpdateStages.WithKind, UpdateStages.WithArcConfiguration, UpdateStages.WithAppLogsConfiguration {
+        extends UpdateStages.WithKind,
+            UpdateStages.WithArcConfiguration,
+            UpdateStages.WithAppLogsConfiguration,
+            UpdateStages.WithContainerAppsConfiguration {
         /**
          * Executes the update request.
          *
@@ -352,6 +397,18 @@ public interface KubeEnvironment {
              * @return the next definition stage.
              */
             Update withAppLogsConfiguration(AppLogsConfiguration appLogsConfiguration);
+        }
+        /** The stage of the KubeEnvironment update allowing to specify containerAppsConfiguration. */
+        interface WithContainerAppsConfiguration {
+            /**
+             * Specifies the containerAppsConfiguration property: Cluster configuration for Container Apps Environments
+             * to configure Dapr Instrumentation Key and VNET Configuration.
+             *
+             * @param containerAppsConfiguration Cluster configuration for Container Apps Environments to configure Dapr
+             *     Instrumentation Key and VNET Configuration.
+             * @return the next definition stage.
+             */
+            Update withContainerAppsConfiguration(ContainerAppsConfiguration containerAppsConfiguration);
         }
     }
     /**

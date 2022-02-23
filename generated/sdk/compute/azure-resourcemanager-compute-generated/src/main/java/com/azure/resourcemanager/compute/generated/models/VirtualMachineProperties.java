@@ -6,6 +6,7 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachinePropertiesInner;
+import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of VirtualMachineProperties. */
 public interface VirtualMachineProperties {
@@ -229,6 +230,14 @@ public interface VirtualMachineProperties {
      * @return the applicationProfile value.
      */
     ApplicationProfile applicationProfile();
+
+    /**
+     * Gets the timeCreated property: Specifies the time at which the Virtual Machine resource was
+     * created.&lt;br&gt;&lt;br&gt;Minimum api-version: 2021-11-01.
+     *
+     * @return the timeCreated value.
+     */
+    OffsetDateTime timeCreated();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachinePropertiesInner object.

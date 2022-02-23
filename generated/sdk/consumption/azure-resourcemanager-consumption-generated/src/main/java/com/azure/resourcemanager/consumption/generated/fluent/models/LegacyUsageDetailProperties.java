@@ -7,6 +7,7 @@ package com.azure.resourcemanager.consumption.generated.fluent.models;
 import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.models.MeterDetailsResponse;
+import com.azure.resourcemanager.consumption.generated.models.PricingModelType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
@@ -289,6 +290,30 @@ public final class LegacyUsageDetailProperties {
      */
     @JsonProperty(value = "frequency", access = JsonProperty.Access.WRITE_ONLY)
     private String frequency;
+
+    /*
+     * Retail price for the resource.
+     */
+    @JsonProperty(value = "payGPrice", access = JsonProperty.Access.WRITE_ONLY)
+    private BigDecimal payGPrice;
+
+    /*
+     * Unique identifier for the applicable benefit.
+     */
+    @JsonProperty(value = "benefitId", access = JsonProperty.Access.WRITE_ONLY)
+    private String benefitId;
+
+    /*
+     * Name of the applicable benefit.
+     */
+    @JsonProperty(value = "benefitName", access = JsonProperty.Access.WRITE_ONLY)
+    private String benefitName;
+
+    /*
+     * Identifier that indicates how the meter is priced.
+     */
+    @JsonProperty(value = "pricingModel", access = JsonProperty.Access.WRITE_ONLY)
+    private PricingModelType pricingModel;
 
     /**
      * Get the billingAccountId property: Billing Account identifier.
@@ -680,6 +705,42 @@ public final class LegacyUsageDetailProperties {
      */
     public String frequency() {
         return this.frequency;
+    }
+
+    /**
+     * Get the payGPrice property: Retail price for the resource.
+     *
+     * @return the payGPrice value.
+     */
+    public BigDecimal payGPrice() {
+        return this.payGPrice;
+    }
+
+    /**
+     * Get the benefitId property: Unique identifier for the applicable benefit.
+     *
+     * @return the benefitId value.
+     */
+    public String benefitId() {
+        return this.benefitId;
+    }
+
+    /**
+     * Get the benefitName property: Name of the applicable benefit.
+     *
+     * @return the benefitName value.
+     */
+    public String benefitName() {
+        return this.benefitName;
+    }
+
+    /**
+     * Get the pricingModel property: Identifier that indicates how the meter is priced.
+     *
+     * @return the pricingModel value.
+     */
+    public PricingModelType pricingModel() {
+        return this.pricingModel;
     }
 
     /**

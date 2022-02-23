@@ -9,6 +9,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.DestinationProperties;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.UUID;
 
 /** Capture storage details for capture description. */
 @Fluent
@@ -128,6 +129,75 @@ public final class Destination {
             this.innerProperties = new DestinationProperties();
         }
         this.innerProperties().withArchiveNameFormat(archiveNameFormat);
+        return this;
+    }
+
+    /**
+     * Get the dataLakeSubscriptionId property: Subscription Id of Azure Data Lake Store.
+     *
+     * @return the dataLakeSubscriptionId value.
+     */
+    public UUID dataLakeSubscriptionId() {
+        return this.innerProperties() == null ? null : this.innerProperties().dataLakeSubscriptionId();
+    }
+
+    /**
+     * Set the dataLakeSubscriptionId property: Subscription Id of Azure Data Lake Store.
+     *
+     * @param dataLakeSubscriptionId the dataLakeSubscriptionId value to set.
+     * @return the Destination object itself.
+     */
+    public Destination withDataLakeSubscriptionId(UUID dataLakeSubscriptionId) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new DestinationProperties();
+        }
+        this.innerProperties().withDataLakeSubscriptionId(dataLakeSubscriptionId);
+        return this;
+    }
+
+    /**
+     * Get the dataLakeAccountName property: The Azure Data Lake Store name for the captured events.
+     *
+     * @return the dataLakeAccountName value.
+     */
+    public String dataLakeAccountName() {
+        return this.innerProperties() == null ? null : this.innerProperties().dataLakeAccountName();
+    }
+
+    /**
+     * Set the dataLakeAccountName property: The Azure Data Lake Store name for the captured events.
+     *
+     * @param dataLakeAccountName the dataLakeAccountName value to set.
+     * @return the Destination object itself.
+     */
+    public Destination withDataLakeAccountName(String dataLakeAccountName) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new DestinationProperties();
+        }
+        this.innerProperties().withDataLakeAccountName(dataLakeAccountName);
+        return this;
+    }
+
+    /**
+     * Get the dataLakeFolderPath property: The destination folder path for the captured events.
+     *
+     * @return the dataLakeFolderPath value.
+     */
+    public String dataLakeFolderPath() {
+        return this.innerProperties() == null ? null : this.innerProperties().dataLakeFolderPath();
+    }
+
+    /**
+     * Set the dataLakeFolderPath property: The destination folder path for the captured events.
+     *
+     * @param dataLakeFolderPath the dataLakeFolderPath value to set.
+     * @return the Destination object itself.
+     */
+    public Destination withDataLakeFolderPath(String dataLakeFolderPath) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new DestinationProperties();
+        }
+        this.innerProperties().withDataLakeFolderPath(dataLakeFolderPath);
         return this;
     }
 

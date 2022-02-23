@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.hdinsight.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.ApplicationInner;
 import com.azure.resourcemanager.hdinsight.generated.models.Application;
@@ -49,6 +50,10 @@ public final class ApplicationImpl implements Application, Application.Definitio
 
     public ApplicationProperties properties() {
         return this.innerModel().properties();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public ApplicationInner innerModel() {

@@ -354,12 +354,17 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     }
 
     public Response<RecoveryWalkResponse> forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponse(
-        String resourceGroupName, String vmScaleSetName, int platformUpdateDomain, Context context) {
+        String resourceGroupName,
+        String vmScaleSetName,
+        int platformUpdateDomain,
+        String zone,
+        String placementGroupId,
+        Context context) {
         Response<RecoveryWalkResponseInner> inner =
             this
                 .serviceClient()
                 .forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponse(
-                    resourceGroupName, vmScaleSetName, platformUpdateDomain, context);
+                    resourceGroupName, vmScaleSetName, platformUpdateDomain, zone, placementGroupId, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),

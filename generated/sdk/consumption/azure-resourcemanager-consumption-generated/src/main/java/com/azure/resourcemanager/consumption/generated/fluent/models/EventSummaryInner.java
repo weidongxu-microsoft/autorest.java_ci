@@ -12,10 +12,8 @@ import com.azure.resourcemanager.consumption.generated.models.AmountWithExchange
 import com.azure.resourcemanager.consumption.generated.models.EventType;
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
-import java.util.Map;
 
 /** An event summary resource. */
 @Fluent
@@ -29,17 +27,12 @@ public final class EventSummaryInner extends ProxyResource {
     private EventProperties innerProperties;
 
     /*
-     * The etag for the resource.
+     * eTag of the resource. To handle concurrent update scenario, this field
+     * will be used to determine whether the user is updating the latest
+     * version or not.
      */
-    @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "eTag")
     private String etag;
-
-    /*
-     * Resource tags.
-     */
-    @JsonProperty(value = "tags", access = JsonProperty.Access.WRITE_ONLY)
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
-    private Map<String, String> tags;
 
     /**
      * Get the innerProperties property: The event properties.
@@ -51,7 +44,8 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the etag property: The etag for the resource.
+     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
+     * determine whether the user is updating the latest version or not.
      *
      * @return the etag value.
      */
@@ -60,12 +54,15 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the tags property: Resource tags.
+     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
+     * determine whether the user is updating the latest version or not.
      *
-     * @return the tags value.
+     * @param etag the etag value to set.
+     * @return the EventSummaryInner object itself.
      */
-    public Map<String, String> tags() {
-        return this.tags;
+    public EventSummaryInner withEtag(String etag) {
+        this.etag = etag;
+        return this;
     }
 
     /**
@@ -285,6 +282,15 @@ public final class EventSummaryInner extends ProxyResource {
      */
     public AmountWithExchangeRate closedBalanceInBillingCurrency() {
         return this.innerProperties() == null ? null : this.innerProperties().closedBalanceInBillingCurrency();
+    }
+
+    /**
+     * Get the etag property: The eTag for the resource.
+     *
+     * @return the etag value.
+     */
+    public String etagPropertiesEtag() {
+        return this.innerProperties() == null ? null : this.innerProperties().etag();
     }
 
     /**

@@ -8,11 +8,13 @@ import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryInner;
 import com.azure.resourcemanager.compute.generated.models.Gallery;
+import com.azure.resourcemanager.compute.generated.models.GalleryExpandParams;
 import com.azure.resourcemanager.compute.generated.models.GalleryIdentifier;
 import com.azure.resourcemanager.compute.generated.models.GalleryPropertiesProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.GalleryUpdate;
 import com.azure.resourcemanager.compute.generated.models.SelectPermissions;
 import com.azure.resourcemanager.compute.generated.models.SharingProfile;
+import com.azure.resourcemanager.compute.generated.models.SharingStatus;
 import com.azure.resourcemanager.compute.generated.models.SoftDeletePolicy;
 import java.util.Collections;
 import java.util.Map;
@@ -65,6 +67,10 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
 
     public SoftDeletePolicy softDeletePolicy() {
         return this.innerModel().softDeletePolicy();
+    }
+
+    public SharingStatus sharingStatus() {
+        return this.innerModel().sharingStatus();
     }
 
     public Region region() {
@@ -150,22 +156,24 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
 
     public Gallery refresh() {
         SelectPermissions localSelect = null;
+        GalleryExpandParams localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getGalleries()
-                .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public Gallery refresh(Context context) {
         SelectPermissions localSelect = null;
+        GalleryExpandParams localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getGalleries()
-                .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, context)
+                .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, localExpand, context)
                 .getValue();
         return this;
     }

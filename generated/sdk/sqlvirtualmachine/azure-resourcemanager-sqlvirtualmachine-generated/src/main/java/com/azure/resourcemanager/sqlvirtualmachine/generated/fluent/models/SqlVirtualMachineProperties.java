@@ -6,6 +6,7 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AssessmentSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoBackupSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoPatchingSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.KeyVaultCredentialSettings;
@@ -104,6 +105,12 @@ public final class SqlVirtualMachineProperties {
      */
     @JsonProperty(value = "storageConfigurationSettings")
     private StorageConfigurationSettings storageConfigurationSettings;
+
+    /*
+     * Assessment Settings.
+     */
+    @JsonProperty(value = "assessmentSettings")
+    private AssessmentSettings assessmentSettings;
 
     /**
      * Get the virtualMachineResourceId property: ARM Resource id of underlying virtual machine created from SQL
@@ -366,6 +373,26 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
+     * Get the assessmentSettings property: Assessment Settings.
+     *
+     * @return the assessmentSettings value.
+     */
+    public AssessmentSettings assessmentSettings() {
+        return this.assessmentSettings;
+    }
+
+    /**
+     * Set the assessmentSettings property: Assessment Settings.
+     *
+     * @param assessmentSettings the assessmentSettings value to set.
+     * @return the SqlVirtualMachineProperties object itself.
+     */
+    public SqlVirtualMachineProperties withAssessmentSettings(AssessmentSettings assessmentSettings) {
+        this.assessmentSettings = assessmentSettings;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -388,6 +415,9 @@ public final class SqlVirtualMachineProperties {
         }
         if (storageConfigurationSettings() != null) {
             storageConfigurationSettings().validate();
+        }
+        if (assessmentSettings() != null) {
+            assessmentSettings().validate();
         }
     }
 }

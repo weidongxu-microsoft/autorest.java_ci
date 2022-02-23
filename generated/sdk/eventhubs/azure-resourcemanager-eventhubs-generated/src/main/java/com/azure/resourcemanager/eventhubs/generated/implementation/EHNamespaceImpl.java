@@ -5,15 +5,20 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceInner;
+import com.azure.resourcemanager.eventhubs.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.eventhubs.generated.models.EHNamespace;
 import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
 import com.azure.resourcemanager.eventhubs.generated.models.Identity;
+import com.azure.resourcemanager.eventhubs.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.eventhubs.generated.models.Sku;
 import java.time.OffsetDateTime;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definition, EHNamespace.Update {
     private EHNamespaceInner innerObject;
@@ -51,6 +56,10 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
 
     public Identity identity() {
         return this.innerModel().identity();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String provisioningState() {
@@ -99,6 +108,28 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
 
     public Encryption encryption() {
         return this.innerModel().encryption();
+    }
+
+    public List<PrivateEndpointConnection> privateEndpointConnections() {
+        List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public Boolean disableLocalAuth() {
+        return this.innerModel().disableLocalAuth();
+    }
+
+    public String alternateName() {
+        return this.innerModel().alternateName();
     }
 
     public Region region() {
@@ -254,6 +285,22 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
 
     public EHNamespaceImpl withEncryption(Encryption encryption) {
         this.innerModel().withEncryption(encryption);
+        return this;
+    }
+
+    public EHNamespaceImpl withPrivateEndpointConnections(
+        List<PrivateEndpointConnectionInner> privateEndpointConnections) {
+        this.innerModel().withPrivateEndpointConnections(privateEndpointConnections);
+        return this;
+    }
+
+    public EHNamespaceImpl withDisableLocalAuth(Boolean disableLocalAuth) {
+        this.innerModel().withDisableLocalAuth(disableLocalAuth);
+        return this;
+    }
+
+    public EHNamespaceImpl withAlternateName(String alternateName) {
+        this.innerModel().withAlternateName(alternateName);
         return this;
     }
 }

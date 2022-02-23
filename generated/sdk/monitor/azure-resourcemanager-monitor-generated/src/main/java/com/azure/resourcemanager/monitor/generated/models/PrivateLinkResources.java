@@ -13,7 +13,7 @@ public interface PrivateLinkResources {
     /**
      * Gets the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -26,7 +26,7 @@ public interface PrivateLinkResources {
     /**
      * Gets the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -41,7 +41,7 @@ public interface PrivateLinkResources {
     /**
      * Gets the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param groupName The name of the private link resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -54,7 +54,7 @@ public interface PrivateLinkResources {
     /**
      * Gets the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param groupName The name of the private link resource.
      * @param context The context to associate with this operation.

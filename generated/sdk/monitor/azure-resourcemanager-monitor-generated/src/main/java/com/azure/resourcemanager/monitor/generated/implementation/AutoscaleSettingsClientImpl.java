@@ -175,7 +175,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Lists the autoscale settings for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -229,7 +229,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Lists the autoscale settings for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -281,7 +281,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Lists the autoscale settings for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -297,7 +297,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Lists the autoscale settings for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -315,7 +315,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Lists the autoscale settings for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -329,7 +329,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Lists the autoscale settings for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -344,7 +344,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Creates or updates an autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param parameters Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -401,7 +401,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Creates or updates an autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param parameters Parameters supplied to the operation.
      * @param context The context to associate with this operation.
@@ -459,7 +459,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Creates or updates an autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param parameters Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -484,7 +484,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Creates or updates an autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param parameters Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -501,7 +501,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Creates or updates an autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param parameters Parameters supplied to the operation.
      * @param context The context to associate with this operation.
@@ -522,7 +522,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Deletes and autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -571,7 +571,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Deletes and autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -619,7 +619,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Deletes and autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -635,7 +635,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Deletes and autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -649,7 +649,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Deletes and autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -665,7 +665,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Gets an autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -715,7 +715,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Gets an autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -763,7 +763,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Gets an autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -787,7 +787,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Gets an autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -802,7 +802,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Gets an autoscale setting.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -819,7 +819,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Updates an existing AutoscaleSettingsResource. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param autoscaleSettingResource Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -878,7 +878,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Updates an existing AutoscaleSettingsResource. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param autoscaleSettingResource Parameters supplied to the operation.
      * @param context The context to associate with this operation.
@@ -938,7 +938,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Updates an existing AutoscaleSettingsResource. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param autoscaleSettingResource Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -963,7 +963,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Updates an existing AutoscaleSettingsResource. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param autoscaleSettingResource Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -980,7 +980,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     /**
      * Updates an existing AutoscaleSettingsResource. To update other fields use the CreateOrUpdate method.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param autoscaleSettingResource Parameters supplied to the operation.
      * @param context The context to associate with this operation.

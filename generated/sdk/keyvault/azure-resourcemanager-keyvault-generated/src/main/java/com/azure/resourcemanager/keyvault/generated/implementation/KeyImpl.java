@@ -14,6 +14,7 @@ import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyType;
 import com.azure.resourcemanager.keyvault.generated.models.Key;
 import com.azure.resourcemanager.keyvault.generated.models.KeyAttributes;
 import com.azure.resourcemanager.keyvault.generated.models.KeyCreateParameters;
+import com.azure.resourcemanager.keyvault.generated.models.KeyReleasePolicy;
 import com.azure.resourcemanager.keyvault.generated.models.RotationPolicy;
 import java.util.Collections;
 import java.util.List;
@@ -89,6 +90,10 @@ public final class KeyImpl implements Key, Key.Definition {
 
     public RotationPolicy rotationPolicy() {
         return this.innerModel().rotationPolicy();
+    }
+
+    public KeyReleasePolicy releasePolicy() {
+        return this.innerModel().releasePolicy();
     }
 
     public Region region() {

@@ -67,6 +67,12 @@ public final class KeyPermissions extends ExpandableStringEnum<KeyPermissions> {
     /** Static value rotate for KeyPermissions. */
     public static final KeyPermissions ROTATE = fromString("rotate");
 
+    /** Static value getrotationpolicy for KeyPermissions. */
+    public static final KeyPermissions GETROTATIONPOLICY = fromString("getrotationpolicy");
+
+    /** Static value setrotationpolicy for KeyPermissions. */
+    public static final KeyPermissions SETROTATIONPOLICY = fromString("setrotationpolicy");
+
     /**
      * Creates or finds a KeyPermissions from its string representation.
      *

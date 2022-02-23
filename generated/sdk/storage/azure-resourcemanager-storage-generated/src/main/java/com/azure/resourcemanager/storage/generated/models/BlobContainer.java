@@ -169,6 +169,20 @@ public interface BlobContainer {
     ImmutableStorageWithVersioning immutableStorageWithVersioning();
 
     /**
+     * Gets the enableNfsV3RootSquash property: Enable NFSv3 root squash on blob container.
+     *
+     * @return the enableNfsV3RootSquash value.
+     */
+    Boolean enableNfsV3RootSquash();
+
+    /**
+     * Gets the enableNfsV3AllSquash property: Enable NFSv3 all squash on blob container.
+     *
+     * @return the enableNfsV3AllSquash value.
+     */
+    Boolean enableNfsV3AllSquash();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.BlobContainerInner object.
      *
      * @return the inner object.
@@ -206,7 +220,9 @@ public interface BlobContainer {
                 DefinitionStages.WithDenyEncryptionScopeOverride,
                 DefinitionStages.WithPublicAccess,
                 DefinitionStages.WithMetadata,
-                DefinitionStages.WithImmutableStorageWithVersioning {
+                DefinitionStages.WithImmutableStorageWithVersioning,
+                DefinitionStages.WithEnableNfsV3RootSquash,
+                DefinitionStages.WithEnableNfsV3AllSquash {
             /**
              * Executes the create request.
              *
@@ -281,6 +297,26 @@ public interface BlobContainer {
             WithCreate withImmutableStorageWithVersioning(
                 ImmutableStorageWithVersioning immutableStorageWithVersioning);
         }
+        /** The stage of the BlobContainer definition allowing to specify enableNfsV3RootSquash. */
+        interface WithEnableNfsV3RootSquash {
+            /**
+             * Specifies the enableNfsV3RootSquash property: Enable NFSv3 root squash on blob container..
+             *
+             * @param enableNfsV3RootSquash Enable NFSv3 root squash on blob container.
+             * @return the next definition stage.
+             */
+            WithCreate withEnableNfsV3RootSquash(Boolean enableNfsV3RootSquash);
+        }
+        /** The stage of the BlobContainer definition allowing to specify enableNfsV3AllSquash. */
+        interface WithEnableNfsV3AllSquash {
+            /**
+             * Specifies the enableNfsV3AllSquash property: Enable NFSv3 all squash on blob container..
+             *
+             * @param enableNfsV3AllSquash Enable NFSv3 all squash on blob container.
+             * @return the next definition stage.
+             */
+            WithCreate withEnableNfsV3AllSquash(Boolean enableNfsV3AllSquash);
+        }
     }
     /**
      * Begins update for the BlobContainer resource.
@@ -295,7 +331,9 @@ public interface BlobContainer {
             UpdateStages.WithDenyEncryptionScopeOverride,
             UpdateStages.WithPublicAccess,
             UpdateStages.WithMetadata,
-            UpdateStages.WithImmutableStorageWithVersioning {
+            UpdateStages.WithImmutableStorageWithVersioning,
+            UpdateStages.WithEnableNfsV3RootSquash,
+            UpdateStages.WithEnableNfsV3AllSquash {
         /**
          * Executes the update request.
          *
@@ -370,6 +408,26 @@ public interface BlobContainer {
              * @return the next definition stage.
              */
             Update withImmutableStorageWithVersioning(ImmutableStorageWithVersioning immutableStorageWithVersioning);
+        }
+        /** The stage of the BlobContainer update allowing to specify enableNfsV3RootSquash. */
+        interface WithEnableNfsV3RootSquash {
+            /**
+             * Specifies the enableNfsV3RootSquash property: Enable NFSv3 root squash on blob container..
+             *
+             * @param enableNfsV3RootSquash Enable NFSv3 root squash on blob container.
+             * @return the next definition stage.
+             */
+            Update withEnableNfsV3RootSquash(Boolean enableNfsV3RootSquash);
+        }
+        /** The stage of the BlobContainer update allowing to specify enableNfsV3AllSquash. */
+        interface WithEnableNfsV3AllSquash {
+            /**
+             * Specifies the enableNfsV3AllSquash property: Enable NFSv3 all squash on blob container..
+             *
+             * @param enableNfsV3AllSquash Enable NFSv3 all squash on blob container.
+             * @return the next definition stage.
+             */
+            Update withEnableNfsV3AllSquash(Boolean enableNfsV3AllSquash);
         }
     }
     /**

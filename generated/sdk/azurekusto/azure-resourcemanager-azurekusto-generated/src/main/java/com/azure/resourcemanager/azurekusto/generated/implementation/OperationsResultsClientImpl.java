@@ -56,7 +56,7 @@ public final class OperationsResultsClientImpl implements OperationsResultsClien
     private interface OperationsResultsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Kusto/locations/{location}/operationresults"
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Kusto/locations/{location}/operationResults"
                 + "/{operationId}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)

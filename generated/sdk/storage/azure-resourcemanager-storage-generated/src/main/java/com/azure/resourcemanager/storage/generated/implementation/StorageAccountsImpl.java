@@ -235,6 +235,23 @@ public final class StorageAccountsImpl implements StorageAccounts {
         this.serviceClient().failover(resourceGroupName, accountName, context);
     }
 
+    public void hierarchicalNamespaceMigration(String resourceGroupName, String accountName, String requestType) {
+        this.serviceClient().hierarchicalNamespaceMigration(resourceGroupName, accountName, requestType);
+    }
+
+    public void hierarchicalNamespaceMigration(
+        String resourceGroupName, String accountName, String requestType, Context context) {
+        this.serviceClient().hierarchicalNamespaceMigration(resourceGroupName, accountName, requestType, context);
+    }
+
+    public void abortHierarchicalNamespaceMigration(String resourceGroupName, String accountName) {
+        this.serviceClient().abortHierarchicalNamespaceMigration(resourceGroupName, accountName);
+    }
+
+    public void abortHierarchicalNamespaceMigration(String resourceGroupName, String accountName, Context context) {
+        this.serviceClient().abortHierarchicalNamespaceMigration(resourceGroupName, accountName, context);
+    }
+
     public BlobRestoreStatus restoreBlobRanges(
         String resourceGroupName, String accountName, BlobRestoreParameters parameters) {
         BlobRestoreStatusInner inner =

@@ -94,6 +94,13 @@ public interface CreditSummary {
     Reseller reseller();
 
     /**
+     * Gets the etagPropertiesEtag property: The eTag for the resource.
+     *
+     * @return the etagPropertiesEtag value.
+     */
+    String etagPropertiesEtag();
+
+    /**
      * Gets the inner com.azure.resourcemanager.consumption.generated.fluent.models.CreditSummaryInner object.
      *
      * @return the inner object.

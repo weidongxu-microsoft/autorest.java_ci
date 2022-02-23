@@ -38,7 +38,7 @@ public interface DiskRestorePoint {
     OffsetDateTime timeCreated();
 
     /**
-     * Gets the sourceResourceId property: arm id of source disk.
+     * Gets the sourceResourceId property: arm id of source disk or source disk restore point.
      *
      * @return the sourceResourceId value.
      */
@@ -125,12 +125,28 @@ public interface DiskRestorePoint {
     String diskAccessId();
 
     /**
-     * Gets the completionPercent property: Percentage complete for the background copy when a resource is created via
-     * the CopyStart operation.
+     * Gets the completionPercent property: Percentage complete for the background copy of disk restore point when
+     * source resource is from a different region.
      *
      * @return the completionPercent value.
      */
     Float completionPercent();
+
+    /**
+     * Gets the replicationState property: Replication state of disk restore point when source resource is from a
+     * different region.
+     *
+     * @return the replicationState value.
+     */
+    String replicationState();
+
+    /**
+     * Gets the sourceResourceLocation property: Location of source disk or source disk restore point when source
+     * resource is from a different region.
+     *
+     * @return the sourceResourceLocation value.
+     */
+    String sourceResourceLocation();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.DiskRestorePointInner object.

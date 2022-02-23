@@ -36,77 +36,6 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<AuthorizationRule> listAuthorizationRules(
-        String resourceGroupName, String namespaceName, String alias) {
-        PagedIterable<AuthorizationRuleInner> inner =
-            this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, alias);
-        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<AuthorizationRule> listAuthorizationRules(
-        String resourceGroupName, String namespaceName, String alias, Context context) {
-        PagedIterable<AuthorizationRuleInner> inner =
-            this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, alias, context);
-        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
-    }
-
-    public AuthorizationRule getAuthorizationRule(
-        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
-        AuthorizationRuleInner inner =
-            this.serviceClient().getAuthorizationRule(resourceGroupName, namespaceName, alias, authorizationRuleName);
-        if (inner != null) {
-            return new AuthorizationRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<AuthorizationRule> getAuthorizationRuleWithResponse(
-        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName, Context context) {
-        Response<AuthorizationRuleInner> inner =
-            this
-                .serviceClient()
-                .getAuthorizationRuleWithResponse(
-                    resourceGroupName, namespaceName, alias, authorizationRuleName, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new AuthorizationRuleImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
-    public AccessKeys listKeys(
-        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
-        AccessKeysInner inner =
-            this.serviceClient().listKeys(resourceGroupName, namespaceName, alias, authorizationRuleName);
-        if (inner != null) {
-            return new AccessKeysImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<AccessKeys> listKeysWithResponse(
-        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName, Context context) {
-        Response<AccessKeysInner> inner =
-            this
-                .serviceClient()
-                .listKeysWithResponse(resourceGroupName, namespaceName, alias, authorizationRuleName, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new AccessKeysImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
     public CheckNameAvailabilityResult checkNameAvailability(
         String resourceGroupName, String namespaceName, CheckNameAvailabilityParameter parameters) {
         CheckNameAvailabilityResultInner inner =
@@ -195,6 +124,77 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     public Response<Void> failOverWithResponse(
         String resourceGroupName, String namespaceName, String alias, Context context) {
         return this.serviceClient().failOverWithResponse(resourceGroupName, namespaceName, alias, context);
+    }
+
+    public PagedIterable<AuthorizationRule> listAuthorizationRules(
+        String resourceGroupName, String namespaceName, String alias) {
+        PagedIterable<AuthorizationRuleInner> inner =
+            this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, alias);
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<AuthorizationRule> listAuthorizationRules(
+        String resourceGroupName, String namespaceName, String alias, Context context) {
+        PagedIterable<AuthorizationRuleInner> inner =
+            this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, alias, context);
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+    }
+
+    public AuthorizationRule getAuthorizationRule(
+        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
+        AuthorizationRuleInner inner =
+            this.serviceClient().getAuthorizationRule(resourceGroupName, namespaceName, alias, authorizationRuleName);
+        if (inner != null) {
+            return new AuthorizationRuleImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<AuthorizationRule> getAuthorizationRuleWithResponse(
+        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName, Context context) {
+        Response<AuthorizationRuleInner> inner =
+            this
+                .serviceClient()
+                .getAuthorizationRuleWithResponse(
+                    resourceGroupName, namespaceName, alias, authorizationRuleName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new AuthorizationRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AccessKeys listKeys(
+        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
+        AccessKeysInner inner =
+            this.serviceClient().listKeys(resourceGroupName, namespaceName, alias, authorizationRuleName);
+        if (inner != null) {
+            return new AccessKeysImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<AccessKeys> listKeysWithResponse(
+        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName, Context context) {
+        Response<AccessKeysInner> inner =
+            this
+                .serviceClient()
+                .listKeysWithResponse(resourceGroupName, namespaceName, alias, authorizationRuleName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new AccessKeysImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
     }
 
     public ArmDisasterRecovery getById(String id) {

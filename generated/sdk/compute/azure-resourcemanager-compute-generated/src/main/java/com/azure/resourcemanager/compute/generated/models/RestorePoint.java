@@ -6,6 +6,7 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.RestorePointInner;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 /** An immutable client-side representation of RestorePoint. */
@@ -62,12 +63,26 @@ public interface RestorePoint {
     ConsistencyModeTypes consistencyMode();
 
     /**
-     * Gets the provisioningDetails property: Gets the provisioning details set by the server during Create restore
-     * point operation.
+     * Gets the timeCreated property: Gets the creation time of the restore point.
      *
-     * @return the provisioningDetails value.
+     * @return the timeCreated value.
      */
-    RestorePointProvisioningDetails provisioningDetails();
+    OffsetDateTime timeCreated();
+
+    /**
+     * Gets the sourceRestorePoint property: Resource Id of the source restore point from which a copy needs to be
+     * created.
+     *
+     * @return the sourceRestorePoint value.
+     */
+    ApiEntityReference sourceRestorePoint();
+
+    /**
+     * Gets the instanceView property: The restore point instance view.
+     *
+     * @return the instanceView value.
+     */
+    RestorePointInstanceView instanceView();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.RestorePointInner object.
@@ -100,7 +115,10 @@ public interface RestorePoint {
          * The stage of the RestorePoint definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithExcludeDisks {
+        interface WithCreate
+            extends DefinitionStages.WithExcludeDisks,
+                DefinitionStages.WithTimeCreated,
+                DefinitionStages.WithSourceRestorePoint {
             /**
              * Executes the create request.
              *
@@ -127,6 +145,27 @@ public interface RestorePoint {
              * @return the next definition stage.
              */
             WithCreate withExcludeDisks(List<ApiEntityReference> excludeDisks);
+        }
+        /** The stage of the RestorePoint definition allowing to specify timeCreated. */
+        interface WithTimeCreated {
+            /**
+             * Specifies the timeCreated property: Gets the creation time of the restore point..
+             *
+             * @param timeCreated Gets the creation time of the restore point.
+             * @return the next definition stage.
+             */
+            WithCreate withTimeCreated(OffsetDateTime timeCreated);
+        }
+        /** The stage of the RestorePoint definition allowing to specify sourceRestorePoint. */
+        interface WithSourceRestorePoint {
+            /**
+             * Specifies the sourceRestorePoint property: Resource Id of the source restore point from which a copy
+             * needs to be created..
+             *
+             * @param sourceRestorePoint Resource Id of the source restore point from which a copy needs to be created.
+             * @return the next definition stage.
+             */
+            WithCreate withSourceRestorePoint(ApiEntityReference sourceRestorePoint);
         }
     }
     /**

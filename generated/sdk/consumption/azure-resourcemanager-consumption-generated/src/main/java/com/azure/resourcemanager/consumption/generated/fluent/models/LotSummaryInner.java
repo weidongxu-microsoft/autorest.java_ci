@@ -13,10 +13,8 @@ import com.azure.resourcemanager.consumption.generated.models.LotSource;
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import com.azure.resourcemanager.consumption.generated.models.Status;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
-import java.util.Map;
 
 /** A lot summary resource. */
 @Fluent
@@ -30,17 +28,12 @@ public final class LotSummaryInner extends ProxyResource {
     private LotProperties innerProperties;
 
     /*
-     * The etag for the resource.
+     * eTag of the resource. To handle concurrent update scenario, this field
+     * will be used to determine whether the user is updating the latest
+     * version or not.
      */
-    @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "eTag")
     private String etag;
-
-    /*
-     * Resource tags.
-     */
-    @JsonProperty(value = "tags", access = JsonProperty.Access.WRITE_ONLY)
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
-    private Map<String, String> tags;
 
     /**
      * Get the innerProperties property: The lot properties.
@@ -52,7 +45,8 @@ public final class LotSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the etag property: The etag for the resource.
+     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
+     * determine whether the user is updating the latest version or not.
      *
      * @return the etag value.
      */
@@ -61,12 +55,15 @@ public final class LotSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the tags property: Resource tags.
+     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
+     * determine whether the user is updating the latest version or not.
      *
-     * @return the tags value.
+     * @param etag the etag value to set.
+     * @return the LotSummaryInner object itself.
      */
-    public Map<String, String> tags() {
-        return this.tags;
+    public LotSummaryInner withEtag(String etag) {
+        this.etag = etag;
+        return this;
     }
 
     /**
@@ -125,12 +122,12 @@ public final class LotSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the purchaseDate property: The date when the lot was added.
+     * Get the purchasedDate property: The date when the lot was added.
      *
-     * @return the purchaseDate value.
+     * @return the purchasedDate value.
      */
-    public OffsetDateTime purchaseDate() {
-        return this.innerProperties() == null ? null : this.innerProperties().purchaseDate();
+    public OffsetDateTime purchasedDate() {
+        return this.innerProperties() == null ? null : this.innerProperties().purchasedDate();
     }
 
     /**
@@ -185,6 +182,15 @@ public final class LotSummaryInner extends ProxyResource {
      */
     public Reseller reseller() {
         return this.innerProperties() == null ? null : this.innerProperties().reseller();
+    }
+
+    /**
+     * Get the etag property: The eTag for the resource.
+     *
+     * @return the etag value.
+     */
+    public String etagPropertiesEtag() {
+        return this.innerProperties() == null ? null : this.innerProperties().etag();
     }
 
     /**

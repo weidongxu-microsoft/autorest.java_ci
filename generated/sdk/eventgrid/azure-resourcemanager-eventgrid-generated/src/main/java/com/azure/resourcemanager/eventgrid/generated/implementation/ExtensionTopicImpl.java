@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.ExtensionTopicInner;
 import com.azure.resourcemanager.eventgrid.generated.models.ExtensionTopic;
 
@@ -29,6 +30,10 @@ public final class ExtensionTopicImpl implements ExtensionTopic {
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String description() {

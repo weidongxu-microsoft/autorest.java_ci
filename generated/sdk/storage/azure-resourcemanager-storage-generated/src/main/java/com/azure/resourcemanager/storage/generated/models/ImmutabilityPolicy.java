@@ -64,6 +64,17 @@ public interface ImmutabilityPolicy {
     Boolean allowProtectedAppendWrites();
 
     /**
+     * Gets the allowProtectedAppendWritesAll property: This property can only be changed for unlocked time-based
+     * retention policies. When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining
+     * immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified
+     * or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. The 'allowProtectedAppendWrites'
+     * and 'allowProtectedAppendWritesAll' properties are mutually exclusive.
+     *
+     * @return the allowProtectedAppendWritesAll value.
+     */
+    Boolean allowProtectedAppendWritesAll();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.ImmutabilityPolicyInner object.
      *
      * @return the inner object.
@@ -102,6 +113,7 @@ public interface ImmutabilityPolicy {
         interface WithCreate
             extends DefinitionStages.WithImmutabilityPeriodSinceCreationInDays,
                 DefinitionStages.WithAllowProtectedAppendWrites,
+                DefinitionStages.WithAllowProtectedAppendWritesAll,
                 DefinitionStages.WithIfMatch {
             /**
              * Executes the create request.
@@ -136,7 +148,7 @@ public interface ImmutabilityPolicy {
              * Specifies the allowProtectedAppendWrites property: This property can only be changed for unlocked
              * time-based retention policies. When enabled, new blocks can be written to an append blob while
              * maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks
-             * cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API.
+             * cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API..
              *
              * @param allowProtectedAppendWrites This property can only be changed for unlocked time-based retention
              *     policies. When enabled, new blocks can be written to an append blob while maintaining immutability
@@ -145,6 +157,24 @@ public interface ImmutabilityPolicy {
              * @return the next definition stage.
              */
             WithCreate withAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites);
+        }
+        /** The stage of the ImmutabilityPolicy definition allowing to specify allowProtectedAppendWritesAll. */
+        interface WithAllowProtectedAppendWritesAll {
+            /**
+             * Specifies the allowProtectedAppendWritesAll property: This property can only be changed for unlocked
+             * time-based retention policies. When enabled, new blocks can be written to both 'Append and Bock Blobs'
+             * while maintaining immutability protection and compliance. Only new blocks can be added and any existing
+             * blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API.
+             * The 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive..
+             *
+             * @param allowProtectedAppendWritesAll This property can only be changed for unlocked time-based retention
+             *     policies. When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining
+             *     immutability protection and compliance. Only new blocks can be added and any existing blocks cannot
+             *     be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. The
+             *     'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive.
+             * @return the next definition stage.
+             */
+            WithCreate withAllowProtectedAppendWritesAll(Boolean allowProtectedAppendWritesAll);
         }
         /** The stage of the ImmutabilityPolicy definition allowing to specify ifMatch. */
         interface WithIfMatch {
@@ -172,6 +202,7 @@ public interface ImmutabilityPolicy {
     interface Update
         extends UpdateStages.WithImmutabilityPeriodSinceCreationInDays,
             UpdateStages.WithAllowProtectedAppendWrites,
+            UpdateStages.WithAllowProtectedAppendWritesAll,
             UpdateStages.WithIfMatch {
         /**
          * Executes the update request.
@@ -208,7 +239,7 @@ public interface ImmutabilityPolicy {
              * Specifies the allowProtectedAppendWrites property: This property can only be changed for unlocked
              * time-based retention policies. When enabled, new blocks can be written to an append blob while
              * maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks
-             * cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API.
+             * cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API..
              *
              * @param allowProtectedAppendWrites This property can only be changed for unlocked time-based retention
              *     policies. When enabled, new blocks can be written to an append blob while maintaining immutability
@@ -217,6 +248,24 @@ public interface ImmutabilityPolicy {
              * @return the next definition stage.
              */
             Update withAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites);
+        }
+        /** The stage of the ImmutabilityPolicy update allowing to specify allowProtectedAppendWritesAll. */
+        interface WithAllowProtectedAppendWritesAll {
+            /**
+             * Specifies the allowProtectedAppendWritesAll property: This property can only be changed for unlocked
+             * time-based retention policies. When enabled, new blocks can be written to both 'Append and Bock Blobs'
+             * while maintaining immutability protection and compliance. Only new blocks can be added and any existing
+             * blocks cannot be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API.
+             * The 'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive..
+             *
+             * @param allowProtectedAppendWritesAll This property can only be changed for unlocked time-based retention
+             *     policies. When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining
+             *     immutability protection and compliance. Only new blocks can be added and any existing blocks cannot
+             *     be modified or deleted. This property cannot be changed with ExtendImmutabilityPolicy API. The
+             *     'allowProtectedAppendWrites' and 'allowProtectedAppendWritesAll' properties are mutually exclusive.
+             * @return the next definition stage.
+             */
+            Update withAllowProtectedAppendWritesAll(Boolean allowProtectedAppendWritesAll);
         }
         /** The stage of the ImmutabilityPolicy update allowing to specify ifMatch. */
         interface WithIfMatch {

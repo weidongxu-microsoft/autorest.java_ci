@@ -6,6 +6,7 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
 import com.azure.resourcemanager.eventhubs.generated.models.Identity;
@@ -13,6 +14,7 @@ import com.azure.resourcemanager.eventhubs.generated.models.Sku;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Map;
 
 /** Single Namespace item in List or Get Operation. */
@@ -31,6 +33,12 @@ public final class EHNamespaceInner extends Resource {
      */
     @JsonProperty(value = "identity")
     private Identity identity;
+
+    /*
+     * The system meta data relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /*
      * Namespace properties supplied for create namespace operation.
@@ -76,6 +84,15 @@ public final class EHNamespaceInner extends Resource {
     public EHNamespaceInner withIdentity(Identity identity) {
         this.identity = identity;
         return this;
+    }
+
+    /**
+     * Get the systemData property: The system meta data relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**
@@ -296,6 +313,76 @@ public final class EHNamespaceInner extends Resource {
             this.innerProperties = new EHNamespaceProperties();
         }
         this.innerProperties().withEncryption(encryption);
+        return this;
+    }
+
+    /**
+     * Get the privateEndpointConnections property: List of private endpoint connections.
+     *
+     * @return the privateEndpointConnections value.
+     */
+    public List<PrivateEndpointConnectionInner> privateEndpointConnections() {
+        return this.innerProperties() == null ? null : this.innerProperties().privateEndpointConnections();
+    }
+
+    /**
+     * Set the privateEndpointConnections property: List of private endpoint connections.
+     *
+     * @param privateEndpointConnections the privateEndpointConnections value to set.
+     * @return the EHNamespaceInner object itself.
+     */
+    public EHNamespaceInner withPrivateEndpointConnections(
+        List<PrivateEndpointConnectionInner> privateEndpointConnections) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new EHNamespaceProperties();
+        }
+        this.innerProperties().withPrivateEndpointConnections(privateEndpointConnections);
+        return this;
+    }
+
+    /**
+     * Get the disableLocalAuth property: This property disables SAS authentication for the Event Hubs namespace.
+     *
+     * @return the disableLocalAuth value.
+     */
+    public Boolean disableLocalAuth() {
+        return this.innerProperties() == null ? null : this.innerProperties().disableLocalAuth();
+    }
+
+    /**
+     * Set the disableLocalAuth property: This property disables SAS authentication for the Event Hubs namespace.
+     *
+     * @param disableLocalAuth the disableLocalAuth value to set.
+     * @return the EHNamespaceInner object itself.
+     */
+    public EHNamespaceInner withDisableLocalAuth(Boolean disableLocalAuth) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new EHNamespaceProperties();
+        }
+        this.innerProperties().withDisableLocalAuth(disableLocalAuth);
+        return this;
+    }
+
+    /**
+     * Get the alternateName property: Alternate name specified when alias and namespace names are same.
+     *
+     * @return the alternateName value.
+     */
+    public String alternateName() {
+        return this.innerProperties() == null ? null : this.innerProperties().alternateName();
+    }
+
+    /**
+     * Set the alternateName property: Alternate name specified when alias and namespace names are same.
+     *
+     * @param alternateName the alternateName value to set.
+     * @return the EHNamespaceInner object itself.
+     */
+    public EHNamespaceInner withAlternateName(String alternateName) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new EHNamespaceProperties();
+        }
+        this.innerProperties().withAlternateName(alternateName);
         return this;
     }
 

@@ -6,6 +6,7 @@ package com.azure.resourcemanager.azurekusto.generated.implementation;
 
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.OperationResultInner;
 import com.azure.resourcemanager.azurekusto.generated.models.OperationResult;
+import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
 import com.azure.resourcemanager.azurekusto.generated.models.Status;
 import java.time.OffsetDateTime;
 
@@ -46,6 +47,10 @@ public final class OperationResultImpl implements OperationResult {
 
     public String operationKind() {
         return this.innerModel().operationKind();
+    }
+
+    public ProvisioningState provisioningState() {
+        return this.innerModel().provisioningState();
     }
 
     public String operationState() {

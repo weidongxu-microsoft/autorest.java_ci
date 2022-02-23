@@ -74,6 +74,14 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
         return Utils.mapPage(inner, inner1 -> new DedicatedHostImpl(inner1, this.manager()));
     }
 
+    public void restart(String resourceGroupName, String hostGroupName, String hostname) {
+        this.serviceClient().restart(resourceGroupName, hostGroupName, hostname);
+    }
+
+    public void restart(String resourceGroupName, String hostGroupName, String hostname, Context context) {
+        this.serviceClient().restart(resourceGroupName, hostGroupName, hostname, context);
+    }
+
     public DedicatedHost getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {

@@ -131,6 +131,14 @@ public interface VirtualMachineExtension {
     Boolean suppressFailures();
 
     /**
+     * Gets the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference,
+     * and consumed from key vault.
+     *
+     * @return the protectedSettingsFromKeyVault value.
+     */
+    Object protectedSettingsFromKeyVault();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -207,7 +215,8 @@ public interface VirtualMachineExtension {
                 DefinitionStages.WithSettings,
                 DefinitionStages.WithProtectedSettings,
                 DefinitionStages.WithInstanceView,
-                DefinitionStages.WithSuppressFailures {
+                DefinitionStages.WithSuppressFailures,
+                DefinitionStages.WithProtectedSettingsFromKeyVault {
             /**
              * Executes the create request.
              *
@@ -348,6 +357,18 @@ public interface VirtualMachineExtension {
              */
             WithCreate withSuppressFailures(Boolean suppressFailures);
         }
+        /** The stage of the VirtualMachineExtension definition allowing to specify protectedSettingsFromKeyVault. */
+        interface WithProtectedSettingsFromKeyVault {
+            /**
+             * Specifies the protectedSettingsFromKeyVault property: The extensions protected settings that are passed
+             * by reference, and consumed from key vault.
+             *
+             * @param protectedSettingsFromKeyVault The extensions protected settings that are passed by reference, and
+             *     consumed from key vault.
+             * @return the next definition stage.
+             */
+            WithCreate withProtectedSettingsFromKeyVault(Object protectedSettingsFromKeyVault);
+        }
     }
     /**
      * Begins update for the VirtualMachineExtension resource.
@@ -367,7 +388,8 @@ public interface VirtualMachineExtension {
             UpdateStages.WithEnableAutomaticUpgrade,
             UpdateStages.WithSettings,
             UpdateStages.WithProtectedSettings,
-            UpdateStages.WithSuppressFailures {
+            UpdateStages.WithSuppressFailures,
+            UpdateStages.WithProtectedSettingsFromKeyVault {
         /**
          * Executes the update request.
          *
@@ -498,6 +520,18 @@ public interface VirtualMachineExtension {
              * @return the next definition stage.
              */
             Update withSuppressFailures(Boolean suppressFailures);
+        }
+        /** The stage of the VirtualMachineExtension update allowing to specify protectedSettingsFromKeyVault. */
+        interface WithProtectedSettingsFromKeyVault {
+            /**
+             * Specifies the protectedSettingsFromKeyVault property: The extensions protected settings that are passed
+             * by reference, and consumed from key vault.
+             *
+             * @param protectedSettingsFromKeyVault The extensions protected settings that are passed by reference, and
+             *     consumed from key vault.
+             * @return the next definition stage.
+             */
+            Update withProtectedSettingsFromKeyVault(Object protectedSettingsFromKeyVault);
         }
     }
     /**

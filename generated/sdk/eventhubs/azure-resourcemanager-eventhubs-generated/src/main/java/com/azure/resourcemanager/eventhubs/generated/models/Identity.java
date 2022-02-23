@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Map;
 
 /** Properties to configure Identity for Bring your Own Keys. */
 @Fluent
@@ -17,21 +19,27 @@ public class Identity {
     /*
      * ObjectId from the KeyVault
      */
-    @JsonProperty(value = "principalId")
+    @JsonProperty(value = "principalId", access = JsonProperty.Access.WRITE_ONLY)
     private String principalId;
 
     /*
      * TenantId from the KeyVault
      */
-    @JsonProperty(value = "tenantId")
+    @JsonProperty(value = "tenantId", access = JsonProperty.Access.WRITE_ONLY)
     private String tenantId;
 
     /*
-     * Enumerates the possible value Identity type, which currently supports
-     * only 'SystemAssigned'
+     * Type of managed service identity.
      */
     @JsonProperty(value = "type")
-    private IdentityType type;
+    private ManagedServiceIdentityType type;
+
+    /*
+     * Properties for User Assigned Identities
+     */
+    @JsonProperty(value = "userAssignedIdentities")
+    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
+    private Map<String, UserAssignedIdentity> userAssignedIdentities;
 
     /**
      * Get the principalId property: ObjectId from the KeyVault.
@@ -40,17 +48,6 @@ public class Identity {
      */
     public String principalId() {
         return this.principalId;
-    }
-
-    /**
-     * Set the principalId property: ObjectId from the KeyVault.
-     *
-     * @param principalId the principalId value to set.
-     * @return the Identity object itself.
-     */
-    public Identity withPrincipalId(String principalId) {
-        this.principalId = principalId;
-        return this;
     }
 
     /**
@@ -63,35 +60,42 @@ public class Identity {
     }
 
     /**
-     * Set the tenantId property: TenantId from the KeyVault.
-     *
-     * @param tenantId the tenantId value to set.
-     * @return the Identity object itself.
-     */
-    public Identity withTenantId(String tenantId) {
-        this.tenantId = tenantId;
-        return this;
-    }
-
-    /**
-     * Get the type property: Enumerates the possible value Identity type, which currently supports only
-     * 'SystemAssigned'.
+     * Get the type property: Type of managed service identity.
      *
      * @return the type value.
      */
-    public IdentityType type() {
+    public ManagedServiceIdentityType type() {
         return this.type;
     }
 
     /**
-     * Set the type property: Enumerates the possible value Identity type, which currently supports only
-     * 'SystemAssigned'.
+     * Set the type property: Type of managed service identity.
      *
      * @param type the type value to set.
      * @return the Identity object itself.
      */
-    public Identity withType(IdentityType type) {
+    public Identity withType(ManagedServiceIdentityType type) {
         this.type = type;
+        return this;
+    }
+
+    /**
+     * Get the userAssignedIdentities property: Properties for User Assigned Identities.
+     *
+     * @return the userAssignedIdentities value.
+     */
+    public Map<String, UserAssignedIdentity> userAssignedIdentities() {
+        return this.userAssignedIdentities;
+    }
+
+    /**
+     * Set the userAssignedIdentities property: Properties for User Assigned Identities.
+     *
+     * @param userAssignedIdentities the userAssignedIdentities value to set.
+     * @return the Identity object itself.
+     */
+    public Identity withUserAssignedIdentities(Map<String, UserAssignedIdentity> userAssignedIdentities) {
+        this.userAssignedIdentities = userAssignedIdentities;
         return this;
     }
 
@@ -101,5 +105,15 @@ public class Identity {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (userAssignedIdentities() != null) {
+            userAssignedIdentities()
+                .values()
+                .forEach(
+                    e -> {
+                        if (e != null) {
+                            e.validate();
+                        }
+                    });
+        }
     }
 }

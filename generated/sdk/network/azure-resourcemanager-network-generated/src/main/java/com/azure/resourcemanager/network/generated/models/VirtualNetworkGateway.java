@@ -117,6 +117,13 @@ public interface VirtualNetworkGateway {
     Boolean active();
 
     /**
+     * Gets the disableIpSecReplayProtection property: disableIPSecReplayProtection flag.
+     *
+     * @return the disableIpSecReplayProtection value.
+     */
+    Boolean disableIpSecReplayProtection();
+
+    /**
      * Gets the gatewayDefaultSite property: The reference to the LocalNetworkGateway resource which represents local
      * network site having default routes. Assign Null value in case of removing existing default site setting.
      *
@@ -281,6 +288,7 @@ public interface VirtualNetworkGateway {
                 DefinitionStages.WithEnableBgp,
                 DefinitionStages.WithEnablePrivateIpAddress,
                 DefinitionStages.WithActive,
+                DefinitionStages.WithDisableIpSecReplayProtection,
                 DefinitionStages.WithGatewayDefaultSite,
                 DefinitionStages.WithSku,
                 DefinitionStages.WithVpnClientConfiguration,
@@ -398,6 +406,16 @@ public interface VirtualNetworkGateway {
              * @return the next definition stage.
              */
             WithCreate withActive(Boolean active);
+        }
+        /** The stage of the VirtualNetworkGateway definition allowing to specify disableIpSecReplayProtection. */
+        interface WithDisableIpSecReplayProtection {
+            /**
+             * Specifies the disableIpSecReplayProtection property: disableIPSecReplayProtection flag..
+             *
+             * @param disableIpSecReplayProtection disableIPSecReplayProtection flag.
+             * @return the next definition stage.
+             */
+            WithCreate withDisableIpSecReplayProtection(Boolean disableIpSecReplayProtection);
         }
         /** The stage of the VirtualNetworkGateway definition allowing to specify gatewayDefaultSite. */
         interface WithGatewayDefaultSite {

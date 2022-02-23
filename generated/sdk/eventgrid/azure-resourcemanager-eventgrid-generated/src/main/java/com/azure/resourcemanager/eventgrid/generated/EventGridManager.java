@@ -24,15 +24,10 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventgrid.generated.fluent.EventGridManagementClient;
 import com.azure.resourcemanager.eventgrid.generated.implementation.DomainTopicsImpl;
 import com.azure.resourcemanager.eventgrid.generated.implementation.DomainsImpl;
-import com.azure.resourcemanager.eventgrid.generated.implementation.EventChannelsImpl;
 import com.azure.resourcemanager.eventgrid.generated.implementation.EventGridManagementClientBuilder;
 import com.azure.resourcemanager.eventgrid.generated.implementation.EventSubscriptionsImpl;
 import com.azure.resourcemanager.eventgrid.generated.implementation.ExtensionTopicsImpl;
 import com.azure.resourcemanager.eventgrid.generated.implementation.OperationsImpl;
-import com.azure.resourcemanager.eventgrid.generated.implementation.PartnerNamespacesImpl;
-import com.azure.resourcemanager.eventgrid.generated.implementation.PartnerRegistrationsImpl;
-import com.azure.resourcemanager.eventgrid.generated.implementation.PartnerTopicEventSubscriptionsImpl;
-import com.azure.resourcemanager.eventgrid.generated.implementation.PartnerTopicsImpl;
 import com.azure.resourcemanager.eventgrid.generated.implementation.PrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.eventgrid.generated.implementation.PrivateLinkResourcesImpl;
 import com.azure.resourcemanager.eventgrid.generated.implementation.SystemTopicEventSubscriptionsImpl;
@@ -41,14 +36,9 @@ import com.azure.resourcemanager.eventgrid.generated.implementation.TopicTypesIm
 import com.azure.resourcemanager.eventgrid.generated.implementation.TopicsImpl;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainTopics;
 import com.azure.resourcemanager.eventgrid.generated.models.Domains;
-import com.azure.resourcemanager.eventgrid.generated.models.EventChannels;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptions;
 import com.azure.resourcemanager.eventgrid.generated.models.ExtensionTopics;
 import com.azure.resourcemanager.eventgrid.generated.models.Operations;
-import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaces;
-import com.azure.resourcemanager.eventgrid.generated.models.PartnerRegistrations;
-import com.azure.resourcemanager.eventgrid.generated.models.PartnerTopicEventSubscriptions;
-import com.azure.resourcemanager.eventgrid.generated.models.PartnerTopics;
 import com.azure.resourcemanager.eventgrid.generated.models.PrivateEndpointConnections;
 import com.azure.resourcemanager.eventgrid.generated.models.PrivateLinkResources;
 import com.azure.resourcemanager.eventgrid.generated.models.SystemTopicEventSubscriptions;
@@ -68,29 +58,19 @@ public final class EventGridManager {
 
     private DomainTopics domainTopics;
 
-    private EventChannels eventChannels;
-
     private EventSubscriptions eventSubscriptions;
 
     private SystemTopicEventSubscriptions systemTopicEventSubscriptions;
 
-    private PartnerTopicEventSubscriptions partnerTopicEventSubscriptions;
-
     private Operations operations;
 
-    private PartnerNamespaces partnerNamespaces;
-
-    private PartnerRegistrations partnerRegistrations;
-
-    private PartnerTopics partnerTopics;
+    private Topics topics;
 
     private PrivateEndpointConnections privateEndpointConnections;
 
     private PrivateLinkResources privateLinkResources;
 
     private SystemTopics systemTopics;
-
-    private Topics topics;
 
     private ExtensionTopics extensionTopics;
 
@@ -300,14 +280,6 @@ public final class EventGridManager {
         return domainTopics;
     }
 
-    /** @return Resource collection API of EventChannels. */
-    public EventChannels eventChannels() {
-        if (this.eventChannels == null) {
-            this.eventChannels = new EventChannelsImpl(clientObject.getEventChannels(), this);
-        }
-        return eventChannels;
-    }
-
     /** @return Resource collection API of EventSubscriptions. */
     public EventSubscriptions eventSubscriptions() {
         if (this.eventSubscriptions == null) {
@@ -325,15 +297,6 @@ public final class EventGridManager {
         return systemTopicEventSubscriptions;
     }
 
-    /** @return Resource collection API of PartnerTopicEventSubscriptions. */
-    public PartnerTopicEventSubscriptions partnerTopicEventSubscriptions() {
-        if (this.partnerTopicEventSubscriptions == null) {
-            this.partnerTopicEventSubscriptions =
-                new PartnerTopicEventSubscriptionsImpl(clientObject.getPartnerTopicEventSubscriptions(), this);
-        }
-        return partnerTopicEventSubscriptions;
-    }
-
     /** @return Resource collection API of Operations. */
     public Operations operations() {
         if (this.operations == null) {
@@ -342,28 +305,12 @@ public final class EventGridManager {
         return operations;
     }
 
-    /** @return Resource collection API of PartnerNamespaces. */
-    public PartnerNamespaces partnerNamespaces() {
-        if (this.partnerNamespaces == null) {
-            this.partnerNamespaces = new PartnerNamespacesImpl(clientObject.getPartnerNamespaces(), this);
+    /** @return Resource collection API of Topics. */
+    public Topics topics() {
+        if (this.topics == null) {
+            this.topics = new TopicsImpl(clientObject.getTopics(), this);
         }
-        return partnerNamespaces;
-    }
-
-    /** @return Resource collection API of PartnerRegistrations. */
-    public PartnerRegistrations partnerRegistrations() {
-        if (this.partnerRegistrations == null) {
-            this.partnerRegistrations = new PartnerRegistrationsImpl(clientObject.getPartnerRegistrations(), this);
-        }
-        return partnerRegistrations;
-    }
-
-    /** @return Resource collection API of PartnerTopics. */
-    public PartnerTopics partnerTopics() {
-        if (this.partnerTopics == null) {
-            this.partnerTopics = new PartnerTopicsImpl(clientObject.getPartnerTopics(), this);
-        }
-        return partnerTopics;
+        return topics;
     }
 
     /** @return Resource collection API of PrivateEndpointConnections. */
@@ -389,14 +336,6 @@ public final class EventGridManager {
             this.systemTopics = new SystemTopicsImpl(clientObject.getSystemTopics(), this);
         }
         return systemTopics;
-    }
-
-    /** @return Resource collection API of Topics. */
-    public Topics topics() {
-        if (this.topics == null) {
-            this.topics = new TopicsImpl(clientObject.getTopics(), this);
-        }
-        return topics;
     }
 
     /** @return Resource collection API of ExtensionTopics. */
