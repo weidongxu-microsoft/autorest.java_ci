@@ -220,8 +220,8 @@ public final class EventHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Get the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
-     * used to authenticate with event hub.
+     * Get the managedIdentityResourceId property: Empty for non-managed identity based data connection. For system
+     * assigned identity, provide cluster resource Id. For user assigned identity (UAI) provide the UAI resource Id.
      *
      * @return the managedIdentityResourceId value.
      */
@@ -230,8 +230,8 @@ public final class EventHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Set the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
-     * used to authenticate with event hub.
+     * Set the managedIdentityResourceId property: Empty for non-managed identity based data connection. For system
+     * assigned identity, provide cluster resource Id. For user assigned identity (UAI) provide the UAI resource Id.
      *
      * @param managedIdentityResourceId the managedIdentityResourceId value to set.
      * @return the EventHubDataConnection object itself.

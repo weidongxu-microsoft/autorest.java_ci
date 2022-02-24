@@ -71,8 +71,9 @@ public final class EventHubConnectionProperties {
     private ProvisioningState provisioningState;
 
     /*
-     * The resource ID of a managed identity (system or user assigned) to be
-     * used to authenticate with event hub.
+     * Empty for non-managed identity based data connection. For system
+     * assigned identity, provide cluster resource Id.  For user assigned
+     * identity (UAI) provide the UAI resource Id.
      */
     @JsonProperty(value = "managedIdentityResourceId")
     private String managedIdentityResourceId;
@@ -246,8 +247,8 @@ public final class EventHubConnectionProperties {
     }
 
     /**
-     * Get the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
-     * used to authenticate with event hub.
+     * Get the managedIdentityResourceId property: Empty for non-managed identity based data connection. For system
+     * assigned identity, provide cluster resource Id. For user assigned identity (UAI) provide the UAI resource Id.
      *
      * @return the managedIdentityResourceId value.
      */
@@ -256,8 +257,8 @@ public final class EventHubConnectionProperties {
     }
 
     /**
-     * Set the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
-     * used to authenticate with event hub.
+     * Set the managedIdentityResourceId property: Empty for non-managed identity based data connection. For system
+     * assigned identity, provide cluster resource Id. For user assigned identity (UAI) provide the UAI resource Id.
      *
      * @param managedIdentityResourceId the managedIdentityResourceId value to set.
      * @return the EventHubConnectionProperties object itself.
