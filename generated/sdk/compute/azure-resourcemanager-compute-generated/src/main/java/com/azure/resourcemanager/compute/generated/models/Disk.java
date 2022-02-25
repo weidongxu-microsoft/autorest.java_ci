@@ -302,6 +302,14 @@ public interface Disk {
     PublicNetworkAccess publicNetworkAccess();
 
     /**
+     * Gets the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a
+     * disk or snapshot.
+     *
+     * @return the dataAccessAuthMode value.
+     */
+    DataAccessAuthMode dataAccessAuthMode();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -391,7 +399,8 @@ public interface Disk {
                 DefinitionStages.WithSupportsHibernation,
                 DefinitionStages.WithSecurityProfile,
                 DefinitionStages.WithCompletionPercent,
-                DefinitionStages.WithPublicNetworkAccess {
+                DefinitionStages.WithPublicNetworkAccess,
+                DefinitionStages.WithDataAccessAuthMode {
             /**
              * Executes the create request.
              *
@@ -697,6 +706,18 @@ public interface Disk {
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+        /** The stage of the Disk definition allowing to specify dataAccessAuthMode. */
+        interface WithDataAccessAuthMode {
+            /**
+             * Specifies the dataAccessAuthMode property: Additional authentication requirements when exporting or
+             * uploading to a disk or snapshot..
+             *
+             * @param dataAccessAuthMode Additional authentication requirements when exporting or uploading to a disk or
+             *     snapshot.
+             * @return the next definition stage.
+             */
+            WithCreate withDataAccessAuthMode(DataAccessAuthMode dataAccessAuthMode);
+        }
     }
     /**
      * Begins update for the Disk resource.
@@ -725,7 +746,8 @@ public interface Disk {
             UpdateStages.WithPurchasePlan,
             UpdateStages.WithSupportedCapabilities,
             UpdateStages.WithSupportsHibernation,
-            UpdateStages.WithPublicNetworkAccess {
+            UpdateStages.WithPublicNetworkAccess,
+            UpdateStages.WithDataAccessAuthMode {
         /**
          * Executes the update request.
          *
@@ -935,11 +957,9 @@ public interface Disk {
         /** The stage of the Disk update allowing to specify supportedCapabilities. */
         interface WithSupportedCapabilities {
             /**
-             * Specifies the supportedCapabilities property: List of supported capabilities (like accelerated
-             * networking) to be added on the OS disk..
+             * Specifies the supportedCapabilities property: List of supported capabilities to be added on the OS disk..
              *
-             * @param supportedCapabilities List of supported capabilities (like accelerated networking) to be added on
-             *     the OS disk.
+             * @param supportedCapabilities List of supported capabilities to be added on the OS disk.
              * @return the next definition stage.
              */
             Update withSupportedCapabilities(SupportedCapabilities supportedCapabilities);
@@ -963,6 +983,18 @@ public interface Disk {
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
+        }
+        /** The stage of the Disk update allowing to specify dataAccessAuthMode. */
+        interface WithDataAccessAuthMode {
+            /**
+             * Specifies the dataAccessAuthMode property: Additional authentication requirements when exporting or
+             * uploading to a disk or snapshot..
+             *
+             * @param dataAccessAuthMode Additional authentication requirements when exporting or uploading to a disk or
+             *     snapshot.
+             * @return the next definition stage.
+             */
+            Update withDataAccessAuthMode(DataAccessAuthMode dataAccessAuthMode);
         }
     }
     /**

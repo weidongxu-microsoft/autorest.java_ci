@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.compute.generated.models.Architecture;
 import com.azure.resourcemanager.compute.generated.models.Disallowed;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageFeature;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageIdentifier;
@@ -376,6 +377,29 @@ public final class GalleryImageInner extends Resource {
             this.innerProperties = new GalleryImageProperties();
         }
         this.innerProperties().withFeatures(features);
+        return this;
+    }
+
+    /**
+     * Get the architecture property: The architecture of the image. Applicable to OS disks only.
+     *
+     * @return the architecture value.
+     */
+    public Architecture architecture() {
+        return this.innerProperties() == null ? null : this.innerProperties().architecture();
+    }
+
+    /**
+     * Set the architecture property: The architecture of the image. Applicable to OS disks only.
+     *
+     * @param architecture the architecture value to set.
+     * @return the GalleryImageInner object itself.
+     */
+    public GalleryImageInner withArchitecture(Architecture architecture) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new GalleryImageProperties();
+        }
+        this.innerProperties().withArchitecture(architecture);
         return this;
     }
 

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryImageInner;
+import com.azure.resourcemanager.compute.generated.models.Architecture;
 import com.azure.resourcemanager.compute.generated.models.Disallowed;
 import com.azure.resourcemanager.compute.generated.models.GalleryImage;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageFeature;
@@ -112,6 +113,10 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public Architecture architecture() {
+        return this.innerModel().architecture();
     }
 
     public Region region() {
@@ -366,6 +371,16 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
             return this;
         } else {
             this.updateGalleryImage.withFeatures(features);
+            return this;
+        }
+    }
+
+    public GalleryImageImpl withArchitecture(Architecture architecture) {
+        if (isInCreateMode()) {
+            this.innerModel().withArchitecture(architecture);
+            return this;
+        } else {
+            this.updateGalleryImage.withArchitecture(architecture);
             return this;
         }
     }

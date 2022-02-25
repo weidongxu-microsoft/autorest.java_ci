@@ -156,6 +156,13 @@ public interface GalleryImage {
     List<GalleryImageFeature> features();
 
     /**
+     * Gets the architecture property: The architecture of the image. Applicable to OS disks only.
+     *
+     * @return the architecture value.
+     */
+    Architecture architecture();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -235,7 +242,8 @@ public interface GalleryImage {
                 DefinitionStages.WithRecommended,
                 DefinitionStages.WithDisallowed,
                 DefinitionStages.WithPurchasePlan,
-                DefinitionStages.WithFeatures {
+                DefinitionStages.WithFeatures,
+                DefinitionStages.WithArchitecture {
             /**
              * Executes the create request.
              *
@@ -405,6 +413,16 @@ public interface GalleryImage {
              */
             WithCreate withFeatures(List<GalleryImageFeature> features);
         }
+        /** The stage of the GalleryImage definition allowing to specify architecture. */
+        interface WithArchitecture {
+            /**
+             * Specifies the architecture property: The architecture of the image. Applicable to OS disks only..
+             *
+             * @param architecture The architecture of the image. Applicable to OS disks only.
+             * @return the next definition stage.
+             */
+            WithCreate withArchitecture(Architecture architecture);
+        }
     }
     /**
      * Begins update for the GalleryImage resource.
@@ -428,7 +446,8 @@ public interface GalleryImage {
             UpdateStages.WithRecommended,
             UpdateStages.WithDisallowed,
             UpdateStages.WithPurchasePlan,
-            UpdateStages.WithFeatures {
+            UpdateStages.WithFeatures,
+            UpdateStages.WithArchitecture {
         /**
          * Executes the update request.
          *
@@ -599,6 +618,16 @@ public interface GalleryImage {
              * @return the next definition stage.
              */
             Update withFeatures(List<GalleryImageFeature> features);
+        }
+        /** The stage of the GalleryImage update allowing to specify architecture. */
+        interface WithArchitecture {
+            /**
+             * Specifies the architecture property: The architecture of the image. Applicable to OS disks only..
+             *
+             * @param architecture The architecture of the image. Applicable to OS disks only.
+             * @return the next definition stage.
+             */
+            Update withArchitecture(Architecture architecture);
         }
     }
     /**

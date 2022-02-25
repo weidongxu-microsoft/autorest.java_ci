@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageInner;
+import com.azure.resourcemanager.compute.generated.models.ArchitectureTypes;
 import com.azure.resourcemanager.compute.generated.models.AutomaticOSUpgradeProperties;
 import com.azure.resourcemanager.compute.generated.models.DataDiskImage;
 import com.azure.resourcemanager.compute.generated.models.DisallowedConfiguration;
@@ -91,6 +92,10 @@ public final class VirtualMachineImageImpl implements VirtualMachineImage {
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public ArchitectureTypes architecture() {
+        return this.innerModel().architecture();
     }
 
     public VirtualMachineImageInner innerModel() {

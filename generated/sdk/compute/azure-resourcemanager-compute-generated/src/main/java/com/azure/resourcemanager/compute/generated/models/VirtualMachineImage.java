@@ -97,6 +97,13 @@ public interface VirtualMachineImage {
     List<VirtualMachineImageFeature> features();
 
     /**
+     * Gets the architecture property: Specifies the Architecture Type.
+     *
+     * @return the architecture value.
+     */
+    ArchitectureTypes architecture();
+
+    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageInner object.
      *
      * @return the inner object.

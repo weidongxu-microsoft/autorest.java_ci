@@ -9,6 +9,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskInner;
 import com.azure.resourcemanager.compute.generated.models.AccessUri;
 import com.azure.resourcemanager.compute.generated.models.CreationData;
+import com.azure.resourcemanager.compute.generated.models.DataAccessAuthMode;
 import com.azure.resourcemanager.compute.generated.models.Disk;
 import com.azure.resourcemanager.compute.generated.models.DiskSecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.DiskSku;
@@ -206,6 +207,10 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
 
     public PublicNetworkAccess publicNetworkAccess() {
         return this.innerModel().publicNetworkAccess();
+    }
+
+    public DataAccessAuthMode dataAccessAuthMode() {
+        return this.innerModel().dataAccessAuthMode();
     }
 
     public Region region() {
@@ -545,6 +550,16 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
             return this;
         } else {
             this.updateDisk.withPublicNetworkAccess(publicNetworkAccess);
+            return this;
+        }
+    }
+
+    public DiskImpl withDataAccessAuthMode(DataAccessAuthMode dataAccessAuthMode) {
+        if (isInCreateMode()) {
+            this.innerModel().withDataAccessAuthMode(dataAccessAuthMode);
+            return this;
+        } else {
+            this.updateDisk.withDataAccessAuthMode(dataAccessAuthMode);
             return this;
         }
     }
