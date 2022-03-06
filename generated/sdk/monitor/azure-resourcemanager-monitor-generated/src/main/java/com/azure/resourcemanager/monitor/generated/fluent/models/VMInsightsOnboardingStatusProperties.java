@@ -9,15 +9,12 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.DataContainer;
 import com.azure.resourcemanager.monitor.generated.models.DataStatus;
 import com.azure.resourcemanager.monitor.generated.models.OnboardingStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Resource properties. */
 @Fluent
 public final class VMInsightsOnboardingStatusProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VMInsightsOnboardingStatusProperties.class);
-
     /*
      * Azure Resource Manager identifier of the resource whose onboarding
      * status is being represented.
@@ -143,19 +140,19 @@ public final class VMInsightsOnboardingStatusProperties {
      */
     public void validate() {
         if (resourceId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property resourceId in model VMInsightsOnboardingStatusProperties"));
         }
         if (onboardingStatus() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property onboardingStatus in model VMInsightsOnboardingStatusProperties"));
         }
         if (dataStatus() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property dataStatus in model VMInsightsOnboardingStatusProperties"));
@@ -164,4 +161,6 @@ public final class VMInsightsOnboardingStatusProperties {
             data().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(VMInsightsOnboardingStatusProperties.class);
 }

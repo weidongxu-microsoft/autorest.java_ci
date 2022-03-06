@@ -12,10 +12,9 @@ import com.azure.resourcemanager.network.generated.fluent.ResourceNavigationLink
 import com.azure.resourcemanager.network.generated.fluent.models.ResourceNavigationLinksListResultInner;
 import com.azure.resourcemanager.network.generated.models.ResourceNavigationLinks;
 import com.azure.resourcemanager.network.generated.models.ResourceNavigationLinksListResult;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceNavigationLinksImpl implements ResourceNavigationLinks {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceNavigationLinksImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ResourceNavigationLinksImpl.class);
 
     private final ResourceNavigationLinksClient innerClient;
 

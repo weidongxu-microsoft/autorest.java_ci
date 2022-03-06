@@ -19,10 +19,9 @@ import com.azure.resourcemanager.hdinsight.generated.models.ClusterMonitoringReq
 import com.azure.resourcemanager.hdinsight.generated.models.ClusterMonitoringResponse;
 import com.azure.resourcemanager.hdinsight.generated.models.Extension;
 import com.azure.resourcemanager.hdinsight.generated.models.Extensions;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExtensionsImpl implements Extensions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExtensionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ExtensionsImpl.class);
 
     private final ExtensionsClient innerClient;
 

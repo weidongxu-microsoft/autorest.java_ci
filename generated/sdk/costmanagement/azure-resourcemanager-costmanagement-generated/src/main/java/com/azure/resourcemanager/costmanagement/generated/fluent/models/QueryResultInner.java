@@ -6,9 +6,7 @@ package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.models.QueryColumn;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -17,8 +15,6 @@ import java.util.Map;
 /** Result of query. It contains all columns listed under groupings and aggregation. */
 @Fluent
 public final class QueryResultInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(QueryResultInner.class);
-
     /*
      * eTag of the resource. To handle concurrent update scenario, this field
      * will be used to determine whether the user is updating the latest

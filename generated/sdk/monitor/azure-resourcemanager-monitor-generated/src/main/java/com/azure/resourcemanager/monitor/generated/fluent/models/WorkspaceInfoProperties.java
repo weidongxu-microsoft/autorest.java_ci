@@ -6,14 +6,11 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Resource properties. */
 @Fluent
 public final class WorkspaceInfoProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WorkspaceInfoProperties.class);
-
     /*
      * Log Analytics workspace identifier.
      */
@@ -47,10 +44,12 @@ public final class WorkspaceInfoProperties {
      */
     public void validate() {
         if (customerId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property customerId in model WorkspaceInfoProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(WorkspaceInfoProperties.class);
 }

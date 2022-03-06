@@ -13,10 +13,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.ScheduledQueryRulesCli
 import com.azure.resourcemanager.monitor.generated.fluent.models.LogSearchRuleResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.LogSearchRuleResource;
 import com.azure.resourcemanager.monitor.generated.models.ScheduledQueryRules;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ScheduledQueryRulesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ScheduledQueryRulesImpl.class);
 
     private final ScheduledQueryRulesClient innerClient;
 
@@ -86,7 +85,7 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
     public LogSearchRuleResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -94,7 +93,7 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
         }
         String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
         if (ruleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -107,7 +106,7 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
     public Response<LogSearchRuleResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -115,7 +114,7 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
         }
         String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
         if (ruleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -128,7 +127,7 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -136,7 +135,7 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
         }
         String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
         if (ruleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -157,7 +156,7 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
         }
         String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
         if (ruleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

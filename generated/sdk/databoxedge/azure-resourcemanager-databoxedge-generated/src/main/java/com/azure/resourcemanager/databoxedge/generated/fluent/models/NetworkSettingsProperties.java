@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.NetworkAdapter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The properties of network settings. */
 @Immutable
 public final class NetworkSettingsProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkSettingsProperties.class);
-
     /*
      * The network adapter list on the device.
      */

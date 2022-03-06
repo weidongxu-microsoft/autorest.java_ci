@@ -13,10 +13,9 @@ import com.azure.resourcemanager.eventgrid.generated.fluent.DomainTopicsClient;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DomainTopicInner;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainTopic;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainTopics;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DomainTopicsImpl implements DomainTopics {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DomainTopicsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DomainTopicsImpl.class);
 
     private final DomainTopicsClient innerClient;
 

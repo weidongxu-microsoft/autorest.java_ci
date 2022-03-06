@@ -14,10 +14,9 @@ import com.azure.resourcemanager.storage.generated.fluent.models.QueueServicePro
 import com.azure.resourcemanager.storage.generated.models.ListQueueServices;
 import com.azure.resourcemanager.storage.generated.models.QueueServiceProperties;
 import com.azure.resourcemanager.storage.generated.models.QueueServices;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class QueueServicesImpl implements QueueServices {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(QueueServicesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(QueueServicesImpl.class);
 
     private final QueueServicesClient innerClient;
 
@@ -79,7 +78,7 @@ public final class QueueServicesImpl implements QueueServices {
     public QueueServiceProperties getServicePropertiesById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -87,7 +86,7 @@ public final class QueueServicesImpl implements QueueServices {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -99,7 +98,7 @@ public final class QueueServicesImpl implements QueueServices {
     public Response<QueueServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -107,7 +106,7 @@ public final class QueueServicesImpl implements QueueServices {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

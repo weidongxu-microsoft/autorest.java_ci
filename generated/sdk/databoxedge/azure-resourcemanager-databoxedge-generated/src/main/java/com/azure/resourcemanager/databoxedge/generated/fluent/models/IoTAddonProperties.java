@@ -10,14 +10,11 @@ import com.azure.resourcemanager.databoxedge.generated.models.AddonState;
 import com.azure.resourcemanager.databoxedge.generated.models.HostPlatformType;
 import com.azure.resourcemanager.databoxedge.generated.models.IoTDeviceInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.PlatformType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** IoT addon properties. */
 @Fluent
 public final class IoTAddonProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(IoTAddonProperties.class);
-
     /*
      * IoT device metadata to which appliance needs to be connected.
      */
@@ -137,7 +134,7 @@ public final class IoTAddonProperties {
      */
     public void validate() {
         if (ioTDeviceDetails() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property ioTDeviceDetails in model IoTAddonProperties"));
@@ -145,7 +142,7 @@ public final class IoTAddonProperties {
             ioTDeviceDetails().validate();
         }
         if (ioTEdgeDeviceDetails() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property ioTEdgeDeviceDetails in model IoTAddonProperties"));
@@ -153,4 +150,6 @@ public final class IoTAddonProperties {
             ioTEdgeDeviceDetails().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(IoTAddonProperties.class);
 }

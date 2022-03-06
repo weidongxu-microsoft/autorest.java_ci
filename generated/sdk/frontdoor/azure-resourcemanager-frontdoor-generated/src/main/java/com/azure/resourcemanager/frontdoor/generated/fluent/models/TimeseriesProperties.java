@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.AggregationInterval;
 import com.azure.resourcemanager.frontdoor.generated.models.TimeseriesDataPoint;
 import com.azure.resourcemanager.frontdoor.generated.models.TimeseriesType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Defines the properties of a timeseries. */
 @Fluent
 public final class TimeseriesProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TimeseriesProperties.class);
-
     /*
      * The endpoint associated with the Timeseries data point
      */

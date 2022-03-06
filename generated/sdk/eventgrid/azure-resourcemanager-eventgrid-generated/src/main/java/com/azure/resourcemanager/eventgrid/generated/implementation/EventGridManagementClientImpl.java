@@ -46,8 +46,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the EventGridManagementClientImpl type. */
 @ServiceClient(builder = EventGridManagementClientBuilder.class)
 public final class EventGridManagementClientImpl implements EventGridManagementClient {
-    private final ClientLogger logger = new ClientLogger(EventGridManagementClientImpl.class);
-
     /**
      * Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of
      * the URI for every service call.
@@ -376,7 +374,7 @@ public final class EventGridManagementClientImpl implements EventGridManagementC
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -435,4 +433,6 @@ public final class EventGridManagementClientImpl implements EventGridManagementC
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(EventGridManagementClientImpl.class);
 }

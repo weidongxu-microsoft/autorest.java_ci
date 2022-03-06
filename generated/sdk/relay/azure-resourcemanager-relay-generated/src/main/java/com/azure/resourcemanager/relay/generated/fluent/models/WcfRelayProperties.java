@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.relay.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.relay.generated.models.Relaytype;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** Properties of the WCF relay. */
 @Fluent
 public final class WcfRelayProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WcfRelayProperties.class);
-
     /*
      * Returns true if the relay is dynamic; otherwise, false.
      */

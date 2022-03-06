@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.BackendPool;
 import com.azure.resourcemanager.frontdoor.generated.models.BackendPoolsSettings;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorEnabledState;
@@ -14,15 +13,12 @@ import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorUpdateParam
 import com.azure.resourcemanager.frontdoor.generated.models.HealthProbeSettingsModel;
 import com.azure.resourcemanager.frontdoor.generated.models.LoadBalancingSettingsModel;
 import com.azure.resourcemanager.frontdoor.generated.models.RoutingRule;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The JSON object that contains the properties required to create an endpoint. */
 @Fluent
 public final class FrontDoorProperties extends FrontDoorUpdateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontDoorProperties.class);
-
     /*
      * Resource status of the Front Door or Front Door SubResource. Resource
      * status of the Front Door.

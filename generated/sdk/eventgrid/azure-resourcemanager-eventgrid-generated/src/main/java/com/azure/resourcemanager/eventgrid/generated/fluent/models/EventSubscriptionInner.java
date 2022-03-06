@@ -7,7 +7,6 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventgrid.generated.models.DeadLetterDestination;
 import com.azure.resourcemanager.eventgrid.generated.models.DeadLetterWithResourceIdentity;
 import com.azure.resourcemanager.eventgrid.generated.models.DeliveryWithResourceIdentity;
@@ -16,7 +15,6 @@ import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionDes
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionFilter;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.RetryPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -24,8 +22,6 @@ import java.util.List;
 /** Event Subscription. */
 @Fluent
 public final class EventSubscriptionInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EventSubscriptionInner.class);
-
     /*
      * Properties of the event subscription.
      */

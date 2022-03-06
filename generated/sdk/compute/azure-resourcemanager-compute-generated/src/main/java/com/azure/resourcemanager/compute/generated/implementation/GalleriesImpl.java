@@ -15,10 +15,9 @@ import com.azure.resourcemanager.compute.generated.models.Galleries;
 import com.azure.resourcemanager.compute.generated.models.Gallery;
 import com.azure.resourcemanager.compute.generated.models.GalleryExpandParams;
 import com.azure.resourcemanager.compute.generated.models.SelectPermissions;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class GalleriesImpl implements Galleries {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(GalleriesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(GalleriesImpl.class);
 
     private final GalleriesClient innerClient;
 
@@ -91,7 +90,7 @@ public final class GalleriesImpl implements Galleries {
     public Gallery getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -99,7 +98,7 @@ public final class GalleriesImpl implements Galleries {
         }
         String galleryName = Utils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
@@ -115,7 +114,7 @@ public final class GalleriesImpl implements Galleries {
         String id, SelectPermissions select, GalleryExpandParams expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -123,7 +122,7 @@ public final class GalleriesImpl implements Galleries {
         }
         String galleryName = Utils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
@@ -134,7 +133,7 @@ public final class GalleriesImpl implements Galleries {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -142,7 +141,7 @@ public final class GalleriesImpl implements Galleries {
         }
         String galleryName = Utils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
@@ -153,7 +152,7 @@ public final class GalleriesImpl implements Galleries {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -161,7 +160,7 @@ public final class GalleriesImpl implements Galleries {
         }
         String galleryName = Utils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));

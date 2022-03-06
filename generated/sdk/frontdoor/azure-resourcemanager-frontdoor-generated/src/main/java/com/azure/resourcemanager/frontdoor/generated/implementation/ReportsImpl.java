@@ -17,11 +17,10 @@ import com.azure.resourcemanager.frontdoor.generated.models.Reports;
 import com.azure.resourcemanager.frontdoor.generated.models.Timeseries;
 import com.azure.resourcemanager.frontdoor.generated.models.TimeseriesAggregationInterval;
 import com.azure.resourcemanager.frontdoor.generated.models.TimeseriesType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.OffsetDateTime;
 
 public final class ReportsImpl implements Reports {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ReportsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ReportsImpl.class);
 
     private final ReportsClient innerClient;
 

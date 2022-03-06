@@ -6,20 +6,16 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.models.AdditionalCapabilities;
 import com.azure.resourcemanager.compute.generated.models.AutomaticRepairsPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScaleInPolicy;
 import com.azure.resourcemanager.compute.generated.models.UpgradePolicy;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetUpdateVMProfile;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Describes the properties of a Virtual Machine Scale Set. */
 @Fluent
 public final class VirtualMachineScaleSetUpdateProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineScaleSetUpdateProperties.class);
-
     /*
      * The upgrade policy.
      */

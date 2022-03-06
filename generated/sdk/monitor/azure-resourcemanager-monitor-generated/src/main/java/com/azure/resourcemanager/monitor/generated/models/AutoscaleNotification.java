@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Autoscale notification. */
 @Fluent
 public final class AutoscaleNotification {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AutoscaleNotification.class);
-
     /*
      * the operation associated with the notification and its value must be
      * "scale"

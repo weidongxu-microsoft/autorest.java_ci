@@ -7,14 +7,11 @@ package com.azure.resourcemanager.postgresql.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.models.VirtualNetworkRuleState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Properties of a virtual network rule. */
 @Fluent
 public final class VirtualNetworkRuleProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworkRuleProperties.class);
-
     /*
      * The ARM resource id of the virtual network subnet.
      */
@@ -92,10 +89,12 @@ public final class VirtualNetworkRuleProperties {
      */
     public void validate() {
         if (virtualNetworkSubnetId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property virtualNetworkSubnetId in model VirtualNetworkRuleProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualNetworkRuleProperties.class);
 }

@@ -28,7 +28,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.applicationinsights.generated.fluent.AnnotationsClient;
 import com.azure.resourcemanager.applicationinsights.generated.fluent.models.AnnotationInner;
 import com.azure.resourcemanager.applicationinsights.generated.models.AnnotationErrorException;
@@ -38,8 +37,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in AnnotationsClient. */
 public final class AnnotationsClientImpl implements AnnotationsClient {
-    private final ClientLogger logger = new ClientLogger(AnnotationsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final AnnotationsService service;
 

@@ -5,17 +5,11 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The GenerateReservationDetailsReportsByBillingAccountIdHeaders model. */
 @Fluent
 public final class GenerateReservationDetailsReportsByBillingAccountIdHeaders {
-    @JsonIgnore
-    private final ClientLogger logger =
-        new ClientLogger(GenerateReservationDetailsReportsByBillingAccountIdHeaders.class);
-
     /*
      * The Retry-After property.
      */

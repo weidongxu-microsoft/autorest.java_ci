@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.AuthorizationUseStatus;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Properties of ExpressRouteCircuitAuthorization. */
 @Fluent
 public final class AuthorizationPropertiesFormat {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AuthorizationPropertiesFormat.class);
-
     /*
      * The authorization key.
      */

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.policy.generated.fluent.PolicyAssignmentsClient
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyAssignmentInner;
 import com.azure.resourcemanager.policy.generated.models.PolicyAssignment;
 import com.azure.resourcemanager.policy.generated.models.PolicyAssignments;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PolicyAssignmentsImpl implements PolicyAssignments {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PolicyAssignmentsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PolicyAssignmentsImpl.class);
 
     private final PolicyAssignmentsClient innerClient;
 

@@ -7,15 +7,12 @@ package com.azure.resourcemanager.mysql.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.models.ServerSecurityAlertPolicyState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Properties of a security alert policy. */
 @Fluent
 public final class SecurityAlertPolicyProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SecurityAlertPolicyProperties.class);
-
     /*
      * Specifies the state of the policy, whether it is enabled or disabled.
      */
@@ -215,10 +212,12 @@ public final class SecurityAlertPolicyProperties {
      */
     public void validate() {
         if (state() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property state in model SecurityAlertPolicyProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(SecurityAlertPolicyProperties.class);
 }

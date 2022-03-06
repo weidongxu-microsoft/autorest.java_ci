@@ -6,16 +6,12 @@ package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.HealthProbeSettingsProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Load balancing settings for a backend pool. */
 @Fluent
 public final class HealthProbeSettingsModel extends SubResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(HealthProbeSettingsModel.class);
-
     /*
      * Properties of the health probe settings
      */

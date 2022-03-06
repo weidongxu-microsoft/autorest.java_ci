@@ -14,10 +14,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.ExternalCloudPr
 import com.azure.resourcemanager.costmanagement.generated.models.ForecastDefinition;
 import com.azure.resourcemanager.costmanagement.generated.models.Forecasts;
 import com.azure.resourcemanager.costmanagement.generated.models.QueryResult;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ForecastsImpl implements Forecasts {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ForecastsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ForecastsImpl.class);
 
     private final ForecastsClient innerClient;
 

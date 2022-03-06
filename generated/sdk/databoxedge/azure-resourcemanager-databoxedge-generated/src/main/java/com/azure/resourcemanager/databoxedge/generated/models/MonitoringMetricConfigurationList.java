@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.MonitoringMetricConfigurationInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Collection of metric configurations. */
 @Immutable
 public final class MonitoringMetricConfigurationList {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MonitoringMetricConfigurationList.class);
-
     /*
      * The list of metric configurations.
      */

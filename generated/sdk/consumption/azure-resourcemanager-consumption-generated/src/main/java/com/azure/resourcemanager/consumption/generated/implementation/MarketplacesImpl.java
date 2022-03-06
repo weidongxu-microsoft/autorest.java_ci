@@ -11,10 +11,9 @@ import com.azure.resourcemanager.consumption.generated.fluent.MarketplacesClient
 import com.azure.resourcemanager.consumption.generated.fluent.models.MarketplaceInner;
 import com.azure.resourcemanager.consumption.generated.models.Marketplace;
 import com.azure.resourcemanager.consumption.generated.models.Marketplaces;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class MarketplacesImpl implements Marketplaces {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MarketplacesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(MarketplacesImpl.class);
 
     private final MarketplacesClient innerClient;
 

@@ -7,14 +7,11 @@ package com.azure.resourcemanager.authorization.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssignmentProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Role assignment create parameters. */
 @Fluent
 public final class RoleAssignmentCreateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RoleAssignmentCreateParameters.class);
-
     /*
      * Role assignment properties.
      */
@@ -131,7 +128,7 @@ public final class RoleAssignmentCreateParameters {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model RoleAssignmentCreateParameters"));
@@ -139,4 +136,6 @@ public final class RoleAssignmentCreateParameters {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(RoleAssignmentCreateParameters.class);
 }

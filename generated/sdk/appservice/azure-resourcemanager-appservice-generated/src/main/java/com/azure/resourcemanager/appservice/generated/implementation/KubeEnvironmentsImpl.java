@@ -13,10 +13,9 @@ import com.azure.resourcemanager.appservice.generated.fluent.KubeEnvironmentsCli
 import com.azure.resourcemanager.appservice.generated.fluent.models.KubeEnvironmentInner;
 import com.azure.resourcemanager.appservice.generated.models.KubeEnvironment;
 import com.azure.resourcemanager.appservice.generated.models.KubeEnvironments;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class KubeEnvironmentsImpl implements KubeEnvironments {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KubeEnvironmentsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(KubeEnvironmentsImpl.class);
 
     private final KubeEnvironmentsClient innerClient;
 
@@ -85,7 +84,7 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
     public KubeEnvironment getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -93,7 +92,7 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
         }
         String name = Utils.getValueFromIdByName(id, "kubeEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -106,7 +105,7 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
     public Response<KubeEnvironment> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -114,7 +113,7 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
         }
         String name = Utils.getValueFromIdByName(id, "kubeEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -127,7 +126,7 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -135,7 +134,7 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
         }
         String name = Utils.getValueFromIdByName(id, "kubeEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -148,7 +147,7 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -156,7 +155,7 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
         }
         String name = Utils.getValueFromIdByName(id, "kubeEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

@@ -6,13 +6,11 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.InstallRebootBehavior;
 import com.azure.resourcemanager.databoxedge.generated.models.JobStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateOperation;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -20,8 +18,6 @@ import java.util.List;
 /** Details about ongoing updates and availability of updates on the device. */
 @Fluent
 public final class UpdateSummaryInner extends ArmBaseModel {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(UpdateSummaryInner.class);
-
     /*
      * UpdateSummary Result
      */

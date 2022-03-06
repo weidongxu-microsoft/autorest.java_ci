@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.WebApplicationFirewall
 import com.azure.resourcemanager.network.generated.fluent.models.WebApplicationFirewallPolicyInner;
 import com.azure.resourcemanager.network.generated.models.WebApplicationFirewallPolicies;
 import com.azure.resourcemanager.network.generated.models.WebApplicationFirewallPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class WebApplicationFirewallPoliciesImpl implements WebApplicationFirewallPolicies {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WebApplicationFirewallPoliciesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(WebApplicationFirewallPoliciesImpl.class);
 
     private final WebApplicationFirewallPoliciesClient innerClient;
 
@@ -87,7 +86,7 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
     public WebApplicationFirewallPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -95,7 +94,7 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
         }
         String policyName = Utils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
         if (policyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -110,7 +109,7 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
     public Response<WebApplicationFirewallPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -118,7 +117,7 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
         }
         String policyName = Utils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
         if (policyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -133,7 +132,7 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -141,7 +140,7 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
         }
         String policyName = Utils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
         if (policyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -156,7 +155,7 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -164,7 +163,7 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
         }
         String policyName = Utils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
         if (policyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

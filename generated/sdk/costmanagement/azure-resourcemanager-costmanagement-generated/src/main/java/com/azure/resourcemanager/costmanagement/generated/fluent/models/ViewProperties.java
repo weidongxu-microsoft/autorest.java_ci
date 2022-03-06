@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.models.AccumulatedType;
 import com.azure.resourcemanager.costmanagement.generated.models.ChartType;
 import com.azure.resourcemanager.costmanagement.generated.models.KpiProperties;
@@ -15,7 +14,6 @@ import com.azure.resourcemanager.costmanagement.generated.models.ReportConfigDat
 import com.azure.resourcemanager.costmanagement.generated.models.ReportConfigTimePeriod;
 import com.azure.resourcemanager.costmanagement.generated.models.ReportTimeframeType;
 import com.azure.resourcemanager.costmanagement.generated.models.ReportType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -23,8 +21,6 @@ import java.util.List;
 /** The properties of the view. */
 @Fluent
 public final class ViewProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ViewProperties.class);
-
     /*
      * User input name of the view. Required.
      */

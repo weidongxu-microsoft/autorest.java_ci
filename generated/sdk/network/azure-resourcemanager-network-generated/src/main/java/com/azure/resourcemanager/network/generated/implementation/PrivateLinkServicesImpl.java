@@ -20,10 +20,9 @@ import com.azure.resourcemanager.network.generated.models.PrivateEndpointConnect
 import com.azure.resourcemanager.network.generated.models.PrivateLinkService;
 import com.azure.resourcemanager.network.generated.models.PrivateLinkServiceVisibility;
 import com.azure.resourcemanager.network.generated.models.PrivateLinkServices;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateLinkServicesImpl implements PrivateLinkServices {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateLinkServicesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PrivateLinkServicesImpl.class);
 
     private final PrivateLinkServicesClient innerClient;
 
@@ -262,7 +261,7 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
     public PrivateLinkService getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -270,7 +269,7 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         }
         String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
         if (serviceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -286,7 +285,7 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
     public Response<PrivateLinkService> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -294,7 +293,7 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         }
         String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
         if (serviceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -307,7 +306,7 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -315,7 +314,7 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         }
         String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
         if (serviceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -328,7 +327,7 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -336,7 +335,7 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         }
         String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
         if (serviceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.search.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.search.generated.models.HostingMode;
 import com.azure.resourcemanager.search.generated.models.Identity;
 import com.azure.resourcemanager.search.generated.models.NetworkRuleSet;
@@ -14,7 +13,6 @@ import com.azure.resourcemanager.search.generated.models.ProvisioningState;
 import com.azure.resourcemanager.search.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.search.generated.models.SearchServiceStatus;
 import com.azure.resourcemanager.search.generated.models.Sku;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -22,8 +20,6 @@ import java.util.Map;
 /** Describes an Azure Cognitive Search service and its current state. */
 @Fluent
 public final class SearchServiceInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SearchServiceInner.class);
-
     /*
      * Properties of the search service.
      */

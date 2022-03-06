@@ -22,7 +22,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.fluent.CheckNameAvailabilitiesClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.NameAvailabilityInner;
 import com.azure.resourcemanager.postgresql.generated.models.NameAvailabilityRequest;
@@ -30,8 +29,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in CheckNameAvailabilitiesClient. */
 public final class CheckNameAvailabilitiesClientImpl implements CheckNameAvailabilitiesClient {
-    private final ClientLogger logger = new ClientLogger(CheckNameAvailabilitiesClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final CheckNameAvailabilitiesService service;
 

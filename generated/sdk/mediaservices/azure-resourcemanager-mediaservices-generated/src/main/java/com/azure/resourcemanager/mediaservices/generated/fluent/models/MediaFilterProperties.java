@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.models.FilterTrackSelection;
 import com.azure.resourcemanager.mediaservices.generated.models.FirstQuality;
 import com.azure.resourcemanager.mediaservices.generated.models.PresentationTimeRange;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The Media Filter properties. */
 @Fluent
 public final class MediaFilterProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MediaFilterProperties.class);
-
     /*
      * The presentation time range.
      */

@@ -29,7 +29,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.fluent.AutoscaleSettingsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.AutoscaleSettingResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.AutoscaleSettingResourceCollection;
@@ -38,8 +37,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in AutoscaleSettingsClient. */
 public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClient {
-    private final ClientLogger logger = new ClientLogger(AutoscaleSettingsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final AutoscaleSettingsService service;
 

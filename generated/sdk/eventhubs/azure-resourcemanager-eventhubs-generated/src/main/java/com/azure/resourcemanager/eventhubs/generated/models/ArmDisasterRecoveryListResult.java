@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ArmDisasterRecoveryInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The result of the List Alias(Disaster Recovery configuration) operation. */
 @Fluent
 public final class ArmDisasterRecoveryListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ArmDisasterRecoveryListResult.class);
-
     /*
      * List of Alias(Disaster Recovery configurations)
      */

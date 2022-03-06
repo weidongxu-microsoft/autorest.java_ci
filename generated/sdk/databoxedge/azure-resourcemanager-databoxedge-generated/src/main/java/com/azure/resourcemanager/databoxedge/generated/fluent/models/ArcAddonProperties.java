@@ -9,14 +9,11 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.AddonState;
 import com.azure.resourcemanager.databoxedge.generated.models.HostPlatformType;
 import com.azure.resourcemanager.databoxedge.generated.models.PlatformType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Arc addon properties. */
 @Fluent
 public final class ArcAddonProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ArcAddonProperties.class);
-
     /*
      * Arc resource subscription Id
      */
@@ -188,27 +185,29 @@ public final class ArcAddonProperties {
      */
     public void validate() {
         if (subscriptionId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property subscriptionId in model ArcAddonProperties"));
         }
         if (resourceGroupName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property resourceGroupName in model ArcAddonProperties"));
         }
         if (resourceName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property resourceName in model ArcAddonProperties"));
         }
         if (resourceLocation() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property resourceLocation in model ArcAddonProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ArcAddonProperties.class);
 }

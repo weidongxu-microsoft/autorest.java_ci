@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.storage.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.models.AccessTier;
 import com.azure.resourcemanager.storage.generated.models.AccountStatus;
 import com.azure.resourcemanager.storage.generated.models.AllowedCopyScope;
@@ -24,7 +23,6 @@ import com.azure.resourcemanager.storage.generated.models.ProvisioningState;
 import com.azure.resourcemanager.storage.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.storage.generated.models.RoutingPreference;
 import com.azure.resourcemanager.storage.generated.models.SasPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -32,8 +30,6 @@ import java.util.List;
 /** Properties of the storage account. */
 @Fluent
 public final class StorageAccountPropertiesInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StorageAccountPropertiesInner.class);
-
     /*
      * Gets the status of the storage account at the time the operation was
      * called.

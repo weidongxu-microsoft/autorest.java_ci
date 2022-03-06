@@ -6,7 +6,6 @@ package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.BackendPool;
 import com.azure.resourcemanager.frontdoor.generated.models.BackendPoolsSettings;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorEnabledState;
@@ -14,7 +13,6 @@ import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorResourceSta
 import com.azure.resourcemanager.frontdoor.generated.models.HealthProbeSettingsModel;
 import com.azure.resourcemanager.frontdoor.generated.models.LoadBalancingSettingsModel;
 import com.azure.resourcemanager.frontdoor.generated.models.RoutingRule;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -25,8 +23,6 @@ import java.util.Map;
  */
 @Fluent
 public final class FrontDoorInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontDoorInner.class);
-
     /*
      * Properties of the Front Door Load Balancer
      */

@@ -17,10 +17,9 @@ import com.azure.resourcemanager.network.generated.models.IpAddressAvailabilityR
 import com.azure.resourcemanager.network.generated.models.VirtualNetwork;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkUsage;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworks;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualNetworksImpl implements VirtualNetworks {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworksImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualNetworksImpl.class);
 
     private final VirtualNetworksClient innerClient;
 
@@ -128,7 +127,7 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
     public VirtualNetwork getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -136,7 +135,7 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -151,7 +150,7 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
     public Response<VirtualNetwork> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -159,7 +158,7 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -171,7 +170,7 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -179,7 +178,7 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -191,7 +190,7 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -199,7 +198,7 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

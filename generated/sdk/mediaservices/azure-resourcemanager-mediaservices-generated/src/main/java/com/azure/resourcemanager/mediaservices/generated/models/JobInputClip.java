@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -26,8 +24,6 @@ import java.util.List;
 })
 @Fluent
 public class JobInputClip extends JobInput {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(JobInputClip.class);
-
     /*
      * List of files. Required for JobInputHttp. Maximum of 4000 characters
      * each. Query strings will not be returned in service responses to prevent

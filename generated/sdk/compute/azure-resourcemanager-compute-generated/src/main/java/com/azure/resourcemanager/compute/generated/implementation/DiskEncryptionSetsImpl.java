@@ -13,10 +13,9 @@ import com.azure.resourcemanager.compute.generated.fluent.DiskEncryptionSetsClie
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskEncryptionSetInner;
 import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSet;
 import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSets;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiskEncryptionSetsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DiskEncryptionSetsImpl.class);
 
     private final DiskEncryptionSetsClient innerClient;
 
@@ -95,7 +94,7 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
     public DiskEncryptionSet getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -103,7 +102,7 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
         }
         String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
         if (diskEncryptionSetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -116,7 +115,7 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
     public Response<DiskEncryptionSet> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -124,7 +123,7 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
         }
         String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
         if (diskEncryptionSetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -137,7 +136,7 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -145,7 +144,7 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
         }
         String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
         if (diskEncryptionSetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -158,7 +157,7 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -166,7 +165,7 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
         }
         String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
         if (diskEncryptionSetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

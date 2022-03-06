@@ -12,10 +12,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.MetricAlertsStatusClie
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertStatusCollectionInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertStatusCollection;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertsStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class MetricAlertsStatusImpl implements MetricAlertsStatus {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricAlertsStatusImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(MetricAlertsStatusImpl.class);
 
     private final MetricAlertsStatusClient innerClient;
 

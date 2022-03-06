@@ -31,13 +31,12 @@ import com.azure.resourcemanager.appservice.generated.models.Site;
 import com.azure.resourcemanager.appservice.generated.models.VnetGateway;
 import com.azure.resourcemanager.appservice.generated.models.VnetInfoResource;
 import com.azure.resourcemanager.appservice.generated.models.VnetRoute;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class AppServicePlansImpl implements AppServicePlans {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AppServicePlansImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AppServicePlansImpl.class);
 
     private final AppServicePlansClient innerClient;
 
@@ -498,7 +497,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
     public AppServicePlan getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -506,7 +505,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
         String name = Utils.getValueFromIdByName(id, "serverfarms");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
@@ -517,7 +516,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
     public Response<AppServicePlan> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -525,7 +524,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
         String name = Utils.getValueFromIdByName(id, "serverfarms");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
@@ -536,7 +535,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -544,7 +543,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
         String name = Utils.getValueFromIdByName(id, "serverfarms");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
@@ -555,7 +554,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -563,7 +562,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
         String name = Utils.getValueFromIdByName(id, "serverfarms");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
@@ -574,7 +573,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
     public void deleteVnetRouteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -582,14 +581,14 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
         String name = Utils.getValueFromIdByName(id, "serverfarms");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
         }
         String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -599,7 +598,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
         String routeName = Utils.getValueFromIdByName(id, "routes");
         if (routeName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'routes'.", id)));
@@ -610,7 +609,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
     public Response<Void> deleteVnetRouteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -618,14 +617,14 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
         String name = Utils.getValueFromIdByName(id, "serverfarms");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
         }
         String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -635,7 +634,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
         String routeName = Utils.getValueFromIdByName(id, "routes");
         if (routeName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'routes'.", id)));

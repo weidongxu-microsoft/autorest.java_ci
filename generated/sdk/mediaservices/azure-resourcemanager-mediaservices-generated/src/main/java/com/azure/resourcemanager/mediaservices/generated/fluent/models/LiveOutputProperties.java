@@ -8,7 +8,6 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.models.Hls;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveOutputResourceState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.time.OffsetDateTime;
@@ -16,8 +15,6 @@ import java.time.OffsetDateTime;
 /** The JSON object that contains the properties required to create a live output. */
 @Fluent
 public final class LiveOutputProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LiveOutputProperties.class);
-
     /*
      * The description of the live output.
      */
@@ -255,12 +252,12 @@ public final class LiveOutputProperties {
      */
     public void validate() {
         if (assetName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property assetName in model LiveOutputProperties"));
         }
         if (archiveWindowLength() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property archiveWindowLength in model LiveOutputProperties"));
@@ -269,4 +266,6 @@ public final class LiveOutputProperties {
             hls().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(LiveOutputProperties.class);
 }

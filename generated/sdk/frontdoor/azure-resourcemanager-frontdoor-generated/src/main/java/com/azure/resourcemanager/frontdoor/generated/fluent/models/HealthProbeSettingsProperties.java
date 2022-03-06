@@ -5,20 +5,16 @@
 package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorHealthProbeMethod;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorProtocol;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.HealthProbeEnabled;
 import com.azure.resourcemanager.frontdoor.generated.models.HealthProbeSettingsUpdateParameters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The JSON object that contains the properties required to create a health probe settings. */
 @Fluent
 public final class HealthProbeSettingsProperties extends HealthProbeSettingsUpdateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(HealthProbeSettingsProperties.class);
-
     /*
      * Resource status of the Front Door or Front Door SubResource. Resource
      * status.

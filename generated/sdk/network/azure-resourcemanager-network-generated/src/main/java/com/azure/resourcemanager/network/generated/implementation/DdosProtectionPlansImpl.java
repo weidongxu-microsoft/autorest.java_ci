@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.DdosProtectionPlansCli
 import com.azure.resourcemanager.network.generated.fluent.models.DdosProtectionPlanInner;
 import com.azure.resourcemanager.network.generated.models.DdosProtectionPlan;
 import com.azure.resourcemanager.network.generated.models.DdosProtectionPlans;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DdosProtectionPlansImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DdosProtectionPlansImpl.class);
 
     private final DdosProtectionPlansClient innerClient;
 
@@ -86,7 +85,7 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
     public DdosProtectionPlan getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -94,7 +93,7 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
         }
         String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
         if (ddosProtectionPlanName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -107,7 +106,7 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
     public Response<DdosProtectionPlan> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -115,7 +114,7 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
         }
         String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
         if (ddosProtectionPlanName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -128,7 +127,7 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -136,7 +135,7 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
         }
         String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
         if (ddosProtectionPlanName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -157,7 +156,7 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
         }
         String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
         if (ddosProtectionPlanName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

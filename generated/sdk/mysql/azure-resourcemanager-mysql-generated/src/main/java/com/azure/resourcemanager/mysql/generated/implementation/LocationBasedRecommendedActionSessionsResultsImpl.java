@@ -11,12 +11,11 @@ import com.azure.resourcemanager.mysql.generated.fluent.LocationBasedRecommended
 import com.azure.resourcemanager.mysql.generated.fluent.models.RecommendationActionInner;
 import com.azure.resourcemanager.mysql.generated.models.LocationBasedRecommendedActionSessionsResults;
 import com.azure.resourcemanager.mysql.generated.models.RecommendationAction;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LocationBasedRecommendedActionSessionsResultsImpl
     implements LocationBasedRecommendedActionSessionsResults {
-    @JsonIgnore
-    private final ClientLogger logger = new ClientLogger(LocationBasedRecommendedActionSessionsResultsImpl.class);
+    private static final ClientLogger LOGGER =
+        new ClientLogger(LocationBasedRecommendedActionSessionsResultsImpl.class);
 
     private final LocationBasedRecommendedActionSessionsResultsClient innerClient;
 

@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ActivityLogAlertResourceInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** A list of activity log alerts. */
 @Fluent
 public final class ActivityLogAlertList {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActivityLogAlertList.class);
-
     /*
      * The list of activity log alerts.
      */

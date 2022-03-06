@@ -11,10 +11,9 @@ import com.azure.resourcemanager.recoveryservices.generated.fluent.OperationsCli
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.ClientDiscoveryValueForSingleApiInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.ClientDiscoveryValueForSingleApi;
 import com.azure.resourcemanager.recoveryservices.generated.models.Operations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class OperationsImpl implements Operations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(OperationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(OperationsImpl.class);
 
     private final OperationsClient innerClient;
 

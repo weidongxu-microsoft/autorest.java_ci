@@ -23,11 +23,10 @@ import com.azure.resourcemanager.appservice.generated.models.DiagnosticAnalysis;
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticCategory;
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticDetectorResponse;
 import com.azure.resourcemanager.appservice.generated.models.Diagnostics;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.OffsetDateTime;
 
 public final class DiagnosticsImpl implements Diagnostics {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiagnosticsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DiagnosticsImpl.class);
 
     private final DiagnosticsClient innerClient;
 

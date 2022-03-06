@@ -5,10 +5,8 @@
 package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.PcError;
 import com.azure.resourcemanager.network.generated.models.PcStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -16,8 +14,6 @@ import java.util.List;
 /** Status of packet capture session. */
 @Fluent
 public final class PacketCaptureQueryStatusResultInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PacketCaptureQueryStatusResultInner.class);
-
     /*
      * The name of the packet capture resource.
      */

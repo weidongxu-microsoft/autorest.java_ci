@@ -13,11 +13,10 @@ import com.azure.resourcemanager.search.generated.fluent.SharedPrivateLinkResour
 import com.azure.resourcemanager.search.generated.fluent.models.SharedPrivateLinkResourceInner;
 import com.azure.resourcemanager.search.generated.models.SharedPrivateLinkResource;
 import com.azure.resourcemanager.search.generated.models.SharedPrivateLinkResources;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.UUID;
 
 public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkResources {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SharedPrivateLinkResourcesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(SharedPrivateLinkResourcesImpl.class);
 
     private final SharedPrivateLinkResourcesClient innerClient;
 
@@ -104,7 +103,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
     public SharedPrivateLinkResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -112,7 +111,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
         }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -120,7 +119,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
         }
         String sharedPrivateLinkResourceName = Utils.getValueFromIdByName(id, "sharedPrivateLinkResources");
         if (sharedPrivateLinkResourceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -138,7 +137,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
     public Response<SharedPrivateLinkResource> getByIdWithResponse(String id, UUID clientRequestId, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -146,7 +145,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
         }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -154,7 +153,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
         }
         String sharedPrivateLinkResourceName = Utils.getValueFromIdByName(id, "sharedPrivateLinkResources");
         if (sharedPrivateLinkResourceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -170,7 +169,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -178,7 +177,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
         }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -186,7 +185,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
         }
         String sharedPrivateLinkResourceName = Utils.getValueFromIdByName(id, "sharedPrivateLinkResources");
         if (sharedPrivateLinkResourceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -207,7 +206,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
     public void deleteByIdWithResponse(String id, UUID clientRequestId, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -215,7 +214,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
         }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -223,7 +222,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
         }
         String sharedPrivateLinkResourceName = Utils.getValueFromIdByName(id, "sharedPrivateLinkResources");
         if (sharedPrivateLinkResourceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

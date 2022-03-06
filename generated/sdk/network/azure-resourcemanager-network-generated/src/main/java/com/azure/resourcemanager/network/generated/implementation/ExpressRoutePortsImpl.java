@@ -16,10 +16,9 @@ import com.azure.resourcemanager.network.generated.models.ExpressRoutePort;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePorts;
 import com.azure.resourcemanager.network.generated.models.GenerateExpressRoutePortsLoaRequest;
 import com.azure.resourcemanager.network.generated.models.GenerateExpressRoutePortsLoaResult;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRoutePortsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ExpressRoutePortsImpl.class);
 
     private final ExpressRoutePortsClient innerClient;
 
@@ -117,7 +116,7 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
     public ExpressRoutePort getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -125,7 +124,7 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
         }
         String expressRoutePortName = Utils.getValueFromIdByName(id, "ExpressRoutePorts");
         if (expressRoutePortName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -138,7 +137,7 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
     public Response<ExpressRoutePort> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -146,7 +145,7 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
         }
         String expressRoutePortName = Utils.getValueFromIdByName(id, "ExpressRoutePorts");
         if (expressRoutePortName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -159,7 +158,7 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -167,7 +166,7 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
         }
         String expressRoutePortName = Utils.getValueFromIdByName(id, "ExpressRoutePorts");
         if (expressRoutePortName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -180,7 +179,7 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -188,7 +187,7 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
         }
         String expressRoutePortName = Utils.getValueFromIdByName(id, "ExpressRoutePorts");
         if (expressRoutePortName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

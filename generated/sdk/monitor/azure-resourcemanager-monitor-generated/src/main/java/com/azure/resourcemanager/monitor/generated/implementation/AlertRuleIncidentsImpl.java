@@ -13,10 +13,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.AlertRuleIncidentsClie
 import com.azure.resourcemanager.monitor.generated.fluent.models.IncidentInner;
 import com.azure.resourcemanager.monitor.generated.models.AlertRuleIncidents;
 import com.azure.resourcemanager.monitor.generated.models.Incident;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AlertRuleIncidentsImpl implements AlertRuleIncidents {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AlertRuleIncidentsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AlertRuleIncidentsImpl.class);
 
     private final AlertRuleIncidentsClient innerClient;
 

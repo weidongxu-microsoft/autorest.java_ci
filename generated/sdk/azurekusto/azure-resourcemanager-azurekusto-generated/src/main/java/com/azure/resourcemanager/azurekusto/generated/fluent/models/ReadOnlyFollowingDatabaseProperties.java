@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabaseStatistics;
 import com.azure.resourcemanager.azurekusto.generated.models.PrincipalsModificationKind;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 
 /** Class representing the Kusto database properties. */
 @Fluent
 public final class ReadOnlyFollowingDatabaseProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ReadOnlyFollowingDatabaseProperties.class);
-
     /*
      * The provisioned state of the resource.
      */

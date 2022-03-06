@@ -11,15 +11,12 @@ import com.azure.resourcemanager.monitor.generated.models.Enabled;
 import com.azure.resourcemanager.monitor.generated.models.ProvisioningState;
 import com.azure.resourcemanager.monitor.generated.models.Schedule;
 import com.azure.resourcemanager.monitor.generated.models.Source;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** Log Search Rule Definition. */
 @Fluent
 public final class LogSearchRule {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogSearchRule.class);
-
     /*
      * The api-version used when creating this alert rule
      */
@@ -276,7 +273,7 @@ public final class LogSearchRule {
      */
     public void validate() {
         if (source() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property source in model LogSearchRule"));
         } else {
@@ -286,11 +283,13 @@ public final class LogSearchRule {
             schedule().validate();
         }
         if (action() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property action in model LogSearchRule"));
         } else {
             action().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(LogSearchRule.class);
 }

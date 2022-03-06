@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -16,8 +14,6 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.Mp4Format")
 @Fluent
 public final class Mp4Format extends MultiBitrateFormat {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Mp4Format.class);
-
     /** {@inheritDoc} */
     @Override
     public Mp4Format withOutputFiles(List<OutputFile> outputFiles) {

@@ -6,16 +6,12 @@ package com.azure.resourcemanager.postgresql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** Represents a log file. */
 @Fluent
 public final class LogFileInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogFileInner.class);
-
     /*
      * The properties of the log file.
      */

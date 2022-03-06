@@ -7,11 +7,9 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.CommissionedState;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -19,8 +17,6 @@ import java.util.Map;
 /** Custom IP prefix resource. */
 @Fluent
 public final class CustomIpPrefixInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CustomIpPrefixInner.class);
-
     /*
      * The extended location of the custom IP prefix.
      */

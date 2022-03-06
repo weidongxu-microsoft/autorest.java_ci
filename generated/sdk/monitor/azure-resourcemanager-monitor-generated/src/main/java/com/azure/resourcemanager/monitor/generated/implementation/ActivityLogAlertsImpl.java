@@ -13,10 +13,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.ActivityLogAlertsClien
 import com.azure.resourcemanager.monitor.generated.fluent.models.ActivityLogAlertResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertResource;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlerts;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActivityLogAlertsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ActivityLogAlertsImpl.class);
 
     private final ActivityLogAlertsClient innerClient;
 
@@ -87,7 +86,7 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
     public ActivityLogAlertResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -95,7 +94,7 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
         }
         String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
         if (activityLogAlertName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -108,7 +107,7 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
     public Response<ActivityLogAlertResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -116,7 +115,7 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
         }
         String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
         if (activityLogAlertName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -129,7 +128,7 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -137,7 +136,7 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
         }
         String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
         if (activityLogAlertName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -150,7 +149,7 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -158,7 +157,7 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
         }
         String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
         if (activityLogAlertName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

@@ -11,10 +11,9 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.DeletedWor
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspaceInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.DeletedWorkspaces;
 import com.azure.resourcemanager.operationalinsights.generated.models.Workspace;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DeletedWorkspacesImpl implements DeletedWorkspaces {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DeletedWorkspacesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DeletedWorkspacesImpl.class);
 
     private final DeletedWorkspacesClient innerClient;
 

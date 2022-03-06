@@ -6,15 +6,12 @@ package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Define a match condition. */
 @Fluent
 public final class MatchCondition {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MatchCondition.class);
-
     /*
      * Request variable to compare with.
      */
@@ -181,19 +178,21 @@ public final class MatchCondition {
      */
     public void validate() {
         if (matchVariable() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property matchVariable in model MatchCondition"));
         }
         if (operator() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property operator in model MatchCondition"));
         }
         if (matchValue() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property matchValue in model MatchCondition"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MatchCondition.class);
 }

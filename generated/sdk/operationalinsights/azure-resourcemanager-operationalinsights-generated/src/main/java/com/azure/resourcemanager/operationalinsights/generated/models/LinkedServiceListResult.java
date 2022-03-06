@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.LinkedServiceInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The list linked service operation response. */
 @Fluent
 public final class LinkedServiceListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LinkedServiceListResult.class);
-
     /*
      * The list of linked service instances
      */

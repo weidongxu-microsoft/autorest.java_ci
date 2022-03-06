@@ -30,10 +30,9 @@ import com.azure.resourcemanager.storage.generated.models.StorageAccountExpand;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountListKeysResult;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountRegenerateKeyParameters;
 import com.azure.resourcemanager.storage.generated.models.StorageAccounts;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class StorageAccountsImpl implements StorageAccounts {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StorageAccountsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(StorageAccountsImpl.class);
 
     private final StorageAccountsClient innerClient;
 
@@ -286,7 +285,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
     public StorageAccount getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -294,7 +293,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -309,7 +308,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
     public Response<StorageAccount> getByIdWithResponse(String id, StorageAccountExpand expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -317,7 +316,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -329,7 +328,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -337,7 +336,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -349,7 +348,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -357,7 +356,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

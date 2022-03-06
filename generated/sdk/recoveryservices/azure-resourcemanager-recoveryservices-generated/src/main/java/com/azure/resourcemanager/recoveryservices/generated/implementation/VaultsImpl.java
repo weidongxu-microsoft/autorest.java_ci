@@ -13,10 +13,9 @@ import com.azure.resourcemanager.recoveryservices.generated.fluent.VaultsClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.Vault;
 import com.azure.resourcemanager.recoveryservices.generated.models.Vaults;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VaultsImpl implements Vaults {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VaultsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VaultsImpl.class);
 
     private final VaultsClient innerClient;
 
@@ -83,7 +82,7 @@ public final class VaultsImpl implements Vaults {
     public Vault getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -91,7 +90,7 @@ public final class VaultsImpl implements Vaults {
         }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
         if (vaultName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
@@ -102,7 +101,7 @@ public final class VaultsImpl implements Vaults {
     public Response<Vault> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -110,7 +109,7 @@ public final class VaultsImpl implements Vaults {
         }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
         if (vaultName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
@@ -121,7 +120,7 @@ public final class VaultsImpl implements Vaults {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -129,7 +128,7 @@ public final class VaultsImpl implements Vaults {
         }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
         if (vaultName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
@@ -140,7 +139,7 @@ public final class VaultsImpl implements Vaults {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -148,7 +147,7 @@ public final class VaultsImpl implements Vaults {
         }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
         if (vaultName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));

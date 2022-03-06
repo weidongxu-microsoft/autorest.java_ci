@@ -11,10 +11,9 @@ import com.azure.resourcemanager.authorization.generated.fluent.PermissionsClien
 import com.azure.resourcemanager.authorization.generated.fluent.models.PermissionInner;
 import com.azure.resourcemanager.authorization.generated.models.Permission;
 import com.azure.resourcemanager.authorization.generated.models.Permissions;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PermissionsImpl implements Permissions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PermissionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PermissionsImpl.class);
 
     private final PermissionsClient innerClient;
 

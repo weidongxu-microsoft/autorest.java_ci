@@ -7,15 +7,11 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Event grid Extension Topic. This is used for getting Event Grid related metrics for Azure resources. */
 @Fluent
 public final class ExtensionTopicInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExtensionTopicInner.class);
-
     /*
      * Properties of the extension topic
      */

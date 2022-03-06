@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.VirtualNetworkGatewayN
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayNatRuleInner;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayNatRule;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayNatRules;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGatewayNatRules {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworkGatewayNatRulesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualNetworkGatewayNatRulesImpl.class);
 
     private final VirtualNetworkGatewayNatRulesClient innerClient;
 
@@ -81,7 +80,7 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
     public VirtualNetworkGatewayNatRule getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -89,7 +88,7 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -99,7 +98,7 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
         }
         String natRuleName = Utils.getValueFromIdByName(id, "natRules");
         if (natRuleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
@@ -110,7 +109,7 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
     public Response<VirtualNetworkGatewayNatRule> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -118,7 +117,7 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -128,7 +127,7 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
         }
         String natRuleName = Utils.getValueFromIdByName(id, "natRules");
         if (natRuleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
@@ -139,7 +138,7 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -147,7 +146,7 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -157,7 +156,7 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
         }
         String natRuleName = Utils.getValueFromIdByName(id, "natRules");
         if (natRuleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
@@ -168,7 +167,7 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -176,7 +175,7 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -186,7 +185,7 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
         }
         String natRuleName = Utils.getValueFromIdByName(id, "natRules");
         if (natRuleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));

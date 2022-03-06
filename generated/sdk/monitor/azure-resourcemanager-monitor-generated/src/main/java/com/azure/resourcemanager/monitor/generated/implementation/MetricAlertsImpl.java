@@ -13,10 +13,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.MetricAlertsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertResource;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlerts;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class MetricAlertsImpl implements MetricAlerts {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricAlertsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(MetricAlertsImpl.class);
 
     private final MetricAlertsClient innerClient;
 
@@ -84,7 +83,7 @@ public final class MetricAlertsImpl implements MetricAlerts {
     public MetricAlertResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -92,7 +91,7 @@ public final class MetricAlertsImpl implements MetricAlerts {
         }
         String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
         if (ruleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));
@@ -103,7 +102,7 @@ public final class MetricAlertsImpl implements MetricAlerts {
     public Response<MetricAlertResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -111,7 +110,7 @@ public final class MetricAlertsImpl implements MetricAlerts {
         }
         String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
         if (ruleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));
@@ -122,7 +121,7 @@ public final class MetricAlertsImpl implements MetricAlerts {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -130,7 +129,7 @@ public final class MetricAlertsImpl implements MetricAlerts {
         }
         String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
         if (ruleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));
@@ -141,7 +140,7 @@ public final class MetricAlertsImpl implements MetricAlerts {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class MetricAlertsImpl implements MetricAlerts {
         }
         String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
         if (ruleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));

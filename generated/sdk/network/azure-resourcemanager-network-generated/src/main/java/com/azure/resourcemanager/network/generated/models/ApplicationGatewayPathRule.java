@@ -6,17 +6,13 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPathRulePropertiesFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Path rule of URL path map of an application gateway. */
 @Fluent
 public final class ApplicationGatewayPathRule extends SubResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApplicationGatewayPathRule.class);
-
     /*
      * Properties of the application gateway path rule.
      */

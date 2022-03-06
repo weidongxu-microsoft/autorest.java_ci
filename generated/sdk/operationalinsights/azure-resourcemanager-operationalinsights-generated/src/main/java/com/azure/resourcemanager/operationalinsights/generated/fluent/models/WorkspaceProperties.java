@@ -5,22 +5,18 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.PrivateLinkScopedResource;
 import com.azure.resourcemanager.operationalinsights.generated.models.PublicNetworkAccessType;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceCapping;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceEntityStatus;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceFeatures;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceSku;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Workspace properties. */
 @Fluent
 public final class WorkspaceProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WorkspaceProperties.class);
-
     /*
      * The provisioning state of the workspace.
      */

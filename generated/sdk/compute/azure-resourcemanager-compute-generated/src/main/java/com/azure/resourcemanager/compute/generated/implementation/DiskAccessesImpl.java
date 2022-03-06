@@ -17,10 +17,9 @@ import com.azure.resourcemanager.compute.generated.models.DiskAccess;
 import com.azure.resourcemanager.compute.generated.models.DiskAccesses;
 import com.azure.resourcemanager.compute.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.compute.generated.models.PrivateLinkResourceListResult;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DiskAccessesImpl implements DiskAccesses {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiskAccessesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DiskAccessesImpl.class);
 
     private final DiskAccessesClient innerClient;
 
@@ -211,7 +210,7 @@ public final class DiskAccessesImpl implements DiskAccesses {
     public DiskAccess getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -219,7 +218,7 @@ public final class DiskAccessesImpl implements DiskAccesses {
         }
         String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
         if (diskAccessName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
@@ -230,7 +229,7 @@ public final class DiskAccessesImpl implements DiskAccesses {
     public Response<DiskAccess> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -238,7 +237,7 @@ public final class DiskAccessesImpl implements DiskAccesses {
         }
         String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
         if (diskAccessName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
@@ -249,7 +248,7 @@ public final class DiskAccessesImpl implements DiskAccesses {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -257,7 +256,7 @@ public final class DiskAccessesImpl implements DiskAccesses {
         }
         String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
         if (diskAccessName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
@@ -268,7 +267,7 @@ public final class DiskAccessesImpl implements DiskAccesses {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -276,7 +275,7 @@ public final class DiskAccessesImpl implements DiskAccesses {
         }
         String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
         if (diskAccessName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));

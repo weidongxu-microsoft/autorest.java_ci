@@ -6,15 +6,12 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The metric counter set. */
 @Fluent
 public final class MetricCounterSet {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricCounterSet.class);
-
     /*
      * The counters that should be collected in this set.
      */
@@ -48,11 +45,13 @@ public final class MetricCounterSet {
      */
     public void validate() {
         if (counters() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property counters in model MetricCounterSet"));
         } else {
             counters().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MetricCounterSet.class);
 }

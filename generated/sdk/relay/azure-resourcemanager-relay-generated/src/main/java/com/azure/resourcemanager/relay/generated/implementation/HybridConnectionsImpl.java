@@ -18,10 +18,9 @@ import com.azure.resourcemanager.relay.generated.models.AuthorizationRule;
 import com.azure.resourcemanager.relay.generated.models.HybridConnection;
 import com.azure.resourcemanager.relay.generated.models.HybridConnections;
 import com.azure.resourcemanager.relay.generated.models.RegenerateAccessKeyParameters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class HybridConnectionsImpl implements HybridConnections {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(HybridConnectionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(HybridConnectionsImpl.class);
 
     private final HybridConnectionsClient innerClient;
 
@@ -269,7 +268,7 @@ public final class HybridConnectionsImpl implements HybridConnections {
     public HybridConnection getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -277,14 +276,14 @@ public final class HybridConnectionsImpl implements HybridConnections {
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String hybridConnectionName = Utils.getValueFromIdByName(id, "hybridConnections");
         if (hybridConnectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -297,7 +296,7 @@ public final class HybridConnectionsImpl implements HybridConnections {
     public Response<HybridConnection> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -305,14 +304,14 @@ public final class HybridConnectionsImpl implements HybridConnections {
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String hybridConnectionName = Utils.getValueFromIdByName(id, "hybridConnections");
         if (hybridConnectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -325,7 +324,7 @@ public final class HybridConnectionsImpl implements HybridConnections {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -333,14 +332,14 @@ public final class HybridConnectionsImpl implements HybridConnections {
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String hybridConnectionName = Utils.getValueFromIdByName(id, "hybridConnections");
         if (hybridConnectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -353,7 +352,7 @@ public final class HybridConnectionsImpl implements HybridConnections {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -361,14 +360,14 @@ public final class HybridConnectionsImpl implements HybridConnections {
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String hybridConnectionName = Utils.getValueFromIdByName(id, "hybridConnections");
         if (hybridConnectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

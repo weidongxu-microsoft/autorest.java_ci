@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.ComputeModeOptions;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Worker pool of an App Service Environment ARM resource. */
 @Fluent
 public final class WorkerPoolResourceInner extends ProxyOnlyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WorkerPoolResourceInner.class);
-
     /*
      * Core resource properties
      */

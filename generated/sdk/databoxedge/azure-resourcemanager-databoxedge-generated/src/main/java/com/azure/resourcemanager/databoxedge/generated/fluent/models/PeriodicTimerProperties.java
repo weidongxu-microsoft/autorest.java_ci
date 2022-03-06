@@ -8,14 +8,11 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.PeriodicTimerSourceInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleSinkInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Periodic timer trigger properties. */
 @Fluent
 public final class PeriodicTimerProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PeriodicTimerProperties.class);
-
     /*
      * Periodic timer details.
      */
@@ -108,7 +105,7 @@ public final class PeriodicTimerProperties {
      */
     public void validate() {
         if (sourceInfo() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property sourceInfo in model PeriodicTimerProperties"));
@@ -116,7 +113,7 @@ public final class PeriodicTimerProperties {
             sourceInfo().validate();
         }
         if (sinkInfo() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property sinkInfo in model PeriodicTimerProperties"));
@@ -124,4 +121,6 @@ public final class PeriodicTimerProperties {
             sinkInfo().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(PeriodicTimerProperties.class);
 }

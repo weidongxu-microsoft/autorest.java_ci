@@ -14,13 +14,12 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineI
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImage;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImageResource;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImagesEdgeZones;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class VirtualMachineImagesEdgeZonesImpl implements VirtualMachineImagesEdgeZones {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineImagesEdgeZonesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualMachineImagesEdgeZonesImpl.class);
 
     private final VirtualMachineImagesEdgeZonesClient innerClient;
 

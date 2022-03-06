@@ -6,7 +6,6 @@ package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomRuleList;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontendEndpointLink;
 import com.azure.resourcemanager.frontdoor.generated.models.ManagedRuleSetList;
@@ -15,7 +14,6 @@ import com.azure.resourcemanager.frontdoor.generated.models.PolicySettings;
 import com.azure.resourcemanager.frontdoor.generated.models.RoutingRuleLink;
 import com.azure.resourcemanager.frontdoor.generated.models.SecurityPolicyLink;
 import com.azure.resourcemanager.frontdoor.generated.models.Sku;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -23,8 +21,6 @@ import java.util.Map;
 /** Defines web application firewall policy. */
 @Fluent
 public final class WebApplicationFirewallPolicyInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WebApplicationFirewallPolicyInner.class);
-
     /*
      * Properties of the web application firewall policy.
      */

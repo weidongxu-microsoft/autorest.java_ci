@@ -11,10 +11,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.MetricNamespacesClient
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricNamespaceInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricNamespace;
 import com.azure.resourcemanager.monitor.generated.models.MetricNamespaces;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class MetricNamespacesImpl implements MetricNamespaces {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricNamespacesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(MetricNamespacesImpl.class);
 
     private final MetricNamespacesClient innerClient;
 

@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** Management group properties. */
 @Fluent
 public final class ManagementGroupProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagementGroupProperties.class);
-
     /*
      * The number of servers connected to the management group.
      */

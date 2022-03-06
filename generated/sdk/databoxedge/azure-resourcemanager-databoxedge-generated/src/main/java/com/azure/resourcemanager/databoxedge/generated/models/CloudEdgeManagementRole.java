@@ -5,10 +5,8 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.CloudEdgeManagementRoleProperties;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.RoleInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -18,8 +16,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("CloudEdgeManagement")
 @Fluent
 public final class CloudEdgeManagementRole extends RoleInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CloudEdgeManagementRole.class);
-
     /*
      * Properties specific to CloudEdgeManagementRole role.
      */

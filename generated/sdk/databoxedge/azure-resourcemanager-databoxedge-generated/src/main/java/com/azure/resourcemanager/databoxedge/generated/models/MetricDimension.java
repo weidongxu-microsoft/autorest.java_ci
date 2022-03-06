@@ -6,14 +6,11 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The metric dimension. */
 @Fluent
 public final class MetricDimension {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricDimension.class);
-
     /*
      * The dimension type.
      */
@@ -73,14 +70,16 @@ public final class MetricDimension {
      */
     public void validate() {
         if (sourceType() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property sourceType in model MetricDimension"));
         }
         if (sourceName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property sourceName in model MetricDimension"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MetricDimension.class);
 }

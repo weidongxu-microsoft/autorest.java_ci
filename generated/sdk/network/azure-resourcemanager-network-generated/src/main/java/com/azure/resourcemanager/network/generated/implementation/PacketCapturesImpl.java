@@ -16,10 +16,9 @@ import com.azure.resourcemanager.network.generated.models.PacketCapture;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureQueryStatusResult;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureResult;
 import com.azure.resourcemanager.network.generated.models.PacketCaptures;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PacketCapturesImpl implements PacketCaptures {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PacketCapturesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PacketCapturesImpl.class);
 
     private final PacketCapturesClient innerClient;
 

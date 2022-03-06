@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.CategoryType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The diagnostic settings Category. */
 @Fluent
 public final class DiagnosticSettingsCategory {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiagnosticSettingsCategory.class);
-
     /*
      * The type of the diagnostic settings category.
      */

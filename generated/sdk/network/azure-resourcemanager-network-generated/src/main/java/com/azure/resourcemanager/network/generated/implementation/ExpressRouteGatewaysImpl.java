@@ -14,10 +14,9 @@ import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteGat
 import com.azure.resourcemanager.network.generated.models.ExpressRouteGateway;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteGatewayList;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteGateways;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteGatewaysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ExpressRouteGatewaysImpl.class);
 
     private final ExpressRouteGatewaysClient innerClient;
 
@@ -112,7 +111,7 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     public ExpressRouteGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -120,7 +119,7 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
         }
         String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
         if (expressRouteGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -134,7 +133,7 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     public Response<ExpressRouteGateway> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -142,7 +141,7 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
         }
         String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
         if (expressRouteGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -156,7 +155,7 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -164,7 +163,7 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
         }
         String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
         if (expressRouteGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -178,7 +177,7 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -186,7 +185,7 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
         }
         String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
         if (expressRouteGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

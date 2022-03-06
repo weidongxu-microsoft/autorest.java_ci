@@ -6,15 +6,12 @@ package com.azure.resourcemanager.resourcegraph.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** An interval in time specifying the date and time for the inclusive start and exclusive end, i.e. `[start, end)`. */
 @Fluent
 public final class DateTimeInterval {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DateTimeInterval.class);
-
     /*
      * A datetime indicating the inclusive/closed start of the time interval,
      * i.e. `[`**`start`**`, end)`. Specifying a `start` that occurs
@@ -82,14 +79,16 @@ public final class DateTimeInterval {
      */
     public void validate() {
         if (start() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property start in model DateTimeInterval"));
         }
         if (end() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property end in model DateTimeInterval"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(DateTimeInterval.class);
 }

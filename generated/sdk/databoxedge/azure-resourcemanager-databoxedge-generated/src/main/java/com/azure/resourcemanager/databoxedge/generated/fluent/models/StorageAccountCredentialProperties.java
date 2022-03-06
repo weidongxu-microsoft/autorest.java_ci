@@ -9,14 +9,11 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.AccountType;
 import com.azure.resourcemanager.databoxedge.generated.models.AsymmetricEncryptedSecret;
 import com.azure.resourcemanager.databoxedge.generated.models.SslStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The storage account credential properties. */
 @Fluent
 public final class StorageAccountCredentialProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StorageAccountCredentialProperties.class);
-
     /*
      * Alias for the storage account.
      */
@@ -235,7 +232,7 @@ public final class StorageAccountCredentialProperties {
      */
     public void validate() {
         if (alias() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property alias in model StorageAccountCredentialProperties"));
@@ -244,16 +241,18 @@ public final class StorageAccountCredentialProperties {
             accountKey().validate();
         }
         if (sslStatus() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property sslStatus in model StorageAccountCredentialProperties"));
         }
         if (accountType() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property accountType in model StorageAccountCredentialProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(StorageAccountCredentialProperties.class);
 }

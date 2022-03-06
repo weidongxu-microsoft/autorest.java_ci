@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.NetworkSecurityGroupsC
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkSecurityGroupInner;
 import com.azure.resourcemanager.network.generated.models.NetworkSecurityGroup;
 import com.azure.resourcemanager.network.generated.models.NetworkSecurityGroups;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkSecurityGroupsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(NetworkSecurityGroupsImpl.class);
 
     private final NetworkSecurityGroupsClient innerClient;
 
@@ -88,7 +87,7 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
     public NetworkSecurityGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -96,7 +95,7 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
         }
         String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
         if (networkSecurityGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -113,7 +112,7 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
     public Response<NetworkSecurityGroup> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -121,7 +120,7 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
         }
         String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
         if (networkSecurityGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -135,7 +134,7 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -143,7 +142,7 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
         }
         String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
         if (networkSecurityGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -157,7 +156,7 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -165,7 +164,7 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
         }
         String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
         if (networkSecurityGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

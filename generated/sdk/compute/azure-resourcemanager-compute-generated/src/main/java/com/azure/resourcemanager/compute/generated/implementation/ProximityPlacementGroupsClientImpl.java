@@ -28,7 +28,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.RestProxy;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.ProximityPlacementGroupsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.ProximityPlacementGroupInner;
 import com.azure.resourcemanager.compute.generated.models.ApiErrorException;
@@ -38,8 +37,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ProximityPlacementGroupsClient. */
 public final class ProximityPlacementGroupsClientImpl implements ProximityPlacementGroupsClient {
-    private final ClientLogger logger = new ClientLogger(ProximityPlacementGroupsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final ProximityPlacementGroupsService service;
 

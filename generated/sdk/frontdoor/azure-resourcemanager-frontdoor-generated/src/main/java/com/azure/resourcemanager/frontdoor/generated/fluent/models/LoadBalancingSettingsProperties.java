@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.LoadBalancingSettingsUpdateParameters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The JSON object that contains the properties required to create load balancing settings. */
 @Fluent
 public final class LoadBalancingSettingsProperties extends LoadBalancingSettingsUpdateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancingSettingsProperties.class);
-
     /*
      * Resource status of the Front Door or Front Door SubResource. Resource
      * status.

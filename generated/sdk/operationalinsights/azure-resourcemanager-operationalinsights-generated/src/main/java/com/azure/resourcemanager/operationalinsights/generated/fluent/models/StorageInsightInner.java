@@ -6,10 +6,8 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.StorageAccount;
 import com.azure.resourcemanager.operationalinsights.generated.models.StorageInsightStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -18,8 +16,6 @@ import java.util.Map;
 /** The top level storage insight resource container. */
 @Fluent
 public final class StorageInsightInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StorageInsightInner.class);
-
     /*
      * Storage insight properties.
      */

@@ -7,17 +7,13 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.AccessRights;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Single item in a List or Get AuthorizationRule operation. */
 @Fluent
 public final class AuthorizationRuleInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AuthorizationRuleInner.class);
-
     /*
      * Properties supplied to create or update AuthorizationRule
      */

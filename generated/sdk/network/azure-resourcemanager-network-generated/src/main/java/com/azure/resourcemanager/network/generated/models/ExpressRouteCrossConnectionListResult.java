@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCrossConnectionInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Response for ListExpressRouteCrossConnection API service call. */
 @Fluent
 public final class ExpressRouteCrossConnectionListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteCrossConnectionListResult.class);
-
     /*
      * A list of ExpressRouteCrossConnection resources.
      */

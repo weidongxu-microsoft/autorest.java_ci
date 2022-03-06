@@ -14,10 +14,9 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineR
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommand;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommandUpdate;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMRunCommands;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineScaleSetVMRunCommandsImpl implements VirtualMachineScaleSetVMRunCommands {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineScaleSetVMRunCommandsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualMachineScaleSetVMRunCommandsImpl.class);
 
     private final VirtualMachineScaleSetVMRunCommandsClient innerClient;
 

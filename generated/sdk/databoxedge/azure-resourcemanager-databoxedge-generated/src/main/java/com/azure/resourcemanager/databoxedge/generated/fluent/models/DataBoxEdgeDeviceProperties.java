@@ -6,22 +6,18 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDeviceStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.DataResidency;
 import com.azure.resourcemanager.databoxedge.generated.models.DeviceType;
 import com.azure.resourcemanager.databoxedge.generated.models.EdgeProfile;
 import com.azure.resourcemanager.databoxedge.generated.models.ResourceMoveDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleTypes;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The properties of the Data Box Edge/Gateway device. */
 @Fluent
 public final class DataBoxEdgeDeviceProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DataBoxEdgeDeviceProperties.class);
-
     /*
      * DataBoxEdge Device Properties
      */

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAuthenticationCertificate;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAutoscaleConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendAddressPool;
@@ -33,15 +32,12 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayTrus
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayUrlPathMap;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayWebApplicationFirewallConfiguration;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Properties of the application gateway. */
 @Fluent
 public final class ApplicationGatewayPropertiesFormat {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApplicationGatewayPropertiesFormat.class);
-
     /*
      * SKU of the application gateway resource.
      */

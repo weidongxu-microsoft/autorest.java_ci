@@ -8,15 +8,12 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertActionList;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertAllOfCondition;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** An Azure activity log alert. */
 @Fluent
 public final class ActivityLogAlert {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActivityLogAlert.class);
-
     /*
      * A list of resourceIds that will be used as prefixes. The alert will only
      * apply to activityLogs with resourceIds that fall under one of these
@@ -161,23 +158,25 @@ public final class ActivityLogAlert {
      */
     public void validate() {
         if (scopes() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property scopes in model ActivityLogAlert"));
         }
         if (condition() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property condition in model ActivityLogAlert"));
         } else {
             condition().validate();
         }
         if (actions() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property actions in model ActivityLogAlert"));
         } else {
             actions().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ActivityLogAlert.class);
 }

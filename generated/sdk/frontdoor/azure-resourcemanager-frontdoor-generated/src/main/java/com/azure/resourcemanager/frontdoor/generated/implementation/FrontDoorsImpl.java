@@ -16,10 +16,9 @@ import com.azure.resourcemanager.frontdoor.generated.models.FrontDoor;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoors;
 import com.azure.resourcemanager.frontdoor.generated.models.ValidateCustomDomainInput;
 import com.azure.resourcemanager.frontdoor.generated.models.ValidateCustomDomainOutput;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FrontDoorsImpl implements FrontDoors {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontDoorsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(FrontDoorsImpl.class);
 
     private final FrontDoorsClient innerClient;
 
@@ -117,7 +116,7 @@ public final class FrontDoorsImpl implements FrontDoors {
     public FrontDoor getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -125,7 +124,7 @@ public final class FrontDoorsImpl implements FrontDoors {
         }
         String frontDoorName = Utils.getValueFromIdByName(id, "frontDoors");
         if (frontDoorName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'frontDoors'.", id)));
@@ -136,7 +135,7 @@ public final class FrontDoorsImpl implements FrontDoors {
     public Response<FrontDoor> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -144,7 +143,7 @@ public final class FrontDoorsImpl implements FrontDoors {
         }
         String frontDoorName = Utils.getValueFromIdByName(id, "frontDoors");
         if (frontDoorName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'frontDoors'.", id)));
@@ -155,7 +154,7 @@ public final class FrontDoorsImpl implements FrontDoors {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -163,7 +162,7 @@ public final class FrontDoorsImpl implements FrontDoors {
         }
         String frontDoorName = Utils.getValueFromIdByName(id, "frontDoors");
         if (frontDoorName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'frontDoors'.", id)));
@@ -174,7 +173,7 @@ public final class FrontDoorsImpl implements FrontDoors {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -182,7 +181,7 @@ public final class FrontDoorsImpl implements FrontDoors {
         }
         String frontDoorName = Utils.getValueFromIdByName(id, "frontDoors");
         if (frontDoorName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'frontDoors'.", id)));

@@ -14,10 +14,9 @@ import com.azure.resourcemanager.mysql.generated.fluent.models.QueryStatisticInn
 import com.azure.resourcemanager.mysql.generated.models.QueryStatistic;
 import com.azure.resourcemanager.mysql.generated.models.TopQueryStatistics;
 import com.azure.resourcemanager.mysql.generated.models.TopQueryStatisticsInput;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TopQueryStatisticsImpl implements TopQueryStatistics {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TopQueryStatisticsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(TopQueryStatisticsImpl.class);
 
     private final TopQueryStatisticsClient innerClient;
 

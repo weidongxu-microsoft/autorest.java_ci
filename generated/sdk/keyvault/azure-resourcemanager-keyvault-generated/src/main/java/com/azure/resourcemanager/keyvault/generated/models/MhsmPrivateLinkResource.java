@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateLinkResourceProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -15,8 +13,6 @@ import java.util.Map;
 /** A private link resource. */
 @Fluent
 public final class MhsmPrivateLinkResource extends ManagedHsmResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MhsmPrivateLinkResource.class);
-
     /*
      * Resource properties.
      */

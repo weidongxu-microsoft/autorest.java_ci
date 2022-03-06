@@ -13,10 +13,9 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.DataSource
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.DataSourceInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.DataSource;
 import com.azure.resourcemanager.operationalinsights.generated.models.DataSources;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DataSourcesImpl implements DataSources {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DataSourcesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DataSourcesImpl.class);
 
     private final DataSourcesClient innerClient;
 
@@ -78,7 +77,7 @@ public final class DataSourcesImpl implements DataSources {
     public DataSource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -86,14 +85,14 @@ public final class DataSourcesImpl implements DataSources {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String dataSourceName = Utils.getValueFromIdByName(id, "dataSources");
         if (dataSourceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'dataSources'.", id)));
@@ -104,7 +103,7 @@ public final class DataSourcesImpl implements DataSources {
     public Response<DataSource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -112,14 +111,14 @@ public final class DataSourcesImpl implements DataSources {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String dataSourceName = Utils.getValueFromIdByName(id, "dataSources");
         if (dataSourceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'dataSources'.", id)));
@@ -130,7 +129,7 @@ public final class DataSourcesImpl implements DataSources {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -138,14 +137,14 @@ public final class DataSourcesImpl implements DataSources {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String dataSourceName = Utils.getValueFromIdByName(id, "dataSources");
         if (dataSourceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'dataSources'.", id)));
@@ -156,7 +155,7 @@ public final class DataSourcesImpl implements DataSources {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -164,14 +163,14 @@ public final class DataSourcesImpl implements DataSources {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String dataSourceName = Utils.getValueFromIdByName(id, "dataSources");
         if (dataSourceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'dataSources'.", id)));

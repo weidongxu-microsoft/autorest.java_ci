@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.NetworkInterfaceIpConf
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfigurations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkInterfaceIpConfigurationsImpl implements NetworkInterfaceIpConfigurations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkInterfaceIpConfigurationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(NetworkInterfaceIpConfigurationsImpl.class);
 
     private final NetworkInterfaceIpConfigurationsClient innerClient;
 

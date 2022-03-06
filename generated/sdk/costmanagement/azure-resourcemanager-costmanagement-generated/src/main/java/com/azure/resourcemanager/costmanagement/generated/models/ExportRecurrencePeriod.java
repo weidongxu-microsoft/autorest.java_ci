@@ -6,15 +6,12 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** The start and end date for recurrence schedule. */
 @Fluent
 public final class ExportRecurrencePeriod {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExportRecurrencePeriod.class);
-
     /*
      * The start date of recurrence.
      */
@@ -74,9 +71,11 @@ public final class ExportRecurrencePeriod {
      */
     public void validate() {
         if (from() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property from in model ExportRecurrencePeriod"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ExportRecurrencePeriod.class);
 }

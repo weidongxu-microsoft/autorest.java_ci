@@ -15,10 +15,9 @@ import com.azure.resourcemanager.keyvault.generated.fluent.models.ManagedHsmInne
 import com.azure.resourcemanager.keyvault.generated.models.DeletedManagedHsm;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsm;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsms;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ManagedHsmsImpl implements ManagedHsms {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagedHsmsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ManagedHsmsImpl.class);
 
     private final ManagedHsmsClient innerClient;
 
@@ -125,7 +124,7 @@ public final class ManagedHsmsImpl implements ManagedHsms {
     public ManagedHsm getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -133,7 +132,7 @@ public final class ManagedHsmsImpl implements ManagedHsms {
         }
         String name = Utils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));
@@ -144,7 +143,7 @@ public final class ManagedHsmsImpl implements ManagedHsms {
     public Response<ManagedHsm> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -152,7 +151,7 @@ public final class ManagedHsmsImpl implements ManagedHsms {
         }
         String name = Utils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));
@@ -163,7 +162,7 @@ public final class ManagedHsmsImpl implements ManagedHsms {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -171,7 +170,7 @@ public final class ManagedHsmsImpl implements ManagedHsms {
         }
         String name = Utils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));
@@ -182,7 +181,7 @@ public final class ManagedHsmsImpl implements ManagedHsms {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -190,7 +189,7 @@ public final class ManagedHsmsImpl implements ManagedHsms {
         }
         String name = Utils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));

@@ -14,10 +14,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSetti
 import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsOperations;
 import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsResource;
 import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsResourceCollection;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DiagnosticSettingsOperationsImpl implements DiagnosticSettingsOperations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiagnosticSettingsOperationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DiagnosticSettingsOperationsImpl.class);
 
     private final DiagnosticSettingsOperationsClient innerClient;
 
@@ -90,7 +89,7 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
                 .getValueFromIdByParameterName(
                     id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
         if (resourceUri == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'resourceUri'.", id)));
@@ -100,7 +99,7 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
                 .getValueFromIdByParameterName(
                     id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -116,7 +115,7 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
                 .getValueFromIdByParameterName(
                     id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
         if (resourceUri == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'resourceUri'.", id)));
@@ -126,7 +125,7 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
                 .getValueFromIdByParameterName(
                     id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -142,7 +141,7 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
                 .getValueFromIdByParameterName(
                     id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
         if (resourceUri == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'resourceUri'.", id)));
@@ -152,7 +151,7 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
                 .getValueFromIdByParameterName(
                     id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -168,7 +167,7 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
                 .getValueFromIdByParameterName(
                     id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
         if (resourceUri == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'resourceUri'.", id)));
@@ -178,7 +177,7 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
                 .getValueFromIdByParameterName(
                     id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

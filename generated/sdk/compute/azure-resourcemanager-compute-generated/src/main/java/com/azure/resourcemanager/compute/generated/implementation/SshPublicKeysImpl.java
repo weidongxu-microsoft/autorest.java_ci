@@ -15,10 +15,9 @@ import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyRes
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeyGenerateKeyPairResult;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeyResource;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeys;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SshPublicKeysImpl implements SshPublicKeys {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SshPublicKeysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(SshPublicKeysImpl.class);
 
     private final SshPublicKeysClient innerClient;
 
@@ -111,7 +110,7 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
     public SshPublicKeyResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -119,7 +118,7 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
         }
         String sshPublicKeyName = Utils.getValueFromIdByName(id, "sshPublicKeys");
         if (sshPublicKeyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sshPublicKeys'.", id)));
@@ -130,7 +129,7 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
     public Response<SshPublicKeyResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -138,7 +137,7 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
         }
         String sshPublicKeyName = Utils.getValueFromIdByName(id, "sshPublicKeys");
         if (sshPublicKeyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sshPublicKeys'.", id)));
@@ -149,7 +148,7 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -157,7 +156,7 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
         }
         String sshPublicKeyName = Utils.getValueFromIdByName(id, "sshPublicKeys");
         if (sshPublicKeyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sshPublicKeys'.", id)));
@@ -168,7 +167,7 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -176,7 +175,7 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
         }
         String sshPublicKeyName = Utils.getValueFromIdByName(id, "sshPublicKeys");
         if (sshPublicKeyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sshPublicKeys'.", id)));

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.BgpSettings;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -16,15 +15,12 @@ import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayT
 import com.azure.resourcemanager.network.generated.models.VpnClientConfiguration;
 import com.azure.resourcemanager.network.generated.models.VpnGatewayGeneration;
 import com.azure.resourcemanager.network.generated.models.VpnType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** VirtualNetworkGateway properties. */
 @Fluent
 public final class VirtualNetworkGatewayPropertiesFormat {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworkGatewayPropertiesFormat.class);
-
     /*
      * IP configurations for virtual network gateway.
      */

@@ -38,8 +38,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the DnsManagementClientImpl type. */
 @ServiceClient(builder = DnsManagementClientBuilder.class)
 public final class DnsManagementClientImpl implements DnsManagementClient {
-    private final ClientLogger logger = new ClientLogger(DnsManagementClientImpl.class);
-
     /** Specifies the Azure subscription ID, which uniquely identifies the Microsoft Azure subscription. */
     private final String subscriptionId;
 
@@ -260,7 +258,7 @@ public final class DnsManagementClientImpl implements DnsManagementClient {
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -319,4 +317,6 @@ public final class DnsManagementClientImpl implements DnsManagementClient {
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(DnsManagementClientImpl.class);
 }

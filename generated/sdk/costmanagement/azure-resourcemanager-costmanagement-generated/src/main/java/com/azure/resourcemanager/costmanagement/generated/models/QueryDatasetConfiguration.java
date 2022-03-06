@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The configuration of dataset in the query. */
 @Fluent
 public final class QueryDatasetConfiguration {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(QueryDatasetConfiguration.class);
-
     /*
      * Array of column names to be included in the query. Any valid query
      * column name is allowed. If not provided, then query includes all

@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.DnsVerificationTestResult;
 import com.azure.resourcemanager.appservice.generated.models.ErrorEntity;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Custom domain analysis. */
 @Fluent
 public final class CustomHostnameAnalysisResultInner extends ProxyOnlyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CustomHostnameAnalysisResultInner.class);
-
     /*
      * CustomHostnameAnalysisResult resource specific properties
      */

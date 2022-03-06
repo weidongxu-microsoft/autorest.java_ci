@@ -5,18 +5,14 @@
 package com.azure.resourcemanager.keyvault.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateEndpoint;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateLinkServiceConnectionState;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnectionProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Properties of the private endpoint connection resource. */
 @Fluent
 public final class MhsmPrivateEndpointConnectionProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MhsmPrivateEndpointConnectionProperties.class);
-
     /*
      * Properties of the private endpoint object.
      */

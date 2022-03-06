@@ -5,20 +5,16 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.DefaultAction;
 import com.azure.resourcemanager.eventhubs.generated.models.NWRuleSetIpRules;
 import com.azure.resourcemanager.eventhubs.generated.models.NWRuleSetVirtualNetworkRules;
 import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccessFlag;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** NetworkRuleSet properties. */
 @Fluent
 public final class NetworkRuleSetProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkRuleSetProperties.class);
-
     /*
      * Value that indicates whether Trusted Service Access is Enabled or not.
      */

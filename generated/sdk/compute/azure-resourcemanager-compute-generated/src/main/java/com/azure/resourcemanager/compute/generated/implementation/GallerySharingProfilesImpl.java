@@ -10,10 +10,9 @@ import com.azure.resourcemanager.compute.generated.fluent.GallerySharingProfiles
 import com.azure.resourcemanager.compute.generated.fluent.models.SharingUpdateInner;
 import com.azure.resourcemanager.compute.generated.models.GallerySharingProfiles;
 import com.azure.resourcemanager.compute.generated.models.SharingUpdate;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class GallerySharingProfilesImpl implements GallerySharingProfiles {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(GallerySharingProfilesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(GallerySharingProfilesImpl.class);
 
     private final GallerySharingProfilesClient innerClient;
 

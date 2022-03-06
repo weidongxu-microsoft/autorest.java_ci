@@ -6,7 +6,6 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -15,8 +14,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @Fluent
 public final class IoTEdgeAgentInfo {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(IoTEdgeAgentInfo.class);
-
     /*
      * Name of the IoT edge agent image.
      */
@@ -102,12 +99,12 @@ public final class IoTEdgeAgentInfo {
      */
     public void validate() {
         if (imageName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property imageName in model IoTEdgeAgentInfo"));
         }
         if (tag() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property tag in model IoTEdgeAgentInfo"));
         }
@@ -115,4 +112,6 @@ public final class IoTEdgeAgentInfo {
             imageRepository().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(IoTEdgeAgentInfo.class);
 }

@@ -6,14 +6,11 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Kubernetes role compute resource. */
 @Fluent
 public final class KubernetesRoleCompute {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KubernetesRoleCompute.class);
-
     /*
      * VM profile
      */
@@ -77,9 +74,11 @@ public final class KubernetesRoleCompute {
      */
     public void validate() {
         if (vmProfile() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property vmProfile in model KubernetesRoleCompute"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(KubernetesRoleCompute.class);
 }

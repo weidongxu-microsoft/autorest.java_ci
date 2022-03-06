@@ -14,10 +14,9 @@ import com.azure.resourcemanager.applicationinsights.generated.fluent.models.Wor
 import com.azure.resourcemanager.applicationinsights.generated.models.WorkItemConfiguration;
 import com.azure.resourcemanager.applicationinsights.generated.models.WorkItemConfigurations;
 import com.azure.resourcemanager.applicationinsights.generated.models.WorkItemCreateConfiguration;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class WorkItemConfigurationsImpl implements WorkItemConfigurations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WorkItemConfigurationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(WorkItemConfigurationsImpl.class);
 
     private final WorkItemConfigurationsClient innerClient;
 

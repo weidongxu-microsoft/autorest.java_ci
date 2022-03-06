@@ -14,10 +14,9 @@ import com.azure.resourcemanager.dns.generated.fluent.models.RecordSetInner;
 import com.azure.resourcemanager.dns.generated.models.RecordSet;
 import com.azure.resourcemanager.dns.generated.models.RecordSets;
 import com.azure.resourcemanager.dns.generated.models.RecordType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RecordSetsImpl implements RecordSets {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RecordSetsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(RecordSetsImpl.class);
 
     private final RecordSetsClient innerClient;
 

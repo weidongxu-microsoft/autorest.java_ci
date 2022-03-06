@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.ArmRoleReceiver;
 import com.azure.resourcemanager.monitor.generated.models.AutomationRunbookReceiver;
 import com.azure.resourcemanager.monitor.generated.models.AzureAppPushReceiver;
@@ -17,7 +16,6 @@ import com.azure.resourcemanager.monitor.generated.models.LogicAppReceiver;
 import com.azure.resourcemanager.monitor.generated.models.SmsReceiver;
 import com.azure.resourcemanager.monitor.generated.models.VoiceReceiver;
 import com.azure.resourcemanager.monitor.generated.models.WebhookReceiver;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -25,8 +23,6 @@ import java.util.Map;
 /** An action group resource. */
 @Fluent
 public final class ActionGroupResourceInner extends AzureResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActionGroupResourceInner.class);
-
     /*
      * The action groups properties of the resource.
      */

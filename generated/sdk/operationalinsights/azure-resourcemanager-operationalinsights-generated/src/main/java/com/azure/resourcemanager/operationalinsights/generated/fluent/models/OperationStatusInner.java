@@ -6,15 +6,11 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.exception.ManagementError;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The status of operation. */
 @Fluent
 public final class OperationStatusInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(OperationStatusInner.class);
-
     /*
      * The operation Id.
      */

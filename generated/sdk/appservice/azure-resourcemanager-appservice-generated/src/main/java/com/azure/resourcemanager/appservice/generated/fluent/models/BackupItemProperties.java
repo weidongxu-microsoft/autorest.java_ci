@@ -5,10 +5,8 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.BackupItemStatus;
 import com.azure.resourcemanager.appservice.generated.models.DatabaseBackupSetting;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -16,8 +14,6 @@ import java.util.List;
 /** BackupItem resource specific properties. */
 @Immutable
 public final class BackupItemProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BackupItemProperties.class);
-
     /*
      * Id of the backup.
      */

@@ -25,7 +25,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.fluent.ExportsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportExecutionListResultInner;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportInner;
@@ -34,8 +33,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ExportsClient. */
 public final class ExportsClientImpl implements ExportsClient {
-    private final ClientLogger logger = new ClientLogger(ExportsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final ExportsService service;
 

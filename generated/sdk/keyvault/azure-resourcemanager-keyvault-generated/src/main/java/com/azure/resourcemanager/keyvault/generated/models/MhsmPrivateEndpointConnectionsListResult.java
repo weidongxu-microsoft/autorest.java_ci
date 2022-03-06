@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateEndpointConnectionInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** List of private endpoint connections associated with a managed HSM Pools. */
 @Fluent
 public final class MhsmPrivateEndpointConnectionsListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MhsmPrivateEndpointConnectionsListResult.class);
-
     /*
      * The private endpoint connection associated with a managed HSM Pools.
      */

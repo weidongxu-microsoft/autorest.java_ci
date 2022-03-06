@@ -31,7 +31,6 @@ import com.azure.core.management.exception.ManagementException;
 import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.P2SVpnGatewaysClient;
@@ -49,8 +48,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in P2SVpnGatewaysClient. */
 public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
-    private final ClientLogger logger = new ClientLogger(P2SVpnGatewaysClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final P2SVpnGatewaysService service;
 

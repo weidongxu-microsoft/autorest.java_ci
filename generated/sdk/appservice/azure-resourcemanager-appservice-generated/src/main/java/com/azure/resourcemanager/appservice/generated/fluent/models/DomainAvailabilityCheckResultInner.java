@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.DomainType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Domain availability check result. */
 @Fluent
 public final class DomainAvailabilityCheckResultInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DomainAvailabilityCheckResultInner.class);
-
     /*
      * Name of the domain.
      */

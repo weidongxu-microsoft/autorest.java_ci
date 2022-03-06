@@ -13,10 +13,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.models.NameAvailabi
 import com.azure.resourcemanager.postgresql.generated.models.CheckNameAvailabilities;
 import com.azure.resourcemanager.postgresql.generated.models.NameAvailability;
 import com.azure.resourcemanager.postgresql.generated.models.NameAvailabilityRequest;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CheckNameAvailabilitiesImpl implements CheckNameAvailabilities {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CheckNameAvailabilitiesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(CheckNameAvailabilitiesImpl.class);
 
     private final CheckNameAvailabilitiesClient innerClient;
 

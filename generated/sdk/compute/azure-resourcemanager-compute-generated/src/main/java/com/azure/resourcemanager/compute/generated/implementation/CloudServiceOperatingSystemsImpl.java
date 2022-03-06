@@ -15,10 +15,9 @@ import com.azure.resourcemanager.compute.generated.fluent.models.OSVersionInner;
 import com.azure.resourcemanager.compute.generated.models.CloudServiceOperatingSystems;
 import com.azure.resourcemanager.compute.generated.models.OSFamily;
 import com.azure.resourcemanager.compute.generated.models.OSVersion;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CloudServiceOperatingSystemsImpl implements CloudServiceOperatingSystems {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CloudServiceOperatingSystemsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(CloudServiceOperatingSystemsImpl.class);
 
     private final CloudServiceOperatingSystemsClient innerClient;
 

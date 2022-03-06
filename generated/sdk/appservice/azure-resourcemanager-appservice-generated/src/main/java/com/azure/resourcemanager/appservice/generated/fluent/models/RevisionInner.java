@@ -6,11 +6,9 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.RevisionHealthState;
 import com.azure.resourcemanager.appservice.generated.models.RevisionProvisioningState;
 import com.azure.resourcemanager.appservice.generated.models.Template;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Map;
@@ -18,8 +16,6 @@ import java.util.Map;
 /** Container App Revision. */
 @Fluent
 public final class RevisionInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RevisionInner.class);
-
     /*
      * Revision resource specific properties
      */

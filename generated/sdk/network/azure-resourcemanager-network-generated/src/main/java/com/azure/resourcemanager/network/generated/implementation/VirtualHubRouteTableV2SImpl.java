@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.VirtualHubRouteTableV2
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubRouteTableV2Inner;
 import com.azure.resourcemanager.network.generated.models.VirtualHubRouteTableV2;
 import com.azure.resourcemanager.network.generated.models.VirtualHubRouteTableV2S;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualHubRouteTableV2SImpl implements VirtualHubRouteTableV2S {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualHubRouteTableV2SImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualHubRouteTableV2SImpl.class);
 
     private final VirtualHubRouteTableV2SClient innerClient;
 

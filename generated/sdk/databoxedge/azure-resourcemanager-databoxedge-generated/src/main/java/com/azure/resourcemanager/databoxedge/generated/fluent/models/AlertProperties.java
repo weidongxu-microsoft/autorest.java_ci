@@ -5,10 +5,8 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.AlertErrorDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.AlertSeverity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -17,8 +15,6 @@ import java.util.Map;
 /** Properties of alert. */
 @Immutable
 public final class AlertProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AlertProperties.class);
-
     /*
      * Alert title.
      */

@@ -8,15 +8,12 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.models.SecretProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /** Resource information with extended details. */
 @Fluent
 public final class SecretInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SecretInner.class);
-
     /*
      * Properties of the secret
      */
@@ -64,11 +61,13 @@ public final class SecretInner extends Resource {
      */
     public void validate() {
         if (properties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property properties in model SecretInner"));
         } else {
             properties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(SecretInner.class);
 }

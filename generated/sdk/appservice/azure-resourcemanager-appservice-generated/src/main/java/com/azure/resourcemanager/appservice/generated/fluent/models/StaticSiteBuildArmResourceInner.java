@@ -5,11 +5,9 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.BuildStatus;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserProvidedFunctionApp;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -17,8 +15,6 @@ import java.util.List;
 /** Static Site Build ARM resource. */
 @Fluent
 public final class StaticSiteBuildArmResourceInner extends ProxyOnlyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StaticSiteBuildArmResourceInner.class);
-
     /*
      * StaticSiteBuildARMResource resource specific properties
      */

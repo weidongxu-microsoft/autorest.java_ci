@@ -51,8 +51,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in DeploymentsClient. */
 public final class DeploymentsClientImpl implements DeploymentsClient {
-    private final ClientLogger logger = new ClientLogger(DeploymentsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final DeploymentsService service;
 
@@ -1087,7 +1085,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
         if (value != null) {
             return value;
         } else {
-            throw logger.logExceptionAsError(new NullPointerException());
+            throw LOGGER.logExceptionAsError(new NullPointerException());
         }
     }
 
@@ -2517,7 +2515,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
         if (value != null) {
             return value;
         } else {
-            throw logger.logExceptionAsError(new NullPointerException());
+            throw LOGGER.logExceptionAsError(new NullPointerException());
         }
     }
 
@@ -4103,7 +4101,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
         if (value != null) {
             return value;
         } else {
-            throw logger.logExceptionAsError(new NullPointerException());
+            throw LOGGER.logExceptionAsError(new NullPointerException());
         }
     }
 
@@ -5858,7 +5856,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
         if (value != null) {
             return value;
         } else {
-            throw logger.logExceptionAsError(new NullPointerException());
+            throw LOGGER.logExceptionAsError(new NullPointerException());
         }
     }
 
@@ -7655,7 +7653,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
         if (value != null) {
             return value;
         } else {
-            throw logger.logExceptionAsError(new NullPointerException());
+            throw LOGGER.logExceptionAsError(new NullPointerException());
         }
     }
 
@@ -9666,4 +9664,6 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                         res.getValue().nextLink(),
                         null));
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(DeploymentsClientImpl.class);
 }

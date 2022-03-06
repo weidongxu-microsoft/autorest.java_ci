@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -17,8 +15,6 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.JobInputHttp")
 @Fluent
 public final class JobInputHttp extends JobInputClip {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(JobInputHttp.class);
-
     /*
      * Base URI for HTTPS job input. It will be concatenated with provided file
      * names. If no base uri is given, then the provided file list is assumed

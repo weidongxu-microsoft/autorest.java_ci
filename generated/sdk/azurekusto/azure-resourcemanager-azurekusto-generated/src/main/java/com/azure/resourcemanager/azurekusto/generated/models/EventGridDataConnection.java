@@ -5,10 +5,8 @@
 package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DataConnectionInner;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.EventGridConnectionProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -18,8 +16,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("EventGrid")
 @Fluent
 public final class EventGridDataConnection extends DataConnectionInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EventGridDataConnection.class);
-
     /*
      * The properties of the Event Grid data connection.
      */

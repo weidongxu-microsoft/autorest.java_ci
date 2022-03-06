@@ -8,14 +8,11 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.FileSourceInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleSinkInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** File trigger properties. */
 @Fluent
 public final class FileTriggerProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FileTriggerProperties.class);
-
     /*
      * File event source details.
      */
@@ -108,7 +105,7 @@ public final class FileTriggerProperties {
      */
     public void validate() {
         if (sourceInfo() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property sourceInfo in model FileTriggerProperties"));
@@ -116,11 +113,13 @@ public final class FileTriggerProperties {
             sourceInfo().validate();
         }
         if (sinkInfo() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property sinkInfo in model FileTriggerProperties"));
         } else {
             sinkInfo().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(FileTriggerProperties.class);
 }

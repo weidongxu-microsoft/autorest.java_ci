@@ -5,18 +5,14 @@
 package com.azure.resourcemanager.hdinsight.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.hdinsight.generated.models.PrivateIpAllocationMethod;
 import com.azure.resourcemanager.hdinsight.generated.models.PrivateLinkConfigurationProvisioningState;
 import com.azure.resourcemanager.hdinsight.generated.models.ResourceId;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The private link ip configuration properties. */
 @Fluent
 public final class IpConfigurationProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(IpConfigurationProperties.class);
-
     /*
      * The private link configuration provisioning state, which only appears in
      * the response.

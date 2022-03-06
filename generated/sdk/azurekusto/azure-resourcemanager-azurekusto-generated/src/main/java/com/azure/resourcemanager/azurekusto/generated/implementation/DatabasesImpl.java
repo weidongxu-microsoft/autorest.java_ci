@@ -21,10 +21,9 @@ import com.azure.resourcemanager.azurekusto.generated.models.DatabasePrincipal;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabasePrincipalListRequest;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabasePrincipalListResult;
 import com.azure.resourcemanager.azurekusto.generated.models.Databases;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DatabasesImpl implements Databases {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DatabasesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DatabasesImpl.class);
 
     private final DatabasesClient innerClient;
 

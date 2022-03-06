@@ -7,14 +7,11 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.fluent.models.WorkspaceInfoProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Information about a Log Analytics Workspace. */
 @Fluent
 public final class WorkspaceInfo {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WorkspaceInfo.class);
-
     /*
      * Azure Resource Manager identifier of the Log Analytics Workspace.
      */
@@ -112,21 +109,23 @@ public final class WorkspaceInfo {
      */
     public void validate() {
         if (id() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property id in model WorkspaceInfo"));
         }
         if (location() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property location in model WorkspaceInfo"));
         }
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property innerProperties in model WorkspaceInfo"));
         } else {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(WorkspaceInfo.class);
 }

@@ -5,20 +5,16 @@
 package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.models.CommonExportProperties;
 import com.azure.resourcemanager.costmanagement.generated.models.ExportDefinition;
 import com.azure.resourcemanager.costmanagement.generated.models.ExportDeliveryInfo;
 import com.azure.resourcemanager.costmanagement.generated.models.ExportSchedule;
 import com.azure.resourcemanager.costmanagement.generated.models.FormatType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The properties of the export. */
 @Fluent
 public final class ExportProperties extends CommonExportProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExportProperties.class);
-
     /*
      * Has schedule information for the export.
      */

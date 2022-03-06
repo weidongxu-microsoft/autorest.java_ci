@@ -22,10 +22,9 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMReimageParameters;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMs;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleSetVMs {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineScaleSetVMsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualMachineScaleSetVMsImpl.class);
 
     private final VirtualMachineScaleSetVMsClient innerClient;
 

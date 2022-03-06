@@ -13,10 +13,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.AutoscaleSettingsClien
 import com.azure.resourcemanager.monitor.generated.fluent.models.AutoscaleSettingResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.AutoscaleSettingResource;
 import com.azure.resourcemanager.monitor.generated.models.AutoscaleSettings;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AutoscaleSettingsImpl implements AutoscaleSettings {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AutoscaleSettingsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AutoscaleSettingsImpl.class);
 
     private final AutoscaleSettingsClient innerClient;
 
@@ -87,7 +86,7 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
     public AutoscaleSettingResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -95,7 +94,7 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
         }
         String autoscaleSettingName = Utils.getValueFromIdByName(id, "autoscalesettings");
         if (autoscaleSettingName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -108,7 +107,7 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
     public Response<AutoscaleSettingResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -116,7 +115,7 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
         }
         String autoscaleSettingName = Utils.getValueFromIdByName(id, "autoscalesettings");
         if (autoscaleSettingName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -129,7 +128,7 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -137,7 +136,7 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
         }
         String autoscaleSettingName = Utils.getValueFromIdByName(id, "autoscalesettings");
         if (autoscaleSettingName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -150,7 +149,7 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -158,7 +157,7 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
         }
         String autoscaleSettingName = Utils.getValueFromIdByName(id, "autoscalesettings");
         if (autoscaleSettingName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

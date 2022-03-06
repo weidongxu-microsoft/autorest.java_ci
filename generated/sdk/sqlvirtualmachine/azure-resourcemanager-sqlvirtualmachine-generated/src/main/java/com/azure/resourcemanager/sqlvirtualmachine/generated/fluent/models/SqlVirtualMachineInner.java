@@ -7,7 +7,6 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AssessmentSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoBackupSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoPatchingSettings;
@@ -19,15 +18,12 @@ import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlManagemen
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlServerLicenseType;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.StorageConfigurationSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.WsfcDomainCredentials;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /** A SQL virtual machine. */
 @Fluent
 public final class SqlVirtualMachineInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SqlVirtualMachineInner.class);
-
     /*
      * Azure Active Directory identity of the server.
      */

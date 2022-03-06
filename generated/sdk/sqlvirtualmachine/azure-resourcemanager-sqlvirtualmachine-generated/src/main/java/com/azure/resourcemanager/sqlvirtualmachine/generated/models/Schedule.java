@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The Schedule model. */
 @Fluent
 public final class Schedule {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Schedule.class);
-
     /*
      * Enable or disable assessment schedule on SQL virtual machine.
      */

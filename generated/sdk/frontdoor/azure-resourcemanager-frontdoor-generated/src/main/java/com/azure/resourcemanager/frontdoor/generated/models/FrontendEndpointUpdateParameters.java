@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Frontend endpoint used in routing rule. */
 @Fluent
 public class FrontendEndpointUpdateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontendEndpointUpdateParameters.class);
-
     /*
      * The host name of the frontendEndpoint. Must be a domain name.
      */

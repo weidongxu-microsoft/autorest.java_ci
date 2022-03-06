@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.recoveryservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The properties of the Key Vault which hosts CMK. */
 @Fluent
 public final class CmkKeyVaultProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CmkKeyVaultProperties.class);
-
     /*
      * The key uri of the Customer Managed Key
      */

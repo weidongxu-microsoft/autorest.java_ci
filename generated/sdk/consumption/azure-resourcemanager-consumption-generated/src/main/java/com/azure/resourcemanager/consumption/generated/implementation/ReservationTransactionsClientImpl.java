@@ -25,7 +25,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.ReservationTransactionsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ModernReservationTransactionInner;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationTransactionInner;
@@ -35,8 +34,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ReservationTransactionsClient. */
 public final class ReservationTransactionsClientImpl implements ReservationTransactionsClient {
-    private final ClientLogger logger = new ClientLogger(ReservationTransactionsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final ReservationTransactionsService service;
 

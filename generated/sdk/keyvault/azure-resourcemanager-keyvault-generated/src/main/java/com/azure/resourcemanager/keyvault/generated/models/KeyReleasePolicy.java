@@ -7,15 +7,11 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.Base64Url;
 import com.azure.core.util.CoreUtils;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The KeyReleasePolicy model. */
 @Fluent
 public final class KeyReleasePolicy {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KeyReleasePolicy.class);
-
     /*
      * Content type and version of key release policy
      */

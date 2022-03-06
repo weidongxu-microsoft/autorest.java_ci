@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Search job execution statistics. */
 @Immutable
 public final class ResultStatistics {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResultStatistics.class);
-
     /*
      * Search job completion percentage.
      */

@@ -6,18 +6,14 @@ package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabasePrincipalRole;
 import com.azure.resourcemanager.azurekusto.generated.models.PrincipalType;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Class representing a database principal assignment. */
 @Fluent
 public final class DatabasePrincipalAssignmentInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DatabasePrincipalAssignmentInner.class);
-
     /*
      * The database principal.
      */

@@ -14,13 +14,12 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.SnapshotInne
 import com.azure.resourcemanager.appservice.generated.models.DeletedSite;
 import com.azure.resourcemanager.appservice.generated.models.Globals;
 import com.azure.resourcemanager.appservice.generated.models.Snapshot;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class GlobalsImpl implements Globals {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(GlobalsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(GlobalsImpl.class);
 
     private final GlobalsClient innerClient;
 

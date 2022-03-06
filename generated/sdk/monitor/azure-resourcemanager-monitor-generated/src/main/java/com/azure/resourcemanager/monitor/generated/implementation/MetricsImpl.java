@@ -13,11 +13,10 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.ResponseInner;
 import com.azure.resourcemanager.monitor.generated.models.Metrics;
 import com.azure.resourcemanager.monitor.generated.models.ResponseModel;
 import com.azure.resourcemanager.monitor.generated.models.ResultType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.Duration;
 
 public final class MetricsImpl implements Metrics {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(MetricsImpl.class);
 
     private final MetricsClient innerClient;
 

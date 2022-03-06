@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorCertificateType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Parameters required for enabling SSL with Front Door-managed certificates. */
 @Fluent
 public final class FrontDoorCertificateSourceParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontDoorCertificateSourceParameters.class);
-
     /*
      * Defines the type of the certificate used for secure connections to a
      * frontendEndpoint

@@ -6,9 +6,7 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportExecutionProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -17,8 +15,6 @@ import java.util.Map;
 /** A export execution. */
 @Fluent
 public final class ExportExecution extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExportExecution.class);
-
     /*
      * The properties of the export execution.
      */

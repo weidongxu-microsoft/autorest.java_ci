@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.Delegation;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -15,15 +14,12 @@ import com.azure.resourcemanager.network.generated.models.ServiceAssociationLink
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPropertiesFormat;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateEndpointNetworkPolicies;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateLinkServiceNetworkPolicies;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Properties of the subnet. */
 @Fluent
 public final class SubnetPropertiesFormatInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SubnetPropertiesFormatInner.class);
-
     /*
      * The address prefix for the subnet.
      */

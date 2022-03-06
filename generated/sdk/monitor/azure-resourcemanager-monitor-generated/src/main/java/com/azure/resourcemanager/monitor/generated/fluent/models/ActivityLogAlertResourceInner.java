@@ -6,10 +6,8 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertActionList;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertAllOfCondition;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -17,8 +15,6 @@ import java.util.Map;
 /** An activity log alert resource. */
 @Fluent
 public final class ActivityLogAlertResourceInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActivityLogAlertResourceInner.class);
-
     /*
      * The activity log alert properties of the resource.
      */

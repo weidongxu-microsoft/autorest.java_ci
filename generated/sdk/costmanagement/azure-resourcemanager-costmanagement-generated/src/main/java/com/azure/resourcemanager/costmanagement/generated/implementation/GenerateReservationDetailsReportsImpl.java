@@ -10,10 +10,9 @@ import com.azure.resourcemanager.costmanagement.generated.fluent.GenerateReserva
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.OperationStatusInner;
 import com.azure.resourcemanager.costmanagement.generated.models.GenerateReservationDetailsReports;
 import com.azure.resourcemanager.costmanagement.generated.models.OperationStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class GenerateReservationDetailsReportsImpl implements GenerateReservationDetailsReports {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(GenerateReservationDetailsReportsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(GenerateReservationDetailsReportsImpl.class);
 
     private final GenerateReservationDetailsReportsClient innerClient;
 

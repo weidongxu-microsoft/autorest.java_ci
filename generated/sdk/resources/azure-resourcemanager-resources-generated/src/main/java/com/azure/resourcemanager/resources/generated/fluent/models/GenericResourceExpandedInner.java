@@ -5,11 +5,9 @@
 package com.azure.resourcemanager.resources.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.resources.generated.models.Identity;
 import com.azure.resourcemanager.resources.generated.models.Plan;
 import com.azure.resourcemanager.resources.generated.models.Sku;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Map;
@@ -17,8 +15,6 @@ import java.util.Map;
 /** Resource information. */
 @Fluent
 public final class GenericResourceExpandedInner extends GenericResourceInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(GenericResourceExpandedInner.class);
-
     /*
      * The created time of the resource. This is only present if requested via
      * the $expand query parameter.

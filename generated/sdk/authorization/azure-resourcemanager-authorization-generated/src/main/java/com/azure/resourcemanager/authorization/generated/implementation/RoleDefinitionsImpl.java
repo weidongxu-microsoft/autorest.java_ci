@@ -13,10 +13,9 @@ import com.azure.resourcemanager.authorization.generated.fluent.RoleDefinitionsC
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleDefinitionInner;
 import com.azure.resourcemanager.authorization.generated.models.RoleDefinition;
 import com.azure.resourcemanager.authorization.generated.models.RoleDefinitions;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RoleDefinitionsImpl implements RoleDefinitions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RoleDefinitionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(RoleDefinitionsImpl.class);
 
     private final RoleDefinitionsClient innerClient;
 
@@ -111,7 +110,7 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -123,7 +122,7 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
                     "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}",
                     "roleDefinitionId");
         if (roleDefinitionId == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -138,7 +137,7 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -150,7 +149,7 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
                     "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}",
                     "roleDefinitionId");
         if (roleDefinitionId == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

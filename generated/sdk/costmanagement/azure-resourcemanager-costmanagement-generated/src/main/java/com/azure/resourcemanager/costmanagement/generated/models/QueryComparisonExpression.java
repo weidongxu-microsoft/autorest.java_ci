@@ -6,15 +6,12 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The comparison expression to be used in the query. */
 @Fluent
 public final class QueryComparisonExpression {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(QueryComparisonExpression.class);
-
     /*
      * The name of the column to use in comparison.
      */
@@ -100,21 +97,23 @@ public final class QueryComparisonExpression {
      */
     public void validate() {
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property name in model QueryComparisonExpression"));
         }
         if (operator() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property operator in model QueryComparisonExpression"));
         }
         if (values() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property values in model QueryComparisonExpression"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(QueryComparisonExpression.class);
 }

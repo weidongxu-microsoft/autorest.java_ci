@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 
@@ -16,8 +14,6 @@ import java.time.Duration;
  */
 @Fluent
 public final class MetricAvailability {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricAvailability.class);
-
     /*
      * the time grain specifies the aggregation interval for the metric.
      * Expressed as a duration 'PT1M', 'P1D', etc.

@@ -11,10 +11,9 @@ import com.azure.resourcemanager.network.generated.fluent.ExpressRouteServicePro
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteServiceProviderInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteServiceProvider;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteServiceProviders;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteServiceProvidersImpl implements ExpressRouteServiceProviders {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteServiceProvidersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ExpressRouteServiceProvidersImpl.class);
 
     private final ExpressRouteServiceProvidersClient innerClient;
 

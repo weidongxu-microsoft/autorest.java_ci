@@ -13,10 +13,9 @@ import com.azure.resourcemanager.frontdoor.generated.fluent.models.CheckNameAvai
 import com.azure.resourcemanager.frontdoor.generated.models.CheckNameAvailabilityInput;
 import com.azure.resourcemanager.frontdoor.generated.models.CheckNameAvailabilityOutput;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorNameAvailabilities;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FrontDoorNameAvailabilitiesImpl implements FrontDoorNameAvailabilities {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontDoorNameAvailabilitiesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(FrontDoorNameAvailabilitiesImpl.class);
 
     private final FrontDoorNameAvailabilitiesClient innerClient;
 

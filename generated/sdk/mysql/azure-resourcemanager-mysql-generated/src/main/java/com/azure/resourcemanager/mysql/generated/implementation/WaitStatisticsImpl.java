@@ -14,10 +14,9 @@ import com.azure.resourcemanager.mysql.generated.fluent.models.WaitStatisticInne
 import com.azure.resourcemanager.mysql.generated.models.WaitStatistic;
 import com.azure.resourcemanager.mysql.generated.models.WaitStatistics;
 import com.azure.resourcemanager.mysql.generated.models.WaitStatisticsInput;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class WaitStatisticsImpl implements WaitStatistics {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WaitStatisticsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(WaitStatisticsImpl.class);
 
     private final WaitStatisticsClient innerClient;
 

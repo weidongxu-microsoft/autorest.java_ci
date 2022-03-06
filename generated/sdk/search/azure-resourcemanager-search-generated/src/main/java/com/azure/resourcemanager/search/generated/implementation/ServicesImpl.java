@@ -16,11 +16,10 @@ import com.azure.resourcemanager.search.generated.models.CheckNameAvailabilityIn
 import com.azure.resourcemanager.search.generated.models.CheckNameAvailabilityOutput;
 import com.azure.resourcemanager.search.generated.models.SearchService;
 import com.azure.resourcemanager.search.generated.models.Services;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.UUID;
 
 public final class ServicesImpl implements Services {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServicesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ServicesImpl.class);
 
     private final ServicesClient innerClient;
 
@@ -118,7 +117,7 @@ public final class ServicesImpl implements Services {
     public SearchService getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -126,7 +125,7 @@ public final class ServicesImpl implements Services {
         }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -141,7 +140,7 @@ public final class ServicesImpl implements Services {
     public Response<SearchService> getByIdWithResponse(String id, UUID clientRequestId, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class ServicesImpl implements Services {
         }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -161,7 +160,7 @@ public final class ServicesImpl implements Services {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -169,7 +168,7 @@ public final class ServicesImpl implements Services {
         }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -182,7 +181,7 @@ public final class ServicesImpl implements Services {
     public Response<Void> deleteByIdWithResponse(String id, UUID clientRequestId, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -190,7 +189,7 @@ public final class ServicesImpl implements Services {
         }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

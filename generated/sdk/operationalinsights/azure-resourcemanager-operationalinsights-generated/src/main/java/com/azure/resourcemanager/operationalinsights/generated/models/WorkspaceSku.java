@@ -6,14 +6,11 @@ package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The SKU (tier) of a workspace. */
 @Fluent
 public final class WorkspaceSku {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WorkspaceSku.class);
-
     /*
      * The name of the SKU.
      */
@@ -91,9 +88,11 @@ public final class WorkspaceSku {
      */
     public void validate() {
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property name in model WorkspaceSku"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(WorkspaceSku.class);
 }

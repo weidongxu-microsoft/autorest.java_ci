@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** One or more actions that will execute, modifying the request and/or response. */
 @Fluent
 public final class RulesEngineAction {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RulesEngineAction.class);
-
     /*
      * A list of header actions to apply from the request from AFD to the
      * origin.

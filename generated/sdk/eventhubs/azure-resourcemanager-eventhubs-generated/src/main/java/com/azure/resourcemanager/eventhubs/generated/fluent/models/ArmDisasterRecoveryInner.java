@@ -7,17 +7,13 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.ProvisioningStateDR;
 import com.azure.resourcemanager.eventhubs.generated.models.RoleDisasterRecovery;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Single item in List or Get Alias(Disaster Recovery configuration) operation. */
 @Fluent
 public final class ArmDisasterRecoveryInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ArmDisasterRecoveryInner.class);
-
     /*
      * Properties required to the Create Or Update Alias(Disaster Recovery
      * configurations)

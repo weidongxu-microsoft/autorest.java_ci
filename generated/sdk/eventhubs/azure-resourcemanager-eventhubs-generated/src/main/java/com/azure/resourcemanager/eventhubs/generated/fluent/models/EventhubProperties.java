@@ -5,10 +5,8 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.CaptureDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.EntityStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -16,8 +14,6 @@ import java.util.List;
 /** Properties supplied to the Create Or Update Event Hub operation. */
 @Fluent
 public final class EventhubProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EventhubProperties.class);
-
     /*
      * Current number of shards on the Event Hub.
      */

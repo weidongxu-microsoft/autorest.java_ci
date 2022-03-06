@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.VpnServerConfiguration
 import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.VpnServerConfiguration;
 import com.azure.resourcemanager.network.generated.models.VpnServerConfigurations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnServerConfigurationsImpl implements VpnServerConfigurations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VpnServerConfigurationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VpnServerConfigurationsImpl.class);
 
     private final VpnServerConfigurationsClient innerClient;
 
@@ -86,7 +85,7 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
     public VpnServerConfiguration getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -94,7 +93,7 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
         }
         String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
         if (vpnServerConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -110,7 +109,7 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
     public Response<VpnServerConfiguration> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -118,7 +117,7 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
         }
         String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
         if (vpnServerConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -132,7 +131,7 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -140,7 +139,7 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
         }
         String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
         if (vpnServerConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -154,7 +153,7 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -162,7 +161,7 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
         }
         String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
         if (vpnServerConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

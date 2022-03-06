@@ -13,10 +13,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.LogProfilesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LogProfileResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.LogProfileResource;
 import com.azure.resourcemanager.monitor.generated.models.LogProfiles;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LogProfilesImpl implements LogProfiles {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogProfilesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(LogProfilesImpl.class);
 
     private final LogProfilesClient innerClient;
 
@@ -71,7 +70,7 @@ public final class LogProfilesImpl implements LogProfiles {
     public LogProfileResource getById(String id) {
         String logProfileName = Utils.getValueFromIdByName(id, "logprofiles");
         if (logProfileName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'logprofiles'.", id)));
@@ -82,7 +81,7 @@ public final class LogProfilesImpl implements LogProfiles {
     public Response<LogProfileResource> getByIdWithResponse(String id, Context context) {
         String logProfileName = Utils.getValueFromIdByName(id, "logprofiles");
         if (logProfileName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'logprofiles'.", id)));
@@ -93,7 +92,7 @@ public final class LogProfilesImpl implements LogProfiles {
     public void deleteById(String id) {
         String logProfileName = Utils.getValueFromIdByName(id, "logprofiles");
         if (logProfileName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'logprofiles'.", id)));
@@ -104,7 +103,7 @@ public final class LogProfilesImpl implements LogProfiles {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String logProfileName = Utils.getValueFromIdByName(id, "logprofiles");
         if (logProfileName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'logprofiles'.", id)));

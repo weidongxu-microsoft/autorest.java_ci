@@ -51,8 +51,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the AzureMediaServicesImpl type. */
 @ServiceClient(builder = AzureMediaServicesBuilder.class)
 public final class AzureMediaServicesImpl implements AzureMediaServices {
-    private final ClientLogger logger = new ClientLogger(AzureMediaServicesImpl.class);
-
     /** The unique identifier for a Microsoft Azure subscription. */
     private final String subscriptionId;
 
@@ -441,7 +439,7 @@ public final class AzureMediaServicesImpl implements AzureMediaServices {
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -500,4 +498,6 @@ public final class AzureMediaServicesImpl implements AzureMediaServices {
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(AzureMediaServicesImpl.class);
 }

@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Kubernetes role network resource. */
 @Immutable
 public final class KubernetesRoleNetwork {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KubernetesRoleNetwork.class);
-
     /*
      * Cni configuration
      */

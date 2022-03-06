@@ -6,14 +6,11 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The number of instances that can be used during this profile. */
 @Fluent
 public final class ScaleCapacity {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ScaleCapacity.class);
-
     /*
      * the minimum number of instances for the resource.
      */
@@ -107,19 +104,21 @@ public final class ScaleCapacity {
      */
     public void validate() {
         if (minimum() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property minimum in model ScaleCapacity"));
         }
         if (maximum() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property maximum in model ScaleCapacity"));
         }
         if (defaultProperty() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property defaultProperty in model ScaleCapacity"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ScaleCapacity.class);
 }

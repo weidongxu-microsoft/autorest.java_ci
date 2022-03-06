@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Pre-provisioned and readily available Event Hubs Cluster count per region. */
 @Fluent
 public final class AvailableCluster {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AvailableCluster.class);
-
     /*
      * Location fo the Available Cluster
      */

@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.mysql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.models.PerformanceTierServiceLevelObjectives;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Performance tier properties. */
 @Fluent
 public final class PerformanceTierPropertiesInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PerformanceTierPropertiesInner.class);
-
     /*
      * ID of the performance tier.
      */

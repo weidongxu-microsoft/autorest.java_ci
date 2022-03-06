@@ -12,13 +12,12 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.AvailableS
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.AvailableServiceTierInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.AvailableServiceTier;
 import com.azure.resourcemanager.operationalinsights.generated.models.AvailableServiceTiers;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class AvailableServiceTiersImpl implements AvailableServiceTiers {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AvailableServiceTiersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AvailableServiceTiersImpl.class);
 
     private final AvailableServiceTiersClient innerClient;
 

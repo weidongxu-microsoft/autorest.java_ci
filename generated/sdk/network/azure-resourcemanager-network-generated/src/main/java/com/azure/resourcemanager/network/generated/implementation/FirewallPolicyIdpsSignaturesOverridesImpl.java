@@ -14,10 +14,9 @@ import com.azure.resourcemanager.network.generated.fluent.models.SignaturesOverr
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyIdpsSignaturesOverrides;
 import com.azure.resourcemanager.network.generated.models.SignaturesOverrides;
 import com.azure.resourcemanager.network.generated.models.SignaturesOverridesList;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FirewallPolicyIdpsSignaturesOverridesImpl implements FirewallPolicyIdpsSignaturesOverrides {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FirewallPolicyIdpsSignaturesOverridesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(FirewallPolicyIdpsSignaturesOverridesImpl.class);
 
     private final FirewallPolicyIdpsSignaturesOverridesClient innerClient;
 

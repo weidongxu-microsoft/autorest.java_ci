@@ -10,7 +10,6 @@ import com.azure.resourcemanager.mediaservices.generated.models.JobInput;
 import com.azure.resourcemanager.mediaservices.generated.models.JobOutput;
 import com.azure.resourcemanager.mediaservices.generated.models.JobState;
 import com.azure.resourcemanager.mediaservices.generated.models.Priority;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -20,8 +19,6 @@ import java.util.Map;
 /** Properties of the Job. */
 @Fluent
 public final class JobProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(JobProperties.class);
-
     /*
      * The UTC date and time when the customer has created the Job, in
      * 'YYYY-MM-DDThh:mm:ssZ' format.
@@ -246,18 +243,20 @@ public final class JobProperties {
      */
     public void validate() {
         if (input() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property input in model JobProperties"));
         } else {
             input().validate();
         }
         if (outputs() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property outputs in model JobProperties"));
         } else {
             outputs().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(JobProperties.class);
 }

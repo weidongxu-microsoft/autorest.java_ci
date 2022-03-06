@@ -7,14 +7,12 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.PrivateLinkScopedResource;
 import com.azure.resourcemanager.operationalinsights.generated.models.PublicNetworkAccessType;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceCapping;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceEntityStatus;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceFeatures;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceSku;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -22,8 +20,6 @@ import java.util.Map;
 /** The top level Workspace resource container. */
 @Fluent
 public final class WorkspaceInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WorkspaceInner.class);
-
     /*
      * Workspace properties.
      */

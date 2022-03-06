@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.LoadBalancerFrontendIp
 import com.azure.resourcemanager.network.generated.fluent.models.FrontendIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.FrontendIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerFrontendIpConfigurations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LoadBalancerFrontendIpConfigurationsImpl implements LoadBalancerFrontendIpConfigurations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancerFrontendIpConfigurationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(LoadBalancerFrontendIpConfigurationsImpl.class);
 
     private final LoadBalancerFrontendIpConfigurationsClient innerClient;
 

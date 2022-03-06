@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The Data Box Edge/Gateway device extended info patch. */
 @Fluent
 public final class DataBoxEdgeDeviceExtendedInfoPatch {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DataBoxEdgeDeviceExtendedInfoPatch.class);
-
     /*
      * The Key Vault ARM Id for client secrets
      */

@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The Capacity Reservation properties. */
 @Immutable
 public final class CapacityReservationProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CapacityReservationProperties.class);
-
     /*
      * The last time Sku was updated.
      */

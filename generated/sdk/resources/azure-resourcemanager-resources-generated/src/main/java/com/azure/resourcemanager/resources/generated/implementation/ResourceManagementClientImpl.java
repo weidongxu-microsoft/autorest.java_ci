@@ -42,8 +42,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the ResourceManagementClientImpl type. */
 @ServiceClient(builder = ResourceManagementClientBuilder.class)
 public final class ResourceManagementClientImpl implements ResourceManagementClient {
-    private final ClientLogger logger = new ClientLogger(ResourceManagementClientImpl.class);
-
     /** The ID of the target subscription. */
     private final String subscriptionId;
 
@@ -315,7 +313,7 @@ public final class ResourceManagementClientImpl implements ResourceManagementCli
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -374,4 +372,6 @@ public final class ResourceManagementClientImpl implements ResourceManagementCli
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ResourceManagementClientImpl.class);
 }

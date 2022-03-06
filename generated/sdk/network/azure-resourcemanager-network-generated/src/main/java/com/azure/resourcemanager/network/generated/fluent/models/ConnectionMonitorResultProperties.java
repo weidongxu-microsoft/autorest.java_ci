@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorDestination;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorEndpoint;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorOutput;
@@ -14,7 +13,6 @@ import com.azure.resourcemanager.network.generated.models.ConnectionMonitorTestC
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorTestGroup;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorType;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -22,8 +20,6 @@ import java.util.List;
 /** Describes the properties of a connection monitor. */
 @Fluent
 public final class ConnectionMonitorResultProperties extends ConnectionMonitorParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ConnectionMonitorResultProperties.class);
-
     /*
      * The provisioning state of the connection monitor.
      */

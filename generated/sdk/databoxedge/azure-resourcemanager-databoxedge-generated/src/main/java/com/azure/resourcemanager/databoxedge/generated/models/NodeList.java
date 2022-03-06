@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.NodeInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Collection of Nodes. */
 @Immutable
 public final class NodeList {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NodeList.class);
-
     /*
      * The list of Nodes.
      */

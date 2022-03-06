@@ -14,10 +14,9 @@ import com.azure.resourcemanager.compute.generated.fluent.models.CapacityReserva
 import com.azure.resourcemanager.compute.generated.models.CapacityReservation;
 import com.azure.resourcemanager.compute.generated.models.CapacityReservationInstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.CapacityReservations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CapacityReservationsImpl implements CapacityReservations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CapacityReservationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(CapacityReservationsImpl.class);
 
     private final CapacityReservationsClient innerClient;
 
@@ -94,7 +93,7 @@ public final class CapacityReservationsImpl implements CapacityReservations {
     public CapacityReservation getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -102,7 +101,7 @@ public final class CapacityReservationsImpl implements CapacityReservations {
         }
         String capacityReservationGroupName = Utils.getValueFromIdByName(id, "capacityReservationGroups");
         if (capacityReservationGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -112,7 +111,7 @@ public final class CapacityReservationsImpl implements CapacityReservations {
         }
         String capacityReservationName = Utils.getValueFromIdByName(id, "capacityReservations");
         if (capacityReservationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -131,7 +130,7 @@ public final class CapacityReservationsImpl implements CapacityReservations {
         String id, CapacityReservationInstanceViewTypes expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -139,7 +138,7 @@ public final class CapacityReservationsImpl implements CapacityReservations {
         }
         String capacityReservationGroupName = Utils.getValueFromIdByName(id, "capacityReservationGroups");
         if (capacityReservationGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class CapacityReservationsImpl implements CapacityReservations {
         }
         String capacityReservationName = Utils.getValueFromIdByName(id, "capacityReservations");
         if (capacityReservationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -164,7 +163,7 @@ public final class CapacityReservationsImpl implements CapacityReservations {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -172,7 +171,7 @@ public final class CapacityReservationsImpl implements CapacityReservations {
         }
         String capacityReservationGroupName = Utils.getValueFromIdByName(id, "capacityReservationGroups");
         if (capacityReservationGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -182,7 +181,7 @@ public final class CapacityReservationsImpl implements CapacityReservations {
         }
         String capacityReservationName = Utils.getValueFromIdByName(id, "capacityReservations");
         if (capacityReservationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -196,7 +195,7 @@ public final class CapacityReservationsImpl implements CapacityReservations {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -204,7 +203,7 @@ public final class CapacityReservationsImpl implements CapacityReservations {
         }
         String capacityReservationGroupName = Utils.getValueFromIdByName(id, "capacityReservationGroups");
         if (capacityReservationGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -214,7 +213,7 @@ public final class CapacityReservationsImpl implements CapacityReservations {
         }
         String capacityReservationName = Utils.getValueFromIdByName(id, "capacityReservations");
         if (capacityReservationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

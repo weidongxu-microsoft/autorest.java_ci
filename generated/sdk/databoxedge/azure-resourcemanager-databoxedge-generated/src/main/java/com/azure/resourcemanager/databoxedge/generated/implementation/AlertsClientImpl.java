@@ -25,7 +25,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.AlertsClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.AlertInner;
 import com.azure.resourcemanager.databoxedge.generated.models.AlertList;
@@ -33,8 +32,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in AlertsClient. */
 public final class AlertsClientImpl implements AlertsClient {
-    private final ClientLogger logger = new ClientLogger(AlertsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final AlertsService service;
 

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.compute.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.models.ArchitectureTypes;
 import com.azure.resourcemanager.compute.generated.models.AutomaticOSUpgradeProperties;
 import com.azure.resourcemanager.compute.generated.models.DataDiskImage;
@@ -14,15 +13,12 @@ import com.azure.resourcemanager.compute.generated.models.HyperVGenerationTypes;
 import com.azure.resourcemanager.compute.generated.models.OSDiskImage;
 import com.azure.resourcemanager.compute.generated.models.PurchasePlan;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImageFeature;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Describes the properties of a Virtual Machine Image. */
 @Fluent
 public final class VirtualMachineImageProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineImageProperties.class);
-
     /*
      * Used for establishing the purchase context of any 3rd Party artifact
      * through MarketPlace.

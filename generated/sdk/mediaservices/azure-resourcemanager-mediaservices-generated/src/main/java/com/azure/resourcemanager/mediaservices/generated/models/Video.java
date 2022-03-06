@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -27,8 +25,6 @@ import java.time.Duration;
 })
 @Fluent
 public class Video extends Codec {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Video.class);
-
     /*
      * The distance between two key frames. The value should be non-zero in the
      * range [0.5, 20] seconds, specified in ISO 8601 format. The default is 2

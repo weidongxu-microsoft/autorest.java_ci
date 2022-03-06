@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
 /** Properties describing the storage account, blob container and archive name format for capture destination. */
 @Fluent
 public final class DestinationProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DestinationProperties.class);
-
     /*
      * Resource id of the storage account to be used to create the blobs
      */

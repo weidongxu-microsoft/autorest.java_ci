@@ -6,11 +6,9 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.FileEventTrigger;
 import com.azure.resourcemanager.databoxedge.generated.models.PeriodicTimerEventTrigger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -29,8 +27,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 })
 @Immutable
 public class TriggerInner extends ArmBaseModel {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TriggerInner.class);
-
     /*
      * Trigger in DataBoxEdge Resource
      */

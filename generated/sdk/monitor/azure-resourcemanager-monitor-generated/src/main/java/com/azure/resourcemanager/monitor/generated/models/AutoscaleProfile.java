@@ -6,15 +6,12 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Autoscale profile. */
 @Fluent
 public final class AutoscaleProfile {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AutoscaleProfile.class);
-
     /*
      * the name of the profile.
      */
@@ -161,19 +158,19 @@ public final class AutoscaleProfile {
      */
     public void validate() {
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property name in model AutoscaleProfile"));
         }
         if (capacity() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property capacity in model AutoscaleProfile"));
         } else {
             capacity().validate();
         }
         if (rules() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property rules in model AutoscaleProfile"));
         } else {
@@ -186,4 +183,6 @@ public final class AutoscaleProfile {
             recurrence().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(AutoscaleProfile.class);
 }

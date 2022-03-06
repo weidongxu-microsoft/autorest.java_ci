@@ -11,10 +11,9 @@ import com.azure.resourcemanager.consumption.generated.fluent.ReservationRecomme
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationInner;
 import com.azure.resourcemanager.consumption.generated.models.ReservationRecommendation;
 import com.azure.resourcemanager.consumption.generated.models.ReservationRecommendations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ReservationRecommendationsImpl implements ReservationRecommendations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ReservationRecommendationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ReservationRecommendationsImpl.class);
 
     private final ReservationRecommendationsClient innerClient;
 

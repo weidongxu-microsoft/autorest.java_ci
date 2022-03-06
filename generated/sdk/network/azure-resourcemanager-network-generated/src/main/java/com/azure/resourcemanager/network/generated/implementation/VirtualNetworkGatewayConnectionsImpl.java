@@ -19,10 +19,9 @@ import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayC
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnections;
 import com.azure.resourcemanager.network.generated.models.VpnPacketCaptureStartParameters;
 import com.azure.resourcemanager.network.generated.models.VpnPacketCaptureStopParameters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetworkGatewayConnections {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworkGatewayConnectionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualNetworkGatewayConnectionsImpl.class);
 
     private final VirtualNetworkGatewayConnectionsClient innerClient;
 
@@ -228,7 +227,7 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
     public VirtualNetworkGatewayConnection getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -236,7 +235,7 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
         }
         String virtualNetworkGatewayConnectionName = Utils.getValueFromIdByName(id, "connections");
         if (virtualNetworkGatewayConnectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'connections'.", id)));
@@ -249,7 +248,7 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
     public Response<VirtualNetworkGatewayConnection> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -257,7 +256,7 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
         }
         String virtualNetworkGatewayConnectionName = Utils.getValueFromIdByName(id, "connections");
         if (virtualNetworkGatewayConnectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'connections'.", id)));
@@ -268,7 +267,7 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -276,7 +275,7 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
         }
         String virtualNetworkGatewayConnectionName = Utils.getValueFromIdByName(id, "connections");
         if (virtualNetworkGatewayConnectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'connections'.", id)));
@@ -287,7 +286,7 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -295,7 +294,7 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
         }
         String virtualNetworkGatewayConnectionName = Utils.getValueFromIdByName(id, "connections");
         if (virtualNetworkGatewayConnectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'connections'.", id)));

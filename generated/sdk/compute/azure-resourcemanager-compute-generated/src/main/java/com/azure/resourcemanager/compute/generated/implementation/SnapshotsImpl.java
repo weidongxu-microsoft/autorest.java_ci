@@ -16,10 +16,9 @@ import com.azure.resourcemanager.compute.generated.models.AccessUri;
 import com.azure.resourcemanager.compute.generated.models.GrantAccessData;
 import com.azure.resourcemanager.compute.generated.models.Snapshot;
 import com.azure.resourcemanager.compute.generated.models.Snapshots;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SnapshotsImpl implements Snapshots {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SnapshotsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(SnapshotsImpl.class);
 
     private final SnapshotsClient innerClient;
 
@@ -114,7 +113,7 @@ public final class SnapshotsImpl implements Snapshots {
     public Snapshot getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -122,7 +121,7 @@ public final class SnapshotsImpl implements Snapshots {
         }
         String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
         if (snapshotName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
@@ -133,7 +132,7 @@ public final class SnapshotsImpl implements Snapshots {
     public Response<Snapshot> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -141,7 +140,7 @@ public final class SnapshotsImpl implements Snapshots {
         }
         String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
         if (snapshotName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
@@ -152,7 +151,7 @@ public final class SnapshotsImpl implements Snapshots {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -160,7 +159,7 @@ public final class SnapshotsImpl implements Snapshots {
         }
         String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
         if (snapshotName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
@@ -171,7 +170,7 @@ public final class SnapshotsImpl implements Snapshots {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -179,7 +178,7 @@ public final class SnapshotsImpl implements Snapshots {
         }
         String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
         if (snapshotName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));

@@ -12,12 +12,10 @@ import com.azure.resourcemanager.mysql.generated.fluent.LocationBasedRecommended
 import com.azure.resourcemanager.mysql.generated.fluent.models.RecommendedActionSessionsOperationStatusInner;
 import com.azure.resourcemanager.mysql.generated.models.LocationBasedRecommendedActionSessionsOperationStatus;
 import com.azure.resourcemanager.mysql.generated.models.RecommendedActionSessionsOperationStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LocationBasedRecommendedActionSessionsOperationStatusImpl
     implements LocationBasedRecommendedActionSessionsOperationStatus {
-    @JsonIgnore
-    private final ClientLogger logger =
+    private static final ClientLogger LOGGER =
         new ClientLogger(LocationBasedRecommendedActionSessionsOperationStatusImpl.class);
 
     private final LocationBasedRecommendedActionSessionsOperationStatusClient innerClient;

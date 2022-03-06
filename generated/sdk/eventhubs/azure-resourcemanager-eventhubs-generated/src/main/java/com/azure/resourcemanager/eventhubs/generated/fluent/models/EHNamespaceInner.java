@@ -7,11 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
 import com.azure.resourcemanager.eventhubs.generated.models.Identity;
 import com.azure.resourcemanager.eventhubs.generated.models.Sku;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -20,8 +18,6 @@ import java.util.Map;
 /** Single Namespace item in List or Get Operation. */
 @Fluent
 public final class EHNamespaceInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EHNamespaceInner.class);
-
     /*
      * Properties of sku resource
      */

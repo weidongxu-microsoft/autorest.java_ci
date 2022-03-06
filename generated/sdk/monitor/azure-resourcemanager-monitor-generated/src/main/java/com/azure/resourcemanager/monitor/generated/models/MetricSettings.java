@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 
 /** Part of MultiTenantDiagnosticSettings. Specifies the settings for a particular metric. */
 @Fluent
 public final class MetricSettings {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricSettings.class);
-
     /*
      * the timegrain of the metric in ISO8601 format.
      */

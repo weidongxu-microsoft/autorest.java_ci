@@ -13,10 +13,9 @@ import com.azure.resourcemanager.mysql.generated.fluent.AdvisorsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.AdvisorInner;
 import com.azure.resourcemanager.mysql.generated.models.Advisor;
 import com.azure.resourcemanager.mysql.generated.models.Advisors;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AdvisorsImpl implements Advisors {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AdvisorsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AdvisorsImpl.class);
 
     private final AdvisorsClient innerClient;
 

@@ -7,10 +7,8 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.SchemaCompatibility;
 import com.azure.resourcemanager.eventhubs.generated.models.SchemaType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Map;
@@ -19,8 +17,6 @@ import java.util.UUID;
 /** Single item in List or Get Schema Group operation. */
 @Fluent
 public final class SchemaGroupInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SchemaGroupInner.class);
-
     /*
      * The properties property.
      */

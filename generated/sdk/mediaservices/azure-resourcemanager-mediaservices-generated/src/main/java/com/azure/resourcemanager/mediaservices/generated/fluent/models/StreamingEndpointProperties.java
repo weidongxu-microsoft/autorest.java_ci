@@ -5,11 +5,9 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.models.CrossSiteAccessPolicies;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointAccessControl;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointResourceState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -17,8 +15,6 @@ import java.util.List;
 /** The streaming endpoint properties. */
 @Fluent
 public final class StreamingEndpointProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StreamingEndpointProperties.class);
-
     /*
      * The streaming endpoint description.
      */

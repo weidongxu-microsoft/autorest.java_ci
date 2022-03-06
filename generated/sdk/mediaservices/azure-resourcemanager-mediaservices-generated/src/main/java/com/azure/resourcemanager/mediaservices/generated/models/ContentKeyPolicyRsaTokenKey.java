@@ -7,7 +7,6 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -17,8 +16,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyRsaTokenKey")
 @Fluent
 public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestrictionTokenKey {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ContentKeyPolicyRsaTokenKey.class);
-
     /*
      * The RSA Parameter exponent
      */
@@ -80,16 +77,18 @@ public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestricti
     public void validate() {
         super.validate();
         if (exponent() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property exponent in model ContentKeyPolicyRsaTokenKey"));
         }
         if (modulus() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property modulus in model ContentKeyPolicyRsaTokenKey"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ContentKeyPolicyRsaTokenKey.class);
 }

@@ -25,7 +25,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.LotsOperationsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.models.LotSummaryInner;
 import com.azure.resourcemanager.consumption.generated.models.Lots;
@@ -33,8 +32,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in LotsOperationsClient. */
 public final class LotsOperationsClientImpl implements LotsOperationsClient {
-    private final ClientLogger logger = new ClientLogger(LotsOperationsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final LotsOperationsService service;
 

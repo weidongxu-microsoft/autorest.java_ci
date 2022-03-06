@@ -28,7 +28,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.fluent.SchemaRegistriesClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.SchemaGroupInner;
 import com.azure.resourcemanager.eventhubs.generated.models.SchemaGroupListResult;
@@ -36,8 +35,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in SchemaRegistriesClient. */
 public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient {
-    private final ClientLogger logger = new ClientLogger(SchemaRegistriesClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final SchemaRegistriesService service;
 

@@ -5,18 +5,14 @@
 package com.azure.resourcemanager.authorization.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.models.DenyAssignmentPermission;
 import com.azure.resourcemanager.authorization.generated.models.Principal;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Deny Assignment. */
 @Fluent
 public final class DenyAssignmentInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DenyAssignmentInner.class);
-
     /*
      * The deny assignment ID.
      */

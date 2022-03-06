@@ -13,10 +13,9 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.ContainersClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.ContainerInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Container;
 import com.azure.resourcemanager.databoxedge.generated.models.Containers;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ContainersImpl implements Containers {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ContainersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ContainersImpl.class);
 
     private final ContainersClient innerClient;
 
@@ -91,7 +90,7 @@ public final class ContainersImpl implements Containers {
     public Container getById(String id) {
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -100,7 +99,7 @@ public final class ContainersImpl implements Containers {
         }
         String storageAccountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (storageAccountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -108,14 +107,14 @@ public final class ContainersImpl implements Containers {
         }
         String containerName = Utils.getValueFromIdByName(id, "containers");
         if (containerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
         }
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -129,7 +128,7 @@ public final class ContainersImpl implements Containers {
     public Response<Container> getByIdWithResponse(String id, Context context) {
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -138,7 +137,7 @@ public final class ContainersImpl implements Containers {
         }
         String storageAccountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (storageAccountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -146,14 +145,14 @@ public final class ContainersImpl implements Containers {
         }
         String containerName = Utils.getValueFromIdByName(id, "containers");
         if (containerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
         }
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -165,7 +164,7 @@ public final class ContainersImpl implements Containers {
     public void deleteById(String id) {
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -174,7 +173,7 @@ public final class ContainersImpl implements Containers {
         }
         String storageAccountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (storageAccountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -182,14 +181,14 @@ public final class ContainersImpl implements Containers {
         }
         String containerName = Utils.getValueFromIdByName(id, "containers");
         if (containerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
         }
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -201,7 +200,7 @@ public final class ContainersImpl implements Containers {
     public void deleteByIdWithResponse(String id, Context context) {
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -210,7 +209,7 @@ public final class ContainersImpl implements Containers {
         }
         String storageAccountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (storageAccountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -218,14 +217,14 @@ public final class ContainersImpl implements Containers {
         }
         String containerName = Utils.getValueFromIdByName(id, "containers");
         if (containerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
         }
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -17,8 +16,6 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.StandardEncoderPreset")
 @Fluent
 public final class StandardEncoderPreset extends Preset {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StandardEncoderPreset.class);
-
     /*
      * One or more filtering operations that are applied to the input media
      * before encoding.
@@ -110,18 +107,20 @@ public final class StandardEncoderPreset extends Preset {
             filters().validate();
         }
         if (codecs() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property codecs in model StandardEncoderPreset"));
         } else {
             codecs().forEach(e -> e.validate());
         }
         if (formats() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property formats in model StandardEncoderPreset"));
         } else {
             formats().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(StandardEncoderPreset.class);
 }

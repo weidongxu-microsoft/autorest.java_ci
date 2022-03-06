@@ -11,11 +11,10 @@ import com.azure.resourcemanager.search.generated.fluent.PrivateLinkResourcesCli
 import com.azure.resourcemanager.search.generated.fluent.models.PrivateLinkResourceInner;
 import com.azure.resourcemanager.search.generated.models.PrivateLinkResource;
 import com.azure.resourcemanager.search.generated.models.PrivateLinkResources;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.UUID;
 
 public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateLinkResourcesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PrivateLinkResourcesImpl.class);
 
     private final PrivateLinkResourcesClient innerClient;
 

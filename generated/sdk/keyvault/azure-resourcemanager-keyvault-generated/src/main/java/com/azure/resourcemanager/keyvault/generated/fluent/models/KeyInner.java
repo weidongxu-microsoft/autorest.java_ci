@@ -13,7 +13,6 @@ import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyType;
 import com.azure.resourcemanager.keyvault.generated.models.KeyAttributes;
 import com.azure.resourcemanager.keyvault.generated.models.KeyReleasePolicy;
 import com.azure.resourcemanager.keyvault.generated.models.RotationPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -21,8 +20,6 @@ import java.util.Map;
 /** The key resource. */
 @Fluent
 public final class KeyInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KeyInner.class);
-
     /*
      * The properties of the key.
      */
@@ -242,11 +239,13 @@ public final class KeyInner extends Resource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property innerProperties in model KeyInner"));
         } else {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(KeyInner.class);
 }

@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,8 +12,6 @@ import java.util.List;
 /** Alert details. */
 @Fluent
 public final class AlertPropertiesDetails {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AlertPropertiesDetails.class);
-
     /*
      * Type of timegrain cadence
      */

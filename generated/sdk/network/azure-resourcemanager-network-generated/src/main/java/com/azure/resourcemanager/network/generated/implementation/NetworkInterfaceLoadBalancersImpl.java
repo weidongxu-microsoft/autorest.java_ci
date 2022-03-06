@@ -11,10 +11,9 @@ import com.azure.resourcemanager.network.generated.fluent.NetworkInterfaceLoadBa
 import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancerInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancer;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceLoadBalancers;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkInterfaceLoadBalancersImpl implements NetworkInterfaceLoadBalancers {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkInterfaceLoadBalancersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(NetworkInterfaceLoadBalancersImpl.class);
 
     private final NetworkInterfaceLoadBalancersClient innerClient;
 

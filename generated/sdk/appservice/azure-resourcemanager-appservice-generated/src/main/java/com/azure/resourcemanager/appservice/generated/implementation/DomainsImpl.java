@@ -22,10 +22,9 @@ import com.azure.resourcemanager.appservice.generated.models.DomainOwnershipIden
 import com.azure.resourcemanager.appservice.generated.models.DomainRecommendationSearchParameters;
 import com.azure.resourcemanager.appservice.generated.models.Domains;
 import com.azure.resourcemanager.appservice.generated.models.NameIdentifier;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DomainsImpl implements Domains {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DomainsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DomainsImpl.class);
 
     private final DomainsClient innerClient;
 
@@ -230,7 +229,7 @@ public final class DomainsImpl implements Domains {
     public Domain getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -238,7 +237,7 @@ public final class DomainsImpl implements Domains {
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
@@ -249,7 +248,7 @@ public final class DomainsImpl implements Domains {
     public Response<Domain> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -257,7 +256,7 @@ public final class DomainsImpl implements Domains {
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
@@ -268,7 +267,7 @@ public final class DomainsImpl implements Domains {
     public DomainOwnershipIdentifier getOwnershipIdentifierById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -276,14 +275,14 @@ public final class DomainsImpl implements Domains {
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -297,7 +296,7 @@ public final class DomainsImpl implements Domains {
     public Response<DomainOwnershipIdentifier> getOwnershipIdentifierByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -305,14 +304,14 @@ public final class DomainsImpl implements Domains {
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -326,7 +325,7 @@ public final class DomainsImpl implements Domains {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -334,7 +333,7 @@ public final class DomainsImpl implements Domains {
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
@@ -346,7 +345,7 @@ public final class DomainsImpl implements Domains {
     public Response<Void> deleteByIdWithResponse(String id, Boolean forceHardDeleteDomain, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -354,7 +353,7 @@ public final class DomainsImpl implements Domains {
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
@@ -365,7 +364,7 @@ public final class DomainsImpl implements Domains {
     public void deleteOwnershipIdentifierById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -373,14 +372,14 @@ public final class DomainsImpl implements Domains {
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -394,7 +393,7 @@ public final class DomainsImpl implements Domains {
     public Response<Void> deleteOwnershipIdentifierByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -402,14 +401,14 @@ public final class DomainsImpl implements Domains {
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

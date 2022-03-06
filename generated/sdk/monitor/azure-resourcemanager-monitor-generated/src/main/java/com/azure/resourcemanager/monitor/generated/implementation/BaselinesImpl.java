@@ -12,11 +12,10 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.SingleMetricBas
 import com.azure.resourcemanager.monitor.generated.models.Baselines;
 import com.azure.resourcemanager.monitor.generated.models.ResultType;
 import com.azure.resourcemanager.monitor.generated.models.SingleMetricBaseline;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.Duration;
 
 public final class BaselinesImpl implements Baselines {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BaselinesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(BaselinesImpl.class);
 
     private final BaselinesClient innerClient;
 

@@ -27,7 +27,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.search.generated.fluent.QueryKeysClient;
 import com.azure.resourcemanager.search.generated.fluent.models.QueryKeyInner;
 import com.azure.resourcemanager.search.generated.models.ListQueryKeysResult;
@@ -36,8 +35,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in QueryKeysClient. */
 public final class QueryKeysClientImpl implements QueryKeysClient {
-    private final ClientLogger logger = new ClientLogger(QueryKeysClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final QueryKeysService service;
 

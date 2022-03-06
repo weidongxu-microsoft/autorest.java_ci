@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.DimensionInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Result of listing dimensions. It contains a list of available dimensions. */
 @Immutable
 public final class DimensionsListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DimensionsListResult.class);
-
     /*
      * The list of dimensions.
      */

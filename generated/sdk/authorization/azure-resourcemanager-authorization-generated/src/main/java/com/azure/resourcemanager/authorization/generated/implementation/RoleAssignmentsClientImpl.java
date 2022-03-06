@@ -28,7 +28,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.fluent.RoleAssignmentsClient;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssignmentInner;
 import com.azure.resourcemanager.authorization.generated.models.RoleAssignmentCreateParameters;
@@ -37,8 +36,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in RoleAssignmentsClient. */
 public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
-    private final ClientLogger logger = new ClientLogger(RoleAssignmentsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final RoleAssignmentsService service;
 

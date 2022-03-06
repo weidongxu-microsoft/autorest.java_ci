@@ -11,10 +11,9 @@ import com.azure.resourcemanager.network.generated.fluent.ServiceTagInformations
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceTagInformationInner;
 import com.azure.resourcemanager.network.generated.models.ServiceTagInformation;
 import com.azure.resourcemanager.network.generated.models.ServiceTagInformations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServiceTagInformationsImpl implements ServiceTagInformations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServiceTagInformationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ServiceTagInformationsImpl.class);
 
     private final ServiceTagInformationsClient innerClient;
 

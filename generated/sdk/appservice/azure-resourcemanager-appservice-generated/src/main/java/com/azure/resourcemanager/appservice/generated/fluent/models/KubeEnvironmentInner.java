@@ -6,21 +6,17 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.AppLogsConfiguration;
 import com.azure.resourcemanager.appservice.generated.models.ArcConfiguration;
 import com.azure.resourcemanager.appservice.generated.models.ContainerAppsConfiguration;
 import com.azure.resourcemanager.appservice.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.appservice.generated.models.KubeEnvironmentProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /** A Kubernetes cluster specialized for web workloads by Azure App Service. */
 @Fluent
 public final class KubeEnvironmentInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KubeEnvironmentInner.class);
-
     /*
      * KubeEnvironment resource specific properties
      */

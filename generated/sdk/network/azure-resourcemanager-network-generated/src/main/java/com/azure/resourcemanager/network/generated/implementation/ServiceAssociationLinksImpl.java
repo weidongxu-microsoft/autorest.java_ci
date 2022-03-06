@@ -12,10 +12,9 @@ import com.azure.resourcemanager.network.generated.fluent.ServiceAssociationLink
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceAssociationLinksListResultInner;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLinks;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLinksListResult;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServiceAssociationLinksImpl implements ServiceAssociationLinks {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServiceAssociationLinksImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ServiceAssociationLinksImpl.class);
 
     private final ServiceAssociationLinksClient innerClient;
 

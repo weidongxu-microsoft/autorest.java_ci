@@ -12,10 +12,9 @@ import com.azure.resourcemanager.iothub.generated.fluent.ResourceProviderCommons
 import com.azure.resourcemanager.iothub.generated.fluent.models.UserSubscriptionQuotaListResultInner;
 import com.azure.resourcemanager.iothub.generated.models.ResourceProviderCommons;
 import com.azure.resourcemanager.iothub.generated.models.UserSubscriptionQuotaListResult;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceProviderCommonsImpl implements ResourceProviderCommons {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceProviderCommonsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ResourceProviderCommonsImpl.class);
 
     private final ResourceProviderCommonsClient innerClient;
 

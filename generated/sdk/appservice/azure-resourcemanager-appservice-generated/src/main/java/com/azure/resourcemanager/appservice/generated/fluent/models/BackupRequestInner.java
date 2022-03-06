@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.BackupSchedule;
 import com.azure.resourcemanager.appservice.generated.models.DatabaseBackupSetting;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Description of a backup which will be performed. */
 @Fluent
 public final class BackupRequestInner extends ProxyOnlyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BackupRequestInner.class);
-
     /*
      * BackupRequest resource specific properties
      */

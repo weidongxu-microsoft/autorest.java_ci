@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.VirtualNetworkTapsClie
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkTapInner;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkTap;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkTaps;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworkTapsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualNetworkTapsImpl.class);
 
     private final VirtualNetworkTapsClient innerClient;
 
@@ -85,7 +84,7 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
     public VirtualNetworkTap getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -93,7 +92,7 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
         }
         String tapName = Utils.getValueFromIdByName(id, "virtualNetworkTaps");
         if (tapName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -106,7 +105,7 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
     public Response<VirtualNetworkTap> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -114,7 +113,7 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
         }
         String tapName = Utils.getValueFromIdByName(id, "virtualNetworkTaps");
         if (tapName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -127,7 +126,7 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -135,7 +134,7 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
         }
         String tapName = Utils.getValueFromIdByName(id, "virtualNetworkTaps");
         if (tapName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -148,7 +147,7 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -156,7 +155,7 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
         }
         String tapName = Utils.getValueFromIdByName(id, "virtualNetworkTaps");
         if (tapName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

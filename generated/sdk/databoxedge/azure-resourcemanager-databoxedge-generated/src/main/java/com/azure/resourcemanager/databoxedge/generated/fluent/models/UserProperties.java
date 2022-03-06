@@ -9,15 +9,12 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.AsymmetricEncryptedSecret;
 import com.azure.resourcemanager.databoxedge.generated.models.ShareAccessRight;
 import com.azure.resourcemanager.databoxedge.generated.models.UserType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The user properties. */
 @Fluent
 public final class UserProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(UserProperties.class);
-
     /*
      * The password details.
      */
@@ -100,9 +97,11 @@ public final class UserProperties {
             shareAccessRights().forEach(e -> e.validate());
         }
         if (userType() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property userType in model UserProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(UserProperties.class);
 }

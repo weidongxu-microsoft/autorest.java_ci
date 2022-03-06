@@ -8,15 +8,12 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.StorageAccount;
 import com.azure.resourcemanager.operationalinsights.generated.models.StorageInsightStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Storage insight properties. */
 @Fluent
 public final class StorageInsightProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StorageInsightProperties.class);
-
     /*
      * The names of the blob containers that the workspace should read
      */
@@ -117,7 +114,7 @@ public final class StorageInsightProperties {
      */
     public void validate() {
         if (storageAccount() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property storageAccount in model StorageInsightProperties"));
@@ -128,4 +125,6 @@ public final class StorageInsightProperties {
             status().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(StorageInsightProperties.class);
 }

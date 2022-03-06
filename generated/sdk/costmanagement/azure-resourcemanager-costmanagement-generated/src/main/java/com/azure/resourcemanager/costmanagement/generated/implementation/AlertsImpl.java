@@ -16,10 +16,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.Alerts;
 import com.azure.resourcemanager.costmanagement.generated.models.AlertsResult;
 import com.azure.resourcemanager.costmanagement.generated.models.DismissAlertPayload;
 import com.azure.resourcemanager.costmanagement.generated.models.ExternalCloudProviderType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AlertsImpl implements Alerts {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AlertsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AlertsImpl.class);
 
     private final AlertsClient innerClient;
 

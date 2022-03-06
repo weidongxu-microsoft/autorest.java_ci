@@ -19,10 +19,9 @@ import com.azure.resourcemanager.appservice.generated.models.ProviderOsTypeSelec
 import com.azure.resourcemanager.appservice.generated.models.ProviderStackOsType;
 import com.azure.resourcemanager.appservice.generated.models.Providers;
 import com.azure.resourcemanager.appservice.generated.models.WebAppStack;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ProvidersImpl implements Providers {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ProvidersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ProvidersImpl.class);
 
     private final ProvidersClient innerClient;
 

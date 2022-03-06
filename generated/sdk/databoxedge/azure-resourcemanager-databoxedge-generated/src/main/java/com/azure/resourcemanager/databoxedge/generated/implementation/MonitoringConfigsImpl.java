@@ -13,10 +13,9 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.MonitoringConfigsC
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.MonitoringMetricConfigurationInner;
 import com.azure.resourcemanager.databoxedge.generated.models.MonitoringConfigs;
 import com.azure.resourcemanager.databoxedge.generated.models.MonitoringMetricConfiguration;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class MonitoringConfigsImpl implements MonitoringConfigs {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MonitoringConfigsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(MonitoringConfigsImpl.class);
 
     private final MonitoringConfigsClient innerClient;
 

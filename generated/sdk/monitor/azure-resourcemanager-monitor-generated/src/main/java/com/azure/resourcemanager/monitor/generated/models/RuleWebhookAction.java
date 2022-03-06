@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -21,8 +19,6 @@ import java.util.Map;
 @JsonTypeName("Microsoft.Azure.Management.Insights.Models.RuleWebhookAction")
 @Fluent
 public final class RuleWebhookAction extends RuleAction {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RuleWebhookAction.class);
-
     /*
      * the service uri to Post the notification when the alert activates or
      * resolves.

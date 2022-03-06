@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Table column. */
 @Fluent
 public final class Column {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Column.class);
-
     /*
      * Column name.
      */

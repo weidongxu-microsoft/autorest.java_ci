@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** A set of rules governing the network accessibility of a managed hsm pool. */
 @Fluent
 public final class MhsmNetworkRuleSet {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MhsmNetworkRuleSet.class);
-
     /*
      * Tells what traffic can bypass network rules. This can be 'AzureServices'
      * or 'None'.  If not specified the default is 'AzureServices'.

@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Defines top-level WebApplicationFirewallPolicy configuration settings. */
 @Fluent
 public final class PolicySettings {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PolicySettings.class);
-
     /*
      * Describes if the policy is in enabled or disabled state. Defaults to
      * Enabled if not specified.

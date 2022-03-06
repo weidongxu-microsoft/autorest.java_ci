@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.VirtualHubIpConfigurat
 import com.azure.resourcemanager.network.generated.fluent.models.HubIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.HubIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.VirtualHubIpConfigurations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigurations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualHubIpConfigurationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualHubIpConfigurationsImpl.class);
 
     private final VirtualHubIpConfigurationsClient innerClient;
 
@@ -75,7 +74,7 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
     public HubIpConfiguration getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -83,14 +82,14 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String ipConfigName = Utils.getValueFromIdByName(id, "ipConfigurations");
         if (ipConfigName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -103,7 +102,7 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
     public Response<HubIpConfiguration> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -111,14 +110,14 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String ipConfigName = Utils.getValueFromIdByName(id, "ipConfigurations");
         if (ipConfigName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -131,7 +130,7 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -139,14 +138,14 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String ipConfigName = Utils.getValueFromIdByName(id, "ipConfigurations");
         if (ipConfigName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -159,7 +158,7 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -167,14 +166,14 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String ipConfigName = Utils.getValueFromIdByName(id, "ipConfigurations");
         if (ipConfigName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

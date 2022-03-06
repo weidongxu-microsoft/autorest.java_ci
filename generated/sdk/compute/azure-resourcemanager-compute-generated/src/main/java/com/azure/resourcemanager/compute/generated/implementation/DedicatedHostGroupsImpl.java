@@ -14,10 +14,9 @@ import com.azure.resourcemanager.compute.generated.fluent.models.DedicatedHostGr
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroup;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroups;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DedicatedHostGroupsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DedicatedHostGroupsImpl.class);
 
     private final DedicatedHostGroupsClient innerClient;
 
@@ -86,7 +85,7 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
     public DedicatedHostGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -94,7 +93,7 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
         }
         String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
         if (hostGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
@@ -108,7 +107,7 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
     public Response<DedicatedHostGroup> getByIdWithResponse(String id, InstanceViewTypes expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -116,7 +115,7 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
         }
         String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
         if (hostGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
@@ -127,7 +126,7 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -135,7 +134,7 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
         }
         String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
         if (hostGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
@@ -146,7 +145,7 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -154,7 +153,7 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
         }
         String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
         if (hostGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.LocalNetworkGatewaysCl
 import com.azure.resourcemanager.network.generated.fluent.models.LocalNetworkGatewayInner;
 import com.azure.resourcemanager.network.generated.models.LocalNetworkGateway;
 import com.azure.resourcemanager.network.generated.models.LocalNetworkGateways;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LocalNetworkGatewaysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(LocalNetworkGatewaysImpl.class);
 
     private final LocalNetworkGatewaysClient innerClient;
 
@@ -76,7 +75,7 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
     public LocalNetworkGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -84,7 +83,7 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
         }
         String localNetworkGatewayName = Utils.getValueFromIdByName(id, "localNetworkGateways");
         if (localNetworkGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -98,7 +97,7 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
     public Response<LocalNetworkGateway> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -106,7 +105,7 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
         }
         String localNetworkGatewayName = Utils.getValueFromIdByName(id, "localNetworkGateways");
         if (localNetworkGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -120,7 +119,7 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -128,7 +127,7 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
         }
         String localNetworkGatewayName = Utils.getValueFromIdByName(id, "localNetworkGateways");
         if (localNetworkGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -142,7 +141,7 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -150,7 +149,7 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
         }
         String localNetworkGatewayName = Utils.getValueFromIdByName(id, "localNetworkGateways");
         if (localNetworkGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

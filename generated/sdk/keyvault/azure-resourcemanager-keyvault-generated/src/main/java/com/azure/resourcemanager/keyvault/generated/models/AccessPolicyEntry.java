@@ -6,7 +6,6 @@ package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
@@ -16,8 +15,6 @@ import java.util.UUID;
  */
 @Fluent
 public final class AccessPolicyEntry {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AccessPolicyEntry.class);
-
     /*
      * The Azure Active Directory tenant ID that should be used for
      * authenticating requests to the key vault.
@@ -136,21 +133,23 @@ public final class AccessPolicyEntry {
      */
     public void validate() {
         if (tenantId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property tenantId in model AccessPolicyEntry"));
         }
         if (objectId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property objectId in model AccessPolicyEntry"));
         }
         if (permissions() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property permissions in model AccessPolicyEntry"));
         } else {
             permissions().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(AccessPolicyEntry.class);
 }

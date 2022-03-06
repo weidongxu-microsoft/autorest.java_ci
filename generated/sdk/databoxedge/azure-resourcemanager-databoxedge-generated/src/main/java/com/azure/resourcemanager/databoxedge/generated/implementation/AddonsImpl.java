@@ -13,10 +13,9 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.AddonsClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.AddonInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Addon;
 import com.azure.resourcemanager.databoxedge.generated.models.Addons;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AddonsImpl implements Addons {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AddonsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AddonsImpl.class);
 
     private final AddonsClient innerClient;
 

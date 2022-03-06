@@ -41,10 +41,9 @@ import com.azure.resourcemanager.appservice.generated.models.ValidateRequest;
 import com.azure.resourcemanager.appservice.generated.models.ValidateResponse;
 import com.azure.resourcemanager.appservice.generated.models.VnetParameters;
 import com.azure.resourcemanager.appservice.generated.models.VnetValidationFailureDetails;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceProvidersImpl implements ResourceProviders {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceProvidersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ResourceProvidersImpl.class);
 
     private final ResourceProvidersClient innerClient;
 

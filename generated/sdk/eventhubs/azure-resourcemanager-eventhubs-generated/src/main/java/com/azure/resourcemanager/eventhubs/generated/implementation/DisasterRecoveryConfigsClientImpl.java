@@ -29,7 +29,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.fluent.DisasterRecoveryConfigsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AccessKeysInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ArmDisasterRecoveryInner;
@@ -42,8 +41,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in DisasterRecoveryConfigsClient. */
 public final class DisasterRecoveryConfigsClientImpl implements DisasterRecoveryConfigsClient {
-    private final ClientLogger logger = new ClientLogger(DisasterRecoveryConfigsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final DisasterRecoveryConfigsService service;
 

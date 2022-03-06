@@ -13,11 +13,10 @@ import com.azure.resourcemanager.search.generated.fluent.QueryKeysClient;
 import com.azure.resourcemanager.search.generated.fluent.models.QueryKeyInner;
 import com.azure.resourcemanager.search.generated.models.QueryKey;
 import com.azure.resourcemanager.search.generated.models.QueryKeys;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.UUID;
 
 public final class QueryKeysImpl implements QueryKeys {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(QueryKeysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(QueryKeysImpl.class);
 
     private final QueryKeysClient innerClient;
 

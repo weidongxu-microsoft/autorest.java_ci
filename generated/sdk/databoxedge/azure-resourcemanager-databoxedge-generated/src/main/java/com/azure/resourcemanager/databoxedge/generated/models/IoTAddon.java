@@ -8,7 +8,6 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.AddonInner;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.IoTAddonProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -18,8 +17,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("IotEdge")
 @Fluent
 public final class IoTAddon extends AddonInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(IoTAddon.class);
-
     /*
      * Properties specific to IOT addon.
      */
@@ -126,11 +123,13 @@ public final class IoTAddon extends AddonInner {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property innerProperties in model IoTAddon"));
         } else {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(IoTAddon.class);
 }

@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.UUID;
@@ -14,8 +12,6 @@ import java.util.UUID;
 /** Properties of the vault. */
 @Fluent
 public final class VaultPatchProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VaultPatchProperties.class);
-
     /*
      * The Azure Active Directory tenant ID that should be used for
      * authenticating requests to the key vault.

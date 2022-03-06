@@ -6,14 +6,11 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The share mount point. */
 @Fluent
 public final class MountPointMap {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MountPointMap.class);
-
     /*
      * ID of the share mounted to the role VM.
      */
@@ -107,9 +104,11 @@ public final class MountPointMap {
      */
     public void validate() {
         if (shareId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property shareId in model MountPointMap"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MountPointMap.class);
 }

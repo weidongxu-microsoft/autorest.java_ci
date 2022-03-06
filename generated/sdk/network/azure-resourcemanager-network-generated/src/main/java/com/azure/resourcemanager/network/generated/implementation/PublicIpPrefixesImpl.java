@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.PublicIpPrefixesClient
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpPrefixInner;
 import com.azure.resourcemanager.network.generated.models.PublicIpPrefix;
 import com.azure.resourcemanager.network.generated.models.PublicIpPrefixes;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PublicIpPrefixesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PublicIpPrefixesImpl.class);
 
     private final PublicIpPrefixesClient innerClient;
 
@@ -83,7 +82,7 @@ public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
     public PublicIpPrefix getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -91,7 +90,7 @@ public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
         }
         String publicIpPrefixName = Utils.getValueFromIdByName(id, "publicIPPrefixes");
         if (publicIpPrefixName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -107,7 +106,7 @@ public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
     public Response<PublicIpPrefix> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -115,7 +114,7 @@ public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
         }
         String publicIpPrefixName = Utils.getValueFromIdByName(id, "publicIPPrefixes");
         if (publicIpPrefixName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -128,7 +127,7 @@ public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -136,7 +135,7 @@ public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
         }
         String publicIpPrefixName = Utils.getValueFromIdByName(id, "publicIPPrefixes");
         if (publicIpPrefixName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -157,7 +156,7 @@ public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
         }
         String publicIpPrefixName = Utils.getValueFromIdByName(id, "publicIPPrefixes");
         if (publicIpPrefixName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

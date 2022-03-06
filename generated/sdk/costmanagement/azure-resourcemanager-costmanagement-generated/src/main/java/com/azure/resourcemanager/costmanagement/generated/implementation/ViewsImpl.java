@@ -13,10 +13,9 @@ import com.azure.resourcemanager.costmanagement.generated.fluent.ViewsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ViewInner;
 import com.azure.resourcemanager.costmanagement.generated.models.View;
 import com.azure.resourcemanager.costmanagement.generated.models.Views;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ViewsImpl implements Views {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ViewsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ViewsImpl.class);
 
     private final ViewsClient innerClient;
 
@@ -137,7 +136,7 @@ public final class ViewsImpl implements Views {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/views/{viewName}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -147,7 +146,7 @@ public final class ViewsImpl implements Views {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/views/{viewName}", "viewName");
         if (viewName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'views'.", id)));
@@ -161,7 +160,7 @@ public final class ViewsImpl implements Views {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/views/{viewName}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -171,7 +170,7 @@ public final class ViewsImpl implements Views {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/views/{viewName}", "viewName");
         if (viewName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'views'.", id)));
@@ -185,7 +184,7 @@ public final class ViewsImpl implements Views {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/views/{viewName}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -195,7 +194,7 @@ public final class ViewsImpl implements Views {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/views/{viewName}", "viewName");
         if (viewName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'views'.", id)));
@@ -209,7 +208,7 @@ public final class ViewsImpl implements Views {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/views/{viewName}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -219,7 +218,7 @@ public final class ViewsImpl implements Views {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/views/{viewName}", "viewName");
         if (viewName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'views'.", id)));

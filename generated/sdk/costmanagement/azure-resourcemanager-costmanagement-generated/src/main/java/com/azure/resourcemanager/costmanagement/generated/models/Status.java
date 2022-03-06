@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The status of the long running operation. */
 @Fluent
 public final class Status {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Status.class);
-
     /*
      * The status of the long running operation.
      */

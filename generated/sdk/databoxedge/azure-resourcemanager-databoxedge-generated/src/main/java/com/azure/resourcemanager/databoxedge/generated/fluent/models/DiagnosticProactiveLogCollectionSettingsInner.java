@@ -9,15 +9,11 @@ import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.ProactiveDiagnosticsConsent;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The diagnostic proactive log collection settings of a device. */
 @Fluent
 public final class DiagnosticProactiveLogCollectionSettingsInner extends ArmBaseModel {
-    @JsonIgnore
-    private final ClientLogger logger = new ClientLogger(DiagnosticProactiveLogCollectionSettingsInner.class);
-
     /*
      * DiagnosticProactiveLogCollectionSettings
      */
@@ -80,7 +76,7 @@ public final class DiagnosticProactiveLogCollectionSettingsInner extends ArmBase
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model"
@@ -89,4 +85,6 @@ public final class DiagnosticProactiveLogCollectionSettingsInner extends ArmBase
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(DiagnosticProactiveLogCollectionSettingsInner.class);
 }

@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Defines the Resource ID for a Frontend Endpoint. */
 @Fluent
 public final class FrontendEndpointLink {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontendEndpointLink.class);
-
     /*
      * Resource ID.
      */

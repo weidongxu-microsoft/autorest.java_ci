@@ -11,10 +11,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.LogFilesClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.LogFileInner;
 import com.azure.resourcemanager.postgresql.generated.models.LogFile;
 import com.azure.resourcemanager.postgresql.generated.models.LogFiles;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LogFilesImpl implements LogFiles {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogFilesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(LogFilesImpl.class);
 
     private final LogFilesClient innerClient;
 

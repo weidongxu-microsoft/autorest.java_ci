@@ -25,7 +25,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.NodesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.NodeInner;
 import com.azure.resourcemanager.databoxedge.generated.models.NodeList;
@@ -33,8 +32,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in NodesClient. */
 public final class NodesClientImpl implements NodesClient {
-    private final ClientLogger logger = new ClientLogger(NodesClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final NodesService service;
 

@@ -11,10 +11,9 @@ import com.azure.resourcemanager.locks.generated.fluent.AuthorizationOperationsC
 import com.azure.resourcemanager.locks.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.locks.generated.models.AuthorizationOperations;
 import com.azure.resourcemanager.locks.generated.models.Operation;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AuthorizationOperationsImpl implements AuthorizationOperations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AuthorizationOperationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AuthorizationOperationsImpl.class);
 
     private final AuthorizationOperationsClient innerClient;
 

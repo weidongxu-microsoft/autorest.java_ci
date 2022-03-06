@@ -12,14 +12,11 @@ import com.azure.resourcemanager.databoxedge.generated.models.KubernetesRoleReso
 import com.azure.resourcemanager.databoxedge.generated.models.KubernetesState;
 import com.azure.resourcemanager.databoxedge.generated.models.PlatformType;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Kubernetes role properties. */
 @Fluent
 public final class KubernetesRoleProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KubernetesRoleProperties.class);
-
     /*
      * Host OS supported by the Kubernetes role.
      */
@@ -161,13 +158,13 @@ public final class KubernetesRoleProperties {
      */
     public void validate() {
         if (hostPlatform() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property hostPlatform in model KubernetesRoleProperties"));
         }
         if (kubernetesClusterInfo() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property kubernetesClusterInfo in model KubernetesRoleProperties"));
@@ -175,7 +172,7 @@ public final class KubernetesRoleProperties {
             kubernetesClusterInfo().validate();
         }
         if (kubernetesRoleResources() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property kubernetesRoleResources in model KubernetesRoleProperties"));
@@ -183,10 +180,12 @@ public final class KubernetesRoleProperties {
             kubernetesRoleResources().validate();
         }
         if (roleStatus() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property roleStatus in model KubernetesRoleProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(KubernetesRoleProperties.class);
 }

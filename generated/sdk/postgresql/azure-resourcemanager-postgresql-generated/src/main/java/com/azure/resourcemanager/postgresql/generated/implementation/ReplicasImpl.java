@@ -11,10 +11,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.ReplicasClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerInner;
 import com.azure.resourcemanager.postgresql.generated.models.Replicas;
 import com.azure.resourcemanager.postgresql.generated.models.Server;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ReplicasImpl implements Replicas {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ReplicasImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ReplicasImpl.class);
 
     private final ReplicasClient innerClient;
 

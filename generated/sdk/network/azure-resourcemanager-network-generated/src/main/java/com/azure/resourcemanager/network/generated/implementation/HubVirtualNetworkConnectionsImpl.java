@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.HubVirtualNetworkConne
 import com.azure.resourcemanager.network.generated.fluent.models.HubVirtualNetworkConnectionInner;
 import com.azure.resourcemanager.network.generated.models.HubVirtualNetworkConnection;
 import com.azure.resourcemanager.network.generated.models.HubVirtualNetworkConnections;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class HubVirtualNetworkConnectionsImpl implements HubVirtualNetworkConnections {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(HubVirtualNetworkConnectionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(HubVirtualNetworkConnectionsImpl.class);
 
     private final HubVirtualNetworkConnectionsClient innerClient;
 

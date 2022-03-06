@@ -11,10 +11,9 @@ import com.azure.resourcemanager.costmanagement.generated.fluent.OperationsClien
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.costmanagement.generated.models.Operation;
 import com.azure.resourcemanager.costmanagement.generated.models.Operations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class OperationsImpl implements Operations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(OperationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(OperationsImpl.class);
 
     private final OperationsClient innerClient;
 

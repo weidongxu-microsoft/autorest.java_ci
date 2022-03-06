@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The filter expression to be used in the report. */
 @Fluent
 public final class ReportConfigFilter {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ReportConfigFilter.class);
-
     /*
      * The logical "AND" expression. Must have at least 2 items.
      */

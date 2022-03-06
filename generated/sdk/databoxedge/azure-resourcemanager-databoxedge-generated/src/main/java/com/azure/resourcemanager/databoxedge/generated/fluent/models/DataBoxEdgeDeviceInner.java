@@ -17,7 +17,6 @@ import com.azure.resourcemanager.databoxedge.generated.models.ResourceIdentity;
 import com.azure.resourcemanager.databoxedge.generated.models.ResourceMoveDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleTypes;
 import com.azure.resourcemanager.databoxedge.generated.models.Sku;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -26,8 +25,6 @@ import java.util.Map;
 /** The Data Box Edge/Gateway device. */
 @Fluent
 public final class DataBoxEdgeDeviceInner extends ArmBaseModel {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DataBoxEdgeDeviceInner.class);
-
     /*
      * The location of the device. This is a supported and registered Azure
      * geographical region (for example, West US, East US, or Southeast Asia).
@@ -425,7 +422,7 @@ public final class DataBoxEdgeDeviceInner extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (location() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property location in model DataBoxEdgeDeviceInner"));
         }
@@ -439,4 +436,6 @@ public final class DataBoxEdgeDeviceInner extends ArmBaseModel {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(DataBoxEdgeDeviceInner.class);
 }

@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.models.CommonExportProperties;
 import com.azure.resourcemanager.costmanagement.generated.models.ExecutionStatus;
 import com.azure.resourcemanager.costmanagement.generated.models.ExecutionType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** The properties of the export execution. */
 @Fluent
 public final class ExportExecutionProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExportExecutionProperties.class);
-
     /*
      * The type of the export execution.
      */

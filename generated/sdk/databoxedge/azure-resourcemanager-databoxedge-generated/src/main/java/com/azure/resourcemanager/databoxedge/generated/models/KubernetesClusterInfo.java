@@ -6,15 +6,12 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Kubernetes cluster configuration. */
 @Fluent
 public final class KubernetesClusterInfo {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KubernetesClusterInfo.class);
-
     /*
      * Etcd configuration
      */
@@ -84,9 +81,11 @@ public final class KubernetesClusterInfo {
             nodes().forEach(e -> e.validate());
         }
         if (version() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property version in model KubernetesClusterInfo"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(KubernetesClusterInfo.class);
 }

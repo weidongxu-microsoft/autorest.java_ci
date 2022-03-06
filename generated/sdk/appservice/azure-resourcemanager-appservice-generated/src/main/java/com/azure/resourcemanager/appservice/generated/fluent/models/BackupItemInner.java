@@ -5,11 +5,9 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.BackupItemStatus;
 import com.azure.resourcemanager.appservice.generated.models.DatabaseBackupSetting;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -17,8 +15,6 @@ import java.util.List;
 /** Backup description. */
 @Fluent
 public final class BackupItemInner extends ProxyOnlyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BackupItemInner.class);
-
     /*
      * BackupItem resource specific properties
      */

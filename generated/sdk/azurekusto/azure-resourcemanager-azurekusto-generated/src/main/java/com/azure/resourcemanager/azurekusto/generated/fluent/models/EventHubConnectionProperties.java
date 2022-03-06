@@ -10,15 +10,12 @@ import com.azure.resourcemanager.azurekusto.generated.models.Compression;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabaseRouting;
 import com.azure.resourcemanager.azurekusto.generated.models.EventHubDataFormat;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Class representing the Kusto event hub connection properties. */
 @Fluent
 public final class EventHubConnectionProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EventHubConnectionProperties.class);
-
     /*
      * The resource ID of the event hub to be used to create a data connection.
      */
@@ -306,16 +303,18 @@ public final class EventHubConnectionProperties {
      */
     public void validate() {
         if (eventHubResourceId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property eventHubResourceId in model EventHubConnectionProperties"));
         }
         if (consumerGroup() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property consumerGroup in model EventHubConnectionProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(EventHubConnectionProperties.class);
 }

@@ -25,13 +25,12 @@ import com.azure.resourcemanager.appservice.generated.models.ReissueCertificateO
 import com.azure.resourcemanager.appservice.generated.models.RenewCertificateOrderRequest;
 import com.azure.resourcemanager.appservice.generated.models.SiteSeal;
 import com.azure.resourcemanager.appservice.generated.models.SiteSealRequest;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class AppServiceCertificateOrdersImpl implements AppServiceCertificateOrders {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AppServiceCertificateOrdersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AppServiceCertificateOrdersImpl.class);
 
     private final AppServiceCertificateOrdersClient innerClient;
 
@@ -322,7 +321,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public AppServiceCertificateOrder getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -330,7 +329,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -343,7 +342,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public Response<AppServiceCertificateOrder> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -351,7 +350,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -364,7 +363,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public AppServiceCertificateResource getCertificateById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -372,7 +371,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -381,7 +380,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
         String name = Utils.getValueFromIdByName(id, "certificates");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
@@ -392,7 +391,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public Response<AppServiceCertificateResource> getCertificateByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -400,7 +399,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -409,7 +408,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
         String name = Utils.getValueFromIdByName(id, "certificates");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
@@ -420,7 +419,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -428,7 +427,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -441,7 +440,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -449,7 +448,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -462,7 +461,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public void deleteCertificateById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -470,7 +469,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -479,7 +478,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
         String name = Utils.getValueFromIdByName(id, "certificates");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
@@ -490,7 +489,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public Response<Void> deleteCertificateByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -498,7 +497,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -507,7 +506,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
         String name = Utils.getValueFromIdByName(id, "certificates");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));

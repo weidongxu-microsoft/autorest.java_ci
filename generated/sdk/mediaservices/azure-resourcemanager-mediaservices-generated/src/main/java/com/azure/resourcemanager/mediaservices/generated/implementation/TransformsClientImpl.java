@@ -29,7 +29,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.fluent.TransformsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.TransformInner;
 import com.azure.resourcemanager.mediaservices.generated.models.TransformCollection;
@@ -37,8 +36,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in TransformsClient. */
 public final class TransformsClientImpl implements TransformsClient {
-    private final ClientLogger logger = new ClientLogger(TransformsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final TransformsService service;
 

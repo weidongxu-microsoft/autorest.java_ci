@@ -7,7 +7,6 @@ package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.models.CrossSiteAccessPolicies;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventEncoding;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventInput;
@@ -15,7 +14,6 @@ import com.azure.resourcemanager.mediaservices.generated.models.LiveEventPreview
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventResourceState;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventTranscription;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamOptionsFlag;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -24,8 +22,6 @@ import java.util.Map;
 /** The live event. */
 @Fluent
 public final class LiveEventInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LiveEventInner.class);
-
     /*
      * The live event properties.
      */

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mysql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.models.InfrastructureEncryption;
 import com.azure.resourcemanager.mysql.generated.models.MinimalTlsVersionEnum;
 import com.azure.resourcemanager.mysql.generated.models.PublicNetworkAccessEnum;
@@ -14,7 +13,6 @@ import com.azure.resourcemanager.mysql.generated.models.ServerState;
 import com.azure.resourcemanager.mysql.generated.models.ServerVersion;
 import com.azure.resourcemanager.mysql.generated.models.SslEnforcementEnum;
 import com.azure.resourcemanager.mysql.generated.models.StorageProfile;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -22,8 +20,6 @@ import java.util.List;
 /** The properties of a server. */
 @Fluent
 public final class ServerProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServerProperties.class);
-
     /*
      * The administrator's login name of a server. Can only be specified when
      * the server is being created (and is required for creation).

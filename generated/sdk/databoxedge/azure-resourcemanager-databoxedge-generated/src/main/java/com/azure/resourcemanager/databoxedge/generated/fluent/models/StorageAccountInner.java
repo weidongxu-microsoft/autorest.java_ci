@@ -10,14 +10,11 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.DataPolicy;
 import com.azure.resourcemanager.databoxedge.generated.models.StorageAccountStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Represents a Storage Account on the Data Box Edge/Gateway device. */
 @Fluent
 public final class StorageAccountInner extends ArmBaseModel {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StorageAccountInner.class);
-
     /*
      * StorageAccount object on ASE device
      */
@@ -168,7 +165,7 @@ public final class StorageAccountInner extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model StorageAccountInner"));
@@ -176,4 +173,6 @@ public final class StorageAccountInner extends ArmBaseModel {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(StorageAccountInner.class);
 }

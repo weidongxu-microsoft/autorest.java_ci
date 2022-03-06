@@ -13,10 +13,9 @@ import com.azure.resourcemanager.dns.generated.fluent.ZonesClient;
 import com.azure.resourcemanager.dns.generated.fluent.models.ZoneInner;
 import com.azure.resourcemanager.dns.generated.models.Zone;
 import com.azure.resourcemanager.dns.generated.models.Zones;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ZonesImpl implements Zones {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ZonesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ZonesImpl.class);
 
     private final ZonesClient innerClient;
 
@@ -85,7 +84,7 @@ public final class ZonesImpl implements Zones {
     public Zone getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -93,7 +92,7 @@ public final class ZonesImpl implements Zones {
         }
         String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
         if (zoneName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
@@ -104,7 +103,7 @@ public final class ZonesImpl implements Zones {
     public Response<Zone> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -112,7 +111,7 @@ public final class ZonesImpl implements Zones {
         }
         String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
         if (zoneName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
@@ -123,7 +122,7 @@ public final class ZonesImpl implements Zones {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -131,7 +130,7 @@ public final class ZonesImpl implements Zones {
         }
         String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
         if (zoneName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
@@ -143,7 +142,7 @@ public final class ZonesImpl implements Zones {
     public void deleteByIdWithResponse(String id, String ifMatch, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -151,7 +150,7 @@ public final class ZonesImpl implements Zones {
         }
         String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
         if (zoneName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));

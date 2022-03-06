@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHealthPool;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Response for ApplicationGatewayBackendHealth API service call. */
 @Fluent
 public final class ApplicationGatewayBackendHealthInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApplicationGatewayBackendHealthInner.class);
-
     /*
      * A list of ApplicationGatewayBackendHealthPool resources.
      */

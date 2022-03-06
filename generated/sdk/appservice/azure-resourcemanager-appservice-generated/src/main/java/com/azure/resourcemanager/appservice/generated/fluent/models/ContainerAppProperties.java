@@ -5,18 +5,14 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.Configuration;
 import com.azure.resourcemanager.appservice.generated.models.ContainerAppProvisioningState;
 import com.azure.resourcemanager.appservice.generated.models.Template;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** ContainerApp resource specific properties. */
 @Fluent
 public final class ContainerAppProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ContainerAppProperties.class);
-
     /*
      * Provisioning state of the Container App.
      */

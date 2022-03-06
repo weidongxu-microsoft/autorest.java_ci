@@ -24,12 +24,11 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBack
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayOnDemandProbe;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslPredefinedPolicy;
 import com.azure.resourcemanager.network.generated.models.ApplicationGateways;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 
 public final class ApplicationGatewaysImpl implements ApplicationGateways {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApplicationGatewaysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ApplicationGatewaysImpl.class);
 
     private final ApplicationGatewaysClient innerClient;
 
@@ -312,7 +311,7 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     public ApplicationGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -320,7 +319,7 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         }
         String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
         if (applicationGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -333,7 +332,7 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     public Response<ApplicationGateway> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -341,7 +340,7 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         }
         String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
         if (applicationGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -354,7 +353,7 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -362,7 +361,7 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         }
         String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
         if (applicationGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -375,7 +374,7 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -383,7 +382,7 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         }
         String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
         if (applicationGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

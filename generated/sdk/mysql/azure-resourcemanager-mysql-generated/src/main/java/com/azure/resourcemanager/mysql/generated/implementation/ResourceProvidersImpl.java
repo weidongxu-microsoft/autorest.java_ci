@@ -12,10 +12,9 @@ import com.azure.resourcemanager.mysql.generated.fluent.ResourceProvidersClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.QueryPerformanceInsightResetDataResultInner;
 import com.azure.resourcemanager.mysql.generated.models.QueryPerformanceInsightResetDataResult;
 import com.azure.resourcemanager.mysql.generated.models.ResourceProviders;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceProvidersImpl implements ResourceProviders {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceProvidersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ResourceProvidersImpl.class);
 
     private final ResourceProvidersClient innerClient;
 

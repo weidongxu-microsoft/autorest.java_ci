@@ -12,10 +12,9 @@ import com.azure.resourcemanager.compute.generated.fluent.CommunityGalleriesClie
 import com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryInner;
 import com.azure.resourcemanager.compute.generated.models.CommunityGalleries;
 import com.azure.resourcemanager.compute.generated.models.CommunityGallery;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CommunityGalleriesImpl implements CommunityGalleries {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CommunityGalleriesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(CommunityGalleriesImpl.class);
 
     private final CommunityGalleriesClient innerClient;
 

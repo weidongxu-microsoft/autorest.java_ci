@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.LoadBalancerLoadBalanc
 import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancingRuleInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerLoadBalancingRules;
 import com.azure.resourcemanager.network.generated.models.LoadBalancingRule;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LoadBalancerLoadBalancingRulesImpl implements LoadBalancerLoadBalancingRules {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancerLoadBalancingRulesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(LoadBalancerLoadBalancingRulesImpl.class);
 
     private final LoadBalancerLoadBalancingRulesClient innerClient;
 

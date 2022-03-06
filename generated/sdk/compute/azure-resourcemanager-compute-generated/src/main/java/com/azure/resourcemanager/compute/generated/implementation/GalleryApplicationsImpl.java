@@ -13,10 +13,9 @@ import com.azure.resourcemanager.compute.generated.fluent.GalleryApplicationsCli
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryApplicationInner;
 import com.azure.resourcemanager.compute.generated.models.GalleryApplication;
 import com.azure.resourcemanager.compute.generated.models.GalleryApplications;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class GalleryApplicationsImpl implements GalleryApplications {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(GalleryApplicationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(GalleryApplicationsImpl.class);
 
     private final GalleryApplicationsClient innerClient;
 
@@ -78,7 +77,7 @@ public final class GalleryApplicationsImpl implements GalleryApplications {
     public GalleryApplication getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -86,14 +85,14 @@ public final class GalleryApplicationsImpl implements GalleryApplications {
         }
         String galleryName = Utils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
         String galleryApplicationName = Utils.getValueFromIdByName(id, "applications");
         if (galleryApplicationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'applications'.", id)));
@@ -104,7 +103,7 @@ public final class GalleryApplicationsImpl implements GalleryApplications {
     public Response<GalleryApplication> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -112,14 +111,14 @@ public final class GalleryApplicationsImpl implements GalleryApplications {
         }
         String galleryName = Utils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
         String galleryApplicationName = Utils.getValueFromIdByName(id, "applications");
         if (galleryApplicationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'applications'.", id)));
@@ -130,7 +129,7 @@ public final class GalleryApplicationsImpl implements GalleryApplications {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -138,14 +137,14 @@ public final class GalleryApplicationsImpl implements GalleryApplications {
         }
         String galleryName = Utils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
         String galleryApplicationName = Utils.getValueFromIdByName(id, "applications");
         if (galleryApplicationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'applications'.", id)));
@@ -156,7 +155,7 @@ public final class GalleryApplicationsImpl implements GalleryApplications {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -164,14 +163,14 @@ public final class GalleryApplicationsImpl implements GalleryApplications {
         }
         String galleryName = Utils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
         String galleryApplicationName = Utils.getValueFromIdByName(id, "applications");
         if (galleryApplicationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'applications'.", id)));

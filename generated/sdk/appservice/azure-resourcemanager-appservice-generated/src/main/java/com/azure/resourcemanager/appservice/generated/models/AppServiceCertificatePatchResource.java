@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificate;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Key Vault container ARM resource for a certificate that is purchased through Azure. */
 @Fluent
 public final class AppServiceCertificatePatchResource extends ProxyOnlyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AppServiceCertificatePatchResource.class);
-
     /*
      * Core resource properties
      */

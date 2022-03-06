@@ -17,11 +17,10 @@ import com.azure.resourcemanager.compute.generated.models.CloudServiceRoleInstan
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.RoleInstance;
 import com.azure.resourcemanager.compute.generated.models.RoleInstanceView;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.InputStream;
 
 public final class CloudServiceRoleInstancesImpl implements CloudServiceRoleInstances {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CloudServiceRoleInstancesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(CloudServiceRoleInstancesImpl.class);
 
     private final CloudServiceRoleInstancesClient innerClient;
 

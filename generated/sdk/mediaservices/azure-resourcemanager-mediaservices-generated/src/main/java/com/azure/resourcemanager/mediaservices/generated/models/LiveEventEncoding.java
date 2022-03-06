@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 
 /** Specifies the live event type and optional encoding settings for encoding live events. */
 @Fluent
 public final class LiveEventEncoding {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LiveEventEncoding.class);
-
     /*
      * Live event type. When encodingType is set to PassthroughBasic or
      * PassthroughStandard, the service simply passes through the incoming

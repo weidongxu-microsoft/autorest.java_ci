@@ -11,10 +11,9 @@ import com.azure.resourcemanager.storage.generated.fluent.SkusClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.SkuInformationInner;
 import com.azure.resourcemanager.storage.generated.models.SkuInformation;
 import com.azure.resourcemanager.storage.generated.models.Skus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SkusImpl implements Skus {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SkusImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(SkusImpl.class);
 
     private final SkusClient innerClient;
 

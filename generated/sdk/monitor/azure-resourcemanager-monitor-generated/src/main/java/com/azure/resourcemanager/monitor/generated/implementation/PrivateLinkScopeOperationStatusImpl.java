@@ -12,10 +12,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.PrivateLinkScopeOperat
 import com.azure.resourcemanager.monitor.generated.fluent.models.OperationStatusInner;
 import com.azure.resourcemanager.monitor.generated.models.OperationStatus;
 import com.azure.resourcemanager.monitor.generated.models.PrivateLinkScopeOperationStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateLinkScopeOperationStatusImpl implements PrivateLinkScopeOperationStatus {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateLinkScopeOperationStatusImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PrivateLinkScopeOperationStatusImpl.class);
 
     private final PrivateLinkScopeOperationStatusClient innerClient;
 

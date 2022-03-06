@@ -44,8 +44,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the CostManagementClientImpl type. */
 @ServiceClient(builder = CostManagementClientBuilder.class)
 public final class CostManagementClientImpl implements CostManagementClient {
-    private final ClientLogger logger = new ClientLogger(CostManagementClientImpl.class);
-
     /** server parameter. */
     private final String endpoint;
 
@@ -328,7 +326,7 @@ public final class CostManagementClientImpl implements CostManagementClient {
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -387,4 +385,6 @@ public final class CostManagementClientImpl implements CostManagementClient {
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(CostManagementClientImpl.class);
 }

@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Network Security Group resource. */
 @Fluent
 public final class NetworkSecurityGroupPropertiesFormat {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkSecurityGroupPropertiesFormat.class);
-
     /*
      * A collection of security rules of the network security group.
      */

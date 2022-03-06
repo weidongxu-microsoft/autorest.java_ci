@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Namespace/EventHub Connection String. */
 @Immutable
 public final class AccessKeysInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AccessKeysInner.class);
-
     /*
      * Primary connection string of the created namespace AuthorizationRule.
      */

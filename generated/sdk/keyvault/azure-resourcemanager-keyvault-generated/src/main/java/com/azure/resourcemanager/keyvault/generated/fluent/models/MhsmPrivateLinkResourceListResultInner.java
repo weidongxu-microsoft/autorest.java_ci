@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.keyvault.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateLinkResource;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** A list of private link resources. */
 @Fluent
 public final class MhsmPrivateLinkResourceListResultInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MhsmPrivateLinkResourceListResultInner.class);
-
     /*
      * Array of private link resources
      */

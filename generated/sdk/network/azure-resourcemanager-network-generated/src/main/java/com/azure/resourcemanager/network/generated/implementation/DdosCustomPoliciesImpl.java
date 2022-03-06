@@ -12,10 +12,9 @@ import com.azure.resourcemanager.network.generated.fluent.DdosCustomPoliciesClie
 import com.azure.resourcemanager.network.generated.fluent.models.DdosCustomPolicyInner;
 import com.azure.resourcemanager.network.generated.models.DdosCustomPolicies;
 import com.azure.resourcemanager.network.generated.models.DdosCustomPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DdosCustomPoliciesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DdosCustomPoliciesImpl.class);
 
     private final DdosCustomPoliciesClient innerClient;
 
@@ -63,7 +62,7 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
     public DdosCustomPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -71,7 +70,7 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
         }
         String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
         if (ddosCustomPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -84,7 +83,7 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
     public Response<DdosCustomPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -92,7 +91,7 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
         }
         String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
         if (ddosCustomPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -105,7 +104,7 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -113,7 +112,7 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
         }
         String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
         if (ddosCustomPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -126,7 +125,7 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -134,7 +133,7 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
         }
         String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
         if (ddosCustomPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

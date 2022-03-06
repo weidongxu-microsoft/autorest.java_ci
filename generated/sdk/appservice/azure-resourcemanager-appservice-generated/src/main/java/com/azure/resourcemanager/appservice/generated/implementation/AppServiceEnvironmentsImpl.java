@@ -46,13 +46,12 @@ import com.azure.resourcemanager.appservice.generated.models.StampCapacity;
 import com.azure.resourcemanager.appservice.generated.models.Usage;
 import com.azure.resourcemanager.appservice.generated.models.VirtualNetworkProfile;
 import com.azure.resourcemanager.appservice.generated.models.WorkerPoolResource;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AppServiceEnvironmentsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AppServiceEnvironmentsImpl.class);
 
     private final AppServiceEnvironmentsClient innerClient;
 
@@ -721,7 +720,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public AppServiceEnvironmentResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -729,7 +728,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -742,7 +741,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public Response<AppServiceEnvironmentResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -750,7 +749,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -763,7 +762,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnectionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -771,7 +770,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -780,7 +779,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
         if (privateEndpointConnectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -798,7 +797,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -806,7 +805,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -815,7 +814,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
         if (privateEndpointConnectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -830,7 +829,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public WorkerPoolResource getWorkerPoolById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -838,7 +837,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -847,7 +846,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String workerPoolName = Utils.getValueFromIdByName(id, "workerPools");
         if (workerPoolName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workerPools'.", id)));
@@ -858,7 +857,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public Response<WorkerPoolResource> getWorkerPoolByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -866,7 +865,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -875,7 +874,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String workerPoolName = Utils.getValueFromIdByName(id, "workerPools");
         if (workerPoolName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workerPools'.", id)));
@@ -886,7 +885,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -894,7 +893,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -908,7 +907,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public void deleteByIdWithResponse(String id, Boolean forceDelete, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -916,7 +915,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -929,7 +928,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public Object deletePrivateEndpointConnectionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -937,7 +936,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -946,7 +945,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
         if (privateEndpointConnectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -961,7 +960,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public Object deletePrivateEndpointConnectionByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -969,7 +968,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -978,7 +977,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
         String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
         if (privateEndpointConnectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

@@ -11,10 +11,9 @@ import com.azure.resourcemanager.network.generated.fluent.AvailablePrivateEndpoi
 import com.azure.resourcemanager.network.generated.fluent.models.AvailablePrivateEndpointTypeInner;
 import com.azure.resourcemanager.network.generated.models.AvailablePrivateEndpointType;
 import com.azure.resourcemanager.network.generated.models.AvailablePrivateEndpointTypes;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AvailablePrivateEndpointTypesImpl implements AvailablePrivateEndpointTypes {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AvailablePrivateEndpointTypesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AvailablePrivateEndpointTypesImpl.class);
 
     private final AvailablePrivateEndpointTypesClient innerClient;
 

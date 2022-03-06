@@ -15,10 +15,9 @@ import com.azure.resourcemanager.network.generated.fluent.models.PeerRouteListIn
 import com.azure.resourcemanager.network.generated.models.BgpConnection;
 import com.azure.resourcemanager.network.generated.models.PeerRouteList;
 import com.azure.resourcemanager.network.generated.models.VirtualHubBgpConnections;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnections {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualHubBgpConnectionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualHubBgpConnectionsImpl.class);
 
     private final VirtualHubBgpConnectionsClient innerClient;
 
@@ -117,7 +116,7 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
     public BgpConnection getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -125,14 +124,14 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String connectionName = Utils.getValueFromIdByName(id, "bgpConnections");
         if (connectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -144,7 +143,7 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
     public Response<BgpConnection> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -152,14 +151,14 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String connectionName = Utils.getValueFromIdByName(id, "bgpConnections");
         if (connectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -171,7 +170,7 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -179,14 +178,14 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String connectionName = Utils.getValueFromIdByName(id, "bgpConnections");
         if (connectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -198,7 +197,7 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -206,14 +205,14 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String connectionName = Utils.getValueFromIdByName(id, "bgpConnections");
         if (connectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

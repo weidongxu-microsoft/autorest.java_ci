@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** L7 health probe settings for a backend pool. */
 @Fluent
 public class HealthProbeSettingsUpdateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(HealthProbeSettingsUpdateParameters.class);
-
     /*
      * The path to use for the health probe. Default is /
      */

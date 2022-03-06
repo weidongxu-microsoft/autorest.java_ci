@@ -16,10 +16,9 @@ import com.azure.resourcemanager.compute.generated.models.AccessUri;
 import com.azure.resourcemanager.compute.generated.models.DiskRestorePoint;
 import com.azure.resourcemanager.compute.generated.models.DiskRestorePoints;
 import com.azure.resourcemanager.compute.generated.models.GrantAccessData;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DiskRestorePointsImpl implements DiskRestorePoints {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiskRestorePointsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DiskRestorePointsImpl.class);
 
     private final DiskRestorePointsClient innerClient;
 

@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.mysql.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.fluent.models.WaitStatisticInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** A list of wait statistics. */
 @Immutable
 public final class WaitStatisticsResultList {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WaitStatisticsResultList.class);
-
     /*
      * The list of wait statistics.
      */

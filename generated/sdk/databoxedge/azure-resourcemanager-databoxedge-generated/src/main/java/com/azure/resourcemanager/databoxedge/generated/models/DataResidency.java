@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Wraps data-residency related information for edge-resource and this should be used with ARM layer. */
 @Fluent
 public final class DataResidency {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DataResidency.class);
-
     /*
      * DataResidencyType enum
      */

@@ -7,21 +7,17 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.ProvisioningStateEnum;
 import com.azure.resourcemanager.operationalinsights.generated.models.RestoredLogs;
 import com.azure.resourcemanager.operationalinsights.generated.models.ResultStatistics;
 import com.azure.resourcemanager.operationalinsights.generated.models.Schema;
 import com.azure.resourcemanager.operationalinsights.generated.models.SearchResults;
 import com.azure.resourcemanager.operationalinsights.generated.models.TablePlanEnum;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Workspace data table definition. */
 @Fluent
 public final class TableInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TableInner.class);
-
     /*
      * Table's properties.
      */

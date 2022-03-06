@@ -12,10 +12,9 @@ import com.azure.resourcemanager.recoveryservices.generated.fluent.VaultExtended
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultExtendedInfoResourceInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.VaultExtendedInfoResource;
 import com.azure.resourcemanager.recoveryservices.generated.models.VaultExtendedInfoes;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VaultExtendedInfoesImpl implements VaultExtendedInfoes {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VaultExtendedInfoesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VaultExtendedInfoesImpl.class);
 
     private final VaultExtendedInfoesClient innerClient;
 

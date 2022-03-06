@@ -6,17 +6,13 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayRedirectConfigurationPropertiesFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Redirect configuration of an application gateway. */
 @Fluent
 public final class ApplicationGatewayRedirectConfiguration extends SubResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApplicationGatewayRedirectConfiguration.class);
-
     /*
      * Properties of the application gateway redirect configuration.
      */

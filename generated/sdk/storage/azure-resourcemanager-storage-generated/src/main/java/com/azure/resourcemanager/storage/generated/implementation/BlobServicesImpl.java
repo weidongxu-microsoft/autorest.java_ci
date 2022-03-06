@@ -13,10 +13,9 @@ import com.azure.resourcemanager.storage.generated.fluent.BlobServicesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobServicePropertiesInner;
 import com.azure.resourcemanager.storage.generated.models.BlobServiceProperties;
 import com.azure.resourcemanager.storage.generated.models.BlobServices;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class BlobServicesImpl implements BlobServices {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BlobServicesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(BlobServicesImpl.class);
 
     private final BlobServicesClient innerClient;
 
@@ -66,7 +65,7 @@ public final class BlobServicesImpl implements BlobServices {
     public BlobServiceProperties getServicePropertiesById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -74,7 +73,7 @@ public final class BlobServicesImpl implements BlobServices {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -86,7 +85,7 @@ public final class BlobServicesImpl implements BlobServices {
     public Response<BlobServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -94,7 +93,7 @@ public final class BlobServicesImpl implements BlobServices {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

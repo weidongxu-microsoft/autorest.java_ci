@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.mysql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** The properties of a wait statistic. */
 @Fluent
 public final class WaitStatisticProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WaitStatisticProperties.class);
-
     /*
      * Observation start time.
      */

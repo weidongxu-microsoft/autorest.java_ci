@@ -11,15 +11,12 @@ import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.AzureContainerDataFormat;
 import com.azure.resourcemanager.databoxedge.generated.models.ContainerStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.RefreshDetails;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** Represents a container on the Data Box Edge/Gateway device. */
 @Fluent
 public final class ContainerInner extends ArmBaseModel {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ContainerInner.class);
-
     /*
      * Container in DataBoxEdge Resource
      */
@@ -109,11 +106,13 @@ public final class ContainerInner extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property innerProperties in model ContainerInner"));
         } else {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ContainerInner.class);
 }

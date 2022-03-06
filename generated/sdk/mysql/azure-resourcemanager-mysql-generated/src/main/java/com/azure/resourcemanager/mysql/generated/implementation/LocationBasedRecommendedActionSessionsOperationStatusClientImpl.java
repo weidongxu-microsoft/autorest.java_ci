@@ -21,7 +21,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.fluent.LocationBasedRecommendedActionSessionsOperationStatusClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.RecommendedActionSessionsOperationStatusInner;
 import reactor.core.publisher.Mono;
@@ -32,9 +31,6 @@ import reactor.core.publisher.Mono;
  */
 public final class LocationBasedRecommendedActionSessionsOperationStatusClientImpl
     implements LocationBasedRecommendedActionSessionsOperationStatusClient {
-    private final ClientLogger logger =
-        new ClientLogger(LocationBasedRecommendedActionSessionsOperationStatusClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final LocationBasedRecommendedActionSessionsOperationStatusService service;
 

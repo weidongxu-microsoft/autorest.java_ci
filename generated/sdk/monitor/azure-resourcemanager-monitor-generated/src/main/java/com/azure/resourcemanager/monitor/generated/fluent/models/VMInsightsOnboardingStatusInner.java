@@ -6,19 +6,15 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.DataContainer;
 import com.azure.resourcemanager.monitor.generated.models.DataStatus;
 import com.azure.resourcemanager.monitor.generated.models.OnboardingStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** VM Insights onboarding status for a resource. */
 @Fluent
 public final class VMInsightsOnboardingStatusInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VMInsightsOnboardingStatusInner.class);
-
     /*
      * Resource properties.
      */

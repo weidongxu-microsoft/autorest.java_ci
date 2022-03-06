@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -22,8 +20,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonSubTypes({@JsonSubTypes.Type(name = "#Microsoft.Media.H265Layer", value = H265Layer.class)})
 @Fluent
 public class H265VideoLayer extends Layer {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(H265VideoLayer.class);
-
     /*
      * The average bitrate in bits per second at which to encode the input
      * video when generating this layer. For example: a target bitrate of

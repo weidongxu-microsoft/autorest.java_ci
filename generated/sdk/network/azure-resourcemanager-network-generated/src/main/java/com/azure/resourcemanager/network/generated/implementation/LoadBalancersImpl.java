@@ -17,10 +17,9 @@ import com.azure.resourcemanager.network.generated.models.LoadBalancer;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerVipSwapRequest;
 import com.azure.resourcemanager.network.generated.models.LoadBalancers;
 import com.azure.resourcemanager.network.generated.models.QueryInboundNatRulePortMappingRequest;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LoadBalancersImpl implements LoadBalancers {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(LoadBalancersImpl.class);
 
     private final LoadBalancersClient innerClient;
 
@@ -128,7 +127,7 @@ public final class LoadBalancersImpl implements LoadBalancers {
     public LoadBalancer getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -136,7 +135,7 @@ public final class LoadBalancersImpl implements LoadBalancers {
         }
         String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
         if (loadBalancerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
@@ -150,7 +149,7 @@ public final class LoadBalancersImpl implements LoadBalancers {
     public Response<LoadBalancer> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -158,7 +157,7 @@ public final class LoadBalancersImpl implements LoadBalancers {
         }
         String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
         if (loadBalancerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
@@ -169,7 +168,7 @@ public final class LoadBalancersImpl implements LoadBalancers {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -177,7 +176,7 @@ public final class LoadBalancersImpl implements LoadBalancers {
         }
         String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
         if (loadBalancerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
@@ -188,7 +187,7 @@ public final class LoadBalancersImpl implements LoadBalancers {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -196,7 +195,7 @@ public final class LoadBalancersImpl implements LoadBalancers {
         }
         String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
         if (loadBalancerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));

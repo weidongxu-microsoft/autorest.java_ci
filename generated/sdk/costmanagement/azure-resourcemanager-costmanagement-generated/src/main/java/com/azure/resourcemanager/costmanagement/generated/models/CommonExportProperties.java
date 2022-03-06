@@ -6,14 +6,11 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The common properties of the export. */
 @Fluent
 public class CommonExportProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CommonExportProperties.class);
-
     /*
      * The format of the export being delivered.
      */
@@ -99,7 +96,7 @@ public class CommonExportProperties {
      */
     public void validate() {
         if (deliveryInfo() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property deliveryInfo in model CommonExportProperties"));
@@ -107,7 +104,7 @@ public class CommonExportProperties {
             deliveryInfo().validate();
         }
         if (definition() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property definition in model CommonExportProperties"));
@@ -115,4 +112,6 @@ public class CommonExportProperties {
             definition().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(CommonExportProperties.class);
 }

@@ -6,15 +6,12 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Metric configuration. */
 @Fluent
 public final class MetricConfiguration {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricConfiguration.class);
-
     /*
      * The Resource ID on which the metrics should be pushed.
      */
@@ -129,16 +126,18 @@ public final class MetricConfiguration {
      */
     public void validate() {
         if (resourceId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property resourceId in model MetricConfiguration"));
         }
         if (counterSets() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property counterSets in model MetricConfiguration"));
         } else {
             counterSets().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MetricConfiguration.class);
 }

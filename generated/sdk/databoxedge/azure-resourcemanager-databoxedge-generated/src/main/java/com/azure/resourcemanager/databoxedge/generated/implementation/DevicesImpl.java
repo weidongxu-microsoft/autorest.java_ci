@@ -26,10 +26,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.SecuritySettings;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateSummary;
 import com.azure.resourcemanager.databoxedge.generated.models.UploadCertificateRequest;
 import com.azure.resourcemanager.databoxedge.generated.models.UploadCertificateResponse;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DevicesImpl implements Devices {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DevicesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DevicesImpl.class);
 
     private final DevicesClient innerClient;
 
@@ -283,7 +282,7 @@ public final class DevicesImpl implements Devices {
     public DataBoxEdgeDevice getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -291,7 +290,7 @@ public final class DevicesImpl implements Devices {
         }
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -304,7 +303,7 @@ public final class DevicesImpl implements Devices {
     public Response<DataBoxEdgeDevice> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -312,7 +311,7 @@ public final class DevicesImpl implements Devices {
         }
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -325,7 +324,7 @@ public final class DevicesImpl implements Devices {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -333,7 +332,7 @@ public final class DevicesImpl implements Devices {
         }
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -346,7 +345,7 @@ public final class DevicesImpl implements Devices {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -354,7 +353,7 @@ public final class DevicesImpl implements Devices {
         }
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

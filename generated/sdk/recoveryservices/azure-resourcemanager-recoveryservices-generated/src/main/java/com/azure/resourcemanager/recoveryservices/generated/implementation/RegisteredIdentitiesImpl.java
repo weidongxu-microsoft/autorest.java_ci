@@ -9,10 +9,9 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.RegisteredIdentitiesClient;
 import com.azure.resourcemanager.recoveryservices.generated.models.RegisteredIdentities;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RegisteredIdentitiesImpl implements RegisteredIdentities {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RegisteredIdentitiesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(RegisteredIdentitiesImpl.class);
 
     private final RegisteredIdentitiesClient innerClient;
 

@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.mysql.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerAdministratorResourceInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The response to a list Active Directory Administrators request. */
 @Fluent
 public final class ServerAdministratorResourceListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServerAdministratorResourceListResult.class);
-
     /*
      * The list of server Active Directory Administrators for the server.
      */

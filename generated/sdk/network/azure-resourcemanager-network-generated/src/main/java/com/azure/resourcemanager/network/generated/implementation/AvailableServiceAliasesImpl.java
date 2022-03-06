@@ -11,10 +11,9 @@ import com.azure.resourcemanager.network.generated.fluent.AvailableServiceAliase
 import com.azure.resourcemanager.network.generated.fluent.models.AvailableServiceAliasInner;
 import com.azure.resourcemanager.network.generated.models.AvailableServiceAlias;
 import com.azure.resourcemanager.network.generated.models.AvailableServiceAliases;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AvailableServiceAliasesImpl implements AvailableServiceAliases {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AvailableServiceAliasesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AvailableServiceAliasesImpl.class);
 
     private final AvailableServiceAliasesClient innerClient;
 

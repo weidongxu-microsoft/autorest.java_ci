@@ -45,8 +45,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the EventHubManagementClientImpl type. */
 @ServiceClient(builder = EventHubManagementClientBuilder.class)
 public final class EventHubManagementClientImpl implements EventHubManagementClient {
-    private final ClientLogger logger = new ClientLogger(EventHubManagementClientImpl.class);
-
     /**
      * Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of
      * the URI for every service call.
@@ -362,7 +360,7 @@ public final class EventHubManagementClientImpl implements EventHubManagementCli
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -421,4 +419,6 @@ public final class EventHubManagementClientImpl implements EventHubManagementCli
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(EventHubManagementClientImpl.class);
 }

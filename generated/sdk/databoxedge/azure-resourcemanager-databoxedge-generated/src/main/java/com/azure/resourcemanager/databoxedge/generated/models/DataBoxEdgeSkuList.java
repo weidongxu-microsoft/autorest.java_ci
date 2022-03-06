@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeSkuInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** List of SKU Information objects. */
 @Immutable
 public final class DataBoxEdgeSkuList {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DataBoxEdgeSkuList.class);
-
     /*
      * List of ResourceType Sku
      */

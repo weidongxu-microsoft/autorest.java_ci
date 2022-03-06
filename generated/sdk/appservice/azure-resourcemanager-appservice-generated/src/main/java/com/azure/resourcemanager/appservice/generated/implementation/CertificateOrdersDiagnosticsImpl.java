@@ -13,11 +13,10 @@ import com.azure.resourcemanager.appservice.generated.fluent.CertificateOrdersDi
 import com.azure.resourcemanager.appservice.generated.fluent.models.DetectorResponseInner;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrdersDiagnostics;
 import com.azure.resourcemanager.appservice.generated.models.DetectorResponse;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.OffsetDateTime;
 
 public final class CertificateOrdersDiagnosticsImpl implements CertificateOrdersDiagnostics {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CertificateOrdersDiagnosticsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(CertificateOrdersDiagnosticsImpl.class);
 
     private final CertificateOrdersDiagnosticsClient innerClient;
 

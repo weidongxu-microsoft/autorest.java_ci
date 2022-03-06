@@ -21,7 +21,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.ReservationRecommendationDetailsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationDetailsModelInner;
 import com.azure.resourcemanager.consumption.generated.models.LookBackPeriod;
@@ -32,8 +31,6 @@ import reactor.core.publisher.Mono;
  * An instance of this class provides access to all the operations defined in ReservationRecommendationDetailsClient.
  */
 public final class ReservationRecommendationDetailsClientImpl implements ReservationRecommendationDetailsClient {
-    private final ClientLogger logger = new ClientLogger(ReservationRecommendationDetailsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final ReservationRecommendationDetailsService service;
 

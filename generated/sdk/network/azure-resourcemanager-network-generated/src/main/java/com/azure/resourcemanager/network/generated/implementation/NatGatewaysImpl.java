@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.NatGatewaysClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NatGatewayInner;
 import com.azure.resourcemanager.network.generated.models.NatGateway;
 import com.azure.resourcemanager.network.generated.models.NatGateways;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NatGatewaysImpl implements NatGateways {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NatGatewaysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(NatGatewaysImpl.class);
 
     private final NatGatewaysClient innerClient;
 
@@ -83,7 +82,7 @@ public final class NatGatewaysImpl implements NatGateways {
     public NatGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -91,7 +90,7 @@ public final class NatGatewaysImpl implements NatGateways {
         }
         String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
         if (natGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'natGateways'.", id)));
@@ -105,7 +104,7 @@ public final class NatGatewaysImpl implements NatGateways {
     public Response<NatGateway> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -113,7 +112,7 @@ public final class NatGatewaysImpl implements NatGateways {
         }
         String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
         if (natGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'natGateways'.", id)));
@@ -124,7 +123,7 @@ public final class NatGatewaysImpl implements NatGateways {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -132,7 +131,7 @@ public final class NatGatewaysImpl implements NatGateways {
         }
         String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
         if (natGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'natGateways'.", id)));
@@ -143,7 +142,7 @@ public final class NatGatewaysImpl implements NatGateways {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -151,7 +150,7 @@ public final class NatGatewaysImpl implements NatGateways {
         }
         String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
         if (natGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'natGateways'.", id)));

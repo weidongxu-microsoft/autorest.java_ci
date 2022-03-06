@@ -6,18 +6,14 @@ package com.azure.resourcemanager.policy.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.policy.generated.models.ParameterDefinitionsValue;
 import com.azure.resourcemanager.policy.generated.models.PolicyType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /** The policy definition. */
 @Fluent
 public final class PolicyDefinitionInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PolicyDefinitionInner.class);
-
     /*
      * The policy definition properties.
      */

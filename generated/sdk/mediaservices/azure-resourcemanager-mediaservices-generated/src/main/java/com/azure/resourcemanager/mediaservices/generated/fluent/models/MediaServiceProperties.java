@@ -5,13 +5,11 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.models.AccountEncryption;
 import com.azure.resourcemanager.mediaservices.generated.models.KeyDelivery;
 import com.azure.resourcemanager.mediaservices.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.mediaservices.generated.models.StorageAccount;
 import com.azure.resourcemanager.mediaservices.generated.models.StorageAuthentication;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.UUID;
@@ -19,8 +17,6 @@ import java.util.UUID;
 /** Properties of the Media Services account. */
 @Fluent
 public final class MediaServiceProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MediaServiceProperties.class);
-
     /*
      * The Media Services account ID.
      */

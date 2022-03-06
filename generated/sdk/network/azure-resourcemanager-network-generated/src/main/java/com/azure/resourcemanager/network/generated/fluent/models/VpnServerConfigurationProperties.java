@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.AadAuthenticationParameters;
 import com.azure.resourcemanager.network.generated.models.IpsecPolicy;
 import com.azure.resourcemanager.network.generated.models.RadiusServer;
@@ -15,15 +14,12 @@ import com.azure.resourcemanager.network.generated.models.VpnServerConfigRadiusC
 import com.azure.resourcemanager.network.generated.models.VpnServerConfigRadiusServerRootCertificate;
 import com.azure.resourcemanager.network.generated.models.VpnServerConfigVpnClientRevokedCertificate;
 import com.azure.resourcemanager.network.generated.models.VpnServerConfigVpnClientRootCertificate;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Parameters for VpnServerConfiguration. */
 @Fluent
 public final class VpnServerConfigurationProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VpnServerConfigurationProperties.class);
-
     /*
      * The name of the VpnServerConfiguration that is unique within a resource
      * group.

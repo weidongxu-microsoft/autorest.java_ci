@@ -6,14 +6,11 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** An Activity Log alert condition that is met by comparing an activity log field and value. */
 @Fluent
 public final class ActivityLogAlertLeafCondition {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActivityLogAlertLeafCondition.class);
-
     /*
      * The name of the field that this condition will examine. The possible
      * values for this field are (case-insensitive): 'resourceId', 'category',
@@ -84,16 +81,18 @@ public final class ActivityLogAlertLeafCondition {
      */
     public void validate() {
         if (field() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property field in model ActivityLogAlertLeafCondition"));
         }
         if (equals() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property equals in model ActivityLogAlertLeafCondition"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ActivityLogAlertLeafCondition.class);
 }

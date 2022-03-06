@@ -13,10 +13,9 @@ import com.azure.resourcemanager.compute.generated.fluent.CloudServicesUpdateDom
 import com.azure.resourcemanager.compute.generated.fluent.models.UpdateDomainInner;
 import com.azure.resourcemanager.compute.generated.models.CloudServicesUpdateDomains;
 import com.azure.resourcemanager.compute.generated.models.UpdateDomain;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CloudServicesUpdateDomainsImpl implements CloudServicesUpdateDomains {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CloudServicesUpdateDomainsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(CloudServicesUpdateDomainsImpl.class);
 
     private final CloudServicesUpdateDomainsClient innerClient;
 

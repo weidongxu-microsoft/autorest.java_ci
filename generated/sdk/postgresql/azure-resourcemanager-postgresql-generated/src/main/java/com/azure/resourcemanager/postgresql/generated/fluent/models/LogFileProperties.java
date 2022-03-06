@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.postgresql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** The properties of a log file. */
 @Fluent
 public final class LogFileProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogFileProperties.class);
-
     /*
      * Size of the log file.
      */

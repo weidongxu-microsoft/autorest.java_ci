@@ -27,10 +27,9 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceRequiredIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSets;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSets {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineScaleSetsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualMachineScaleSetsImpl.class);
 
     private final VirtualMachineScaleSetsClient innerClient;
 
@@ -404,7 +403,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     public VirtualMachineScaleSet getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -412,7 +411,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         }
         String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -430,7 +429,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         String id, ExpandTypesForGetVMScaleSets expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -438,7 +437,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         }
         String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -452,7 +451,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -460,7 +459,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         }
         String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -475,7 +474,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     public void deleteByIdWithResponse(String id, Boolean forceDeletion, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -483,7 +482,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         }
         String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

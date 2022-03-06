@@ -8,14 +8,11 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontDoorCertificateSourceParameters;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.KeyVaultCertificateSourceParameters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Https settings for a domain. */
 @Fluent
 public final class CustomHttpsConfiguration {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CustomHttpsConfiguration.class);
-
     /*
      * Defines the source of the SSL certificate
      */
@@ -240,19 +237,19 @@ public final class CustomHttpsConfiguration {
      */
     public void validate() {
         if (certificateSource() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property certificateSource in model CustomHttpsConfiguration"));
         }
         if (protocolType() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property protocolType in model CustomHttpsConfiguration"));
         }
         if (minimumTlsVersion() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property minimumTlsVersion in model CustomHttpsConfiguration"));
@@ -264,4 +261,6 @@ public final class CustomHttpsConfiguration {
             innerFrontDoorCertificateSourceParameters().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(CustomHttpsConfiguration.class);
 }

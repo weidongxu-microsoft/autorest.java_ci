@@ -7,15 +7,12 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.DayOfWeek;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The properties of the bandwidth schedule. */
 @Fluent
 public final class BandwidthScheduleProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BandwidthScheduleProperties.class);
-
     /*
      * The start time of the schedule in UTC.
      */
@@ -127,22 +124,24 @@ public final class BandwidthScheduleProperties {
      */
     public void validate() {
         if (start() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property start in model BandwidthScheduleProperties"));
         }
         if (stop() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property stop in model BandwidthScheduleProperties"));
         }
         if (days() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property days in model BandwidthScheduleProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(BandwidthScheduleProperties.class);
 }

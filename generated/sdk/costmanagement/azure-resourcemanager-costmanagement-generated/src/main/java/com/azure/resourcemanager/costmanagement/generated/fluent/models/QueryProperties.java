@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.models.QueryColumn;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The QueryProperties model. */
 @Fluent
 public final class QueryProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(QueryProperties.class);
-
     /*
      * The link (url) to the next page of results.
      */

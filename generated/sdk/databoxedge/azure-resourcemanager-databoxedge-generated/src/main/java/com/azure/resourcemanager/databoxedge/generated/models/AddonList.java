@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.AddonInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Collection of all the Role addon on the Azure Stack Edge device. */
 @Immutable
 public final class AddonList {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AddonList.class);
-
     /*
      * The Value.
      */

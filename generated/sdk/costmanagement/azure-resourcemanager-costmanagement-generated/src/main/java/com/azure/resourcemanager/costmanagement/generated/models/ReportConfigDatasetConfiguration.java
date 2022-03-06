@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The configuration of dataset in the report. */
 @Fluent
 public final class ReportConfigDatasetConfiguration {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ReportConfigDatasetConfiguration.class);
-
     /*
      * Array of column names to be included in the report. Any valid report
      * column name is allowed. If not provided, then report includes all

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.frontdoor.generated.fluent.NetworkExperimentPro
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ProfileInner;
 import com.azure.resourcemanager.frontdoor.generated.models.NetworkExperimentProfiles;
 import com.azure.resourcemanager.frontdoor.generated.models.Profile;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkExperimentProfilesImpl implements NetworkExperimentProfiles {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkExperimentProfilesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(NetworkExperimentProfilesImpl.class);
 
     private final NetworkExperimentProfilesClient innerClient;
 
@@ -84,7 +83,7 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
     public Profile getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -92,7 +91,7 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
         }
         String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
         if (profileName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -106,7 +105,7 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
     public Response<Profile> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -114,7 +113,7 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
         }
         String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
         if (profileName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -128,7 +127,7 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -136,7 +135,7 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
         }
         String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
         if (profileName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -150,7 +149,7 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -158,7 +157,7 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
         }
         String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
         if (profileName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

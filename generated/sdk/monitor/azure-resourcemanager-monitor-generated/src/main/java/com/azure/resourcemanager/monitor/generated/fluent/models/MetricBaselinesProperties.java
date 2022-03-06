@@ -7,7 +7,6 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.TimeSeriesBaseline;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.util.List;
@@ -15,8 +14,6 @@ import java.util.List;
 /** The response to a metric baselines query. */
 @Fluent
 public final class MetricBaselinesProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricBaselinesProperties.class);
-
     /*
      * The timespan for which the data was retrieved. Its value consists of two
      * datetimes concatenated, separated by '/'.  This may be adjusted in the
@@ -141,19 +138,19 @@ public final class MetricBaselinesProperties {
      */
     public void validate() {
         if (timespan() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property timespan in model MetricBaselinesProperties"));
         }
         if (interval() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property interval in model MetricBaselinesProperties"));
         }
         if (baselines() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property baselines in model MetricBaselinesProperties"));
@@ -161,4 +158,6 @@ public final class MetricBaselinesProperties {
             baselines().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MetricBaselinesProperties.class);
 }

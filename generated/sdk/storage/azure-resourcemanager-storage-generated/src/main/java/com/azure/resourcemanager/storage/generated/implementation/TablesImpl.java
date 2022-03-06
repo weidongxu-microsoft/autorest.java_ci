@@ -13,10 +13,9 @@ import com.azure.resourcemanager.storage.generated.fluent.TablesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.TableInner;
 import com.azure.resourcemanager.storage.generated.models.Table;
 import com.azure.resourcemanager.storage.generated.models.Tables;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TablesImpl implements Tables {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TablesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(TablesImpl.class);
 
     private final TablesClient innerClient;
 

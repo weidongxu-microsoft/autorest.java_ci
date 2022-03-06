@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** An Azure action group for patch operations. */
 @Fluent
 public final class ActionGroupPatch {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActionGroupPatch.class);
-
     /*
      * Indicates whether this action group is enabled. If an action group is
      * not enabled, then none of its actions will be activated.

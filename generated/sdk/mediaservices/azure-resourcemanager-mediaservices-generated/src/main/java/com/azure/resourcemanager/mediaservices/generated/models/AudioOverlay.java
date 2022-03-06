@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
@@ -16,8 +14,6 @@ import java.time.Duration;
 @JsonTypeName("#Microsoft.Media.AudioOverlay")
 @Fluent
 public final class AudioOverlay extends Overlay {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AudioOverlay.class);
-
     /** {@inheritDoc} */
     @Override
     public AudioOverlay withInputLabel(String inputLabel) {

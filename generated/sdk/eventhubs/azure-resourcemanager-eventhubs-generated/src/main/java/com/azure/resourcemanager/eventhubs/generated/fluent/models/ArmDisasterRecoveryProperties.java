@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.ProvisioningStateDR;
 import com.azure.resourcemanager.eventhubs.generated.models.RoleDisasterRecovery;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Properties required to the Create Or Update Alias(Disaster Recovery configurations). */
 @Fluent
 public final class ArmDisasterRecoveryProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ArmDisasterRecoveryProperties.class);
-
     /*
      * Provisioning state of the Alias(Disaster Recovery configuration) -
      * possible values 'Accepted' or 'Succeeded' or 'Failed'

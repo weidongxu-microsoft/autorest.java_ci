@@ -16,10 +16,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.Export;
 import com.azure.resourcemanager.costmanagement.generated.models.ExportExecutionListResult;
 import com.azure.resourcemanager.costmanagement.generated.models.ExportListResult;
 import com.azure.resourcemanager.costmanagement.generated.models.Exports;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExportsImpl implements Exports {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExportsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ExportsImpl.class);
 
     private final ExportsClient innerClient;
 
@@ -122,7 +121,7 @@ public final class ExportsImpl implements Exports {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/exports/{exportName}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -132,7 +131,7 @@ public final class ExportsImpl implements Exports {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/exports/{exportName}", "exportName");
         if (exportName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'exports'.", id)));
@@ -146,7 +145,7 @@ public final class ExportsImpl implements Exports {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/exports/{exportName}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -156,7 +155,7 @@ public final class ExportsImpl implements Exports {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/exports/{exportName}", "exportName");
         if (exportName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'exports'.", id)));
@@ -170,7 +169,7 @@ public final class ExportsImpl implements Exports {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/exports/{exportName}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -180,7 +179,7 @@ public final class ExportsImpl implements Exports {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/exports/{exportName}", "exportName");
         if (exportName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'exports'.", id)));
@@ -194,7 +193,7 @@ public final class ExportsImpl implements Exports {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/exports/{exportName}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -204,7 +203,7 @@ public final class ExportsImpl implements Exports {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.CostManagement/exports/{exportName}", "exportName");
         if (exportName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'exports'.", id)));

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.RouteTablesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteTableInner;
 import com.azure.resourcemanager.network.generated.models.RouteTable;
 import com.azure.resourcemanager.network.generated.models.RouteTables;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RouteTablesImpl implements RouteTables {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RouteTablesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(RouteTablesImpl.class);
 
     private final RouteTablesClient innerClient;
 
@@ -83,7 +82,7 @@ public final class RouteTablesImpl implements RouteTables {
     public RouteTable getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -91,7 +90,7 @@ public final class RouteTablesImpl implements RouteTables {
         }
         String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
         if (routeTableName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
@@ -105,7 +104,7 @@ public final class RouteTablesImpl implements RouteTables {
     public Response<RouteTable> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -113,7 +112,7 @@ public final class RouteTablesImpl implements RouteTables {
         }
         String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
         if (routeTableName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
@@ -124,7 +123,7 @@ public final class RouteTablesImpl implements RouteTables {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -132,7 +131,7 @@ public final class RouteTablesImpl implements RouteTables {
         }
         String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
         if (routeTableName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
@@ -143,7 +142,7 @@ public final class RouteTablesImpl implements RouteTables {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -151,7 +150,7 @@ public final class RouteTablesImpl implements RouteTables {
         }
         String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
         if (routeTableName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));

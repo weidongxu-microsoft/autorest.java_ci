@@ -7,14 +7,11 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.SecuritySettingsProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The security settings of a device. */
 @Fluent
 public final class SecuritySettings extends ArmBaseModel {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SecuritySettings.class);
-
     /*
      * Properties of the security settings.
      */
@@ -66,7 +63,7 @@ public final class SecuritySettings extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model SecuritySettings"));
@@ -74,4 +71,6 @@ public final class SecuritySettings extends ArmBaseModel {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(SecuritySettings.class);
 }

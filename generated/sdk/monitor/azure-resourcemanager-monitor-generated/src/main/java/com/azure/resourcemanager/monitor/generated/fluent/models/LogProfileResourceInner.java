@@ -8,7 +8,6 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.RetentionPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -16,8 +15,6 @@ import java.util.Map;
 /** The log profile resource. */
 @Fluent
 public final class LogProfileResourceInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogProfileResourceInner.class);
-
     /*
      * The log profile properties of the resource.
      */
@@ -179,7 +176,7 @@ public final class LogProfileResourceInner extends Resource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model LogProfileResourceInner"));
@@ -187,4 +184,6 @@ public final class LogProfileResourceInner extends Resource {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(LogProfileResourceInner.class);
 }

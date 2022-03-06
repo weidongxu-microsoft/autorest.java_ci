@@ -13,10 +13,9 @@ import com.azure.resourcemanager.recoveryservices.generated.fluent.PrivateLinkRe
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.PrivateLinkResourceInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.PrivateLinkResource;
 import com.azure.resourcemanager.recoveryservices.generated.models.PrivateLinkResourcesOperations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateLinkResourcesOperationsImpl implements PrivateLinkResourcesOperations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateLinkResourcesOperationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PrivateLinkResourcesOperationsImpl.class);
 
     private final PrivateLinkResourcesOperationsClient innerClient;
 

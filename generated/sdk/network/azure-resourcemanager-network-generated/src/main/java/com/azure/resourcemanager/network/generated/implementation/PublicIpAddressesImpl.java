@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.PublicIpAddressesClien
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressInner;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddress;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddresses;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PublicIpAddressesImpl implements PublicIpAddresses {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PublicIpAddressesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PublicIpAddressesImpl.class);
 
     private final PublicIpAddressesClient innerClient;
 
@@ -303,7 +302,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
     public PublicIpAddress getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -311,7 +310,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         }
         String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
         if (publicIpAddressName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -327,7 +326,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
     public Response<PublicIpAddress> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -335,7 +334,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         }
         String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
         if (publicIpAddressName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -348,7 +347,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -356,7 +355,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         }
         String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
         if (publicIpAddressName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -369,7 +368,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -377,7 +376,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         }
         String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
         if (publicIpAddressName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

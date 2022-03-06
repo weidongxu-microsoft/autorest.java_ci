@@ -13,12 +13,10 @@ import com.azure.resourcemanager.frontdoor.generated.fluent.models.CheckNameAvai
 import com.azure.resourcemanager.frontdoor.generated.models.CheckNameAvailabilityInput;
 import com.azure.resourcemanager.frontdoor.generated.models.CheckNameAvailabilityOutput;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorNameAvailabilityWithSubscriptions;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FrontDoorNameAvailabilityWithSubscriptionsImpl
     implements FrontDoorNameAvailabilityWithSubscriptions {
-    @JsonIgnore
-    private final ClientLogger logger = new ClientLogger(FrontDoorNameAvailabilityWithSubscriptionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(FrontDoorNameAvailabilityWithSubscriptionsImpl.class);
 
     private final FrontDoorNameAvailabilityWithSubscriptionsClient innerClient;
 

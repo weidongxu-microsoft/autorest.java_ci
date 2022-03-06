@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.ClusterPatchProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -15,8 +13,6 @@ import java.util.Map;
 /** The top level Log Analytics cluster resource container. */
 @Fluent
 public final class ClusterPatch {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ClusterPatch.class);
-
     /*
      * Log Analytics cluster properties.
      */

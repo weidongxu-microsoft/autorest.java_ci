@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Defines the Resource ID for a Security Policy. */
 @Fluent
 public final class SecurityPolicyLink {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SecurityPolicyLink.class);
-
     /*
      * Resource ID.
      */

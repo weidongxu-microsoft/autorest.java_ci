@@ -5,11 +5,9 @@
 package com.azure.resourcemanager.hdinsight.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.hdinsight.generated.models.QuotaCapability;
 import com.azure.resourcemanager.hdinsight.generated.models.RegionsCapability;
 import com.azure.resourcemanager.hdinsight.generated.models.VersionsCapability;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -18,8 +16,6 @@ import java.util.Map;
 /** The Get Capabilities operation response. */
 @Fluent
 public final class CapabilitiesResultInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CapabilitiesResultInner.class);
-
     /*
      * The version capability.
      */

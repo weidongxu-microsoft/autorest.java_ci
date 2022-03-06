@@ -13,10 +13,9 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.TablesClie
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.TableInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.Table;
 import com.azure.resourcemanager.operationalinsights.generated.models.Tables;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TablesImpl implements Tables {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TablesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(TablesImpl.class);
 
     private final TablesClient innerClient;
 
@@ -84,7 +83,7 @@ public final class TablesImpl implements Tables {
     public Table getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -92,14 +91,14 @@ public final class TablesImpl implements Tables {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String tableName = Utils.getValueFromIdByName(id, "tables");
         if (tableName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
@@ -110,7 +109,7 @@ public final class TablesImpl implements Tables {
     public Response<Table> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -118,14 +117,14 @@ public final class TablesImpl implements Tables {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String tableName = Utils.getValueFromIdByName(id, "tables");
         if (tableName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
@@ -136,7 +135,7 @@ public final class TablesImpl implements Tables {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -144,14 +143,14 @@ public final class TablesImpl implements Tables {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String tableName = Utils.getValueFromIdByName(id, "tables");
         if (tableName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
@@ -162,7 +161,7 @@ public final class TablesImpl implements Tables {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -170,14 +169,14 @@ public final class TablesImpl implements Tables {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String tableName = Utils.getValueFromIdByName(id, "tables");
         if (tableName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));

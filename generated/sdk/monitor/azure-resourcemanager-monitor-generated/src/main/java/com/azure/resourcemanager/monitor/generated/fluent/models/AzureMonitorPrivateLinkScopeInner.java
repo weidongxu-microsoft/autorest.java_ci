@@ -7,7 +7,6 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.PrivateLinkScopesResource;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -15,8 +14,6 @@ import java.util.Map;
 /** An Azure Monitor PrivateLinkScope definition. */
 @Fluent
 public final class AzureMonitorPrivateLinkScopeInner extends PrivateLinkScopesResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AzureMonitorPrivateLinkScopeInner.class);
-
     /*
      * Properties that define a Azure Monitor PrivateLinkScope resource.
      */
@@ -75,7 +72,7 @@ public final class AzureMonitorPrivateLinkScopeInner extends PrivateLinkScopesRe
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model AzureMonitorPrivateLinkScopeInner"));
@@ -83,4 +80,6 @@ public final class AzureMonitorPrivateLinkScopeInner extends PrivateLinkScopesRe
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(AzureMonitorPrivateLinkScopeInner.class);
 }

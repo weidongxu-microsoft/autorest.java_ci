@@ -13,10 +13,9 @@ import com.azure.resourcemanager.keyvault.generated.fluent.KeysClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.KeyInner;
 import com.azure.resourcemanager.keyvault.generated.models.Key;
 import com.azure.resourcemanager.keyvault.generated.models.Keys;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class KeysImpl implements Keys {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KeysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(KeysImpl.class);
 
     private final KeysClient innerClient;
 
@@ -99,7 +98,7 @@ public final class KeysImpl implements Keys {
     public Key getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -107,14 +106,14 @@ public final class KeysImpl implements Keys {
         }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
         if (vaultName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
         }
         String keyName = Utils.getValueFromIdByName(id, "keys");
         if (keyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));
@@ -125,7 +124,7 @@ public final class KeysImpl implements Keys {
     public Response<Key> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -133,14 +132,14 @@ public final class KeysImpl implements Keys {
         }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
         if (vaultName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
         }
         String keyName = Utils.getValueFromIdByName(id, "keys");
         if (keyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));

@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.policy.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyExemptionInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** List of policy exemptions. */
 @Fluent
 public final class PolicyExemptionListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PolicyExemptionListResult.class);
-
     /*
      * An array of policy exemptions.
      */

@@ -14,10 +14,9 @@ import com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryIm
 import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersion;
 import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersions;
 import com.azure.resourcemanager.compute.generated.models.SharedToValues;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SharedGalleryImageVersionsImpl implements SharedGalleryImageVersions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SharedGalleryImageVersionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(SharedGalleryImageVersionsImpl.class);
 
     private final SharedGalleryImageVersionsClient innerClient;
 

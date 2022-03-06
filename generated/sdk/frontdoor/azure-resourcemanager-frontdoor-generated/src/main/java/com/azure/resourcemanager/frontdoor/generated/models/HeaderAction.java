@@ -6,14 +6,11 @@ package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** An action that can manipulate an http header. */
 @Fluent
 public final class HeaderAction {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(HeaderAction.class);
-
     /*
      * Which type of manipulation to apply to the header.
      */
@@ -102,14 +99,16 @@ public final class HeaderAction {
      */
     public void validate() {
         if (headerActionType() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property headerActionType in model HeaderAction"));
         }
         if (headerName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property headerName in model HeaderAction"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(HeaderAction.class);
 }

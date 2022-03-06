@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.SecretInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** List of secrets. */
 @Fluent
 public final class SecretListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SecretListResult.class);
-
     /*
      * The list of secrets.
      */

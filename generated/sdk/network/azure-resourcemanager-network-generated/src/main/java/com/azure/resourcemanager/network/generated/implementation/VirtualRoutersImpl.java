@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.VirtualRoutersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualRouterInner;
 import com.azure.resourcemanager.network.generated.models.VirtualRouter;
 import com.azure.resourcemanager.network.generated.models.VirtualRouters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualRoutersImpl implements VirtualRouters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualRoutersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualRoutersImpl.class);
 
     private final VirtualRoutersClient innerClient;
 
@@ -83,7 +82,7 @@ public final class VirtualRoutersImpl implements VirtualRouters {
     public VirtualRouter getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -91,7 +90,7 @@ public final class VirtualRoutersImpl implements VirtualRouters {
         }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
         if (virtualRouterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -106,7 +105,7 @@ public final class VirtualRoutersImpl implements VirtualRouters {
     public Response<VirtualRouter> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -114,7 +113,7 @@ public final class VirtualRoutersImpl implements VirtualRouters {
         }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
         if (virtualRouterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -126,7 +125,7 @@ public final class VirtualRoutersImpl implements VirtualRouters {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -134,7 +133,7 @@ public final class VirtualRoutersImpl implements VirtualRouters {
         }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
         if (virtualRouterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -146,7 +145,7 @@ public final class VirtualRoutersImpl implements VirtualRouters {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -154,7 +153,7 @@ public final class VirtualRoutersImpl implements VirtualRouters {
         }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
         if (virtualRouterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.commerce.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -17,8 +15,6 @@ import java.util.UUID;
 /** Detailed information about the meter. */
 @Fluent
 public final class MeterInfo {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MeterInfo.class);
-
     /*
      * The unique identifier of the resource.
      */

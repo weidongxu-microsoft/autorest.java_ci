@@ -5,18 +5,14 @@
 package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.RoutingPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The properties of a RoutingIntent resource. */
 @Fluent
 public final class RoutingIntentProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RoutingIntentProperties.class);
-
     /*
      * List of routing policies.
      */

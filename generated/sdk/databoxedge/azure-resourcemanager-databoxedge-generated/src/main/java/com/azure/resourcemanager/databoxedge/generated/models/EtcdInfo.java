@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Etcd configuration. */
 @Immutable
 public final class EtcdInfo {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EtcdInfo.class);
-
     /*
      * Etcd type
      */

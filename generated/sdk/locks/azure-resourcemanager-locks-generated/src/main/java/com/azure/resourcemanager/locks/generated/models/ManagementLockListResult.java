@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.locks.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.locks.generated.fluent.models.ManagementLockObjectInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The list of locks. */
 @Fluent
 public final class ManagementLockListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagementLockListResult.class);
-
     /*
      * The list of locks.
      */

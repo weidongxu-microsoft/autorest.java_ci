@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.mysql.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerUpdateParametersProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -15,8 +13,6 @@ import java.util.Map;
 /** Parameters allowed to update for a server. */
 @Fluent
 public final class ServerUpdateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServerUpdateParameters.class);
-
     /*
      * The Azure Active Directory identity of the server.
      */

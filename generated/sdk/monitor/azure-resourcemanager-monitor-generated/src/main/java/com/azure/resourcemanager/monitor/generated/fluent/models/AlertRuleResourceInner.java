@@ -9,7 +9,6 @@ import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.RuleAction;
 import com.azure.resourcemanager.monitor.generated.models.RuleCondition;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -18,8 +17,6 @@ import java.util.Map;
 /** The alert rule resource. */
 @Fluent
 public final class AlertRuleResourceInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AlertRuleResourceInner.class);
-
     /*
      * The alert rule properties of the resource.
      */
@@ -230,7 +227,7 @@ public final class AlertRuleResourceInner extends Resource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model AlertRuleResourceInner"));
@@ -238,4 +235,6 @@ public final class AlertRuleResourceInner extends Resource {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(AlertRuleResourceInner.class);
 }

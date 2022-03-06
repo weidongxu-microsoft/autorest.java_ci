@@ -18,10 +18,9 @@ import com.azure.resourcemanager.resources.generated.models.TagOperations;
 import com.azure.resourcemanager.resources.generated.models.TagValue;
 import com.azure.resourcemanager.resources.generated.models.TagsPatchResource;
 import com.azure.resourcemanager.resources.generated.models.TagsResource;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TagOperationsImpl implements TagOperations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TagOperationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(TagOperationsImpl.class);
 
     private final TagOperationsClient innerClient;
 

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.PrivateLinkScopedResou
 import com.azure.resourcemanager.monitor.generated.fluent.models.ScopedResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.PrivateLinkScopedResources;
 import com.azure.resourcemanager.monitor.generated.models.ScopedResource;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedResources {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateLinkScopedResourcesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PrivateLinkScopedResourcesImpl.class);
 
     private final PrivateLinkScopedResourcesClient innerClient;
 
@@ -77,7 +76,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
     public ScopedResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -85,7 +84,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
         }
         String scopeName = Utils.getValueFromIdByName(id, "privateLinkScopes");
         if (scopeName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -94,7 +93,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
         }
         String name = Utils.getValueFromIdByName(id, "scopedResources");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -106,7 +105,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
     public Response<ScopedResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -114,7 +113,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
         }
         String scopeName = Utils.getValueFromIdByName(id, "privateLinkScopes");
         if (scopeName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -123,7 +122,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
         }
         String name = Utils.getValueFromIdByName(id, "scopedResources");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -135,7 +134,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -143,7 +142,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
         }
         String scopeName = Utils.getValueFromIdByName(id, "privateLinkScopes");
         if (scopeName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -152,7 +151,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
         }
         String name = Utils.getValueFromIdByName(id, "scopedResources");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -164,7 +163,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -172,7 +171,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
         }
         String scopeName = Utils.getValueFromIdByName(id, "privateLinkScopes");
         if (scopeName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -181,7 +180,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
         }
         String name = Utils.getValueFromIdByName(id, "scopedResources");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

@@ -15,10 +15,9 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineS
 import com.azure.resourcemanager.compute.generated.models.AvailabilitySet;
 import com.azure.resourcemanager.compute.generated.models.AvailabilitySets;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineSize;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AvailabilitySetsImpl implements AvailabilitySets {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AvailabilitySetsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AvailabilitySetsImpl.class);
 
     private final AvailabilitySetsClient innerClient;
 
@@ -99,7 +98,7 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
     public AvailabilitySet getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -107,7 +106,7 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
         }
         String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
         if (availabilitySetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -120,7 +119,7 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
     public Response<AvailabilitySet> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -128,7 +127,7 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
         }
         String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
         if (availabilitySetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -141,7 +140,7 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
         }
         String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
         if (availabilitySetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -162,7 +161,7 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -170,7 +169,7 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
         }
         String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
         if (availabilitySetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

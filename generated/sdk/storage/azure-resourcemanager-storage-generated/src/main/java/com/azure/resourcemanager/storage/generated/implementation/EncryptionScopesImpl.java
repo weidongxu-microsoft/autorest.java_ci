@@ -13,10 +13,9 @@ import com.azure.resourcemanager.storage.generated.fluent.EncryptionScopesClient
 import com.azure.resourcemanager.storage.generated.fluent.models.EncryptionScopeInner;
 import com.azure.resourcemanager.storage.generated.models.EncryptionScope;
 import com.azure.resourcemanager.storage.generated.models.EncryptionScopes;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class EncryptionScopesImpl implements EncryptionScopes {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EncryptionScopesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(EncryptionScopesImpl.class);
 
     private final EncryptionScopesClient innerClient;
 
@@ -65,7 +64,7 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
     public EncryptionScope getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -73,7 +72,7 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -81,7 +80,7 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
         }
         String encryptionScopeName = Utils.getValueFromIdByName(id, "encryptionScopes");
         if (encryptionScopeName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -94,7 +93,7 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
     public Response<EncryptionScope> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -102,7 +101,7 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -110,7 +109,7 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
         }
         String encryptionScopeName = Utils.getValueFromIdByName(id, "encryptionScopes");
         if (encryptionScopeName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

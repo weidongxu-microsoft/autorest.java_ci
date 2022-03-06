@@ -6,15 +6,12 @@ package com.azure.resourcemanager.mysql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** The properties for input to get wait statistics. */
 @Fluent
 public final class WaitStatisticsInputProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WaitStatisticsInputProperties.class);
-
     /*
      * Observation start time.
      */
@@ -100,22 +97,24 @@ public final class WaitStatisticsInputProperties {
      */
     public void validate() {
         if (observationStartTime() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property observationStartTime in model WaitStatisticsInputProperties"));
         }
         if (observationEndTime() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property observationEndTime in model WaitStatisticsInputProperties"));
         }
         if (aggregationWindow() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property aggregationWindow in model WaitStatisticsInputProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(WaitStatisticsInputProperties.class);
 }

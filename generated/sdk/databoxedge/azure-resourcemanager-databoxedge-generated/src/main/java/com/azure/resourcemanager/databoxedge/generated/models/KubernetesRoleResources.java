@@ -6,14 +6,11 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Kubernetes role resources. */
 @Fluent
 public final class KubernetesRoleResources {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KubernetesRoleResources.class);
-
     /*
      * Kubernetes role storage resource
      */
@@ -91,7 +88,7 @@ public final class KubernetesRoleResources {
             storage().validate();
         }
         if (compute() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property compute in model KubernetesRoleResources"));
         } else {
@@ -101,4 +98,6 @@ public final class KubernetesRoleResources {
             network().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(KubernetesRoleResources.class);
 }

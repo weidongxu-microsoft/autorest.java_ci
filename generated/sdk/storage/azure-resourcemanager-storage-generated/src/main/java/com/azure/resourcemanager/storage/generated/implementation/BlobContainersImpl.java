@@ -27,10 +27,9 @@ import com.azure.resourcemanager.storage.generated.models.LeaseContainerResponse
 import com.azure.resourcemanager.storage.generated.models.LegalHold;
 import com.azure.resourcemanager.storage.generated.models.ListContainerItem;
 import com.azure.resourcemanager.storage.generated.models.ListContainersInclude;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class BlobContainersImpl implements BlobContainers {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BlobContainersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(BlobContainersImpl.class);
 
     private final BlobContainersClient innerClient;
 
@@ -305,7 +304,7 @@ public final class BlobContainersImpl implements BlobContainers {
     public BlobContainer getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -313,7 +312,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -321,7 +320,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String containerName = Utils.getValueFromIdByName(id, "containers");
         if (containerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
@@ -332,7 +331,7 @@ public final class BlobContainersImpl implements BlobContainers {
     public Response<BlobContainer> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -340,7 +339,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -348,7 +347,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String containerName = Utils.getValueFromIdByName(id, "containers");
         if (containerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
@@ -359,7 +358,7 @@ public final class BlobContainersImpl implements BlobContainers {
     public ImmutabilityPolicy getImmutabilityPolicyById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -367,7 +366,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -375,7 +374,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String containerName = Utils.getValueFromIdByName(id, "containers");
         if (containerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
@@ -391,7 +390,7 @@ public final class BlobContainersImpl implements BlobContainers {
         String id, String ifMatch, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -399,7 +398,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -407,7 +406,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String containerName = Utils.getValueFromIdByName(id, "containers");
         if (containerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
@@ -418,7 +417,7 @@ public final class BlobContainersImpl implements BlobContainers {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -426,7 +425,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -434,7 +433,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String containerName = Utils.getValueFromIdByName(id, "containers");
         if (containerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
@@ -445,7 +444,7 @@ public final class BlobContainersImpl implements BlobContainers {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -453,7 +452,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -461,7 +460,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String containerName = Utils.getValueFromIdByName(id, "containers");
         if (containerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
@@ -472,7 +471,7 @@ public final class BlobContainersImpl implements BlobContainers {
     public ImmutabilityPolicy deleteImmutabilityPolicyById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -480,7 +479,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -488,7 +487,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String containerName = Utils.getValueFromIdByName(id, "containers");
         if (containerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
@@ -504,7 +503,7 @@ public final class BlobContainersImpl implements BlobContainers {
         String id, String ifMatch, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -512,7 +511,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -520,7 +519,7 @@ public final class BlobContainersImpl implements BlobContainers {
         }
         String containerName = Utils.getValueFromIdByName(id, "containers");
         if (containerName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));

@@ -15,10 +15,9 @@ import com.azure.resourcemanager.network.generated.fluent.models.ConnectionMonit
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorQueryResult;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorResult;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitors;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ConnectionMonitorsImpl implements ConnectionMonitors {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ConnectionMonitorsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ConnectionMonitorsImpl.class);
 
     private final ConnectionMonitorsClient innerClient;
 
@@ -122,7 +121,7 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
     public ConnectionMonitorResult getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -130,7 +129,7 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -138,7 +137,7 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         }
         String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
         if (connectionMonitorName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -153,7 +152,7 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
     public Response<ConnectionMonitorResult> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -161,7 +160,7 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -169,7 +168,7 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         }
         String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
         if (connectionMonitorName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -182,7 +181,7 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -190,7 +189,7 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -198,7 +197,7 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         }
         String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
         if (connectionMonitorName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -211,7 +210,7 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -219,7 +218,7 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -227,7 +226,7 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         }
         String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
         if (connectionMonitorName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

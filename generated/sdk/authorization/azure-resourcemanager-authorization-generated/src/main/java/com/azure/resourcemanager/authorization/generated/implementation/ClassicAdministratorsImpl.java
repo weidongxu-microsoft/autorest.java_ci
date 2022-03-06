@@ -11,10 +11,9 @@ import com.azure.resourcemanager.authorization.generated.fluent.ClassicAdministr
 import com.azure.resourcemanager.authorization.generated.fluent.models.ClassicAdministratorInner;
 import com.azure.resourcemanager.authorization.generated.models.ClassicAdministrator;
 import com.azure.resourcemanager.authorization.generated.models.ClassicAdministrators;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ClassicAdministratorsImpl implements ClassicAdministrators {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ClassicAdministratorsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ClassicAdministratorsImpl.class);
 
     private final ClassicAdministratorsClient innerClient;
 

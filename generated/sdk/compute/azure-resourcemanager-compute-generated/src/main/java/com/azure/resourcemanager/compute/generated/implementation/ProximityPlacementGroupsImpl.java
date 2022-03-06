@@ -13,10 +13,9 @@ import com.azure.resourcemanager.compute.generated.fluent.ProximityPlacementGrou
 import com.azure.resourcemanager.compute.generated.fluent.models.ProximityPlacementGroupInner;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroup;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroups;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ProximityPlacementGroupsImpl implements ProximityPlacementGroups {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ProximityPlacementGroupsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ProximityPlacementGroupsImpl.class);
 
     private final ProximityPlacementGroupsClient innerClient;
 
@@ -90,7 +89,7 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
     public ProximityPlacementGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -98,7 +97,7 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
         }
         String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
         if (proximityPlacementGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -117,7 +116,7 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
         String id, String includeColocationStatus, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -125,7 +124,7 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
         }
         String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
         if (proximityPlacementGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -141,7 +140,7 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
         }
         String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
         if (proximityPlacementGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -163,7 +162,7 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -171,7 +170,7 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
         }
         String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
         if (proximityPlacementGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

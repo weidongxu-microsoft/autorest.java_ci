@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.WebCategoriesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureWebCategoryInner;
 import com.azure.resourcemanager.network.generated.models.AzureWebCategory;
 import com.azure.resourcemanager.network.generated.models.WebCategories;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class WebCategoriesImpl implements WebCategories {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WebCategoriesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(WebCategoriesImpl.class);
 
     private final WebCategoriesClient innerClient;
 

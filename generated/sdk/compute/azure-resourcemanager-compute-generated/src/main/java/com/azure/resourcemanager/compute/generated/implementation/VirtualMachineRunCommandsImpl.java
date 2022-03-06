@@ -17,10 +17,9 @@ import com.azure.resourcemanager.compute.generated.models.RunCommandDocument;
 import com.azure.resourcemanager.compute.generated.models.RunCommandDocumentBase;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommand;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommands;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCommands {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineRunCommandsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualMachineRunCommandsImpl.class);
 
     private final VirtualMachineRunCommandsClient innerClient;
 
@@ -117,7 +116,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
     public VirtualMachineRunCommand getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -125,7 +124,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
         }
         String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
         if (vmName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -133,7 +132,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
         }
         String runCommandName = Utils.getValueFromIdByName(id, "runCommands");
         if (runCommandName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'runCommands'.", id)));
@@ -147,7 +146,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
     public Response<VirtualMachineRunCommand> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -155,7 +154,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
         }
         String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
         if (vmName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -163,7 +162,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
         }
         String runCommandName = Utils.getValueFromIdByName(id, "runCommands");
         if (runCommandName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'runCommands'.", id)));
@@ -174,7 +173,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -182,7 +181,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
         }
         String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
         if (vmName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -190,7 +189,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
         }
         String runCommandName = Utils.getValueFromIdByName(id, "runCommands");
         if (runCommandName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'runCommands'.", id)));
@@ -201,7 +200,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -209,7 +208,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
         }
         String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
         if (vmName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -217,7 +216,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
         }
         String runCommandName = Utils.getValueFromIdByName(id, "runCommands");
         if (runCommandName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'runCommands'.", id)));

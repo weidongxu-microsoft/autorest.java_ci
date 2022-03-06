@@ -21,7 +21,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.fluent.DiagnosticSettingsCategoriesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsCategoryResourceCollectionInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsCategoryResourceInner;
@@ -29,8 +28,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in DiagnosticSettingsCategoriesClient. */
 public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticSettingsCategoriesClient {
-    private final ClientLogger logger = new ClientLogger(DiagnosticSettingsCategoriesClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final DiagnosticSettingsCategoriesService service;
 

@@ -6,15 +6,12 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** The start and end date for pulling data for the report. */
 @Fluent
 public final class ReportConfigTimePeriod {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ReportConfigTimePeriod.class);
-
     /*
      * The start date to pull data from.
      */
@@ -74,14 +71,16 @@ public final class ReportConfigTimePeriod {
      */
     public void validate() {
         if (from() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property from in model ReportConfigTimePeriod"));
         }
         if (to() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property to in model ReportConfigTimePeriod"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ReportConfigTimePeriod.class);
 }

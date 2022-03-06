@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.dns.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.dns.generated.models.DnsResourceReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
@@ -17,8 +15,6 @@ import java.util.List;
  */
 @Fluent
 public final class DnsResourceReferenceResultProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DnsResourceReferenceResultProperties.class);
-
     /*
      * The result of dns resource reference request. A list of dns resource
      * references for each of the azure resource in the request

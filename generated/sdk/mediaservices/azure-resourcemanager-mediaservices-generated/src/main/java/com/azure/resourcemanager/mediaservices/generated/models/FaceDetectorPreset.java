@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -21,8 +19,6 @@ import java.util.Map;
 @JsonTypeName("#Microsoft.Media.FaceDetectorPreset")
 @Fluent
 public final class FaceDetectorPreset extends Preset {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FaceDetectorPreset.class);
-
     /*
      * Specifies the maximum resolution at which your video is analyzed. The
      * default behavior is "SourceResolution," which will keep the input video

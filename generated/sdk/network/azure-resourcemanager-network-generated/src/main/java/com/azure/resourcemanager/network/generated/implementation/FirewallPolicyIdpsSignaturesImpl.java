@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.models.QueryResultsInn
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyIdpsSignatures;
 import com.azure.resourcemanager.network.generated.models.IdpsQueryObject;
 import com.azure.resourcemanager.network.generated.models.QueryResults;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FirewallPolicyIdpsSignaturesImpl implements FirewallPolicyIdpsSignatures {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FirewallPolicyIdpsSignaturesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(FirewallPolicyIdpsSignaturesImpl.class);
 
     private final FirewallPolicyIdpsSignaturesClient innerClient;
 

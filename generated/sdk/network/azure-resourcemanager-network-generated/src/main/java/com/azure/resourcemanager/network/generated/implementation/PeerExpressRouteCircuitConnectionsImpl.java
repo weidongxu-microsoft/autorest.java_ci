@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.PeerExpressRouteCircui
 import com.azure.resourcemanager.network.generated.fluent.models.PeerExpressRouteCircuitConnectionInner;
 import com.azure.resourcemanager.network.generated.models.PeerExpressRouteCircuitConnection;
 import com.azure.resourcemanager.network.generated.models.PeerExpressRouteCircuitConnections;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PeerExpressRouteCircuitConnectionsImpl implements PeerExpressRouteCircuitConnections {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PeerExpressRouteCircuitConnectionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PeerExpressRouteCircuitConnectionsImpl.class);
 
     private final PeerExpressRouteCircuitConnectionsClient innerClient;
 

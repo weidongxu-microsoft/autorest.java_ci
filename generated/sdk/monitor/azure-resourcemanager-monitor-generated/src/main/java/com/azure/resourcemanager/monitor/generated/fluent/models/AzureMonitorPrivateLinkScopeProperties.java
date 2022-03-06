@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Properties that define a Azure Monitor PrivateLinkScope resource. */
 @Immutable
 public final class AzureMonitorPrivateLinkScopeProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AzureMonitorPrivateLinkScopeProperties.class);
-
     /*
      * Current state of this PrivateLinkScope: whether or not is has been
      * provisioned within the resource group it is defined. Users cannot change

@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The KeyRotationPolicyAttributes model. */
 @Fluent
 public final class KeyRotationPolicyAttributes {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KeyRotationPolicyAttributes.class);
-
     /*
      * Creation time in seconds since 1970-01-01T00:00:00Z.
      */

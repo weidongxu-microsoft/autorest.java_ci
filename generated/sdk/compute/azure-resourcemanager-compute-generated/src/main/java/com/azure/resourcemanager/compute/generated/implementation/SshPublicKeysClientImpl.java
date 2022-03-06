@@ -29,7 +29,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.RestProxy;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.SshPublicKeysClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyGenerateKeyPairResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyResourceInner;
@@ -40,8 +39,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in SshPublicKeysClient. */
 public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
-    private final ClientLogger logger = new ClientLogger(SshPublicKeysClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final SshPublicKeysService service;
 

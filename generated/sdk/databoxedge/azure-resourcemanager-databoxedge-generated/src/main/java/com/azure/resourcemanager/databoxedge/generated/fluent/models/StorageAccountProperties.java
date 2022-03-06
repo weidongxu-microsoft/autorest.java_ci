@@ -8,14 +8,11 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.DataPolicy;
 import com.azure.resourcemanager.databoxedge.generated.models.StorageAccountStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The storage account properties. */
 @Fluent
 public final class StorageAccountProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StorageAccountProperties.class);
-
     /*
      * Description for the storage Account.
      */
@@ -159,10 +156,12 @@ public final class StorageAccountProperties {
      */
     public void validate() {
         if (dataPolicy() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property dataPolicy in model StorageAccountProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(StorageAccountProperties.class);
 }

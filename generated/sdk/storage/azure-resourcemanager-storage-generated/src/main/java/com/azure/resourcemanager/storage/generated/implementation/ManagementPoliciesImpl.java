@@ -13,10 +13,9 @@ import com.azure.resourcemanager.storage.generated.fluent.models.ManagementPolic
 import com.azure.resourcemanager.storage.generated.models.ManagementPolicies;
 import com.azure.resourcemanager.storage.generated.models.ManagementPolicy;
 import com.azure.resourcemanager.storage.generated.models.ManagementPolicyName;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ManagementPoliciesImpl implements ManagementPolicies {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagementPoliciesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ManagementPoliciesImpl.class);
 
     private final ManagementPoliciesClient innerClient;
 
@@ -66,7 +65,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
     public ManagementPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -74,7 +73,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -83,7 +82,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         ManagementPolicyName managementPolicyName =
             ManagementPolicyName.fromString(Utils.getValueFromIdByName(id, "managementPolicies"));
         if (managementPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -96,7 +95,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
     public Response<ManagementPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -104,7 +103,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -113,7 +112,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         ManagementPolicyName managementPolicyName =
             ManagementPolicyName.fromString(Utils.getValueFromIdByName(id, "managementPolicies"));
         if (managementPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -126,7 +125,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -134,7 +133,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -143,7 +142,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         ManagementPolicyName managementPolicyName =
             ManagementPolicyName.fromString(Utils.getValueFromIdByName(id, "managementPolicies"));
         if (managementPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -156,7 +155,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -164,7 +163,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -173,7 +172,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         ManagementPolicyName managementPolicyName =
             ManagementPolicyName.fromString(Utils.getValueFromIdByName(id, "managementPolicies"));
         if (managementPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

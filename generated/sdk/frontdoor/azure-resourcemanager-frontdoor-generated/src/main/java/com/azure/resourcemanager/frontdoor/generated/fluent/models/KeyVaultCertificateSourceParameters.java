@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.KeyVaultCertificateSourceParametersVault;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Parameters required for bring-your-own-certification via Key Vault. */
 @Fluent
 public final class KeyVaultCertificateSourceParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KeyVaultCertificateSourceParameters.class);
-
     /*
      * The Key Vault containing the SSL certificate
      */

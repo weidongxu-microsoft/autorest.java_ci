@@ -13,15 +13,12 @@ import com.azure.resourcemanager.databoxedge.generated.models.IoTEdgeAgentInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.MountPointMap;
 import com.azure.resourcemanager.databoxedge.generated.models.PlatformType;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** IoT role properties. */
 @Fluent
 public final class IoTRoleProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(IoTRoleProperties.class);
-
     /*
      * Host OS supported by the IoT role.
      */
@@ -226,12 +223,12 @@ public final class IoTRoleProperties {
      */
     public void validate() {
         if (hostPlatform() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property hostPlatform in model IoTRoleProperties"));
         }
         if (ioTDeviceDetails() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property ioTDeviceDetails in model IoTRoleProperties"));
@@ -239,7 +236,7 @@ public final class IoTRoleProperties {
             ioTDeviceDetails().validate();
         }
         if (ioTEdgeDeviceDetails() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property ioTEdgeDeviceDetails in model IoTRoleProperties"));
@@ -256,9 +253,11 @@ public final class IoTRoleProperties {
             computeResource().validate();
         }
         if (roleStatus() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property roleStatus in model IoTRoleProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(IoTRoleProperties.class);
 }

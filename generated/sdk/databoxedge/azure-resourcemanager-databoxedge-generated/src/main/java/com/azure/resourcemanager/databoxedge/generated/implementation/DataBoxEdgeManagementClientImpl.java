@@ -55,8 +55,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the DataBoxEdgeManagementClientImpl type. */
 @ServiceClient(builder = DataBoxEdgeManagementClientBuilder.class)
 public final class DataBoxEdgeManagementClientImpl implements DataBoxEdgeManagementClient {
-    private final ClientLogger logger = new ClientLogger(DataBoxEdgeManagementClientImpl.class);
-
     /** The subscription ID. */
     private final String subscriptionId;
 
@@ -497,7 +495,7 @@ public final class DataBoxEdgeManagementClientImpl implements DataBoxEdgeManagem
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -556,4 +554,6 @@ public final class DataBoxEdgeManagementClientImpl implements DataBoxEdgeManagem
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(DataBoxEdgeManagementClientImpl.class);
 }

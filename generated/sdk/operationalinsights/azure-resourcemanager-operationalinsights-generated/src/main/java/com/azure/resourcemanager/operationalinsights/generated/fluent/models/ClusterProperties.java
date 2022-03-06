@@ -5,21 +5,17 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.AssociatedWorkspace;
 import com.azure.resourcemanager.operationalinsights.generated.models.BillingType;
 import com.azure.resourcemanager.operationalinsights.generated.models.CapacityReservationProperties;
 import com.azure.resourcemanager.operationalinsights.generated.models.ClusterEntityStatus;
 import com.azure.resourcemanager.operationalinsights.generated.models.KeyVaultProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Cluster properties. */
 @Fluent
 public final class ClusterProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ClusterProperties.class);
-
     /*
      * The ID associated with the cluster.
      */

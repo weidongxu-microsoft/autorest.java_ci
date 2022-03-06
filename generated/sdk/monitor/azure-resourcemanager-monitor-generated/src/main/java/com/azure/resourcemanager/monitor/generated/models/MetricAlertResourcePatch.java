@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertPropertiesPatch;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
@@ -18,8 +16,6 @@ import java.util.Map;
 /** The metric alert resource for patch operations. */
 @Fluent
 public final class MetricAlertResourcePatch {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricAlertResourcePatch.class);
-
     /*
      * Resource tags
      */

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.ExpressRouteLinksClien
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteLinkInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteLink;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteLinks;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteLinksImpl implements ExpressRouteLinks {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteLinksImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ExpressRouteLinksImpl.class);
 
     private final ExpressRouteLinksClient innerClient;
 

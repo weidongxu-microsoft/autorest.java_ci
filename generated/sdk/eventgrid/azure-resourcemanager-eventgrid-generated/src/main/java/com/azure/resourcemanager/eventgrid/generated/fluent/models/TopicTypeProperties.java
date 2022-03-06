@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventgrid.generated.models.ResourceRegionType;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicTypePropertiesSupportedScopesForSourceItem;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicTypeProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Properties of a topic type. */
 @Fluent
 public final class TopicTypeProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TopicTypeProperties.class);
-
     /*
      * Namespace of the provider of the topic type.
      */

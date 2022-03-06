@@ -7,20 +7,16 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.DefaultAction;
 import com.azure.resourcemanager.eventhubs.generated.models.NWRuleSetIpRules;
 import com.azure.resourcemanager.eventhubs.generated.models.NWRuleSetVirtualNetworkRules;
 import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccessFlag;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Description of topic resource. */
 @Fluent
 public final class NetworkRuleSetInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkRuleSetInner.class);
-
     /*
      * NetworkRuleSet properties
      */

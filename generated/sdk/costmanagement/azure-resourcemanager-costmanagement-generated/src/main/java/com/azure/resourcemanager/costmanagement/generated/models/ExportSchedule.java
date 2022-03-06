@@ -6,14 +6,11 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The schedule associated with a export. */
 @Fluent
 public final class ExportSchedule {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExportSchedule.class);
-
     /*
      * The status of the schedule. Whether active or not. If inactive, the
      * export's scheduled execution is paused.
@@ -105,7 +102,7 @@ public final class ExportSchedule {
      */
     public void validate() {
         if (recurrence() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property recurrence in model ExportSchedule"));
         }
@@ -113,4 +110,6 @@ public final class ExportSchedule {
             recurrencePeriod().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ExportSchedule.class);
 }

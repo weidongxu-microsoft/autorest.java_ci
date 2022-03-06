@@ -21,7 +21,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.ResourceProvidersClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.OperationResourceInner;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultInner;
@@ -29,8 +28,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ResourceProvidersClient. */
 public final class ResourceProvidersClientImpl implements ResourceProvidersClient {
-    private final ClientLogger logger = new ClientLogger(ResourceProvidersClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final ResourceProvidersService service;
 

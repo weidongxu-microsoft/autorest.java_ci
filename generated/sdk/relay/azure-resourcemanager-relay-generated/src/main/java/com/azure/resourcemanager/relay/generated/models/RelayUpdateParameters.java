@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.relay.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.relay.generated.fluent.models.RelayNamespaceProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Map;
@@ -15,8 +13,6 @@ import java.util.Map;
 /** Description of a namespace resource. */
 @Fluent
 public final class RelayUpdateParameters extends ResourceNamespacePatch {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RelayUpdateParameters.class);
-
     /*
      * SKU of the namespace.
      */

@@ -11,10 +11,9 @@ import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewayPriv
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPrivateLinkResourceInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateLinkResource;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateLinkResources;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ApplicationGatewayPrivateLinkResourcesImpl implements ApplicationGatewayPrivateLinkResources {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApplicationGatewayPrivateLinkResourcesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ApplicationGatewayPrivateLinkResourcesImpl.class);
 
     private final ApplicationGatewayPrivateLinkResourcesClient innerClient;
 

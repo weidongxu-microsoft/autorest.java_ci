@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.BuiltInAuthenticationProvider;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
 import com.azure.resourcemanager.appservice.generated.models.UnauthenticatedClientAction;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Configuration settings for the Azure App Service Authentication / Authorization feature. */
 @Fluent
 public final class SiteAuthSettingsInner extends ProxyOnlyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SiteAuthSettingsInner.class);
-
     /*
      * SiteAuthSettings resource specific properties
      */

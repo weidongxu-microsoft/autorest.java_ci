@@ -8,15 +8,12 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.Tag;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Value object for saved search results. */
 @Fluent
 public final class SavedSearchInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SavedSearchInner.class);
-
     /*
      * The ETag of the saved search. To override an existing saved search, use
      * "*" or specify the current Etag
@@ -235,7 +232,7 @@ public final class SavedSearchInner extends ProxyResource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model SavedSearchInner"));
@@ -243,4 +240,6 @@ public final class SavedSearchInner extends ProxyResource {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(SavedSearchInner.class);
 }

@@ -12,10 +12,9 @@ import com.azure.resourcemanager.costmanagement.generated.fluent.models.Dimensio
 import com.azure.resourcemanager.costmanagement.generated.models.Dimension;
 import com.azure.resourcemanager.costmanagement.generated.models.Dimensions;
 import com.azure.resourcemanager.costmanagement.generated.models.ExternalCloudProviderType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DimensionsImpl implements Dimensions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DimensionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DimensionsImpl.class);
 
     private final DimensionsClient innerClient;
 

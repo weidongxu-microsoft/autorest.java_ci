@@ -13,10 +13,9 @@ import com.azure.resourcemanager.resources.generated.fluent.DeploymentOperations
 import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentOperationInner;
 import com.azure.resourcemanager.resources.generated.models.DeploymentOperation;
 import com.azure.resourcemanager.resources.generated.models.DeploymentOperations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DeploymentOperationsImpl implements DeploymentOperations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DeploymentOperationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DeploymentOperationsImpl.class);
 
     private final DeploymentOperationsClient innerClient;
 

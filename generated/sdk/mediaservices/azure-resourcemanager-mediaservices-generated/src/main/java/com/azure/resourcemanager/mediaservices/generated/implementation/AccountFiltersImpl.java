@@ -13,10 +13,9 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.AccountFiltersCl
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.AccountFilterInner;
 import com.azure.resourcemanager.mediaservices.generated.models.AccountFilter;
 import com.azure.resourcemanager.mediaservices.generated.models.AccountFilters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AccountFiltersImpl implements AccountFilters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AccountFiltersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AccountFiltersImpl.class);
 
     private final AccountFiltersClient innerClient;
 
@@ -75,7 +74,7 @@ public final class AccountFiltersImpl implements AccountFilters {
     public AccountFilter getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -83,14 +82,14 @@ public final class AccountFiltersImpl implements AccountFilters {
         }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
         }
         String filterName = Utils.getValueFromIdByName(id, "accountFilters");
         if (filterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -102,7 +101,7 @@ public final class AccountFiltersImpl implements AccountFilters {
     public Response<AccountFilter> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -110,14 +109,14 @@ public final class AccountFiltersImpl implements AccountFilters {
         }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
         }
         String filterName = Utils.getValueFromIdByName(id, "accountFilters");
         if (filterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -129,7 +128,7 @@ public final class AccountFiltersImpl implements AccountFilters {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -137,14 +136,14 @@ public final class AccountFiltersImpl implements AccountFilters {
         }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
         }
         String filterName = Utils.getValueFromIdByName(id, "accountFilters");
         if (filterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -156,7 +155,7 @@ public final class AccountFiltersImpl implements AccountFilters {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -164,14 +163,14 @@ public final class AccountFiltersImpl implements AccountFilters {
         }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
         }
         String filterName = Utils.getValueFromIdByName(id, "accountFilters");
         if (filterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

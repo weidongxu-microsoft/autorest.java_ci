@@ -44,8 +44,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the KeyVaultManagementClientImpl type. */
 @ServiceClient(builder = KeyVaultManagementClientBuilder.class)
 public final class KeyVaultManagementClientImpl implements KeyVaultManagementClient {
-    private final ClientLogger logger = new ClientLogger(KeyVaultManagementClientImpl.class);
-
     /**
      * Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of
      * the URI for every service call.
@@ -348,7 +346,7 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -407,4 +405,6 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(KeyVaultManagementClientImpl.class);
 }

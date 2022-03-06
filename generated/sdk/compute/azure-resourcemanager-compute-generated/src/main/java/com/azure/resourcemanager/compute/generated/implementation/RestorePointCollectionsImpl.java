@@ -14,10 +14,9 @@ import com.azure.resourcemanager.compute.generated.fluent.models.RestorePointCol
 import com.azure.resourcemanager.compute.generated.models.RestorePointCollection;
 import com.azure.resourcemanager.compute.generated.models.RestorePointCollectionExpandOptions;
 import com.azure.resourcemanager.compute.generated.models.RestorePointCollections;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RestorePointCollectionsImpl implements RestorePointCollections {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RestorePointCollectionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(RestorePointCollectionsImpl.class);
 
     private final RestorePointCollectionsClient innerClient;
 
@@ -92,7 +91,7 @@ public final class RestorePointCollectionsImpl implements RestorePointCollection
     public RestorePointCollection getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -100,7 +99,7 @@ public final class RestorePointCollectionsImpl implements RestorePointCollection
         }
         String restorePointCollectionName = Utils.getValueFromIdByName(id, "restorePointCollections");
         if (restorePointCollectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -118,7 +117,7 @@ public final class RestorePointCollectionsImpl implements RestorePointCollection
         String id, RestorePointCollectionExpandOptions expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -126,7 +125,7 @@ public final class RestorePointCollectionsImpl implements RestorePointCollection
         }
         String restorePointCollectionName = Utils.getValueFromIdByName(id, "restorePointCollections");
         if (restorePointCollectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -140,7 +139,7 @@ public final class RestorePointCollectionsImpl implements RestorePointCollection
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -148,7 +147,7 @@ public final class RestorePointCollectionsImpl implements RestorePointCollection
         }
         String restorePointCollectionName = Utils.getValueFromIdByName(id, "restorePointCollections");
         if (restorePointCollectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -162,7 +161,7 @@ public final class RestorePointCollectionsImpl implements RestorePointCollection
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -170,7 +169,7 @@ public final class RestorePointCollectionsImpl implements RestorePointCollection
         }
         String restorePointCollectionName = Utils.getValueFromIdByName(id, "restorePointCollections");
         if (restorePointCollectionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

@@ -11,10 +11,9 @@ import com.azure.resourcemanager.recoveryservices.generated.fluent.UsagesClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultUsageInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.Usages;
 import com.azure.resourcemanager.recoveryservices.generated.models.VaultUsage;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class UsagesImpl implements Usages {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(UsagesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(UsagesImpl.class);
 
     private final UsagesClient innerClient;
 

@@ -7,14 +7,11 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.ProactiveDiagnosticsConsent;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The properties of proactive log collection settings. */
 @Fluent
 public final class ProactiveLogCollectionSettingsProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ProactiveLogCollectionSettingsProperties.class);
-
     /*
      * Proactive diagnostic collection consent flag
      */
@@ -48,10 +45,12 @@ public final class ProactiveLogCollectionSettingsProperties {
      */
     public void validate() {
         if (userConsent() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property userConsent in model ProactiveLogCollectionSettingsProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ProactiveLogCollectionSettingsProperties.class);
 }

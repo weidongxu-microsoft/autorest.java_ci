@@ -11,15 +11,12 @@ import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.AsymmetricEncryptedSecret;
 import com.azure.resourcemanager.databoxedge.generated.models.ShareAccessRight;
 import com.azure.resourcemanager.databoxedge.generated.models.UserType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Represents a user who has access to one or more shares on the Data Box Edge/Gateway device. */
 @Fluent
 public final class UserInner extends ArmBaseModel {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(UserInner.class);
-
     /*
      * User in DataBoxEdge Resource
      */
@@ -115,11 +112,13 @@ public final class UserInner extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property innerProperties in model UserInner"));
         } else {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(UserInner.class);
 }

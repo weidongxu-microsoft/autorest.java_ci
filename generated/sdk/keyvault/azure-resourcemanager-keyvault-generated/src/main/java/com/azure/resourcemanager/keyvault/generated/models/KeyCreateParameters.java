@@ -7,7 +7,6 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.KeyProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -15,8 +14,6 @@ import java.util.Map;
 /** The parameters used to create a key. */
 @Fluent
 public final class KeyCreateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KeyCreateParameters.class);
-
     /*
      * The tags that will be assigned to the key.
      */
@@ -77,11 +74,13 @@ public final class KeyCreateParameters {
      */
     public void validate() {
         if (properties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property properties in model KeyCreateParameters"));
         } else {
             properties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(KeyCreateParameters.class);
 }

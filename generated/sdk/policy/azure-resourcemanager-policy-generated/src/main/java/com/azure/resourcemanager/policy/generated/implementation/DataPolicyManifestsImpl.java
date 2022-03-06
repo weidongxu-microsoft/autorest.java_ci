@@ -13,10 +13,9 @@ import com.azure.resourcemanager.policy.generated.fluent.DataPolicyManifestsClie
 import com.azure.resourcemanager.policy.generated.fluent.models.DataPolicyManifestInner;
 import com.azure.resourcemanager.policy.generated.models.DataPolicyManifest;
 import com.azure.resourcemanager.policy.generated.models.DataPolicyManifests;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DataPolicyManifestsImpl implements DataPolicyManifests {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DataPolicyManifestsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DataPolicyManifestsImpl.class);
 
     private final DataPolicyManifestsClient innerClient;
 

@@ -39,8 +39,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the RelayApiImpl type. */
 @ServiceClient(builder = RelayApiBuilder.class)
 public final class RelayApiImpl implements RelayApi {
-    private final ClientLogger logger = new ClientLogger(RelayApiImpl.class);
-
     /**
      * Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part
      * of the URI for every service call.
@@ -278,7 +276,7 @@ public final class RelayApiImpl implements RelayApi {
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -337,4 +335,6 @@ public final class RelayApiImpl implements RelayApi {
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(RelayApiImpl.class);
 }

@@ -25,7 +25,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.fluent.BaselinesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.SingleMetricBaselineInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricBaselinesResponse;
@@ -35,8 +34,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in BaselinesClient. */
 public final class BaselinesClientImpl implements BaselinesClient {
-    private final ClientLogger logger = new ClientLogger(BaselinesClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final BaselinesService service;
 

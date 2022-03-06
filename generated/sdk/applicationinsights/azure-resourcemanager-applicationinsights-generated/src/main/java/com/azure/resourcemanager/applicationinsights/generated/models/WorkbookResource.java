@@ -6,15 +6,11 @@ package com.azure.resourcemanager.applicationinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Map;
 
 /** An azure resource object. */
 @Fluent
 public class WorkbookResource extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WorkbookResource.class);
-
     /** {@inheritDoc} */
     @Override
     public WorkbookResource withLocation(String location) {

@@ -7,7 +7,6 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -17,8 +16,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyX509CertificateTokenKey")
 @Fluent
 public final class ContentKeyPolicyX509CertificateTokenKey extends ContentKeyPolicyRestrictionTokenKey {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ContentKeyPolicyX509CertificateTokenKey.class);
-
     /*
      * The raw data field of a certificate in PKCS 12 format (X509Certificate2
      * in .NET)
@@ -55,10 +52,12 @@ public final class ContentKeyPolicyX509CertificateTokenKey extends ContentKeyPol
     public void validate() {
         super.validate();
         if (rawBody() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property rawBody in model ContentKeyPolicyX509CertificateTokenKey"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ContentKeyPolicyX509CertificateTokenKey.class);
 }

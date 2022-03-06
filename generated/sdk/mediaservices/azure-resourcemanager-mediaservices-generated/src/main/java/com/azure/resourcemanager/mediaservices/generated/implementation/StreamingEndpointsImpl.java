@@ -14,10 +14,9 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.Streaming
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpoint;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpoints;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEntityScaleUnit;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class StreamingEndpointsImpl implements StreamingEndpoints {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StreamingEndpointsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(StreamingEndpointsImpl.class);
 
     private final StreamingEndpointsClient innerClient;
 
@@ -109,7 +108,7 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
     public StreamingEndpoint getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -117,14 +116,14 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
         }
         String accountName = Utils.getValueFromIdByName(id, "mediaservices");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'mediaservices'.", id)));
         }
         String streamingEndpointName = Utils.getValueFromIdByName(id, "streamingEndpoints");
         if (streamingEndpointName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -137,7 +136,7 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
     public Response<StreamingEndpoint> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -145,14 +144,14 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
         }
         String accountName = Utils.getValueFromIdByName(id, "mediaservices");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'mediaservices'.", id)));
         }
         String streamingEndpointName = Utils.getValueFromIdByName(id, "streamingEndpoints");
         if (streamingEndpointName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -165,7 +164,7 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -173,14 +172,14 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
         }
         String accountName = Utils.getValueFromIdByName(id, "mediaservices");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'mediaservices'.", id)));
         }
         String streamingEndpointName = Utils.getValueFromIdByName(id, "streamingEndpoints");
         if (streamingEndpointName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -193,7 +192,7 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -201,14 +200,14 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
         }
         String accountName = Utils.getValueFromIdByName(id, "mediaservices");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'mediaservices'.", id)));
         }
         String streamingEndpointName = Utils.getValueFromIdByName(id, "streamingEndpoints");
         if (streamingEndpointName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

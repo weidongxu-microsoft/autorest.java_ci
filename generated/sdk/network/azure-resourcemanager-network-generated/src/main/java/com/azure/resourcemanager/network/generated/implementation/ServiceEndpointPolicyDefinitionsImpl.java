@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.ServiceEndpointPolicyD
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceEndpointPolicyDefinitionInner;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicyDefinition;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicyDefinitions;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpointPolicyDefinitions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServiceEndpointPolicyDefinitionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ServiceEndpointPolicyDefinitionsImpl.class);
 
     private final ServiceEndpointPolicyDefinitionsClient innerClient;
 
@@ -93,7 +92,7 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
     public ServiceEndpointPolicyDefinition getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -101,7 +100,7 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
         }
         String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
         if (serviceEndpointPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -111,7 +110,7 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
         }
         String serviceEndpointPolicyDefinitionName = Utils.getValueFromIdByName(id, "serviceEndpointPolicyDefinitions");
         if (serviceEndpointPolicyDefinitionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -129,7 +128,7 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
     public Response<ServiceEndpointPolicyDefinition> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -137,7 +136,7 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
         }
         String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
         if (serviceEndpointPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -147,7 +146,7 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
         }
         String serviceEndpointPolicyDefinitionName = Utils.getValueFromIdByName(id, "serviceEndpointPolicyDefinitions");
         if (serviceEndpointPolicyDefinitionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -164,7 +163,7 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -172,7 +171,7 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
         }
         String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
         if (serviceEndpointPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -182,7 +181,7 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
         }
         String serviceEndpointPolicyDefinitionName = Utils.getValueFromIdByName(id, "serviceEndpointPolicyDefinitions");
         if (serviceEndpointPolicyDefinitionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -197,7 +196,7 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -205,7 +204,7 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
         }
         String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
         if (serviceEndpointPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -215,7 +214,7 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
         }
         String serviceEndpointPolicyDefinitionName = Utils.getValueFromIdByName(id, "serviceEndpointPolicyDefinitions");
         if (serviceEndpointPolicyDefinitionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

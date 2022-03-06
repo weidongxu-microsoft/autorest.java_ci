@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -15,8 +13,6 @@ import java.util.Map;
 /** The definition of data present in the query. */
 @Fluent
 public final class QueryDataset {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(QueryDataset.class);
-
     /*
      * The granularity of rows in the query.
      */

@@ -147,8 +147,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the NetworkManagementClientImpl type. */
 @ServiceClient(builder = NetworkManagementClientBuilder.class)
 public final class NetworkManagementClientImpl implements NetworkManagementClient {
-    private final ClientLogger logger = new ClientLogger(NetworkManagementClientImpl.class);
-
     /**
      * The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms
      * part of the URI for every service call.
@@ -1781,7 +1779,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -1840,4 +1838,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(NetworkManagementClientImpl.class);
 }

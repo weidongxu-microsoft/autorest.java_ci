@@ -6,17 +6,13 @@ package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.EndpointType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /** Defines the properties of a preconfigured endpoint. */
 @Fluent
 public final class PreconfiguredEndpointInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PreconfiguredEndpointInner.class);
-
     /*
      * The properties of a preconfiguredEndpoint
      */

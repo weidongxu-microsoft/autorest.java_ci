@@ -15,10 +15,9 @@ import com.azure.resourcemanager.network.generated.models.VpnGateway;
 import com.azure.resourcemanager.network.generated.models.VpnGatewayPacketCaptureStartParameters;
 import com.azure.resourcemanager.network.generated.models.VpnGatewayPacketCaptureStopParameters;
 import com.azure.resourcemanager.network.generated.models.VpnGateways;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnGatewaysImpl implements VpnGateways {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VpnGatewaysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VpnGatewaysImpl.class);
 
     private final VpnGatewaysClient innerClient;
 
@@ -137,7 +136,7 @@ public final class VpnGatewaysImpl implements VpnGateways {
     public VpnGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -145,7 +144,7 @@ public final class VpnGatewaysImpl implements VpnGateways {
         }
         String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
         if (gatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vpnGateways'.", id)));
@@ -156,7 +155,7 @@ public final class VpnGatewaysImpl implements VpnGateways {
     public Response<VpnGateway> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -164,7 +163,7 @@ public final class VpnGatewaysImpl implements VpnGateways {
         }
         String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
         if (gatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vpnGateways'.", id)));
@@ -175,7 +174,7 @@ public final class VpnGatewaysImpl implements VpnGateways {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -183,7 +182,7 @@ public final class VpnGatewaysImpl implements VpnGateways {
         }
         String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
         if (gatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vpnGateways'.", id)));
@@ -194,7 +193,7 @@ public final class VpnGatewaysImpl implements VpnGateways {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -202,7 +201,7 @@ public final class VpnGatewaysImpl implements VpnGateways {
         }
         String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
         if (gatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vpnGateways'.", id)));

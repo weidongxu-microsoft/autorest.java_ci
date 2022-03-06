@@ -12,10 +12,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.VMInsightsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.VMInsightsOnboardingStatusInner;
 import com.azure.resourcemanager.monitor.generated.models.VMInsights;
 import com.azure.resourcemanager.monitor.generated.models.VMInsightsOnboardingStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VMInsightsImpl implements VMInsights {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VMInsightsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VMInsightsImpl.class);
 
     private final VMInsightsClient innerClient;
 

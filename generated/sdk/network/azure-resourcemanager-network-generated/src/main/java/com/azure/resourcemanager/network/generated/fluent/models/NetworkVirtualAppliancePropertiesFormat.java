@@ -6,19 +6,15 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceNicProperties;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSkuProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Network Virtual Appliance definition. */
 @Fluent
 public final class NetworkVirtualAppliancePropertiesFormat {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkVirtualAppliancePropertiesFormat.class);
-
     /*
      * Network Virtual Appliance SKU.
      */

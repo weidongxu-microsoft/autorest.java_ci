@@ -9,10 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.iothub.generated.fluent.IotHubsClient;
 import com.azure.resourcemanager.iothub.generated.models.FailoverInput;
 import com.azure.resourcemanager.iothub.generated.models.IotHubs;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class IotHubsImpl implements IotHubs {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(IotHubsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(IotHubsImpl.class);
 
     private final IotHubsClient innerClient;
 

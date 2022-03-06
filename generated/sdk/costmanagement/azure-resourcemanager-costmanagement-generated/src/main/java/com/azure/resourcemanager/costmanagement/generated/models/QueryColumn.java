@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The QueryColumn model. */
 @Fluent
 public final class QueryColumn {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(QueryColumn.class);
-
     /*
      * The name of column.
      */

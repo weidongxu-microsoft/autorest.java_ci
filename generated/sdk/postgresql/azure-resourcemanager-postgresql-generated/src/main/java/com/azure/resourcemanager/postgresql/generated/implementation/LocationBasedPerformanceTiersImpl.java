@@ -11,10 +11,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.LocationBasedPerfor
 import com.azure.resourcemanager.postgresql.generated.fluent.models.PerformanceTierPropertiesInner;
 import com.azure.resourcemanager.postgresql.generated.models.LocationBasedPerformanceTiers;
 import com.azure.resourcemanager.postgresql.generated.models.PerformanceTierProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LocationBasedPerformanceTiersImpl implements LocationBasedPerformanceTiers {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LocationBasedPerformanceTiersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(LocationBasedPerformanceTiersImpl.class);
 
     private final LocationBasedPerformanceTiersClient innerClient;
 

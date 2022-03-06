@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.VirtualApplianceSitesC
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualApplianceSiteInner;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSite;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSites;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualApplianceSitesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualApplianceSitesImpl.class);
 
     private final VirtualApplianceSitesClient innerClient;
 
@@ -78,7 +77,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
     public VirtualApplianceSite getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -86,7 +85,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
         }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
         if (networkVirtualApplianceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -96,7 +95,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
         }
         String siteName = Utils.getValueFromIdByName(id, "virtualApplianceSites");
         if (siteName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -110,7 +109,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
     public Response<VirtualApplianceSite> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -118,7 +117,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
         }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
         if (networkVirtualApplianceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -128,7 +127,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
         }
         String siteName = Utils.getValueFromIdByName(id, "virtualApplianceSites");
         if (siteName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -142,7 +141,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -150,7 +149,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
         }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
         if (networkVirtualApplianceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -160,7 +159,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
         }
         String siteName = Utils.getValueFromIdByName(id, "virtualApplianceSites");
         if (siteName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -174,7 +173,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -182,7 +181,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
         }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
         if (networkVirtualApplianceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -192,7 +191,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
         }
         String siteName = Utils.getValueFromIdByName(id, "virtualApplianceSites");
         if (siteName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

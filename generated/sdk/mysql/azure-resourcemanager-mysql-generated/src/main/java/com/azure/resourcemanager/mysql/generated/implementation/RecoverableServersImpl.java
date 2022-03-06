@@ -12,10 +12,9 @@ import com.azure.resourcemanager.mysql.generated.fluent.RecoverableServersClient
 import com.azure.resourcemanager.mysql.generated.fluent.models.RecoverableServerResourceInner;
 import com.azure.resourcemanager.mysql.generated.models.RecoverableServerResource;
 import com.azure.resourcemanager.mysql.generated.models.RecoverableServers;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RecoverableServersImpl implements RecoverableServers {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RecoverableServersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(RecoverableServersImpl.class);
 
     private final RecoverableServersClient innerClient;
 

@@ -13,11 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.models.SignatureOverri
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyIdpsSignaturesFilterValues;
 import com.azure.resourcemanager.network.generated.models.SignatureOverridesFilterValuesQuery;
 import com.azure.resourcemanager.network.generated.models.SignatureOverridesFilterValuesResponse;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FirewallPolicyIdpsSignaturesFilterValuesImpl implements FirewallPolicyIdpsSignaturesFilterValues {
-    @JsonIgnore
-    private final ClientLogger logger = new ClientLogger(FirewallPolicyIdpsSignaturesFilterValuesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(FirewallPolicyIdpsSignaturesFilterValuesImpl.class);
 
     private final FirewallPolicyIdpsSignaturesFilterValuesClient innerClient;
 

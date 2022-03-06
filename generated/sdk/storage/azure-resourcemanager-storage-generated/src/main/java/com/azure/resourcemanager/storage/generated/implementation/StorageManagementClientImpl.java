@@ -55,8 +55,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the StorageManagementClientImpl type. */
 @ServiceClient(builder = StorageManagementClientBuilder.class)
 public final class StorageManagementClientImpl implements StorageManagementClient {
-    private final ClientLogger logger = new ClientLogger(StorageManagementClientImpl.class);
-
     /** The ID of the target subscription. */
     private final String subscriptionId;
 
@@ -497,7 +495,7 @@ public final class StorageManagementClientImpl implements StorageManagementClien
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -556,4 +554,6 @@ public final class StorageManagementClientImpl implements StorageManagementClien
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(StorageManagementClientImpl.class);
 }

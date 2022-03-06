@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -16,8 +14,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.JpgLayer")
 @Fluent
 public final class JpgLayer extends Layer {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(JpgLayer.class);
-
     /*
      * The compression quality of the JPEG output. Range is from 0-100 and the
      * default is 70.

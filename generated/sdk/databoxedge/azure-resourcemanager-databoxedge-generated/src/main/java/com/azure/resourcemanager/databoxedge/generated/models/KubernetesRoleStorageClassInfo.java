@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Kubernetes storage class info. */
 @Immutable
 public final class KubernetesRoleStorageClassInfo {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KubernetesRoleStorageClassInfo.class);
-
     /*
      * Storage class name.
      */

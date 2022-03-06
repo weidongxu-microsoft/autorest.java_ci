@@ -7,10 +7,8 @@ package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.models.Hls;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveOutputResourceState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.time.OffsetDateTime;
@@ -18,8 +16,6 @@ import java.time.OffsetDateTime;
 /** The Live Output. */
 @Fluent
 public final class LiveOutputInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LiveOutputInner.class);
-
     /*
      * Live output properties.
      */

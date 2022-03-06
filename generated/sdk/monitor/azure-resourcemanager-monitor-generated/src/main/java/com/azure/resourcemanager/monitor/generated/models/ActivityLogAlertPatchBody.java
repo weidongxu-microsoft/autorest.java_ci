@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ActivityLogAlertPatch;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -15,8 +13,6 @@ import java.util.Map;
 /** An activity log alert object for the body of patch operations. */
 @Fluent
 public final class ActivityLogAlertPatchBody {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActivityLogAlertPatchBody.class);
-
     /*
      * Resource tags
      */

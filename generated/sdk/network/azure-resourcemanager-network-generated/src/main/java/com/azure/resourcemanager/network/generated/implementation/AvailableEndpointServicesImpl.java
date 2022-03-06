@@ -11,10 +11,9 @@ import com.azure.resourcemanager.network.generated.fluent.AvailableEndpointServi
 import com.azure.resourcemanager.network.generated.fluent.models.EndpointServiceResultInner;
 import com.azure.resourcemanager.network.generated.models.AvailableEndpointServices;
 import com.azure.resourcemanager.network.generated.models.EndpointServiceResult;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AvailableEndpointServicesImpl implements AvailableEndpointServices {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AvailableEndpointServicesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AvailableEndpointServicesImpl.class);
 
     private final AvailableEndpointServicesClient innerClient;
 

@@ -5,10 +5,8 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.MecRoleProperties;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.RoleInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -18,8 +16,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("MEC")
 @Fluent
 public final class MecRole extends RoleInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MecRole.class);
-
     /*
      * Properties specific to MEC role.
      */

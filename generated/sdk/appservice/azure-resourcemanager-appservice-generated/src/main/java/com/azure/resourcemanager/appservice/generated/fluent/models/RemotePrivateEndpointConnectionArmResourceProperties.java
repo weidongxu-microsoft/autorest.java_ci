@@ -5,19 +5,14 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.ArmIdWrapper;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** RemotePrivateEndpointConnectionARMResource resource specific properties. */
 @Fluent
 public final class RemotePrivateEndpointConnectionArmResourceProperties {
-    @JsonIgnore
-    private final ClientLogger logger = new ClientLogger(RemotePrivateEndpointConnectionArmResourceProperties.class);
-
     /*
      * The provisioningState property.
      */

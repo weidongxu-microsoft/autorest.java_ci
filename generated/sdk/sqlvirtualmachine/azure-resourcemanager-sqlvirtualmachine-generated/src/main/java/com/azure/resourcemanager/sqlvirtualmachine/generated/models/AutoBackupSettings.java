@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Configure backups for databases in your SQL virtual machine. */
 @Fluent
 public final class AutoBackupSettings {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AutoBackupSettings.class);
-
     /*
      * Enable or disable autobackup on SQL virtual machine.
      */

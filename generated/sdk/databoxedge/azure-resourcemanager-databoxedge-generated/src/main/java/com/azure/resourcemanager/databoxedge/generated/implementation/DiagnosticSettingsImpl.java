@@ -14,10 +14,9 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.models.DiagnosticR
 import com.azure.resourcemanager.databoxedge.generated.models.DiagnosticProactiveLogCollectionSettings;
 import com.azure.resourcemanager.databoxedge.generated.models.DiagnosticRemoteSupportSettings;
 import com.azure.resourcemanager.databoxedge.generated.models.DiagnosticSettings;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DiagnosticSettingsImpl implements DiagnosticSettings {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiagnosticSettingsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DiagnosticSettingsImpl.class);
 
     private final DiagnosticSettingsClient innerClient;
 

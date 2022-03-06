@@ -7,14 +7,11 @@ package com.azure.resourcemanager.postgresql.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Represents a server firewall rule. */
 @Fluent
 public final class FirewallRuleInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FirewallRuleInner.class);
-
     /*
      * The properties of a firewall rule.
      */
@@ -83,7 +80,7 @@ public final class FirewallRuleInner extends ProxyResource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model FirewallRuleInner"));
@@ -91,4 +88,6 @@ public final class FirewallRuleInner extends ProxyResource {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(FirewallRuleInner.class);
 }

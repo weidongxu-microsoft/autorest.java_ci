@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.LogSettings;
 import com.azure.resourcemanager.monitor.generated.models.MetricSettings;
 import com.azure.resourcemanager.monitor.generated.models.ProxyOnlyResource;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The diagnostic setting resource. */
 @Fluent
 public final class DiagnosticSettingsResourceInner extends ProxyOnlyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiagnosticSettingsResourceInner.class);
-
     /*
      * Properties of a Diagnostic Settings Resource.
      */

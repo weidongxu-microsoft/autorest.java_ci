@@ -42,8 +42,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the IotHubClientImpl type. */
 @ServiceClient(builder = IotHubClientBuilder.class)
 public final class IotHubClientImpl implements IotHubClient {
-    private final ClientLogger logger = new ClientLogger(IotHubClientImpl.class);
-
     /** The subscription identifier. */
     private final String subscriptionId;
 
@@ -315,7 +313,7 @@ public final class IotHubClientImpl implements IotHubClient {
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -374,4 +372,6 @@ public final class IotHubClientImpl implements IotHubClient {
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(IotHubClientImpl.class);
 }

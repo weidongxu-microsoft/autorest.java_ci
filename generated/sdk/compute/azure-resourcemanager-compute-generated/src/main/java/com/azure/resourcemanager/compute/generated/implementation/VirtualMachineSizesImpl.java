@@ -11,10 +11,9 @@ import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineSizesCli
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineSizeInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineSize;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineSizes;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineSizesImpl implements VirtualMachineSizes {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineSizesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualMachineSizesImpl.class);
 
     private final VirtualMachineSizesClient innerClient;
 

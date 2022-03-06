@@ -15,10 +15,9 @@ import com.azure.resourcemanager.hdinsight.generated.fluent.models.RuntimeScript
 import com.azure.resourcemanager.hdinsight.generated.models.AsyncOperationResult;
 import com.azure.resourcemanager.hdinsight.generated.models.RuntimeScriptActionDetail;
 import com.azure.resourcemanager.hdinsight.generated.models.ScriptActions;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ScriptActionsImpl implements ScriptActions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ScriptActionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ScriptActionsImpl.class);
 
     private final ScriptActionsClient innerClient;
 

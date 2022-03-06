@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventgrid.generated.models.DeadLetterDestination;
 import com.azure.resourcemanager.eventgrid.generated.models.DeadLetterWithResourceIdentity;
 import com.azure.resourcemanager.eventgrid.generated.models.DeliveryWithResourceIdentity;
@@ -14,7 +13,6 @@ import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionDes
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionFilter;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.RetryPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -22,8 +20,6 @@ import java.util.List;
 /** Properties of the Event Subscription. */
 @Fluent
 public final class EventSubscriptionProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EventSubscriptionProperties.class);
-
     /*
      * Name of the topic of the event subscription.
      */

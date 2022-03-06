@@ -5,22 +5,18 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.JobErrorDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.JobStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.JobType;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateDownloadProgress;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateInstallProgress;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateOperationStage;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** A device job. */
 @Immutable
 public final class JobInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(JobInner.class);
-
     /*
      * The path ID that uniquely identifies the object.
      */

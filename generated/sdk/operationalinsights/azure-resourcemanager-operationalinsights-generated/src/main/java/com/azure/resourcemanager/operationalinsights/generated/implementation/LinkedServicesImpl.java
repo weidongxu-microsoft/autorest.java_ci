@@ -13,10 +13,9 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.LinkedServ
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.LinkedServiceInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.LinkedService;
 import com.azure.resourcemanager.operationalinsights.generated.models.LinkedServices;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LinkedServicesImpl implements LinkedServices {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LinkedServicesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(LinkedServicesImpl.class);
 
     private final LinkedServicesClient innerClient;
 
@@ -89,7 +88,7 @@ public final class LinkedServicesImpl implements LinkedServices {
     public LinkedService getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -97,14 +96,14 @@ public final class LinkedServicesImpl implements LinkedServices {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String linkedServiceName = Utils.getValueFromIdByName(id, "linkedServices");
         if (linkedServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -116,7 +115,7 @@ public final class LinkedServicesImpl implements LinkedServices {
     public Response<LinkedService> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -124,14 +123,14 @@ public final class LinkedServicesImpl implements LinkedServices {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String linkedServiceName = Utils.getValueFromIdByName(id, "linkedServices");
         if (linkedServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -143,7 +142,7 @@ public final class LinkedServicesImpl implements LinkedServices {
     public LinkedService deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -151,14 +150,14 @@ public final class LinkedServicesImpl implements LinkedServices {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String linkedServiceName = Utils.getValueFromIdByName(id, "linkedServices");
         if (linkedServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -170,7 +169,7 @@ public final class LinkedServicesImpl implements LinkedServices {
     public LinkedService deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -178,14 +177,14 @@ public final class LinkedServicesImpl implements LinkedServices {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String linkedServiceName = Utils.getValueFromIdByName(id, "linkedServices");
         if (linkedServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

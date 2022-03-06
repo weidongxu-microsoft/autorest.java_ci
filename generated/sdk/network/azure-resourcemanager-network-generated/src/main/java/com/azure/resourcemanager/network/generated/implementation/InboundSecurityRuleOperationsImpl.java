@@ -7,10 +7,9 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.InboundSecurityRuleOperationsClient;
 import com.azure.resourcemanager.network.generated.models.InboundSecurityRuleOperations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class InboundSecurityRuleOperationsImpl implements InboundSecurityRuleOperations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(InboundSecurityRuleOperationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(InboundSecurityRuleOperationsImpl.class);
 
     private final InboundSecurityRuleOperationsClient innerClient;
 

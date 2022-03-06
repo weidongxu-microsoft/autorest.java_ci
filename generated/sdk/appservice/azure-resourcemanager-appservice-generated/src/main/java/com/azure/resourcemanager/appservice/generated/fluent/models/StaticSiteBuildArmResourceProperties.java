@@ -5,10 +5,8 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.BuildStatus;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserProvidedFunctionApp;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -16,8 +14,6 @@ import java.util.List;
 /** StaticSiteBuildARMResource resource specific properties. */
 @Immutable
 public final class StaticSiteBuildArmResourceProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StaticSiteBuildArmResourceProperties.class);
-
     /*
      * An identifier for the static site build.
      */

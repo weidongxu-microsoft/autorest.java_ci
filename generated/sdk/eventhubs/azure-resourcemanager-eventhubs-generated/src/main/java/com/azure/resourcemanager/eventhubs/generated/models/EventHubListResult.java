@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EventhubInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The result of the List EventHubs operation. */
 @Fluent
 public final class EventHubListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EventHubListResult.class);
-
     /*
      * Result of the List EventHubs operation.
      */

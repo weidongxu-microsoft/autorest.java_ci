@@ -12,10 +12,9 @@ import com.azure.resourcemanager.keyvault.generated.fluent.MhsmPrivateLinkResour
 import com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateLinkResourceListResultInner;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateLinkResourceListResult;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateLinkResources;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class MhsmPrivateLinkResourcesImpl implements MhsmPrivateLinkResources {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MhsmPrivateLinkResourcesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(MhsmPrivateLinkResourcesImpl.class);
 
     private final MhsmPrivateLinkResourcesClient innerClient;
 

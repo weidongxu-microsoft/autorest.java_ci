@@ -6,7 +6,6 @@ package com.azure.resourcemanager.resources.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -14,8 +13,6 @@ import java.util.Map;
 /** Deployment operation parameters. */
 @Fluent
 public final class Deployment {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Deployment.class);
-
     /*
      * The location to store the deployment data.
      */
@@ -102,11 +99,13 @@ public final class Deployment {
      */
     public void validate() {
         if (properties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property properties in model Deployment"));
         } else {
             properties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(Deployment.class);
 }

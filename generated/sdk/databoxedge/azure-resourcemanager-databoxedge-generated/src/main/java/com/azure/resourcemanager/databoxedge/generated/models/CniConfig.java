@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Cni configuration. */
 @Immutable
 public final class CniConfig {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CniConfig.class);
-
     /*
      * Cni type
      */

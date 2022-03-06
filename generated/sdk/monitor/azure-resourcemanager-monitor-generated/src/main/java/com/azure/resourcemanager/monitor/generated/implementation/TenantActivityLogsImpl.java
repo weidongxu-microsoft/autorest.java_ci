@@ -11,10 +11,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.TenantActivityLogsClie
 import com.azure.resourcemanager.monitor.generated.fluent.models.EventDataInner;
 import com.azure.resourcemanager.monitor.generated.models.EventData;
 import com.azure.resourcemanager.monitor.generated.models.TenantActivityLogs;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TenantActivityLogsImpl implements TenantActivityLogs {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TenantActivityLogsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(TenantActivityLogsImpl.class);
 
     private final TenantActivityLogsClient innerClient;
 

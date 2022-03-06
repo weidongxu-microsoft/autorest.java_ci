@@ -11,10 +11,9 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.AvailableSkusClien
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeSkuInner;
 import com.azure.resourcemanager.databoxedge.generated.models.AvailableSkus;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeSku;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AvailableSkusImpl implements AvailableSkus {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AvailableSkusImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AvailableSkusImpl.class);
 
     private final AvailableSkusClient innerClient;
 

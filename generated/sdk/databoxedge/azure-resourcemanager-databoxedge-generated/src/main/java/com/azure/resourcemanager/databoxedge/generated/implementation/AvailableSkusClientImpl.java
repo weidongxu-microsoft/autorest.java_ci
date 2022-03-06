@@ -25,7 +25,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.AvailableSkusClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeSkuInner;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeSkuList;
@@ -33,8 +32,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in AvailableSkusClient. */
 public final class AvailableSkusClientImpl implements AvailableSkusClient {
-    private final ClientLogger logger = new ClientLogger(AvailableSkusClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final AvailableSkusService service;
 

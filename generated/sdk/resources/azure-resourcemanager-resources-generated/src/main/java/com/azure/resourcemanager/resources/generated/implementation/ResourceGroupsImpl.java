@@ -16,10 +16,9 @@ import com.azure.resourcemanager.resources.generated.models.ExportTemplateReques
 import com.azure.resourcemanager.resources.generated.models.ResourceGroup;
 import com.azure.resourcemanager.resources.generated.models.ResourceGroupExportResult;
 import com.azure.resourcemanager.resources.generated.models.ResourceGroups;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceGroupsImpl implements ResourceGroups {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceGroupsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ResourceGroupsImpl.class);
 
     private final ResourceGroupsClient innerClient;
 
@@ -107,7 +106,7 @@ public final class ResourceGroupsImpl implements ResourceGroups {
     public ResourceGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -119,7 +118,7 @@ public final class ResourceGroupsImpl implements ResourceGroups {
     public Response<ResourceGroup> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -131,7 +130,7 @@ public final class ResourceGroupsImpl implements ResourceGroups {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -144,7 +143,7 @@ public final class ResourceGroupsImpl implements ResourceGroups {
     public void deleteByIdWithResponse(String id, String forceDeletionTypes, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

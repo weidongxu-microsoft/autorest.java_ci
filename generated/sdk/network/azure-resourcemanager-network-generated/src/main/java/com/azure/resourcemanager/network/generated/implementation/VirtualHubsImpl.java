@@ -14,10 +14,9 @@ import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubInner
 import com.azure.resourcemanager.network.generated.models.EffectiveRoutesParameters;
 import com.azure.resourcemanager.network.generated.models.VirtualHub;
 import com.azure.resourcemanager.network.generated.models.VirtualHubs;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualHubsImpl implements VirtualHubs {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualHubsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualHubsImpl.class);
 
     private final VirtualHubsClient innerClient;
 
@@ -103,7 +102,7 @@ public final class VirtualHubsImpl implements VirtualHubs {
     public VirtualHub getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -111,7 +110,7 @@ public final class VirtualHubsImpl implements VirtualHubs {
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
@@ -122,7 +121,7 @@ public final class VirtualHubsImpl implements VirtualHubs {
     public Response<VirtualHub> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -130,7 +129,7 @@ public final class VirtualHubsImpl implements VirtualHubs {
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
@@ -141,7 +140,7 @@ public final class VirtualHubsImpl implements VirtualHubs {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class VirtualHubsImpl implements VirtualHubs {
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
@@ -160,7 +159,7 @@ public final class VirtualHubsImpl implements VirtualHubs {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -168,7 +167,7 @@ public final class VirtualHubsImpl implements VirtualHubs {
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));

@@ -14,10 +14,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSetti
 import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsCategories;
 import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsCategoryResource;
 import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsCategoryResourceCollection;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DiagnosticSettingsCategoriesImpl implements DiagnosticSettingsCategories {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiagnosticSettingsCategoriesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DiagnosticSettingsCategoriesImpl.class);
 
     private final DiagnosticSettingsCategoriesClient innerClient;
 

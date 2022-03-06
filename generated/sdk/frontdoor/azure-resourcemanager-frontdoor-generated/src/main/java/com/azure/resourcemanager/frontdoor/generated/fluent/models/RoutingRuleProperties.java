@@ -6,22 +6,18 @@ package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorProtocol;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.RouteConfiguration;
 import com.azure.resourcemanager.frontdoor.generated.models.RoutingRuleEnabledState;
 import com.azure.resourcemanager.frontdoor.generated.models.RoutingRuleUpdateParameters;
 import com.azure.resourcemanager.frontdoor.generated.models.RoutingRuleUpdateParametersWebApplicationFirewallPolicyLink;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The JSON object that contains the properties required to create a routing rule. */
 @Fluent
 public final class RoutingRuleProperties extends RoutingRuleUpdateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RoutingRuleProperties.class);
-
     /*
      * Resource status of the Front Door or Front Door SubResource. Resource
      * status.

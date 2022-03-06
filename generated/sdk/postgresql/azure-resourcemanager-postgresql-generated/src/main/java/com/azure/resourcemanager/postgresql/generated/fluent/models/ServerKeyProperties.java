@@ -7,15 +7,12 @@ package com.azure.resourcemanager.postgresql.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.models.ServerKeyType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** Properties for a key execution. */
 @Fluent
 public final class ServerKeyProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServerKeyProperties.class);
-
     /*
      * The key type like 'AzureKeyVault'.
      */
@@ -90,10 +87,12 @@ public final class ServerKeyProperties {
      */
     public void validate() {
         if (serverKeyType() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property serverKeyType in model ServerKeyProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ServerKeyProperties.class);
 }

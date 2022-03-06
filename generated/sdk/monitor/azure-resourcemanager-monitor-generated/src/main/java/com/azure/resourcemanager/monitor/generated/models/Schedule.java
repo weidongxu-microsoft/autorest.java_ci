@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Defines how often to run the search and the time interval. */
 @Fluent
 public final class Schedule {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Schedule.class);
-
     /*
      * frequency (in minutes) at which rule condition should be evaluated.
      */

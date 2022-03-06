@@ -25,7 +25,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.fluent.QueryTextsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.QueryTextInner;
 import com.azure.resourcemanager.mysql.generated.models.QueryTextsResultList;
@@ -39,8 +38,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in QueryTextsClient. */
 public final class QueryTextsClientImpl implements QueryTextsClient {
-    private final ClientLogger logger = new ClientLogger(QueryTextsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final QueryTextsService service;
 

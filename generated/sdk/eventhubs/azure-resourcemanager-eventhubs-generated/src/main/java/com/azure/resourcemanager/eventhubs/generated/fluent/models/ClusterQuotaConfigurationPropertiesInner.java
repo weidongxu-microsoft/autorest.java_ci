@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -14,8 +12,6 @@ import java.util.Map;
 /** Contains all settings for the cluster. */
 @Fluent
 public final class ClusterQuotaConfigurationPropertiesInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ClusterQuotaConfigurationPropertiesInner.class);
-
     /*
      * All possible Cluster settings - a collection of key/value paired
      * settings which apply to quotas and configurations imposed on the

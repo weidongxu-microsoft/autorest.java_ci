@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mysql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -14,8 +12,6 @@ import java.util.List;
 /** The properties of a query statistic. */
 @Fluent
 public final class QueryStatisticProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(QueryStatisticProperties.class);
-
     /*
      * Database query identifier.
      */

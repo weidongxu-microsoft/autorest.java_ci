@@ -11,10 +11,9 @@ import com.azure.resourcemanager.network.generated.fluent.VpnLinkConnectionsClie
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkConnectionInner;
 import com.azure.resourcemanager.network.generated.models.VpnLinkConnections;
 import com.azure.resourcemanager.network.generated.models.VpnSiteLinkConnection;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnLinkConnectionsImpl implements VpnLinkConnections {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VpnLinkConnectionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VpnLinkConnectionsImpl.class);
 
     private final VpnLinkConnectionsClient innerClient;
 

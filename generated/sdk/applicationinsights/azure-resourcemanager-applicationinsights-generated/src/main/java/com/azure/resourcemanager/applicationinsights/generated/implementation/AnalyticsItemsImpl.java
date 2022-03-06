@@ -15,13 +15,12 @@ import com.azure.resourcemanager.applicationinsights.generated.models.Applicatio
 import com.azure.resourcemanager.applicationinsights.generated.models.ItemScope;
 import com.azure.resourcemanager.applicationinsights.generated.models.ItemScopePath;
 import com.azure.resourcemanager.applicationinsights.generated.models.ItemTypeParameter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class AnalyticsItemsImpl implements AnalyticsItems {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AnalyticsItemsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AnalyticsItemsImpl.class);
 
     private final AnalyticsItemsClient innerClient;
 

@@ -7,14 +7,11 @@ package com.azure.resourcemanager.authorization.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.models.PrincipalType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Role assignment properties. */
 @Fluent
 public final class RoleAssignmentProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RoleAssignmentProperties.class);
-
     /*
      * The role definition ID used in the role assignment.
      */
@@ -130,16 +127,18 @@ public final class RoleAssignmentProperties {
      */
     public void validate() {
         if (roleDefinitionId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property roleDefinitionId in model RoleAssignmentProperties"));
         }
         if (principalId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property principalId in model RoleAssignmentProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(RoleAssignmentProperties.class);
 }

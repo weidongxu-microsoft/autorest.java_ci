@@ -14,10 +14,9 @@ import com.azure.resourcemanager.storage.generated.fluent.models.TableServicePro
 import com.azure.resourcemanager.storage.generated.models.ListTableServices;
 import com.azure.resourcemanager.storage.generated.models.TableServiceProperties;
 import com.azure.resourcemanager.storage.generated.models.TableServices;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TableServicesImpl implements TableServices {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TableServicesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(TableServicesImpl.class);
 
     private final TableServicesClient innerClient;
 
@@ -79,7 +78,7 @@ public final class TableServicesImpl implements TableServices {
     public TableServiceProperties getServicePropertiesById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -87,7 +86,7 @@ public final class TableServicesImpl implements TableServices {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -99,7 +98,7 @@ public final class TableServicesImpl implements TableServices {
     public Response<TableServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -107,7 +106,7 @@ public final class TableServicesImpl implements TableServices {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

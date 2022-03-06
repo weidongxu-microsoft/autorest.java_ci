@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Destination meta data. */
 @Fluent
 public final class DestinationMetadata {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DestinationMetadata.class);
-
     /*
      * Optional. Allows to define an Event Hub name. Not applicable when
      * destination is Storage Account.

@@ -6,14 +6,11 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Image repository credential. */
 @Fluent
 public final class ImageRepositoryCredential {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ImageRepositoryCredential.class);
-
     /*
      * Image repository url (e.g.: mcr.microsoft.com).
      */
@@ -99,13 +96,13 @@ public final class ImageRepositoryCredential {
      */
     public void validate() {
         if (imageRepositoryUrl() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property imageRepositoryUrl in model ImageRepositoryCredential"));
         }
         if (username() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property username in model ImageRepositoryCredential"));
@@ -114,4 +111,6 @@ public final class ImageRepositoryCredential {
             password().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ImageRepositoryCredential.class);
 }

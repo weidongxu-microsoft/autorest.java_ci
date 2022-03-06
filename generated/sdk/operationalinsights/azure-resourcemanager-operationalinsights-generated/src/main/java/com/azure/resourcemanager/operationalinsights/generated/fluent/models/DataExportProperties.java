@@ -7,15 +7,12 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.Type;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Data Export properties. */
 @Fluent
 public final class DataExportProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DataExportProperties.class);
-
     /*
      * The data export rule ID.
      */
@@ -227,7 +224,7 @@ public final class DataExportProperties {
      */
     public void validate() {
         if (tableNames() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property tableNames in model DataExportProperties"));
         }
@@ -235,4 +232,6 @@ public final class DataExportProperties {
             innerDestination().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(DataExportProperties.class);
 }

@@ -12,10 +12,9 @@ import com.azure.resourcemanager.compute.generated.fluent.CommunityGalleryImageV
 import com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryImageVersionInner;
 import com.azure.resourcemanager.compute.generated.models.CommunityGalleryImageVersion;
 import com.azure.resourcemanager.compute.generated.models.CommunityGalleryImageVersions;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CommunityGalleryImageVersionsImpl implements CommunityGalleryImageVersions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CommunityGalleryImageVersionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(CommunityGalleryImageVersionsImpl.class);
 
     private final CommunityGalleryImageVersionsClient innerClient;
 

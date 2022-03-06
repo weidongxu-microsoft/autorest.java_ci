@@ -7,15 +7,12 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.SupportPackageRequestProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** The request object for trigger support package. */
 @Fluent
 public final class TriggerSupportPackageRequest extends ArmBaseModel {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TriggerSupportPackageRequest.class);
-
     /*
      * The TriggerSupportPackageRequest properties.
      */
@@ -111,7 +108,7 @@ public final class TriggerSupportPackageRequest extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model TriggerSupportPackageRequest"));
@@ -119,4 +116,6 @@ public final class TriggerSupportPackageRequest extends ArmBaseModel {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(TriggerSupportPackageRequest.class);
 }

@@ -14,10 +14,9 @@ import com.azure.resourcemanager.compute.generated.fluent.models.GalleryImageVer
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersion;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersions;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatusTypes;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class GalleryImageVersionsImpl implements GalleryImageVersions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(GalleryImageVersionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(GalleryImageVersionsImpl.class);
 
     private final GalleryImageVersionsClient innerClient;
 
@@ -95,7 +94,7 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
     public GalleryImageVersion getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -103,21 +102,21 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
         }
         String galleryName = Utils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
         String galleryImageName = Utils.getValueFromIdByName(id, "images");
         if (galleryImageName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'images'.", id)));
         }
         String galleryImageVersionName = Utils.getValueFromIdByName(id, "versions");
         if (galleryImageVersionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'versions'.", id)));
@@ -133,7 +132,7 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
         String id, ReplicationStatusTypes expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -141,21 +140,21 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
         }
         String galleryName = Utils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
         String galleryImageName = Utils.getValueFromIdByName(id, "images");
         if (galleryImageName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'images'.", id)));
         }
         String galleryImageVersionName = Utils.getValueFromIdByName(id, "versions");
         if (galleryImageVersionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'versions'.", id)));
@@ -168,7 +167,7 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -176,21 +175,21 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
         }
         String galleryName = Utils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
         String galleryImageName = Utils.getValueFromIdByName(id, "images");
         if (galleryImageName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'images'.", id)));
         }
         String galleryImageVersionName = Utils.getValueFromIdByName(id, "versions");
         if (galleryImageVersionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'versions'.", id)));
@@ -201,7 +200,7 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -209,21 +208,21 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
         }
         String galleryName = Utils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
         String galleryImageName = Utils.getValueFromIdByName(id, "images");
         if (galleryImageName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'images'.", id)));
         }
         String galleryImageVersionName = Utils.getValueFromIdByName(id, "versions");
         if (galleryImageVersionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'versions'.", id)));

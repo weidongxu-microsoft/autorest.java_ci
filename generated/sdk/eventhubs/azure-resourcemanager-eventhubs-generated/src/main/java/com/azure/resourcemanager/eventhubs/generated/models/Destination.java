@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.DestinationProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
 /** Capture storage details for capture description. */
 @Fluent
 public final class Destination {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Destination.class);
-
     /*
      * Name for capture destination
      */

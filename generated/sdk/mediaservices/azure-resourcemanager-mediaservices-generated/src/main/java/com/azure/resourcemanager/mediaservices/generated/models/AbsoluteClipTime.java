@@ -6,7 +6,6 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -20,8 +19,6 @@ import java.time.Duration;
 @JsonTypeName("#Microsoft.Media.AbsoluteClipTime")
 @Fluent
 public final class AbsoluteClipTime extends ClipTime {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AbsoluteClipTime.class);
-
     /*
      * The time position on the timeline of the input media. It is usually
      * specified as an ISO8601 period. e.g PT30S for 30 seconds.
@@ -60,9 +57,11 @@ public final class AbsoluteClipTime extends ClipTime {
     public void validate() {
         super.validate();
         if (time() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property time in model AbsoluteClipTime"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(AbsoluteClipTime.class);
 }

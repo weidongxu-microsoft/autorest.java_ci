@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.VirtualNetworkPeerings
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkPeeringInner;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeering;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeerings;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworkPeeringsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualNetworkPeeringsImpl.class);
 
     private final VirtualNetworkPeeringsClient innerClient;
 
@@ -82,7 +81,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
     public VirtualNetworkPeering getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -90,7 +89,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -98,7 +97,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
         }
         String virtualNetworkPeeringName = Utils.getValueFromIdByName(id, "virtualNetworkPeerings");
         if (virtualNetworkPeeringName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -114,7 +113,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
     public Response<VirtualNetworkPeering> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -122,7 +121,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -130,7 +129,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
         }
         String virtualNetworkPeeringName = Utils.getValueFromIdByName(id, "virtualNetworkPeerings");
         if (virtualNetworkPeeringName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -144,7 +143,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -152,7 +151,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -160,7 +159,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
         }
         String virtualNetworkPeeringName = Utils.getValueFromIdByName(id, "virtualNetworkPeerings");
         if (virtualNetworkPeeringName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -174,7 +173,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -182,7 +181,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -190,7 +189,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
         }
         String virtualNetworkPeeringName = Utils.getValueFromIdByName(id, "virtualNetworkPeerings");
         if (virtualNetworkPeeringName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

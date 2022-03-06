@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -15,8 +13,6 @@ import java.util.List;
 /** Namespace properties supplied for create namespace operation. */
 @Fluent
 public final class EHNamespaceProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EHNamespaceProperties.class);
-
     /*
      * Provisioning state of the Namespace.
      */

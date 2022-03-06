@@ -14,10 +14,9 @@ import com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssig
 import com.azure.resourcemanager.authorization.generated.models.RoleAssignment;
 import com.azure.resourcemanager.authorization.generated.models.RoleAssignmentCreateParameters;
 import com.azure.resourcemanager.authorization.generated.models.RoleAssignments;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RoleAssignmentsImpl implements RoleAssignments {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RoleAssignmentsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(RoleAssignmentsImpl.class);
 
     private final RoleAssignmentsClient innerClient;
 

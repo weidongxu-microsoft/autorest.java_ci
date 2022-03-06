@@ -6,16 +6,12 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayRequestRoutingRulePropertiesFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Request routing rule of an application gateway. */
 @Fluent
 public final class ApplicationGatewayRequestRoutingRule extends SubResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApplicationGatewayRequestRoutingRule.class);
-
     /*
      * Properties of the application gateway request routing rule.
      */

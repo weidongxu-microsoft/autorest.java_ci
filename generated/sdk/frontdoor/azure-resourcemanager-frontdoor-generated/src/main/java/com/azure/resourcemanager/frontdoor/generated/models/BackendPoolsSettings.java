@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Settings that apply to all backend pools. */
 @Fluent
 public final class BackendPoolsSettings {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BackendPoolsSettings.class);
-
     /*
      * Whether to enforce certificate name check on HTTPS requests to all
      * backend pools. No effect on non-HTTPS requests.

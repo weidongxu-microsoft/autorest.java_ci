@@ -12,10 +12,9 @@ import com.azure.resourcemanager.consumption.generated.fluent.TagsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.models.TagsResultInner;
 import com.azure.resourcemanager.consumption.generated.models.Tags;
 import com.azure.resourcemanager.consumption.generated.models.TagsResult;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TagsImpl implements Tags {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TagsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(TagsImpl.class);
 
     private final TagsClient innerClient;
 

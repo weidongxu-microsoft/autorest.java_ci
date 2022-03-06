@@ -5,21 +5,17 @@
 package com.azure.resourcemanager.search.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.search.generated.models.HostingMode;
 import com.azure.resourcemanager.search.generated.models.NetworkRuleSet;
 import com.azure.resourcemanager.search.generated.models.ProvisioningState;
 import com.azure.resourcemanager.search.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.search.generated.models.SearchServiceStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Properties of the search service. */
 @Fluent
 public final class SearchServiceProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SearchServiceProperties.class);
-
     /*
      * The number of replicas in the search service. If specified, it must be a
      * value between 1 and 12 inclusive for standard SKUs or between 1 and 3

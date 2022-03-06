@@ -11,10 +11,9 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.Management
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.ManagementGroupInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.ManagementGroup;
 import com.azure.resourcemanager.operationalinsights.generated.models.ManagementGroups;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ManagementGroupsImpl implements ManagementGroups {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagementGroupsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ManagementGroupsImpl.class);
 
     private final ManagementGroupsClient innerClient;
 

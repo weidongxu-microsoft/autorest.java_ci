@@ -7,15 +7,12 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.Tag;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Value object for saved search results. */
 @Fluent
 public final class SavedSearchProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SavedSearchProperties.class);
-
     /*
      * The category of the saved search. This helps the user to find a saved
      * search faster.
@@ -217,18 +214,18 @@ public final class SavedSearchProperties {
      */
     public void validate() {
         if (category() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property category in model SavedSearchProperties"));
         }
         if (displayName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property displayName in model SavedSearchProperties"));
         }
         if (query() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property query in model SavedSearchProperties"));
         }
@@ -236,4 +233,6 @@ public final class SavedSearchProperties {
             tags().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(SavedSearchProperties.class);
 }

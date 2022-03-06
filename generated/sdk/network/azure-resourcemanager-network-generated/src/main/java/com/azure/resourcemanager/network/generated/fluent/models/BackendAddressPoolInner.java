@@ -6,19 +6,15 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.GatewayLoadBalancerTunnelInterface;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerBackendAddress;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Pool of backend IP addresses. */
 @Fluent
 public final class BackendAddressPoolInner extends SubResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BackendAddressPoolInner.class);
-
     /*
      * Properties of load balancer backend address pool.
      */

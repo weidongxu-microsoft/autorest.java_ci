@@ -11,10 +11,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.EventCategoriesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LocalizableStringInner;
 import com.azure.resourcemanager.monitor.generated.models.EventCategories;
 import com.azure.resourcemanager.monitor.generated.models.LocalizableString;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class EventCategoriesImpl implements EventCategories {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EventCategoriesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(EventCategoriesImpl.class);
 
     private final EventCategoriesClient innerClient;
 

@@ -5,14 +5,10 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /** The secret management attributes. */
 @Fluent
 public final class SecretAttributes extends Attributes {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SecretAttributes.class);
-
     /** {@inheritDoc} */
     @Override
     public SecretAttributes withEnabled(Boolean enabled) {

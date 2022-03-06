@@ -5,12 +5,10 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.InstallRebootBehavior;
 import com.azure.resourcemanager.databoxedge.generated.models.JobStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateOperation;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -18,8 +16,6 @@ import java.util.List;
 /** The device update information summary. */
 @Fluent
 public final class UpdateSummaryProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(UpdateSummaryProperties.class);
-
     /*
      * The current version of the device in format: 1.2.17312.13.",
      */

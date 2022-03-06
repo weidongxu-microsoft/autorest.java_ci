@@ -7,19 +7,15 @@ package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.models.FilterTrackSelection;
 import com.azure.resourcemanager.mediaservices.generated.models.FirstQuality;
 import com.azure.resourcemanager.mediaservices.generated.models.PresentationTimeRange;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** An Asset Filter. */
 @Fluent
 public final class AssetFilterInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AssetFilterInner.class);
-
     /*
      * The Media Filter properties.
      */

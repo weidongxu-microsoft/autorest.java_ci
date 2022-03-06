@@ -30,7 +30,6 @@ import com.azure.core.management.exception.ManagementException;
 import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteCrossConnectionsClient;
@@ -46,8 +45,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ExpressRouteCrossConnectionsClient. */
 public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRouteCrossConnectionsClient {
-    private final ClientLogger logger = new ClientLogger(ExpressRouteCrossConnectionsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final ExpressRouteCrossConnectionsService service;
 

@@ -14,10 +14,9 @@ import com.azure.resourcemanager.applicationinsights.generated.fluent.models.App
 import com.azure.resourcemanager.applicationinsights.generated.models.ApiKeyRequest;
 import com.azure.resourcemanager.applicationinsights.generated.models.ApiKeys;
 import com.azure.resourcemanager.applicationinsights.generated.models.ApplicationInsightsComponentApiKey;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ApiKeysImpl implements ApiKeys {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApiKeysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ApiKeysImpl.class);
 
     private final ApiKeysClient innerClient;
 

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.Workspaces
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspaceInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.Workspace;
 import com.azure.resourcemanager.operationalinsights.generated.models.Workspaces;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class WorkspacesImpl implements Workspaces {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WorkspacesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(WorkspacesImpl.class);
 
     private final WorkspacesClient innerClient;
 
@@ -88,7 +87,7 @@ public final class WorkspacesImpl implements Workspaces {
     public Workspace getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -96,7 +95,7 @@ public final class WorkspacesImpl implements Workspaces {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
@@ -107,7 +106,7 @@ public final class WorkspacesImpl implements Workspaces {
     public Response<Workspace> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -115,7 +114,7 @@ public final class WorkspacesImpl implements Workspaces {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
@@ -126,7 +125,7 @@ public final class WorkspacesImpl implements Workspaces {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -134,7 +133,7 @@ public final class WorkspacesImpl implements Workspaces {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
@@ -146,7 +145,7 @@ public final class WorkspacesImpl implements Workspaces {
     public void deleteByIdWithResponse(String id, Boolean force, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -154,7 +153,7 @@ public final class WorkspacesImpl implements Workspaces {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));

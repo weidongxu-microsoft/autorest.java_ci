@@ -6,17 +6,13 @@ package com.azure.resourcemanager.dns.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.dns.generated.models.ZoneType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Represents the properties of the zone. */
 @Fluent
 public final class ZoneProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ZoneProperties.class);
-
     /*
      * The maximum number of record sets that can be created in this DNS zone.
      * This is a read-only property and any attempt to set this value will be

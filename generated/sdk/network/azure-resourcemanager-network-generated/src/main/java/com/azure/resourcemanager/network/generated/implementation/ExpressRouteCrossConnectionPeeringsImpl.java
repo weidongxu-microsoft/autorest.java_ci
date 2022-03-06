@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.ExpressRouteCrossConne
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCrossConnectionPeeringInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCrossConnectionPeering;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCrossConnectionPeerings;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteCrossConnectionPeeringsImpl implements ExpressRouteCrossConnectionPeerings {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteCrossConnectionPeeringsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ExpressRouteCrossConnectionPeeringsImpl.class);
 
     private final ExpressRouteCrossConnectionPeeringsClient innerClient;
 

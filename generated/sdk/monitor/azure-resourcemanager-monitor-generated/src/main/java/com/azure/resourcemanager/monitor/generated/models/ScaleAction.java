@@ -6,15 +6,12 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 
 /** The parameters for the scaling action. */
 @Fluent
 public final class ScaleAction {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ScaleAction.class);
-
     /*
      * the scale direction. Whether the scaling action increases or decreases
      * the number of instances.
@@ -136,19 +133,21 @@ public final class ScaleAction {
      */
     public void validate() {
         if (direction() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property direction in model ScaleAction"));
         }
         if (type() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property type in model ScaleAction"));
         }
         if (cooldown() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property cooldown in model ScaleAction"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ScaleAction.class);
 }

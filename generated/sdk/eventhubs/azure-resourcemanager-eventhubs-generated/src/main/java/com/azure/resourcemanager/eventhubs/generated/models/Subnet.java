@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Properties supplied for Subnet. */
 @Fluent
 public final class Subnet {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Subnet.class);
-
     /*
      * Resource ID of Virtual Network Subnet
      */

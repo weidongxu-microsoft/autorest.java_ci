@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.MediaServiceProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -17,8 +15,6 @@ import java.util.UUID;
 /** A Media Services account update. */
 @Fluent
 public final class MediaServiceUpdate {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MediaServiceUpdate.class);
-
     /*
      * Resource tags.
      */

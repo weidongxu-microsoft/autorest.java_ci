@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.eventgrid.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.TopicUpdateParameterProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -16,8 +14,6 @@ import java.util.Map;
 /** Properties of the Topic update. */
 @Fluent
 public final class TopicUpdateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TopicUpdateParameters.class);
-
     /*
      * Tags of the resource.
      */

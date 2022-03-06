@@ -21,15 +21,12 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.commerce.generated.fluent.RateCardsClient;
 import com.azure.resourcemanager.commerce.generated.fluent.models.ResourceRateCardInfoInner;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in RateCardsClient. */
 public final class RateCardsClientImpl implements RateCardsClient {
-    private final ClientLogger logger = new ClientLogger(RateCardsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final RateCardsService service;
 

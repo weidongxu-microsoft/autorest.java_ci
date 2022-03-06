@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.dns.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** An SOA record. */
 @Fluent
 public final class SoaRecord {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SoaRecord.class);
-
     /*
      * The domain name of the authoritative name server for this SOA record.
      */

@@ -5,22 +5,18 @@
 package com.azure.resourcemanager.keyvault.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyCurveName;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyOperation;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyType;
 import com.azure.resourcemanager.keyvault.generated.models.KeyAttributes;
 import com.azure.resourcemanager.keyvault.generated.models.KeyReleasePolicy;
 import com.azure.resourcemanager.keyvault.generated.models.RotationPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The properties of the key. */
 @Fluent
 public final class KeyProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KeyProperties.class);
-
     /*
      * The attributes of the key.
      */

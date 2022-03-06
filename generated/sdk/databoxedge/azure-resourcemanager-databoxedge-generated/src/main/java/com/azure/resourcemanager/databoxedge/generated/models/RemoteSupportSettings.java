@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** RemoteApplicationType for which remote support settings is being modified. */
 @Fluent
 public final class RemoteSupportSettings {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RemoteSupportSettings.class);
-
     /*
      * Remote application type
      */

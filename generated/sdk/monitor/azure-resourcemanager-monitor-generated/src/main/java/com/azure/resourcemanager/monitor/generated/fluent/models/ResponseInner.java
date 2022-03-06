@@ -6,7 +6,6 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.util.List;
@@ -14,8 +13,6 @@ import java.util.List;
 /** The response to a metrics query. */
 @Fluent
 public final class ResponseInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResponseInner.class);
-
     /*
      * The integer value representing the relative cost of the query.
      */
@@ -192,16 +189,18 @@ public final class ResponseInner {
      */
     public void validate() {
         if (timespan() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property timespan in model ResponseInner"));
         }
         if (value() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property value in model ResponseInner"));
         } else {
             value().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ResponseInner.class);
 }

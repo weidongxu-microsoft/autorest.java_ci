@@ -8,14 +8,11 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.EdgeProfile;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** CloudEdgeManagement Role properties. */
 @Fluent
 public final class CloudEdgeManagementRoleProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CloudEdgeManagementRoleProperties.class);
-
     /*
      * Local Edge Management Status
      */
@@ -82,10 +79,12 @@ public final class CloudEdgeManagementRoleProperties {
             edgeProfile().validate();
         }
         if (roleStatus() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property roleStatus in model CloudEdgeManagementRoleProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(CloudEdgeManagementRoleProperties.class);
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.storage.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.models.EnabledProtocols;
 import com.azure.resourcemanager.storage.generated.models.LeaseDuration;
 import com.azure.resourcemanager.storage.generated.models.LeaseState;
@@ -13,7 +12,6 @@ import com.azure.resourcemanager.storage.generated.models.LeaseStatus;
 import com.azure.resourcemanager.storage.generated.models.RootSquashType;
 import com.azure.resourcemanager.storage.generated.models.ShareAccessTier;
 import com.azure.resourcemanager.storage.generated.models.SignedIdentifier;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -23,8 +21,6 @@ import java.util.Map;
 /** The properties of the file share. */
 @Fluent
 public final class FileShareProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FileShareProperties.class);
-
     /*
      * Returns the date and time the share was last modified.
      */

@@ -15,10 +15,9 @@ import com.azure.resourcemanager.network.generated.models.VpnConnection;
 import com.azure.resourcemanager.network.generated.models.VpnConnectionPacketCaptureStartParameters;
 import com.azure.resourcemanager.network.generated.models.VpnConnectionPacketCaptureStopParameters;
 import com.azure.resourcemanager.network.generated.models.VpnConnections;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnConnectionsImpl implements VpnConnections {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VpnConnectionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VpnConnectionsImpl.class);
 
     private final VpnConnectionsClient innerClient;
 

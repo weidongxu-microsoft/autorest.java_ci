@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.EdgeProfilePatch;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The Data Box Edge/Gateway device properties patch. */
 @Fluent
 public final class DataBoxEdgeDevicePropertiesPatch {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DataBoxEdgeDevicePropertiesPatch.class);
-
     /*
      * Edge Profile property of the Data Box Edge/Gateway device
      */

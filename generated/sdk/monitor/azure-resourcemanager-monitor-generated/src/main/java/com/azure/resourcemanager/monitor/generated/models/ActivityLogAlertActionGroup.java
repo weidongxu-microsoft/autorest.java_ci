@@ -6,7 +6,6 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -14,8 +13,6 @@ import java.util.Map;
 /** A pointer to an Azure Action Group. */
 @Fluent
 public final class ActivityLogAlertActionGroup {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActivityLogAlertActionGroup.class);
-
     /*
      * The resourceId of the action group. This cannot be null or empty.
      */
@@ -79,10 +76,12 @@ public final class ActivityLogAlertActionGroup {
      */
     public void validate() {
         if (actionGroupId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property actionGroupId in model ActivityLogAlertActionGroup"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ActivityLogAlertActionGroup.class);
 }

@@ -17,15 +17,12 @@ import com.azure.resourcemanager.databoxedge.generated.models.RefreshDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.ShareAccessProtocol;
 import com.azure.resourcemanager.databoxedge.generated.models.ShareStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.UserAccessRight;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Represents a share on the Data Box Edge/Gateway device. */
 @Fluent
 public final class ShareInner extends ArmBaseModel {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ShareInner.class);
-
     /*
      * Share on ASE device
      */
@@ -285,11 +282,13 @@ public final class ShareInner extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property innerProperties in model ShareInner"));
         } else {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ShareInner.class);
 }

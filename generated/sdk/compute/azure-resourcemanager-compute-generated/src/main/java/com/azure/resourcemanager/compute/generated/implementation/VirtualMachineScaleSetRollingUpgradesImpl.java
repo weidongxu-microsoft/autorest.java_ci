@@ -12,10 +12,9 @@ import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineScaleSet
 import com.azure.resourcemanager.compute.generated.fluent.models.RollingUpgradeStatusInfoInner;
 import com.azure.resourcemanager.compute.generated.models.RollingUpgradeStatusInfo;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetRollingUpgrades;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineScaleSetRollingUpgradesImpl implements VirtualMachineScaleSetRollingUpgrades {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineScaleSetRollingUpgradesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualMachineScaleSetRollingUpgradesImpl.class);
 
     private final VirtualMachineScaleSetRollingUpgradesClient innerClient;
 

@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.DeletedManagedHsmInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** List of deleted managed HSM Pools. */
 @Fluent
 public final class DeletedManagedHsmListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DeletedManagedHsmListResult.class);
-
     /*
      * The list of deleted managed HSM Pools.
      */

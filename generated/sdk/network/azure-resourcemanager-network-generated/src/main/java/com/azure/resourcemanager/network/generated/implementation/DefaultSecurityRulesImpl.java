@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.DefaultSecurityRulesCl
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityRuleInner;
 import com.azure.resourcemanager.network.generated.models.DefaultSecurityRules;
 import com.azure.resourcemanager.network.generated.models.SecurityRule;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DefaultSecurityRulesImpl implements DefaultSecurityRules {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DefaultSecurityRulesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DefaultSecurityRulesImpl.class);
 
     private final DefaultSecurityRulesClient innerClient;
 

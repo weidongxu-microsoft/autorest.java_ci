@@ -28,10 +28,9 @@ import com.azure.resourcemanager.network.generated.models.VpnClientParameters;
 import com.azure.resourcemanager.network.generated.models.VpnDeviceScriptParameters;
 import com.azure.resourcemanager.network.generated.models.VpnPacketCaptureStartParameters;
 import com.azure.resourcemanager.network.generated.models.VpnPacketCaptureStopParameters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworkGatewaysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualNetworkGatewaysImpl.class);
 
     private final VirtualNetworkGatewaysClient innerClient;
 
@@ -406,7 +405,7 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
     public VirtualNetworkGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -414,7 +413,7 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -430,7 +429,7 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
     public Response<VirtualNetworkGateway> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -438,7 +437,7 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -452,7 +451,7 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -460,7 +459,7 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -474,7 +473,7 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -482,7 +481,7 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

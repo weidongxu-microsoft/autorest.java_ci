@@ -6,7 +6,6 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -17,8 +16,6 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.JobInputAsset")
 @Fluent
 public final class JobInputAsset extends JobInputClip {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(JobInputAsset.class);
-
     /*
      * The name of the input Asset.
      */
@@ -89,9 +86,11 @@ public final class JobInputAsset extends JobInputClip {
     public void validate() {
         super.validate();
         if (assetName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property assetName in model JobInputAsset"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(JobInputAsset.class);
 }

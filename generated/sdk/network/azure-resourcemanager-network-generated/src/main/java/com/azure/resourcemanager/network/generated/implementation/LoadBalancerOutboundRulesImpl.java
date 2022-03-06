@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.LoadBalancerOutboundRu
 import com.azure.resourcemanager.network.generated.fluent.models.OutboundRuleInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerOutboundRules;
 import com.azure.resourcemanager.network.generated.models.OutboundRule;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LoadBalancerOutboundRulesImpl implements LoadBalancerOutboundRules {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancerOutboundRulesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(LoadBalancerOutboundRulesImpl.class);
 
     private final LoadBalancerOutboundRulesClient innerClient;
 

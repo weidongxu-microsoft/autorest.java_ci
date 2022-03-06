@@ -9,10 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.fluent.EndpointsClient;
 import com.azure.resourcemanager.frontdoor.generated.models.Endpoints;
 import com.azure.resourcemanager.frontdoor.generated.models.PurgeParameters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class EndpointsImpl implements Endpoints {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EndpointsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(EndpointsImpl.class);
 
     private final EndpointsClient innerClient;
 

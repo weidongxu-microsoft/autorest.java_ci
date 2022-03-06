@@ -13,10 +13,9 @@ import com.azure.resourcemanager.authorization.generated.fluent.ProviderOperatio
 import com.azure.resourcemanager.authorization.generated.fluent.models.ProviderOperationsMetadataInner;
 import com.azure.resourcemanager.authorization.generated.models.ProviderOperationsMetadata;
 import com.azure.resourcemanager.authorization.generated.models.ProviderOperationsMetadatas;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ProviderOperationsMetadatasImpl implements ProviderOperationsMetadatas {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ProviderOperationsMetadatasImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ProviderOperationsMetadatasImpl.class);
 
     private final ProviderOperationsMetadatasClient innerClient;
 

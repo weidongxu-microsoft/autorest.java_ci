@@ -5,10 +5,8 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.IoTRoleProperties;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.RoleInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -19,8 +17,6 @@ import java.util.List;
 @JsonTypeName("IOT")
 @Fluent
 public final class IoTRole extends RoleInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(IoTRole.class);
-
     /*
      * Properties specific to IoT role.
      */

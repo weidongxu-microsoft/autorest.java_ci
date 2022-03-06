@@ -14,10 +14,9 @@ import com.azure.resourcemanager.storage.generated.fluent.models.BlobInventoryPo
 import com.azure.resourcemanager.storage.generated.models.BlobInventoryPolicies;
 import com.azure.resourcemanager.storage.generated.models.BlobInventoryPolicy;
 import com.azure.resourcemanager.storage.generated.models.BlobInventoryPolicyName;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BlobInventoryPoliciesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(BlobInventoryPoliciesImpl.class);
 
     private final BlobInventoryPoliciesClient innerClient;
 
@@ -87,7 +86,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
     public BlobInventoryPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -95,7 +94,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -104,7 +103,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
         BlobInventoryPolicyName blobInventoryPolicyName =
             BlobInventoryPolicyName.fromString(Utils.getValueFromIdByName(id, "inventoryPolicies"));
         if (blobInventoryPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -117,7 +116,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
     public Response<BlobInventoryPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -125,7 +124,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -134,7 +133,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
         BlobInventoryPolicyName blobInventoryPolicyName =
             BlobInventoryPolicyName.fromString(Utils.getValueFromIdByName(id, "inventoryPolicies"));
         if (blobInventoryPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -147,7 +146,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -155,7 +154,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -164,7 +163,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
         BlobInventoryPolicyName blobInventoryPolicyName =
             BlobInventoryPolicyName.fromString(Utils.getValueFromIdByName(id, "inventoryPolicies"));
         if (blobInventoryPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -177,7 +176,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -185,7 +184,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -194,7 +193,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
         BlobInventoryPolicyName blobInventoryPolicyName =
             BlobInventoryPolicyName.fromString(Utils.getValueFromIdByName(id, "inventoryPolicies"));
         if (blobInventoryPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

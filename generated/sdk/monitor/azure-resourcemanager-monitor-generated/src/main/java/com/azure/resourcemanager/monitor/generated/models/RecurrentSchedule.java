@@ -6,15 +6,12 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The scheduling constraints for when the profile begins. */
 @Fluent
 public final class RecurrentSchedule {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RecurrentSchedule.class);
-
     /*
      * the timezone for the hours of the profile. Some examples of valid time
      * zones are: Dateline Standard Time, UTC-11, Hawaiian Standard Time,
@@ -218,24 +215,26 @@ public final class RecurrentSchedule {
      */
     public void validate() {
         if (timeZone() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property timeZone in model RecurrentSchedule"));
         }
         if (days() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property days in model RecurrentSchedule"));
         }
         if (hours() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property hours in model RecurrentSchedule"));
         }
         if (minutes() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property minutes in model RecurrentSchedule"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(RecurrentSchedule.class);
 }

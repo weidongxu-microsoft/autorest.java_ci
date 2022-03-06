@@ -11,10 +11,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.MetricDefinitionsClien
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricDefinitionInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricDefinition;
 import com.azure.resourcemanager.monitor.generated.models.MetricDefinitions;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class MetricDefinitionsImpl implements MetricDefinitions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricDefinitionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(MetricDefinitionsImpl.class);
 
     private final MetricDefinitionsClient innerClient;
 

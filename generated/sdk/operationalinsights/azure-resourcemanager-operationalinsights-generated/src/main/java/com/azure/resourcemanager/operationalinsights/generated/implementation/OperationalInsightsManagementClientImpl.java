@@ -55,8 +55,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the OperationalInsightsManagementClientImpl type. */
 @ServiceClient(builder = OperationalInsightsManagementClientBuilder.class)
 public final class OperationalInsightsManagementClientImpl implements OperationalInsightsManagementClient {
-    private final ClientLogger logger = new ClientLogger(OperationalInsightsManagementClientImpl.class);
-
     /** The ID of the target subscription. */
     private final String subscriptionId;
 
@@ -484,7 +482,7 @@ public final class OperationalInsightsManagementClientImpl implements Operationa
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -543,4 +541,6 @@ public final class OperationalInsightsManagementClientImpl implements Operationa
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(OperationalInsightsManagementClientImpl.class);
 }

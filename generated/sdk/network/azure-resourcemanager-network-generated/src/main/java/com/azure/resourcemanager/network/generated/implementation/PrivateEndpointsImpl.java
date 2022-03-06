@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.PrivateEndpointsClient
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointInner;
 import com.azure.resourcemanager.network.generated.models.PrivateEndpoint;
 import com.azure.resourcemanager.network.generated.models.PrivateEndpoints;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateEndpointsImpl implements PrivateEndpoints {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateEndpointsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PrivateEndpointsImpl.class);
 
     private final PrivateEndpointsClient innerClient;
 
@@ -86,7 +85,7 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
     public PrivateEndpoint getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -94,7 +93,7 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
         }
         String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
         if (privateEndpointName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -110,7 +109,7 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
     public Response<PrivateEndpoint> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -118,7 +117,7 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
         }
         String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
         if (privateEndpointName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -131,7 +130,7 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -139,7 +138,7 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
         }
         String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
         if (privateEndpointName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -152,7 +151,7 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -160,7 +159,7 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
         }
         String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
         if (privateEndpointName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

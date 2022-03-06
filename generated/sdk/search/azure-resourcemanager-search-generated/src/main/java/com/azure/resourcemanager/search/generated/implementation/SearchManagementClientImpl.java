@@ -42,8 +42,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the SearchManagementClientImpl type. */
 @ServiceClient(builder = SearchManagementClientBuilder.class)
 public final class SearchManagementClientImpl implements SearchManagementClient {
-    private final ClientLogger logger = new ClientLogger(SearchManagementClientImpl.class);
-
     /**
      * The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource
      * Manager API or the portal.
@@ -320,7 +318,7 @@ public final class SearchManagementClientImpl implements SearchManagementClient 
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -379,4 +377,6 @@ public final class SearchManagementClientImpl implements SearchManagementClient 
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(SearchManagementClientImpl.class);
 }

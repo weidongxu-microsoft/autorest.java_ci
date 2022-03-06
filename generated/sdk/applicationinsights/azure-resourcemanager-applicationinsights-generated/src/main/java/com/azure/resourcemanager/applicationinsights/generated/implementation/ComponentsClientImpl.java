@@ -30,7 +30,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.applicationinsights.generated.fluent.ComponentsClient;
 import com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentInner;
 import com.azure.resourcemanager.applicationinsights.generated.fluent.models.ComponentPurgeResponseInner;
@@ -42,8 +41,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ComponentsClient. */
 public final class ComponentsClientImpl implements ComponentsClient {
-    private final ClientLogger logger = new ClientLogger(ComponentsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final ComponentsService service;
 

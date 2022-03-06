@@ -7,10 +7,9 @@ package com.azure.resourcemanager.recoveryservices.generated.implementation;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.VaultCertificatesClient;
 import com.azure.resourcemanager.recoveryservices.generated.models.VaultCertificates;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VaultCertificatesImpl implements VaultCertificates {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VaultCertificatesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VaultCertificatesImpl.class);
 
     private final VaultCertificatesClient innerClient;
 

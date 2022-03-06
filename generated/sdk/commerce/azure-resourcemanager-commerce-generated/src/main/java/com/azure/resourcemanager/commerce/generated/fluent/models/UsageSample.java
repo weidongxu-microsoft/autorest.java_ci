@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.commerce.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.commerce.generated.models.InfoField;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -15,8 +13,6 @@ import java.util.UUID;
 /** Describes a sample of the usageAggregation. */
 @Fluent
 public final class UsageSample {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(UsageSample.class);
-
     /*
      * The subscription identifier for the Azure user.
      */

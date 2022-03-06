@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.KeyVaultSyncStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.Secret;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /** The extended Info of the Data Box Edge/Gateway device. */
 @Fluent
 public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DataBoxEdgeDeviceExtendedInfoInner.class);
-
     /*
      * The extended info properties.
      */

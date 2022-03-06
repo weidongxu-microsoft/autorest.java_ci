@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.SubscriptionProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Subscription details for the Edge Profile. */
 @Fluent
 public final class EdgeProfileSubscription {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EdgeProfileSubscription.class);
-
     /*
      * Edge Subscription Registration ID
      */

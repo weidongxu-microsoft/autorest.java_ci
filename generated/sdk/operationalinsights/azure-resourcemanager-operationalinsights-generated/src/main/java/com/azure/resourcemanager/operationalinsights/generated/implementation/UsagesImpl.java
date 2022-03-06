@@ -11,10 +11,9 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.UsagesClie
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.UsageMetricInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.UsageMetric;
 import com.azure.resourcemanager.operationalinsights.generated.models.Usages;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class UsagesImpl implements Usages {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(UsagesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(UsagesImpl.class);
 
     private final UsagesClient innerClient;
 

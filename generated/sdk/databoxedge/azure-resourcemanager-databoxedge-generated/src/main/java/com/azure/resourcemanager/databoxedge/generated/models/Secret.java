@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Holds device secret either as a KeyVault reference or as an encrypted value. */
 @Fluent
 public final class Secret {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Secret.class);
-
     /*
      * Encrypted (using device public key) secret value.
      */

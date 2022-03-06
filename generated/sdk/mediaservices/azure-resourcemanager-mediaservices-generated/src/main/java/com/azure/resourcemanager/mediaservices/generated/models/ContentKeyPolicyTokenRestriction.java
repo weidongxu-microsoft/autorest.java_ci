@@ -6,7 +6,6 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -19,8 +18,6 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyTokenRestriction")
 @Fluent
 public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRestriction {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ContentKeyPolicyTokenRestriction.class);
-
     /*
      * The token issuer.
      */
@@ -215,19 +212,19 @@ public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRest
     public void validate() {
         super.validate();
         if (issuer() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property issuer in model ContentKeyPolicyTokenRestriction"));
         }
         if (audience() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property audience in model ContentKeyPolicyTokenRestriction"));
         }
         if (primaryVerificationKey() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property primaryVerificationKey in model ContentKeyPolicyTokenRestriction"));
@@ -241,10 +238,12 @@ public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRest
             requiredClaims().forEach(e -> e.validate());
         }
         if (restrictionTokenType() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property restrictionTokenType in model ContentKeyPolicyTokenRestriction"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ContentKeyPolicyTokenRestriction.class);
 }

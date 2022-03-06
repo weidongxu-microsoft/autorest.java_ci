@@ -6,18 +6,14 @@ package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.NetworkExperimentResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.State;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /** Defines an Network Experiment Profile and lists of Experiments. */
 @Fluent
 public final class ProfileInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ProfileInner.class);
-
     /*
      * The properties of a Profile
      */

@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.models.ConnectionMonitorParameters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -16,8 +15,6 @@ import java.util.Map;
 /** Parameters that define the operation to create a connection monitor. */
 @Fluent
 public final class ConnectionMonitor {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ConnectionMonitor.class);
-
     /*
      * Connection monitor location.
      */
@@ -300,7 +297,7 @@ public final class ConnectionMonitor {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model ConnectionMonitor"));
@@ -308,4 +305,6 @@ public final class ConnectionMonitor {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ConnectionMonitor.class);
 }

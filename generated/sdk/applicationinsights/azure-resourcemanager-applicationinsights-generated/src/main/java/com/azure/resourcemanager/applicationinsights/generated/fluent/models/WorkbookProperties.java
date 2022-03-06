@@ -7,15 +7,12 @@ package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.applicationinsights.generated.models.SharedTypeKind;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Properties that contain a workbook. */
 @Fluent
 public final class WorkbookProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WorkbookProperties.class);
-
     /*
      * The user-defined name of the workbook.
      */
@@ -285,36 +282,38 @@ public final class WorkbookProperties {
      */
     public void validate() {
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property name in model WorkbookProperties"));
         }
         if (serializedData() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property serializedData in model WorkbookProperties"));
         }
         if (workbookId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property workbookId in model WorkbookProperties"));
         }
         if (sharedTypeKind() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property sharedTypeKind in model WorkbookProperties"));
         }
         if (category() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property category in model WorkbookProperties"));
         }
         if (userId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property userId in model WorkbookProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(WorkbookProperties.class);
 }

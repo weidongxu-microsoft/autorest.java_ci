@@ -6,14 +6,11 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The shipping address of the customer. */
 @Fluent
 public final class Address {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Address.class);
-
     /*
      * The address line1.
      */
@@ -203,9 +200,11 @@ public final class Address {
      */
     public void validate() {
         if (country() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property country in model Address"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(Address.class);
 }

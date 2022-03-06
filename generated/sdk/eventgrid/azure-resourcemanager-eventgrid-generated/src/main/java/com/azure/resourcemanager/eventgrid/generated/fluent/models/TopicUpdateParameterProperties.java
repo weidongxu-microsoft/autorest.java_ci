@@ -5,18 +5,14 @@
 package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Information of topic update parameter properties. */
 @Fluent
 public final class TopicUpdateParameterProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TopicUpdateParameterProperties.class);
-
     /*
      * This determines if traffic is allowed over public network. By default it
      * is enabled.

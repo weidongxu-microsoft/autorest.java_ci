@@ -5,18 +5,14 @@
 package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.Endpoint;
 import com.azure.resourcemanager.frontdoor.generated.models.NetworkExperimentResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.State;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Defines the properties of an experiment. */
 @Fluent
 public final class ExperimentProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExperimentProperties.class);
-
     /*
      * The description of the details or intents of the Experiment
      */

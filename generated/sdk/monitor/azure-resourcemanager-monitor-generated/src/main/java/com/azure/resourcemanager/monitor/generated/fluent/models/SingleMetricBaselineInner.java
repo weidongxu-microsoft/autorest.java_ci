@@ -7,7 +7,6 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.TimeSeriesBaseline;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.util.List;
@@ -15,8 +14,6 @@ import java.util.List;
 /** The baseline results of a single metric. */
 @Fluent
 public final class SingleMetricBaselineInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SingleMetricBaselineInner.class);
-
     /*
      * The metric baseline Id.
      */
@@ -217,22 +214,22 @@ public final class SingleMetricBaselineInner {
      */
     public void validate() {
         if (id() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property id in model SingleMetricBaselineInner"));
         }
         if (type() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property type in model SingleMetricBaselineInner"));
         }
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property name in model SingleMetricBaselineInner"));
         }
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model SingleMetricBaselineInner"));
@@ -240,4 +237,6 @@ public final class SingleMetricBaselineInner {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(SingleMetricBaselineInner.class);
 }

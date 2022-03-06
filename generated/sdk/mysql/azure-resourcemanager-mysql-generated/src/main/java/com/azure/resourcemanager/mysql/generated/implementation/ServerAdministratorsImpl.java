@@ -13,10 +13,9 @@ import com.azure.resourcemanager.mysql.generated.fluent.ServerAdministratorsClie
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerAdministratorResourceInner;
 import com.azure.resourcemanager.mysql.generated.models.ServerAdministratorResource;
 import com.azure.resourcemanager.mysql.generated.models.ServerAdministrators;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServerAdministratorsImpl implements ServerAdministrators {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServerAdministratorsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ServerAdministratorsImpl.class);
 
     private final ServerAdministratorsClient innerClient;
 

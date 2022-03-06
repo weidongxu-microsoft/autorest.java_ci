@@ -11,10 +11,9 @@ import com.azure.resourcemanager.network.generated.fluent.AzureFirewallFqdnTagsC
 import com.azure.resourcemanager.network.generated.fluent.models.AzureFirewallFqdnTagInner;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallFqdnTag;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallFqdnTags;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AzureFirewallFqdnTagsImpl implements AzureFirewallFqdnTags {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AzureFirewallFqdnTagsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AzureFirewallFqdnTagsImpl.class);
 
     private final AzureFirewallFqdnTagsClient innerClient;
 

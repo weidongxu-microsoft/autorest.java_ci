@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The response from the List namespace operation. */
 @Fluent
 public final class NWRuleSetIpRules {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NWRuleSetIpRules.class);
-
     /*
      * IP Mask
      */

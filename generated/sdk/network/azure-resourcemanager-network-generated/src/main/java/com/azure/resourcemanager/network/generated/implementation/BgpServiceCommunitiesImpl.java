@@ -11,10 +11,9 @@ import com.azure.resourcemanager.network.generated.fluent.BgpServiceCommunitiesC
 import com.azure.resourcemanager.network.generated.fluent.models.BgpServiceCommunityInner;
 import com.azure.resourcemanager.network.generated.models.BgpServiceCommunities;
 import com.azure.resourcemanager.network.generated.models.BgpServiceCommunity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class BgpServiceCommunitiesImpl implements BgpServiceCommunities {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BgpServiceCommunitiesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(BgpServiceCommunitiesImpl.class);
 
     private final BgpServiceCommunitiesClient innerClient;
 

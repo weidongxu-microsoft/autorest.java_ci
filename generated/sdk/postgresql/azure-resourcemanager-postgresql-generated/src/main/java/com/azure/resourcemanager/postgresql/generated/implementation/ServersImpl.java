@@ -13,10 +13,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.ServersClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerInner;
 import com.azure.resourcemanager.postgresql.generated.models.Server;
 import com.azure.resourcemanager.postgresql.generated.models.Servers;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServersImpl implements Servers {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ServersImpl.class);
 
     private final ServersClient innerClient;
 
@@ -91,7 +90,7 @@ public final class ServersImpl implements Servers {
     public Server getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -99,7 +98,7 @@ public final class ServersImpl implements Servers {
         }
         String serverName = Utils.getValueFromIdByName(id, "servers");
         if (serverName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
@@ -110,7 +109,7 @@ public final class ServersImpl implements Servers {
     public Response<Server> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -118,7 +117,7 @@ public final class ServersImpl implements Servers {
         }
         String serverName = Utils.getValueFromIdByName(id, "servers");
         if (serverName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
@@ -129,7 +128,7 @@ public final class ServersImpl implements Servers {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -137,7 +136,7 @@ public final class ServersImpl implements Servers {
         }
         String serverName = Utils.getValueFromIdByName(id, "servers");
         if (serverName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
@@ -148,7 +147,7 @@ public final class ServersImpl implements Servers {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -156,7 +155,7 @@ public final class ServersImpl implements Servers {
         }
         String serverName = Utils.getValueFromIdByName(id, "servers");
         if (serverName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));

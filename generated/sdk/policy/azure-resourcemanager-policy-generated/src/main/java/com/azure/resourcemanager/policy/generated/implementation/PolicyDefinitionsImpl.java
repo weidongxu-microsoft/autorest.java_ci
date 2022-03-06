@@ -13,10 +13,9 @@ import com.azure.resourcemanager.policy.generated.fluent.PolicyDefinitionsClient
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyDefinitionInner;
 import com.azure.resourcemanager.policy.generated.models.PolicyDefinition;
 import com.azure.resourcemanager.policy.generated.models.PolicyDefinitions;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PolicyDefinitionsImpl implements PolicyDefinitions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PolicyDefinitionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PolicyDefinitionsImpl.class);
 
     private final PolicyDefinitionsClient innerClient;
 
@@ -181,7 +180,7 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     public PolicyDefinition getById(String id) {
         String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
         if (policyDefinitionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -194,7 +193,7 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     public Response<PolicyDefinition> getByIdWithResponse(String id, Context context) {
         String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
         if (policyDefinitionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -207,7 +206,7 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     public void deleteById(String id) {
         String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
         if (policyDefinitionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -220,7 +219,7 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
         if (policyDefinitionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

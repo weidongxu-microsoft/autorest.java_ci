@@ -13,13 +13,12 @@ import com.azure.resourcemanager.applicationinsights.generated.fluent.models.App
 import com.azure.resourcemanager.applicationinsights.generated.models.ApplicationInsightsComponentExportConfiguration;
 import com.azure.resourcemanager.applicationinsights.generated.models.ApplicationInsightsComponentExportRequest;
 import com.azure.resourcemanager.applicationinsights.generated.models.ExportConfigurations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class ExportConfigurationsImpl implements ExportConfigurations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExportConfigurationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ExportConfigurationsImpl.class);
 
     private final ExportConfigurationsClient innerClient;
 

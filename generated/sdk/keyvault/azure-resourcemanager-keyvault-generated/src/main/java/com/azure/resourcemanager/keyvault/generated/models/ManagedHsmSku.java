@@ -6,14 +6,11 @@ package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** SKU details. */
 @Fluent
 public final class ManagedHsmSku {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagedHsmSku.class);
-
     /*
      * SKU Family of the managed HSM Pool
      */
@@ -73,14 +70,16 @@ public final class ManagedHsmSku {
      */
     public void validate() {
         if (family() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property family in model ManagedHsmSku"));
         }
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property name in model ManagedHsmSku"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ManagedHsmSku.class);
 }

@@ -12,10 +12,9 @@ import com.azure.resourcemanager.azurekusto.generated.fluent.OperationsResultsCl
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.OperationResultInner;
 import com.azure.resourcemanager.azurekusto.generated.models.OperationResult;
 import com.azure.resourcemanager.azurekusto.generated.models.OperationsResults;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class OperationsResultsImpl implements OperationsResults {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(OperationsResultsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(OperationsResultsImpl.class);
 
     private final OperationsResultsClient innerClient;
 

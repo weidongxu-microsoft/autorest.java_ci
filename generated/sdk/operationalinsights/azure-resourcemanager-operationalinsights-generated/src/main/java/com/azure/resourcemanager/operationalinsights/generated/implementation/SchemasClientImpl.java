@@ -21,15 +21,12 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.SchemasClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SearchGetSchemaResponseInner;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in SchemasClient. */
 public final class SchemasClientImpl implements SchemasClient {
-    private final ClientLogger logger = new ClientLogger(SchemasClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final SchemasService service;
 

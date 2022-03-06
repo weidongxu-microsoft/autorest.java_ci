@@ -12,10 +12,9 @@ import com.azure.resourcemanager.consumption.generated.fluent.PriceSheetsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.models.PriceSheetResultInner;
 import com.azure.resourcemanager.consumption.generated.models.PriceSheetResult;
 import com.azure.resourcemanager.consumption.generated.models.PriceSheets;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PriceSheetsImpl implements PriceSheets {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PriceSheetsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PriceSheetsImpl.class);
 
     private final PriceSheetsClient innerClient;
 

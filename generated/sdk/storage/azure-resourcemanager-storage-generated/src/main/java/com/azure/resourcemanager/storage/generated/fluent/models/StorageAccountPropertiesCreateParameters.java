@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.storage.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.models.AccessTier;
 import com.azure.resourcemanager.storage.generated.models.AllowedCopyScope;
 import com.azure.resourcemanager.storage.generated.models.AzureFilesIdentityBasedAuthentication;
@@ -19,14 +18,11 @@ import com.azure.resourcemanager.storage.generated.models.NetworkRuleSet;
 import com.azure.resourcemanager.storage.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.storage.generated.models.RoutingPreference;
 import com.azure.resourcemanager.storage.generated.models.SasPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The parameters used to create the storage account. */
 @Fluent
 public final class StorageAccountPropertiesCreateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StorageAccountPropertiesCreateParameters.class);
-
     /*
      * Restrict copy to and from Storage Accounts within an AAD tenant or with
      * Private Links to the same VNet.

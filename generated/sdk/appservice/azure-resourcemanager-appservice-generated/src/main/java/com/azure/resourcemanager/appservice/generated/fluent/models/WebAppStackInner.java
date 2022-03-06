@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
 import com.azure.resourcemanager.appservice.generated.models.StackPreferredOs;
 import com.azure.resourcemanager.appservice.generated.models.WebAppMajorVersion;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Web App stack. */
 @Fluent
 public final class WebAppStackInner extends ProxyOnlyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WebAppStackInner.class);
-
     /*
      * Web App stack location.
      */

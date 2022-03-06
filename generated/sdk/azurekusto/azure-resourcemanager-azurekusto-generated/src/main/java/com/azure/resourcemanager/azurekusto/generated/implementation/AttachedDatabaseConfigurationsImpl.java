@@ -16,10 +16,9 @@ import com.azure.resourcemanager.azurekusto.generated.models.AttachedDatabaseCon
 import com.azure.resourcemanager.azurekusto.generated.models.AttachedDatabaseConfigurations;
 import com.azure.resourcemanager.azurekusto.generated.models.AttachedDatabaseConfigurationsCheckNameRequest;
 import com.azure.resourcemanager.azurekusto.generated.models.CheckNameResult;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabaseConfigurations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AttachedDatabaseConfigurationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AttachedDatabaseConfigurationsImpl.class);
 
     private final AttachedDatabaseConfigurationsClient innerClient;
 
@@ -116,7 +115,7 @@ public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabas
     public AttachedDatabaseConfiguration getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -124,14 +123,14 @@ public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabas
         }
         String clusterName = Utils.getValueFromIdByName(id, "clusters");
         if (clusterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
         }
         String attachedDatabaseConfigurationName = Utils.getValueFromIdByName(id, "attachedDatabaseConfigurations");
         if (attachedDatabaseConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -148,7 +147,7 @@ public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabas
     public Response<AttachedDatabaseConfiguration> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -156,14 +155,14 @@ public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabas
         }
         String clusterName = Utils.getValueFromIdByName(id, "clusters");
         if (clusterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
         }
         String attachedDatabaseConfigurationName = Utils.getValueFromIdByName(id, "attachedDatabaseConfigurations");
         if (attachedDatabaseConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -178,7 +177,7 @@ public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabas
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -186,14 +185,14 @@ public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabas
         }
         String clusterName = Utils.getValueFromIdByName(id, "clusters");
         if (clusterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
         }
         String attachedDatabaseConfigurationName = Utils.getValueFromIdByName(id, "attachedDatabaseConfigurations");
         if (attachedDatabaseConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -208,7 +207,7 @@ public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabas
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -216,14 +215,14 @@ public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabas
         }
         String clusterName = Utils.getValueFromIdByName(id, "clusters");
         if (clusterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
         }
         String attachedDatabaseConfigurationName = Utils.getValueFromIdByName(id, "attachedDatabaseConfigurations");
         if (attachedDatabaseConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

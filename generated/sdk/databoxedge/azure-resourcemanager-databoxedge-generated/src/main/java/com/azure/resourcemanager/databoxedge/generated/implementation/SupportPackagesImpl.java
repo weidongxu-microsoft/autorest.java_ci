@@ -9,10 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.SupportPackagesClient;
 import com.azure.resourcemanager.databoxedge.generated.models.SupportPackages;
 import com.azure.resourcemanager.databoxedge.generated.models.TriggerSupportPackageRequest;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SupportPackagesImpl implements SupportPackages {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SupportPackagesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(SupportPackagesImpl.class);
 
     private final SupportPackagesClient innerClient;
 

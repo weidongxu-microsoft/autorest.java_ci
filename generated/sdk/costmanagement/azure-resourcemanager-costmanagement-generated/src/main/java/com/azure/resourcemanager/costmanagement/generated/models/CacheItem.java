@@ -6,14 +6,11 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The CacheItem model. */
 @Fluent
 public final class CacheItem {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CacheItem.class);
-
     /*
      * Resource ID used by Resource Manager to uniquely identify the scope.
      */
@@ -190,22 +187,24 @@ public final class CacheItem {
      */
     public void validate() {
         if (id() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(new IllegalArgumentException("Missing required property id in model CacheItem"));
         }
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(new IllegalArgumentException("Missing required property name in model CacheItem"));
         }
         if (channel() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property channel in model CacheItem"));
         }
         if (subchannel() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property subchannel in model CacheItem"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(CacheItem.class);
 }

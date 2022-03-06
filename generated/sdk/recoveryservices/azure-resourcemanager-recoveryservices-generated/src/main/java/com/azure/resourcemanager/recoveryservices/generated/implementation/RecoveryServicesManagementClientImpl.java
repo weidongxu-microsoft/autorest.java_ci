@@ -45,8 +45,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the RecoveryServicesManagementClientImpl type. */
 @ServiceClient(builder = RecoveryServicesManagementClientBuilder.class)
 public final class RecoveryServicesManagementClientImpl implements RecoveryServicesManagementClient {
-    private final ClientLogger logger = new ClientLogger(RecoveryServicesManagementClientImpl.class);
-
     /** The subscription Id. */
     private final String subscriptionId;
 
@@ -357,7 +355,7 @@ public final class RecoveryServicesManagementClientImpl implements RecoveryServi
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -416,4 +414,6 @@ public final class RecoveryServicesManagementClientImpl implements RecoveryServi
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(RecoveryServicesManagementClientImpl.class);
 }

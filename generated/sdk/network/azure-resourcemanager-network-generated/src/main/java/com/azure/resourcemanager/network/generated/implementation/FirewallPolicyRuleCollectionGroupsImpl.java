@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyRuleColl
 import com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyRuleCollectionGroupInner;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyRuleCollectionGroup;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyRuleCollectionGroups;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPolicyRuleCollectionGroups {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FirewallPolicyRuleCollectionGroupsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(FirewallPolicyRuleCollectionGroupsImpl.class);
 
     private final FirewallPolicyRuleCollectionGroupsClient innerClient;
 
@@ -82,7 +81,7 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
     public FirewallPolicyRuleCollectionGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -90,7 +89,7 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
         }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
         if (firewallPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -99,7 +98,7 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
         }
         String ruleCollectionGroupName = Utils.getValueFromIdByName(id, "ruleCollectionGroups");
         if (ruleCollectionGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -115,7 +114,7 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
     public Response<FirewallPolicyRuleCollectionGroup> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -123,7 +122,7 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
         }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
         if (firewallPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -132,7 +131,7 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
         }
         String ruleCollectionGroupName = Utils.getValueFromIdByName(id, "ruleCollectionGroups");
         if (ruleCollectionGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -146,7 +145,7 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -154,7 +153,7 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
         }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
         if (firewallPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -163,7 +162,7 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
         }
         String ruleCollectionGroupName = Utils.getValueFromIdByName(id, "ruleCollectionGroups");
         if (ruleCollectionGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -177,7 +176,7 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -185,7 +184,7 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
         }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
         if (firewallPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -194,7 +193,7 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
         }
         String ruleCollectionGroupName = Utils.getValueFromIdByName(id, "ruleCollectionGroups");
         if (ruleCollectionGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

@@ -9,7 +9,6 @@ import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.AutoscaleNotification;
 import com.azure.resourcemanager.monitor.generated.models.AutoscaleProfile;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -17,8 +16,6 @@ import java.util.Map;
 /** The autoscale setting resource. */
 @Fluent
 public final class AutoscaleSettingResourceInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AutoscaleSettingResourceInner.class);
-
     /*
      * The autoscale setting of the resource.
      */
@@ -201,7 +198,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model AutoscaleSettingResourceInner"));
@@ -209,4 +206,6 @@ public final class AutoscaleSettingResourceInner extends Resource {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(AutoscaleSettingResourceInner.class);
 }

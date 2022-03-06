@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -16,8 +14,6 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.TransportStreamFormat")
 @Fluent
 public final class TransportStreamFormat extends MultiBitrateFormat {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TransportStreamFormat.class);
-
     /** {@inheritDoc} */
     @Override
     public TransportStreamFormat withOutputFiles(List<OutputFile> outputFiles) {

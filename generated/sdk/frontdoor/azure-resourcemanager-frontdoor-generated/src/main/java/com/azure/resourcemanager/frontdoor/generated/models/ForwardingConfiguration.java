@@ -6,8 +6,6 @@ package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -17,8 +15,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Azure.FrontDoor.Models.FrontdoorForwardingConfiguration")
 @Fluent
 public final class ForwardingConfiguration extends RouteConfiguration {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ForwardingConfiguration.class);
-
     /*
      * A custom path used to rewrite resource paths matched by this rule. Leave
      * empty to use incoming path.

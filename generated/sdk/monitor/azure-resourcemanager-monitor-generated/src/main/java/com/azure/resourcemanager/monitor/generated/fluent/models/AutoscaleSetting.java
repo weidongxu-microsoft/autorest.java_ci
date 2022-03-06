@@ -8,15 +8,12 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.AutoscaleNotification;
 import com.azure.resourcemanager.monitor.generated.models.AutoscaleProfile;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** A setting that contains all of the configuration for the automatic scaling of a resource. */
 @Fluent
 public final class AutoscaleSetting {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AutoscaleSetting.class);
-
     /*
      * the collection of automatic scaling profiles that specify different
      * scaling parameters for different time periods. A maximum of 20 profiles
@@ -193,7 +190,7 @@ public final class AutoscaleSetting {
      */
     public void validate() {
         if (profiles() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property profiles in model AutoscaleSetting"));
         } else {
@@ -203,4 +200,6 @@ public final class AutoscaleSetting {
             notifications().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(AutoscaleSetting.class);
 }

@@ -14,10 +14,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.ActionGroupReso
 import com.azure.resourcemanager.monitor.generated.models.ActionGroupResource;
 import com.azure.resourcemanager.monitor.generated.models.ActionGroups;
 import com.azure.resourcemanager.monitor.generated.models.EnableRequest;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ActionGroupsImpl implements ActionGroups {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActionGroupsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ActionGroupsImpl.class);
 
     private final ActionGroupsClient innerClient;
 
@@ -96,7 +95,7 @@ public final class ActionGroupsImpl implements ActionGroups {
     public ActionGroupResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -104,7 +103,7 @@ public final class ActionGroupsImpl implements ActionGroups {
         }
         String actionGroupName = Utils.getValueFromIdByName(id, "actionGroups");
         if (actionGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'actionGroups'.", id)));
@@ -115,7 +114,7 @@ public final class ActionGroupsImpl implements ActionGroups {
     public Response<ActionGroupResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -123,7 +122,7 @@ public final class ActionGroupsImpl implements ActionGroups {
         }
         String actionGroupName = Utils.getValueFromIdByName(id, "actionGroups");
         if (actionGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'actionGroups'.", id)));
@@ -134,7 +133,7 @@ public final class ActionGroupsImpl implements ActionGroups {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -142,7 +141,7 @@ public final class ActionGroupsImpl implements ActionGroups {
         }
         String actionGroupName = Utils.getValueFromIdByName(id, "actionGroups");
         if (actionGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'actionGroups'.", id)));
@@ -153,7 +152,7 @@ public final class ActionGroupsImpl implements ActionGroups {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -161,7 +160,7 @@ public final class ActionGroupsImpl implements ActionGroups {
         }
         String actionGroupName = Utils.getValueFromIdByName(id, "actionGroups");
         if (actionGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'actionGroups'.", id)));

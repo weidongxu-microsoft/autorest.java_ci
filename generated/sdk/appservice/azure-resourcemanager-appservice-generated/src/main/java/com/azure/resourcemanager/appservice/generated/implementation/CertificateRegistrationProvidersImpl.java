@@ -11,10 +11,9 @@ import com.azure.resourcemanager.appservice.generated.fluent.CertificateRegistra
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmOperationDescriptionInner;
 import com.azure.resourcemanager.appservice.generated.models.CertificateRegistrationProviders;
 import com.azure.resourcemanager.appservice.generated.models.CsmOperationDescription;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CertificateRegistrationProvidersImpl implements CertificateRegistrationProviders {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CertificateRegistrationProvidersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(CertificateRegistrationProvidersImpl.class);
 
     private final CertificateRegistrationProvidersClient innerClient;
 

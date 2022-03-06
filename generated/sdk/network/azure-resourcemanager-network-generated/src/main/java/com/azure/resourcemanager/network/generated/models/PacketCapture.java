@@ -7,15 +7,12 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.models.PacketCaptureParameters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Parameters that define the create packet capture operation. */
 @Fluent
 public final class PacketCapture {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PacketCapture.class);
-
     /*
      * Properties of the packet capture.
      */
@@ -176,11 +173,13 @@ public final class PacketCapture {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property innerProperties in model PacketCapture"));
         } else {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(PacketCapture.class);
 }

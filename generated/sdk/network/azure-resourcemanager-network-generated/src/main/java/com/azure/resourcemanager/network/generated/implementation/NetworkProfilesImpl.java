@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.NetworkProfilesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkProfileInner;
 import com.azure.resourcemanager.network.generated.models.NetworkProfile;
 import com.azure.resourcemanager.network.generated.models.NetworkProfiles;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkProfilesImpl implements NetworkProfiles {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkProfilesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(NetworkProfilesImpl.class);
 
     private final NetworkProfilesClient innerClient;
 
@@ -83,7 +82,7 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
     public NetworkProfile getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -91,7 +90,7 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
         }
         String networkProfileName = Utils.getValueFromIdByName(id, "networkProfiles");
         if (networkProfileName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -106,7 +105,7 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
     public Response<NetworkProfile> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -114,7 +113,7 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
         }
         String networkProfileName = Utils.getValueFromIdByName(id, "networkProfiles");
         if (networkProfileName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -126,7 +125,7 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -134,7 +133,7 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
         }
         String networkProfileName = Utils.getValueFromIdByName(id, "networkProfiles");
         if (networkProfileName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -146,7 +145,7 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -154,7 +153,7 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
         }
         String networkProfileName = Utils.getValueFromIdByName(id, "networkProfiles");
         if (networkProfileName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

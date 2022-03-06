@@ -14,10 +14,9 @@ import com.azure.resourcemanager.storage.generated.fluent.models.FileServiceProp
 import com.azure.resourcemanager.storage.generated.models.FileServiceItems;
 import com.azure.resourcemanager.storage.generated.models.FileServiceProperties;
 import com.azure.resourcemanager.storage.generated.models.FileServices;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FileServicesImpl implements FileServices {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FileServicesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(FileServicesImpl.class);
 
     private final FileServicesClient innerClient;
 
@@ -79,7 +78,7 @@ public final class FileServicesImpl implements FileServices {
     public FileServiceProperties getServicePropertiesById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -87,7 +86,7 @@ public final class FileServicesImpl implements FileServices {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -99,7 +98,7 @@ public final class FileServicesImpl implements FileServices {
     public Response<FileServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -107,7 +106,7 @@ public final class FileServicesImpl implements FileServices {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

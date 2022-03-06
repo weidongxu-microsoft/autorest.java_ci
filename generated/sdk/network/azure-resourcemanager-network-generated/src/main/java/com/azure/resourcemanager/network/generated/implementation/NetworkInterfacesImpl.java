@@ -19,10 +19,9 @@ import com.azure.resourcemanager.network.generated.models.EffectiveRouteListResu
 import com.azure.resourcemanager.network.generated.models.NetworkInterface;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaces;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkInterfacesImpl implements NetworkInterfaces {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkInterfacesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(NetworkInterfacesImpl.class);
 
     private final NetworkInterfacesClient innerClient;
 
@@ -374,7 +373,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
     public NetworkInterface getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -382,7 +381,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -398,7 +397,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
     public Response<NetworkInterface> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -406,7 +405,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -419,7 +418,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -427,7 +426,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -440,7 +439,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -448,7 +447,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

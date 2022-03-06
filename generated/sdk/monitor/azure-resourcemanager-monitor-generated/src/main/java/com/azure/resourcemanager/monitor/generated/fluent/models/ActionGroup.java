@@ -16,15 +16,12 @@ import com.azure.resourcemanager.monitor.generated.models.LogicAppReceiver;
 import com.azure.resourcemanager.monitor.generated.models.SmsReceiver;
 import com.azure.resourcemanager.monitor.generated.models.VoiceReceiver;
 import com.azure.resourcemanager.monitor.generated.models.WebhookReceiver;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** An Azure action group. */
 @Fluent
 public final class ActionGroup {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActionGroup.class);
-
     /*
      * The short name of the action group. This will be used in SMS messages.
      */
@@ -353,7 +350,7 @@ public final class ActionGroup {
      */
     public void validate() {
         if (groupShortName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property groupShortName in model ActionGroup"));
         }
@@ -388,4 +385,6 @@ public final class ActionGroup {
             armRoleReceivers().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ActionGroup.class);
 }

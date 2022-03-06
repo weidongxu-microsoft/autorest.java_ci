@@ -7,7 +7,6 @@ package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingLocatorContentKey;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -16,8 +15,6 @@ import java.util.UUID;
 /** Properties of the Streaming Locator. */
 @Fluent
 public final class StreamingLocatorProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StreamingLocatorProperties.class);
-
     /*
      * Asset Name
      */
@@ -290,13 +287,13 @@ public final class StreamingLocatorProperties {
      */
     public void validate() {
         if (assetName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property assetName in model StreamingLocatorProperties"));
         }
         if (streamingPolicyName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property streamingPolicyName in model StreamingLocatorProperties"));
@@ -305,4 +302,6 @@ public final class StreamingLocatorProperties {
             contentKeys().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(StreamingLocatorProperties.class);
 }

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.DscpConfigurationsClie
 import com.azure.resourcemanager.network.generated.fluent.models.DscpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.DscpConfiguration;
 import com.azure.resourcemanager.network.generated.models.DscpConfigurations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DscpConfigurationsImpl implements DscpConfigurations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DscpConfigurationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DscpConfigurationsImpl.class);
 
     private final DscpConfigurationsClient innerClient;
 
@@ -86,7 +85,7 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
     public DscpConfiguration getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -94,7 +93,7 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
         }
         String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
         if (dscpConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -107,7 +106,7 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
     public Response<DscpConfiguration> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -115,7 +114,7 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
         }
         String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
         if (dscpConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -128,7 +127,7 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -136,7 +135,7 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
         }
         String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
         if (dscpConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -157,7 +156,7 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
         }
         String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
         if (dscpConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

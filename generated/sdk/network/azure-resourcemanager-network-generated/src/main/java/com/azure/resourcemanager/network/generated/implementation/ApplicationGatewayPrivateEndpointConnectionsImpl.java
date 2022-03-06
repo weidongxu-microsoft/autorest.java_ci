@@ -13,12 +13,10 @@ import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewayPriv
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPrivateEndpointConnectionInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateEndpointConnection;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateEndpointConnections;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ApplicationGatewayPrivateEndpointConnectionsImpl
     implements ApplicationGatewayPrivateEndpointConnections {
-    @JsonIgnore
-    private final ClientLogger logger = new ClientLogger(ApplicationGatewayPrivateEndpointConnectionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ApplicationGatewayPrivateEndpointConnectionsImpl.class);
 
     private final ApplicationGatewayPrivateEndpointConnectionsClient innerClient;
 

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -35,8 +34,6 @@ import java.util.Map;
 })
 @Fluent
 public class MetricAlertCriteria {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricAlertCriteria.class);
-
     /*
      * The rule criteria that defines the conditions of the alert rule.
      */

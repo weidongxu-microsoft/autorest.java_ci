@@ -6,14 +6,11 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** A rule that provide the triggers and parameters for the scaling action. */
 @Fluent
 public final class ScaleRule {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ScaleRule.class);
-
     /*
      * the trigger that results in a scaling action.
      */
@@ -73,18 +70,20 @@ public final class ScaleRule {
      */
     public void validate() {
         if (metricTrigger() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property metricTrigger in model ScaleRule"));
         } else {
             metricTrigger().validate();
         }
         if (scaleAction() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property scaleAction in model ScaleRule"));
         } else {
             scaleAction().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ScaleRule.class);
 }

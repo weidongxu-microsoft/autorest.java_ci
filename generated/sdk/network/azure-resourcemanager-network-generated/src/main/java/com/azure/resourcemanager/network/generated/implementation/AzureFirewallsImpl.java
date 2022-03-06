@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.AzureFirewallsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureFirewallInner;
 import com.azure.resourcemanager.network.generated.models.AzureFirewall;
 import com.azure.resourcemanager.network.generated.models.AzureFirewalls;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AzureFirewallsImpl implements AzureFirewalls {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AzureFirewallsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AzureFirewallsImpl.class);
 
     private final AzureFirewallsClient innerClient;
 
@@ -83,7 +82,7 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
     public AzureFirewall getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -91,7 +90,7 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
         }
         String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
         if (azureFirewallName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -103,7 +102,7 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
     public Response<AzureFirewall> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -111,7 +110,7 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
         }
         String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
         if (azureFirewallName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -123,7 +122,7 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -131,7 +130,7 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
         }
         String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
         if (azureFirewallName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -143,7 +142,7 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -151,7 +150,7 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
         }
         String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
         if (azureFirewallName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

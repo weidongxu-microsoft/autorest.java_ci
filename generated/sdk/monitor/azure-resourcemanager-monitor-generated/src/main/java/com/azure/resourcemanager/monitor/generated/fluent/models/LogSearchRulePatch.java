@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.Enabled;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Log Search Rule Definition for Patching. */
 @Fluent
 public final class LogSearchRulePatch {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogSearchRulePatch.class);
-
     /*
      * The flag which indicates whether the Log Search rule is enabled. Value
      * should be true or false

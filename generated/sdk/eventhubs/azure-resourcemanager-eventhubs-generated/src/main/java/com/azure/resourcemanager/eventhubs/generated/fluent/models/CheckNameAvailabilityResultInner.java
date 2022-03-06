@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.UnavailableReason;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The Result of the CheckNameAvailability operation. */
 @Fluent
 public final class CheckNameAvailabilityResultInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CheckNameAvailabilityResultInner.class);
-
     /*
      * The detailed info regarding the reason associated with the Namespace.
      */

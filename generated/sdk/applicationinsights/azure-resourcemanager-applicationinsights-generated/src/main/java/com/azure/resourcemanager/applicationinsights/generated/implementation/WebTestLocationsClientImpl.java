@@ -25,7 +25,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.applicationinsights.generated.fluent.WebTestLocationsClient;
 import com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentWebTestLocationInner;
 import com.azure.resourcemanager.applicationinsights.generated.models.ApplicationInsightsWebTestLocationsListResult;
@@ -33,8 +32,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in WebTestLocationsClient. */
 public final class WebTestLocationsClientImpl implements WebTestLocationsClient {
-    private final ClientLogger logger = new ClientLogger(WebTestLocationsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final WebTestLocationsService service;
 

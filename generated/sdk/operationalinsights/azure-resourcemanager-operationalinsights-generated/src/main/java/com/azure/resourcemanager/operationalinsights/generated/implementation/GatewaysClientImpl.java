@@ -20,14 +20,11 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.GatewaysClient;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in GatewaysClient. */
 public final class GatewaysClientImpl implements GatewaysClient {
-    private final ClientLogger logger = new ClientLogger(GatewaysClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final GatewaysService service;
 

@@ -15,10 +15,9 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.Recommendati
 import com.azure.resourcemanager.appservice.generated.models.Recommendation;
 import com.azure.resourcemanager.appservice.generated.models.RecommendationRule;
 import com.azure.resourcemanager.appservice.generated.models.Recommendations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RecommendationsImpl implements Recommendations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RecommendationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(RecommendationsImpl.class);
 
     private final RecommendationsClient innerClient;
 

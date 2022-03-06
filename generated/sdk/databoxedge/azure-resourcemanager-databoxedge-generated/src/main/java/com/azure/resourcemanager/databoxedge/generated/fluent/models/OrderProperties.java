@@ -11,15 +11,12 @@ import com.azure.resourcemanager.databoxedge.generated.models.ContactDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.OrderStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.ShipmentType;
 import com.azure.resourcemanager.databoxedge.generated.models.TrackingInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Order properties. */
 @Fluent
 public final class OrderProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(OrderProperties.class);
-
     /*
      * The contact details.
      */
@@ -184,7 +181,7 @@ public final class OrderProperties {
      */
     public void validate() {
         if (contactInformation() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property contactInformation in model OrderProperties"));
@@ -207,4 +204,6 @@ public final class OrderProperties {
             returnTrackingInfo().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(OrderProperties.class);
 }

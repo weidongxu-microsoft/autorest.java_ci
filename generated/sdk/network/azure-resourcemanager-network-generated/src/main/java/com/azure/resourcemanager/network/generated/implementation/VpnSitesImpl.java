@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.VpnSitesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteInner;
 import com.azure.resourcemanager.network.generated.models.VpnSite;
 import com.azure.resourcemanager.network.generated.models.VpnSites;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnSitesImpl implements VpnSites {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VpnSitesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VpnSitesImpl.class);
 
     private final VpnSitesClient innerClient;
 
@@ -83,7 +82,7 @@ public final class VpnSitesImpl implements VpnSites {
     public VpnSite getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -91,7 +90,7 @@ public final class VpnSitesImpl implements VpnSites {
         }
         String vpnSiteName = Utils.getValueFromIdByName(id, "vpnSites");
         if (vpnSiteName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
@@ -102,7 +101,7 @@ public final class VpnSitesImpl implements VpnSites {
     public Response<VpnSite> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -110,7 +109,7 @@ public final class VpnSitesImpl implements VpnSites {
         }
         String vpnSiteName = Utils.getValueFromIdByName(id, "vpnSites");
         if (vpnSiteName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
@@ -121,7 +120,7 @@ public final class VpnSitesImpl implements VpnSites {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -129,7 +128,7 @@ public final class VpnSitesImpl implements VpnSites {
         }
         String vpnSiteName = Utils.getValueFromIdByName(id, "vpnSites");
         if (vpnSiteName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
@@ -140,7 +139,7 @@ public final class VpnSitesImpl implements VpnSites {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -148,7 +147,7 @@ public final class VpnSitesImpl implements VpnSites {
         }
         String vpnSiteName = Utils.getValueFromIdByName(id, "vpnSites");
         if (vpnSiteName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));

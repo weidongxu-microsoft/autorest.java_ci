@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.VirtualRouterPeeringsC
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualRouterPeeringInner;
 import com.azure.resourcemanager.network.generated.models.VirtualRouterPeering;
 import com.azure.resourcemanager.network.generated.models.VirtualRouterPeerings;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualRouterPeeringsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualRouterPeeringsImpl.class);
 
     private final VirtualRouterPeeringsClient innerClient;
 
@@ -77,7 +76,7 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
     public VirtualRouterPeering getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -85,7 +84,7 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
         }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
         if (virtualRouterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -93,7 +92,7 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
         }
         String peeringName = Utils.getValueFromIdByName(id, "peerings");
         if (peeringName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
@@ -104,7 +103,7 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
     public Response<VirtualRouterPeering> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -112,7 +111,7 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
         }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
         if (virtualRouterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -120,7 +119,7 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
         }
         String peeringName = Utils.getValueFromIdByName(id, "peerings");
         if (peeringName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
@@ -131,7 +130,7 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -139,7 +138,7 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
         }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
         if (virtualRouterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -147,7 +146,7 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
         }
         String peeringName = Utils.getValueFromIdByName(id, "peerings");
         if (peeringName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
@@ -158,7 +157,7 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -166,7 +165,7 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
         }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
         if (virtualRouterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -174,7 +173,7 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
         }
         String peeringName = Utils.getValueFromIdByName(id, "peerings");
         if (peeringName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));

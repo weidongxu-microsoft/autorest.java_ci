@@ -6,14 +6,11 @@ package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** A rule governing the accessibility of a managed hsm pool from a specific ip address or ip range. */
 @Fluent
 public final class MhsmipRule {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MhsmipRule.class);
-
     /*
      * An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple
      * IP address) or '124.56.78.0/24' (all addresses that start with
@@ -51,9 +48,11 @@ public final class MhsmipRule {
      */
     public void validate() {
         if (value() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property value in model MhsmipRule"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MhsmipRule.class);
 }

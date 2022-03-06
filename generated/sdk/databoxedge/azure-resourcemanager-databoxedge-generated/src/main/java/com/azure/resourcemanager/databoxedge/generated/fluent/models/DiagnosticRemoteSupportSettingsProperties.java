@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.RemoteSupportSettings;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The properties of remote support settings. */
 @Fluent
 public final class DiagnosticRemoteSupportSettingsProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiagnosticRemoteSupportSettingsProperties.class);
-
     /*
      * Remote support settings list according to the RemoteApplicationType
      */

@@ -13,11 +13,10 @@ import com.azure.resourcemanager.search.generated.fluent.PrivateEndpointConnecti
 import com.azure.resourcemanager.search.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.search.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.search.generated.models.PrivateEndpointConnections;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.UUID;
 
 public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConnections {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateEndpointConnectionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PrivateEndpointConnectionsImpl.class);
 
     private final PrivateEndpointConnectionsClient innerClient;
 

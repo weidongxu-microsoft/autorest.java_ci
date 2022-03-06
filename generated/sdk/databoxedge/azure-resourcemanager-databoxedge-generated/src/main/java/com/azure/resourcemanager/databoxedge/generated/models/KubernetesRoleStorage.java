@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Kubernetes role storage resource. */
 @Fluent
 public final class KubernetesRoleStorage {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KubernetesRoleStorage.class);
-
     /*
      * Kubernetes storage class info.
      */

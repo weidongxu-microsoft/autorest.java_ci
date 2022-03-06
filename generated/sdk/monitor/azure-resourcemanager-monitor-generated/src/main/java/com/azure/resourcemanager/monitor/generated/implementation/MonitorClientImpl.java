@@ -60,8 +60,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the MonitorClientImpl type. */
 @ServiceClient(builder = MonitorClientBuilder.class)
 public final class MonitorClientImpl implements MonitorClient {
-    private final ClientLogger logger = new ClientLogger(MonitorClientImpl.class);
-
     /** The ID of the target subscription. */
     private final String subscriptionId;
 
@@ -554,7 +552,7 @@ public final class MonitorClientImpl implements MonitorClient {
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -613,4 +611,6 @@ public final class MonitorClientImpl implements MonitorClient {
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MonitorClientImpl.class);
 }

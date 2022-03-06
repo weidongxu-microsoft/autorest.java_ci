@@ -8,7 +8,6 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.LinkedServiceEntityStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -16,8 +15,6 @@ import java.util.Map;
 /** The top level Linked service resource container. */
 @Fluent
 public final class LinkedServiceInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LinkedServiceInner.class);
-
     /*
      * The properties of the linked service.
      */
@@ -140,7 +137,7 @@ public final class LinkedServiceInner extends ProxyResource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model LinkedServiceInner"));
@@ -148,4 +145,6 @@ public final class LinkedServiceInner extends ProxyResource {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(LinkedServiceInner.class);
 }

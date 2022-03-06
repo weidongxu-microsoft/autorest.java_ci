@@ -6,7 +6,6 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -19,8 +18,6 @@ import java.util.List;
         + ".ScheduledQueryRules.LogToMetricAction")
 @Fluent
 public final class LogToMetricAction extends Action {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogToMetricAction.class);
-
     /*
      * Criteria of Metric
      */
@@ -56,11 +53,13 @@ public final class LogToMetricAction extends Action {
     public void validate() {
         super.validate();
         if (criteria() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property criteria in model LogToMetricAction"));
         } else {
             criteria().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(LogToMetricAction.class);
 }

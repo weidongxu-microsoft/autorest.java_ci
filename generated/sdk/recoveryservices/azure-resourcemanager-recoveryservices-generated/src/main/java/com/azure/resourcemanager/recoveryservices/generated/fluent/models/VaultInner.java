@@ -7,19 +7,15 @@ package com.azure.resourcemanager.recoveryservices.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.recoveryservices.generated.models.IdentityData;
 import com.azure.resourcemanager.recoveryservices.generated.models.Sku;
 import com.azure.resourcemanager.recoveryservices.generated.models.VaultProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /** Resource information, as returned by the resource provider. */
 @Fluent
 public final class VaultInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VaultInner.class);
-
     /*
      * Identity for the resource.
      */

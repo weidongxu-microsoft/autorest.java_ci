@@ -12,10 +12,9 @@ import com.azure.resourcemanager.consumption.generated.fluent.BalancesClient;
 import com.azure.resourcemanager.consumption.generated.fluent.models.BalanceInner;
 import com.azure.resourcemanager.consumption.generated.models.Balance;
 import com.azure.resourcemanager.consumption.generated.models.Balances;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class BalancesImpl implements Balances {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BalancesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(BalancesImpl.class);
 
     private final BalancesClient innerClient;
 

@@ -5,20 +5,16 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.models.CommonEncryptionCbcs;
 import com.azure.resourcemanager.mediaservices.generated.models.CommonEncryptionCenc;
 import com.azure.resourcemanager.mediaservices.generated.models.EnvelopeEncryption;
 import com.azure.resourcemanager.mediaservices.generated.models.NoEncryption;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** Class to specify properties of Streaming Policy. */
 @Fluent
 public final class StreamingPolicyProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StreamingPolicyProperties.class);
-
     /*
      * Creation time of Streaming Policy
      */

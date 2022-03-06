@@ -11,10 +11,9 @@ import com.azure.resourcemanager.network.generated.fluent.UsagesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.UsageInner;
 import com.azure.resourcemanager.network.generated.models.Usage;
 import com.azure.resourcemanager.network.generated.models.Usages;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class UsagesImpl implements Usages {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(UsagesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(UsagesImpl.class);
 
     private final UsagesClient innerClient;
 

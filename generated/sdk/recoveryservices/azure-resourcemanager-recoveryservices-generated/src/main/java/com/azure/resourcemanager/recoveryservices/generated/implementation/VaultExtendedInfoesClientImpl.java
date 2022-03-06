@@ -24,15 +24,12 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.VaultExtendedInfoesClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultExtendedInfoResourceInner;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in VaultExtendedInfoesClient. */
 public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesClient {
-    private final ClientLogger logger = new ClientLogger(VaultExtendedInfoesClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final VaultExtendedInfoesService service;
 

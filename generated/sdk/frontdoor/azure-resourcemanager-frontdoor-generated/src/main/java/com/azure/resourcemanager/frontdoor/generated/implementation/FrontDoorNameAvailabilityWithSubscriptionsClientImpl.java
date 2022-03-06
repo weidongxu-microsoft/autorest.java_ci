@@ -22,7 +22,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.fluent.FrontDoorNameAvailabilityWithSubscriptionsClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.CheckNameAvailabilityOutputInner;
 import com.azure.resourcemanager.frontdoor.generated.models.CheckNameAvailabilityInput;
@@ -34,8 +33,6 @@ import reactor.core.publisher.Mono;
  */
 public final class FrontDoorNameAvailabilityWithSubscriptionsClientImpl
     implements FrontDoorNameAvailabilityWithSubscriptionsClient {
-    private final ClientLogger logger = new ClientLogger(FrontDoorNameAvailabilityWithSubscriptionsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final FrontDoorNameAvailabilityWithSubscriptionsService service;
 

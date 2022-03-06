@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.LoadBalancerProbesClie
 import com.azure.resourcemanager.network.generated.fluent.models.ProbeInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerProbes;
 import com.azure.resourcemanager.network.generated.models.Probe;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LoadBalancerProbesImpl implements LoadBalancerProbes {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancerProbesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(LoadBalancerProbesImpl.class);
 
     private final LoadBalancerProbesClient innerClient;
 

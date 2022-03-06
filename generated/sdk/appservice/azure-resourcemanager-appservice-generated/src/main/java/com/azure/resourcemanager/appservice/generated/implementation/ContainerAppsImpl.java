@@ -15,10 +15,9 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.SecretsColle
 import com.azure.resourcemanager.appservice.generated.models.ContainerApp;
 import com.azure.resourcemanager.appservice.generated.models.ContainerApps;
 import com.azure.resourcemanager.appservice.generated.models.SecretsCollection;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ContainerAppsImpl implements ContainerApps {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ContainerAppsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ContainerAppsImpl.class);
 
     private final ContainerAppsClient innerClient;
 
@@ -108,7 +107,7 @@ public final class ContainerAppsImpl implements ContainerApps {
     public ContainerApp getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -116,7 +115,7 @@ public final class ContainerAppsImpl implements ContainerApps {
         }
         String name = Utils.getValueFromIdByName(id, "containerApps");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containerApps'.", id)));
@@ -127,7 +126,7 @@ public final class ContainerAppsImpl implements ContainerApps {
     public Response<ContainerApp> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -135,7 +134,7 @@ public final class ContainerAppsImpl implements ContainerApps {
         }
         String name = Utils.getValueFromIdByName(id, "containerApps");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containerApps'.", id)));
@@ -146,7 +145,7 @@ public final class ContainerAppsImpl implements ContainerApps {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -154,7 +153,7 @@ public final class ContainerAppsImpl implements ContainerApps {
         }
         String name = Utils.getValueFromIdByName(id, "containerApps");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containerApps'.", id)));
@@ -165,7 +164,7 @@ public final class ContainerAppsImpl implements ContainerApps {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -173,7 +172,7 @@ public final class ContainerAppsImpl implements ContainerApps {
         }
         String name = Utils.getValueFromIdByName(id, "containerApps");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'containerApps'.", id)));

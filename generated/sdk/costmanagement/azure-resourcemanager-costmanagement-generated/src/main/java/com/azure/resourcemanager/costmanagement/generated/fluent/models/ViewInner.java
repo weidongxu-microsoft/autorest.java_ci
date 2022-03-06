@@ -6,7 +6,6 @@ package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.models.AccumulatedType;
 import com.azure.resourcemanager.costmanagement.generated.models.ChartType;
 import com.azure.resourcemanager.costmanagement.generated.models.KpiProperties;
@@ -16,7 +15,6 @@ import com.azure.resourcemanager.costmanagement.generated.models.ReportConfigDat
 import com.azure.resourcemanager.costmanagement.generated.models.ReportConfigTimePeriod;
 import com.azure.resourcemanager.costmanagement.generated.models.ReportTimeframeType;
 import com.azure.resourcemanager.costmanagement.generated.models.ReportType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -24,8 +22,6 @@ import java.util.List;
 /** States and configurations of Cost Analysis. */
 @Fluent
 public final class ViewInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ViewInner.class);
-
     /*
      * The properties of the view.
      */

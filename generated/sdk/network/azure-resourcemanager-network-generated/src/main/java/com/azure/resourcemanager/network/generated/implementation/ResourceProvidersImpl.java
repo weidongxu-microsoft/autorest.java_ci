@@ -26,10 +26,9 @@ import com.azure.resourcemanager.network.generated.models.SessionIds;
 import com.azure.resourcemanager.network.generated.models.VirtualWanSecurityProviders;
 import com.azure.resourcemanager.network.generated.models.VirtualWanVpnProfileParameters;
 import com.azure.resourcemanager.network.generated.models.VpnProfileResponse;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceProvidersImpl implements ResourceProviders {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceProvidersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ResourceProvidersImpl.class);
 
     private final ResourceProvidersClient innerClient;
 

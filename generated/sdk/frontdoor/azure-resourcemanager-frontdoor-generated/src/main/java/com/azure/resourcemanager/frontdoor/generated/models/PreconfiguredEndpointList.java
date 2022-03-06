@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.PreconfiguredEndpointInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Defines a list of preconfigured endpoints. */
 @Fluent
 public final class PreconfiguredEndpointList {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PreconfiguredEndpointList.class);
-
     /*
      * List of PreconfiguredEndpoints supported by NetworkExperiment.
      */

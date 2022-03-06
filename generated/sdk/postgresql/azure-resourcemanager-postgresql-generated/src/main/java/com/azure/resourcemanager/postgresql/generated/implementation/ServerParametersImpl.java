@@ -10,10 +10,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.ServerParametersCli
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ConfigurationListResultInner;
 import com.azure.resourcemanager.postgresql.generated.models.ConfigurationListResult;
 import com.azure.resourcemanager.postgresql.generated.models.ServerParameters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServerParametersImpl implements ServerParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServerParametersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ServerParametersImpl.class);
 
     private final ServerParametersClient innerClient;
 

@@ -5,17 +5,11 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Defines the Web Application Firewall policy for each host (if applicable). */
 @Fluent
 public final class FrontendEndpointUpdateParametersWebApplicationFirewallPolicyLink {
-    @JsonIgnore
-    private final ClientLogger logger =
-        new ClientLogger(FrontendEndpointUpdateParametersWebApplicationFirewallPolicyLink.class);
-
     /*
      * Resource ID.
      */

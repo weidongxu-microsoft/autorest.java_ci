@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** An Azure activity log alert for patch operations. */
 @Fluent
 public final class ActivityLogAlertPatch {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActivityLogAlertPatch.class);
-
     /*
      * Indicates whether this activity log alert is enabled. If an activity log
      * alert is not enabled, then none of its actions will be activated.

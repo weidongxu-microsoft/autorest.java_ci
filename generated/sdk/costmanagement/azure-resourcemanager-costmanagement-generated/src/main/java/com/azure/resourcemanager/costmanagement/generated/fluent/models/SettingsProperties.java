@@ -8,15 +8,12 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.models.CacheItem;
 import com.azure.resourcemanager.costmanagement.generated.models.SettingsPropertiesStartOn;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The properties of the setting. */
 @Fluent
 public final class SettingsProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SettingsProperties.class);
-
     /*
      * Sets the default scope the current user will see when they sign into
      * Azure Cost Management in the Azure portal.
@@ -109,7 +106,7 @@ public final class SettingsProperties {
      */
     public void validate() {
         if (scope() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property scope in model SettingsProperties"));
         }
@@ -117,4 +114,6 @@ public final class SettingsProperties {
             cache().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(SettingsProperties.class);
 }

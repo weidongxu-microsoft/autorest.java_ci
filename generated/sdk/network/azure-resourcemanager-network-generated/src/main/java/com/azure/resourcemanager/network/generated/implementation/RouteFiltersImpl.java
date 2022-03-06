@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.RouteFiltersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteFilterInner;
 import com.azure.resourcemanager.network.generated.models.RouteFilter;
 import com.azure.resourcemanager.network.generated.models.RouteFilters;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RouteFiltersImpl implements RouteFilters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RouteFiltersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(RouteFiltersImpl.class);
 
     private final RouteFiltersClient innerClient;
 
@@ -83,7 +82,7 @@ public final class RouteFiltersImpl implements RouteFilters {
     public RouteFilter getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -91,7 +90,7 @@ public final class RouteFiltersImpl implements RouteFilters {
         }
         String routeFilterName = Utils.getValueFromIdByName(id, "routeFilters");
         if (routeFilterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'routeFilters'.", id)));
@@ -105,7 +104,7 @@ public final class RouteFiltersImpl implements RouteFilters {
     public Response<RouteFilter> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -113,7 +112,7 @@ public final class RouteFiltersImpl implements RouteFilters {
         }
         String routeFilterName = Utils.getValueFromIdByName(id, "routeFilters");
         if (routeFilterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'routeFilters'.", id)));
@@ -124,7 +123,7 @@ public final class RouteFiltersImpl implements RouteFilters {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -132,7 +131,7 @@ public final class RouteFiltersImpl implements RouteFilters {
         }
         String routeFilterName = Utils.getValueFromIdByName(id, "routeFilters");
         if (routeFilterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'routeFilters'.", id)));
@@ -143,7 +142,7 @@ public final class RouteFiltersImpl implements RouteFilters {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -151,7 +150,7 @@ public final class RouteFiltersImpl implements RouteFilters {
         }
         String routeFilterName = Utils.getValueFromIdByName(id, "routeFilters");
         if (routeFilterName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'routeFilters'.", id)));

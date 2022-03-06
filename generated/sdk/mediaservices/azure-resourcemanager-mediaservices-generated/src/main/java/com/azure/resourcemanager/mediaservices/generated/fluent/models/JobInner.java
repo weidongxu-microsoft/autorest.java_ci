@@ -7,12 +7,10 @@ package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.models.JobInput;
 import com.azure.resourcemanager.mediaservices.generated.models.JobOutput;
 import com.azure.resourcemanager.mediaservices.generated.models.JobState;
 import com.azure.resourcemanager.mediaservices.generated.models.Priority;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -24,8 +22,6 @@ import java.util.Map;
  */
 @Fluent
 public final class JobInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(JobInner.class);
-
     /*
      * The resource properties.
      */

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.compute.generated.fluent.CloudServiceRolesClien
 import com.azure.resourcemanager.compute.generated.fluent.models.CloudServiceRoleInner;
 import com.azure.resourcemanager.compute.generated.models.CloudServiceRole;
 import com.azure.resourcemanager.compute.generated.models.CloudServiceRoles;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CloudServiceRolesImpl implements CloudServiceRoles {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CloudServiceRolesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(CloudServiceRolesImpl.class);
 
     private final CloudServiceRolesClient innerClient;
 

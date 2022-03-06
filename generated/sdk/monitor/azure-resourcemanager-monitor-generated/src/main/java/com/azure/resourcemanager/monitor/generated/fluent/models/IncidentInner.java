@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** An alert incident indicates the activation status of an alert rule. */
 @Immutable
 public final class IncidentInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(IncidentInner.class);
-
     /*
      * Incident name.
      */

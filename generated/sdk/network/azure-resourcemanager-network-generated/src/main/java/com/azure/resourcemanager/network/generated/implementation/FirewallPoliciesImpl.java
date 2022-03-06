@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.FirewallPoliciesClient
 import com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyInner;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicies;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FirewallPoliciesImpl implements FirewallPolicies {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FirewallPoliciesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(FirewallPoliciesImpl.class);
 
     private final FirewallPoliciesClient innerClient;
 
@@ -83,7 +82,7 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
     public FirewallPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -91,7 +90,7 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
         }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
         if (firewallPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -107,7 +106,7 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
     public Response<FirewallPolicy> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -115,7 +114,7 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
         }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
         if (firewallPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -128,7 +127,7 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -136,7 +135,7 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
         }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
         if (firewallPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -157,7 +156,7 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
         }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
         if (firewallPolicyName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

@@ -6,16 +6,12 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayIpConfigurationPropertiesFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** IP configuration of an application gateway. Currently 1 public and 1 private IP configuration is allowed. */
 @Fluent
 public final class ApplicationGatewayIpConfiguration extends SubResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApplicationGatewayIpConfiguration.class);
-
     /*
      * Properties of the application gateway IP configuration.
      */

@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The UserAssignedIdentityProperties model. */
 @Fluent
 public final class UserAssignedIdentityProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(UserAssignedIdentityProperties.class);
-
     /*
      * ARM ID of user Identity selected for encryption
      */

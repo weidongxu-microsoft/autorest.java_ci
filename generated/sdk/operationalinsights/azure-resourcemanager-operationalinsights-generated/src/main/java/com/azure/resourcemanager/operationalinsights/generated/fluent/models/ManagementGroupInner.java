@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** A management group that is connected to a workspace. */
 @Fluent
 public final class ManagementGroupInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagementGroupInner.class);
-
     /*
      * The properties of the management group.
      */

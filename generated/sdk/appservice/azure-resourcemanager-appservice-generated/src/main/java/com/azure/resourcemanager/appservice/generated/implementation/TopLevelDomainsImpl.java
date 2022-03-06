@@ -16,10 +16,9 @@ import com.azure.resourcemanager.appservice.generated.models.TldLegalAgreement;
 import com.azure.resourcemanager.appservice.generated.models.TopLevelDomain;
 import com.azure.resourcemanager.appservice.generated.models.TopLevelDomainAgreementOption;
 import com.azure.resourcemanager.appservice.generated.models.TopLevelDomains;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TopLevelDomainsImpl implements TopLevelDomains {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TopLevelDomainsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(TopLevelDomainsImpl.class);
 
     private final TopLevelDomainsClient innerClient;
 

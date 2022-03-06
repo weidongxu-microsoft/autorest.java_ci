@@ -7,14 +7,11 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.RawCertificateData;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The upload certificate request. */
 @Fluent
 public final class UploadCertificateRequest {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(UploadCertificateRequest.class);
-
     /*
      * The Base 64 encoded certificate raw data.
      */
@@ -83,7 +80,7 @@ public final class UploadCertificateRequest {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model UploadCertificateRequest"));
@@ -91,4 +88,6 @@ public final class UploadCertificateRequest {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(UploadCertificateRequest.class);
 }

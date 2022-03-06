@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.VirtualApplianceSkusCl
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceSkuInner;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianceSku;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSkus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualApplianceSkusImpl implements VirtualApplianceSkus {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualApplianceSkusImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualApplianceSkusImpl.class);
 
     private final VirtualApplianceSkusClient innerClient;
 

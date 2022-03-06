@@ -13,10 +13,9 @@ import com.azure.resourcemanager.locks.generated.fluent.ManagementLocksClient;
 import com.azure.resourcemanager.locks.generated.fluent.models.ManagementLockObjectInner;
 import com.azure.resourcemanager.locks.generated.models.ManagementLockObject;
 import com.azure.resourcemanager.locks.generated.models.ManagementLocks;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ManagementLocksImpl implements ManagementLocks {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagementLocksImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ManagementLocksImpl.class);
 
     private final ManagementLocksClient innerClient;
 
@@ -389,7 +388,7 @@ public final class ManagementLocksImpl implements ManagementLocks {
     public ManagementLockObject getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -397,7 +396,7 @@ public final class ManagementLocksImpl implements ManagementLocks {
         }
         String lockName = Utils.getValueFromIdByName(id, "locks");
         if (lockName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
@@ -408,7 +407,7 @@ public final class ManagementLocksImpl implements ManagementLocks {
     public Response<ManagementLockObject> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -416,7 +415,7 @@ public final class ManagementLocksImpl implements ManagementLocks {
         }
         String lockName = Utils.getValueFromIdByName(id, "locks");
         if (lockName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
@@ -427,7 +426,7 @@ public final class ManagementLocksImpl implements ManagementLocks {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -435,7 +434,7 @@ public final class ManagementLocksImpl implements ManagementLocks {
         }
         String lockName = Utils.getValueFromIdByName(id, "locks");
         if (lockName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
@@ -446,7 +445,7 @@ public final class ManagementLocksImpl implements ManagementLocks {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -454,7 +453,7 @@ public final class ManagementLocksImpl implements ManagementLocks {
         }
         String lockName = Utils.getValueFromIdByName(id, "locks");
         if (lockName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));

@@ -18,10 +18,9 @@ import com.azure.resourcemanager.eventgrid.generated.models.EventSubscription;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionFullUrl;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionUpdateParameters;
 import com.azure.resourcemanager.eventgrid.generated.models.SystemTopicEventSubscriptions;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SystemTopicEventSubscriptionsImpl implements SystemTopicEventSubscriptions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SystemTopicEventSubscriptionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(SystemTopicEventSubscriptionsImpl.class);
 
     private final SystemTopicEventSubscriptionsClient innerClient;
 

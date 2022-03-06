@@ -6,7 +6,6 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -16,8 +15,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.BuiltInStandardEncoderPreset")
 @Fluent
 public final class BuiltInStandardEncoderPreset extends Preset {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BuiltInStandardEncoderPreset.class);
-
     /*
      * PresetConfigurations are only supported for the ContentAwareEncoding and
      * H265ContentAwareEncoding built-in presets. These settings will not
@@ -88,10 +85,12 @@ public final class BuiltInStandardEncoderPreset extends Preset {
             configurations().validate();
         }
         if (presetName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property presetName in model BuiltInStandardEncoderPreset"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(BuiltInStandardEncoderPreset.class);
 }

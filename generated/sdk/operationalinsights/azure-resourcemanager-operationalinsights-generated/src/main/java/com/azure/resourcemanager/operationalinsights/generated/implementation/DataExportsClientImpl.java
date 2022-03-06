@@ -28,7 +28,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.DataExportsClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.DataExportInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.DataExportListResult;
@@ -36,8 +35,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in DataExportsClient. */
 public final class DataExportsClientImpl implements DataExportsClient {
-    private final ClientLogger logger = new ClientLogger(DataExportsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final DataExportsService service;
 

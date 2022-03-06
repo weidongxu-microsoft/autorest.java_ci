@@ -25,7 +25,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.fluent.ServerBasedPerformanceTiersClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.PerformanceTierPropertiesInner;
 import com.azure.resourcemanager.postgresql.generated.models.PerformanceTierListResult;
@@ -33,8 +32,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ServerBasedPerformanceTiersClient. */
 public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedPerformanceTiersClient {
-    private final ClientLogger logger = new ClientLogger(ServerBasedPerformanceTiersClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final ServerBasedPerformanceTiersService service;
 

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.appservice.generated.fluent.ResourceHealthMetad
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceHealthMetadataInner;
 import com.azure.resourcemanager.appservice.generated.models.ResourceHealthMetadata;
 import com.azure.resourcemanager.appservice.generated.models.ResourceHealthMetadatas;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceHealthMetadatasImpl implements ResourceHealthMetadatas {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceHealthMetadatasImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ResourceHealthMetadatasImpl.class);
 
     private final ResourceHealthMetadatasClient innerClient;
 

@@ -6,14 +6,11 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Parameter supplied to check Namespace name availability operation. */
 @Fluent
 public final class CheckNameAvailabilityParameter {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CheckNameAvailabilityParameter.class);
-
     /*
      * Name to check the namespace name availability
      */
@@ -47,10 +44,12 @@ public final class CheckNameAvailabilityParameter {
      */
     public void validate() {
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property name in model CheckNameAvailabilityParameter"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(CheckNameAvailabilityParameter.class);
 }

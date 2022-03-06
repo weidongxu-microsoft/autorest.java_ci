@@ -28,7 +28,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.policy.generated.fluent.PolicyAssignmentsClient;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyAssignmentInner;
 import com.azure.resourcemanager.policy.generated.models.PolicyAssignmentListResult;
@@ -36,8 +35,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in PolicyAssignmentsClient. */
 public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClient {
-    private final ClientLogger logger = new ClientLogger(PolicyAssignmentsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final PolicyAssignmentsService service;
 

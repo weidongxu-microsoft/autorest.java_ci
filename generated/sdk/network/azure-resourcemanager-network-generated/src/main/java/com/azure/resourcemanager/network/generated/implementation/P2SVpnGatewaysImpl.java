@@ -20,10 +20,9 @@ import com.azure.resourcemanager.network.generated.models.P2SVpnGateway;
 import com.azure.resourcemanager.network.generated.models.P2SVpnGateways;
 import com.azure.resourcemanager.network.generated.models.P2SVpnProfileParameters;
 import com.azure.resourcemanager.network.generated.models.VpnProfileResponse;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(P2SVpnGatewaysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(P2SVpnGatewaysImpl.class);
 
     private final P2SVpnGatewaysClient innerClient;
 
@@ -181,7 +180,7 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
     public P2SVpnGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -189,7 +188,7 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
         }
         String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
         if (gatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -201,7 +200,7 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
     public Response<P2SVpnGateway> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -209,7 +208,7 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
         }
         String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
         if (gatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -221,7 +220,7 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -229,7 +228,7 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
         }
         String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
         if (gatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -241,7 +240,7 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -249,7 +248,7 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
         }
         String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
         if (gatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

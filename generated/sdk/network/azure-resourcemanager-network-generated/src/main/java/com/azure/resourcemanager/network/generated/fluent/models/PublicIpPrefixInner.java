@@ -7,14 +7,12 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.IpTag;
 import com.azure.resourcemanager.network.generated.models.IpVersion;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.PublicIpPrefixSku;
 import com.azure.resourcemanager.network.generated.models.ReferencedPublicIpAddress;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -22,8 +20,6 @@ import java.util.Map;
 /** Public IP prefix resource. */
 @Fluent
 public final class PublicIpPrefixInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PublicIpPrefixInner.class);
-
     /*
      * The extended location of the public ip address.
      */

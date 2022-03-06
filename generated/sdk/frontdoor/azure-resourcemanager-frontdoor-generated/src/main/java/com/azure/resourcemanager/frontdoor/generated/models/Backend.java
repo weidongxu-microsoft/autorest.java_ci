@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Backend address of a frontDoor load balancer. */
 @Fluent
 public final class Backend {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Backend.class);
-
     /*
      * Location of the backend (IP address or FQDN)
      */

@@ -10,14 +10,11 @@ import com.azure.resourcemanager.costmanagement.generated.models.ReportConfigDat
 import com.azure.resourcemanager.costmanagement.generated.models.ReportConfigTimePeriod;
 import com.azure.resourcemanager.costmanagement.generated.models.ReportTimeframeType;
 import com.azure.resourcemanager.costmanagement.generated.models.ReportType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The definition of a report config. */
 @Fluent
 public final class ReportConfigDefinition {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ReportConfigDefinition.class);
-
     /*
      * The type of the report. Usage represents actual usage, forecast
      * represents forecasted data and UsageAndForecast represents both usage
@@ -154,12 +151,12 @@ public final class ReportConfigDefinition {
      */
     public void validate() {
         if (type() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property type in model ReportConfigDefinition"));
         }
         if (timeframe() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property timeframe in model ReportConfigDefinition"));
@@ -171,4 +168,6 @@ public final class ReportConfigDefinition {
             dataSet().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ReportConfigDefinition.class);
 }

@@ -10,12 +10,11 @@ import com.azure.resourcemanager.network.generated.fluent.VpnServerConfiguration
 import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationsResponseInner;
 import com.azure.resourcemanager.network.generated.models.VpnServerConfigurationsAssociatedWithVirtualWans;
 import com.azure.resourcemanager.network.generated.models.VpnServerConfigurationsResponse;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnServerConfigurationsAssociatedWithVirtualWansImpl
     implements VpnServerConfigurationsAssociatedWithVirtualWans {
-    @JsonIgnore
-    private final ClientLogger logger = new ClientLogger(VpnServerConfigurationsAssociatedWithVirtualWansImpl.class);
+    private static final ClientLogger LOGGER =
+        new ClientLogger(VpnServerConfigurationsAssociatedWithVirtualWansImpl.class);
 
     private final VpnServerConfigurationsAssociatedWithVirtualWansClient innerClient;
 

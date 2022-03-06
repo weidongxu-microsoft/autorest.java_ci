@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.NetworkInterfaceTapCon
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceTapConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceTapConfiguration;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceTapConfigurations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInterfaceTapConfigurations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkInterfaceTapConfigurationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(NetworkInterfaceTapConfigurationsImpl.class);
 
     private final NetworkInterfaceTapConfigurationsClient innerClient;
 
@@ -82,7 +81,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
     public NetworkInterfaceTapConfiguration getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -90,7 +89,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -99,7 +98,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
         }
         String tapConfigurationName = Utils.getValueFromIdByName(id, "tapConfigurations");
         if (tapConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -114,7 +113,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
     public Response<NetworkInterfaceTapConfiguration> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -122,7 +121,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -131,7 +130,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
         }
         String tapConfigurationName = Utils.getValueFromIdByName(id, "tapConfigurations");
         if (tapConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -144,7 +143,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -152,7 +151,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -161,7 +160,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
         }
         String tapConfigurationName = Utils.getValueFromIdByName(id, "tapConfigurations");
         if (tapConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -174,7 +173,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -182,7 +181,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -191,7 +190,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
         }
         String tapConfigurationName = Utils.getValueFromIdByName(id, "tapConfigurations");
         if (tapConfigurationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

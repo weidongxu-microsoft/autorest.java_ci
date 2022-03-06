@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Load balancer configuration. */
 @Immutable
 public final class LoadBalancerConfig {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancerConfig.class);
-
     /*
      * Load balancer type
      */

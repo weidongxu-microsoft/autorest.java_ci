@@ -6,7 +6,6 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.EnterpriseGradeCdnStatus;
 import com.azure.resourcemanager.appservice.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.appservice.generated.models.ResponseMessageEnvelopeRemotePrivateEndpointConnection;
@@ -15,7 +14,6 @@ import com.azure.resourcemanager.appservice.generated.models.StagingEnvironmentP
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildProperties;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteTemplateOptions;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserProvidedFunctionApp;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -23,8 +21,6 @@ import java.util.Map;
 /** Static Site ARM resource. */
 @Fluent
 public final class StaticSiteArmResourceInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StaticSiteArmResourceInner.class);
-
     /*
      * Core resource properties
      */

@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.recoveryservices.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** The details of the latest move operation performed on the Azure Resource. */
 @Immutable
 public final class VaultPropertiesMoveDetails {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VaultPropertiesMoveDetails.class);
-
     /*
      * OperationId of the Resource Move Operation
      */

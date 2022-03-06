@@ -6,15 +6,12 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** An Activity Log alert condition that is met when all its member conditions are met. */
 @Fluent
 public final class ActivityLogAlertAllOfCondition {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActivityLogAlertAllOfCondition.class);
-
     /*
      * The list of activity log alert conditions.
      */
@@ -48,7 +45,7 @@ public final class ActivityLogAlertAllOfCondition {
      */
     public void validate() {
         if (allOf() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property allOf in model ActivityLogAlertAllOfCondition"));
@@ -56,4 +53,6 @@ public final class ActivityLogAlertAllOfCondition {
             allOf().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ActivityLogAlertAllOfCondition.class);
 }

@@ -6,22 +6,18 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.Address;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.ContactDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.OrderStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.ShipmentType;
 import com.azure.resourcemanager.databoxedge.generated.models.TrackingInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The order details. */
 @Fluent
 public final class OrderInner extends ArmBaseModel {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(OrderInner.class);
-
     /*
      * Order configured on ASE resource
      */

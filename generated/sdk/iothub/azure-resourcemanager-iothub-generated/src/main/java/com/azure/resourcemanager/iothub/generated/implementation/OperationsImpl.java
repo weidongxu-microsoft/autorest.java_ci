@@ -11,10 +11,9 @@ import com.azure.resourcemanager.iothub.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.iothub.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.iothub.generated.models.Operation;
 import com.azure.resourcemanager.iothub.generated.models.Operations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class OperationsImpl implements Operations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(OperationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(OperationsImpl.class);
 
     private final OperationsClient innerClient;
 

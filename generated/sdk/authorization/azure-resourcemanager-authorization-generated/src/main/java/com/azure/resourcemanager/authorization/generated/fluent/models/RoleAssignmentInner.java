@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.authorization.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.models.PrincipalType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Role Assignments. */
 @Fluent
 public final class RoleAssignmentInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RoleAssignmentInner.class);
-
     /*
      * The role assignment ID.
      */

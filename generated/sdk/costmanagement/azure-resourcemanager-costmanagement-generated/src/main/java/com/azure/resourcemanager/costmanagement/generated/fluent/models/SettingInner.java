@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.models.CacheItem;
 import com.azure.resourcemanager.costmanagement.generated.models.ProxySettingResource;
 import com.azure.resourcemanager.costmanagement.generated.models.SettingsPropertiesStartOn;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** State of the myscope setting. */
 @Fluent
 public final class SettingInner extends ProxySettingResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SettingInner.class);
-
     /*
      * The properties of the setting.
      */

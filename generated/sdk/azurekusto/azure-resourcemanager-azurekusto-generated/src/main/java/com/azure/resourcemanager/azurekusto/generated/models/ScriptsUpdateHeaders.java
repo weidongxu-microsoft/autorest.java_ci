@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The ScriptsUpdateHeaders model. */
 @Fluent
 public final class ScriptsUpdateHeaders {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ScriptsUpdateHeaders.class);
-
     /*
      * The Azure-AsyncOperation property.
      */

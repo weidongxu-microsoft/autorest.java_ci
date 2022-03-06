@@ -5,22 +5,18 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.DataProviderMetadata;
 import com.azure.resourcemanager.appservice.generated.models.DetectorInfo;
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticData;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
 import com.azure.resourcemanager.appservice.generated.models.QueryUtterancesResults;
 import com.azure.resourcemanager.appservice.generated.models.Status;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Class representing Response from Detector. */
 @Fluent
 public final class DetectorResponseInner extends ProxyOnlyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DetectorResponseInner.class);
-
     /*
      * DetectorResponse resource specific properties
      */

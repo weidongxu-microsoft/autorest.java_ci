@@ -13,10 +13,9 @@ import com.azure.resourcemanager.compute.generated.fluent.ImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.ImageInner;
 import com.azure.resourcemanager.compute.generated.models.Image;
 import com.azure.resourcemanager.compute.generated.models.Images;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ImagesImpl implements Images {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ImagesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ImagesImpl.class);
 
     private final ImagesClient innerClient;
 
@@ -83,7 +82,7 @@ public final class ImagesImpl implements Images {
     public Image getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -91,7 +90,7 @@ public final class ImagesImpl implements Images {
         }
         String imageName = Utils.getValueFromIdByName(id, "images");
         if (imageName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'images'.", id)));
@@ -103,7 +102,7 @@ public final class ImagesImpl implements Images {
     public Response<Image> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -111,7 +110,7 @@ public final class ImagesImpl implements Images {
         }
         String imageName = Utils.getValueFromIdByName(id, "images");
         if (imageName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'images'.", id)));
@@ -122,7 +121,7 @@ public final class ImagesImpl implements Images {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -130,7 +129,7 @@ public final class ImagesImpl implements Images {
         }
         String imageName = Utils.getValueFromIdByName(id, "images");
         if (imageName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'images'.", id)));
@@ -141,7 +140,7 @@ public final class ImagesImpl implements Images {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class ImagesImpl implements Images {
         }
         String imageName = Utils.getValueFromIdByName(id, "images");
         if (imageName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'images'.", id)));

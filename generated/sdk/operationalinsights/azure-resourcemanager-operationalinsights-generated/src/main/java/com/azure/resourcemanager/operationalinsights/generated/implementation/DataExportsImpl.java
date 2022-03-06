@@ -13,10 +13,9 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.DataExport
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.DataExportInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.DataExport;
 import com.azure.resourcemanager.operationalinsights.generated.models.DataExports;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DataExportsImpl implements DataExports {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DataExportsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DataExportsImpl.class);
 
     private final DataExportsClient innerClient;
 
@@ -76,7 +75,7 @@ public final class DataExportsImpl implements DataExports {
     public DataExport getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -84,14 +83,14 @@ public final class DataExportsImpl implements DataExports {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String dataExportName = Utils.getValueFromIdByName(id, "dataExports");
         if (dataExportName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'dataExports'.", id)));
@@ -102,7 +101,7 @@ public final class DataExportsImpl implements DataExports {
     public Response<DataExport> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -110,14 +109,14 @@ public final class DataExportsImpl implements DataExports {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String dataExportName = Utils.getValueFromIdByName(id, "dataExports");
         if (dataExportName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'dataExports'.", id)));
@@ -128,7 +127,7 @@ public final class DataExportsImpl implements DataExports {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -136,14 +135,14 @@ public final class DataExportsImpl implements DataExports {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String dataExportName = Utils.getValueFromIdByName(id, "dataExports");
         if (dataExportName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'dataExports'.", id)));
@@ -154,7 +153,7 @@ public final class DataExportsImpl implements DataExports {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -162,14 +161,14 @@ public final class DataExportsImpl implements DataExports {
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String dataExportName = Utils.getValueFromIdByName(id, "dataExports");
         if (dataExportName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'dataExports'.", id)));

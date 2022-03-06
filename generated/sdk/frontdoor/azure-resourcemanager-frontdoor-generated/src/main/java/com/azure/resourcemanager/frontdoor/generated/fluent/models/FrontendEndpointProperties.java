@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomHttpsConfiguration;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomHttpsProvisioningState;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomHttpsProvisioningSubstate;
@@ -13,14 +12,11 @@ import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorResourceSta
 import com.azure.resourcemanager.frontdoor.generated.models.FrontendEndpointUpdateParameters;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontendEndpointUpdateParametersWebApplicationFirewallPolicyLink;
 import com.azure.resourcemanager.frontdoor.generated.models.SessionAffinityEnabledState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The JSON object that contains the properties required to create a frontend endpoint. */
 @Fluent
 public final class FrontendEndpointProperties extends FrontendEndpointUpdateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontendEndpointProperties.class);
-
     /*
      * Resource status of the Front Door or Front Door SubResource. Resource
      * status.

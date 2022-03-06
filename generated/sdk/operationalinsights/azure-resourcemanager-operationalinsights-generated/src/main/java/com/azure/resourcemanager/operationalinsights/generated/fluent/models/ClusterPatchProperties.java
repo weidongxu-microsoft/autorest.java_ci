@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.BillingType;
 import com.azure.resourcemanager.operationalinsights.generated.models.KeyVaultProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Log Analytics cluster patch properties. */
 @Fluent
 public final class ClusterPatchProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ClusterPatchProperties.class);
-
     /*
      * The associated key properties.
      */

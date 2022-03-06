@@ -84,8 +84,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the ComputeManagementClientImpl type. */
 @ServiceClient(builder = ComputeManagementClientBuilder.class)
 public final class ComputeManagementClientImpl implements ComputeManagementClient {
-    private final ClientLogger logger = new ClientLogger(ComputeManagementClientImpl.class);
-
     /**
      * Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of
      * the URI for every service call.
@@ -895,7 +893,7 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -954,4 +952,6 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ComputeManagementClientImpl.class);
 }

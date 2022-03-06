@@ -18,10 +18,9 @@ import com.azure.resourcemanager.relay.generated.models.AuthorizationRule;
 import com.azure.resourcemanager.relay.generated.models.RegenerateAccessKeyParameters;
 import com.azure.resourcemanager.relay.generated.models.WcfRelay;
 import com.azure.resourcemanager.relay.generated.models.WcfRelays;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class WcfRelaysImpl implements WcfRelays {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WcfRelaysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(WcfRelaysImpl.class);
 
     private final WcfRelaysClient innerClient;
 
@@ -261,7 +260,7 @@ public final class WcfRelaysImpl implements WcfRelays {
     public WcfRelay getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -269,14 +268,14 @@ public final class WcfRelaysImpl implements WcfRelays {
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String relayName = Utils.getValueFromIdByName(id, "wcfRelays");
         if (relayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'wcfRelays'.", id)));
@@ -287,7 +286,7 @@ public final class WcfRelaysImpl implements WcfRelays {
     public Response<WcfRelay> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -295,14 +294,14 @@ public final class WcfRelaysImpl implements WcfRelays {
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String relayName = Utils.getValueFromIdByName(id, "wcfRelays");
         if (relayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'wcfRelays'.", id)));
@@ -313,7 +312,7 @@ public final class WcfRelaysImpl implements WcfRelays {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -321,14 +320,14 @@ public final class WcfRelaysImpl implements WcfRelays {
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String relayName = Utils.getValueFromIdByName(id, "wcfRelays");
         if (relayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'wcfRelays'.", id)));
@@ -339,7 +338,7 @@ public final class WcfRelaysImpl implements WcfRelays {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -347,14 +346,14 @@ public final class WcfRelaysImpl implements WcfRelays {
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String relayName = Utils.getValueFromIdByName(id, "wcfRelays");
         if (relayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'wcfRelays'.", id)));

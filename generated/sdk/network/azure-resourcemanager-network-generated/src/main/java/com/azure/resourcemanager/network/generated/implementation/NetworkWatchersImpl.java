@@ -44,10 +44,9 @@ import com.azure.resourcemanager.network.generated.models.TroubleshootingParamet
 import com.azure.resourcemanager.network.generated.models.TroubleshootingResult;
 import com.azure.resourcemanager.network.generated.models.VerificationIpFlowParameters;
 import com.azure.resourcemanager.network.generated.models.VerificationIpFlowResult;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkWatchersImpl implements NetworkWatchers {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkWatchersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(NetworkWatchersImpl.class);
 
     private final NetworkWatchersClient innerClient;
 
@@ -392,7 +391,7 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
     public NetworkWatcher getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -400,7 +399,7 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -412,7 +411,7 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
     public Response<NetworkWatcher> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -420,7 +419,7 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -432,7 +431,7 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -440,7 +439,7 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -452,7 +451,7 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -460,7 +459,7 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

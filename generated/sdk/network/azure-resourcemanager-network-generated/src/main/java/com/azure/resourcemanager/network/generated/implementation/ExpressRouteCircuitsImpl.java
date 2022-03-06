@@ -21,10 +21,9 @@ import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuits;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitsArpTableListResult;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitsRoutesTableListResult;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitsRoutesTableSummaryListResult;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteCircuitsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ExpressRouteCircuitsImpl.class);
 
     private final ExpressRouteCircuitsClient innerClient;
 
@@ -210,7 +209,7 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     public ExpressRouteCircuit getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -218,7 +217,7 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -232,7 +231,7 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     public Response<ExpressRouteCircuit> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -240,7 +239,7 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -254,7 +253,7 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -262,7 +261,7 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -276,7 +275,7 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -284,7 +283,7 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

@@ -5,20 +5,16 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.AggregationType;
 import com.azure.resourcemanager.monitor.generated.models.MetricAvailability;
 import com.azure.resourcemanager.monitor.generated.models.MetricClass;
 import com.azure.resourcemanager.monitor.generated.models.MetricUnit;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Metric definition class specifies the metadata for a metric. */
 @Fluent
 public final class MetricDefinitionInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricDefinitionInner.class);
-
     /*
      * Flag to indicate whether the dimension is required.
      */

@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.keyvault.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmProperties;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmResource;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmSku;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /** Resource information with extended details. */
 @Fluent
 public final class ManagedHsmInner extends ManagedHsmResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagedHsmInner.class);
-
     /*
      * Properties of the managed HSM
      */

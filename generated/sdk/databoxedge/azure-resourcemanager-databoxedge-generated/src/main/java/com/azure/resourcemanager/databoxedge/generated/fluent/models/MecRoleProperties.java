@@ -8,14 +8,11 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.AsymmetricEncryptedSecret;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** MEC role properties. */
 @Fluent
 public final class MecRoleProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MecRoleProperties.class);
-
     /*
      * Activation key of the MEC.
      */
@@ -130,9 +127,11 @@ public final class MecRoleProperties {
             connectionString().validate();
         }
         if (roleStatus() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property roleStatus in model MecRoleProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MecRoleProperties.class);
 }

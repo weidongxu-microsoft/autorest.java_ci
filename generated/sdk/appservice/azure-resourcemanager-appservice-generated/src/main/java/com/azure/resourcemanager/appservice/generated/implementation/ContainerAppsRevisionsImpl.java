@@ -13,10 +13,9 @@ import com.azure.resourcemanager.appservice.generated.fluent.ContainerAppsRevisi
 import com.azure.resourcemanager.appservice.generated.fluent.models.RevisionInner;
 import com.azure.resourcemanager.appservice.generated.models.ContainerAppsRevisions;
 import com.azure.resourcemanager.appservice.generated.models.Revision;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ContainerAppsRevisionsImpl implements ContainerAppsRevisions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ContainerAppsRevisionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ContainerAppsRevisionsImpl.class);
 
     private final ContainerAppsRevisionsClient innerClient;
 

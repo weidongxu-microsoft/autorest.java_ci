@@ -6,7 +6,6 @@ package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
@@ -17,8 +16,6 @@ import java.util.List;
  */
 @Fluent
 public final class RulesEngineRule {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RulesEngineRule.class);
-
     /*
      * A name to refer to this specific rule.
      */
@@ -164,12 +161,12 @@ public final class RulesEngineRule {
      */
     public void validate() {
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property name in model RulesEngineRule"));
         }
         if (action() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property action in model RulesEngineRule"));
         } else {
@@ -179,4 +176,6 @@ public final class RulesEngineRule {
             matchConditions().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(RulesEngineRule.class);
 }

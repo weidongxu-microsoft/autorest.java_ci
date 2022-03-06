@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspaceProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -16,8 +14,6 @@ import java.util.Map;
 /** The top level Workspace resource container. */
 @Fluent
 public final class WorkspacePatch extends AzureEntityResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WorkspacePatch.class);
-
     /*
      * Workspace properties.
      */

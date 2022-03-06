@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.DataSourceType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Linked storage accounts properties. */
 @Fluent
 public final class LinkedStorageAccountsProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LinkedStorageAccountsProperties.class);
-
     /*
      * Linked storage accounts type.
      */

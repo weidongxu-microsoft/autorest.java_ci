@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** Restore parameters. */
 @Fluent
 public final class RestoredLogs {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RestoredLogs.class);
-
     /*
      * The timestamp to start the restore from (UTC).
      */

@@ -13,11 +13,10 @@ import com.azure.resourcemanager.search.generated.fluent.models.AdminKeyResultIn
 import com.azure.resourcemanager.search.generated.models.AdminKeyKind;
 import com.azure.resourcemanager.search.generated.models.AdminKeyResult;
 import com.azure.resourcemanager.search.generated.models.AdminKeys;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.UUID;
 
 public final class AdminKeysImpl implements AdminKeys {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AdminKeysImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AdminKeysImpl.class);
 
     private final AdminKeysClient innerClient;
 

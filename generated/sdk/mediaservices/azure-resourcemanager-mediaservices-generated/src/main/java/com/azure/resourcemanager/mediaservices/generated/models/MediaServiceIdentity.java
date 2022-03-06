@@ -6,7 +6,6 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -15,8 +14,6 @@ import java.util.UUID;
 /** The MediaServiceIdentity model. */
 @Fluent
 public class MediaServiceIdentity {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MediaServiceIdentity.class);
-
     /*
      * The identity type.
      */
@@ -108,7 +105,7 @@ public class MediaServiceIdentity {
      */
     public void validate() {
         if (type() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property type in model MediaServiceIdentity"));
         }
@@ -123,4 +120,6 @@ public class MediaServiceIdentity {
                     });
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MediaServiceIdentity.class);
 }

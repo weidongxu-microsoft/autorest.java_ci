@@ -10,14 +10,11 @@ import com.azure.resourcemanager.azurekusto.generated.models.BlobStorageEventTyp
 import com.azure.resourcemanager.azurekusto.generated.models.DatabaseRouting;
 import com.azure.resourcemanager.azurekusto.generated.models.EventGridDataFormat;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Class representing the Kusto event grid connection properties. */
 @Fluent
 public final class EventGridConnectionProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(EventGridConnectionProperties.class);
-
     /*
      * The resource ID of the storage account where the data resides.
      */
@@ -362,22 +359,24 @@ public final class EventGridConnectionProperties {
      */
     public void validate() {
         if (storageAccountResourceId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property storageAccountResourceId in model EventGridConnectionProperties"));
         }
         if (eventHubResourceId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property eventHubResourceId in model EventGridConnectionProperties"));
         }
         if (consumerGroup() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property consumerGroup in model EventGridConnectionProperties"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(EventGridConnectionProperties.class);
 }

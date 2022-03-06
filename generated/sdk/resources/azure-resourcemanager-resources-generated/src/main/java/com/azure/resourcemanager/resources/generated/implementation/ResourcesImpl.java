@@ -16,10 +16,9 @@ import com.azure.resourcemanager.resources.generated.models.GenericResource;
 import com.azure.resourcemanager.resources.generated.models.GenericResourceExpanded;
 import com.azure.resourcemanager.resources.generated.models.Resources;
 import com.azure.resourcemanager.resources.generated.models.ResourcesMoveInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourcesImpl implements Resources {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourcesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ResourcesImpl.class);
 
     private final ResourcesClient innerClient;
 

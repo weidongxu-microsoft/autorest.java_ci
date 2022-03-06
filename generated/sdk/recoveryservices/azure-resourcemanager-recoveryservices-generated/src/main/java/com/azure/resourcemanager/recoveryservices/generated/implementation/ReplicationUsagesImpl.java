@@ -11,10 +11,9 @@ import com.azure.resourcemanager.recoveryservices.generated.fluent.ReplicationUs
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.ReplicationUsageInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.ReplicationUsage;
 import com.azure.resourcemanager.recoveryservices.generated.models.ReplicationUsages;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ReplicationUsagesImpl implements ReplicationUsages {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ReplicationUsagesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ReplicationUsagesImpl.class);
 
     private final ReplicationUsagesClient innerClient;
 

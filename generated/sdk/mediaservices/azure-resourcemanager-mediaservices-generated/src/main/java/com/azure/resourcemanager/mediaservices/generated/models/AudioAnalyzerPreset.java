@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -27,8 +25,6 @@ import java.util.Map;
 @JsonSubTypes({@JsonSubTypes.Type(name = "#Microsoft.Media.VideoAnalyzerPreset", value = VideoAnalyzerPreset.class)})
 @Fluent
 public class AudioAnalyzerPreset extends Preset {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AudioAnalyzerPreset.class);
-
     /*
      * The language for the audio payload in the input using the BCP-47 format
      * of 'language tag-region' (e.g: 'en-US').  If you know the language of

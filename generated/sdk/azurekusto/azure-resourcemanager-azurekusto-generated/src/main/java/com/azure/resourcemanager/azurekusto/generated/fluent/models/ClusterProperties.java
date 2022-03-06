@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.azurekusto.generated.models.AcceptedAudiences;
 import com.azure.resourcemanager.azurekusto.generated.models.ClusterNetworkAccessFlag;
 import com.azure.resourcemanager.azurekusto.generated.models.EngineType;
@@ -18,15 +17,12 @@ import com.azure.resourcemanager.azurekusto.generated.models.PublicNetworkAccess
 import com.azure.resourcemanager.azurekusto.generated.models.State;
 import com.azure.resourcemanager.azurekusto.generated.models.TrustedExternalTenant;
 import com.azure.resourcemanager.azurekusto.generated.models.VirtualNetworkConfiguration;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Class representing the Kusto cluster properties. */
 @Fluent
 public final class ClusterProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ClusterProperties.class);
-
     /*
      * The state of the resource.
      */

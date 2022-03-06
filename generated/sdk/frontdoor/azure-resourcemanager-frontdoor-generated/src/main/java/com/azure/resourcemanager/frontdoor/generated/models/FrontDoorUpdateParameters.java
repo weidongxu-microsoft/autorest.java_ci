@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontendEndpointInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The properties needed to update a Front Door. */
 @Fluent
 public class FrontDoorUpdateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontDoorUpdateParameters.class);
-
     /*
      * A friendly name for the frontDoor
      */

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.ExpressRouteCircuitAut
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitAuthorizationInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitAuthorization;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitAuthorizations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRouteCircuitAuthorizations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteCircuitAuthorizationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ExpressRouteCircuitAuthorizationsImpl.class);
 
     private final ExpressRouteCircuitAuthorizationsClient innerClient;
 
@@ -79,7 +78,7 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
     public ExpressRouteCircuitAuthorization getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -87,7 +86,7 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -97,7 +96,7 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
         }
         String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
         if (authorizationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -109,7 +108,7 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
     public Response<ExpressRouteCircuitAuthorization> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -117,7 +116,7 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -127,7 +126,7 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
         }
         String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
         if (authorizationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -139,7 +138,7 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -147,7 +146,7 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -157,7 +156,7 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
         }
         String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
         if (authorizationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -169,7 +168,7 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -177,7 +176,7 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -187,7 +186,7 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
         }
         String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
         if (authorizationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

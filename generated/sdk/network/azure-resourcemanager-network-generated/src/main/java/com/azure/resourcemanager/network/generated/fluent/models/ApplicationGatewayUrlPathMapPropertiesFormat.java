@@ -6,19 +6,14 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPathRule;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Properties of UrlPathMap of the application gateway. */
 @Fluent
 public final class ApplicationGatewayUrlPathMapPropertiesFormat {
-    @JsonIgnore
-    private final ClientLogger logger = new ClientLogger(ApplicationGatewayUrlPathMapPropertiesFormat.class);
-
     /*
      * Default backend address pool resource of URL path map.
      */

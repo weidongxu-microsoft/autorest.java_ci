@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Properties to configure capture description for eventhub. */
 @Fluent
 public final class CaptureDescription {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CaptureDescription.class);
-
     /*
      * A value that indicates whether capture description is enabled.
      */

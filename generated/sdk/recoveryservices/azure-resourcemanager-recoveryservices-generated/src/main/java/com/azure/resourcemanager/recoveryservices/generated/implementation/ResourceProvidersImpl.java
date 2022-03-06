@@ -14,10 +14,9 @@ import com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultI
 import com.azure.resourcemanager.recoveryservices.generated.models.OperationResource;
 import com.azure.resourcemanager.recoveryservices.generated.models.ResourceProviders;
 import com.azure.resourcemanager.recoveryservices.generated.models.Vault;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceProvidersImpl implements ResourceProviders {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceProvidersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ResourceProvidersImpl.class);
 
     private final ResourceProvidersClient innerClient;
 

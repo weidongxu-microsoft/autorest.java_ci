@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.mysql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The properties that can be updated for a server. */
 @Fluent
 public final class ServerUpgradeParametersProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServerUpgradeParametersProperties.class);
-
     /*
      * Represents an server storage profile.
      */

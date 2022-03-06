@@ -14,10 +14,9 @@ import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCon
 import com.azure.resourcemanager.network.generated.models.ExpressRouteConnection;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteConnectionList;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteConnections;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteConnectionsImpl implements ExpressRouteConnections {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteConnectionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ExpressRouteConnectionsImpl.class);
 
     private final ExpressRouteConnectionsClient innerClient;
 

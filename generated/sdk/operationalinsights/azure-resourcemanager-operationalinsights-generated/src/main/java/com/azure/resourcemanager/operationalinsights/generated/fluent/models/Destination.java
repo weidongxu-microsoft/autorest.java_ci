@@ -7,14 +7,11 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.Type;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Destination properties. */
 @Fluent
 public final class Destination {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Destination.class);
-
     /*
      * The destination resource ID. This can be copied from the Properties
      * entry of the destination resource in Azure.
@@ -106,7 +103,7 @@ public final class Destination {
      */
     public void validate() {
         if (resourceId() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property resourceId in model Destination"));
         }
@@ -114,4 +111,6 @@ public final class Destination {
             innerMetadata().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(Destination.class);
 }

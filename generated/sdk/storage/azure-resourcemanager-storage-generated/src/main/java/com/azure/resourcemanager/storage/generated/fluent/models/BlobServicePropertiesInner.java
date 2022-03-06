@@ -6,21 +6,17 @@ package com.azure.resourcemanager.storage.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.models.ChangeFeed;
 import com.azure.resourcemanager.storage.generated.models.CorsRules;
 import com.azure.resourcemanager.storage.generated.models.DeleteRetentionPolicy;
 import com.azure.resourcemanager.storage.generated.models.LastAccessTimeTrackingPolicy;
 import com.azure.resourcemanager.storage.generated.models.RestorePolicyProperties;
 import com.azure.resourcemanager.storage.generated.models.Sku;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The properties of a storage account’s Blob service. */
 @Fluent
 public final class BlobServicePropertiesInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BlobServicePropertiesInner.class);
-
     /*
      * The properties of a storage account’s Blob service.
      */

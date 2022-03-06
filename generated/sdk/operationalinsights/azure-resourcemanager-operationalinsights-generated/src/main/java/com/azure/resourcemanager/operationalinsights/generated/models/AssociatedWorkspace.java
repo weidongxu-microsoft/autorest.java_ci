@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The list of Log Analytics workspaces associated with the cluster. */
 @Immutable
 public final class AssociatedWorkspace {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AssociatedWorkspace.class);
-
     /*
      * The id of the assigned workspace.
      */

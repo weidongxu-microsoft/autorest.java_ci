@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Properties of the secret. */
 @Fluent
 public final class SecretProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SecretProperties.class);
-
     /*
      * The value of the secret. NOTE: 'value' will never be returned from the
      * service, as APIs using this model are is intended for internal use in

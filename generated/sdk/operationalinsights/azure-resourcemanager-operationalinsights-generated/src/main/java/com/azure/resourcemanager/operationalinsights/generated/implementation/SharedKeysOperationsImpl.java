@@ -12,10 +12,9 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.SharedKeys
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SharedKeysInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.SharedKeys;
 import com.azure.resourcemanager.operationalinsights.generated.models.SharedKeysOperations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SharedKeysOperationsImpl implements SharedKeysOperations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SharedKeysOperationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(SharedKeysOperationsImpl.class);
 
     private final SharedKeysOperationsClient innerClient;
 

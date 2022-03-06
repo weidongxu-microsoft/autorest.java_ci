@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.compute.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.models.BootDiagnosticsInstanceView;
 import com.azure.resourcemanager.compute.generated.models.DiskInstanceView;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewStatus;
@@ -13,15 +12,12 @@ import com.azure.resourcemanager.compute.generated.models.MaintenanceRedeploySta
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineAgentInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineHealthStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The instance view of a virtual machine scale set VM. */
 @Fluent
 public final class VirtualMachineScaleSetVMInstanceViewInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineScaleSetVMInstanceViewInner.class);
-
     /*
      * The Update Domain count.
      */

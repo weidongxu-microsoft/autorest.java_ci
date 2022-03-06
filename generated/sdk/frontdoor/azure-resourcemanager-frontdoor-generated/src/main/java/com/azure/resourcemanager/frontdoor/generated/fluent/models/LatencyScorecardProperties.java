@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.LatencyMetric;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -15,8 +13,6 @@ import java.util.List;
 /** Defines a the properties of a Latency Scorecard. */
 @Fluent
 public final class LatencyScorecardProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LatencyScorecardProperties.class);
-
     /*
      * The unique identifier of the Latency Scorecard
      */

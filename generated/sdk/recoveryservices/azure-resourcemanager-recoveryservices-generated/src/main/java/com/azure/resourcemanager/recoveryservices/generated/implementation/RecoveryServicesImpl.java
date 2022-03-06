@@ -13,10 +13,9 @@ import com.azure.resourcemanager.recoveryservices.generated.fluent.models.CheckN
 import com.azure.resourcemanager.recoveryservices.generated.models.CheckNameAvailabilityParameters;
 import com.azure.resourcemanager.recoveryservices.generated.models.CheckNameAvailabilityResult;
 import com.azure.resourcemanager.recoveryservices.generated.models.RecoveryServices;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RecoveryServicesImpl implements RecoveryServices {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RecoveryServicesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(RecoveryServicesImpl.class);
 
     private final RecoveryServicesClient innerClient;
 

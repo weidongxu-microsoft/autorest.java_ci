@@ -37,8 +37,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the UsageManagementClientImpl type. */
 @ServiceClient(builder = UsageManagementClientBuilder.class)
 public final class UsageManagementClientImpl implements UsageManagementClient {
-    private final ClientLogger logger = new ClientLogger(UsageManagementClientImpl.class);
-
     /**
      * It uniquely identifies Microsoft Azure subscription. The subscription ID forms part of the URI for every service
      * call.
@@ -250,7 +248,7 @@ public final class UsageManagementClientImpl implements UsageManagementClient {
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -309,4 +307,6 @@ public final class UsageManagementClientImpl implements UsageManagementClient {
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(UsageManagementClientImpl.class);
 }

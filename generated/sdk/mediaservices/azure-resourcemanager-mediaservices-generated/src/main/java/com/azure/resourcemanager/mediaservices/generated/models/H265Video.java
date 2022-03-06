@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -18,8 +16,6 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.H265Video")
 @Fluent
 public final class H265Video extends Video {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(H265Video.class);
-
     /*
      * Specifies whether or not the encoder should insert key frames at scene
      * changes. If not specified, the default is false. This flag should be set

@@ -9,15 +9,12 @@ import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.models.VaultProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /** Resource information with extended details. */
 @Fluent
 public final class VaultInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VaultInner.class);
-
     /*
      * System metadata for the key vault.
      */
@@ -80,11 +77,13 @@ public final class VaultInner extends Resource {
      */
     public void validate() {
         if (properties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property properties in model VaultInner"));
         } else {
             properties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(VaultInner.class);
 }

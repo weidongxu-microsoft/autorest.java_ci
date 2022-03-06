@@ -6,14 +6,11 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The definition of a forecast. */
 @Fluent
 public final class ForecastDefinition {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ForecastDefinition.class);
-
     /*
      * The type of the forecast.
      */
@@ -180,12 +177,12 @@ public final class ForecastDefinition {
      */
     public void validate() {
         if (type() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property type in model ForecastDefinition"));
         }
         if (timeframe() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property timeframe in model ForecastDefinition"));
         }
@@ -193,11 +190,13 @@ public final class ForecastDefinition {
             timePeriod().validate();
         }
         if (dataset() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property dataset in model ForecastDefinition"));
         } else {
             dataset().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ForecastDefinition.class);
 }

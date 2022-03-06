@@ -7,15 +7,12 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.MetricConfiguration;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Metrics properties. */
 @Fluent
 public final class MonitoringMetricConfigurationProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MonitoringMetricConfigurationProperties.class);
-
     /*
      * The metrics configuration details
      */
@@ -50,7 +47,7 @@ public final class MonitoringMetricConfigurationProperties {
      */
     public void validate() {
         if (metricConfigurations() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property metricConfigurations in model"
@@ -59,4 +56,6 @@ public final class MonitoringMetricConfigurationProperties {
             metricConfigurations().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MonitoringMetricConfigurationProperties.class);
 }

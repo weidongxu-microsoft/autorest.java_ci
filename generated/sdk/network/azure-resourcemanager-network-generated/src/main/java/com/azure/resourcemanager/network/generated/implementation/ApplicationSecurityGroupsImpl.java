@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.ApplicationSecurityGro
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationSecurityGroupInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationSecurityGroup;
 import com.azure.resourcemanager.network.generated.models.ApplicationSecurityGroups;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityGroups {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApplicationSecurityGroupsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ApplicationSecurityGroupsImpl.class);
 
     private final ApplicationSecurityGroupsClient innerClient;
 
@@ -89,7 +88,7 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
     public ApplicationSecurityGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -97,7 +96,7 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
         }
         String applicationSecurityGroupName = Utils.getValueFromIdByName(id, "applicationSecurityGroups");
         if (applicationSecurityGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -113,7 +112,7 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
     public Response<ApplicationSecurityGroup> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -121,7 +120,7 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
         }
         String applicationSecurityGroupName = Utils.getValueFromIdByName(id, "applicationSecurityGroups");
         if (applicationSecurityGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -135,7 +134,7 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -143,7 +142,7 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
         }
         String applicationSecurityGroupName = Utils.getValueFromIdByName(id, "applicationSecurityGroups");
         if (applicationSecurityGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -157,7 +156,7 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -165,7 +164,7 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
         }
         String applicationSecurityGroupName = Utils.getValueFromIdByName(id, "applicationSecurityGroups");
         if (applicationSecurityGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

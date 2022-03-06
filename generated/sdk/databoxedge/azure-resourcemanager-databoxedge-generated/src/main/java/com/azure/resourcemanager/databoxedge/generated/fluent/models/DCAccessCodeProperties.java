@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** DCAccessCode Properties. */
 @Fluent
 public final class DCAccessCodeProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DCAccessCodeProperties.class);
-
     /*
      * DCAccess Code for the Self Managed shipment.
      */

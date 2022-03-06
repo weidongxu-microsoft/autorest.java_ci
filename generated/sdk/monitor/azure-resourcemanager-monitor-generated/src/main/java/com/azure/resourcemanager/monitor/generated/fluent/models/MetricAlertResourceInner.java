@@ -9,7 +9,6 @@ import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertAction;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertCriteria;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.time.OffsetDateTime;
@@ -19,8 +18,6 @@ import java.util.Map;
 /** The metric alert resource. */
 @Fluent
 public final class MetricAlertResourceInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricAlertResourceInner.class);
-
     /*
      * The alert rule properties of the resource.
      */
@@ -340,7 +337,7 @@ public final class MetricAlertResourceInner extends Resource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model MetricAlertResourceInner"));
@@ -348,4 +345,6 @@ public final class MetricAlertResourceInner extends Resource {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MetricAlertResourceInner.class);
 }

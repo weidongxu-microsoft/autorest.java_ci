@@ -6,14 +6,11 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The definition of a query. */
 @Fluent
 public final class ExportDefinition {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExportDefinition.class);
-
     /*
      * The type of the query.
      */
@@ -128,12 +125,12 @@ public final class ExportDefinition {
      */
     public void validate() {
         if (type() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property type in model ExportDefinition"));
         }
         if (timeframe() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property timeframe in model ExportDefinition"));
         }
@@ -144,4 +141,6 @@ public final class ExportDefinition {
             dataSet().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ExportDefinition.class);
 }

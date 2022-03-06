@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.KeyInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The page of keys. */
 @Fluent
 public final class KeyListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KeyListResult.class);
-
     /*
      * The key resources.
      */

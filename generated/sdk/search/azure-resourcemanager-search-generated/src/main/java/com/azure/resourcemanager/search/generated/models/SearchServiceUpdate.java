@@ -6,11 +6,9 @@ package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.search.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.search.generated.fluent.models.SearchServiceProperties;
 import com.azure.resourcemanager.search.generated.fluent.models.SharedPrivateLinkResourceInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -19,8 +17,6 @@ import java.util.Map;
 /** The parameters used to update an Azure Cognitive Search service. */
 @Fluent
 public final class SearchServiceUpdate extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SearchServiceUpdate.class);
-
     /*
      * Properties of the search service.
      */

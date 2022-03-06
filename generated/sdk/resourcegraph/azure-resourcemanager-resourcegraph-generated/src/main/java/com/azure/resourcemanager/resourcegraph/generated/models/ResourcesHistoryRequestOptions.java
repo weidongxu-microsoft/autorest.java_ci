@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.resourcegraph.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The options for history request evaluation. */
 @Fluent
 public final class ResourcesHistoryRequestOptions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourcesHistoryRequestOptions.class);
-
     /*
      * The time interval used to fetch history.
      */

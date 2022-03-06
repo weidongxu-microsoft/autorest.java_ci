@@ -5,18 +5,14 @@
 package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayProbeHealthResponseMatch;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayProtocol;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Properties of probe of an application gateway. */
 @Fluent
 public final class ApplicationGatewayProbePropertiesFormat {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApplicationGatewayProbePropertiesFormat.class);
-
     /*
      * The protocol used for the probe.
      */

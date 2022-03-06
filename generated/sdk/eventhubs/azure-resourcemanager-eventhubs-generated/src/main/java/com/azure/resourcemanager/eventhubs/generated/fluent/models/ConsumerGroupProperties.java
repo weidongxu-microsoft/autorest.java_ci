@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** Single item in List or Get Consumer group operation. */
 @Fluent
 public final class ConsumerGroupProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ConsumerGroupProperties.class);
-
     /*
      * Exact time the message was created.
      */

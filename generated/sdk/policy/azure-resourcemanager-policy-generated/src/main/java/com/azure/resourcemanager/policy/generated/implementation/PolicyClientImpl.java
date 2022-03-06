@@ -40,8 +40,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the PolicyClientImpl type. */
 @ServiceClient(builder = PolicyClientBuilder.class)
 public final class PolicyClientImpl implements PolicyClient {
-    private final ClientLogger logger = new ClientLogger(PolicyClientImpl.class);
-
     /** The ID of the target subscription. */
     private final String subscriptionId;
 
@@ -274,7 +272,7 @@ public final class PolicyClientImpl implements PolicyClient {
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -333,4 +331,6 @@ public final class PolicyClientImpl implements PolicyClient {
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(PolicyClientImpl.class);
 }

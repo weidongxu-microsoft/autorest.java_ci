@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The LifetimeAction model. */
 @Fluent
 public final class LifetimeAction {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LifetimeAction.class);
-
     /*
      * The trigger of key rotation policy lifetimeAction.
      */

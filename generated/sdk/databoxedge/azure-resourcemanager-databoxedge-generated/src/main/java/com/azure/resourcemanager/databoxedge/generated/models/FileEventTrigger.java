@@ -8,7 +8,6 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.FileTriggerProperties;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.TriggerInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -18,8 +17,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("FileEvent")
 @Fluent
 public final class FileEventTrigger extends TriggerInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FileEventTrigger.class);
-
     /*
      * File trigger properties.
      */
@@ -117,7 +114,7 @@ public final class FileEventTrigger extends TriggerInner {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model FileEventTrigger"));
@@ -125,4 +122,6 @@ public final class FileEventTrigger extends TriggerInner {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(FileEventTrigger.class);
 }

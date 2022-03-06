@@ -13,10 +13,9 @@ import com.azure.resourcemanager.resources.generated.fluent.ProvidersClient;
 import com.azure.resourcemanager.resources.generated.fluent.models.ProviderInner;
 import com.azure.resourcemanager.resources.generated.models.Provider;
 import com.azure.resourcemanager.resources.generated.models.Providers;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ProvidersImpl implements Providers {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ProvidersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ProvidersImpl.class);
 
     private final ProvidersClient innerClient;
 

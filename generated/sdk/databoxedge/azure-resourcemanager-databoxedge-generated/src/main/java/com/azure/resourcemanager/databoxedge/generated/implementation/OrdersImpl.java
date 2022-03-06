@@ -15,10 +15,9 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.models.OrderInner;
 import com.azure.resourcemanager.databoxedge.generated.models.DCAccessCode;
 import com.azure.resourcemanager.databoxedge.generated.models.Order;
 import com.azure.resourcemanager.databoxedge.generated.models.Orders;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class OrdersImpl implements Orders {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(OrdersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(OrdersImpl.class);
 
     private final OrdersClient innerClient;
 

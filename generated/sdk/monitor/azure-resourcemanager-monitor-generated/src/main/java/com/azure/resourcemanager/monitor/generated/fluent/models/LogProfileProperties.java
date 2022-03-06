@@ -7,15 +7,12 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.RetentionPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The log profile properties. */
 @Fluent
 public final class LogProfileProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogProfileProperties.class);
-
     /*
      * the resource id of the storage account to which you would like to send
      * the Activity Log.
@@ -171,17 +168,17 @@ public final class LogProfileProperties {
      */
     public void validate() {
         if (locations() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property locations in model LogProfileProperties"));
         }
         if (categories() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property categories in model LogProfileProperties"));
         }
         if (retentionPolicy() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property retentionPolicy in model LogProfileProperties"));
@@ -189,4 +186,6 @@ public final class LogProfileProperties {
             retentionPolicy().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(LogProfileProperties.class);
 }

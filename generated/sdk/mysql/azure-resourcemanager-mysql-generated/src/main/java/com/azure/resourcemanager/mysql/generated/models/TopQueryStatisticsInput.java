@@ -7,15 +7,12 @@ package com.azure.resourcemanager.mysql.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.fluent.models.TopQueryStatisticsInputProperties;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** Input to get top query statistics. */
 @Fluent
 public final class TopQueryStatisticsInput {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TopQueryStatisticsInput.class);
-
     /*
      * The properties of a wait statistics input.
      */
@@ -176,7 +173,7 @@ public final class TopQueryStatisticsInput {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model TopQueryStatisticsInput"));
@@ -184,4 +181,6 @@ public final class TopQueryStatisticsInput {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(TopQueryStatisticsInput.class);
 }

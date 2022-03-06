@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.NodeStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** This class represents the nodes in a highly available cluster. */
 @Immutable
 public final class NodeProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NodeProperties.class);
-
     /*
      * The current status of the individual node
      */

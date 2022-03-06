@@ -13,10 +13,9 @@ import com.azure.resourcemanager.dns.generated.fluent.models.DnsResourceReferenc
 import com.azure.resourcemanager.dns.generated.models.DnsResourceReferenceRequest;
 import com.azure.resourcemanager.dns.generated.models.DnsResourceReferenceResult;
 import com.azure.resourcemanager.dns.generated.models.DnsResourceReferences;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DnsResourceReferencesImpl implements DnsResourceReferences {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DnsResourceReferencesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DnsResourceReferencesImpl.class);
 
     private final DnsResourceReferencesClient innerClient;
 

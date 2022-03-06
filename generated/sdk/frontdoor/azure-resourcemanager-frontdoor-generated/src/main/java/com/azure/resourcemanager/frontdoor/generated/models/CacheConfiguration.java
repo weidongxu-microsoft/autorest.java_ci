@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 
 /** Caching settings for a caching-type route. To disable caching, do not provide a cacheConfiguration object. */
 @Fluent
 public final class CacheConfiguration {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CacheConfiguration.class);
-
     /*
      * Treatment of URL query terms when forming the cache key.
      */

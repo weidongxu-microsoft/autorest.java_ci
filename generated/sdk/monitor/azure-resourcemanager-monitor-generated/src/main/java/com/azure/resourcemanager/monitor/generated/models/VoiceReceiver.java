@@ -6,14 +6,11 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** A voice receiver. */
 @Fluent
 public final class VoiceReceiver {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VoiceReceiver.class);
-
     /*
      * The name of the voice receiver. Names must be unique across all
      * receivers within an action group.
@@ -102,19 +99,21 @@ public final class VoiceReceiver {
      */
     public void validate() {
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property name in model VoiceReceiver"));
         }
         if (countryCode() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property countryCode in model VoiceReceiver"));
         }
         if (phoneNumber() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property phoneNumber in model VoiceReceiver"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(VoiceReceiver.class);
 }

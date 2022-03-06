@@ -15,15 +15,12 @@ import com.azure.resourcemanager.databoxedge.generated.models.RefreshDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.ShareAccessProtocol;
 import com.azure.resourcemanager.databoxedge.generated.models.ShareStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.UserAccessRight;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The share properties. */
 @Fluent
 public final class ShareProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ShareProperties.class);
-
     /*
      * Description for the share.
      */
@@ -286,12 +283,12 @@ public final class ShareProperties {
      */
     public void validate() {
         if (shareStatus() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property shareStatus in model ShareProperties"));
         }
         if (monitoringStatus() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property monitoringStatus in model ShareProperties"));
@@ -300,7 +297,7 @@ public final class ShareProperties {
             azureContainerInfo().validate();
         }
         if (accessProtocol() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property accessProtocol in model ShareProperties"));
         }
@@ -317,4 +314,6 @@ public final class ShareProperties {
             shareMappings().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ShareProperties.class);
 }

@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -18,8 +16,6 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.JpgImage")
 @Fluent
 public final class JpgImage extends Image {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(JpgImage.class);
-
     /*
      * A collection of output JPEG image layers to be produced by the encoder.
      */

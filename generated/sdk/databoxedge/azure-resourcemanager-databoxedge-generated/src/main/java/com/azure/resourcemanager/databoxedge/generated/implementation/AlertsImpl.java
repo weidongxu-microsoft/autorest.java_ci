@@ -13,10 +13,9 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.AlertsClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.AlertInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Alert;
 import com.azure.resourcemanager.databoxedge.generated.models.Alerts;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AlertsImpl implements Alerts {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AlertsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AlertsImpl.class);
 
     private final AlertsClient innerClient;
 

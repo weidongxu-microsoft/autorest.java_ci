@@ -6,16 +6,12 @@ package com.azure.resourcemanager.postgresql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.models.VirtualNetworkRuleState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** A virtual network rule. */
 @Fluent
 public final class VirtualNetworkRuleInner extends ProxyResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworkRuleInner.class);
-
     /*
      * Resource properties.
      */

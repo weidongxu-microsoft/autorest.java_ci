@@ -30,7 +30,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.fluent.MediaservicesClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.EdgePoliciesInner;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.MediaServiceInner;
@@ -42,8 +41,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in MediaservicesClient. */
 public final class MediaservicesClientImpl implements MediaservicesClient {
-    private final ClientLogger logger = new ClientLogger(MediaservicesClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final MediaservicesService service;
 

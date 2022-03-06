@@ -7,14 +7,11 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.AuthenticationType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Raw Certificate Data. */
 @Fluent
 public final class RawCertificateData {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RawCertificateData.class);
-
     /*
      * The authentication type.
      */
@@ -74,9 +71,11 @@ public final class RawCertificateData {
      */
     public void validate() {
         if (certificate() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property certificate in model RawCertificateData"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(RawCertificateData.class);
 }

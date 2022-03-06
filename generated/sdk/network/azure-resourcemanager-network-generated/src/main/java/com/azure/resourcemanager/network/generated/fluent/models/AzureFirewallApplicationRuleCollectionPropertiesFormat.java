@@ -5,20 +5,15 @@
 package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallApplicationRule;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallRCAction;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Properties of the application rule collection. */
 @Fluent
 public final class AzureFirewallApplicationRuleCollectionPropertiesFormat {
-    @JsonIgnore
-    private final ClientLogger logger = new ClientLogger(AzureFirewallApplicationRuleCollectionPropertiesFormat.class);
-
     /*
      * Priority of the application rule collection resource.
      */

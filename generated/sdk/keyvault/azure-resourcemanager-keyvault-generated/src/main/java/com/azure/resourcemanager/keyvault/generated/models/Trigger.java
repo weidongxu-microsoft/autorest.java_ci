@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The Trigger model. */
 @Fluent
 public final class Trigger {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Trigger.class);
-
     /*
      * The time duration after key creation to rotate the key. It only applies
      * to rotate. It will be in ISO 8601 duration format. Eg: 'P90D', 'P1Y'.

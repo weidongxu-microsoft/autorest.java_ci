@@ -30,8 +30,6 @@ import java.util.Map;
 })
 @Fluent
 public class MultiMetricCriteria {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MultiMetricCriteria.class);
-
     /*
      * Name of the criteria.
      */
@@ -232,17 +230,17 @@ public class MultiMetricCriteria {
      */
     public void validate() {
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property name in model MultiMetricCriteria"));
         }
         if (metricName() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property metricName in model MultiMetricCriteria"));
         }
         if (timeAggregation() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property timeAggregation in model MultiMetricCriteria"));
@@ -251,4 +249,6 @@ public class MultiMetricCriteria {
             dimensions().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MultiMetricCriteria.class);
 }

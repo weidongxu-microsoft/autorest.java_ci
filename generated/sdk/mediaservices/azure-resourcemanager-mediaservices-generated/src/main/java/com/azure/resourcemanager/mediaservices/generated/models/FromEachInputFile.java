@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -19,8 +17,6 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.FromEachInputFile")
 @Fluent
 public final class FromEachInputFile extends InputDefinition {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FromEachInputFile.class);
-
     /** {@inheritDoc} */
     @Override
     public FromEachInputFile withIncludedTracks(List<TrackDescriptor> includedTracks) {

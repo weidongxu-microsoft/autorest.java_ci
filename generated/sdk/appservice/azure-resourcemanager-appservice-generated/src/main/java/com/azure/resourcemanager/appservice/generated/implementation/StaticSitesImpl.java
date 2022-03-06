@@ -41,10 +41,9 @@ import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflow
 import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreviewRequest;
 import com.azure.resourcemanager.appservice.generated.models.StringDictionary;
 import com.azure.resourcemanager.appservice.generated.models.StringList;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class StaticSitesImpl implements StaticSites {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StaticSitesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(StaticSitesImpl.class);
 
     private final StaticSitesClient innerClient;
 
@@ -1031,7 +1030,7 @@ public final class StaticSitesImpl implements StaticSites {
     public StaticSiteArmResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -1039,7 +1038,7 @@ public final class StaticSitesImpl implements StaticSites {
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
@@ -1050,7 +1049,7 @@ public final class StaticSitesImpl implements StaticSites {
     public Response<StaticSiteArmResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -1058,7 +1057,7 @@ public final class StaticSitesImpl implements StaticSites {
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
@@ -1069,7 +1068,7 @@ public final class StaticSitesImpl implements StaticSites {
     public StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSiteBuildById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -1077,21 +1076,21 @@ public final class StaticSitesImpl implements StaticSites {
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String environmentName = Utils.getValueFromIdByName(id, "builds");
         if (environmentName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
         }
         String functionAppName = Utils.getValueFromIdByName(id, "userProvidedFunctionApps");
         if (functionAppName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -1109,7 +1108,7 @@ public final class StaticSitesImpl implements StaticSites {
         getUserProvidedFunctionAppForStaticSiteBuildByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -1117,21 +1116,21 @@ public final class StaticSitesImpl implements StaticSites {
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String environmentName = Utils.getValueFromIdByName(id, "builds");
         if (environmentName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
         }
         String functionAppName = Utils.getValueFromIdByName(id, "userProvidedFunctionApps");
         if (functionAppName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -1147,7 +1146,7 @@ public final class StaticSitesImpl implements StaticSites {
     public StaticSiteCustomDomainOverviewArmResource getStaticSiteCustomDomainById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -1155,14 +1154,14 @@ public final class StaticSitesImpl implements StaticSites {
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "customDomains");
         if (domainName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
@@ -1174,7 +1173,7 @@ public final class StaticSitesImpl implements StaticSites {
         String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -1182,14 +1181,14 @@ public final class StaticSitesImpl implements StaticSites {
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "customDomains");
         if (domainName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
@@ -1200,7 +1199,7 @@ public final class StaticSitesImpl implements StaticSites {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -1208,7 +1207,7 @@ public final class StaticSitesImpl implements StaticSites {
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
@@ -1219,7 +1218,7 @@ public final class StaticSitesImpl implements StaticSites {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -1227,7 +1226,7 @@ public final class StaticSitesImpl implements StaticSites {
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
@@ -1238,7 +1237,7 @@ public final class StaticSitesImpl implements StaticSites {
     public void deleteStaticSiteCustomDomainById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -1246,14 +1245,14 @@ public final class StaticSitesImpl implements StaticSites {
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "customDomains");
         if (domainName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
@@ -1264,7 +1263,7 @@ public final class StaticSitesImpl implements StaticSites {
     public void deleteStaticSiteCustomDomainByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -1272,14 +1271,14 @@ public final class StaticSitesImpl implements StaticSites {
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "customDomains");
         if (domainName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));

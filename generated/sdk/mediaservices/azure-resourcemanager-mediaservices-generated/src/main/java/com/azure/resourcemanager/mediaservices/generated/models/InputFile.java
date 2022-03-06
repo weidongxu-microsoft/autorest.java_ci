@@ -5,8 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -17,8 +15,6 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.InputFile")
 @Fluent
 public final class InputFile extends InputDefinition {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(InputFile.class);
-
     /*
      * Name of the file that this input definition applies to.
      */

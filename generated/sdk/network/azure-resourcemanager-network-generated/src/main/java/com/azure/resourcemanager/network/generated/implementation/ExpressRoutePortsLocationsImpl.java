@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortsLocat
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRoutePortsLocationInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePortsLocation;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePortsLocations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRoutePortsLocationsImpl implements ExpressRoutePortsLocations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRoutePortsLocationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ExpressRoutePortsLocationsImpl.class);
 
     private final ExpressRoutePortsLocationsClient innerClient;
 

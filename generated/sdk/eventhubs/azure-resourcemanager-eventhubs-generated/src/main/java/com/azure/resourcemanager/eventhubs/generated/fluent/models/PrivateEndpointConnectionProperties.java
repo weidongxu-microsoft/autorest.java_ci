@@ -5,18 +5,14 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.ConnectionState;
 import com.azure.resourcemanager.eventhubs.generated.models.EndPointProvisioningState;
 import com.azure.resourcemanager.eventhubs.generated.models.PrivateEndpoint;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Properties of the private endpoint connection resource. */
 @Fluent
 public final class PrivateEndpointConnectionProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateEndpointConnectionProperties.class);
-
     /*
      * The Private Endpoint resource for this Connection.
      */

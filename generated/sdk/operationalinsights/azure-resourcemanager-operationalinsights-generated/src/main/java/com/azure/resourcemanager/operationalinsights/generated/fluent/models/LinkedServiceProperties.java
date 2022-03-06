@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.LinkedServiceEntityStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Linked service properties. */
 @Fluent
 public final class LinkedServiceProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LinkedServiceProperties.class);
-
     /*
      * The resource id of the resource that will be linked to the workspace.
      * This should be used for linking resources which require read access

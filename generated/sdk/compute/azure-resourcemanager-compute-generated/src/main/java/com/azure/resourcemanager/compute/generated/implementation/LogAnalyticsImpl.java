@@ -12,10 +12,9 @@ import com.azure.resourcemanager.compute.generated.models.LogAnalytics;
 import com.azure.resourcemanager.compute.generated.models.LogAnalyticsOperationResult;
 import com.azure.resourcemanager.compute.generated.models.RequestRateByIntervalInput;
 import com.azure.resourcemanager.compute.generated.models.ThrottledRequestsInput;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LogAnalyticsImpl implements LogAnalytics {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogAnalyticsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(LogAnalyticsImpl.class);
 
     private final LogAnalyticsClient innerClient;
 

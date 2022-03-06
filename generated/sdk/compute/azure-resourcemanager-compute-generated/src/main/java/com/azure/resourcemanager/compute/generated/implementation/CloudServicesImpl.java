@@ -16,10 +16,9 @@ import com.azure.resourcemanager.compute.generated.models.CloudService;
 import com.azure.resourcemanager.compute.generated.models.CloudServiceInstanceView;
 import com.azure.resourcemanager.compute.generated.models.CloudServices;
 import com.azure.resourcemanager.compute.generated.models.RoleInstances;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CloudServicesImpl implements CloudServices {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CloudServicesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(CloudServicesImpl.class);
 
     private final CloudServicesClient innerClient;
 
@@ -175,7 +174,7 @@ public final class CloudServicesImpl implements CloudServices {
     public CloudService getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -183,7 +182,7 @@ public final class CloudServicesImpl implements CloudServices {
         }
         String cloudServiceName = Utils.getValueFromIdByName(id, "cloudServices");
         if (cloudServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'cloudServices'.", id)));
@@ -194,7 +193,7 @@ public final class CloudServicesImpl implements CloudServices {
     public Response<CloudService> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -202,7 +201,7 @@ public final class CloudServicesImpl implements CloudServices {
         }
         String cloudServiceName = Utils.getValueFromIdByName(id, "cloudServices");
         if (cloudServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'cloudServices'.", id)));
@@ -213,7 +212,7 @@ public final class CloudServicesImpl implements CloudServices {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -221,7 +220,7 @@ public final class CloudServicesImpl implements CloudServices {
         }
         String cloudServiceName = Utils.getValueFromIdByName(id, "cloudServices");
         if (cloudServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'cloudServices'.", id)));
@@ -232,7 +231,7 @@ public final class CloudServicesImpl implements CloudServices {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -240,7 +239,7 @@ public final class CloudServicesImpl implements CloudServices {
         }
         String cloudServiceName = Utils.getValueFromIdByName(id, "cloudServices");
         if (cloudServiceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'cloudServices'.", id)));

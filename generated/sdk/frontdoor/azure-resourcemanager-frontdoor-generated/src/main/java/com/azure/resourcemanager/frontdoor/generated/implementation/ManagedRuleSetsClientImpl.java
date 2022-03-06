@@ -25,7 +25,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.fluent.ManagedRuleSetsClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ManagedRuleSetDefinitionInner;
 import com.azure.resourcemanager.frontdoor.generated.models.ManagedRuleSetDefinitionList;
@@ -33,8 +32,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ManagedRuleSetsClient. */
 public final class ManagedRuleSetsClientImpl implements ManagedRuleSetsClient {
-    private final ClientLogger logger = new ClientLogger(ManagedRuleSetsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final ManagedRuleSetsService service;
 

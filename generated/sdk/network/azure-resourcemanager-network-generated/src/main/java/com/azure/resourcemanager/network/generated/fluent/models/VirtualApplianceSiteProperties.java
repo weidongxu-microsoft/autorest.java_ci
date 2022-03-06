@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.Office365PolicyProperties;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Properties of the rule group. */
 @Fluent
 public final class VirtualApplianceSiteProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualApplianceSiteProperties.class);
-
     /*
      * Address Prefix.
      */

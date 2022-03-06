@@ -12,10 +12,9 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.SchemasCli
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SearchGetSchemaResponseInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.Schemas;
 import com.azure.resourcemanager.operationalinsights.generated.models.SearchGetSchemaResponse;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SchemasImpl implements Schemas {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SchemasImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(SchemasImpl.class);
 
     private final SchemasClient innerClient;
 

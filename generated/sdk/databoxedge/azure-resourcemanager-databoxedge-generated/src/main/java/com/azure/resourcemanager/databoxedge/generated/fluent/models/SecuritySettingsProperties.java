@@ -7,14 +7,11 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.AsymmetricEncryptedSecret;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The properties of security settings. */
 @Fluent
 public final class SecuritySettingsProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SecuritySettingsProperties.class);
-
     /*
      * Device administrator password as an encrypted string (encrypted using
      * RSA PKCS #1) is used to sign into the  local web UI of the device. The
@@ -55,7 +52,7 @@ public final class SecuritySettingsProperties {
      */
     public void validate() {
         if (deviceAdminPassword() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property deviceAdminPassword in model SecuritySettingsProperties"));
@@ -63,4 +60,6 @@ public final class SecuritySettingsProperties {
             deviceAdminPassword().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(SecuritySettingsProperties.class);
 }

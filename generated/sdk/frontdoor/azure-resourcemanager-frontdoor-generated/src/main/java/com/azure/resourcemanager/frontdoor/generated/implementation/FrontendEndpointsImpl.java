@@ -14,10 +14,9 @@ import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontendEndpo
 import com.azure.resourcemanager.frontdoor.generated.models.CustomHttpsConfiguration;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontendEndpoint;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontendEndpoints;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FrontendEndpointsImpl implements FrontendEndpoints {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontendEndpointsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(FrontendEndpointsImpl.class);
 
     private final FrontendEndpointsClient innerClient;
 

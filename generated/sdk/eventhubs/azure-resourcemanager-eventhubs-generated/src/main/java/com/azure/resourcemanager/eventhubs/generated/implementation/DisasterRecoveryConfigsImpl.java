@@ -20,10 +20,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.AuthorizationRule;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityParameter;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityResult;
 import com.azure.resourcemanager.eventhubs.generated.models.DisasterRecoveryConfigs;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfigs {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DisasterRecoveryConfigsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DisasterRecoveryConfigsImpl.class);
 
     private final DisasterRecoveryConfigsClient innerClient;
 
@@ -200,7 +199,7 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     public ArmDisasterRecovery getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -208,14 +207,14 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
         if (alias == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -229,7 +228,7 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     public Response<ArmDisasterRecovery> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -237,14 +236,14 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
         if (alias == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -258,7 +257,7 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -266,14 +265,14 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
         if (alias == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -287,7 +286,7 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -295,14 +294,14 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
         if (alias == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

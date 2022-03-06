@@ -13,10 +13,9 @@ import com.azure.resourcemanager.storage.generated.fluent.DeletedAccountsClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.DeletedAccountInner;
 import com.azure.resourcemanager.storage.generated.models.DeletedAccount;
 import com.azure.resourcemanager.storage.generated.models.DeletedAccounts;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DeletedAccountsImpl implements DeletedAccounts {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DeletedAccountsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DeletedAccountsImpl.class);
 
     private final DeletedAccountsClient innerClient;
 

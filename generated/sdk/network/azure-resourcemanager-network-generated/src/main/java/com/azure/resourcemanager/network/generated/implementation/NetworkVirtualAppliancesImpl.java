@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.NetworkVirtualApplianc
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInner;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliance;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliances;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkVirtualAppliancesImpl implements NetworkVirtualAppliances {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkVirtualAppliancesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(NetworkVirtualAppliancesImpl.class);
 
     private final NetworkVirtualAppliancesClient innerClient;
 
@@ -88,7 +87,7 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
     public NetworkVirtualAppliance getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -96,7 +95,7 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
         }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
         if (networkVirtualApplianceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -113,7 +112,7 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
     public Response<NetworkVirtualAppliance> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -121,7 +120,7 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
         }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
         if (networkVirtualApplianceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -135,7 +134,7 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -143,7 +142,7 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
         }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
         if (networkVirtualApplianceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -157,7 +156,7 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -165,7 +164,7 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
         }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
         if (networkVirtualApplianceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

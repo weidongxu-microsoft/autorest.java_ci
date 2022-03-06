@@ -5,16 +5,12 @@
 package com.azure.resourcemanager.relay.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** Properties of the HybridConnection. */
 @Fluent
 public final class HybridConnectionProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(HybridConnectionProperties.class);
-
     /*
      * The time the hybrid connection was created.
      */

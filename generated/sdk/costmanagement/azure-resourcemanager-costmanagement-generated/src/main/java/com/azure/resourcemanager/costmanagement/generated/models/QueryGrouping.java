@@ -6,14 +6,11 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The group by expression to be used in the query. */
 @Fluent
 public final class QueryGrouping {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(QueryGrouping.class);
-
     /*
      * Has type of the column to group.
      */
@@ -73,14 +70,16 @@ public final class QueryGrouping {
      */
     public void validate() {
         if (type() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property type in model QueryGrouping"));
         }
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property name in model QueryGrouping"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(QueryGrouping.class);
 }

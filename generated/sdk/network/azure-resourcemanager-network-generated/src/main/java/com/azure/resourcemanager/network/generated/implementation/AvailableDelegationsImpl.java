@@ -11,10 +11,9 @@ import com.azure.resourcemanager.network.generated.fluent.AvailableDelegationsCl
 import com.azure.resourcemanager.network.generated.fluent.models.AvailableDelegationInner;
 import com.azure.resourcemanager.network.generated.models.AvailableDelegation;
 import com.azure.resourcemanager.network.generated.models.AvailableDelegations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AvailableDelegationsImpl implements AvailableDelegations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AvailableDelegationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AvailableDelegationsImpl.class);
 
     private final AvailableDelegationsClient innerClient;
 

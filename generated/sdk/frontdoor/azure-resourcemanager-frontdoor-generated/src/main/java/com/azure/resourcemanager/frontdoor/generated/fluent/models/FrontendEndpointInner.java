@@ -6,21 +6,17 @@ package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomHttpsConfiguration;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomHttpsProvisioningState;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomHttpsProvisioningSubstate;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontendEndpointUpdateParametersWebApplicationFirewallPolicyLink;
 import com.azure.resourcemanager.frontdoor.generated.models.SessionAffinityEnabledState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** A frontend endpoint used for routing. */
 @Fluent
 public final class FrontendEndpointInner extends SubResource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontendEndpointInner.class);
-
     /*
      * Properties of the Frontend endpoint
      */

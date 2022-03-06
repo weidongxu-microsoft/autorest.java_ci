@@ -9,15 +9,12 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.AzureContainerDataFormat;
 import com.azure.resourcemanager.databoxedge.generated.models.ContainerStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.RefreshDetails;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /** The container properties. */
 @Fluent
 public final class ContainerProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ContainerProperties.class);
-
     /*
      * Current status of the container.
      */
@@ -96,7 +93,7 @@ public final class ContainerProperties {
      */
     public void validate() {
         if (dataFormat() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property dataFormat in model ContainerProperties"));
         }
@@ -104,4 +101,6 @@ public final class ContainerProperties {
             refreshDetails().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ContainerProperties.class);
 }

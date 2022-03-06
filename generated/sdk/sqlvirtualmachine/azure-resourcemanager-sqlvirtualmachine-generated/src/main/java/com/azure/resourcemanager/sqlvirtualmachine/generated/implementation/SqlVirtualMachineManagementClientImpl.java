@@ -39,8 +39,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the SqlVirtualMachineManagementClientImpl type. */
 @ServiceClient(builder = SqlVirtualMachineManagementClientBuilder.class)
 public final class SqlVirtualMachineManagementClientImpl implements SqlVirtualMachineManagementClient {
-    private final ClientLogger logger = new ClientLogger(SqlVirtualMachineManagementClientImpl.class);
-
     /** Subscription ID that identifies an Azure subscription. */
     private final String subscriptionId;
 
@@ -273,7 +271,7 @@ public final class SqlVirtualMachineManagementClientImpl implements SqlVirtualMa
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -332,4 +330,6 @@ public final class SqlVirtualMachineManagementClientImpl implements SqlVirtualMa
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(SqlVirtualMachineManagementClientImpl.class);
 }

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.policy.generated.fluent.PolicyExemptionsClient;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyExemptionInner;
 import com.azure.resourcemanager.policy.generated.models.PolicyExemption;
 import com.azure.resourcemanager.policy.generated.models.PolicyExemptions;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PolicyExemptionsImpl implements PolicyExemptions {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PolicyExemptionsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PolicyExemptionsImpl.class);
 
     private final PolicyExemptionsClient innerClient;
 
@@ -135,7 +134,7 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -147,7 +146,7 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                     "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}",
                     "policyExemptionName");
         if (policyExemptionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -163,7 +162,7 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -175,7 +174,7 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                     "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}",
                     "policyExemptionName");
         if (policyExemptionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -191,7 +190,7 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -203,7 +202,7 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                     "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}",
                     "policyExemptionName");
         if (policyExemptionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -219,7 +218,7 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                 .getValueFromIdByParameterName(
                     id, "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "scope");
         if (scope == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
@@ -231,7 +230,7 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                     "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}",
                     "policyExemptionName");
         if (policyExemptionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

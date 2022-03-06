@@ -12,7 +12,6 @@ import com.azure.resourcemanager.monitor.generated.models.Enabled;
 import com.azure.resourcemanager.monitor.generated.models.ProvisioningState;
 import com.azure.resourcemanager.monitor.generated.models.Schedule;
 import com.azure.resourcemanager.monitor.generated.models.Source;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Map;
@@ -20,8 +19,6 @@ import java.util.Map;
 /** The Log Search Rule resource. */
 @Fluent
 public final class LogSearchRuleResourceInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogSearchRuleResourceInner.class);
-
     /*
      * The rule properties of the resource.
      */
@@ -302,7 +299,7 @@ public final class LogSearchRuleResourceInner extends Resource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model LogSearchRuleResourceInner"));
@@ -310,4 +307,6 @@ public final class LogSearchRuleResourceInner extends Resource {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(LogSearchRuleResourceInner.class);
 }

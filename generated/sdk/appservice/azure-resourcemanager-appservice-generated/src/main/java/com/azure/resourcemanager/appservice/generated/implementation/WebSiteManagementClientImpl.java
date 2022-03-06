@@ -56,8 +56,6 @@ import reactor.core.publisher.Mono;
 /** Initializes a new instance of the WebSiteManagementClientImpl type. */
 @ServiceClient(builder = WebSiteManagementClientBuilder.class)
 public final class WebSiteManagementClientImpl implements WebSiteManagementClient {
-    private final ClientLogger logger = new ClientLogger(WebSiteManagementClientImpl.class);
-
     /** Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000). */
     private final String subscriptionId;
 
@@ -512,7 +510,7 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
                             managementError = null;
                         }
                     } catch (IOException | RuntimeException ioe) {
-                        logger.logThrowableAsWarning(ioe);
+                        LOGGER.logThrowableAsWarning(ioe);
                     }
                 }
             } else {
@@ -571,4 +569,6 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
             return Mono.just(new String(responseBody, charset));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(WebSiteManagementClientImpl.class);
 }

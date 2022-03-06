@@ -14,11 +14,10 @@ import com.azure.resourcemanager.applicationinsights.generated.fluent.models.MyW
 import com.azure.resourcemanager.applicationinsights.generated.models.CategoryType;
 import com.azure.resourcemanager.applicationinsights.generated.models.MyWorkbook;
 import com.azure.resourcemanager.applicationinsights.generated.models.MyWorkbooks;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 
 public final class MyWorkbooksImpl implements MyWorkbooks {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MyWorkbooksImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(MyWorkbooksImpl.class);
 
     private final MyWorkbooksClient innerClient;
 
@@ -89,7 +88,7 @@ public final class MyWorkbooksImpl implements MyWorkbooks {
     public MyWorkbook getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -97,7 +96,7 @@ public final class MyWorkbooksImpl implements MyWorkbooks {
         }
         String resourceName = Utils.getValueFromIdByName(id, "myWorkbooks");
         if (resourceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'myWorkbooks'.", id)));
@@ -108,7 +107,7 @@ public final class MyWorkbooksImpl implements MyWorkbooks {
     public Response<MyWorkbook> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -116,7 +115,7 @@ public final class MyWorkbooksImpl implements MyWorkbooks {
         }
         String resourceName = Utils.getValueFromIdByName(id, "myWorkbooks");
         if (resourceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'myWorkbooks'.", id)));
@@ -127,7 +126,7 @@ public final class MyWorkbooksImpl implements MyWorkbooks {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -135,7 +134,7 @@ public final class MyWorkbooksImpl implements MyWorkbooks {
         }
         String resourceName = Utils.getValueFromIdByName(id, "myWorkbooks");
         if (resourceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'myWorkbooks'.", id)));
@@ -146,7 +145,7 @@ public final class MyWorkbooksImpl implements MyWorkbooks {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -154,7 +153,7 @@ public final class MyWorkbooksImpl implements MyWorkbooks {
         }
         String resourceName = Utils.getValueFromIdByName(id, "myWorkbooks");
         if (resourceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'myWorkbooks'.", id)));

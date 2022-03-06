@@ -6,7 +6,6 @@ package com.azure.resourcemanager.postgresql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.models.InfrastructureEncryption;
 import com.azure.resourcemanager.postgresql.generated.models.MinimalTlsVersionEnum;
 import com.azure.resourcemanager.postgresql.generated.models.PublicNetworkAccessEnum;
@@ -17,7 +16,6 @@ import com.azure.resourcemanager.postgresql.generated.models.ServerVersion;
 import com.azure.resourcemanager.postgresql.generated.models.Sku;
 import com.azure.resourcemanager.postgresql.generated.models.SslEnforcementEnum;
 import com.azure.resourcemanager.postgresql.generated.models.StorageProfile;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -26,8 +24,6 @@ import java.util.Map;
 /** Represents a server. */
 @Fluent
 public final class ServerInner extends Resource {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServerInner.class);
-
     /*
      * The Azure Active Directory identity of the server.
      */

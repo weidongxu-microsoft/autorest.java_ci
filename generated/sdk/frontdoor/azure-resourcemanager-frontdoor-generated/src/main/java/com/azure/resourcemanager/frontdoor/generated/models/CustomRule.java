@@ -6,15 +6,12 @@ package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Defines contents of a web application rule. */
 @Fluent
 public final class CustomRule {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(CustomRule.class);
-
     /*
      * Describes the name of the rule.
      */
@@ -236,21 +233,23 @@ public final class CustomRule {
      */
     public void validate() {
         if (ruleType() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property ruleType in model CustomRule"));
         }
         if (matchConditions() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property matchConditions in model CustomRule"));
         } else {
             matchConditions().forEach(e -> e.validate());
         }
         if (action() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property action in model CustomRule"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(CustomRule.class);
 }

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.RouteFilterRulesClient
 import com.azure.resourcemanager.network.generated.fluent.models.RouteFilterRuleInner;
 import com.azure.resourcemanager.network.generated.models.RouteFilterRule;
 import com.azure.resourcemanager.network.generated.models.RouteFilterRules;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RouteFilterRulesImpl implements RouteFilterRules {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RouteFilterRulesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(RouteFilterRulesImpl.class);
 
     private final RouteFilterRulesClient innerClient;
 

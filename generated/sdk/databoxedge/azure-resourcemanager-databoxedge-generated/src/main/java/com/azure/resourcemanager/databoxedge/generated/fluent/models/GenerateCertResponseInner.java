@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Used in activation key generation flow. */
 @Fluent
 public final class GenerateCertResponseInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(GenerateCertResponseInner.class);
-
     /*
      * Gets or sets base64 encoded certificate raw data,
      * this is the public part needed to be uploaded to cert vault

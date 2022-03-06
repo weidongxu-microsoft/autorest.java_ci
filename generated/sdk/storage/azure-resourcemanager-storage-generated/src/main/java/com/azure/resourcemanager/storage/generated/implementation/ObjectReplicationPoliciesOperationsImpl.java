@@ -13,10 +13,9 @@ import com.azure.resourcemanager.storage.generated.fluent.ObjectReplicationPolic
 import com.azure.resourcemanager.storage.generated.fluent.models.ObjectReplicationPolicyInner;
 import com.azure.resourcemanager.storage.generated.models.ObjectReplicationPoliciesOperations;
 import com.azure.resourcemanager.storage.generated.models.ObjectReplicationPolicy;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ObjectReplicationPoliciesOperationsImpl implements ObjectReplicationPoliciesOperations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ObjectReplicationPoliciesOperationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ObjectReplicationPoliciesOperationsImpl.class);
 
     private final ObjectReplicationPoliciesOperationsClient innerClient;
 
@@ -79,7 +78,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
     public ObjectReplicationPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -87,7 +86,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -95,7 +94,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
         }
         String objectReplicationPolicyId = Utils.getValueFromIdByName(id, "objectReplicationPolicies");
         if (objectReplicationPolicyId == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -109,7 +108,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
     public Response<ObjectReplicationPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -117,7 +116,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -125,7 +124,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
         }
         String objectReplicationPolicyId = Utils.getValueFromIdByName(id, "objectReplicationPolicies");
         if (objectReplicationPolicyId == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -139,7 +138,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -147,7 +146,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -155,7 +154,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
         }
         String objectReplicationPolicyId = Utils.getValueFromIdByName(id, "objectReplicationPolicies");
         if (objectReplicationPolicyId == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -169,7 +168,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -177,7 +176,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -185,7 +184,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
         }
         String objectReplicationPolicyId = Utils.getValueFromIdByName(id, "objectReplicationPolicies");
         if (objectReplicationPolicyId == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

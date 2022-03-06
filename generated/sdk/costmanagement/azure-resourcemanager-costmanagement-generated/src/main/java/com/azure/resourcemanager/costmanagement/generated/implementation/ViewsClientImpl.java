@@ -28,7 +28,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.fluent.ViewsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ViewInner;
 import com.azure.resourcemanager.costmanagement.generated.models.ViewListResult;
@@ -36,8 +35,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ViewsClient. */
 public final class ViewsClientImpl implements ViewsClient {
-    private final ClientLogger logger = new ClientLogger(ViewsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final ViewsService service;
 

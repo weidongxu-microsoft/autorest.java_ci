@@ -28,7 +28,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.costmanagement.generated.fluent.SettingsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.SettingInner;
 import com.azure.resourcemanager.costmanagement.generated.models.SettingsListResult;
@@ -36,8 +35,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in SettingsClient. */
 public final class SettingsClientImpl implements SettingsClient {
-    private final ClientLogger logger = new ClientLogger(SettingsClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final SettingsService service;
 

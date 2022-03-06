@@ -6,19 +6,15 @@ package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.Backend;
 import com.azure.resourcemanager.frontdoor.generated.models.BackendPoolUpdateParameters;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorResourceState;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The JSON object that contains the properties required to create a Backend Pool. */
 @Fluent
 public final class BackendPoolProperties extends BackendPoolUpdateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(BackendPoolProperties.class);
-
     /*
      * Resource status of the Front Door or Front Door SubResource. Resource
      * status.

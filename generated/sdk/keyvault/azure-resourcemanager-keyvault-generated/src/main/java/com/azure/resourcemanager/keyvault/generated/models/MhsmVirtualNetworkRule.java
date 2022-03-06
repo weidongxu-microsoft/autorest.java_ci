@@ -6,14 +6,11 @@ package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** A rule governing the accessibility of a managed hsm pool from a specific virtual network. */
 @Fluent
 public final class MhsmVirtualNetworkRule {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MhsmVirtualNetworkRule.class);
-
     /*
      * Full resource id of a vnet subnet, such as
      * '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
@@ -50,9 +47,11 @@ public final class MhsmVirtualNetworkRule {
      */
     public void validate() {
         if (id() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property id in model MhsmVirtualNetworkRule"));
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MhsmVirtualNetworkRule.class);
 }

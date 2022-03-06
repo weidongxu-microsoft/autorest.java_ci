@@ -12,13 +12,12 @@ import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineExtensio
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionImageInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionImage;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionImages;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class VirtualMachineExtensionImagesImpl implements VirtualMachineExtensionImages {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineExtensionImagesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(VirtualMachineExtensionImagesImpl.class);
 
     private final VirtualMachineExtensionImagesClient innerClient;
 

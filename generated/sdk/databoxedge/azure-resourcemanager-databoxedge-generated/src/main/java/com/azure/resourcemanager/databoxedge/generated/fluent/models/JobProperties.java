@@ -5,19 +5,15 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.JobType;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateDownloadProgress;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateInstallProgress;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateOperationStage;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The properties for the job. */
 @Fluent
 public final class JobProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(JobProperties.class);
-
     /*
      * The type of the job.
      */

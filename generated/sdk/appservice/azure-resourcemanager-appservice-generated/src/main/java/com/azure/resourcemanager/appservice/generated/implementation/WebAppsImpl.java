@@ -138,14 +138,13 @@ import com.azure.resourcemanager.appservice.generated.models.VnetInfoResource;
 import com.azure.resourcemanager.appservice.generated.models.WebApps;
 import com.azure.resourcemanager.appservice.generated.models.WebJob;
 import com.azure.resourcemanager.appservice.generated.models.WebSiteInstanceStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class WebAppsImpl implements WebApps {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WebAppsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(WebAppsImpl.class);
 
     private final WebAppsClient innerClient;
 
@@ -7727,7 +7726,7 @@ public final class WebAppsImpl implements WebApps {
     public Site getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7735,7 +7734,7 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
@@ -7746,7 +7745,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<Site> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7754,7 +7753,7 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
@@ -7765,7 +7764,7 @@ public final class WebAppsImpl implements WebApps {
     public Deployment getDeploymentById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7773,14 +7772,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String varId = Utils.getValueFromIdByName(id, "deployments");
         if (varId == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
@@ -7791,7 +7790,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<Deployment> getDeploymentByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7799,14 +7798,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String varId = Utils.getValueFromIdByName(id, "deployments");
         if (varId == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
@@ -7817,7 +7816,7 @@ public final class WebAppsImpl implements WebApps {
     public Identifier getDomainOwnershipIdentifierById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7825,14 +7824,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (domainOwnershipIdentifierName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7849,7 +7848,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<Identifier> getDomainOwnershipIdentifierByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7857,14 +7856,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (domainOwnershipIdentifierName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7879,7 +7878,7 @@ public final class WebAppsImpl implements WebApps {
     public FunctionEnvelope getFunctionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7887,14 +7886,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String functionName = Utils.getValueFromIdByName(id, "functions");
         if (functionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'functions'.", id)));
@@ -7905,7 +7904,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<FunctionEnvelope> getFunctionByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7913,14 +7912,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String functionName = Utils.getValueFromIdByName(id, "functions");
         if (functionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'functions'.", id)));
@@ -7931,7 +7930,7 @@ public final class WebAppsImpl implements WebApps {
     public HostnameBinding getHostnameBindingById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7939,14 +7938,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String hostname = Utils.getValueFromIdByName(id, "hostNameBindings");
         if (hostname == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7959,7 +7958,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<HostnameBinding> getHostnameBindingByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7967,14 +7966,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String hostname = Utils.getValueFromIdByName(id, "hostNameBindings");
         if (hostname == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7987,7 +7986,7 @@ public final class WebAppsImpl implements WebApps {
     public HybridConnection getHybridConnectionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -7995,14 +7994,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "hybridConnectionNamespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8012,7 +8011,7 @@ public final class WebAppsImpl implements WebApps {
         }
         String relayName = Utils.getValueFromIdByName(id, "relays");
         if (relayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'relays'.", id)));
@@ -8025,7 +8024,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<HybridConnection> getHybridConnectionByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8033,14 +8032,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "hybridConnectionNamespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8050,7 +8049,7 @@ public final class WebAppsImpl implements WebApps {
         }
         String relayName = Utils.getValueFromIdByName(id, "relays");
         if (relayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'relays'.", id)));
@@ -8061,7 +8060,7 @@ public final class WebAppsImpl implements WebApps {
     public RelayServiceConnectionEntity getRelayServiceConnectionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8069,14 +8068,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String entityName = Utils.getValueFromIdByName(id, "hybridconnection");
         if (entityName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8090,7 +8089,7 @@ public final class WebAppsImpl implements WebApps {
         String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8098,14 +8097,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String entityName = Utils.getValueFromIdByName(id, "hybridconnection");
         if (entityName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8118,7 +8117,7 @@ public final class WebAppsImpl implements WebApps {
     public PremierAddOn getPremierAddOnById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8126,14 +8125,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String premierAddOnName = Utils.getValueFromIdByName(id, "premieraddons");
         if (premierAddOnName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'premieraddons'.", id)));
@@ -8144,7 +8143,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<PremierAddOn> getPremierAddOnByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8152,14 +8151,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String premierAddOnName = Utils.getValueFromIdByName(id, "premieraddons");
         if (premierAddOnName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'premieraddons'.", id)));
@@ -8170,7 +8169,7 @@ public final class WebAppsImpl implements WebApps {
     public PublicCertificate getPublicCertificateById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8178,14 +8177,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
         if (publicCertificateName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8200,7 +8199,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<PublicCertificate> getPublicCertificateByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8208,14 +8207,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
         if (publicCertificateName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8228,7 +8227,7 @@ public final class WebAppsImpl implements WebApps {
     public VnetInfoResource getVnetConnectionSlotById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8236,14 +8235,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8253,7 +8252,7 @@ public final class WebAppsImpl implements WebApps {
         }
         String slot = Utils.getValueFromIdByName(id, "slots");
         if (slot == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
@@ -8264,7 +8263,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<VnetInfoResource> getVnetConnectionSlotByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8272,14 +8271,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8289,7 +8288,7 @@ public final class WebAppsImpl implements WebApps {
         }
         String slot = Utils.getValueFromIdByName(id, "slots");
         if (slot == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
@@ -8300,7 +8299,7 @@ public final class WebAppsImpl implements WebApps {
     public VnetGateway getVnetConnectionGatewaySlotById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8308,14 +8307,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8325,14 +8324,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String gatewayName = Utils.getValueFromIdByName(id, "gateways");
         if (gatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'gateways'.", id)));
         }
         String slot = Utils.getValueFromIdByName(id, "slots");
         if (slot == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
@@ -8346,7 +8345,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<VnetGateway> getVnetConnectionGatewaySlotByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8354,14 +8353,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8371,14 +8370,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String gatewayName = Utils.getValueFromIdByName(id, "gateways");
         if (gatewayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'gateways'.", id)));
         }
         String slot = Utils.getValueFromIdByName(id, "slots");
         if (slot == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
@@ -8390,7 +8389,7 @@ public final class WebAppsImpl implements WebApps {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8398,7 +8397,7 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
@@ -8412,7 +8411,7 @@ public final class WebAppsImpl implements WebApps {
         String id, Boolean deleteMetrics, Boolean deleteEmptyServerFarm, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8420,7 +8419,7 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
@@ -8431,7 +8430,7 @@ public final class WebAppsImpl implements WebApps {
     public void deleteDeploymentById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8439,14 +8438,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String varId = Utils.getValueFromIdByName(id, "deployments");
         if (varId == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
@@ -8457,7 +8456,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> deleteDeploymentByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8465,14 +8464,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String varId = Utils.getValueFromIdByName(id, "deployments");
         if (varId == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
@@ -8483,7 +8482,7 @@ public final class WebAppsImpl implements WebApps {
     public void deleteDomainOwnershipIdentifierById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8491,14 +8490,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (domainOwnershipIdentifierName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8514,7 +8513,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> deleteDomainOwnershipIdentifierByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8522,14 +8521,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (domainOwnershipIdentifierName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8545,7 +8544,7 @@ public final class WebAppsImpl implements WebApps {
     public void deleteFunctionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8553,14 +8552,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String functionName = Utils.getValueFromIdByName(id, "functions");
         if (functionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'functions'.", id)));
@@ -8571,7 +8570,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> deleteFunctionByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8579,14 +8578,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String functionName = Utils.getValueFromIdByName(id, "functions");
         if (functionName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'functions'.", id)));
@@ -8597,7 +8596,7 @@ public final class WebAppsImpl implements WebApps {
     public void deleteHostnameBindingById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8605,14 +8604,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String hostname = Utils.getValueFromIdByName(id, "hostNameBindings");
         if (hostname == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8625,7 +8624,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> deleteHostnameBindingByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8633,14 +8632,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String hostname = Utils.getValueFromIdByName(id, "hostNameBindings");
         if (hostname == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8653,7 +8652,7 @@ public final class WebAppsImpl implements WebApps {
     public void deleteHybridConnectionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8661,14 +8660,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "hybridConnectionNamespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8678,7 +8677,7 @@ public final class WebAppsImpl implements WebApps {
         }
         String relayName = Utils.getValueFromIdByName(id, "relays");
         if (relayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'relays'.", id)));
@@ -8689,7 +8688,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> deleteHybridConnectionByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8697,14 +8696,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "hybridConnectionNamespaces");
         if (namespaceName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8714,7 +8713,7 @@ public final class WebAppsImpl implements WebApps {
         }
         String relayName = Utils.getValueFromIdByName(id, "relays");
         if (relayName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'relays'.", id)));
@@ -8725,7 +8724,7 @@ public final class WebAppsImpl implements WebApps {
     public void deleteRelayServiceConnectionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8733,14 +8732,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String entityName = Utils.getValueFromIdByName(id, "hybridconnection");
         if (entityName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8753,7 +8752,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> deleteRelayServiceConnectionByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8761,14 +8760,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String entityName = Utils.getValueFromIdByName(id, "hybridconnection");
         if (entityName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8781,7 +8780,7 @@ public final class WebAppsImpl implements WebApps {
     public void deletePremierAddOnById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8789,14 +8788,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String premierAddOnName = Utils.getValueFromIdByName(id, "premieraddons");
         if (premierAddOnName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'premieraddons'.", id)));
@@ -8807,7 +8806,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> deletePremierAddOnByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8815,14 +8814,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String premierAddOnName = Utils.getValueFromIdByName(id, "premieraddons");
         if (premierAddOnName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'premieraddons'.", id)));
@@ -8833,7 +8832,7 @@ public final class WebAppsImpl implements WebApps {
     public void deletePublicCertificateById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8841,14 +8840,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
         if (publicCertificateName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8861,7 +8860,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> deletePublicCertificateByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8869,14 +8868,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
         if (publicCertificateName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8889,7 +8888,7 @@ public final class WebAppsImpl implements WebApps {
     public void deleteVnetConnectionSlotById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8897,14 +8896,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8914,7 +8913,7 @@ public final class WebAppsImpl implements WebApps {
         }
         String slot = Utils.getValueFromIdByName(id, "slots");
         if (slot == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
@@ -8925,7 +8924,7 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> deleteVnetConnectionSlotByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8933,14 +8932,14 @@ public final class WebAppsImpl implements WebApps {
         }
         String name = Utils.getValueFromIdByName(id, "sites");
         if (name == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
         String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -8950,7 +8949,7 @@ public final class WebAppsImpl implements WebApps {
         }
         String slot = Utils.getValueFromIdByName(id, "slots");
         if (slot == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));

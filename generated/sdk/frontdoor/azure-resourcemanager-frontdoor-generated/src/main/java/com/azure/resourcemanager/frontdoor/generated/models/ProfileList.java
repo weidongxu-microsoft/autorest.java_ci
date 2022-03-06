@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ProfileInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Defines a list of Profiles. It contains a list of Profile objects and a URL link to get the next set of results. */
 @Fluent
 public final class ProfileList {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ProfileList.class);
-
     /*
      * List of Profiles within a resource group.
      */

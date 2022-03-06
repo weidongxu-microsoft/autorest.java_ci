@@ -5,17 +5,13 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.SubscriptionRegisteredFeatures;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The SubscriptionProperties model. */
 @Fluent
 public final class SubscriptionProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SubscriptionProperties.class);
-
     /*
      * The tenantId property.
      */

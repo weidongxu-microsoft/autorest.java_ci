@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.RulesEngineInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
@@ -17,8 +15,6 @@ import java.util.List;
  */
 @Fluent
 public final class RulesEngineListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RulesEngineListResult.class);
-
     /*
      * List of rulesEngines within a Front Door.
      */

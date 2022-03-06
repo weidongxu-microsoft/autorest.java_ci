@@ -6,14 +6,11 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The repeating times at which this profile begins. This element is not used if the FixedDate element is used. */
 @Fluent
 public final class Recurrence {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(Recurrence.class);
-
     /*
      * the recurrence frequency. How often the schedule profile should take
      * effect. This value must be Week, meaning each week will have the same
@@ -81,16 +78,18 @@ public final class Recurrence {
      */
     public void validate() {
         if (frequency() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property frequency in model Recurrence"));
         }
         if (schedule() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property schedule in model Recurrence"));
         } else {
             schedule().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(Recurrence.class);
 }

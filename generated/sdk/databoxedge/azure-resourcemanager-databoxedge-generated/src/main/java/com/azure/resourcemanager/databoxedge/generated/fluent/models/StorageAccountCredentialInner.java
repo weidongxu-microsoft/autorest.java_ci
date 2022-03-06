@@ -11,14 +11,11 @@ import com.azure.resourcemanager.databoxedge.generated.models.AccountType;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.AsymmetricEncryptedSecret;
 import com.azure.resourcemanager.databoxedge.generated.models.SslStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The storage account credential. */
 @Fluent
 public final class StorageAccountCredentialInner extends ArmBaseModel {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(StorageAccountCredentialInner.class);
-
     /*
      * StorageAccountCredential object
      */
@@ -244,7 +241,7 @@ public final class StorageAccountCredentialInner extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property innerProperties in model StorageAccountCredentialInner"));
@@ -252,4 +249,6 @@ public final class StorageAccountCredentialInner extends ArmBaseModel {
             innerProperties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(StorageAccountCredentialInner.class);
 }

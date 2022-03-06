@@ -5,21 +5,17 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.operationalinsights.generated.models.ProvisioningStateEnum;
 import com.azure.resourcemanager.operationalinsights.generated.models.RestoredLogs;
 import com.azure.resourcemanager.operationalinsights.generated.models.ResultStatistics;
 import com.azure.resourcemanager.operationalinsights.generated.models.Schema;
 import com.azure.resourcemanager.operationalinsights.generated.models.SearchResults;
 import com.azure.resourcemanager.operationalinsights.generated.models.TablePlanEnum;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Table properties. */
 @Fluent
 public final class TableProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TableProperties.class);
-
     /*
      * The table retention in days, between 4 and 730. Setting this property to
      * -1 will default to the workspace retention.

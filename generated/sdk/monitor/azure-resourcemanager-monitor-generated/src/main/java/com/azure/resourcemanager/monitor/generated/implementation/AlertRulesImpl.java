@@ -13,10 +13,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.AlertRulesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.AlertRuleResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.AlertRuleResource;
 import com.azure.resourcemanager.monitor.generated.models.AlertRules;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AlertRulesImpl implements AlertRules {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AlertRulesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(AlertRulesImpl.class);
 
     private final AlertRulesClient innerClient;
 
@@ -84,7 +83,7 @@ public final class AlertRulesImpl implements AlertRules {
     public AlertRuleResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -92,7 +91,7 @@ public final class AlertRulesImpl implements AlertRules {
         }
         String ruleName = Utils.getValueFromIdByName(id, "alertrules");
         if (ruleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
@@ -103,7 +102,7 @@ public final class AlertRulesImpl implements AlertRules {
     public Response<AlertRuleResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -111,7 +110,7 @@ public final class AlertRulesImpl implements AlertRules {
         }
         String ruleName = Utils.getValueFromIdByName(id, "alertrules");
         if (ruleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
@@ -122,7 +121,7 @@ public final class AlertRulesImpl implements AlertRules {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -130,7 +129,7 @@ public final class AlertRulesImpl implements AlertRules {
         }
         String ruleName = Utils.getValueFromIdByName(id, "alertrules");
         if (ruleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
@@ -141,7 +140,7 @@ public final class AlertRulesImpl implements AlertRules {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -149,7 +148,7 @@ public final class AlertRulesImpl implements AlertRules {
         }
         String ruleName = Utils.getValueFromIdByName(id, "alertrules");
         if (ruleName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));

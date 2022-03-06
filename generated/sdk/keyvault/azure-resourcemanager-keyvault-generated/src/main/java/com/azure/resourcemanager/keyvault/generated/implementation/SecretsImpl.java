@@ -13,10 +13,9 @@ import com.azure.resourcemanager.keyvault.generated.fluent.SecretsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.SecretInner;
 import com.azure.resourcemanager.keyvault.generated.models.Secret;
 import com.azure.resourcemanager.keyvault.generated.models.Secrets;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SecretsImpl implements Secrets {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SecretsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(SecretsImpl.class);
 
     private final SecretsClient innerClient;
 
@@ -65,7 +64,7 @@ public final class SecretsImpl implements Secrets {
     public Secret getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -73,14 +72,14 @@ public final class SecretsImpl implements Secrets {
         }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
         if (vaultName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
         }
         String secretName = Utils.getValueFromIdByName(id, "secrets");
         if (secretName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'secrets'.", id)));
@@ -91,7 +90,7 @@ public final class SecretsImpl implements Secrets {
     public Response<Secret> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -99,14 +98,14 @@ public final class SecretsImpl implements Secrets {
         }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
         if (vaultName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
         }
         String secretName = Utils.getValueFromIdByName(id, "secrets");
         if (secretName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'secrets'.", id)));

@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.SecurityPartnerProvide
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityPartnerProviderInner;
 import com.azure.resourcemanager.network.generated.models.SecurityPartnerProvider;
 import com.azure.resourcemanager.network.generated.models.SecurityPartnerProviders;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SecurityPartnerProvidersImpl implements SecurityPartnerProviders {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SecurityPartnerProvidersImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(SecurityPartnerProvidersImpl.class);
 
     private final SecurityPartnerProvidersClient innerClient;
 
@@ -88,7 +87,7 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
     public SecurityPartnerProvider getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -96,7 +95,7 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
         }
         String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
         if (securityPartnerProviderName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -112,7 +111,7 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
     public Response<SecurityPartnerProvider> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -120,7 +119,7 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
         }
         String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
         if (securityPartnerProviderName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -134,7 +133,7 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -142,7 +141,7 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
         }
         String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
         if (securityPartnerProviderName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -156,7 +155,7 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -164,7 +163,7 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
         }
         String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
         if (securityPartnerProviderName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String

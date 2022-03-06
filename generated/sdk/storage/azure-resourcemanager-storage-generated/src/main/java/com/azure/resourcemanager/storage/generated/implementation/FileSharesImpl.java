@@ -20,10 +20,9 @@ import com.azure.resourcemanager.storage.generated.models.FileShares;
 import com.azure.resourcemanager.storage.generated.models.FileSharesLeaseResponse;
 import com.azure.resourcemanager.storage.generated.models.LeaseShareRequest;
 import com.azure.resourcemanager.storage.generated.models.LeaseShareResponse;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FileSharesImpl implements FileShares {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(FileSharesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(FileSharesImpl.class);
 
     private final FileSharesClient innerClient;
 
@@ -144,7 +143,7 @@ public final class FileSharesImpl implements FileShares {
     public FileShare getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -152,7 +151,7 @@ public final class FileSharesImpl implements FileShares {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -160,7 +159,7 @@ public final class FileSharesImpl implements FileShares {
         }
         String shareName = Utils.getValueFromIdByName(id, "shares");
         if (shareName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));
@@ -175,7 +174,7 @@ public final class FileSharesImpl implements FileShares {
     public Response<FileShare> getByIdWithResponse(String id, String expand, String xMsSnapshot, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -183,7 +182,7 @@ public final class FileSharesImpl implements FileShares {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -191,7 +190,7 @@ public final class FileSharesImpl implements FileShares {
         }
         String shareName = Utils.getValueFromIdByName(id, "shares");
         if (shareName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));
@@ -202,7 +201,7 @@ public final class FileSharesImpl implements FileShares {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -210,7 +209,7 @@ public final class FileSharesImpl implements FileShares {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -218,7 +217,7 @@ public final class FileSharesImpl implements FileShares {
         }
         String shareName = Utils.getValueFromIdByName(id, "shares");
         if (shareName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));
@@ -233,7 +232,7 @@ public final class FileSharesImpl implements FileShares {
     public Response<Void> deleteByIdWithResponse(String id, String xMsSnapshot, String include, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -241,7 +240,7 @@ public final class FileSharesImpl implements FileShares {
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -249,7 +248,7 @@ public final class FileSharesImpl implements FileShares {
         }
         String shareName = Utils.getValueFromIdByName(id, "shares");
         if (shareName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));

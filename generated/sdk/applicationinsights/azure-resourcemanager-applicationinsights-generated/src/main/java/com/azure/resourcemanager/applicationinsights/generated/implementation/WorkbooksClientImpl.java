@@ -29,7 +29,6 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.core.util.serializer.CollectionFormat;
 import com.azure.core.util.serializer.JacksonAdapter;
 import com.azure.resourcemanager.applicationinsights.generated.fluent.WorkbooksClient;
@@ -41,8 +40,6 @@ import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in WorkbooksClient. */
 public final class WorkbooksClientImpl implements WorkbooksClient {
-    private final ClientLogger logger = new ClientLogger(WorkbooksClientImpl.class);
-
     /** The proxy service used to perform REST calls. */
     private final WorkbooksService service;
 

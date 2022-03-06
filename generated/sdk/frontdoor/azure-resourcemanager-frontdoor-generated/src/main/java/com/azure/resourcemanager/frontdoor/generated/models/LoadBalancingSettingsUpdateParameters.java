@@ -5,15 +5,11 @@
 package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Round-Robin load balancing settings for a backend pool. */
 @Fluent
 public class LoadBalancingSettingsUpdateParameters {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancingSettingsUpdateParameters.class);
-
     /*
      * The number of samples to consider for load balancing decisions
      */

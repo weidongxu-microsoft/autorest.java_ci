@@ -13,10 +13,9 @@ import com.azure.resourcemanager.appservice.generated.fluent.DeletedWebAppsClien
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeletedSiteInner;
 import com.azure.resourcemanager.appservice.generated.models.DeletedSite;
 import com.azure.resourcemanager.appservice.generated.models.DeletedWebApps;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DeletedWebAppsImpl implements DeletedWebApps {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DeletedWebAppsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(DeletedWebAppsImpl.class);
 
     private final DeletedWebAppsClient innerClient;
 

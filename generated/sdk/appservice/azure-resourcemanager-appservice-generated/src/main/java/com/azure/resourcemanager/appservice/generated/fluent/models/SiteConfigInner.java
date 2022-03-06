@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.ApiDefinitionInfo;
 import com.azure.resourcemanager.appservice.generated.models.ApiManagementConfig;
 import com.azure.resourcemanager.appservice.generated.models.AutoHealRules;
@@ -24,7 +23,6 @@ import com.azure.resourcemanager.appservice.generated.models.SiteLoadBalancing;
 import com.azure.resourcemanager.appservice.generated.models.SiteMachineKey;
 import com.azure.resourcemanager.appservice.generated.models.SupportedTlsVersions;
 import com.azure.resourcemanager.appservice.generated.models.VirtualApplication;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -34,8 +32,6 @@ import java.util.Map;
 /** Configuration of an App Service app. */
 @Fluent
 public final class SiteConfigInner {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SiteConfigInner.class);
-
     /*
      * Number of workers.
      */

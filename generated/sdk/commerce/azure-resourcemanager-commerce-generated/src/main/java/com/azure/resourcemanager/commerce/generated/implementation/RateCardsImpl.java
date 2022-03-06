@@ -12,10 +12,9 @@ import com.azure.resourcemanager.commerce.generated.fluent.RateCardsClient;
 import com.azure.resourcemanager.commerce.generated.fluent.models.ResourceRateCardInfoInner;
 import com.azure.resourcemanager.commerce.generated.models.RateCards;
 import com.azure.resourcemanager.commerce.generated.models.ResourceRateCardInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RateCardsImpl implements RateCards {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(RateCardsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(RateCardsImpl.class);
 
     private final RateCardsClient innerClient;
 

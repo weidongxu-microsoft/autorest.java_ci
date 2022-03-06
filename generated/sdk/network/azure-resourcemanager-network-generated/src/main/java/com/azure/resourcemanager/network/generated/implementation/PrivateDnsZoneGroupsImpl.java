@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.PrivateDnsZoneGroupsCl
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateDnsZoneGroupInner;
 import com.azure.resourcemanager.network.generated.models.PrivateDnsZoneGroup;
 import com.azure.resourcemanager.network.generated.models.PrivateDnsZoneGroups;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateDnsZoneGroupsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(PrivateDnsZoneGroupsImpl.class);
 
     private final PrivateDnsZoneGroupsClient innerClient;
 

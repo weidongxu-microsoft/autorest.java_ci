@@ -7,7 +7,6 @@ package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.models.TransformOutput;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -15,8 +14,6 @@ import java.util.List;
 /** A Transform. */
 @Fluent
 public final class TransformProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(TransformProperties.class);
-
     /*
      * The UTC date and time when the Transform was created, in
      * 'YYYY-MM-DDThh:mm:ssZ' format.
@@ -110,11 +107,13 @@ public final class TransformProperties {
      */
     public void validate() {
         if (outputs() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property outputs in model TransformProperties"));
         } else {
             outputs().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(TransformProperties.class);
 }

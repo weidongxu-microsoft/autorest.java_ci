@@ -13,10 +13,9 @@ import com.azure.resourcemanager.network.generated.fluent.IpAllocationsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.IpAllocationInner;
 import com.azure.resourcemanager.network.generated.models.IpAllocation;
 import com.azure.resourcemanager.network.generated.models.IpAllocations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class IpAllocationsImpl implements IpAllocations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(IpAllocationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(IpAllocationsImpl.class);
 
     private final IpAllocationsClient innerClient;
 
@@ -83,7 +82,7 @@ public final class IpAllocationsImpl implements IpAllocations {
     public IpAllocation getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -91,7 +90,7 @@ public final class IpAllocationsImpl implements IpAllocations {
         }
         String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
         if (ipAllocationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
@@ -105,7 +104,7 @@ public final class IpAllocationsImpl implements IpAllocations {
     public Response<IpAllocation> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -113,7 +112,7 @@ public final class IpAllocationsImpl implements IpAllocations {
         }
         String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
         if (ipAllocationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
@@ -124,7 +123,7 @@ public final class IpAllocationsImpl implements IpAllocations {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -132,7 +131,7 @@ public final class IpAllocationsImpl implements IpAllocations {
         }
         String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
         if (ipAllocationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
@@ -143,7 +142,7 @@ public final class IpAllocationsImpl implements IpAllocations {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String
@@ -151,7 +150,7 @@ public final class IpAllocationsImpl implements IpAllocations {
         }
         String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
         if (ipAllocationName == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));

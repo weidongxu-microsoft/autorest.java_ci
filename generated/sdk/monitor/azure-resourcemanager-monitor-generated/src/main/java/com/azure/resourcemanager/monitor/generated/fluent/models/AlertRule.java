@@ -8,7 +8,6 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.RuleAction;
 import com.azure.resourcemanager.monitor.generated.models.RuleCondition;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -16,8 +15,6 @@ import java.util.List;
 /** An alert rule. */
 @Fluent
 public final class AlertRule {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AlertRule.class);
-
     /*
      * the name of the alert rule.
      */
@@ -229,11 +226,11 @@ public final class AlertRule {
      */
     public void validate() {
         if (name() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(new IllegalArgumentException("Missing required property name in model AlertRule"));
         }
         if (condition() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property condition in model AlertRule"));
         } else {
@@ -246,4 +243,6 @@ public final class AlertRule {
             actions().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(AlertRule.class);
 }

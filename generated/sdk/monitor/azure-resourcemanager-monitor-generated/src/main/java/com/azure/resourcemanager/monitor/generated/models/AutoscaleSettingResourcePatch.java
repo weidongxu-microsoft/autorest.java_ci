@@ -5,9 +5,7 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.fluent.models.AutoscaleSetting;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -16,8 +14,6 @@ import java.util.Map;
 /** The autoscale setting object for patch operations. */
 @Fluent
 public final class AutoscaleSettingResourcePatch {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(AutoscaleSettingResourcePatch.class);
-
     /*
      * Resource tags
      */

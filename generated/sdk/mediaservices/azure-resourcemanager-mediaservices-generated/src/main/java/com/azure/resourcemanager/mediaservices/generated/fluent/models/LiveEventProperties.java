@@ -13,7 +13,6 @@ import com.azure.resourcemanager.mediaservices.generated.models.LiveEventPreview
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventResourceState;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventTranscription;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamOptionsFlag;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -21,8 +20,6 @@ import java.util.List;
 /** The live event properties. */
 @Fluent
 public final class LiveEventProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(LiveEventProperties.class);
-
     /*
      * A description for the live event.
      */
@@ -358,7 +355,7 @@ public final class LiveEventProperties {
      */
     public void validate() {
         if (input() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property input in model LiveEventProperties"));
         } else {
@@ -377,4 +374,6 @@ public final class LiveEventProperties {
             crossSiteAccessPolicies().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(LiveEventProperties.class);
 }

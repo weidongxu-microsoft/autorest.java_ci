@@ -8,7 +8,6 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertAction;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertCriteria;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.time.OffsetDateTime;
@@ -17,8 +16,6 @@ import java.util.List;
 /** An alert rule. */
 @Fluent
 public final class MetricAlertProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricAlertProperties.class);
-
     /*
      * the description of the metric alert that will be included in the alert
      * email.
@@ -363,24 +360,24 @@ public final class MetricAlertProperties {
      */
     public void validate() {
         if (scopes() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property scopes in model MetricAlertProperties"));
         }
         if (evaluationFrequency() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property evaluationFrequency in model MetricAlertProperties"));
         }
         if (windowSize() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
                         "Missing required property windowSize in model MetricAlertProperties"));
         }
         if (criteria() == null) {
-            throw logger
+            throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException("Missing required property criteria in model MetricAlertProperties"));
         } else {
@@ -390,4 +387,6 @@ public final class MetricAlertProperties {
             actions().forEach(e -> e.validate());
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MetricAlertProperties.class);
 }

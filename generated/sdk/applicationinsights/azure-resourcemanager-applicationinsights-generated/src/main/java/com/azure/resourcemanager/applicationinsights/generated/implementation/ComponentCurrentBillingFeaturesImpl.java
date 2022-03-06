@@ -12,10 +12,9 @@ import com.azure.resourcemanager.applicationinsights.generated.fluent.ComponentC
 import com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentBillingFeaturesInner;
 import com.azure.resourcemanager.applicationinsights.generated.models.ApplicationInsightsComponentBillingFeatures;
 import com.azure.resourcemanager.applicationinsights.generated.models.ComponentCurrentBillingFeatures;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ComponentCurrentBillingFeaturesImpl implements ComponentCurrentBillingFeatures {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ComponentCurrentBillingFeaturesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ComponentCurrentBillingFeaturesImpl.class);
 
     private final ComponentCurrentBillingFeaturesClient innerClient;
 

@@ -12,10 +12,9 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.ConfigurationsClient
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterQuotaConfigurationPropertiesInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ClusterQuotaConfigurationProperties;
 import com.azure.resourcemanager.eventhubs.generated.models.Configurations;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ConfigurationsImpl implements Configurations {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ConfigurationsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(ConfigurationsImpl.class);
 
     private final ConfigurationsClient innerClient;
 

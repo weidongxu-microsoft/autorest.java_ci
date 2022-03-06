@@ -5,18 +5,14 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.LogSettings;
 import com.azure.resourcemanager.monitor.generated.models.MetricSettings;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The diagnostic settings. */
 @Fluent
 public final class DiagnosticSettings {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiagnosticSettings.class);
-
     /*
      * The resource ID of the storage account to which you would like to send
      * Diagnostic Logs.

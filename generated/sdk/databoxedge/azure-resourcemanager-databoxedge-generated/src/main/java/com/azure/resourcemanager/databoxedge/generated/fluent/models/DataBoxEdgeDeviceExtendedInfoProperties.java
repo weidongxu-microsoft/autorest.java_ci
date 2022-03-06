@@ -5,10 +5,8 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.KeyVaultSyncStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.Secret;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -16,8 +14,6 @@ import java.util.Map;
 /** The properties of the Data Box Edge/Gateway device extended info. */
 @Fluent
 public final class DataBoxEdgeDeviceExtendedInfoProperties {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(DataBoxEdgeDeviceExtendedInfoProperties.class);
-
     /*
      * The digital signature of encrypted certificate.
      */

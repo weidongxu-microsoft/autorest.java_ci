@@ -14,10 +14,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.ExternalCloudPr
 import com.azure.resourcemanager.costmanagement.generated.models.Queries;
 import com.azure.resourcemanager.costmanagement.generated.models.QueryDefinition;
 import com.azure.resourcemanager.costmanagement.generated.models.QueryResult;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class QueriesImpl implements Queries {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(QueriesImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(QueriesImpl.class);
 
     private final QueriesClient innerClient;
 

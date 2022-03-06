@@ -13,10 +13,9 @@ import com.azure.resourcemanager.costmanagement.generated.fluent.SettingsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.SettingInner;
 import com.azure.resourcemanager.costmanagement.generated.models.Setting;
 import com.azure.resourcemanager.costmanagement.generated.models.Settings;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SettingsImpl implements Settings {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(SettingsImpl.class);
+    private static final ClientLogger LOGGER = new ClientLogger(SettingsImpl.class);
 
     private final SettingsClient innerClient;
 
