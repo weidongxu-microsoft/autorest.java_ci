@@ -50,6 +50,18 @@ public final class LotsOperationsImpl implements LotsOperations {
         return Utils.mapPage(inner, inner1 -> new LotSummaryImpl(inner1, this.manager()));
     }
 
+    public PagedIterable<LotSummary> listByCustomer(String billingAccountId, String customerId) {
+        PagedIterable<LotSummaryInner> inner = this.serviceClient().listByCustomer(billingAccountId, customerId);
+        return Utils.mapPage(inner, inner1 -> new LotSummaryImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<LotSummary> listByCustomer(
+        String billingAccountId, String customerId, String filter, Context context) {
+        PagedIterable<LotSummaryInner> inner =
+            this.serviceClient().listByCustomer(billingAccountId, customerId, filter, context);
+        return Utils.mapPage(inner, inner1 -> new LotSummaryImpl(inner1, this.manager()));
+    }
+
     private LotsOperationsClient serviceClient() {
         return this.innerClient;
     }
