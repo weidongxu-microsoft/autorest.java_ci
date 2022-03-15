@@ -35,6 +35,8 @@ import com.azure.resourcemanager.operationalinsights.generated.implementation.Ma
 import com.azure.resourcemanager.operationalinsights.generated.implementation.OperationStatusesImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.OperationalInsightsManagementClientBuilder;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.OperationsImpl;
+import com.azure.resourcemanager.operationalinsights.generated.implementation.QueriesImpl;
+import com.azure.resourcemanager.operationalinsights.generated.implementation.QueryPacksImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.SavedSearchesImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.SchemasImpl;
 import com.azure.resourcemanager.operationalinsights.generated.implementation.SharedKeysOperationsImpl;
@@ -55,6 +57,8 @@ import com.azure.resourcemanager.operationalinsights.generated.models.LinkedStor
 import com.azure.resourcemanager.operationalinsights.generated.models.ManagementGroups;
 import com.azure.resourcemanager.operationalinsights.generated.models.OperationStatuses;
 import com.azure.resourcemanager.operationalinsights.generated.models.Operations;
+import com.azure.resourcemanager.operationalinsights.generated.models.Queries;
+import com.azure.resourcemanager.operationalinsights.generated.models.QueryPacks;
 import com.azure.resourcemanager.operationalinsights.generated.models.SavedSearches;
 import com.azure.resourcemanager.operationalinsights.generated.models.Schemas;
 import com.azure.resourcemanager.operationalinsights.generated.models.SharedKeysOperations;
@@ -72,13 +76,9 @@ import java.util.stream.Collectors;
 
 /** Entry point to LogAnalyticsManager. Operational Insights Client. */
 public final class LogAnalyticsManager {
-    private Operations operations;
+    private QueryPacks queryPacks;
 
-    private Workspaces workspaces;
-
-    private DeletedWorkspaces deletedWorkspaces;
-
-    private Tables tables;
+    private Queries queries;
 
     private DataExports dataExports;
 
@@ -111,6 +111,14 @@ public final class LogAnalyticsManager {
     private WorkspacePurges workspacePurges;
 
     private Clusters clusters;
+
+    private Operations operations;
+
+    private Workspaces workspaces;
+
+    private DeletedWorkspaces deletedWorkspaces;
+
+    private Tables tables;
 
     private final OperationalInsightsManagementClient clientObject;
 
@@ -302,36 +310,20 @@ public final class LogAnalyticsManager {
         }
     }
 
-    /** @return Resource collection API of Operations. */
-    public Operations operations() {
-        if (this.operations == null) {
-            this.operations = new OperationsImpl(clientObject.getOperations(), this);
+    /** @return Resource collection API of QueryPacks. */
+    public QueryPacks queryPacks() {
+        if (this.queryPacks == null) {
+            this.queryPacks = new QueryPacksImpl(clientObject.getQueryPacks(), this);
         }
-        return operations;
+        return queryPacks;
     }
 
-    /** @return Resource collection API of Workspaces. */
-    public Workspaces workspaces() {
-        if (this.workspaces == null) {
-            this.workspaces = new WorkspacesImpl(clientObject.getWorkspaces(), this);
+    /** @return Resource collection API of Queries. */
+    public Queries queries() {
+        if (this.queries == null) {
+            this.queries = new QueriesImpl(clientObject.getQueries(), this);
         }
-        return workspaces;
-    }
-
-    /** @return Resource collection API of DeletedWorkspaces. */
-    public DeletedWorkspaces deletedWorkspaces() {
-        if (this.deletedWorkspaces == null) {
-            this.deletedWorkspaces = new DeletedWorkspacesImpl(clientObject.getDeletedWorkspaces(), this);
-        }
-        return deletedWorkspaces;
-    }
-
-    /** @return Resource collection API of Tables. */
-    public Tables tables() {
-        if (this.tables == null) {
-            this.tables = new TablesImpl(clientObject.getTables(), this);
-        }
-        return tables;
+        return queries;
     }
 
     /** @return Resource collection API of DataExports. */
@@ -460,6 +452,38 @@ public final class LogAnalyticsManager {
             this.clusters = new ClustersImpl(clientObject.getClusters(), this);
         }
         return clusters;
+    }
+
+    /** @return Resource collection API of Operations. */
+    public Operations operations() {
+        if (this.operations == null) {
+            this.operations = new OperationsImpl(clientObject.getOperations(), this);
+        }
+        return operations;
+    }
+
+    /** @return Resource collection API of Workspaces. */
+    public Workspaces workspaces() {
+        if (this.workspaces == null) {
+            this.workspaces = new WorkspacesImpl(clientObject.getWorkspaces(), this);
+        }
+        return workspaces;
+    }
+
+    /** @return Resource collection API of DeletedWorkspaces. */
+    public DeletedWorkspaces deletedWorkspaces() {
+        if (this.deletedWorkspaces == null) {
+            this.deletedWorkspaces = new DeletedWorkspacesImpl(clientObject.getDeletedWorkspaces(), this);
+        }
+        return deletedWorkspaces;
+    }
+
+    /** @return Resource collection API of Tables. */
+    public Tables tables() {
+        if (this.tables == null) {
+            this.tables = new TablesImpl(clientObject.getTables(), this);
+        }
+        return tables;
     }
 
     /**
