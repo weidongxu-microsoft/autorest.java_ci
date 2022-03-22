@@ -18,12 +18,6 @@ public final class BudgetFilter {
     private List<BudgetFilterProperties> and;
 
     /*
-     * The logical "NOT" expression.
-     */
-    @JsonProperty(value = "not")
-    private BudgetFilterProperties not;
-
-    /*
      * Has comparison expression for a dimension
      */
     @JsonProperty(value = "dimensions")
@@ -52,26 +46,6 @@ public final class BudgetFilter {
      */
     public BudgetFilter withAnd(List<BudgetFilterProperties> and) {
         this.and = and;
-        return this;
-    }
-
-    /**
-     * Get the not property: The logical "NOT" expression.
-     *
-     * @return the not value.
-     */
-    public BudgetFilterProperties not() {
-        return this.not;
-    }
-
-    /**
-     * Set the not property: The logical "NOT" expression.
-     *
-     * @param not the not value to set.
-     * @return the BudgetFilter object itself.
-     */
-    public BudgetFilter withNot(BudgetFilterProperties not) {
-        this.not = not;
         return this;
     }
 
@@ -123,9 +97,6 @@ public final class BudgetFilter {
     public void validate() {
         if (and() != null) {
             and().forEach(e -> e.validate());
-        }
-        if (not() != null) {
-            not().validate();
         }
         if (dimensions() != null) {
             dimensions().validate();

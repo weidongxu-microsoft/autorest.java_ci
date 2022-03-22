@@ -184,6 +184,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
         if (accountName == null) {
             return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -194,7 +195,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             accountName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .<PagedResponse<AccountFilterInner>>map(
@@ -243,6 +244,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
         if (accountName == null) {
             return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -251,7 +253,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 accountName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context)
             .map(
@@ -367,6 +369,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
         if (filterName == null) {
             return Mono.error(new IllegalArgumentException("Parameter filterName is required and cannot be null."));
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -378,7 +381,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
                             resourceGroupName,
                             accountName,
                             filterName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -422,6 +425,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
         if (filterName == null) {
             return Mono.error(new IllegalArgumentException("Parameter filterName is required and cannot be null."));
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -431,7 +435,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
                 resourceGroupName,
                 accountName,
                 filterName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -536,6 +540,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -547,7 +552,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
                             resourceGroupName,
                             accountName,
                             filterName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -601,6 +606,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -610,7 +616,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
                 resourceGroupName,
                 accountName,
                 filterName,
-                this.client.getApiVersion(),
+                apiVersion,
                 parameters,
                 accept,
                 context);
@@ -719,6 +725,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
         if (filterName == null) {
             return Mono.error(new IllegalArgumentException("Parameter filterName is required and cannot be null."));
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -730,7 +737,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
                             resourceGroupName,
                             accountName,
                             filterName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -773,6 +780,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
         if (filterName == null) {
             return Mono.error(new IllegalArgumentException("Parameter filterName is required and cannot be null."));
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -782,7 +790,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
                 resourceGroupName,
                 accountName,
                 filterName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -879,6 +887,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -890,7 +899,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
                             resourceGroupName,
                             accountName,
                             filterName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -944,6 +953,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -953,7 +963,7 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
                 resourceGroupName,
                 accountName,
                 filterName,
-                this.client.getApiVersion(),
+                apiVersion,
                 parameters,
                 accept,
                 context);

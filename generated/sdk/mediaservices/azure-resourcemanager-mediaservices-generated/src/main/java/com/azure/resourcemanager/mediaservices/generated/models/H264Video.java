@@ -17,15 +17,6 @@ import java.util.List;
 @Fluent
 public final class H264Video extends Video {
     /*
-     * Whether or not the encoder should insert key frames at scene changes. If
-     * not specified, the default is false. This flag should be set to true
-     * only when the encoder is being configured to produce a single output
-     * video.
-     */
-    @JsonProperty(value = "sceneChangeDetection")
-    private Boolean sceneChangeDetection;
-
-    /*
      * Tells the encoder how to choose its encoding settings. The default value
      * is Balanced.
      */
@@ -38,29 +29,20 @@ public final class H264Video extends Video {
     @JsonProperty(value = "layers")
     private List<H264Layer> layers;
 
-    /**
-     * Get the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If
-     * not specified, the default is false. This flag should be set to true only when the encoder is being configured to
-     * produce a single output video.
-     *
-     * @return the sceneChangeDetection value.
+    /*
+     * The video rate control mode
      */
-    public Boolean sceneChangeDetection() {
-        return this.sceneChangeDetection;
-    }
+    @JsonProperty(value = "rateControlMode")
+    private H264RateControlMode rateControlMode;
 
-    /**
-     * Set the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If
-     * not specified, the default is false. This flag should be set to true only when the encoder is being configured to
-     * produce a single output video.
-     *
-     * @param sceneChangeDetection the sceneChangeDetection value to set.
-     * @return the H264Video object itself.
+    /*
+     * Whether or not the encoder should insert key frames at scene changes. If
+     * not specified, the default is false. This flag should be set to true
+     * only when the encoder is being configured to produce a single output
+     * video.
      */
-    public H264Video withSceneChangeDetection(Boolean sceneChangeDetection) {
-        this.sceneChangeDetection = sceneChangeDetection;
-        return this;
-    }
+    @JsonProperty(value = "sceneChangeDetection")
+    private Boolean sceneChangeDetection;
 
     /**
      * Get the complexity property: Tells the encoder how to choose its encoding settings. The default value is
@@ -101,6 +83,50 @@ public final class H264Video extends Video {
      */
     public H264Video withLayers(List<H264Layer> layers) {
         this.layers = layers;
+        return this;
+    }
+
+    /**
+     * Get the rateControlMode property: The video rate control mode.
+     *
+     * @return the rateControlMode value.
+     */
+    public H264RateControlMode rateControlMode() {
+        return this.rateControlMode;
+    }
+
+    /**
+     * Set the rateControlMode property: The video rate control mode.
+     *
+     * @param rateControlMode the rateControlMode value to set.
+     * @return the H264Video object itself.
+     */
+    public H264Video withRateControlMode(H264RateControlMode rateControlMode) {
+        this.rateControlMode = rateControlMode;
+        return this;
+    }
+
+    /**
+     * Get the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If
+     * not specified, the default is false. This flag should be set to true only when the encoder is being configured to
+     * produce a single output video.
+     *
+     * @return the sceneChangeDetection value.
+     */
+    public Boolean sceneChangeDetection() {
+        return this.sceneChangeDetection;
+    }
+
+    /**
+     * Set the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If
+     * not specified, the default is false. This flag should be set to true only when the encoder is being configured to
+     * produce a single output video.
+     *
+     * @param sceneChangeDetection the sceneChangeDetection value to set.
+     * @return the H264Video object itself.
+     */
+    public H264Video withSceneChangeDetection(Boolean sceneChangeDetection) {
+        this.sceneChangeDetection = sceneChangeDetection;
         return this;
     }
 

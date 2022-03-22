@@ -11,7 +11,9 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.fluent.StreamingEndpointsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingEndpointInner;
+import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingEndpointSkuInfoListResultInner;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpoint;
+import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointSkuInfoListResult;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpoints;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEntityScaleUnit;
 
@@ -70,6 +72,32 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
 
     public void delete(String resourceGroupName, String accountName, String streamingEndpointName, Context context) {
         this.serviceClient().delete(resourceGroupName, accountName, streamingEndpointName, context);
+    }
+
+    public StreamingEndpointSkuInfoListResult skus(
+        String resourceGroupName, String accountName, String streamingEndpointName) {
+        StreamingEndpointSkuInfoListResultInner inner =
+            this.serviceClient().skus(resourceGroupName, accountName, streamingEndpointName);
+        if (inner != null) {
+            return new StreamingEndpointSkuInfoListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<StreamingEndpointSkuInfoListResult> skusWithResponse(
+        String resourceGroupName, String accountName, String streamingEndpointName, Context context) {
+        Response<StreamingEndpointSkuInfoListResultInner> inner =
+            this.serviceClient().skusWithResponse(resourceGroupName, accountName, streamingEndpointName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StreamingEndpointSkuInfoListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
     }
 
     public void start(String resourceGroupName, String accountName, String streamingEndpointName) {

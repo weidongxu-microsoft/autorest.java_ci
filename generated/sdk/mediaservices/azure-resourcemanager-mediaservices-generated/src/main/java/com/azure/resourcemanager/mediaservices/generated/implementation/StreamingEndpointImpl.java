@@ -8,6 +8,7 @@ import com.azure.core.management.Region;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingEndpointInner;
+import com.azure.resourcemanager.mediaservices.generated.models.ArmStreamingEndpointCurrentSku;
 import com.azure.resourcemanager.mediaservices.generated.models.CrossSiteAccessPolicies;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpoint;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointAccessControl;
@@ -51,6 +52,10 @@ public final class StreamingEndpointImpl
 
     public SystemData systemData() {
         return this.innerModel().systemData();
+    }
+
+    public ArmStreamingEndpointCurrentSku sku() {
+        return this.innerModel().sku();
     }
 
     public String description() {
@@ -275,6 +280,11 @@ public final class StreamingEndpointImpl
 
     public StreamingEndpointImpl withTags(Map<String, String> tags) {
         this.innerModel().withTags(tags);
+        return this;
+    }
+
+    public StreamingEndpointImpl withSku(ArmStreamingEndpointCurrentSku sku) {
+        this.innerModel().withSku(sku);
         return this;
     }
 

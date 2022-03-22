@@ -6,18 +6,8 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** Describes the settings to be used when encoding the input video into a desired output bitrate layer. */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = VideoLayer.class)
-@JsonTypeName("#Microsoft.Media.VideoLayer")
-@JsonSubTypes({@JsonSubTypes.Type(name = "#Microsoft.Media.H264Layer", value = H264Layer.class)})
 @Fluent
 public class VideoLayer extends Layer {
     /*

@@ -117,6 +117,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
         if (accountName == null) {
             return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
         }
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -127,7 +128,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             accountName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -166,6 +167,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
         if (accountName == null) {
             return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
         }
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -174,7 +176,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 accountName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -270,6 +272,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
         if (name == null) {
             return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
         }
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -281,7 +284,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
                             resourceGroupName,
                             accountName,
                             name,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -324,6 +327,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
         if (name == null) {
             return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
         }
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -333,7 +337,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
                 resourceGroupName,
                 accountName,
                 name,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }

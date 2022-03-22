@@ -6,26 +6,11 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * The encoder can be configured to produce video and/or images (thumbnails) at different resolutions, by specifying a
  * layer for each desired resolution. A layer represents the properties for the video or image at a resolution.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "@odata.type",
-    defaultImpl = Layer.class)
-@JsonTypeName("Layer")
-@JsonSubTypes({
-    @JsonSubTypes.Type(name = "#Microsoft.Media.H265VideoLayer", value = H265VideoLayer.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.VideoLayer", value = VideoLayer.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.JpgLayer", value = JpgLayer.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.PngLayer", value = PngLayer.class)
-})
 @Fluent
 public class Layer {
     /*

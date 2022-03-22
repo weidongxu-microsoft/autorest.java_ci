@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
+import com.azure.resourcemanager.mediaservices.generated.models.ArmStreamingEndpointCurrentSku;
 import com.azure.resourcemanager.mediaservices.generated.models.CrossSiteAccessPolicies;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointAccessControl;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointResourceState;
@@ -30,6 +31,12 @@ public final class StreamingEndpointInner extends Resource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /*
+     * The streaming endpoint sku.
+     */
+    @JsonProperty(value = "sku")
+    private ArmStreamingEndpointCurrentSku sku;
+
     /**
      * Get the innerProperties property: The streaming endpoint properties.
      *
@@ -46,6 +53,26 @@ public final class StreamingEndpointInner extends Resource {
      */
     public SystemData systemData() {
         return this.systemData;
+    }
+
+    /**
+     * Get the sku property: The streaming endpoint sku.
+     *
+     * @return the sku value.
+     */
+    public ArmStreamingEndpointCurrentSku sku() {
+        return this.sku;
+    }
+
+    /**
+     * Set the sku property: The streaming endpoint sku.
+     *
+     * @param sku the sku value to set.
+     * @return the StreamingEndpointInner object itself.
+     */
+    public StreamingEndpointInner withSku(ArmStreamingEndpointCurrentSku sku) {
+        this.sku = sku;
+        return this;
     }
 
     /** {@inheritDoc} */
@@ -354,6 +381,9 @@ public final class StreamingEndpointInner extends Resource {
     public void validate() {
         if (innerProperties() != null) {
             innerProperties().validate();
+        }
+        if (sku() != null) {
+            sku().validate();
         }
     }
 }

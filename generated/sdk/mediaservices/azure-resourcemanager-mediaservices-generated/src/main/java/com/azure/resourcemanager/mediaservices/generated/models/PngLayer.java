@@ -5,12 +5,8 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /** Describes the settings to produce a PNG image from the input video. */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
-@JsonTypeName("#Microsoft.Media.PngLayer")
 @Fluent
 public final class PngLayer extends Layer {
     /** {@inheritDoc} */

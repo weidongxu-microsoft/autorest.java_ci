@@ -174,6 +174,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
         if (accountName == null) {
             return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -184,7 +185,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             accountName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             filter,
                             top,
                             orderby,
@@ -240,6 +241,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
         if (accountName == null) {
             return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -248,7 +250,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 accountName,
-                this.client.getApiVersion(),
+                apiVersion,
                 filter,
                 top,
                 orderby,
@@ -407,6 +409,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingPolicyName is required and cannot be null."));
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -418,7 +421,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
                             resourceGroupName,
                             accountName,
                             streamingPolicyName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -463,6 +466,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingPolicyName is required and cannot be null."));
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -472,7 +476,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
                 resourceGroupName,
                 accountName,
                 streamingPolicyName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -579,6 +583,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -590,7 +595,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
                             resourceGroupName,
                             accountName,
                             streamingPolicyName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -645,6 +650,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -654,7 +660,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
                 resourceGroupName,
                 accountName,
                 streamingPolicyName,
-                this.client.getApiVersion(),
+                apiVersion,
                 parameters,
                 accept,
                 context);
@@ -765,6 +771,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingPolicyName is required and cannot be null."));
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -776,7 +783,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
                             resourceGroupName,
                             accountName,
                             streamingPolicyName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -820,6 +827,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingPolicyName is required and cannot be null."));
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -829,7 +837,7 @@ public final class StreamingPoliciesClientImpl implements StreamingPoliciesClien
                 resourceGroupName,
                 accountName,
                 streamingPolicyName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
