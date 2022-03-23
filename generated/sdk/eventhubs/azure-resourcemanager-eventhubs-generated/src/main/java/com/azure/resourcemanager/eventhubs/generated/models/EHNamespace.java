@@ -58,18 +58,39 @@ public interface EHNamespace {
     Sku sku();
 
     /**
-     * Gets the identity property: Properties of BYOK Identity description.
-     *
-     * @return the identity value.
-     */
-    Identity identity();
-
-    /**
      * Gets the systemData property: The system meta data relating to this resource.
      *
      * @return the systemData value.
      */
     SystemData systemData();
+
+    /**
+     * Gets the principalId property: ObjectId from the KeyVault.
+     *
+     * @return the principalId value.
+     */
+    String principalId();
+
+    /**
+     * Gets the tenantId property: TenantId from the KeyVault.
+     *
+     * @return the tenantId value.
+     */
+    String tenantId();
+
+    /**
+     * Gets the typeIdentityType property: Type of managed service identity.
+     *
+     * @return the typeIdentityType value.
+     */
+    ManagedServiceIdentityType typeIdentityType();
+
+    /**
+     * Gets the userAssignedIdentities property: Properties for User Assigned Identities.
+     *
+     * @return the userAssignedIdentities value.
+     */
+    Map<String, UserAssignedIdentity> userAssignedIdentities();
 
     /**
      * Gets the provisioningState property: Provisioning state of the Namespace.
@@ -152,13 +173,6 @@ public interface EHNamespace {
     Boolean zoneRedundant();
 
     /**
-     * Gets the encryption property: Properties of BYOK Encryption description.
-     *
-     * @return the encryption value.
-     */
-    Encryption encryption();
-
-    /**
      * Gets the privateEndpointConnections property: List of private endpoint connections.
      *
      * @return the privateEndpointConnections value.
@@ -178,6 +192,27 @@ public interface EHNamespace {
      * @return the alternateName value.
      */
     String alternateName();
+
+    /**
+     * Gets the keyVaultProperties property: Properties of KeyVault.
+     *
+     * @return the keyVaultProperties value.
+     */
+    List<KeyVaultProperties> keyVaultProperties();
+
+    /**
+     * Gets the keySource property: Enumerates the possible value of keySource for Encryption.
+     *
+     * @return the keySource value.
+     */
+    KeySource keySource();
+
+    /**
+     * Gets the requireInfrastructureEncryption property: Enable Infrastructure Encryption (Double Encryption).
+     *
+     * @return the requireInfrastructureEncryption value.
+     */
+    Boolean requireInfrastructureEncryption();
 
     /**
      * Gets the region of the resource.
@@ -247,16 +282,19 @@ public interface EHNamespace {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithSku,
-                DefinitionStages.WithIdentity,
+                DefinitionStages.WithTypeIdentityType,
+                DefinitionStages.WithUserAssignedIdentities,
                 DefinitionStages.WithClusterArmId,
                 DefinitionStages.WithIsAutoInflateEnabled,
                 DefinitionStages.WithMaximumThroughputUnits,
                 DefinitionStages.WithKafkaEnabled,
                 DefinitionStages.WithZoneRedundant,
-                DefinitionStages.WithEncryption,
                 DefinitionStages.WithPrivateEndpointConnections,
                 DefinitionStages.WithDisableLocalAuth,
-                DefinitionStages.WithAlternateName {
+                DefinitionStages.WithAlternateName,
+                DefinitionStages.WithKeyVaultProperties,
+                DefinitionStages.WithKeySource,
+                DefinitionStages.WithRequireInfrastructureEncryption {
             /**
              * Executes the create request.
              *
@@ -292,15 +330,25 @@ public interface EHNamespace {
              */
             WithCreate withSku(Sku sku);
         }
-        /** The stage of the EHNamespace definition allowing to specify identity. */
-        interface WithIdentity {
+        /** The stage of the EHNamespace definition allowing to specify typeIdentityType. */
+        interface WithTypeIdentityType {
             /**
-             * Specifies the identity property: Properties of BYOK Identity description.
+             * Specifies the typeIdentityType property: Type of managed service identity..
              *
-             * @param identity Properties of BYOK Identity description.
+             * @param typeIdentityType Type of managed service identity.
              * @return the next definition stage.
              */
-            WithCreate withIdentity(Identity identity);
+            WithCreate withTypeIdentityType(ManagedServiceIdentityType typeIdentityType);
+        }
+        /** The stage of the EHNamespace definition allowing to specify userAssignedIdentities. */
+        interface WithUserAssignedIdentities {
+            /**
+             * Specifies the userAssignedIdentities property: Properties for User Assigned Identities.
+             *
+             * @param userAssignedIdentities Properties for User Assigned Identities.
+             * @return the next definition stage.
+             */
+            WithCreate withUserAssignedIdentities(Map<String, UserAssignedIdentity> userAssignedIdentities);
         }
         /** The stage of the EHNamespace definition allowing to specify clusterArmId. */
         interface WithClusterArmId {
@@ -358,16 +406,6 @@ public interface EHNamespace {
              */
             WithCreate withZoneRedundant(Boolean zoneRedundant);
         }
-        /** The stage of the EHNamespace definition allowing to specify encryption. */
-        interface WithEncryption {
-            /**
-             * Specifies the encryption property: Properties of BYOK Encryption description.
-             *
-             * @param encryption Properties of BYOK Encryption description.
-             * @return the next definition stage.
-             */
-            WithCreate withEncryption(Encryption encryption);
-        }
         /** The stage of the EHNamespace definition allowing to specify privateEndpointConnections. */
         interface WithPrivateEndpointConnections {
             /**
@@ -399,6 +437,37 @@ public interface EHNamespace {
              */
             WithCreate withAlternateName(String alternateName);
         }
+        /** The stage of the EHNamespace definition allowing to specify keyVaultProperties. */
+        interface WithKeyVaultProperties {
+            /**
+             * Specifies the keyVaultProperties property: Properties of KeyVault.
+             *
+             * @param keyVaultProperties Properties of KeyVault.
+             * @return the next definition stage.
+             */
+            WithCreate withKeyVaultProperties(List<KeyVaultProperties> keyVaultProperties);
+        }
+        /** The stage of the EHNamespace definition allowing to specify keySource. */
+        interface WithKeySource {
+            /**
+             * Specifies the keySource property: Enumerates the possible value of keySource for Encryption.
+             *
+             * @param keySource Enumerates the possible value of keySource for Encryption.
+             * @return the next definition stage.
+             */
+            WithCreate withKeySource(KeySource keySource);
+        }
+        /** The stage of the EHNamespace definition allowing to specify requireInfrastructureEncryption. */
+        interface WithRequireInfrastructureEncryption {
+            /**
+             * Specifies the requireInfrastructureEncryption property: Enable Infrastructure Encryption (Double
+             * Encryption).
+             *
+             * @param requireInfrastructureEncryption Enable Infrastructure Encryption (Double Encryption).
+             * @return the next definition stage.
+             */
+            WithCreate withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption);
+        }
     }
     /**
      * Begins update for the EHNamespace resource.
@@ -411,16 +480,19 @@ public interface EHNamespace {
     interface Update
         extends UpdateStages.WithTags,
             UpdateStages.WithSku,
-            UpdateStages.WithIdentity,
+            UpdateStages.WithTypeIdentityType,
+            UpdateStages.WithUserAssignedIdentities,
             UpdateStages.WithClusterArmId,
             UpdateStages.WithIsAutoInflateEnabled,
             UpdateStages.WithMaximumThroughputUnits,
             UpdateStages.WithKafkaEnabled,
             UpdateStages.WithZoneRedundant,
-            UpdateStages.WithEncryption,
             UpdateStages.WithPrivateEndpointConnections,
             UpdateStages.WithDisableLocalAuth,
-            UpdateStages.WithAlternateName {
+            UpdateStages.WithAlternateName,
+            UpdateStages.WithKeyVaultProperties,
+            UpdateStages.WithKeySource,
+            UpdateStages.WithRequireInfrastructureEncryption {
         /**
          * Executes the update request.
          *
@@ -458,15 +530,25 @@ public interface EHNamespace {
              */
             Update withSku(Sku sku);
         }
-        /** The stage of the EHNamespace update allowing to specify identity. */
-        interface WithIdentity {
+        /** The stage of the EHNamespace update allowing to specify typeIdentityType. */
+        interface WithTypeIdentityType {
             /**
-             * Specifies the identity property: Properties of BYOK Identity description.
+             * Specifies the typeIdentityType property: Type of managed service identity..
              *
-             * @param identity Properties of BYOK Identity description.
+             * @param typeIdentityType Type of managed service identity.
              * @return the next definition stage.
              */
-            Update withIdentity(Identity identity);
+            Update withTypeIdentityType(ManagedServiceIdentityType typeIdentityType);
+        }
+        /** The stage of the EHNamespace update allowing to specify userAssignedIdentities. */
+        interface WithUserAssignedIdentities {
+            /**
+             * Specifies the userAssignedIdentities property: Properties for User Assigned Identities.
+             *
+             * @param userAssignedIdentities Properties for User Assigned Identities.
+             * @return the next definition stage.
+             */
+            Update withUserAssignedIdentities(Map<String, UserAssignedIdentity> userAssignedIdentities);
         }
         /** The stage of the EHNamespace update allowing to specify clusterArmId. */
         interface WithClusterArmId {
@@ -524,16 +606,6 @@ public interface EHNamespace {
              */
             Update withZoneRedundant(Boolean zoneRedundant);
         }
-        /** The stage of the EHNamespace update allowing to specify encryption. */
-        interface WithEncryption {
-            /**
-             * Specifies the encryption property: Properties of BYOK Encryption description.
-             *
-             * @param encryption Properties of BYOK Encryption description.
-             * @return the next definition stage.
-             */
-            Update withEncryption(Encryption encryption);
-        }
         /** The stage of the EHNamespace update allowing to specify privateEndpointConnections. */
         interface WithPrivateEndpointConnections {
             /**
@@ -564,6 +636,37 @@ public interface EHNamespace {
              * @return the next definition stage.
              */
             Update withAlternateName(String alternateName);
+        }
+        /** The stage of the EHNamespace update allowing to specify keyVaultProperties. */
+        interface WithKeyVaultProperties {
+            /**
+             * Specifies the keyVaultProperties property: Properties of KeyVault.
+             *
+             * @param keyVaultProperties Properties of KeyVault.
+             * @return the next definition stage.
+             */
+            Update withKeyVaultProperties(List<KeyVaultProperties> keyVaultProperties);
+        }
+        /** The stage of the EHNamespace update allowing to specify keySource. */
+        interface WithKeySource {
+            /**
+             * Specifies the keySource property: Enumerates the possible value of keySource for Encryption.
+             *
+             * @param keySource Enumerates the possible value of keySource for Encryption.
+             * @return the next definition stage.
+             */
+            Update withKeySource(KeySource keySource);
+        }
+        /** The stage of the EHNamespace update allowing to specify requireInfrastructureEncryption. */
+        interface WithRequireInfrastructureEncryption {
+            /**
+             * Specifies the requireInfrastructureEncryption property: Enable Infrastructure Encryption (Double
+             * Encryption).
+             *
+             * @param requireInfrastructureEncryption Enable Infrastructure Encryption (Double Encryption).
+             * @return the next definition stage.
+             */
+            Update withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption);
         }
     }
     /**

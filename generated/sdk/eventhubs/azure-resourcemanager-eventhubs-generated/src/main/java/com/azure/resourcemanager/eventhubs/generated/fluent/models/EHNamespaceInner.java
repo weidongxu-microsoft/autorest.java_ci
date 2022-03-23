@@ -7,9 +7,11 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
-import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
-import com.azure.resourcemanager.eventhubs.generated.models.Identity;
+import com.azure.resourcemanager.eventhubs.generated.models.KeySource;
+import com.azure.resourcemanager.eventhubs.generated.models.KeyVaultProperties;
+import com.azure.resourcemanager.eventhubs.generated.models.ManagedServiceIdentityType;
 import com.azure.resourcemanager.eventhubs.generated.models.Sku;
+import com.azure.resourcemanager.eventhubs.generated.models.UserAssignedIdentity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -28,7 +30,7 @@ public final class EHNamespaceInner extends Resource {
      * Properties of BYOK Identity description
      */
     @JsonProperty(value = "identity")
-    private Identity identity;
+    private Identity innerIdentity;
 
     /*
      * The system meta data relating to this resource.
@@ -63,23 +65,12 @@ public final class EHNamespaceInner extends Resource {
     }
 
     /**
-     * Get the identity property: Properties of BYOK Identity description.
+     * Get the innerIdentity property: Properties of BYOK Identity description.
      *
-     * @return the identity value.
+     * @return the innerIdentity value.
      */
-    public Identity identity() {
-        return this.identity;
-    }
-
-    /**
-     * Set the identity property: Properties of BYOK Identity description.
-     *
-     * @param identity the identity value to set.
-     * @return the EHNamespaceInner object itself.
-     */
-    public EHNamespaceInner withIdentity(Identity identity) {
-        this.identity = identity;
-        return this;
+    private Identity innerIdentity() {
+        return this.innerIdentity;
     }
 
     /**
@@ -111,6 +102,70 @@ public final class EHNamespaceInner extends Resource {
     @Override
     public EHNamespaceInner withTags(Map<String, String> tags) {
         super.withTags(tags);
+        return this;
+    }
+
+    /**
+     * Get the principalId property: ObjectId from the KeyVault.
+     *
+     * @return the principalId value.
+     */
+    public String principalId() {
+        return this.innerIdentity() == null ? null : this.innerIdentity().principalId();
+    }
+
+    /**
+     * Get the tenantId property: TenantId from the KeyVault.
+     *
+     * @return the tenantId value.
+     */
+    public String tenantId() {
+        return this.innerIdentity() == null ? null : this.innerIdentity().tenantId();
+    }
+
+    /**
+     * Get the type property: Type of managed service identity.
+     *
+     * @return the type value.
+     */
+    public ManagedServiceIdentityType typeIdentityType() {
+        return this.innerIdentity() == null ? null : this.innerIdentity().type();
+    }
+
+    /**
+     * Set the type property: Type of managed service identity.
+     *
+     * @param type the type value to set.
+     * @return the EHNamespaceInner object itself.
+     */
+    public EHNamespaceInner withTypeIdentityType(ManagedServiceIdentityType type) {
+        if (this.innerIdentity() == null) {
+            this.innerIdentity = new Identity();
+        }
+        this.innerIdentity().withType(type);
+        return this;
+    }
+
+    /**
+     * Get the userAssignedIdentities property: Properties for User Assigned Identities.
+     *
+     * @return the userAssignedIdentities value.
+     */
+    public Map<String, UserAssignedIdentity> userAssignedIdentities() {
+        return this.innerIdentity() == null ? null : this.innerIdentity().userAssignedIdentities();
+    }
+
+    /**
+     * Set the userAssignedIdentities property: Properties for User Assigned Identities.
+     *
+     * @param userAssignedIdentities the userAssignedIdentities value to set.
+     * @return the EHNamespaceInner object itself.
+     */
+    public EHNamespaceInner withUserAssignedIdentities(Map<String, UserAssignedIdentity> userAssignedIdentities) {
+        if (this.innerIdentity() == null) {
+            this.innerIdentity = new Identity();
+        }
+        this.innerIdentity().withUserAssignedIdentities(userAssignedIdentities);
         return this;
     }
 
@@ -290,29 +345,6 @@ public final class EHNamespaceInner extends Resource {
     }
 
     /**
-     * Get the encryption property: Properties of BYOK Encryption description.
-     *
-     * @return the encryption value.
-     */
-    public Encryption encryption() {
-        return this.innerProperties() == null ? null : this.innerProperties().encryption();
-    }
-
-    /**
-     * Set the encryption property: Properties of BYOK Encryption description.
-     *
-     * @param encryption the encryption value to set.
-     * @return the EHNamespaceInner object itself.
-     */
-    public EHNamespaceInner withEncryption(Encryption encryption) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new EHNamespaceProperties();
-        }
-        this.innerProperties().withEncryption(encryption);
-        return this;
-    }
-
-    /**
      * Get the privateEndpointConnections property: List of private endpoint connections.
      *
      * @return the privateEndpointConnections value.
@@ -383,6 +415,75 @@ public final class EHNamespaceInner extends Resource {
     }
 
     /**
+     * Get the keyVaultProperties property: Properties of KeyVault.
+     *
+     * @return the keyVaultProperties value.
+     */
+    public List<KeyVaultProperties> keyVaultProperties() {
+        return this.innerProperties() == null ? null : this.innerProperties().keyVaultProperties();
+    }
+
+    /**
+     * Set the keyVaultProperties property: Properties of KeyVault.
+     *
+     * @param keyVaultProperties the keyVaultProperties value to set.
+     * @return the EHNamespaceInner object itself.
+     */
+    public EHNamespaceInner withKeyVaultProperties(List<KeyVaultProperties> keyVaultProperties) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new EHNamespaceProperties();
+        }
+        this.innerProperties().withKeyVaultProperties(keyVaultProperties);
+        return this;
+    }
+
+    /**
+     * Get the keySource property: Enumerates the possible value of keySource for Encryption.
+     *
+     * @return the keySource value.
+     */
+    public KeySource keySource() {
+        return this.innerProperties() == null ? null : this.innerProperties().keySource();
+    }
+
+    /**
+     * Set the keySource property: Enumerates the possible value of keySource for Encryption.
+     *
+     * @param keySource the keySource value to set.
+     * @return the EHNamespaceInner object itself.
+     */
+    public EHNamespaceInner withKeySource(KeySource keySource) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new EHNamespaceProperties();
+        }
+        this.innerProperties().withKeySource(keySource);
+        return this;
+    }
+
+    /**
+     * Get the requireInfrastructureEncryption property: Enable Infrastructure Encryption (Double Encryption).
+     *
+     * @return the requireInfrastructureEncryption value.
+     */
+    public Boolean requireInfrastructureEncryption() {
+        return this.innerProperties() == null ? null : this.innerProperties().requireInfrastructureEncryption();
+    }
+
+    /**
+     * Set the requireInfrastructureEncryption property: Enable Infrastructure Encryption (Double Encryption).
+     *
+     * @param requireInfrastructureEncryption the requireInfrastructureEncryption value to set.
+     * @return the EHNamespaceInner object itself.
+     */
+    public EHNamespaceInner withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new EHNamespaceProperties();
+        }
+        this.innerProperties().withRequireInfrastructureEncryption(requireInfrastructureEncryption);
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -391,8 +492,8 @@ public final class EHNamespaceInner extends Resource {
         if (sku() != null) {
             sku().validate();
         }
-        if (identity() != null) {
-            identity().validate();
+        if (innerIdentity() != null) {
+            innerIdentity().validate();
         }
         if (innerProperties() != null) {
             innerProperties().validate();

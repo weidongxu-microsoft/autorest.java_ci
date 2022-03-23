@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.eventhubs.generated.fluent.models.UserAssignedIdentityProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Properties to configure keyVault Properties. */
@@ -32,7 +33,7 @@ public final class KeyVaultProperties {
      * The identity property.
      */
     @JsonProperty(value = "identity")
-    private UserAssignedIdentityProperties identity;
+    private UserAssignedIdentityProperties innerIdentity;
 
     /**
      * Get the keyName property: Name of the Key from KeyVault.
@@ -95,22 +96,34 @@ public final class KeyVaultProperties {
     }
 
     /**
-     * Get the identity property: The identity property.
+     * Get the innerIdentity property: The identity property.
      *
-     * @return the identity value.
+     * @return the innerIdentity value.
      */
-    public UserAssignedIdentityProperties identity() {
-        return this.identity;
+    private UserAssignedIdentityProperties innerIdentity() {
+        return this.innerIdentity;
     }
 
     /**
-     * Set the identity property: The identity property.
+     * Get the userAssignedIdentity property: ARM ID of user Identity selected for encryption.
      *
-     * @param identity the identity value to set.
+     * @return the userAssignedIdentity value.
+     */
+    public String userAssignedIdentity() {
+        return this.innerIdentity() == null ? null : this.innerIdentity().userAssignedIdentity();
+    }
+
+    /**
+     * Set the userAssignedIdentity property: ARM ID of user Identity selected for encryption.
+     *
+     * @param userAssignedIdentity the userAssignedIdentity value to set.
      * @return the KeyVaultProperties object itself.
      */
-    public KeyVaultProperties withIdentity(UserAssignedIdentityProperties identity) {
-        this.identity = identity;
+    public KeyVaultProperties withUserAssignedIdentity(String userAssignedIdentity) {
+        if (this.innerIdentity() == null) {
+            this.innerIdentity = new UserAssignedIdentityProperties();
+        }
+        this.innerIdentity().withUserAssignedIdentity(userAssignedIdentity);
         return this;
     }
 
@@ -120,8 +133,8 @@ public final class KeyVaultProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (identity() != null) {
-            identity().validate();
+        if (innerIdentity() != null) {
+            innerIdentity().validate();
         }
     }
 }

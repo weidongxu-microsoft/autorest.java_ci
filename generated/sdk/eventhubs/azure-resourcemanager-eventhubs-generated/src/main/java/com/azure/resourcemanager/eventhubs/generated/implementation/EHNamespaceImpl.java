@@ -10,10 +10,12 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.eventhubs.generated.models.EHNamespace;
-import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
-import com.azure.resourcemanager.eventhubs.generated.models.Identity;
+import com.azure.resourcemanager.eventhubs.generated.models.KeySource;
+import com.azure.resourcemanager.eventhubs.generated.models.KeyVaultProperties;
+import com.azure.resourcemanager.eventhubs.generated.models.ManagedServiceIdentityType;
 import com.azure.resourcemanager.eventhubs.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.eventhubs.generated.models.Sku;
+import com.azure.resourcemanager.eventhubs.generated.models.UserAssignedIdentity;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -54,12 +56,29 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this.innerModel().sku();
     }
 
-    public Identity identity() {
-        return this.innerModel().identity();
-    }
-
     public SystemData systemData() {
         return this.innerModel().systemData();
+    }
+
+    public String principalId() {
+        return this.innerModel().principalId();
+    }
+
+    public String tenantId() {
+        return this.innerModel().tenantId();
+    }
+
+    public ManagedServiceIdentityType typeIdentityType() {
+        return this.innerModel().typeIdentityType();
+    }
+
+    public Map<String, UserAssignedIdentity> userAssignedIdentities() {
+        Map<String, UserAssignedIdentity> inner = this.innerModel().userAssignedIdentities();
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
     }
 
     public String provisioningState() {
@@ -106,10 +125,6 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this.innerModel().zoneRedundant();
     }
 
-    public Encryption encryption() {
-        return this.innerModel().encryption();
-    }
-
     public List<PrivateEndpointConnection> privateEndpointConnections() {
         List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
@@ -130,6 +145,23 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
 
     public String alternateName() {
         return this.innerModel().alternateName();
+    }
+
+    public List<KeyVaultProperties> keyVaultProperties() {
+        List<KeyVaultProperties> inner = this.innerModel().keyVaultProperties();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public KeySource keySource() {
+        return this.innerModel().keySource();
+    }
+
+    public Boolean requireInfrastructureEncryption() {
+        return this.innerModel().requireInfrastructureEncryption();
     }
 
     public Region region() {
@@ -253,8 +285,13 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    public EHNamespaceImpl withIdentity(Identity identity) {
-        this.innerModel().withIdentity(identity);
+    public EHNamespaceImpl withTypeIdentityType(ManagedServiceIdentityType typeIdentityType) {
+        this.innerModel().withTypeIdentityType(typeIdentityType);
+        return this;
+    }
+
+    public EHNamespaceImpl withUserAssignedIdentities(Map<String, UserAssignedIdentity> userAssignedIdentities) {
+        this.innerModel().withUserAssignedIdentities(userAssignedIdentities);
         return this;
     }
 
@@ -283,11 +320,6 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    public EHNamespaceImpl withEncryption(Encryption encryption) {
-        this.innerModel().withEncryption(encryption);
-        return this;
-    }
-
     public EHNamespaceImpl withPrivateEndpointConnections(
         List<PrivateEndpointConnectionInner> privateEndpointConnections) {
         this.innerModel().withPrivateEndpointConnections(privateEndpointConnections);
@@ -301,6 +333,21 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
 
     public EHNamespaceImpl withAlternateName(String alternateName) {
         this.innerModel().withAlternateName(alternateName);
+        return this;
+    }
+
+    public EHNamespaceImpl withKeyVaultProperties(List<KeyVaultProperties> keyVaultProperties) {
+        this.innerModel().withKeyVaultProperties(keyVaultProperties);
+        return this;
+    }
+
+    public EHNamespaceImpl withKeySource(KeySource keySource) {
+        this.innerModel().withKeySource(keySource);
+        return this;
+    }
+
+    public EHNamespaceImpl withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption) {
+        this.innerModel().withRequireInfrastructureEncryption(requireInfrastructureEncryption);
         return this;
     }
 }

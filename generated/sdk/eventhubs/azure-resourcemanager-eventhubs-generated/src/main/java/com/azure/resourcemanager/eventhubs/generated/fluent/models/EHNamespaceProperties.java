@@ -5,7 +5,8 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
+import com.azure.resourcemanager.eventhubs.generated.models.KeySource;
+import com.azure.resourcemanager.eventhubs.generated.models.KeyVaultProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -87,7 +88,7 @@ public final class EHNamespaceProperties {
      * Properties of BYOK Encryption description
      */
     @JsonProperty(value = "encryption")
-    private Encryption encryption;
+    private Encryption innerEncryption;
 
     /*
      * List of private endpoint connections.
@@ -268,23 +269,12 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Get the encryption property: Properties of BYOK Encryption description.
+     * Get the innerEncryption property: Properties of BYOK Encryption description.
      *
-     * @return the encryption value.
+     * @return the innerEncryption value.
      */
-    public Encryption encryption() {
-        return this.encryption;
-    }
-
-    /**
-     * Set the encryption property: Properties of BYOK Encryption description.
-     *
-     * @param encryption the encryption value to set.
-     * @return the EHNamespaceProperties object itself.
-     */
-    public EHNamespaceProperties withEncryption(Encryption encryption) {
-        this.encryption = encryption;
-        return this;
+    private Encryption innerEncryption() {
+        return this.innerEncryption;
     }
 
     /**
@@ -349,13 +339,82 @@ public final class EHNamespaceProperties {
     }
 
     /**
+     * Get the keyVaultProperties property: Properties of KeyVault.
+     *
+     * @return the keyVaultProperties value.
+     */
+    public List<KeyVaultProperties> keyVaultProperties() {
+        return this.innerEncryption() == null ? null : this.innerEncryption().keyVaultProperties();
+    }
+
+    /**
+     * Set the keyVaultProperties property: Properties of KeyVault.
+     *
+     * @param keyVaultProperties the keyVaultProperties value to set.
+     * @return the EHNamespaceProperties object itself.
+     */
+    public EHNamespaceProperties withKeyVaultProperties(List<KeyVaultProperties> keyVaultProperties) {
+        if (this.innerEncryption() == null) {
+            this.innerEncryption = new Encryption();
+        }
+        this.innerEncryption().withKeyVaultProperties(keyVaultProperties);
+        return this;
+    }
+
+    /**
+     * Get the keySource property: Enumerates the possible value of keySource for Encryption.
+     *
+     * @return the keySource value.
+     */
+    public KeySource keySource() {
+        return this.innerEncryption() == null ? null : this.innerEncryption().keySource();
+    }
+
+    /**
+     * Set the keySource property: Enumerates the possible value of keySource for Encryption.
+     *
+     * @param keySource the keySource value to set.
+     * @return the EHNamespaceProperties object itself.
+     */
+    public EHNamespaceProperties withKeySource(KeySource keySource) {
+        if (this.innerEncryption() == null) {
+            this.innerEncryption = new Encryption();
+        }
+        this.innerEncryption().withKeySource(keySource);
+        return this;
+    }
+
+    /**
+     * Get the requireInfrastructureEncryption property: Enable Infrastructure Encryption (Double Encryption).
+     *
+     * @return the requireInfrastructureEncryption value.
+     */
+    public Boolean requireInfrastructureEncryption() {
+        return this.innerEncryption() == null ? null : this.innerEncryption().requireInfrastructureEncryption();
+    }
+
+    /**
+     * Set the requireInfrastructureEncryption property: Enable Infrastructure Encryption (Double Encryption).
+     *
+     * @param requireInfrastructureEncryption the requireInfrastructureEncryption value to set.
+     * @return the EHNamespaceProperties object itself.
+     */
+    public EHNamespaceProperties withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption) {
+        if (this.innerEncryption() == null) {
+            this.innerEncryption = new Encryption();
+        }
+        this.innerEncryption().withRequireInfrastructureEncryption(requireInfrastructureEncryption);
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (encryption() != null) {
-            encryption().validate();
+        if (innerEncryption() != null) {
+            innerEncryption().validate();
         }
         if (privateEndpointConnections() != null) {
             privateEndpointConnections().forEach(e -> e.validate());
