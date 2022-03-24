@@ -13,6 +13,7 @@ import com.azure.resourcemanager.storage.generated.models.AllowedCopyScope;
 import com.azure.resourcemanager.storage.generated.models.AzureFilesIdentityBasedAuthentication;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreStatus;
 import com.azure.resourcemanager.storage.generated.models.CustomDomain;
+import com.azure.resourcemanager.storage.generated.models.DnsEndpointType;
 import com.azure.resourcemanager.storage.generated.models.Encryption;
 import com.azure.resourcemanager.storage.generated.models.Endpoints;
 import com.azure.resourcemanager.storage.generated.models.GeoReplicationStats;
@@ -28,6 +29,7 @@ import com.azure.resourcemanager.storage.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.storage.generated.models.RoutingPreference;
 import com.azure.resourcemanager.storage.generated.models.SasPolicy;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountProperties;
+import com.azure.resourcemanager.storage.generated.models.StorageAccountSkuConversionStatus;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -202,6 +204,14 @@ public final class StorageAccountPropertiesImpl implements StorageAccountPropert
 
     public AllowedCopyScope allowedCopyScope() {
         return this.innerModel().allowedCopyScope();
+    }
+
+    public StorageAccountSkuConversionStatus storageAccountSkuConversionStatus() {
+        return this.innerModel().storageAccountSkuConversionStatus();
+    }
+
+    public DnsEndpointType dnsEndpointType() {
+        return this.innerModel().dnsEndpointType();
     }
 
     public StorageAccountPropertiesInner innerModel() {

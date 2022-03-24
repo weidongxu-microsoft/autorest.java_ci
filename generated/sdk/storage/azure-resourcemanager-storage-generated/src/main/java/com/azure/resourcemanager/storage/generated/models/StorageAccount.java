@@ -184,8 +184,9 @@ public interface StorageAccount {
     Encryption encryption();
 
     /**
-     * Gets the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier used for
-     * billing.
+     * Gets the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier is used for
+     * billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it
+     * cannot be changed for the premium block blobs storage account type.
      *
      * @return the accessTier value.
      */
@@ -354,6 +355,23 @@ public interface StorageAccount {
     AllowedCopyScope allowedCopyScope();
 
     /**
+     * Gets the storageAccountSkuConversionStatus property: This property is readOnly and is set by server during
+     * asynchronous storage account sku conversion operations.
+     *
+     * @return the storageAccountSkuConversionStatus value.
+     */
+    StorageAccountSkuConversionStatus storageAccountSkuConversionStatus();
+
+    /**
+     * Gets the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
+     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
+     * URL will have an alphanumeric DNS Zone identifier.
+     *
+     * @return the dnsEndpointType value.
+     */
+    DnsEndpointType dnsEndpointType();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -472,7 +490,8 @@ public interface StorageAccount {
                 DefinitionStages.WithEnableNfsV3,
                 DefinitionStages.WithAllowCrossTenantReplication,
                 DefinitionStages.WithDefaultToOAuthAuthentication,
-                DefinitionStages.WithImmutableStorageWithVersioning {
+                DefinitionStages.WithImmutableStorageWithVersioning,
+                DefinitionStages.WithDnsEndpointType {
             /**
              * Executes the create request.
              *
@@ -611,10 +630,12 @@ public interface StorageAccount {
         interface WithAccessTier {
             /**
              * Specifies the accessTier property: Required for storage accounts where kind = BlobStorage. The access
-             * tier used for billing..
+             * tier is used for billing. The 'Premium' access tier is the default value for premium block blobs storage
+             * account type and it cannot be changed for the premium block blobs storage account type..
              *
-             * @param accessTier Required for storage accounts where kind = BlobStorage. The access tier used for
-             *     billing.
+             * @param accessTier Required for storage accounts where kind = BlobStorage. The access tier is used for
+             *     billing. The 'Premium' access tier is the default value for premium block blobs storage account type
+             *     and it cannot be changed for the premium block blobs storage account type.
              * @return the next definition stage.
              */
             WithCreate withAccessTier(AccessTier accessTier);
@@ -786,6 +807,20 @@ public interface StorageAccount {
              */
             WithCreate withImmutableStorageWithVersioning(ImmutableStorageAccount immutableStorageWithVersioning);
         }
+        /** The stage of the StorageAccount definition allowing to specify dnsEndpointType. */
+        interface WithDnsEndpointType {
+            /**
+             * Specifies the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to
+             * AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an
+             * Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier..
+             *
+             * @param dnsEndpointType Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a
+             *     large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and
+             *     the endpoint URL will have an alphanumeric DNS Zone identifier.
+             * @return the next definition stage.
+             */
+            WithCreate withDnsEndpointType(DnsEndpointType dnsEndpointType);
+        }
     }
     /**
      * Begins update for the StorageAccount resource.
@@ -819,7 +854,8 @@ public interface StorageAccount {
             UpdateStages.WithDefaultToOAuthAuthentication,
             UpdateStages.WithPublicNetworkAccess,
             UpdateStages.WithImmutableStorageWithVersioning,
-            UpdateStages.WithAllowedCopyScope {
+            UpdateStages.WithAllowedCopyScope,
+            UpdateStages.WithDnsEndpointType {
         /**
          * Executes the update request.
          *
@@ -938,10 +974,12 @@ public interface StorageAccount {
         interface WithAccessTier {
             /**
              * Specifies the accessTier property: Required for storage accounts where kind = BlobStorage. The access
-             * tier used for billing..
+             * tier is used for billing. The 'Premium' access tier is the default value for premium block blobs storage
+             * account type and it cannot be changed for the premium block blobs storage account type..
              *
-             * @param accessTier Required for storage accounts where kind = BlobStorage. The access tier used for
-             *     billing.
+             * @param accessTier Required for storage accounts where kind = BlobStorage. The access tier is used for
+             *     billing. The 'Premium' access tier is the default value for premium block blobs storage account type
+             *     and it cannot be changed for the premium block blobs storage account type.
              * @return the next definition stage.
              */
             Update withAccessTier(AccessTier accessTier);
@@ -1125,6 +1163,20 @@ public interface StorageAccount {
              * @return the next definition stage.
              */
             Update withAllowedCopyScope(AllowedCopyScope allowedCopyScope);
+        }
+        /** The stage of the StorageAccount update allowing to specify dnsEndpointType. */
+        interface WithDnsEndpointType {
+            /**
+             * Specifies the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to
+             * AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an
+             * Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier..
+             *
+             * @param dnsEndpointType Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a
+             *     large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and
+             *     the endpoint URL will have an alphanumeric DNS Zone identifier.
+             * @return the next definition stage.
+             */
+            Update withDnsEndpointType(DnsEndpointType dnsEndpointType);
         }
     }
     /**

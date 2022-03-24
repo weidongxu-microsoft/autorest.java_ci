@@ -117,8 +117,9 @@ public interface StorageAccountProperties {
     Encryption encryption();
 
     /**
-     * Gets the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier used for
-     * billing.
+     * Gets the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier is used for
+     * billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it
+     * cannot be changed for the premium block blobs storage account type.
      *
      * @return the accessTier value.
      */
@@ -285,6 +286,23 @@ public interface StorageAccountProperties {
      * @return the allowedCopyScope value.
      */
     AllowedCopyScope allowedCopyScope();
+
+    /**
+     * Gets the storageAccountSkuConversionStatus property: This property is readOnly and is set by server during
+     * asynchronous storage account sku conversion operations.
+     *
+     * @return the storageAccountSkuConversionStatus value.
+     */
+    StorageAccountSkuConversionStatus storageAccountSkuConversionStatus();
+
+    /**
+     * Gets the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
+     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
+     * URL will have an alphanumeric DNS Zone identifier.
+     *
+     * @return the dnsEndpointType value.
+     */
+    DnsEndpointType dnsEndpointType();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountPropertiesInner object.

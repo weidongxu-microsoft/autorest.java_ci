@@ -18,6 +18,7 @@ import com.azure.resourcemanager.storage.generated.models.AzureFilesIdentityBase
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreParameters;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreStatus;
 import com.azure.resourcemanager.storage.generated.models.CustomDomain;
+import com.azure.resourcemanager.storage.generated.models.DnsEndpointType;
 import com.azure.resourcemanager.storage.generated.models.Encryption;
 import com.azure.resourcemanager.storage.generated.models.Endpoints;
 import com.azure.resourcemanager.storage.generated.models.ExtendedLocation;
@@ -45,6 +46,7 @@ import com.azure.resourcemanager.storage.generated.models.StorageAccountCreatePa
 import com.azure.resourcemanager.storage.generated.models.StorageAccountExpand;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountListKeysResult;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountRegenerateKeyParameters;
+import com.azure.resourcemanager.storage.generated.models.StorageAccountSkuConversionStatus;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountUpdateParameters;
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -255,6 +257,14 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     public AllowedCopyScope allowedCopyScope() {
         return this.innerModel().allowedCopyScope();
+    }
+
+    public StorageAccountSkuConversionStatus storageAccountSkuConversionStatus() {
+        return this.innerModel().storageAccountSkuConversionStatus();
+    }
+
+    public DnsEndpointType dnsEndpointType() {
+        return this.innerModel().dnsEndpointType();
     }
 
     public Region region() {
@@ -696,6 +706,16 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             return this;
         } else {
             this.updateParameters.withImmutableStorageWithVersioning(immutableStorageWithVersioning);
+            return this;
+        }
+    }
+
+    public StorageAccountImpl withDnsEndpointType(DnsEndpointType dnsEndpointType) {
+        if (isInCreateMode()) {
+            this.createParameters.withDnsEndpointType(dnsEndpointType);
+            return this;
+        } else {
+            this.updateParameters.withDnsEndpointType(dnsEndpointType);
             return this;
         }
     }

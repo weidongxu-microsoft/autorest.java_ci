@@ -27,54 +27,6 @@ public final class TablesImpl implements Tables {
         this.serviceManager = serviceManager;
     }
 
-    public Table create(String resourceGroupName, String accountName, String tableName) {
-        TableInner inner = this.serviceClient().create(resourceGroupName, accountName, tableName);
-        if (inner != null) {
-            return new TableImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<Table> createWithResponse(
-        String resourceGroupName, String accountName, String tableName, Context context) {
-        Response<TableInner> inner =
-            this.serviceClient().createWithResponse(resourceGroupName, accountName, tableName, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new TableImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
-    public Table update(String resourceGroupName, String accountName, String tableName) {
-        TableInner inner = this.serviceClient().update(resourceGroupName, accountName, tableName);
-        if (inner != null) {
-            return new TableImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<Table> updateWithResponse(
-        String resourceGroupName, String accountName, String tableName, Context context) {
-        Response<TableInner> inner =
-            this.serviceClient().updateWithResponse(resourceGroupName, accountName, tableName, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new TableImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
     public Table get(String resourceGroupName, String accountName, String tableName) {
         TableInner inner = this.serviceClient().get(resourceGroupName, accountName, tableName);
         if (inner != null) {
@@ -118,11 +70,123 @@ public final class TablesImpl implements Tables {
         return Utils.mapPage(inner, inner1 -> new TableImpl(inner1, this.manager()));
     }
 
+    public Table getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        String tableName = Utils.getValueFromIdByName(id, "tables");
+        if (tableName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
+        }
+        return this.getWithResponse(resourceGroupName, accountName, tableName, Context.NONE).getValue();
+    }
+
+    public Response<Table> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        String tableName = Utils.getValueFromIdByName(id, "tables");
+        if (tableName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
+        }
+        return this.getWithResponse(resourceGroupName, accountName, tableName, context);
+    }
+
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        String tableName = Utils.getValueFromIdByName(id, "tables");
+        if (tableName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, accountName, tableName, Context.NONE);
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        String tableName = Utils.getValueFromIdByName(id, "tables");
+        if (tableName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, accountName, tableName, context);
+    }
+
     private TablesClient serviceClient() {
         return this.innerClient;
     }
 
     private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
+    }
+
+    public TableImpl define(String name) {
+        return new TableImpl(name, this.manager());
     }
 }
