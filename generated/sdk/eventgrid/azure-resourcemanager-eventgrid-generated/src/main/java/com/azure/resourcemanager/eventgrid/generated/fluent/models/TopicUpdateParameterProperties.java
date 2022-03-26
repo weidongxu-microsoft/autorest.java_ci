@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.eventgrid.generated.models.DataResidencyBoundary;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -37,6 +38,12 @@ public final class TopicUpdateParameterProperties {
      */
     @JsonProperty(value = "disableLocalAuth")
     private Boolean disableLocalAuth;
+
+    /*
+     * The data residency boundary for the topic.
+     */
+    @JsonProperty(value = "dataResidencyBoundary")
+    private DataResidencyBoundary dataResidencyBoundary;
 
     /**
      * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
@@ -107,6 +114,26 @@ public final class TopicUpdateParameterProperties {
      */
     public TopicUpdateParameterProperties withDisableLocalAuth(Boolean disableLocalAuth) {
         this.disableLocalAuth = disableLocalAuth;
+        return this;
+    }
+
+    /**
+     * Get the dataResidencyBoundary property: The data residency boundary for the topic.
+     *
+     * @return the dataResidencyBoundary value.
+     */
+    public DataResidencyBoundary dataResidencyBoundary() {
+        return this.dataResidencyBoundary;
+    }
+
+    /**
+     * Set the dataResidencyBoundary property: The data residency boundary for the topic.
+     *
+     * @param dataResidencyBoundary the dataResidencyBoundary value to set.
+     * @return the TopicUpdateParameterProperties object itself.
+     */
+    public TopicUpdateParameterProperties withDataResidencyBoundary(DataResidencyBoundary dataResidencyBoundary) {
+        this.dataResidencyBoundary = dataResidencyBoundary;
         return this;
     }
 

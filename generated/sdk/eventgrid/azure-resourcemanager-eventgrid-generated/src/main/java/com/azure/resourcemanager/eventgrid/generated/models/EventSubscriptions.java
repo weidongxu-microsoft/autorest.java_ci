@@ -393,7 +393,7 @@ public interface EventSubscriptions {
         String resourceGroupName, String location, String topicTypeName, String filter, Integer top, Context context);
 
     /**
-     * List all event subscriptions that have been created for a specific topic.
+     * List all event subscriptions that have been created for a specific resource.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param providerNamespace Namespace of the provider of the topic.
@@ -408,7 +408,7 @@ public interface EventSubscriptions {
         String resourceGroupName, String providerNamespace, String resourceTypeName, String resourceName);
 
     /**
-     * List all event subscriptions that have been created for a specific topic.
+     * List all event subscriptions that have been created for a specific resource.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param providerNamespace Namespace of the provider of the topic.

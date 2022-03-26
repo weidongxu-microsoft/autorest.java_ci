@@ -84,7 +84,7 @@ public interface SystemTopicEventSubscriptions {
         Context context);
 
     /**
-     * Delete an event subscription of a system topic.
+     * Delete an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -97,7 +97,7 @@ public interface SystemTopicEventSubscriptions {
     void delete(String resourceGroupName, String systemTopicName, String eventSubscriptionName);
 
     /**
-     * Delete an event subscription of a system topic.
+     * Delete an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -111,7 +111,7 @@ public interface SystemTopicEventSubscriptions {
     void delete(String resourceGroupName, String systemTopicName, String eventSubscriptionName, Context context);
 
     /**
-     * Update event subscription of a system topic.
+     * Update an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -130,7 +130,7 @@ public interface SystemTopicEventSubscriptions {
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters);
 
     /**
-     * Update event subscription of a system topic.
+     * Update an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.

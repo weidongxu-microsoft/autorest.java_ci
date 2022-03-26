@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.eventgrid.generated.models.DataResidencyBoundary;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchema;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchemaMapping;
@@ -80,6 +81,12 @@ public final class TopicProperties {
      */
     @JsonProperty(value = "disableLocalAuth")
     private Boolean disableLocalAuth;
+
+    /*
+     * Data Residency Boundary of the resource.
+     */
+    @JsonProperty(value = "dataResidencyBoundary")
+    private DataResidencyBoundary dataResidencyBoundary;
 
     /**
      * Get the privateEndpointConnections property: The privateEndpointConnections property.
@@ -230,6 +237,26 @@ public final class TopicProperties {
      */
     public TopicProperties withDisableLocalAuth(Boolean disableLocalAuth) {
         this.disableLocalAuth = disableLocalAuth;
+        return this;
+    }
+
+    /**
+     * Get the dataResidencyBoundary property: Data Residency Boundary of the resource.
+     *
+     * @return the dataResidencyBoundary value.
+     */
+    public DataResidencyBoundary dataResidencyBoundary() {
+        return this.dataResidencyBoundary;
+    }
+
+    /**
+     * Set the dataResidencyBoundary property: Data Residency Boundary of the resource.
+     *
+     * @param dataResidencyBoundary the dataResidencyBoundary value to set.
+     * @return the TopicProperties object itself.
+     */
+    public TopicProperties withDataResidencyBoundary(DataResidencyBoundary dataResidencyBoundary) {
+        this.dataResidencyBoundary = dataResidencyBoundary;
         return this;
     }
 

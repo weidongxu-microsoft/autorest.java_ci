@@ -732,7 +732,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Delete an event subscription of a system topic.
+     * Delete an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -786,7 +786,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Delete an event subscription of a system topic.
+     * Delete an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -838,7 +838,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Delete an event subscription of a system topic.
+     * Delete an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -861,7 +861,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Delete an event subscription of a system topic.
+     * Delete an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -885,7 +885,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Delete an event subscription of a system topic.
+     * Delete an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -903,7 +903,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Delete an event subscription of a system topic.
+     * Delete an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -922,7 +922,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Delete an event subscription of a system topic.
+     * Delete an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -941,7 +941,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Delete an event subscription of a system topic.
+     * Delete an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -962,7 +962,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Delete an event subscription of a system topic.
+     * Delete an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -978,7 +978,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Delete an event subscription of a system topic.
+     * Delete an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -996,7 +996,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Update event subscription of a system topic.
+     * Update an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -1065,7 +1065,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Update event subscription of a system topic.
+     * Update an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -1133,7 +1133,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Update event subscription of a system topic.
+     * Update an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -1165,7 +1165,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Update event subscription of a system topic.
+     * Update an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -1200,7 +1200,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Update event subscription of a system topic.
+     * Update an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -1224,7 +1224,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Update event subscription of a system topic.
+     * Update an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -1250,7 +1250,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Update event subscription of a system topic.
+     * Update an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -1275,7 +1275,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Update event subscription of a system topic.
+     * Update an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -1302,7 +1302,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Update event subscription of a system topic.
+     * Update an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
@@ -1325,7 +1325,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     }
 
     /**
-     * Update event subscription of a system topic.
+     * Update an existing event subscription of a system topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param systemTopicName Name of the system topic.
