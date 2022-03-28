@@ -134,6 +134,19 @@ public final class ApplicationInsightsManager {
     }
 
     /**
+     * Creates an instance of ApplicationInsights service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the ApplicationInsights service API instance.
+     */
+    public static ApplicationInsightsManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new ApplicationInsightsManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create ApplicationInsightsManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

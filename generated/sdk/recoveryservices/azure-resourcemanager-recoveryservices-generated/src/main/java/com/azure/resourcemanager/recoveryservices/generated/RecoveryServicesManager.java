@@ -102,6 +102,19 @@ public final class RecoveryServicesManager {
     }
 
     /**
+     * Creates an instance of RecoveryServices service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the RecoveryServices service API instance.
+     */
+    public static RecoveryServicesManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new RecoveryServicesManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create RecoveryServicesManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

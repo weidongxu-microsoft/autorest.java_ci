@@ -105,6 +105,19 @@ public final class EventHubsManager {
     }
 
     /**
+     * Creates an instance of EventHubs service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the EventHubs service API instance.
+     */
+    public static EventHubsManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new EventHubsManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create EventHubsManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

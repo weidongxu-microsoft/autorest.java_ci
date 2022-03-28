@@ -106,6 +106,19 @@ public final class HDInsightManager {
     }
 
     /**
+     * Creates an instance of HDInsight service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the HDInsight service API instance.
+     */
+    public static HDInsightManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new HDInsightManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create HDInsightManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

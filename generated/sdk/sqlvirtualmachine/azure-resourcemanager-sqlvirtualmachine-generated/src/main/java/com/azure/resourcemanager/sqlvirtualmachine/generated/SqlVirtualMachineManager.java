@@ -83,6 +83,19 @@ public final class SqlVirtualMachineManager {
     }
 
     /**
+     * Creates an instance of SqlVirtualMachine service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the SqlVirtualMachine service API instance.
+     */
+    public static SqlVirtualMachineManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new SqlVirtualMachineManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create SqlVirtualMachineManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

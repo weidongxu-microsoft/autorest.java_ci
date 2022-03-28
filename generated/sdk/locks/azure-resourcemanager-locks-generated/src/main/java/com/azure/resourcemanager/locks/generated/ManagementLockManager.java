@@ -73,6 +73,19 @@ public final class ManagementLockManager {
     }
 
     /**
+     * Creates an instance of ManagementLock service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the ManagementLock service API instance.
+     */
+    public static ManagementLockManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new ManagementLockManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create ManagementLockManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

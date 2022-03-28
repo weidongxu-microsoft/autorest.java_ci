@@ -138,6 +138,19 @@ public final class PostgreSqlManager {
     }
 
     /**
+     * Creates an instance of PostgreSql service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the PostgreSql service API instance.
+     */
+    public static PostgreSqlManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new PostgreSqlManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create PostgreSqlManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

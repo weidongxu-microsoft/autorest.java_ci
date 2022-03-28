@@ -118,6 +118,19 @@ public final class KustoManager {
     }
 
     /**
+     * Creates an instance of Kusto service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the Kusto service API instance.
+     */
+    public static KustoManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new KustoManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create KustoManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

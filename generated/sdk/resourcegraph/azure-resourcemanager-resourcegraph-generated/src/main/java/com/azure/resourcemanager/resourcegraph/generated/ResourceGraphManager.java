@@ -69,6 +69,19 @@ public final class ResourceGraphManager {
     }
 
     /**
+     * Creates an instance of ResourceGraph service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the ResourceGraph service API instance.
+     */
+    public static ResourceGraphManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new ResourceGraphManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create ResourceGraphManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

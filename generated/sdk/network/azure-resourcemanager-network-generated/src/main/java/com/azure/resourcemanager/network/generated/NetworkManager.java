@@ -510,6 +510,19 @@ public final class NetworkManager {
     }
 
     /**
+     * Creates an instance of Network service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the Network service API instance.
+     */
+    public static NetworkManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new NetworkManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create NetworkManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

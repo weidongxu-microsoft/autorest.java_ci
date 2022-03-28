@@ -133,6 +133,19 @@ public final class ConsumptionManager {
     }
 
     /**
+     * Creates an instance of Consumption service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the Consumption service API instance.
+     */
+    public static ConsumptionManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new ConsumptionManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create ConsumptionManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

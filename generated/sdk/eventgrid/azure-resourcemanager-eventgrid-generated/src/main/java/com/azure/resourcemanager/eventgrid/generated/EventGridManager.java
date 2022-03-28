@@ -154,6 +154,19 @@ public final class EventGridManager {
     }
 
     /**
+     * Creates an instance of EventGrid service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the EventGrid service API instance.
+     */
+    public static EventGridManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new EventGridManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create EventGridManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

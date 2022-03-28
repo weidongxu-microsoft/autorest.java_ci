@@ -146,6 +146,19 @@ public final class AppServiceManager {
     }
 
     /**
+     * Creates an instance of AppService service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the AppService service API instance.
+     */
+    public static AppServiceManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new AppServiceManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create AppServiceManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

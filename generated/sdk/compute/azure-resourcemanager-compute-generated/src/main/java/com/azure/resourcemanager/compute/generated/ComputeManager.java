@@ -258,6 +258,19 @@ public final class ComputeManager {
     }
 
     /**
+     * Creates an instance of Compute service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the Compute service API instance.
+     */
+    public static ComputeManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new ComputeManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create ComputeManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

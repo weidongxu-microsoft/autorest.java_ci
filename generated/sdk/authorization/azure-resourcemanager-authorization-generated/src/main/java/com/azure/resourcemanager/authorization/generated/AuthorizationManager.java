@@ -95,6 +95,19 @@ public final class AuthorizationManager {
     }
 
     /**
+     * Creates an instance of Authorization service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the Authorization service API instance.
+     */
+    public static AuthorizationManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new AuthorizationManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create AuthorizationManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

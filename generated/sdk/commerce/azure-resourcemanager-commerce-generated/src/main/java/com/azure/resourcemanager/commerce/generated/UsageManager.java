@@ -70,6 +70,19 @@ public final class UsageManager {
     }
 
     /**
+     * Creates an instance of Usage service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the Usage service API instance.
+     */
+    public static UsageManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new UsageManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create UsageManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

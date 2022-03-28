@@ -142,6 +142,19 @@ public final class StorageManager {
     }
 
     /**
+     * Creates an instance of Storage service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the Storage service API instance.
+     */
+    public static StorageManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new StorageManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create StorageManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

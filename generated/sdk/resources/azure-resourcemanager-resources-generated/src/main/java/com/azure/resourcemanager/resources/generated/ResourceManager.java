@@ -90,6 +90,19 @@ public final class ResourceManager {
     }
 
     /**
+     * Creates an instance of Resource service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the Resource service API instance.
+     */
+    public static ResourceManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new ResourceManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create ResourceManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

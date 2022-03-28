@@ -142,6 +142,19 @@ public final class DataBoxEdgeManager {
     }
 
     /**
+     * Creates an instance of DataBoxEdge service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the DataBoxEdge service API instance.
+     */
+    public static DataBoxEdgeManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new DataBoxEdgeManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create DataBoxEdgeManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

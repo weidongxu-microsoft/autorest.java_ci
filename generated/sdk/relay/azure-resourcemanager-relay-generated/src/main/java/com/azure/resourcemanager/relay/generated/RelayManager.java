@@ -78,6 +78,19 @@ public final class RelayManager {
     }
 
     /**
+     * Creates an instance of Relay service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the Relay service API instance.
+     */
+    public static RelayManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new RelayManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create RelayManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.

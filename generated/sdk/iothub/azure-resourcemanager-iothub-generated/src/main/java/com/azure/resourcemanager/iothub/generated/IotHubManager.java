@@ -90,6 +90,19 @@ public final class IotHubManager {
     }
 
     /**
+     * Creates an instance of IotHub service API entry point.
+     *
+     * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
+     * @param profile the Azure profile for client.
+     * @return the IotHub service API instance.
+     */
+    public static IotHubManager authenticate(HttpPipeline httpPipeline, AzureProfile profile) {
+        Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
+        Objects.requireNonNull(profile, "'profile' cannot be null.");
+        return new IotHubManager(httpPipeline, profile, null);
+    }
+
+    /**
      * Gets a Configurable instance that can be used to create IotHubManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.
