@@ -31,7 +31,7 @@ public interface Trigger {
     String type();
 
     /**
-     * Gets the systemData property: Trigger in DataBoxEdge Resource.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of Trigger.
      *
      * @return the systemData value.
      */

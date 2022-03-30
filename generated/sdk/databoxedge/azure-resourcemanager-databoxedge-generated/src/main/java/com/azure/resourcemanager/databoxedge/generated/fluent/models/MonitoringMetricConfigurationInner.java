@@ -16,25 +16,17 @@ import java.util.List;
 @Fluent
 public final class MonitoringMetricConfigurationInner extends ArmBaseModel {
     /*
-     * MonitoringConfiguration on ASE device
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
-
-    /*
      * The metric setting properties.
      */
     @JsonProperty(value = "properties", required = true)
     private MonitoringMetricConfigurationProperties innerProperties = new MonitoringMetricConfigurationProperties();
 
-    /**
-     * Get the systemData property: MonitoringConfiguration on ASE device.
-     *
-     * @return the systemData value.
+    /*
+     * Metadata pertaining to creation and last modification of
+     * MonitoringConfiguration
      */
-    public SystemData systemData() {
-        return this.systemData;
-    }
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the innerProperties property: The metric setting properties.
@@ -43,6 +35,15 @@ public final class MonitoringMetricConfigurationInner extends ArmBaseModel {
      */
     private MonitoringMetricConfigurationProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of MonitoringConfiguration.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**

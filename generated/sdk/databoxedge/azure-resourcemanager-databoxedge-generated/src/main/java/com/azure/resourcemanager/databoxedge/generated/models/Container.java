@@ -33,7 +33,7 @@ public interface Container {
     String type();
 
     /**
-     * Gets the systemData property: Container in DataBoxEdge Resource.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of Container.
      *
      * @return the systemData value.
      */

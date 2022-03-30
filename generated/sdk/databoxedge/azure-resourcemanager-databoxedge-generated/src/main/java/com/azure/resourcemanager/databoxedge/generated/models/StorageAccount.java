@@ -32,7 +32,7 @@ public interface StorageAccount {
     String type();
 
     /**
-     * Gets the systemData property: StorageAccount object on ASE device.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of StorageAccount.
      *
      * @return the systemData value.
      */

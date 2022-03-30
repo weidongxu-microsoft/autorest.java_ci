@@ -32,7 +32,7 @@ public interface NetworkSettings {
     String type();
 
     /**
-     * Gets the systemData property: NetworkSettings on ASE device.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of NetworkSettings.
      *
      * @return the systemData value.
      */

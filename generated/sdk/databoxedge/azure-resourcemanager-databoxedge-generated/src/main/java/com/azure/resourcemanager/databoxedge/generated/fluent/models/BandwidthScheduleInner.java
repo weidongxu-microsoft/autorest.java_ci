@@ -16,25 +16,17 @@ import java.util.List;
 @Fluent
 public final class BandwidthScheduleInner extends ArmBaseModel {
     /*
-     * Bandwidth object related to ASE resource
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
-
-    /*
      * The properties of the bandwidth schedule.
      */
     @JsonProperty(value = "properties", required = true)
     private BandwidthScheduleProperties innerProperties = new BandwidthScheduleProperties();
 
-    /**
-     * Get the systemData property: Bandwidth object related to ASE resource.
-     *
-     * @return the systemData value.
+    /*
+     * Metadata pertaining to creation and last modification of
+     * BandwidthSchedule
      */
-    public SystemData systemData() {
-        return this.systemData;
-    }
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the innerProperties property: The properties of the bandwidth schedule.
@@ -43,6 +35,15 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
      */
     private BandwidthScheduleProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of BandwidthSchedule.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**

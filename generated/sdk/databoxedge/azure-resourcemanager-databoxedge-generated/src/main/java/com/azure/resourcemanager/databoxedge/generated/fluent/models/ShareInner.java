@@ -24,25 +24,16 @@ import java.util.List;
 @Fluent
 public final class ShareInner extends ArmBaseModel {
     /*
-     * Share on ASE device
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
-
-    /*
      * The share properties.
      */
     @JsonProperty(value = "properties", required = true)
     private ShareProperties innerProperties = new ShareProperties();
 
-    /**
-     * Get the systemData property: Share on ASE device.
-     *
-     * @return the systemData value.
+    /*
+     * Metadata pertaining to creation and last modification of Share
      */
-    public SystemData systemData() {
-        return this.systemData;
-    }
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the innerProperties property: The share properties.
@@ -51,6 +42,15 @@ public final class ShareInner extends ArmBaseModel {
      */
     private ShareProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of Share.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**

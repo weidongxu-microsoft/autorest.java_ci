@@ -18,6 +18,12 @@ import java.util.List;
 @Fluent
 public final class OrderProperties {
     /*
+     * It specify the order resource id.
+     */
+    @JsonProperty(value = "orderId", access = JsonProperty.Access.WRITE_ONLY)
+    private String orderId;
+
+    /*
      * The contact details.
      */
     @JsonProperty(value = "contactInformation", required = true)
@@ -66,6 +72,15 @@ public final class OrderProperties {
      */
     @JsonProperty(value = "shipmentType")
     private ShipmentType shipmentType;
+
+    /**
+     * Get the orderId property: It specify the order resource id.
+     *
+     * @return the orderId value.
+     */
+    public String orderId() {
+        return this.orderId;
+    }
 
     /**
      * Get the contactInformation property: The contact details.

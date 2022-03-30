@@ -33,7 +33,7 @@ public interface User {
     String type();
 
     /**
-     * Gets the systemData property: User in DataBoxEdge Resource.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of User.
      *
      * @return the systemData value.
      */

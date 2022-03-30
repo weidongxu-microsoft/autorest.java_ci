@@ -4,7 +4,9 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeDeviceExtendedInfoInner;
+import com.azure.resourcemanager.databoxedge.generated.models.ClusterWitnessType;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDeviceExtendedInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.KeyVaultSyncStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.Secret;
@@ -33,6 +35,10 @@ public final class DataBoxEdgeDeviceExtendedInfoImpl implements DataBoxEdgeDevic
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String encryptionKeyThumbprint() {
@@ -74,6 +80,30 @@ public final class DataBoxEdgeDeviceExtendedInfoImpl implements DataBoxEdgeDevic
         } else {
             return Collections.emptyMap();
         }
+    }
+
+    public ClusterWitnessType clusterWitnessType() {
+        return this.innerModel().clusterWitnessType();
+    }
+
+    public String fileShareWitnessLocation() {
+        return this.innerModel().fileShareWitnessLocation();
+    }
+
+    public String fileShareWitnessUsername() {
+        return this.innerModel().fileShareWitnessUsername();
+    }
+
+    public String cloudWitnessStorageAccountName() {
+        return this.innerModel().cloudWitnessStorageAccountName();
+    }
+
+    public String cloudWitnessContainerName() {
+        return this.innerModel().cloudWitnessContainerName();
+    }
+
+    public String cloudWitnessStorageEndpoint() {
+        return this.innerModel().cloudWitnessStorageEndpoint();
     }
 
     public DataBoxEdgeDeviceExtendedInfoInner innerModel() {

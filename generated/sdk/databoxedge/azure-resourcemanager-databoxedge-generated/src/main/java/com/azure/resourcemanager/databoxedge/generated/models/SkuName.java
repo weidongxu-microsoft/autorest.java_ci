@@ -85,6 +85,18 @@ public final class SkuName extends ExpandableStringEnum<SkuName> {
     /** Static value Management for SkuName. */
     public static final SkuName MANAGEMENT = fromString("Management");
 
+    /** Static value EP2_64_Mx1_W for SkuName. */
+    public static final SkuName EP2_64_MX1_W = fromString("EP2_64_Mx1_W");
+
+    /** Static value EP2_128_GPU1_Mx1_W for SkuName. */
+    public static final SkuName EP2_128_GPU1_MX1_W = fromString("EP2_128_GPU1_Mx1_W");
+
+    /** Static value EP2_256_GPU2_Mx1 for SkuName. */
+    public static final SkuName EP2_256_GPU2_MX1 = fromString("EP2_256_GPU2_Mx1");
+
+    /** Static value EdgeMR_TCP for SkuName. */
+    public static final SkuName EDGE_MR_TCP = fromString("EdgeMR_TCP");
+
     /**
      * Creates or finds a SkuName from its string representation.
      *

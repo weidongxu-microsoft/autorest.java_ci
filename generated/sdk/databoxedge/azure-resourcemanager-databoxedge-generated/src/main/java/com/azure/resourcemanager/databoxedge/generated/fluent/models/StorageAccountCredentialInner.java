@@ -17,25 +17,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class StorageAccountCredentialInner extends ArmBaseModel {
     /*
-     * StorageAccountCredential object
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
-
-    /*
      * The storage account credential properties.
      */
     @JsonProperty(value = "properties", required = true)
     private StorageAccountCredentialProperties innerProperties = new StorageAccountCredentialProperties();
 
-    /**
-     * Get the systemData property: StorageAccountCredential object.
-     *
-     * @return the systemData value.
+    /*
+     * Metadata pertaining to creation and last modification of
+     * StorageAccountCredential
      */
-    public SystemData systemData() {
-        return this.systemData;
-    }
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the innerProperties property: The storage account credential properties.
@@ -44,6 +36,15 @@ public final class StorageAccountCredentialInner extends ArmBaseModel {
      */
     private StorageAccountCredentialProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of StorageAccountCredential.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**

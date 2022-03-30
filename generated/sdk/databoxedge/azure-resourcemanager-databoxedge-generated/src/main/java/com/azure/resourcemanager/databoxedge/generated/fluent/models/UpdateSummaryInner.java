@@ -19,25 +19,16 @@ import java.util.List;
 @Fluent
 public final class UpdateSummaryInner extends ArmBaseModel {
     /*
-     * UpdateSummary Result
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
-
-    /*
      * The device update information summary.
      */
     @JsonProperty(value = "properties")
     private UpdateSummaryProperties innerProperties;
 
-    /**
-     * Get the systemData property: UpdateSummary Result.
-     *
-     * @return the systemData value.
+    /*
+     * Metadata pertaining to creation and last modification of UpdateSummary
      */
-    public SystemData systemData() {
-        return this.systemData;
-    }
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the innerProperties property: The device update information summary.
@@ -46,6 +37,15 @@ public final class UpdateSummaryInner extends ArmBaseModel {
      */
     private UpdateSummaryProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of UpdateSummary.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**

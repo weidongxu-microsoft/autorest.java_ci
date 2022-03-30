@@ -30,6 +30,8 @@ import com.azure.resourcemanager.databoxedge.generated.implementation.AvailableS
 import com.azure.resourcemanager.databoxedge.generated.implementation.BandwidthSchedulesImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.ContainersImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.DataBoxEdgeManagementClientBuilder;
+import com.azure.resourcemanager.databoxedge.generated.implementation.DeviceCapacityChecksImpl;
+import com.azure.resourcemanager.databoxedge.generated.implementation.DeviceCapacityInfoesImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.DevicesImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.DiagnosticSettingsImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.JobsImpl;
@@ -50,6 +52,8 @@ import com.azure.resourcemanager.databoxedge.generated.models.Alerts;
 import com.azure.resourcemanager.databoxedge.generated.models.AvailableSkus;
 import com.azure.resourcemanager.databoxedge.generated.models.BandwidthSchedules;
 import com.azure.resourcemanager.databoxedge.generated.models.Containers;
+import com.azure.resourcemanager.databoxedge.generated.models.DeviceCapacityChecks;
+import com.azure.resourcemanager.databoxedge.generated.models.DeviceCapacityInfoes;
 import com.azure.resourcemanager.databoxedge.generated.models.Devices;
 import com.azure.resourcemanager.databoxedge.generated.models.DiagnosticSettings;
 import com.azure.resourcemanager.databoxedge.generated.models.Jobs;
@@ -83,6 +87,10 @@ public final class DataBoxEdgeManager {
     private Alerts alerts;
 
     private BandwidthSchedules bandwidthSchedules;
+
+    private DeviceCapacityChecks deviceCapacityChecks;
+
+    private DeviceCapacityInfoes deviceCapacityInfoes;
 
     private DiagnosticSettings diagnosticSettings;
 
@@ -374,6 +382,22 @@ public final class DataBoxEdgeManager {
             this.bandwidthSchedules = new BandwidthSchedulesImpl(clientObject.getBandwidthSchedules(), this);
         }
         return bandwidthSchedules;
+    }
+
+    /** @return Resource collection API of DeviceCapacityChecks. */
+    public DeviceCapacityChecks deviceCapacityChecks() {
+        if (this.deviceCapacityChecks == null) {
+            this.deviceCapacityChecks = new DeviceCapacityChecksImpl(clientObject.getDeviceCapacityChecks(), this);
+        }
+        return deviceCapacityChecks;
+    }
+
+    /** @return Resource collection API of DeviceCapacityInfoes. */
+    public DeviceCapacityInfoes deviceCapacityInfoes() {
+        if (this.deviceCapacityInfoes == null) {
+            this.deviceCapacityInfoes = new DeviceCapacityInfoesImpl(clientObject.getDeviceCapacityInfoes(), this);
+        }
+        return deviceCapacityInfoes;
     }
 
     /** @return Resource collection API of DiagnosticSettings. */

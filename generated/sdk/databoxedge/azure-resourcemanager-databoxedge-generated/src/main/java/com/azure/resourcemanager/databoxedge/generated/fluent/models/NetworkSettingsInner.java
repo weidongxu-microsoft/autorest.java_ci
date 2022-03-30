@@ -15,25 +15,16 @@ import java.util.List;
 @Immutable
 public final class NetworkSettingsInner extends ArmBaseModel {
     /*
-     * NetworkSettings on ASE device
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
-
-    /*
      * The properties of network settings of a device.
      */
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private NetworkSettingsProperties innerProperties;
 
-    /**
-     * Get the systemData property: NetworkSettings on ASE device.
-     *
-     * @return the systemData value.
+    /*
+     * Metadata pertaining to creation and last modification of NetworkSettings
      */
-    public SystemData systemData() {
-        return this.systemData;
-    }
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the innerProperties property: The properties of network settings of a device.
@@ -42,6 +33,15 @@ public final class NetworkSettingsInner extends ArmBaseModel {
      */
     private NetworkSettingsProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of NetworkSettings.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**

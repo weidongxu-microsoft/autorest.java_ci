@@ -31,7 +31,7 @@ public interface Addon {
     String type();
 
     /**
-     * Gets the systemData property: Addon type.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of Addon.
      *
      * @return the systemData value.
      */

@@ -31,7 +31,7 @@ public interface Role {
     String type();
 
     /**
-     * Gets the systemData property: Role configured on ASE resource.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of Role.
      *
      * @return the systemData value.
      */

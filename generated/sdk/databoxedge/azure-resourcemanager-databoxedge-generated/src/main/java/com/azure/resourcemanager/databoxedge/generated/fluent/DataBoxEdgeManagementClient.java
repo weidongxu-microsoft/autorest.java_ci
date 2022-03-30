@@ -80,6 +80,20 @@ public interface DataBoxEdgeManagementClient {
     BandwidthSchedulesClient getBandwidthSchedules();
 
     /**
+     * Gets the DeviceCapacityChecksClient object to access its operations.
+     *
+     * @return the DeviceCapacityChecksClient object.
+     */
+    DeviceCapacityChecksClient getDeviceCapacityChecks();
+
+    /**
+     * Gets the DeviceCapacityInfoesClient object to access its operations.
+     *
+     * @return the DeviceCapacityInfoesClient object.
+     */
+    DeviceCapacityInfoesClient getDeviceCapacityInfoes();
+
+    /**
      * Gets the DiagnosticSettingsClient object to access its operations.
      *
      * @return the DiagnosticSettingsClient object.

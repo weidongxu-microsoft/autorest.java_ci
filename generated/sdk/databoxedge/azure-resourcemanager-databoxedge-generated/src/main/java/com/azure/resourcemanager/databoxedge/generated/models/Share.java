@@ -33,7 +33,7 @@ public interface Share {
     String type();
 
     /**
-     * Gets the systemData property: Share on ASE device.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of Share.
      *
      * @return the systemData value.
      */

@@ -5,7 +5,9 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
+import com.azure.resourcemanager.databoxedge.generated.models.ClusterWitnessType;
 import com.azure.resourcemanager.databoxedge.generated.models.KeyVaultSyncStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.Secret;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -20,6 +22,13 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
     @JsonProperty(value = "properties")
     private DataBoxEdgeDeviceExtendedInfoProperties innerProperties;
 
+    /*
+     * Metadata pertaining to creation and last modification of
+     * DataBoxEdgeDevice
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
+
     /**
      * Get the innerProperties property: The extended info properties.
      *
@@ -27,6 +36,15 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
      */
     private DataBoxEdgeDeviceExtendedInfoProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of DataBoxEdgeDevice.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**
@@ -208,6 +226,60 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
      */
     public Map<String, Secret> deviceSecrets() {
         return this.innerProperties() == null ? null : this.innerProperties().deviceSecrets();
+    }
+
+    /**
+     * Get the clusterWitnessType property: Cluster Witness Type.
+     *
+     * @return the clusterWitnessType value.
+     */
+    public ClusterWitnessType clusterWitnessType() {
+        return this.innerProperties() == null ? null : this.innerProperties().clusterWitnessType();
+    }
+
+    /**
+     * Get the fileShareWitnessLocation property: The witness location of file share.
+     *
+     * @return the fileShareWitnessLocation value.
+     */
+    public String fileShareWitnessLocation() {
+        return this.innerProperties() == null ? null : this.innerProperties().fileShareWitnessLocation();
+    }
+
+    /**
+     * Get the fileShareWitnessUsername property: The username of file share.
+     *
+     * @return the fileShareWitnessUsername value.
+     */
+    public String fileShareWitnessUsername() {
+        return this.innerProperties() == null ? null : this.innerProperties().fileShareWitnessUsername();
+    }
+
+    /**
+     * Get the cloudWitnessStorageAccountName property: The Cloud Witness Storage account name.
+     *
+     * @return the cloudWitnessStorageAccountName value.
+     */
+    public String cloudWitnessStorageAccountName() {
+        return this.innerProperties() == null ? null : this.innerProperties().cloudWitnessStorageAccountName();
+    }
+
+    /**
+     * Get the cloudWitnessContainerName property: The Container for cloud witness in the storage account.
+     *
+     * @return the cloudWitnessContainerName value.
+     */
+    public String cloudWitnessContainerName() {
+        return this.innerProperties() == null ? null : this.innerProperties().cloudWitnessContainerName();
+    }
+
+    /**
+     * Get the cloudWitnessStorageEndpoint property: The Azure service endpoint of the cloud witness storage account.
+     *
+     * @return the cloudWitnessStorageEndpoint value.
+     */
+    public String cloudWitnessStorageEndpoint() {
+        return this.innerProperties() == null ? null : this.innerProperties().cloudWitnessStorageEndpoint();
     }
 
     /**

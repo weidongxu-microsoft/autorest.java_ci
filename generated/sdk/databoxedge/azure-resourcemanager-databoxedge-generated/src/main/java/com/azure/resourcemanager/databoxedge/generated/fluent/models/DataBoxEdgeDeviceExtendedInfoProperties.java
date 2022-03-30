@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.databoxedge.generated.models.ClusterWitnessType;
 import com.azure.resourcemanager.databoxedge.generated.models.KeyVaultSyncStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.Secret;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -70,6 +71,42 @@ public final class DataBoxEdgeDeviceExtendedInfoProperties {
     @JsonProperty(value = "deviceSecrets", access = JsonProperty.Access.WRITE_ONLY)
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, Secret> deviceSecrets;
+
+    /*
+     * Cluster Witness Type
+     */
+    @JsonProperty(value = "clusterWitnessType", access = JsonProperty.Access.WRITE_ONLY)
+    private ClusterWitnessType clusterWitnessType;
+
+    /*
+     * The witness location of file share.
+     */
+    @JsonProperty(value = "fileShareWitnessLocation", access = JsonProperty.Access.WRITE_ONLY)
+    private String fileShareWitnessLocation;
+
+    /*
+     * The username of file share.
+     */
+    @JsonProperty(value = "fileShareWitnessUsername", access = JsonProperty.Access.WRITE_ONLY)
+    private String fileShareWitnessUsername;
+
+    /*
+     * The Cloud Witness Storage account name.
+     */
+    @JsonProperty(value = "cloudWitnessStorageAccountName", access = JsonProperty.Access.WRITE_ONLY)
+    private String cloudWitnessStorageAccountName;
+
+    /*
+     * The Container for cloud witness in the storage account.
+     */
+    @JsonProperty(value = "cloudWitnessContainerName", access = JsonProperty.Access.WRITE_ONLY)
+    private String cloudWitnessContainerName;
+
+    /*
+     * The Azure service endpoint of the cloud witness storage account.
+     */
+    @JsonProperty(value = "cloudWitnessStorageEndpoint", access = JsonProperty.Access.WRITE_ONLY)
+    private String cloudWitnessStorageEndpoint;
 
     /**
      * Get the encryptionKeyThumbprint property: The digital signature of encrypted certificate.
@@ -229,6 +266,60 @@ public final class DataBoxEdgeDeviceExtendedInfoProperties {
      */
     public Map<String, Secret> deviceSecrets() {
         return this.deviceSecrets;
+    }
+
+    /**
+     * Get the clusterWitnessType property: Cluster Witness Type.
+     *
+     * @return the clusterWitnessType value.
+     */
+    public ClusterWitnessType clusterWitnessType() {
+        return this.clusterWitnessType;
+    }
+
+    /**
+     * Get the fileShareWitnessLocation property: The witness location of file share.
+     *
+     * @return the fileShareWitnessLocation value.
+     */
+    public String fileShareWitnessLocation() {
+        return this.fileShareWitnessLocation;
+    }
+
+    /**
+     * Get the fileShareWitnessUsername property: The username of file share.
+     *
+     * @return the fileShareWitnessUsername value.
+     */
+    public String fileShareWitnessUsername() {
+        return this.fileShareWitnessUsername;
+    }
+
+    /**
+     * Get the cloudWitnessStorageAccountName property: The Cloud Witness Storage account name.
+     *
+     * @return the cloudWitnessStorageAccountName value.
+     */
+    public String cloudWitnessStorageAccountName() {
+        return this.cloudWitnessStorageAccountName;
+    }
+
+    /**
+     * Get the cloudWitnessContainerName property: The Container for cloud witness in the storage account.
+     *
+     * @return the cloudWitnessContainerName value.
+     */
+    public String cloudWitnessContainerName() {
+        return this.cloudWitnessContainerName;
+    }
+
+    /**
+     * Get the cloudWitnessStorageEndpoint property: The Azure service endpoint of the cloud witness storage account.
+     *
+     * @return the cloudWitnessStorageEndpoint value.
+     */
+    public String cloudWitnessStorageEndpoint() {
+        return this.cloudWitnessStorageEndpoint;
     }
 
     /**

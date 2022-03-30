@@ -33,7 +33,7 @@ public interface BandwidthSchedule {
     String type();
 
     /**
-     * Gets the systemData property: Bandwidth object related to ASE resource.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of BandwidthSchedule.
      *
      * @return the systemData value.
      */

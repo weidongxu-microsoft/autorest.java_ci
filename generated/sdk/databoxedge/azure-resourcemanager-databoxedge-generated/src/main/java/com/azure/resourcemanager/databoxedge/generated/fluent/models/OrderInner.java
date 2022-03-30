@@ -19,7 +19,13 @@ import java.util.List;
 @Fluent
 public final class OrderInner extends ArmBaseModel {
     /*
-     * Order configured on ASE resource
+     * It specify the order api version.
+     */
+    @JsonProperty(value = "kind", access = JsonProperty.Access.WRITE_ONLY)
+    private String kind;
+
+    /*
+     * Metadata pertaining to creation and last modification of Order
      */
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
@@ -31,7 +37,16 @@ public final class OrderInner extends ArmBaseModel {
     private OrderProperties innerProperties;
 
     /**
-     * Get the systemData property: Order configured on ASE resource.
+     * Get the kind property: It specify the order api version.
+     *
+     * @return the kind value.
+     */
+    public String kind() {
+        return this.kind;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of Order.
      *
      * @return the systemData value.
      */
@@ -46,6 +61,15 @@ public final class OrderInner extends ArmBaseModel {
      */
     private OrderProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the orderId property: It specify the order resource id.
+     *
+     * @return the orderId value.
+     */
+    public String orderId() {
+        return this.innerProperties() == null ? null : this.innerProperties().orderId();
     }
 
     /**

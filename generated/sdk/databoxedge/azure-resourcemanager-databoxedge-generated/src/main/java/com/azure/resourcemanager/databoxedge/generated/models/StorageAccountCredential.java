@@ -32,7 +32,7 @@ public interface StorageAccountCredential {
     String type();
 
     /**
-     * Gets the systemData property: StorageAccountCredential object.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of StorageAccountCredential.
      *
      * @return the systemData value.
      */

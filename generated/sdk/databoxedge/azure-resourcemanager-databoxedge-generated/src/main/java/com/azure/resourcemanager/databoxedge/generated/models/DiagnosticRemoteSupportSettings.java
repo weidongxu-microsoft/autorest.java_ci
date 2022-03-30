@@ -32,7 +32,7 @@ public interface DiagnosticRemoteSupportSettings {
     String type();
 
     /**
-     * Gets the systemData property: DiagnosticRemoteSupportSettings.
+     * Gets the systemData property: Represents resource creation and updation time.
      *
      * @return the systemData value.
      */

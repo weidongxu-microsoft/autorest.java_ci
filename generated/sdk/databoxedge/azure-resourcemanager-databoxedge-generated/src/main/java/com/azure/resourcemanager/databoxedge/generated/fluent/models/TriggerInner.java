@@ -28,13 +28,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Immutable
 public class TriggerInner extends ArmBaseModel {
     /*
-     * Trigger in DataBoxEdge Resource
+     * Metadata pertaining to creation and last modification of Trigger
      */
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
     /**
-     * Get the systemData property: Trigger in DataBoxEdge Resource.
+     * Get the systemData property: Metadata pertaining to creation and last modification of Trigger.
      *
      * @return the systemData value.
      */

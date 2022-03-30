@@ -28,13 +28,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Immutable
 public class AddonInner extends ArmBaseModel {
     /*
-     * Addon type
+     * Metadata pertaining to creation and last modification of Addon
      */
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
     /**
-     * Get the systemData property: Addon type.
+     * Get the systemData property: Metadata pertaining to creation and last modification of Addon.
      *
      * @return the systemData value.
      */

@@ -38,8 +38,16 @@ public final class OrderImpl implements Order {
         return this.innerModel().type();
     }
 
+    public String kind() {
+        return this.innerModel().kind();
+    }
+
     public SystemData systemData() {
         return this.innerModel().systemData();
+    }
+
+    public String orderId() {
+        return this.innerModel().orderId();
     }
 
     public ContactDetails contactInformation() {

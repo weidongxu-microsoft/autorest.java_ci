@@ -18,25 +18,16 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class ContainerInner extends ArmBaseModel {
     /*
-     * Container in DataBoxEdge Resource
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
-
-    /*
      * The container properties.
      */
     @JsonProperty(value = "properties", required = true)
     private ContainerProperties innerProperties = new ContainerProperties();
 
-    /**
-     * Get the systemData property: Container in DataBoxEdge Resource.
-     *
-     * @return the systemData value.
+    /*
+     * Metadata pertaining to creation and last modification of Container
      */
-    public SystemData systemData() {
-        return this.systemData;
-    }
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the innerProperties property: The container properties.
@@ -45,6 +36,15 @@ public final class ContainerInner extends ArmBaseModel {
      */
     private ContainerProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of Container.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**

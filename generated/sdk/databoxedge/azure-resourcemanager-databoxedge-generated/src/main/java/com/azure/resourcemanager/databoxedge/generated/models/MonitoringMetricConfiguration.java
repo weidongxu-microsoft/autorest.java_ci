@@ -32,7 +32,7 @@ public interface MonitoringMetricConfiguration {
     String type();
 
     /**
-     * Gets the systemData property: MonitoringConfiguration on ASE device.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of MonitoringConfiguration.
      *
      * @return the systemData value.
      */

@@ -32,13 +32,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Immutable
 public class RoleInner extends ArmBaseModel {
     /*
-     * Role configured on ASE resource
+     * Metadata pertaining to creation and last modification of Role
      */
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
     /**
-     * Get the systemData property: Role configured on ASE resource.
+     * Get the systemData property: Metadata pertaining to creation and last modification of Role.
      *
      * @return the systemData value.
      */

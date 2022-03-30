@@ -33,7 +33,7 @@ public interface UpdateSummary {
     String type();
 
     /**
-     * Gets the systemData property: UpdateSummary Result.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of UpdateSummary.
      *
      * @return the systemData value.
      */

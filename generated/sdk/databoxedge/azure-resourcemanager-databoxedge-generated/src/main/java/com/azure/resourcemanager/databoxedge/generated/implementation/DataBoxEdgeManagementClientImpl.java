@@ -27,6 +27,8 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.AvailableSkusClien
 import com.azure.resourcemanager.databoxedge.generated.fluent.BandwidthSchedulesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.ContainersClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.DataBoxEdgeManagementClient;
+import com.azure.resourcemanager.databoxedge.generated.fluent.DeviceCapacityChecksClient;
+import com.azure.resourcemanager.databoxedge.generated.fluent.DeviceCapacityInfoesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.DevicesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.DiagnosticSettingsClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.JobsClient;
@@ -185,6 +187,30 @@ public final class DataBoxEdgeManagementClientImpl implements DataBoxEdgeManagem
      */
     public BandwidthSchedulesClient getBandwidthSchedules() {
         return this.bandwidthSchedules;
+    }
+
+    /** The DeviceCapacityChecksClient object to access its operations. */
+    private final DeviceCapacityChecksClient deviceCapacityChecks;
+
+    /**
+     * Gets the DeviceCapacityChecksClient object to access its operations.
+     *
+     * @return the DeviceCapacityChecksClient object.
+     */
+    public DeviceCapacityChecksClient getDeviceCapacityChecks() {
+        return this.deviceCapacityChecks;
+    }
+
+    /** The DeviceCapacityInfoesClient object to access its operations. */
+    private final DeviceCapacityInfoesClient deviceCapacityInfoes;
+
+    /**
+     * Gets the DeviceCapacityInfoesClient object to access its operations.
+     *
+     * @return the DeviceCapacityInfoesClient object.
+     */
+    public DeviceCapacityInfoesClient getDeviceCapacityInfoes() {
+        return this.deviceCapacityInfoes;
     }
 
     /** The DiagnosticSettingsClient object to access its operations. */
@@ -389,12 +415,14 @@ public final class DataBoxEdgeManagementClientImpl implements DataBoxEdgeManagem
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2021-06-01";
+        this.apiVersion = "2022-03-01";
         this.operations = new OperationsClientImpl(this);
         this.availableSkus = new AvailableSkusClientImpl(this);
         this.devices = new DevicesClientImpl(this);
         this.alerts = new AlertsClientImpl(this);
         this.bandwidthSchedules = new BandwidthSchedulesClientImpl(this);
+        this.deviceCapacityChecks = new DeviceCapacityChecksClientImpl(this);
+        this.deviceCapacityInfoes = new DeviceCapacityInfoesClientImpl(this);
         this.diagnosticSettings = new DiagnosticSettingsClientImpl(this);
         this.jobs = new JobsClientImpl(this);
         this.nodes = new NodesClientImpl(this);

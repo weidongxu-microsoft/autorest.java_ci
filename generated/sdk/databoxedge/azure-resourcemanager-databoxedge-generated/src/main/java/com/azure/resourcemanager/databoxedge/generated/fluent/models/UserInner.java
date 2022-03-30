@@ -18,25 +18,16 @@ import java.util.List;
 @Fluent
 public final class UserInner extends ArmBaseModel {
     /*
-     * User in DataBoxEdge Resource
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
-
-    /*
      * The storage account credential properties.
      */
     @JsonProperty(value = "properties", required = true)
     private UserProperties innerProperties = new UserProperties();
 
-    /**
-     * Get the systemData property: User in DataBoxEdge Resource.
-     *
-     * @return the systemData value.
+    /*
+     * Metadata pertaining to creation and last modification of User
      */
-    public SystemData systemData() {
-        return this.systemData;
-    }
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the innerProperties property: The storage account credential properties.
@@ -45,6 +36,15 @@ public final class UserInner extends ArmBaseModel {
      */
     private UserProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of User.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**

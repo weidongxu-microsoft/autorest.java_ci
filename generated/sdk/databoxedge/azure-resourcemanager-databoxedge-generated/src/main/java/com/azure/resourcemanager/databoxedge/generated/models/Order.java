@@ -32,11 +32,25 @@ public interface Order {
     String type();
 
     /**
-     * Gets the systemData property: Order configured on ASE resource.
+     * Gets the kind property: It specify the order api version.
+     *
+     * @return the kind value.
+     */
+    String kind();
+
+    /**
+     * Gets the systemData property: Metadata pertaining to creation and last modification of Order.
      *
      * @return the systemData value.
      */
     SystemData systemData();
+
+    /**
+     * Gets the orderId property: It specify the order resource id.
+     *
+     * @return the orderId value.
+     */
+    String orderId();
 
     /**
      * Gets the contactInformation property: The contact details.

@@ -16,25 +16,16 @@ import java.util.List;
 @Fluent
 public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
     /*
-     * DiagnosticRemoteSupportSettings
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
-
-    /*
      * Properties of the remote support  settings.
      */
     @JsonProperty(value = "properties", required = true)
     private DiagnosticRemoteSupportSettingsProperties innerProperties = new DiagnosticRemoteSupportSettingsProperties();
 
-    /**
-     * Get the systemData property: DiagnosticRemoteSupportSettings.
-     *
-     * @return the systemData value.
+    /*
+     * Represents resource creation and updation time
      */
-    public SystemData systemData() {
-        return this.systemData;
-    }
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the innerProperties property: Properties of the remote support settings.
@@ -43,6 +34,15 @@ public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
      */
     private DiagnosticRemoteSupportSettingsProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Represents resource creation and updation time.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**

@@ -31,7 +31,8 @@ public interface DiagnosticProactiveLogCollectionSettings {
     String type();
 
     /**
-     * Gets the systemData property: DiagnosticProactiveLogCollectionSettings.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of
+     * DiagnosticProactiveLogCollectionSettings.
      *
      * @return the systemData value.
      */

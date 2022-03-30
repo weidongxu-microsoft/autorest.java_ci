@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeDeviceExtendedInfoInner;
 import java.util.Map;
 
@@ -29,6 +30,13 @@ public interface DataBoxEdgeDeviceExtendedInfo {
      * @return the type value.
      */
     String type();
+
+    /**
+     * Gets the systemData property: Metadata pertaining to creation and last modification of DataBoxEdgeDevice.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
 
     /**
      * Gets the encryptionKeyThumbprint property: The digital signature of encrypted certificate.
@@ -94,6 +102,48 @@ public interface DataBoxEdgeDeviceExtendedInfo {
      * @return the deviceSecrets value.
      */
     Map<String, Secret> deviceSecrets();
+
+    /**
+     * Gets the clusterWitnessType property: Cluster Witness Type.
+     *
+     * @return the clusterWitnessType value.
+     */
+    ClusterWitnessType clusterWitnessType();
+
+    /**
+     * Gets the fileShareWitnessLocation property: The witness location of file share.
+     *
+     * @return the fileShareWitnessLocation value.
+     */
+    String fileShareWitnessLocation();
+
+    /**
+     * Gets the fileShareWitnessUsername property: The username of file share.
+     *
+     * @return the fileShareWitnessUsername value.
+     */
+    String fileShareWitnessUsername();
+
+    /**
+     * Gets the cloudWitnessStorageAccountName property: The Cloud Witness Storage account name.
+     *
+     * @return the cloudWitnessStorageAccountName value.
+     */
+    String cloudWitnessStorageAccountName();
+
+    /**
+     * Gets the cloudWitnessContainerName property: The Container for cloud witness in the storage account.
+     *
+     * @return the cloudWitnessContainerName value.
+     */
+    String cloudWitnessContainerName();
+
+    /**
+     * Gets the cloudWitnessStorageEndpoint property: The Azure service endpoint of the cloud witness storage account.
+     *
+     * @return the cloudWitnessStorageEndpoint value.
+     */
+    String cloudWitnessStorageEndpoint();
 
     /**
      * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeDeviceExtendedInfoInner

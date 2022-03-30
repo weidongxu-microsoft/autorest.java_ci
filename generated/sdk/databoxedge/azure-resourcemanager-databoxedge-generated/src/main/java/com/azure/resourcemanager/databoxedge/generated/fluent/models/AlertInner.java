@@ -17,25 +17,16 @@ import java.util.Map;
 @Immutable
 public final class AlertInner extends ArmBaseModel {
     /*
-     * Alert generated in the resource
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
-
-    /*
      * Properties of alert.
      */
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private AlertProperties innerProperties;
 
-    /**
-     * Get the systemData property: Alert generated in the resource.
-     *
-     * @return the systemData value.
+    /*
+     * Metadata pertaining to creation and last modification of Alert
      */
-    public SystemData systemData() {
-        return this.systemData;
-    }
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the innerProperties property: Properties of alert.
@@ -44,6 +35,15 @@ public final class AlertInner extends ArmBaseModel {
      */
     private AlertProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of Alert.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**

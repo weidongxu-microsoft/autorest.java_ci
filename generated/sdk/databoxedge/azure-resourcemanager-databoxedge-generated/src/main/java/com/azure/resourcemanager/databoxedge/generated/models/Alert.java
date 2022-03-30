@@ -33,7 +33,7 @@ public interface Alert {
     String type();
 
     /**
-     * Gets the systemData property: Alert generated in the resource.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of Alert.
      *
      * @return the systemData value.
      */
