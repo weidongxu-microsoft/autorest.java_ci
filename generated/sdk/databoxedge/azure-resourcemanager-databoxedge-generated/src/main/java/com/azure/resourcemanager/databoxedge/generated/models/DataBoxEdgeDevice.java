@@ -289,8 +289,6 @@ public interface DataBoxEdgeDevice {
                 DefinitionStages.WithSku,
                 DefinitionStages.WithEtag,
                 DefinitionStages.WithIdentity,
-                DefinitionStages.WithKind,
-                DefinitionStages.WithDataBoxEdgeDeviceStatus,
                 DefinitionStages.WithDataResidency {
             /**
              * Executes the create request.
@@ -348,26 +346,6 @@ public interface DataBoxEdgeDevice {
              * @return the next definition stage.
              */
             WithCreate withIdentity(ResourceIdentity identity);
-        }
-        /** The stage of the DataBoxEdgeDevice definition allowing to specify kind. */
-        interface WithKind {
-            /**
-             * Specifies the kind property: The kind of the device..
-             *
-             * @param kind The kind of the device.
-             * @return the next definition stage.
-             */
-            WithCreate withKind(DataBoxEdgeDeviceKind kind);
-        }
-        /** The stage of the DataBoxEdgeDevice definition allowing to specify dataBoxEdgeDeviceStatus. */
-        interface WithDataBoxEdgeDeviceStatus {
-            /**
-             * Specifies the dataBoxEdgeDeviceStatus property: The status of the Data Box Edge/Gateway device..
-             *
-             * @param dataBoxEdgeDeviceStatus The status of the Data Box Edge/Gateway device.
-             * @return the next definition stage.
-             */
-            WithCreate withDataBoxEdgeDeviceStatus(DataBoxEdgeDeviceStatus dataBoxEdgeDeviceStatus);
         }
         /** The stage of the DataBoxEdgeDevice definition allowing to specify dataResidency. */
         interface WithDataResidency {

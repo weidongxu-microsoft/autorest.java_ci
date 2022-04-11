@@ -64,7 +64,7 @@ public final class DataBoxEdgeDeviceInner extends ArmBaseModel {
     /*
      * The kind of the device.
      */
-    @JsonProperty(value = "kind")
+    @JsonProperty(value = "kind", access = JsonProperty.Access.WRITE_ONLY)
     private DataBoxEdgeDeviceKind kind;
 
     /*
@@ -195,17 +195,6 @@ public final class DataBoxEdgeDeviceInner extends ArmBaseModel {
     }
 
     /**
-     * Set the kind property: The kind of the device.
-     *
-     * @param kind the kind value to set.
-     * @return the DataBoxEdgeDeviceInner object itself.
-     */
-    public DataBoxEdgeDeviceInner withKind(DataBoxEdgeDeviceKind kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    /**
      * Get the systemData property: DataBoxEdge Resource.
      *
      * @return the systemData value.
@@ -239,20 +228,6 @@ public final class DataBoxEdgeDeviceInner extends ArmBaseModel {
      */
     public DataBoxEdgeDeviceStatus dataBoxEdgeDeviceStatus() {
         return this.innerProperties() == null ? null : this.innerProperties().dataBoxEdgeDeviceStatus();
-    }
-
-    /**
-     * Set the dataBoxEdgeDeviceStatus property: The status of the Data Box Edge/Gateway device.
-     *
-     * @param dataBoxEdgeDeviceStatus the dataBoxEdgeDeviceStatus value to set.
-     * @return the DataBoxEdgeDeviceInner object itself.
-     */
-    public DataBoxEdgeDeviceInner withDataBoxEdgeDeviceStatus(DataBoxEdgeDeviceStatus dataBoxEdgeDeviceStatus) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new DataBoxEdgeDeviceProperties();
-        }
-        this.innerProperties().withDataBoxEdgeDeviceStatus(dataBoxEdgeDeviceStatus);
-        return this;
     }
 
     /**

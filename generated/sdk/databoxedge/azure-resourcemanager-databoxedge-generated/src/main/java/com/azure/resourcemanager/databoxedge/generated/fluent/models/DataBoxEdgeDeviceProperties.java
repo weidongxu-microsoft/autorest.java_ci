@@ -27,7 +27,7 @@ public final class DataBoxEdgeDeviceProperties {
     /*
      * The status of the Data Box Edge/Gateway device.
      */
-    @JsonProperty(value = "dataBoxEdgeDeviceStatus")
+    @JsonProperty(value = "dataBoxEdgeDeviceStatus", access = JsonProperty.Access.WRITE_ONLY)
     private DataBoxEdgeDeviceStatus dataBoxEdgeDeviceStatus;
 
     /*
@@ -142,17 +142,6 @@ public final class DataBoxEdgeDeviceProperties {
      */
     public DataBoxEdgeDeviceStatus dataBoxEdgeDeviceStatus() {
         return this.dataBoxEdgeDeviceStatus;
-    }
-
-    /**
-     * Set the dataBoxEdgeDeviceStatus property: The status of the Data Box Edge/Gateway device.
-     *
-     * @param dataBoxEdgeDeviceStatus the dataBoxEdgeDeviceStatus value to set.
-     * @return the DataBoxEdgeDeviceProperties object itself.
-     */
-    public DataBoxEdgeDeviceProperties withDataBoxEdgeDeviceStatus(DataBoxEdgeDeviceStatus dataBoxEdgeDeviceStatus) {
-        this.dataBoxEdgeDeviceStatus = dataBoxEdgeDeviceStatus;
-        return this;
     }
 
     /**

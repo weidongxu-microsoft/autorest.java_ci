@@ -368,16 +368,6 @@ public final class DataBoxEdgeDeviceImpl
         }
     }
 
-    public DataBoxEdgeDeviceImpl withKind(DataBoxEdgeDeviceKind kind) {
-        this.innerModel().withKind(kind);
-        return this;
-    }
-
-    public DataBoxEdgeDeviceImpl withDataBoxEdgeDeviceStatus(DataBoxEdgeDeviceStatus dataBoxEdgeDeviceStatus) {
-        this.innerModel().withDataBoxEdgeDeviceStatus(dataBoxEdgeDeviceStatus);
-        return this;
-    }
-
     public DataBoxEdgeDeviceImpl withDataResidency(DataResidency dataResidency) {
         this.innerModel().withDataResidency(dataResidency);
         return this;
