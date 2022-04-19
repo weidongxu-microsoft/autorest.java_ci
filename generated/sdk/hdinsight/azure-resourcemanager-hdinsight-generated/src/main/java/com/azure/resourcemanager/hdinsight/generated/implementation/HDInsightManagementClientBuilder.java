@@ -122,9 +122,6 @@ public final class HDInsightManagementClientBuilder {
      * @return an instance of HDInsightManagementClientImpl.
      */
     public HDInsightManagementClientImpl buildClient() {
-        if (pipeline == null) {
-            this.pipeline = new HttpPipelineBuilder().policies(new UserAgentPolicy(), new RetryPolicy()).build();
-        }
         if (endpoint == null) {
             this.endpoint = "https://management.azure.com";
         }

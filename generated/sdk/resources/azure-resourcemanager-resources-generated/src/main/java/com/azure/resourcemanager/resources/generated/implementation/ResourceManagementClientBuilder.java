@@ -119,9 +119,6 @@ public final class ResourceManagementClientBuilder {
      * @return an instance of ResourceManagementClientImpl.
      */
     public ResourceManagementClientImpl buildClient() {
-        if (pipeline == null) {
-            this.pipeline = new HttpPipelineBuilder().policies(new UserAgentPolicy(), new RetryPolicy()).build();
-        }
         if (endpoint == null) {
             this.endpoint = "https://management.azure.com";
         }

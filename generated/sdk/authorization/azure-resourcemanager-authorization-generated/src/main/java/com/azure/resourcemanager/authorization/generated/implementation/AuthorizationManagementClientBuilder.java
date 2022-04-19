@@ -119,9 +119,6 @@ public final class AuthorizationManagementClientBuilder {
      * @return an instance of AuthorizationManagementClientImpl.
      */
     public AuthorizationManagementClientImpl buildClient() {
-        if (pipeline == null) {
-            this.pipeline = new HttpPipelineBuilder().policies(new UserAgentPolicy(), new RetryPolicy()).build();
-        }
         if (endpoint == null) {
             this.endpoint = "https://management.azure.com";
         }

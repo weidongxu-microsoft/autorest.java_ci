@@ -103,9 +103,6 @@ public final class CostManagementClientBuilder {
      * @return an instance of CostManagementClientImpl.
      */
     public CostManagementClientImpl buildClient() {
-        if (pipeline == null) {
-            this.pipeline = new HttpPipelineBuilder().policies(new UserAgentPolicy(), new RetryPolicy()).build();
-        }
         if (endpoint == null) {
             this.endpoint = "https://management.azure.com";
         }

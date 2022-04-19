@@ -119,9 +119,6 @@ public final class DataBoxEdgeManagementClientBuilder {
      * @return an instance of DataBoxEdgeManagementClientImpl.
      */
     public DataBoxEdgeManagementClientImpl buildClient() {
-        if (pipeline == null) {
-            this.pipeline = new HttpPipelineBuilder().policies(new UserAgentPolicy(), new RetryPolicy()).build();
-        }
         if (endpoint == null) {
             this.endpoint = "https://management.azure.com";
         }

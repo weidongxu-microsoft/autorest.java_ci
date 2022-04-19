@@ -122,9 +122,6 @@ public final class EventGridManagementClientBuilder {
      * @return an instance of EventGridManagementClientImpl.
      */
     public EventGridManagementClientImpl buildClient() {
-        if (pipeline == null) {
-            this.pipeline = new HttpPipelineBuilder().policies(new UserAgentPolicy(), new RetryPolicy()).build();
-        }
         if (endpoint == null) {
             this.endpoint = "https://management.azure.com";
         }

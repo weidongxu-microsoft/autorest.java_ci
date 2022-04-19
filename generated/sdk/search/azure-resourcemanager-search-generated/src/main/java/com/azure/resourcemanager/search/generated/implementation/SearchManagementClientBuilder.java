@@ -121,9 +121,6 @@ public final class SearchManagementClientBuilder {
      * @return an instance of SearchManagementClientImpl.
      */
     public SearchManagementClientImpl buildClient() {
-        if (pipeline == null) {
-            this.pipeline = new HttpPipelineBuilder().policies(new UserAgentPolicy(), new RetryPolicy()).build();
-        }
         if (endpoint == null) {
             this.endpoint = "https://management.azure.com";
         }
