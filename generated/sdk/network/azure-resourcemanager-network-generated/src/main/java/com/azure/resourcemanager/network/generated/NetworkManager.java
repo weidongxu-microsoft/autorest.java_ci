@@ -37,6 +37,7 @@ import com.azure.resourcemanager.network.generated.implementation.AzureFirewallF
 import com.azure.resourcemanager.network.generated.implementation.AzureFirewallsImpl;
 import com.azure.resourcemanager.network.generated.implementation.BastionHostsImpl;
 import com.azure.resourcemanager.network.generated.implementation.BgpServiceCommunitiesImpl;
+import com.azure.resourcemanager.network.generated.implementation.ConfigurationPolicyGroupsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ConnectionMonitorsImpl;
 import com.azure.resourcemanager.network.generated.implementation.CustomIpPrefixesImpl;
 import com.azure.resourcemanager.network.generated.implementation.DdosCustomPoliciesImpl;
@@ -52,6 +53,7 @@ import com.azure.resourcemanager.network.generated.implementation.ExpressRouteCr
 import com.azure.resourcemanager.network.generated.implementation.ExpressRouteCrossConnectionsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRouteGatewaysImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRouteLinksImpl;
+import com.azure.resourcemanager.network.generated.implementation.ExpressRoutePortAuthorizationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRoutePortsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRoutePortsLocationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRouteServiceProvidersImpl;
@@ -150,6 +152,7 @@ import com.azure.resourcemanager.network.generated.models.AzureFirewallFqdnTags;
 import com.azure.resourcemanager.network.generated.models.AzureFirewalls;
 import com.azure.resourcemanager.network.generated.models.BastionHosts;
 import com.azure.resourcemanager.network.generated.models.BgpServiceCommunities;
+import com.azure.resourcemanager.network.generated.models.ConfigurationPolicyGroups;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitors;
 import com.azure.resourcemanager.network.generated.models.CustomIpPrefixes;
 import com.azure.resourcemanager.network.generated.models.DdosCustomPolicies;
@@ -165,6 +168,7 @@ import com.azure.resourcemanager.network.generated.models.ExpressRouteCrossConne
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCrossConnections;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteGateways;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteLinks;
+import com.azure.resourcemanager.network.generated.models.ExpressRoutePortAuthorizations;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePorts;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePortsLocations;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteServiceProviders;
@@ -318,6 +322,8 @@ public final class NetworkManager {
 
     private ExpressRouteLinks expressRouteLinks;
 
+    private ExpressRoutePortAuthorizations expressRoutePortAuthorizations;
+
     private FirewallPolicies firewallPolicies;
 
     private FirewallPolicyRuleCollectionGroups firewallPolicyRuleCollectionGroups;
@@ -447,6 +453,8 @@ public final class NetworkManager {
     private VpnSitesConfigurations vpnSitesConfigurations;
 
     private VpnServerConfigurations vpnServerConfigurations;
+
+    private ConfigurationPolicyGroups configurationPolicyGroups;
 
     private VirtualHubs virtualHubs;
 
@@ -959,6 +967,15 @@ public final class NetworkManager {
             this.expressRouteLinks = new ExpressRouteLinksImpl(clientObject.getExpressRouteLinks(), this);
         }
         return expressRouteLinks;
+    }
+
+    /** @return Resource collection API of ExpressRoutePortAuthorizations. */
+    public ExpressRoutePortAuthorizations expressRoutePortAuthorizations() {
+        if (this.expressRoutePortAuthorizations == null) {
+            this.expressRoutePortAuthorizations =
+                new ExpressRoutePortAuthorizationsImpl(clientObject.getExpressRoutePortAuthorizations(), this);
+        }
+        return expressRoutePortAuthorizations;
     }
 
     /** @return Resource collection API of FirewallPolicies. */
@@ -1509,6 +1526,15 @@ public final class NetworkManager {
                 new VpnServerConfigurationsImpl(clientObject.getVpnServerConfigurations(), this);
         }
         return vpnServerConfigurations;
+    }
+
+    /** @return Resource collection API of ConfigurationPolicyGroups. */
+    public ConfigurationPolicyGroups configurationPolicyGroups() {
+        if (this.configurationPolicyGroups == null) {
+            this.configurationPolicyGroups =
+                new ConfigurationPolicyGroupsImpl(clientObject.getConfigurationPolicyGroups(), this);
+        }
+        return configurationPolicyGroups;
     }
 
     /** @return Resource collection API of VirtualHubs. */

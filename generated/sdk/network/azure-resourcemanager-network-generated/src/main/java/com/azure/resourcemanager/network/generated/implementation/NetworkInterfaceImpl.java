@@ -17,6 +17,7 @@ import com.azure.resourcemanager.network.generated.models.EffectiveNetworkSecuri
 import com.azure.resourcemanager.network.generated.models.EffectiveRouteListResult;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.NetworkInterface;
+import com.azure.resourcemanager.network.generated.models.NetworkInterfaceAuxiliaryMode;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceDnsSettings;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceMigrationPhase;
@@ -185,6 +186,10 @@ public final class NetworkInterfaceImpl
 
     public NetworkInterfaceMigrationPhase migrationPhase() {
         return this.innerModel().migrationPhase();
+    }
+
+    public NetworkInterfaceAuxiliaryMode auxiliaryMode() {
+        return this.innerModel().auxiliaryMode();
     }
 
     public Region region() {
@@ -382,6 +387,11 @@ public final class NetworkInterfaceImpl
 
     public NetworkInterfaceImpl withMigrationPhase(NetworkInterfaceMigrationPhase migrationPhase) {
         this.innerModel().withMigrationPhase(migrationPhase);
+        return this;
+    }
+
+    public NetworkInterfaceImpl withAuxiliaryMode(NetworkInterfaceAuxiliaryMode auxiliaryMode) {
+        this.innerModel().withAuxiliaryMode(auxiliaryMode);
         return this;
     }
 

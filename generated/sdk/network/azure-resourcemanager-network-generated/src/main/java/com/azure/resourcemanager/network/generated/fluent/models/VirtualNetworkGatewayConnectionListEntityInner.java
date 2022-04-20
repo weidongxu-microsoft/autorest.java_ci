@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.network.generated.models.GatewayCustomBgpIpAddressIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.IpsecPolicy;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TrafficSelectorPolicy;
@@ -387,6 +388,32 @@ public final class VirtualNetworkGatewayConnectionListEntityInner extends Resour
             this.innerProperties = new VirtualNetworkGatewayConnectionListEntityPropertiesFormat();
         }
         this.innerProperties().withEnableBgp(enableBgp);
+        return this;
+    }
+
+    /**
+     * Get the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway
+     * Connection.
+     *
+     * @return the gatewayCustomBgpIpAddresses value.
+     */
+    public List<GatewayCustomBgpIpAddressIpConfiguration> gatewayCustomBgpIpAddresses() {
+        return this.innerProperties() == null ? null : this.innerProperties().gatewayCustomBgpIpAddresses();
+    }
+
+    /**
+     * Set the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway
+     * Connection.
+     *
+     * @param gatewayCustomBgpIpAddresses the gatewayCustomBgpIpAddresses value to set.
+     * @return the VirtualNetworkGatewayConnectionListEntityInner object itself.
+     */
+    public VirtualNetworkGatewayConnectionListEntityInner withGatewayCustomBgpIpAddresses(
+        List<GatewayCustomBgpIpAddressIpConfiguration> gatewayCustomBgpIpAddresses) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new VirtualNetworkGatewayConnectionListEntityPropertiesFormat();
+        }
+        this.innerProperties().withGatewayCustomBgpIpAddresses(gatewayCustomBgpIpAddresses);
         return this;
     }
 

@@ -8,6 +8,7 @@ import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.P2SVpnGatewayInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationInner;
+import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationPolicyGroupInner;
 import com.azure.resourcemanager.network.generated.models.AadAuthenticationParameters;
 import com.azure.resourcemanager.network.generated.models.IpsecPolicy;
 import com.azure.resourcemanager.network.generated.models.P2SVpnGateway;
@@ -20,6 +21,7 @@ import com.azure.resourcemanager.network.generated.models.VpnServerConfigRadiusS
 import com.azure.resourcemanager.network.generated.models.VpnServerConfigVpnClientRevokedCertificate;
 import com.azure.resourcemanager.network.generated.models.VpnServerConfigVpnClientRootCertificate;
 import com.azure.resourcemanager.network.generated.models.VpnServerConfiguration;
+import com.azure.resourcemanager.network.generated.models.VpnServerConfigurationPolicyGroup;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -160,6 +162,20 @@ public final class VpnServerConfigurationImpl
                     inner
                         .stream()
                         .map(inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<VpnServerConfigurationPolicyGroup> configurationPolicyGroups() {
+        List<VpnServerConfigurationPolicyGroupInner> inner = this.innerModel().configurationPolicyGroups();
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new VpnServerConfigurationPolicyGroupImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
@@ -359,6 +375,12 @@ public final class VpnServerConfigurationImpl
     public VpnServerConfigurationImpl withAadAuthenticationParameters(
         AadAuthenticationParameters aadAuthenticationParameters) {
         this.innerModel().withAadAuthenticationParameters(aadAuthenticationParameters);
+        return this;
+    }
+
+    public VpnServerConfigurationImpl withConfigurationPolicyGroups(
+        List<VpnServerConfigurationPolicyGroupInner> configurationPolicyGroups) {
+        this.innerModel().withConfigurationPolicyGroups(configurationPolicyGroups);
         return this;
     }
 

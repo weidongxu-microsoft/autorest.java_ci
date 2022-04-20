@@ -184,6 +184,14 @@ public interface VirtualNetworkGatewayConnection {
     Boolean enableBgp();
 
     /**
+     * Gets the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway
+     * Connection.
+     *
+     * @return the gatewayCustomBgpIpAddresses value.
+     */
+    List<GatewayCustomBgpIpAddressIpConfiguration> gatewayCustomBgpIpAddresses();
+
+    /**
      * Gets the useLocalAzureIpAddress property: Use private local Azure IP for the connection.
      *
      * @return the useLocalAzureIpAddress value.
@@ -334,6 +342,7 @@ public interface VirtualNetworkGatewayConnection {
                 DefinitionStages.WithSharedKey,
                 DefinitionStages.WithPeer,
                 DefinitionStages.WithEnableBgp,
+                DefinitionStages.WithGatewayCustomBgpIpAddresses,
                 DefinitionStages.WithUseLocalAzureIpAddress,
                 DefinitionStages.WithUsePolicyBasedTrafficSelectors,
                 DefinitionStages.WithIpsecPolicies,
@@ -483,6 +492,21 @@ public interface VirtualNetworkGatewayConnection {
              * @return the next definition stage.
              */
             WithCreate withEnableBgp(Boolean enableBgp);
+        }
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify gatewayCustomBgpIpAddresses.
+         */
+        interface WithGatewayCustomBgpIpAddresses {
+            /**
+             * Specifies the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual
+             * network gateway Connection..
+             *
+             * @param gatewayCustomBgpIpAddresses GatewayCustomBgpIpAddresses to be used for virtual network gateway
+             *     Connection.
+             * @return the next definition stage.
+             */
+            WithCreate withGatewayCustomBgpIpAddresses(
+                List<GatewayCustomBgpIpAddressIpConfiguration> gatewayCustomBgpIpAddresses);
         }
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify useLocalAzureIpAddress. */
         interface WithUseLocalAzureIpAddress {

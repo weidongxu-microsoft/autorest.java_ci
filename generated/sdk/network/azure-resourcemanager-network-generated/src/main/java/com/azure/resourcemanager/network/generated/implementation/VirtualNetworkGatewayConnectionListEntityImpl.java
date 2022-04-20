@@ -6,6 +6,7 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayConnectionListEntityInner;
+import com.azure.resourcemanager.network.generated.models.GatewayCustomBgpIpAddressIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.IpsecPolicy;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TrafficSelectorPolicy;
@@ -124,6 +125,15 @@ public final class VirtualNetworkGatewayConnectionListEntityImpl implements Virt
 
     public Boolean enableBgp() {
         return this.innerModel().enableBgp();
+    }
+
+    public List<GatewayCustomBgpIpAddressIpConfiguration> gatewayCustomBgpIpAddresses() {
+        List<GatewayCustomBgpIpAddressIpConfiguration> inner = this.innerModel().gatewayCustomBgpIpAddresses();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Boolean usePolicyBasedTrafficSelectors() {

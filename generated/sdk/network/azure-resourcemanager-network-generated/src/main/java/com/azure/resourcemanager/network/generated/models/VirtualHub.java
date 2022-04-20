@@ -199,6 +199,13 @@ public interface VirtualHub {
     PreferredRoutingGateway preferredRoutingGateway();
 
     /**
+     * Gets the hubRoutingPreference property: The hubRoutingPreference of this VirtualHub.
+     *
+     * @return the hubRoutingPreference value.
+     */
+    HubRoutingPreference hubRoutingPreference();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -279,7 +286,8 @@ public interface VirtualHub {
                 DefinitionStages.WithVirtualRouterAsn,
                 DefinitionStages.WithVirtualRouterIps,
                 DefinitionStages.WithAllowBranchToBranchTraffic,
-                DefinitionStages.WithPreferredRoutingGateway {
+                DefinitionStages.WithPreferredRoutingGateway,
+                DefinitionStages.WithHubRoutingPreference {
             /**
              * Executes the create request.
              *
@@ -456,6 +464,16 @@ public interface VirtualHub {
              * @return the next definition stage.
              */
             WithCreate withPreferredRoutingGateway(PreferredRoutingGateway preferredRoutingGateway);
+        }
+        /** The stage of the VirtualHub definition allowing to specify hubRoutingPreference. */
+        interface WithHubRoutingPreference {
+            /**
+             * Specifies the hubRoutingPreference property: The hubRoutingPreference of this VirtualHub..
+             *
+             * @param hubRoutingPreference The hubRoutingPreference of this VirtualHub.
+             * @return the next definition stage.
+             */
+            WithCreate withHubRoutingPreference(HubRoutingPreference hubRoutingPreference);
         }
     }
     /**

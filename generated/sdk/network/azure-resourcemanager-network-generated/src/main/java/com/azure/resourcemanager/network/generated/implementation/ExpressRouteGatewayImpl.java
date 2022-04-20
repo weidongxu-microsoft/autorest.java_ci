@@ -210,6 +210,12 @@ public final class ExpressRouteGatewayImpl
         return this;
     }
 
+    public ExpressRouteGatewayImpl withExpressRouteConnections(
+        List<ExpressRouteConnectionInner> expressRouteConnections) {
+        this.innerModel().withExpressRouteConnections(expressRouteConnections);
+        return this;
+    }
+
     public ExpressRouteGatewayImpl withVirtualHub(VirtualHubId virtualHub) {
         this.innerModel().withVirtualHub(virtualHub);
         return this;

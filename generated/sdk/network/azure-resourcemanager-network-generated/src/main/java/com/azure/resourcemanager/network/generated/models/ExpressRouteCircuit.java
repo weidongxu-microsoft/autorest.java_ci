@@ -165,6 +165,13 @@ public interface ExpressRouteCircuit {
     Boolean globalReachEnabled();
 
     /**
+     * Gets the authorizationKey property: The authorizationKey.
+     *
+     * @return the authorizationKey value.
+     */
+    String authorizationKey();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -243,7 +250,8 @@ public interface ExpressRouteCircuit {
                 DefinitionStages.WithExpressRoutePort,
                 DefinitionStages.WithBandwidthInGbps,
                 DefinitionStages.WithGatewayManagerEtag,
-                DefinitionStages.WithGlobalReachEnabled {
+                DefinitionStages.WithGlobalReachEnabled,
+                DefinitionStages.WithAuthorizationKey {
             /**
              * Executes the create request.
              *
@@ -405,6 +413,16 @@ public interface ExpressRouteCircuit {
              * @return the next definition stage.
              */
             WithCreate withGlobalReachEnabled(Boolean globalReachEnabled);
+        }
+        /** The stage of the ExpressRouteCircuit definition allowing to specify authorizationKey. */
+        interface WithAuthorizationKey {
+            /**
+             * Specifies the authorizationKey property: The authorizationKey..
+             *
+             * @param authorizationKey The authorizationKey.
+             * @return the next definition stage.
+             */
+            WithCreate withAuthorizationKey(String authorizationKey);
         }
     }
     /**

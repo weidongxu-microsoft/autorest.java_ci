@@ -201,6 +201,13 @@ public interface NetworkInterface {
     NetworkInterfaceMigrationPhase migrationPhase();
 
     /**
+     * Gets the auxiliaryMode property: Auxiliary mode of Network Interface resource.
+     *
+     * @return the auxiliaryMode value.
+     */
+    NetworkInterfaceAuxiliaryMode auxiliaryMode();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -276,7 +283,8 @@ public interface NetworkInterface {
                 DefinitionStages.WithWorkloadType,
                 DefinitionStages.WithNicType,
                 DefinitionStages.WithPrivateLinkService,
-                DefinitionStages.WithMigrationPhase {
+                DefinitionStages.WithMigrationPhase,
+                DefinitionStages.WithAuxiliaryMode {
             /**
              * Executes the create request.
              *
@@ -403,6 +411,16 @@ public interface NetworkInterface {
              * @return the next definition stage.
              */
             WithCreate withMigrationPhase(NetworkInterfaceMigrationPhase migrationPhase);
+        }
+        /** The stage of the NetworkInterface definition allowing to specify auxiliaryMode. */
+        interface WithAuxiliaryMode {
+            /**
+             * Specifies the auxiliaryMode property: Auxiliary mode of Network Interface resource..
+             *
+             * @param auxiliaryMode Auxiliary mode of Network Interface resource.
+             * @return the next definition stage.
+             */
+            WithCreate withAuxiliaryMode(NetworkInterfaceAuxiliaryMode auxiliaryMode);
         }
     }
     /**

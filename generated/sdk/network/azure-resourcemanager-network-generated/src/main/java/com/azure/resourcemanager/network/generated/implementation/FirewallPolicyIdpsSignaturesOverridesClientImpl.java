@@ -14,6 +14,7 @@ import com.azure.core.annotation.HostParam;
 import com.azure.core.annotation.Patch;
 import com.azure.core.annotation.PathParam;
 import com.azure.core.annotation.Put;
+import com.azure.core.annotation.QueryParam;
 import com.azure.core.annotation.ReturnType;
 import com.azure.core.annotation.ServiceInterface;
 import com.azure.core.annotation.ServiceMethod;
@@ -73,6 +74,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("firewallPolicyName") String firewallPolicyName,
             @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") SignaturesOverridesInner parameters,
             @HeaderParam("Accept") String accept,
             Context context);
@@ -88,6 +90,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("firewallPolicyName") String firewallPolicyName,
             @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") SignaturesOverridesInner parameters,
             @HeaderParam("Accept") String accept,
             Context context);
@@ -103,6 +106,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("firewallPolicyName") String firewallPolicyName,
             @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -117,6 +121,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("firewallPolicyName") String firewallPolicyName,
             @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
             @HeaderParam("Accept") String accept,
             Context context);
     }
@@ -161,6 +166,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -171,6 +177,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                             resourceGroupName,
                             firewallPolicyName,
                             this.client.getSubscriptionId(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -218,6 +225,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -226,6 +234,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                 resourceGroupName,
                 firewallPolicyName,
                 this.client.getSubscriptionId(),
+                apiVersion,
                 parameters,
                 accept,
                 context);
@@ -331,6 +340,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -341,6 +351,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                             resourceGroupName,
                             firewallPolicyName,
                             this.client.getSubscriptionId(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -388,6 +399,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -396,6 +408,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                 resourceGroupName,
                 firewallPolicyName,
                 this.client.getSubscriptionId(),
+                apiVersion,
                 parameters,
                 accept,
                 context);
@@ -495,6 +508,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -505,6 +519,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                             resourceGroupName,
                             firewallPolicyName,
                             this.client.getSubscriptionId(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -545,6 +560,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -553,6 +569,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                 resourceGroupName,
                 firewallPolicyName,
                 this.client.getSubscriptionId(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -646,6 +663,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -656,6 +674,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                             resourceGroupName,
                             firewallPolicyName,
                             this.client.getSubscriptionId(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -696,6 +715,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -704,6 +724,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                 resourceGroupName,
                 firewallPolicyName,
                 this.client.getSubscriptionId(),
+                apiVersion,
                 accept,
                 context);
     }

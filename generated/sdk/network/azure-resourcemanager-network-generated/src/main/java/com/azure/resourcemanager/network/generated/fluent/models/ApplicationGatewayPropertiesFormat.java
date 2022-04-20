@@ -10,12 +10,14 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAuth
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAutoscaleConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendAddressPool;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHttpSettings;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendSettings;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayCustomError;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayFrontendIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayFrontendPort;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayGlobalConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayHttpListener;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayIpConfiguration;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayListener;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayLoadDistributionPolicy;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayOperationalState;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateLinkConfiguration;
@@ -23,6 +25,7 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayProb
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRedirectConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRequestRoutingRule;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRewriteRuleSet;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRoutingRule;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySku;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslCertificate;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslPolicy;
@@ -135,12 +138,28 @@ public final class ApplicationGatewayPropertiesFormat {
     private List<ApplicationGatewayBackendHttpSettings> backendHttpSettingsCollection;
 
     /*
+     * Backend settings of the application gateway resource. For default
+     * limits, see [Application Gateway
+     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     */
+    @JsonProperty(value = "backendSettingsCollection")
+    private List<ApplicationGatewayBackendSettings> backendSettingsCollection;
+
+    /*
      * Http listeners of the application gateway resource. For default limits,
      * see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "httpListeners")
     private List<ApplicationGatewayHttpListener> httpListeners;
+
+    /*
+     * Listeners of the application gateway resource. For default limits, see
+     * [Application Gateway
+     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     */
+    @JsonProperty(value = "listeners")
+    private List<ApplicationGatewayListener> listeners;
 
     /*
      * SSL profiles of the application gateway resource. For default limits,
@@ -163,6 +182,12 @@ public final class ApplicationGatewayPropertiesFormat {
      */
     @JsonProperty(value = "requestRoutingRules")
     private List<ApplicationGatewayRequestRoutingRule> requestRoutingRules;
+
+    /*
+     * Routing rules of the application gateway resource.
+     */
+    @JsonProperty(value = "routingRules")
+    private List<ApplicationGatewayRoutingRule> routingRules;
 
     /*
      * Rewrite rules for the application gateway resource.
@@ -551,6 +576,31 @@ public final class ApplicationGatewayPropertiesFormat {
     }
 
     /**
+     * Get the backendSettingsCollection property: Backend settings of the application gateway resource. For default
+     * limits, see [Application Gateway
+     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     *
+     * @return the backendSettingsCollection value.
+     */
+    public List<ApplicationGatewayBackendSettings> backendSettingsCollection() {
+        return this.backendSettingsCollection;
+    }
+
+    /**
+     * Set the backendSettingsCollection property: Backend settings of the application gateway resource. For default
+     * limits, see [Application Gateway
+     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     *
+     * @param backendSettingsCollection the backendSettingsCollection value to set.
+     * @return the ApplicationGatewayPropertiesFormat object itself.
+     */
+    public ApplicationGatewayPropertiesFormat withBackendSettingsCollection(
+        List<ApplicationGatewayBackendSettings> backendSettingsCollection) {
+        this.backendSettingsCollection = backendSettingsCollection;
+        return this;
+    }
+
+    /**
      * Get the httpListeners property: Http listeners of the application gateway resource. For default limits, see
      * [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
@@ -571,6 +621,28 @@ public final class ApplicationGatewayPropertiesFormat {
      */
     public ApplicationGatewayPropertiesFormat withHttpListeners(List<ApplicationGatewayHttpListener> httpListeners) {
         this.httpListeners = httpListeners;
+        return this;
+    }
+
+    /**
+     * Get the listeners property: Listeners of the application gateway resource. For default limits, see [Application
+     * Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     *
+     * @return the listeners value.
+     */
+    public List<ApplicationGatewayListener> listeners() {
+        return this.listeners;
+    }
+
+    /**
+     * Set the listeners property: Listeners of the application gateway resource. For default limits, see [Application
+     * Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     *
+     * @param listeners the listeners value to set.
+     * @return the ApplicationGatewayPropertiesFormat object itself.
+     */
+    public ApplicationGatewayPropertiesFormat withListeners(List<ApplicationGatewayListener> listeners) {
+        this.listeners = listeners;
         return this;
     }
 
@@ -640,6 +712,26 @@ public final class ApplicationGatewayPropertiesFormat {
     public ApplicationGatewayPropertiesFormat withRequestRoutingRules(
         List<ApplicationGatewayRequestRoutingRule> requestRoutingRules) {
         this.requestRoutingRules = requestRoutingRules;
+        return this;
+    }
+
+    /**
+     * Get the routingRules property: Routing rules of the application gateway resource.
+     *
+     * @return the routingRules value.
+     */
+    public List<ApplicationGatewayRoutingRule> routingRules() {
+        return this.routingRules;
+    }
+
+    /**
+     * Set the routingRules property: Routing rules of the application gateway resource.
+     *
+     * @param routingRules the routingRules value to set.
+     * @return the ApplicationGatewayPropertiesFormat object itself.
+     */
+    public ApplicationGatewayPropertiesFormat withRoutingRules(List<ApplicationGatewayRoutingRule> routingRules) {
+        this.routingRules = routingRules;
         return this;
     }
 
@@ -967,8 +1059,14 @@ public final class ApplicationGatewayPropertiesFormat {
         if (backendHttpSettingsCollection() != null) {
             backendHttpSettingsCollection().forEach(e -> e.validate());
         }
+        if (backendSettingsCollection() != null) {
+            backendSettingsCollection().forEach(e -> e.validate());
+        }
         if (httpListeners() != null) {
             httpListeners().forEach(e -> e.validate());
+        }
+        if (listeners() != null) {
+            listeners().forEach(e -> e.validate());
         }
         if (sslProfiles() != null) {
             sslProfiles().forEach(e -> e.validate());
@@ -978,6 +1076,9 @@ public final class ApplicationGatewayPropertiesFormat {
         }
         if (requestRoutingRules() != null) {
             requestRoutingRules().forEach(e -> e.validate());
+        }
+        if (routingRules() != null) {
+            routingRules().forEach(e -> e.validate());
         }
         if (rewriteRuleSets() != null) {
             rewriteRuleSets().forEach(e -> e.validate());

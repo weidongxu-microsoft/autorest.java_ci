@@ -6,6 +6,7 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkConnectionInner;
+import com.azure.resourcemanager.network.generated.models.GatewayCustomBgpIpAddressIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.IpsecPolicy;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionProtocol;
@@ -81,6 +82,15 @@ public final class VpnSiteLinkConnectionImpl implements VpnSiteLinkConnection {
 
     public Boolean enableBgp() {
         return this.innerModel().enableBgp();
+    }
+
+    public List<GatewayCustomBgpIpAddressIpConfiguration> vpnGatewayCustomBgpAddresses() {
+        List<GatewayCustomBgpIpAddressIpConfiguration> inner = this.innerModel().vpnGatewayCustomBgpAddresses();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Boolean usePolicyBasedTrafficSelectors() {

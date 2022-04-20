@@ -137,6 +137,14 @@ public interface VirtualNetworkGatewayConnectionPropertiesFormat {
     Boolean enableBgp();
 
     /**
+     * Gets the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway
+     * Connection.
+     *
+     * @return the gatewayCustomBgpIpAddresses value.
+     */
+    List<GatewayCustomBgpIpAddressIpConfiguration> gatewayCustomBgpIpAddresses();
+
+    /**
      * Gets the useLocalAzureIpAddress property: Use private local Azure IP for the connection.
      *
      * @return the useLocalAzureIpAddress value.

@@ -16,12 +16,14 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBack
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHealth;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHealthOnDemand;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHttpSettings;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendSettings;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayCustomError;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayFrontendIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayFrontendPort;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayGlobalConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayHttpListener;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayIpConfiguration;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayListener;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayLoadDistributionPolicy;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayOnDemandProbe;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayOperationalState;
@@ -31,6 +33,7 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayProb
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRedirectConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRequestRoutingRule;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRewriteRuleSet;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRoutingRule;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySku;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslCertificate;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslPolicy;
@@ -197,8 +200,26 @@ public final class ApplicationGatewayImpl
         }
     }
 
+    public List<ApplicationGatewayBackendSettings> backendSettingsCollection() {
+        List<ApplicationGatewayBackendSettings> inner = this.innerModel().backendSettingsCollection();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public List<ApplicationGatewayHttpListener> httpListeners() {
         List<ApplicationGatewayHttpListener> inner = this.innerModel().httpListeners();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<ApplicationGatewayListener> listeners() {
+        List<ApplicationGatewayListener> inner = this.innerModel().listeners();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
@@ -226,6 +247,15 @@ public final class ApplicationGatewayImpl
 
     public List<ApplicationGatewayRequestRoutingRule> requestRoutingRules() {
         List<ApplicationGatewayRequestRoutingRule> inner = this.innerModel().requestRoutingRules();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<ApplicationGatewayRoutingRule> routingRules() {
+        List<ApplicationGatewayRoutingRule> inner = this.innerModel().routingRules();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
@@ -580,8 +610,19 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
+    public ApplicationGatewayImpl withBackendSettingsCollection(
+        List<ApplicationGatewayBackendSettings> backendSettingsCollection) {
+        this.innerModel().withBackendSettingsCollection(backendSettingsCollection);
+        return this;
+    }
+
     public ApplicationGatewayImpl withHttpListeners(List<ApplicationGatewayHttpListener> httpListeners) {
         this.innerModel().withHttpListeners(httpListeners);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withListeners(List<ApplicationGatewayListener> listeners) {
+        this.innerModel().withListeners(listeners);
         return this;
     }
 
@@ -598,6 +639,11 @@ public final class ApplicationGatewayImpl
     public ApplicationGatewayImpl withRequestRoutingRules(
         List<ApplicationGatewayRequestRoutingRule> requestRoutingRules) {
         this.innerModel().withRequestRoutingRules(requestRoutingRules);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withRoutingRules(List<ApplicationGatewayRoutingRule> routingRules) {
+        this.innerModel().withRoutingRules(routingRules);
         return this;
     }
 

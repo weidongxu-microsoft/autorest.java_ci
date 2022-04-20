@@ -146,6 +146,13 @@ public interface NetworkInterfacePropertiesFormat {
     NetworkInterfaceMigrationPhase migrationPhase();
 
     /**
+     * Gets the auxiliaryMode property: Auxiliary mode of Network Interface resource.
+     *
+     * @return the auxiliaryMode value.
+     */
+    NetworkInterfaceAuxiliaryMode auxiliaryMode();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfacePropertiesFormatInner
      * object.
      *

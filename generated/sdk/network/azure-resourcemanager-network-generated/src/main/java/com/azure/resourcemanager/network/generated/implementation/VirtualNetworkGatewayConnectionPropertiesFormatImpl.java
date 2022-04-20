@@ -8,6 +8,7 @@ import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.LocalNetworkGatewayInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayConnectionPropertiesFormatInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayInner;
+import com.azure.resourcemanager.network.generated.models.GatewayCustomBgpIpAddressIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.IpsecPolicy;
 import com.azure.resourcemanager.network.generated.models.LocalNetworkGateway;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -135,6 +136,15 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatImpl
 
     public Boolean enableBgp() {
         return this.innerModel().enableBgp();
+    }
+
+    public List<GatewayCustomBgpIpAddressIpConfiguration> gatewayCustomBgpIpAddresses() {
+        List<GatewayCustomBgpIpAddressIpConfiguration> inner = this.innerModel().gatewayCustomBgpIpAddresses();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Boolean useLocalAzureIpAddress() {

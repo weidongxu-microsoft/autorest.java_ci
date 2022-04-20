@@ -179,6 +179,15 @@ public interface ApplicationGateway {
     List<ApplicationGatewayBackendHttpSettings> backendHttpSettingsCollection();
 
     /**
+     * Gets the backendSettingsCollection property: Backend settings of the application gateway resource. For default
+     * limits, see [Application Gateway
+     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     *
+     * @return the backendSettingsCollection value.
+     */
+    List<ApplicationGatewayBackendSettings> backendSettingsCollection();
+
+    /**
      * Gets the httpListeners property: Http listeners of the application gateway resource. For default limits, see
      * [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
@@ -186,6 +195,14 @@ public interface ApplicationGateway {
      * @return the httpListeners value.
      */
     List<ApplicationGatewayHttpListener> httpListeners();
+
+    /**
+     * Gets the listeners property: Listeners of the application gateway resource. For default limits, see [Application
+     * Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     *
+     * @return the listeners value.
+     */
+    List<ApplicationGatewayListener> listeners();
 
     /**
      * Gets the sslProfiles property: SSL profiles of the application gateway resource. For default limits, see
@@ -211,6 +228,13 @@ public interface ApplicationGateway {
      * @return the requestRoutingRules value.
      */
     List<ApplicationGatewayRequestRoutingRule> requestRoutingRules();
+
+    /**
+     * Gets the routingRules property: Routing rules of the application gateway resource.
+     *
+     * @return the routingRules value.
+     */
+    List<ApplicationGatewayRoutingRule> routingRules();
 
     /**
      * Gets the rewriteRuleSets property: Rewrite rules for the application gateway resource.
@@ -401,10 +425,13 @@ public interface ApplicationGateway {
                 DefinitionStages.WithProbes,
                 DefinitionStages.WithBackendAddressPools,
                 DefinitionStages.WithBackendHttpSettingsCollection,
+                DefinitionStages.WithBackendSettingsCollection,
                 DefinitionStages.WithHttpListeners,
+                DefinitionStages.WithListeners,
                 DefinitionStages.WithSslProfiles,
                 DefinitionStages.WithUrlPathMaps,
                 DefinitionStages.WithRequestRoutingRules,
+                DefinitionStages.WithRoutingRules,
                 DefinitionStages.WithRewriteRuleSets,
                 DefinitionStages.WithRedirectConfigurations,
                 DefinitionStages.WithWebApplicationFirewallConfiguration,
@@ -624,6 +651,20 @@ public interface ApplicationGateway {
             WithCreate withBackendHttpSettingsCollection(
                 List<ApplicationGatewayBackendHttpSettings> backendHttpSettingsCollection);
         }
+        /** The stage of the ApplicationGateway definition allowing to specify backendSettingsCollection. */
+        interface WithBackendSettingsCollection {
+            /**
+             * Specifies the backendSettingsCollection property: Backend settings of the application gateway resource.
+             * For default limits, see [Application Gateway
+             * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits)..
+             *
+             * @param backendSettingsCollection Backend settings of the application gateway resource. For default
+             *     limits, see [Application Gateway
+             *     limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+             * @return the next definition stage.
+             */
+            WithCreate withBackendSettingsCollection(List<ApplicationGatewayBackendSettings> backendSettingsCollection);
+        }
         /** The stage of the ApplicationGateway definition allowing to specify httpListeners. */
         interface WithHttpListeners {
             /**
@@ -637,6 +678,20 @@ public interface ApplicationGateway {
              * @return the next definition stage.
              */
             WithCreate withHttpListeners(List<ApplicationGatewayHttpListener> httpListeners);
+        }
+        /** The stage of the ApplicationGateway definition allowing to specify listeners. */
+        interface WithListeners {
+            /**
+             * Specifies the listeners property: Listeners of the application gateway resource. For default limits, see
+             * [Application Gateway
+             * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits)..
+             *
+             * @param listeners Listeners of the application gateway resource. For default limits, see [Application
+             *     Gateway
+             *     limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+             * @return the next definition stage.
+             */
+            WithCreate withListeners(List<ApplicationGatewayListener> listeners);
         }
         /** The stage of the ApplicationGateway definition allowing to specify sslProfiles. */
         interface WithSslProfiles {
@@ -675,6 +730,16 @@ public interface ApplicationGateway {
              * @return the next definition stage.
              */
             WithCreate withRequestRoutingRules(List<ApplicationGatewayRequestRoutingRule> requestRoutingRules);
+        }
+        /** The stage of the ApplicationGateway definition allowing to specify routingRules. */
+        interface WithRoutingRules {
+            /**
+             * Specifies the routingRules property: Routing rules of the application gateway resource..
+             *
+             * @param routingRules Routing rules of the application gateway resource.
+             * @return the next definition stage.
+             */
+            WithCreate withRoutingRules(List<ApplicationGatewayRoutingRule> routingRules);
         }
         /** The stage of the ApplicationGateway definition allowing to specify rewriteRuleSets. */
         interface WithRewriteRuleSets {

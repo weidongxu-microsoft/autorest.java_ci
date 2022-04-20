@@ -21,6 +21,7 @@ import com.azure.resourcemanager.network.generated.models.FirewallPolicyThreatIn
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyTransportSecurity;
 import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
+import com.azure.resourcemanager.network.generated.models.TagsObject;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -158,6 +159,8 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
 
     private String firewallPolicyName;
 
+    private TagsObject updateParameters;
+
     public FirewallPolicyImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
         return this;
@@ -188,6 +191,7 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
     }
 
     public FirewallPolicyImpl update() {
+        this.updateParameters = new TagsObject();
         return this;
     }
 
@@ -196,7 +200,8 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
             serviceManager
                 .serviceClient()
                 .getFirewallPolicies()
-                .createOrUpdate(resourceGroupName, firewallPolicyName, this.innerModel(), Context.NONE);
+                .updateTagsWithResponse(resourceGroupName, firewallPolicyName, updateParameters, Context.NONE)
+                .getValue();
         return this;
     }
 
@@ -205,7 +210,8 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
             serviceManager
                 .serviceClient()
                 .getFirewallPolicies()
-                .createOrUpdate(resourceGroupName, firewallPolicyName, this.innerModel(), context);
+                .updateTagsWithResponse(resourceGroupName, firewallPolicyName, updateParameters, context)
+                .getValue();
         return this;
     }
 
@@ -250,8 +256,13 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
     }
 
     public FirewallPolicyImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
-        return this;
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateParameters.withTags(tags);
+            return this;
+        }
     }
 
     public FirewallPolicyImpl withIdentity(ManagedServiceIdentity identity) {
@@ -312,5 +323,9 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
     public FirewallPolicyImpl withSku(FirewallPolicySku sku) {
         this.innerModel().withSku(sku);
         return this;
+    }
+
+    private boolean isInCreateMode() {
+        return this.innerModel().id() == null;
     }
 }

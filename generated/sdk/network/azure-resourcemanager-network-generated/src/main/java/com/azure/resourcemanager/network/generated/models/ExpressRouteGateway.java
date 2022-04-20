@@ -6,6 +6,7 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteConnectionInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteGatewayInner;
 import java.util.List;
 import java.util.Map;
@@ -150,6 +151,7 @@ public interface ExpressRouteGateway {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithAutoScaleConfiguration,
+                DefinitionStages.WithExpressRouteConnections,
                 DefinitionStages.WithVirtualHub {
             /**
              * Executes the create request.
@@ -186,6 +188,17 @@ public interface ExpressRouteGateway {
              */
             WithCreate withAutoScaleConfiguration(
                 ExpressRouteGatewayPropertiesAutoScaleConfiguration autoScaleConfiguration);
+        }
+        /** The stage of the ExpressRouteGateway definition allowing to specify expressRouteConnections. */
+        interface WithExpressRouteConnections {
+            /**
+             * Specifies the expressRouteConnections property: List of ExpressRoute connections to the ExpressRoute
+             * gateway..
+             *
+             * @param expressRouteConnections List of ExpressRoute connections to the ExpressRoute gateway.
+             * @return the next definition stage.
+             */
+            WithCreate withExpressRouteConnections(List<ExpressRouteConnectionInner> expressRouteConnections);
         }
         /** The stage of the ExpressRouteGateway definition allowing to specify virtualHub. */
         interface WithVirtualHub {

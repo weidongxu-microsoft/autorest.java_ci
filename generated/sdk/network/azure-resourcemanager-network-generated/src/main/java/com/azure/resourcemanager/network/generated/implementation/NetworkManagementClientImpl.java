@@ -34,6 +34,7 @@ import com.azure.resourcemanager.network.generated.fluent.AzureFirewallFqdnTagsC
 import com.azure.resourcemanager.network.generated.fluent.AzureFirewallsClient;
 import com.azure.resourcemanager.network.generated.fluent.BastionHostsClient;
 import com.azure.resourcemanager.network.generated.fluent.BgpServiceCommunitiesClient;
+import com.azure.resourcemanager.network.generated.fluent.ConfigurationPolicyGroupsClient;
 import com.azure.resourcemanager.network.generated.fluent.ConnectionMonitorsClient;
 import com.azure.resourcemanager.network.generated.fluent.CustomIpPrefixesClient;
 import com.azure.resourcemanager.network.generated.fluent.DdosCustomPoliciesClient;
@@ -49,6 +50,7 @@ import com.azure.resourcemanager.network.generated.fluent.ExpressRouteCrossConne
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteCrossConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteGatewaysClient;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteLinksClient;
+import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortAuthorizationsClient;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortsClient;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortsLocationsClient;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteServiceProvidersClient;
@@ -569,6 +571,18 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
      */
     public ExpressRouteLinksClient getExpressRouteLinks() {
         return this.expressRouteLinks;
+    }
+
+    /** The ExpressRoutePortAuthorizationsClient object to access its operations. */
+    private final ExpressRoutePortAuthorizationsClient expressRoutePortAuthorizations;
+
+    /**
+     * Gets the ExpressRoutePortAuthorizationsClient object to access its operations.
+     *
+     * @return the ExpressRoutePortAuthorizationsClient object.
+     */
+    public ExpressRoutePortAuthorizationsClient getExpressRoutePortAuthorizations() {
+        return this.expressRoutePortAuthorizations;
     }
 
     /** The FirewallPoliciesClient object to access its operations. */
@@ -1351,6 +1365,18 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.vpnServerConfigurations;
     }
 
+    /** The ConfigurationPolicyGroupsClient object to access its operations. */
+    private final ConfigurationPolicyGroupsClient configurationPolicyGroups;
+
+    /**
+     * Gets the ConfigurationPolicyGroupsClient object to access its operations.
+     *
+     * @return the ConfigurationPolicyGroupsClient object.
+     */
+    public ConfigurationPolicyGroupsClient getConfigurationPolicyGroups() {
+        return this.configurationPolicyGroups;
+    }
+
     /** The VirtualHubsClient object to access its operations. */
     private final VirtualHubsClient virtualHubs;
 
@@ -1611,6 +1637,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.expressRoutePortsLocations = new ExpressRoutePortsLocationsClientImpl(this);
         this.expressRoutePorts = new ExpressRoutePortsClientImpl(this);
         this.expressRouteLinks = new ExpressRouteLinksClientImpl(this);
+        this.expressRoutePortAuthorizations = new ExpressRoutePortAuthorizationsClientImpl(this);
         this.firewallPolicies = new FirewallPoliciesClientImpl(this);
         this.firewallPolicyRuleCollectionGroups = new FirewallPolicyRuleCollectionGroupsClientImpl(this);
         this.firewallPolicyIdpsSignatures = new FirewallPolicyIdpsSignaturesClientImpl(this);
@@ -1676,6 +1703,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.vpnSiteLinks = new VpnSiteLinksClientImpl(this);
         this.vpnSitesConfigurations = new VpnSitesConfigurationsClientImpl(this);
         this.vpnServerConfigurations = new VpnServerConfigurationsClientImpl(this);
+        this.configurationPolicyGroups = new ConfigurationPolicyGroupsClientImpl(this);
         this.virtualHubs = new VirtualHubsClientImpl(this);
         this.hubVirtualNetworkConnections = new HubVirtualNetworkConnectionsClientImpl(this);
         this.vpnGateways = new VpnGatewaysClientImpl(this);

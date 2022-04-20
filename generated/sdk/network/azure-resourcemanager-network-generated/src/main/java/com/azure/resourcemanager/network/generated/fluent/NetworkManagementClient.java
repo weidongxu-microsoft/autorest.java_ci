@@ -249,6 +249,13 @@ public interface NetworkManagementClient {
     ExpressRouteLinksClient getExpressRouteLinks();
 
     /**
+     * Gets the ExpressRoutePortAuthorizationsClient object to access its operations.
+     *
+     * @return the ExpressRoutePortAuthorizationsClient object.
+     */
+    ExpressRoutePortAuthorizationsClient getExpressRoutePortAuthorizations();
+
+    /**
      * Gets the FirewallPoliciesClient object to access its operations.
      *
      * @return the FirewallPoliciesClient object.
@@ -702,6 +709,13 @@ public interface NetworkManagementClient {
      * @return the VpnServerConfigurationsClient object.
      */
     VpnServerConfigurationsClient getVpnServerConfigurations();
+
+    /**
+     * Gets the ConfigurationPolicyGroupsClient object to access its operations.
+     *
+     * @return the ConfigurationPolicyGroupsClient object.
+     */
+    ConfigurationPolicyGroupsClient getConfigurationPolicyGroups();
 
     /**
      * Gets the VirtualHubsClient object to access its operations.

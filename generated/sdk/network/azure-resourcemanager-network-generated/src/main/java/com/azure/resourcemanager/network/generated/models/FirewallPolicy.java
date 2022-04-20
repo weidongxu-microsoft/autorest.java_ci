@@ -400,20 +400,7 @@ public interface FirewallPolicy {
     FirewallPolicy.Update update();
 
     /** The template for FirewallPolicy update. */
-    interface Update
-        extends UpdateStages.WithTags,
-            UpdateStages.WithIdentity,
-            UpdateStages.WithBasePolicy,
-            UpdateStages.WithThreatIntelMode,
-            UpdateStages.WithThreatIntelWhitelist,
-            UpdateStages.WithInsights,
-            UpdateStages.WithSnat,
-            UpdateStages.WithSql,
-            UpdateStages.WithDnsSettings,
-            UpdateStages.WithExplicitProxySettings,
-            UpdateStages.WithIntrusionDetection,
-            UpdateStages.WithTransportSecurity,
-            UpdateStages.WithSku {
+    interface Update extends UpdateStages.WithTags {
         /**
          * Executes the update request.
          *
@@ -440,126 +427,6 @@ public interface FirewallPolicy {
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify identity. */
-        interface WithIdentity {
-            /**
-             * Specifies the identity property: The identity of the firewall policy..
-             *
-             * @param identity The identity of the firewall policy.
-             * @return the next definition stage.
-             */
-            Update withIdentity(ManagedServiceIdentity identity);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify basePolicy. */
-        interface WithBasePolicy {
-            /**
-             * Specifies the basePolicy property: The parent firewall policy from which rules are inherited..
-             *
-             * @param basePolicy The parent firewall policy from which rules are inherited.
-             * @return the next definition stage.
-             */
-            Update withBasePolicy(SubResource basePolicy);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify threatIntelMode. */
-        interface WithThreatIntelMode {
-            /**
-             * Specifies the threatIntelMode property: The operation mode for Threat Intelligence..
-             *
-             * @param threatIntelMode The operation mode for Threat Intelligence.
-             * @return the next definition stage.
-             */
-            Update withThreatIntelMode(AzureFirewallThreatIntelMode threatIntelMode);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify threatIntelWhitelist. */
-        interface WithThreatIntelWhitelist {
-            /**
-             * Specifies the threatIntelWhitelist property: ThreatIntel Whitelist for Firewall Policy..
-             *
-             * @param threatIntelWhitelist ThreatIntel Whitelist for Firewall Policy.
-             * @return the next definition stage.
-             */
-            Update withThreatIntelWhitelist(FirewallPolicyThreatIntelWhitelist threatIntelWhitelist);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify insights. */
-        interface WithInsights {
-            /**
-             * Specifies the insights property: Insights on Firewall Policy..
-             *
-             * @param insights Insights on Firewall Policy.
-             * @return the next definition stage.
-             */
-            Update withInsights(FirewallPolicyInsights insights);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify snat. */
-        interface WithSnat {
-            /**
-             * Specifies the snat property: The private IP addresses/IP ranges to which traffic will not be SNAT..
-             *
-             * @param snat The private IP addresses/IP ranges to which traffic will not be SNAT.
-             * @return the next definition stage.
-             */
-            Update withSnat(FirewallPolicySnat snat);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify sql. */
-        interface WithSql {
-            /**
-             * Specifies the sql property: SQL Settings definition..
-             *
-             * @param sql SQL Settings definition.
-             * @return the next definition stage.
-             */
-            Update withSql(FirewallPolicySql sql);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify dnsSettings. */
-        interface WithDnsSettings {
-            /**
-             * Specifies the dnsSettings property: DNS Proxy Settings definition..
-             *
-             * @param dnsSettings DNS Proxy Settings definition.
-             * @return the next definition stage.
-             */
-            Update withDnsSettings(DnsSettings dnsSettings);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify explicitProxySettings. */
-        interface WithExplicitProxySettings {
-            /**
-             * Specifies the explicitProxySettings property: Explicit Proxy Settings definition..
-             *
-             * @param explicitProxySettings Explicit Proxy Settings definition.
-             * @return the next definition stage.
-             */
-            Update withExplicitProxySettings(ExplicitProxySettings explicitProxySettings);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify intrusionDetection. */
-        interface WithIntrusionDetection {
-            /**
-             * Specifies the intrusionDetection property: The configuration for Intrusion detection..
-             *
-             * @param intrusionDetection The configuration for Intrusion detection.
-             * @return the next definition stage.
-             */
-            Update withIntrusionDetection(FirewallPolicyIntrusionDetection intrusionDetection);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify transportSecurity. */
-        interface WithTransportSecurity {
-            /**
-             * Specifies the transportSecurity property: TLS Configuration definition..
-             *
-             * @param transportSecurity TLS Configuration definition.
-             * @return the next definition stage.
-             */
-            Update withTransportSecurity(FirewallPolicyTransportSecurity transportSecurity);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify sku. */
-        interface WithSku {
-            /**
-             * Specifies the sku property: The Firewall Policy SKU..
-             *
-             * @param sku The Firewall Policy SKU.
-             * @return the next definition stage.
-             */
-            Update withSku(FirewallPolicySku sku);
         }
     }
     /**

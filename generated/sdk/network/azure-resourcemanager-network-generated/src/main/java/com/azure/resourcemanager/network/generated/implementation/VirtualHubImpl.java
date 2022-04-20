@@ -10,6 +10,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubRouteTableV2Inner;
 import com.azure.resourcemanager.network.generated.models.EffectiveRoutesParameters;
+import com.azure.resourcemanager.network.generated.models.HubRoutingPreference;
 import com.azure.resourcemanager.network.generated.models.PreferredRoutingGateway;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.RoutingState;
@@ -159,6 +160,10 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
 
     public PreferredRoutingGateway preferredRoutingGateway() {
         return this.innerModel().preferredRoutingGateway();
+    }
+
+    public HubRoutingPreference hubRoutingPreference() {
+        return this.innerModel().hubRoutingPreference();
     }
 
     public Region region() {
@@ -373,6 +378,11 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
 
     public VirtualHubImpl withPreferredRoutingGateway(PreferredRoutingGateway preferredRoutingGateway) {
         this.innerModel().withPreferredRoutingGateway(preferredRoutingGateway);
+        return this;
+    }
+
+    public VirtualHubImpl withHubRoutingPreference(HubRoutingPreference hubRoutingPreference) {
+        this.innerModel().withHubRoutingPreference(hubRoutingPreference);
         return this;
     }
 

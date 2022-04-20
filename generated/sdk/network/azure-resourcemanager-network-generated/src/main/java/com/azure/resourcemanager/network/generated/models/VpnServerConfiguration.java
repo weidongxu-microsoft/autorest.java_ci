@@ -7,6 +7,7 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationInner;
+import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationPolicyGroupInner;
 import java.util.List;
 import java.util.Map;
 
@@ -157,6 +158,13 @@ public interface VpnServerConfiguration {
     List<P2SVpnGateway> p2SVpnGateways();
 
     /**
+     * Gets the configurationPolicyGroups property: List of all VpnServerConfigurationPolicyGroups.
+     *
+     * @return the configurationPolicyGroups value.
+     */
+    List<VpnServerConfigurationPolicyGroup> configurationPolicyGroups();
+
+    /**
      * Gets the etagPropertiesEtag property: A unique read-only string that changes whenever the resource is updated.
      *
      * @return the etagPropertiesEtag value.
@@ -241,7 +249,8 @@ public interface VpnServerConfiguration {
                 DefinitionStages.WithRadiusServerAddress,
                 DefinitionStages.WithRadiusServerSecret,
                 DefinitionStages.WithRadiusServers,
-                DefinitionStages.WithAadAuthenticationParameters {
+                DefinitionStages.WithAadAuthenticationParameters,
+                DefinitionStages.WithConfigurationPolicyGroups {
             /**
              * Executes the create request.
              *
@@ -398,6 +407,17 @@ public interface VpnServerConfiguration {
              * @return the next definition stage.
              */
             WithCreate withAadAuthenticationParameters(AadAuthenticationParameters aadAuthenticationParameters);
+        }
+        /** The stage of the VpnServerConfiguration definition allowing to specify configurationPolicyGroups. */
+        interface WithConfigurationPolicyGroups {
+            /**
+             * Specifies the configurationPolicyGroups property: List of all VpnServerConfigurationPolicyGroups..
+             *
+             * @param configurationPolicyGroups List of all VpnServerConfigurationPolicyGroups.
+             * @return the next definition stage.
+             */
+            WithCreate withConfigurationPolicyGroups(
+                List<VpnServerConfigurationPolicyGroupInner> configurationPolicyGroups);
         }
     }
     /**

@@ -110,6 +110,13 @@ public interface VpnSiteLinkConnection {
     Boolean enableBgp();
 
     /**
+     * Gets the vpnGatewayCustomBgpAddresses property: vpnGatewayCustomBgpAddresses used by this connection.
+     *
+     * @return the vpnGatewayCustomBgpAddresses value.
+     */
+    List<GatewayCustomBgpIpAddressIpConfiguration> vpnGatewayCustomBgpAddresses();
+
+    /**
      * Gets the usePolicyBasedTrafficSelectors property: Enable policy-based traffic selectors.
      *
      * @return the usePolicyBasedTrafficSelectors value.

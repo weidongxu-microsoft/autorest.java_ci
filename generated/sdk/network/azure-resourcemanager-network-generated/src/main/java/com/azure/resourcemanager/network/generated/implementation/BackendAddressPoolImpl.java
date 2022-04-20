@@ -111,6 +111,10 @@ public final class BackendAddressPoolImpl
         return this.innerModel().provisioningState();
     }
 
+    public Integer drainPeriodInSeconds() {
+        return this.innerModel().drainPeriodInSeconds();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -242,6 +246,11 @@ public final class BackendAddressPoolImpl
     public BackendAddressPoolImpl withLoadBalancerBackendAddresses(
         List<LoadBalancerBackendAddress> loadBalancerBackendAddresses) {
         this.innerModel().withLoadBalancerBackendAddresses(loadBalancerBackendAddresses);
+        return this;
+    }
+
+    public BackendAddressPoolImpl withDrainPeriodInSeconds(Integer drainPeriodInSeconds) {
+        this.innerModel().withDrainPeriodInSeconds(drainPeriodInSeconds);
         return this;
     }
 }

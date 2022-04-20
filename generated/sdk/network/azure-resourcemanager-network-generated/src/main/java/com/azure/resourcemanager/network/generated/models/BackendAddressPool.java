@@ -107,6 +107,14 @@ public interface BackendAddressPool {
     ProvisioningState provisioningState();
 
     /**
+     * Gets the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client
+     * and backend address.
+     *
+     * @return the drainPeriodInSeconds value.
+     */
+    Integer drainPeriodInSeconds();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -155,7 +163,8 @@ public interface BackendAddressPool {
             extends DefinitionStages.WithLocation,
                 DefinitionStages.WithName,
                 DefinitionStages.WithTunnelInterfaces,
-                DefinitionStages.WithLoadBalancerBackendAddresses {
+                DefinitionStages.WithLoadBalancerBackendAddresses,
+                DefinitionStages.WithDrainPeriodInSeconds {
             /**
              * Executes the create request.
              *
@@ -221,6 +230,18 @@ public interface BackendAddressPool {
              */
             WithCreate withLoadBalancerBackendAddresses(List<LoadBalancerBackendAddress> loadBalancerBackendAddresses);
         }
+        /** The stage of the BackendAddressPool definition allowing to specify drainPeriodInSeconds. */
+        interface WithDrainPeriodInSeconds {
+            /**
+             * Specifies the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending
+             * RESET to client and backend address..
+             *
+             * @param drainPeriodInSeconds Amount of seconds Load Balancer waits for before sending RESET to client and
+             *     backend address.
+             * @return the next definition stage.
+             */
+            WithCreate withDrainPeriodInSeconds(Integer drainPeriodInSeconds);
+        }
     }
     /**
      * Begins update for the BackendAddressPool resource.
@@ -233,7 +254,8 @@ public interface BackendAddressPool {
     interface Update
         extends UpdateStages.WithName,
             UpdateStages.WithTunnelInterfaces,
-            UpdateStages.WithLoadBalancerBackendAddresses {
+            UpdateStages.WithLoadBalancerBackendAddresses,
+            UpdateStages.WithDrainPeriodInSeconds {
         /**
          * Executes the update request.
          *
@@ -282,6 +304,18 @@ public interface BackendAddressPool {
              * @return the next definition stage.
              */
             Update withLoadBalancerBackendAddresses(List<LoadBalancerBackendAddress> loadBalancerBackendAddresses);
+        }
+        /** The stage of the BackendAddressPool update allowing to specify drainPeriodInSeconds. */
+        interface WithDrainPeriodInSeconds {
+            /**
+             * Specifies the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending
+             * RESET to client and backend address..
+             *
+             * @param drainPeriodInSeconds Amount of seconds Load Balancer waits for before sending RESET to client and
+             *     backend address.
+             * @return the next definition stage.
+             */
+            Update withDrainPeriodInSeconds(Integer drainPeriodInSeconds);
         }
     }
     /**

@@ -11,6 +11,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfac
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkSecurityGroupInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceInner;
+import com.azure.resourcemanager.network.generated.models.NetworkInterfaceAuxiliaryMode;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceDnsSettings;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceMigrationPhase;
@@ -151,6 +152,10 @@ public final class NetworkInterfacePropertiesFormatImpl implements NetworkInterf
 
     public NetworkInterfaceMigrationPhase migrationPhase() {
         return this.innerModel().migrationPhase();
+    }
+
+    public NetworkInterfaceAuxiliaryMode auxiliaryMode() {
+        return this.innerModel().auxiliaryMode();
     }
 
     public NetworkInterfacePropertiesFormatInner innerModel() {

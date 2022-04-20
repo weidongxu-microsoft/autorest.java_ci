@@ -159,6 +159,14 @@ public interface VirtualNetworkGatewayConnectionListEntity {
     Boolean enableBgp();
 
     /**
+     * Gets the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway
+     * Connection.
+     *
+     * @return the gatewayCustomBgpIpAddresses value.
+     */
+    List<GatewayCustomBgpIpAddressIpConfiguration> gatewayCustomBgpIpAddresses();
+
+    /**
      * Gets the usePolicyBasedTrafficSelectors property: Enable policy-based traffic selectors.
      *
      * @return the usePolicyBasedTrafficSelectors value.

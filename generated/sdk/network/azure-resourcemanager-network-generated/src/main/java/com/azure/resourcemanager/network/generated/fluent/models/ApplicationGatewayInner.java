@@ -11,12 +11,14 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAuth
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAutoscaleConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendAddressPool;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHttpSettings;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendSettings;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayCustomError;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayFrontendIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayFrontendPort;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayGlobalConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayHttpListener;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayIpConfiguration;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayListener;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayLoadDistributionPolicy;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayOperationalState;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateLinkConfiguration;
@@ -24,6 +26,7 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayProb
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRedirectConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRequestRoutingRule;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRewriteRuleSet;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRoutingRule;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySku;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslCertificate;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslPolicy;
@@ -493,6 +496,34 @@ public final class ApplicationGatewayInner extends Resource {
     }
 
     /**
+     * Get the backendSettingsCollection property: Backend settings of the application gateway resource. For default
+     * limits, see [Application Gateway
+     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     *
+     * @return the backendSettingsCollection value.
+     */
+    public List<ApplicationGatewayBackendSettings> backendSettingsCollection() {
+        return this.innerProperties() == null ? null : this.innerProperties().backendSettingsCollection();
+    }
+
+    /**
+     * Set the backendSettingsCollection property: Backend settings of the application gateway resource. For default
+     * limits, see [Application Gateway
+     * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     *
+     * @param backendSettingsCollection the backendSettingsCollection value to set.
+     * @return the ApplicationGatewayInner object itself.
+     */
+    public ApplicationGatewayInner withBackendSettingsCollection(
+        List<ApplicationGatewayBackendSettings> backendSettingsCollection) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ApplicationGatewayPropertiesFormat();
+        }
+        this.innerProperties().withBackendSettingsCollection(backendSettingsCollection);
+        return this;
+    }
+
+    /**
      * Get the httpListeners property: Http listeners of the application gateway resource. For default limits, see
      * [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
@@ -516,6 +547,31 @@ public final class ApplicationGatewayInner extends Resource {
             this.innerProperties = new ApplicationGatewayPropertiesFormat();
         }
         this.innerProperties().withHttpListeners(httpListeners);
+        return this;
+    }
+
+    /**
+     * Get the listeners property: Listeners of the application gateway resource. For default limits, see [Application
+     * Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     *
+     * @return the listeners value.
+     */
+    public List<ApplicationGatewayListener> listeners() {
+        return this.innerProperties() == null ? null : this.innerProperties().listeners();
+    }
+
+    /**
+     * Set the listeners property: Listeners of the application gateway resource. For default limits, see [Application
+     * Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
+     *
+     * @param listeners the listeners value to set.
+     * @return the ApplicationGatewayInner object itself.
+     */
+    public ApplicationGatewayInner withListeners(List<ApplicationGatewayListener> listeners) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ApplicationGatewayPropertiesFormat();
+        }
+        this.innerProperties().withListeners(listeners);
         return this;
     }
 
@@ -594,6 +650,29 @@ public final class ApplicationGatewayInner extends Resource {
             this.innerProperties = new ApplicationGatewayPropertiesFormat();
         }
         this.innerProperties().withRequestRoutingRules(requestRoutingRules);
+        return this;
+    }
+
+    /**
+     * Get the routingRules property: Routing rules of the application gateway resource.
+     *
+     * @return the routingRules value.
+     */
+    public List<ApplicationGatewayRoutingRule> routingRules() {
+        return this.innerProperties() == null ? null : this.innerProperties().routingRules();
+    }
+
+    /**
+     * Set the routingRules property: Routing rules of the application gateway resource.
+     *
+     * @param routingRules the routingRules value to set.
+     * @return the ApplicationGatewayInner object itself.
+     */
+    public ApplicationGatewayInner withRoutingRules(List<ApplicationGatewayRoutingRule> routingRules) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ApplicationGatewayPropertiesFormat();
+        }
+        this.innerProperties().withRoutingRules(routingRules);
         return this;
     }
 
