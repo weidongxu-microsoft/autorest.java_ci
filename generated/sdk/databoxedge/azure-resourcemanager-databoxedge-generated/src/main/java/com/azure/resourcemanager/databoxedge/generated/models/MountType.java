@@ -27,7 +27,11 @@ public final class MountType extends ExpandableStringEnum<MountType> {
         return fromString(name, MountType.class);
     }
 
-    /** @return known MountType values. */
+    /**
+     * Gets known MountType values.
+     *
+     * @return known MountType values.
+     */
     public static Collection<MountType> values() {
         return values(MountType.class);
     }

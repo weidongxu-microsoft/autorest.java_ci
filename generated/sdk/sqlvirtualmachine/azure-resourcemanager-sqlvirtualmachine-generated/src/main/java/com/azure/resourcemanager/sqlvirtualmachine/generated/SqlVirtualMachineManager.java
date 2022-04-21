@@ -277,7 +277,11 @@ public final class SqlVirtualMachineManager {
         }
     }
 
-    /** @return Resource collection API of AvailabilityGroupListeners. */
+    /**
+     * Gets the resource collection API of AvailabilityGroupListeners.
+     *
+     * @return Resource collection API of AvailabilityGroupListeners.
+     */
     public AvailabilityGroupListeners availabilityGroupListeners() {
         if (this.availabilityGroupListeners == null) {
             this.availabilityGroupListeners =
@@ -286,7 +290,11 @@ public final class SqlVirtualMachineManager {
         return availabilityGroupListeners;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -294,7 +302,11 @@ public final class SqlVirtualMachineManager {
         return operations;
     }
 
-    /** @return Resource collection API of SqlVirtualMachineGroups. */
+    /**
+     * Gets the resource collection API of SqlVirtualMachineGroups.
+     *
+     * @return Resource collection API of SqlVirtualMachineGroups.
+     */
     public SqlVirtualMachineGroups sqlVirtualMachineGroups() {
         if (this.sqlVirtualMachineGroups == null) {
             this.sqlVirtualMachineGroups =
@@ -303,7 +315,11 @@ public final class SqlVirtualMachineManager {
         return sqlVirtualMachineGroups;
     }
 
-    /** @return Resource collection API of SqlVirtualMachines. */
+    /**
+     * Gets the resource collection API of SqlVirtualMachines.
+     *
+     * @return Resource collection API of SqlVirtualMachines.
+     */
     public SqlVirtualMachines sqlVirtualMachines() {
         if (this.sqlVirtualMachines == null) {
             this.sqlVirtualMachines = new SqlVirtualMachinesImpl(clientObject.getSqlVirtualMachines(), this);

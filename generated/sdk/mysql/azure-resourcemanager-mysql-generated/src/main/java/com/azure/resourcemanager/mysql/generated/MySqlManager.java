@@ -364,7 +364,11 @@ public final class MySqlManager {
         }
     }
 
-    /** @return Resource collection API of Servers. */
+    /**
+     * Gets the resource collection API of Servers.
+     *
+     * @return Resource collection API of Servers.
+     */
     public Servers servers() {
         if (this.servers == null) {
             this.servers = new ServersImpl(clientObject.getServers(), this);
@@ -372,7 +376,11 @@ public final class MySqlManager {
         return servers;
     }
 
-    /** @return Resource collection API of Replicas. */
+    /**
+     * Gets the resource collection API of Replicas.
+     *
+     * @return Resource collection API of Replicas.
+     */
     public Replicas replicas() {
         if (this.replicas == null) {
             this.replicas = new ReplicasImpl(clientObject.getReplicas(), this);
@@ -380,7 +388,11 @@ public final class MySqlManager {
         return replicas;
     }
 
-    /** @return Resource collection API of FirewallRules. */
+    /**
+     * Gets the resource collection API of FirewallRules.
+     *
+     * @return Resource collection API of FirewallRules.
+     */
     public FirewallRules firewallRules() {
         if (this.firewallRules == null) {
             this.firewallRules = new FirewallRulesImpl(clientObject.getFirewallRules(), this);
@@ -388,7 +400,11 @@ public final class MySqlManager {
         return firewallRules;
     }
 
-    /** @return Resource collection API of VirtualNetworkRules. */
+    /**
+     * Gets the resource collection API of VirtualNetworkRules.
+     *
+     * @return Resource collection API of VirtualNetworkRules.
+     */
     public VirtualNetworkRules virtualNetworkRules() {
         if (this.virtualNetworkRules == null) {
             this.virtualNetworkRules = new VirtualNetworkRulesImpl(clientObject.getVirtualNetworkRules(), this);
@@ -396,7 +412,11 @@ public final class MySqlManager {
         return virtualNetworkRules;
     }
 
-    /** @return Resource collection API of Databases. */
+    /**
+     * Gets the resource collection API of Databases.
+     *
+     * @return Resource collection API of Databases.
+     */
     public Databases databases() {
         if (this.databases == null) {
             this.databases = new DatabasesImpl(clientObject.getDatabases(), this);
@@ -404,7 +424,11 @@ public final class MySqlManager {
         return databases;
     }
 
-    /** @return Resource collection API of Configurations. */
+    /**
+     * Gets the resource collection API of Configurations.
+     *
+     * @return Resource collection API of Configurations.
+     */
     public Configurations configurations() {
         if (this.configurations == null) {
             this.configurations = new ConfigurationsImpl(clientObject.getConfigurations(), this);
@@ -412,7 +436,11 @@ public final class MySqlManager {
         return configurations;
     }
 
-    /** @return Resource collection API of ServerParameters. */
+    /**
+     * Gets the resource collection API of ServerParameters.
+     *
+     * @return Resource collection API of ServerParameters.
+     */
     public ServerParameters serverParameters() {
         if (this.serverParameters == null) {
             this.serverParameters = new ServerParametersImpl(clientObject.getServerParameters(), this);
@@ -420,7 +448,11 @@ public final class MySqlManager {
         return serverParameters;
     }
 
-    /** @return Resource collection API of LogFiles. */
+    /**
+     * Gets the resource collection API of LogFiles.
+     *
+     * @return Resource collection API of LogFiles.
+     */
     public LogFiles logFiles() {
         if (this.logFiles == null) {
             this.logFiles = new LogFilesImpl(clientObject.getLogFiles(), this);
@@ -428,7 +460,11 @@ public final class MySqlManager {
         return logFiles;
     }
 
-    /** @return Resource collection API of ServerAdministrators. */
+    /**
+     * Gets the resource collection API of ServerAdministrators.
+     *
+     * @return Resource collection API of ServerAdministrators.
+     */
     public ServerAdministrators serverAdministrators() {
         if (this.serverAdministrators == null) {
             this.serverAdministrators = new ServerAdministratorsImpl(clientObject.getServerAdministrators(), this);
@@ -436,7 +472,11 @@ public final class MySqlManager {
         return serverAdministrators;
     }
 
-    /** @return Resource collection API of RecoverableServers. */
+    /**
+     * Gets the resource collection API of RecoverableServers.
+     *
+     * @return Resource collection API of RecoverableServers.
+     */
     public RecoverableServers recoverableServers() {
         if (this.recoverableServers == null) {
             this.recoverableServers = new RecoverableServersImpl(clientObject.getRecoverableServers(), this);
@@ -444,7 +484,11 @@ public final class MySqlManager {
         return recoverableServers;
     }
 
-    /** @return Resource collection API of ServerBasedPerformanceTiers. */
+    /**
+     * Gets the resource collection API of ServerBasedPerformanceTiers.
+     *
+     * @return Resource collection API of ServerBasedPerformanceTiers.
+     */
     public ServerBasedPerformanceTiers serverBasedPerformanceTiers() {
         if (this.serverBasedPerformanceTiers == null) {
             this.serverBasedPerformanceTiers =
@@ -453,7 +497,11 @@ public final class MySqlManager {
         return serverBasedPerformanceTiers;
     }
 
-    /** @return Resource collection API of LocationBasedPerformanceTiers. */
+    /**
+     * Gets the resource collection API of LocationBasedPerformanceTiers.
+     *
+     * @return Resource collection API of LocationBasedPerformanceTiers.
+     */
     public LocationBasedPerformanceTiers locationBasedPerformanceTiers() {
         if (this.locationBasedPerformanceTiers == null) {
             this.locationBasedPerformanceTiers =
@@ -462,7 +510,11 @@ public final class MySqlManager {
         return locationBasedPerformanceTiers;
     }
 
-    /** @return Resource collection API of CheckNameAvailabilities. */
+    /**
+     * Gets the resource collection API of CheckNameAvailabilities.
+     *
+     * @return Resource collection API of CheckNameAvailabilities.
+     */
     public CheckNameAvailabilities checkNameAvailabilities() {
         if (this.checkNameAvailabilities == null) {
             this.checkNameAvailabilities =
@@ -471,7 +523,11 @@ public final class MySqlManager {
         return checkNameAvailabilities;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -479,7 +535,11 @@ public final class MySqlManager {
         return operations;
     }
 
-    /** @return Resource collection API of ServerSecurityAlertPolicies. */
+    /**
+     * Gets the resource collection API of ServerSecurityAlertPolicies.
+     *
+     * @return Resource collection API of ServerSecurityAlertPolicies.
+     */
     public ServerSecurityAlertPolicies serverSecurityAlertPolicies() {
         if (this.serverSecurityAlertPolicies == null) {
             this.serverSecurityAlertPolicies =
@@ -488,7 +548,11 @@ public final class MySqlManager {
         return serverSecurityAlertPolicies;
     }
 
-    /** @return Resource collection API of QueryTexts. */
+    /**
+     * Gets the resource collection API of QueryTexts.
+     *
+     * @return Resource collection API of QueryTexts.
+     */
     public QueryTexts queryTexts() {
         if (this.queryTexts == null) {
             this.queryTexts = new QueryTextsImpl(clientObject.getQueryTexts(), this);
@@ -496,7 +560,11 @@ public final class MySqlManager {
         return queryTexts;
     }
 
-    /** @return Resource collection API of TopQueryStatistics. */
+    /**
+     * Gets the resource collection API of TopQueryStatistics.
+     *
+     * @return Resource collection API of TopQueryStatistics.
+     */
     public TopQueryStatistics topQueryStatistics() {
         if (this.topQueryStatistics == null) {
             this.topQueryStatistics = new TopQueryStatisticsImpl(clientObject.getTopQueryStatistics(), this);
@@ -504,7 +572,11 @@ public final class MySqlManager {
         return topQueryStatistics;
     }
 
-    /** @return Resource collection API of WaitStatistics. */
+    /**
+     * Gets the resource collection API of WaitStatistics.
+     *
+     * @return Resource collection API of WaitStatistics.
+     */
     public WaitStatistics waitStatistics() {
         if (this.waitStatistics == null) {
             this.waitStatistics = new WaitStatisticsImpl(clientObject.getWaitStatistics(), this);
@@ -512,7 +584,11 @@ public final class MySqlManager {
         return waitStatistics;
     }
 
-    /** @return Resource collection API of ResourceProviders. */
+    /**
+     * Gets the resource collection API of ResourceProviders.
+     *
+     * @return Resource collection API of ResourceProviders.
+     */
     public ResourceProviders resourceProviders() {
         if (this.resourceProviders == null) {
             this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
@@ -520,7 +596,11 @@ public final class MySqlManager {
         return resourceProviders;
     }
 
-    /** @return Resource collection API of Advisors. */
+    /**
+     * Gets the resource collection API of Advisors.
+     *
+     * @return Resource collection API of Advisors.
+     */
     public Advisors advisors() {
         if (this.advisors == null) {
             this.advisors = new AdvisorsImpl(clientObject.getAdvisors(), this);
@@ -528,7 +608,11 @@ public final class MySqlManager {
         return advisors;
     }
 
-    /** @return Resource collection API of RecommendedActions. */
+    /**
+     * Gets the resource collection API of RecommendedActions.
+     *
+     * @return Resource collection API of RecommendedActions.
+     */
     public RecommendedActions recommendedActions() {
         if (this.recommendedActions == null) {
             this.recommendedActions = new RecommendedActionsImpl(clientObject.getRecommendedActions(), this);
@@ -536,7 +620,11 @@ public final class MySqlManager {
         return recommendedActions;
     }
 
-    /** @return Resource collection API of LocationBasedRecommendedActionSessionsOperationStatus. */
+    /**
+     * Gets the resource collection API of LocationBasedRecommendedActionSessionsOperationStatus.
+     *
+     * @return Resource collection API of LocationBasedRecommendedActionSessionsOperationStatus.
+     */
     public LocationBasedRecommendedActionSessionsOperationStatus
         locationBasedRecommendedActionSessionsOperationStatus() {
         if (this.locationBasedRecommendedActionSessionsOperationStatus == null) {
@@ -547,7 +635,11 @@ public final class MySqlManager {
         return locationBasedRecommendedActionSessionsOperationStatus;
     }
 
-    /** @return Resource collection API of LocationBasedRecommendedActionSessionsResults. */
+    /**
+     * Gets the resource collection API of LocationBasedRecommendedActionSessionsResults.
+     *
+     * @return Resource collection API of LocationBasedRecommendedActionSessionsResults.
+     */
     public LocationBasedRecommendedActionSessionsResults locationBasedRecommendedActionSessionsResults() {
         if (this.locationBasedRecommendedActionSessionsResults == null) {
             this.locationBasedRecommendedActionSessionsResults =
@@ -557,7 +649,11 @@ public final class MySqlManager {
         return locationBasedRecommendedActionSessionsResults;
     }
 
-    /** @return Resource collection API of PrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of PrivateEndpointConnections.
+     *
+     * @return Resource collection API of PrivateEndpointConnections.
+     */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
             this.privateEndpointConnections =
@@ -566,7 +662,11 @@ public final class MySqlManager {
         return privateEndpointConnections;
     }
 
-    /** @return Resource collection API of PrivateLinkResources. */
+    /**
+     * Gets the resource collection API of PrivateLinkResources.
+     *
+     * @return Resource collection API of PrivateLinkResources.
+     */
     public PrivateLinkResources privateLinkResources() {
         if (this.privateLinkResources == null) {
             this.privateLinkResources = new PrivateLinkResourcesImpl(clientObject.getPrivateLinkResources(), this);
@@ -574,7 +674,11 @@ public final class MySqlManager {
         return privateLinkResources;
     }
 
-    /** @return Resource collection API of ServerKeys. */
+    /**
+     * Gets the resource collection API of ServerKeys.
+     *
+     * @return Resource collection API of ServerKeys.
+     */
     public ServerKeys serverKeys() {
         if (this.serverKeys == null) {
             this.serverKeys = new ServerKeysImpl(clientObject.getServerKeys(), this);

@@ -328,7 +328,11 @@ public final class ApplicationInsightsManager {
         }
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -336,7 +340,11 @@ public final class ApplicationInsightsManager {
         return operations;
     }
 
-    /** @return Resource collection API of Annotations. */
+    /**
+     * Gets the resource collection API of Annotations.
+     *
+     * @return Resource collection API of Annotations.
+     */
     public Annotations annotations() {
         if (this.annotations == null) {
             this.annotations = new AnnotationsImpl(clientObject.getAnnotations(), this);
@@ -344,7 +352,11 @@ public final class ApplicationInsightsManager {
         return annotations;
     }
 
-    /** @return Resource collection API of ApiKeys. */
+    /**
+     * Gets the resource collection API of ApiKeys.
+     *
+     * @return Resource collection API of ApiKeys.
+     */
     public ApiKeys apiKeys() {
         if (this.apiKeys == null) {
             this.apiKeys = new ApiKeysImpl(clientObject.getApiKeys(), this);
@@ -352,7 +364,11 @@ public final class ApplicationInsightsManager {
         return apiKeys;
     }
 
-    /** @return Resource collection API of ExportConfigurations. */
+    /**
+     * Gets the resource collection API of ExportConfigurations.
+     *
+     * @return Resource collection API of ExportConfigurations.
+     */
     public ExportConfigurations exportConfigurations() {
         if (this.exportConfigurations == null) {
             this.exportConfigurations = new ExportConfigurationsImpl(clientObject.getExportConfigurations(), this);
@@ -360,7 +376,11 @@ public final class ApplicationInsightsManager {
         return exportConfigurations;
     }
 
-    /** @return Resource collection API of ComponentCurrentBillingFeatures. */
+    /**
+     * Gets the resource collection API of ComponentCurrentBillingFeatures.
+     *
+     * @return Resource collection API of ComponentCurrentBillingFeatures.
+     */
     public ComponentCurrentBillingFeatures componentCurrentBillingFeatures() {
         if (this.componentCurrentBillingFeatures == null) {
             this.componentCurrentBillingFeatures =
@@ -369,7 +389,11 @@ public final class ApplicationInsightsManager {
         return componentCurrentBillingFeatures;
     }
 
-    /** @return Resource collection API of ComponentQuotaStatus. */
+    /**
+     * Gets the resource collection API of ComponentQuotaStatus.
+     *
+     * @return Resource collection API of ComponentQuotaStatus.
+     */
     public ComponentQuotaStatus componentQuotaStatus() {
         if (this.componentQuotaStatus == null) {
             this.componentQuotaStatus = new ComponentQuotaStatusImpl(clientObject.getComponentQuotaStatus(), this);
@@ -377,7 +401,11 @@ public final class ApplicationInsightsManager {
         return componentQuotaStatus;
     }
 
-    /** @return Resource collection API of ComponentFeatureCapabilities. */
+    /**
+     * Gets the resource collection API of ComponentFeatureCapabilities.
+     *
+     * @return Resource collection API of ComponentFeatureCapabilities.
+     */
     public ComponentFeatureCapabilities componentFeatureCapabilities() {
         if (this.componentFeatureCapabilities == null) {
             this.componentFeatureCapabilities =
@@ -386,7 +414,11 @@ public final class ApplicationInsightsManager {
         return componentFeatureCapabilities;
     }
 
-    /** @return Resource collection API of ComponentAvailableFeatures. */
+    /**
+     * Gets the resource collection API of ComponentAvailableFeatures.
+     *
+     * @return Resource collection API of ComponentAvailableFeatures.
+     */
     public ComponentAvailableFeatures componentAvailableFeatures() {
         if (this.componentAvailableFeatures == null) {
             this.componentAvailableFeatures =
@@ -395,7 +427,11 @@ public final class ApplicationInsightsManager {
         return componentAvailableFeatures;
     }
 
-    /** @return Resource collection API of ProactiveDetectionConfigurations. */
+    /**
+     * Gets the resource collection API of ProactiveDetectionConfigurations.
+     *
+     * @return Resource collection API of ProactiveDetectionConfigurations.
+     */
     public ProactiveDetectionConfigurations proactiveDetectionConfigurations() {
         if (this.proactiveDetectionConfigurations == null) {
             this.proactiveDetectionConfigurations =
@@ -404,7 +440,11 @@ public final class ApplicationInsightsManager {
         return proactiveDetectionConfigurations;
     }
 
-    /** @return Resource collection API of WorkItemConfigurations. */
+    /**
+     * Gets the resource collection API of WorkItemConfigurations.
+     *
+     * @return Resource collection API of WorkItemConfigurations.
+     */
     public WorkItemConfigurations workItemConfigurations() {
         if (this.workItemConfigurations == null) {
             this.workItemConfigurations =
@@ -413,7 +453,11 @@ public final class ApplicationInsightsManager {
         return workItemConfigurations;
     }
 
-    /** @return Resource collection API of Favorites. */
+    /**
+     * Gets the resource collection API of Favorites.
+     *
+     * @return Resource collection API of Favorites.
+     */
     public Favorites favorites() {
         if (this.favorites == null) {
             this.favorites = new FavoritesImpl(clientObject.getFavorites(), this);
@@ -421,7 +465,11 @@ public final class ApplicationInsightsManager {
         return favorites;
     }
 
-    /** @return Resource collection API of WebTestLocations. */
+    /**
+     * Gets the resource collection API of WebTestLocations.
+     *
+     * @return Resource collection API of WebTestLocations.
+     */
     public WebTestLocations webTestLocations() {
         if (this.webTestLocations == null) {
             this.webTestLocations = new WebTestLocationsImpl(clientObject.getWebTestLocations(), this);
@@ -429,7 +477,11 @@ public final class ApplicationInsightsManager {
         return webTestLocations;
     }
 
-    /** @return Resource collection API of WebTests. */
+    /**
+     * Gets the resource collection API of WebTests.
+     *
+     * @return Resource collection API of WebTests.
+     */
     public WebTests webTests() {
         if (this.webTests == null) {
             this.webTests = new WebTestsImpl(clientObject.getWebTests(), this);
@@ -437,7 +489,11 @@ public final class ApplicationInsightsManager {
         return webTests;
     }
 
-    /** @return Resource collection API of AnalyticsItems. */
+    /**
+     * Gets the resource collection API of AnalyticsItems.
+     *
+     * @return Resource collection API of AnalyticsItems.
+     */
     public AnalyticsItems analyticsItems() {
         if (this.analyticsItems == null) {
             this.analyticsItems = new AnalyticsItemsImpl(clientObject.getAnalyticsItems(), this);
@@ -445,7 +501,11 @@ public final class ApplicationInsightsManager {
         return analyticsItems;
     }
 
-    /** @return Resource collection API of Workbooks. */
+    /**
+     * Gets the resource collection API of Workbooks.
+     *
+     * @return Resource collection API of Workbooks.
+     */
     public Workbooks workbooks() {
         if (this.workbooks == null) {
             this.workbooks = new WorkbooksImpl(clientObject.getWorkbooks(), this);
@@ -453,7 +513,11 @@ public final class ApplicationInsightsManager {
         return workbooks;
     }
 
-    /** @return Resource collection API of MyWorkbooks. */
+    /**
+     * Gets the resource collection API of MyWorkbooks.
+     *
+     * @return Resource collection API of MyWorkbooks.
+     */
     public MyWorkbooks myWorkbooks() {
         if (this.myWorkbooks == null) {
             this.myWorkbooks = new MyWorkbooksImpl(clientObject.getMyWorkbooks(), this);
@@ -461,7 +525,11 @@ public final class ApplicationInsightsManager {
         return myWorkbooks;
     }
 
-    /** @return Resource collection API of Components. */
+    /**
+     * Gets the resource collection API of Components.
+     *
+     * @return Resource collection API of Components.
+     */
     public Components components() {
         if (this.components == null) {
             this.components = new ComponentsImpl(clientObject.getComponents(), this);
@@ -469,7 +537,11 @@ public final class ApplicationInsightsManager {
         return components;
     }
 
-    /** @return Resource collection API of ComponentLinkedStorageAccountsOperations. */
+    /**
+     * Gets the resource collection API of ComponentLinkedStorageAccountsOperations.
+     *
+     * @return Resource collection API of ComponentLinkedStorageAccountsOperations.
+     */
     public ComponentLinkedStorageAccountsOperations componentLinkedStorageAccountsOperations() {
         if (this.componentLinkedStorageAccountsOperations == null) {
             this.componentLinkedStorageAccountsOperations =

@@ -27,7 +27,11 @@ public final class CriterionType extends ExpandableStringEnum<CriterionType> {
         return fromString(name, CriterionType.class);
     }
 
-    /** @return known CriterionType values. */
+    /**
+     * Gets known CriterionType values.
+     *
+     * @return known CriterionType values.
+     */
     public static Collection<CriterionType> values() {
         return values(CriterionType.class);
     }

@@ -27,7 +27,11 @@ public final class FrontDoorHealthProbeMethod extends ExpandableStringEnum<Front
         return fromString(name, FrontDoorHealthProbeMethod.class);
     }
 
-    /** @return known FrontDoorHealthProbeMethod values. */
+    /**
+     * Gets known FrontDoorHealthProbeMethod values.
+     *
+     * @return known FrontDoorHealthProbeMethod values.
+     */
     public static Collection<FrontDoorHealthProbeMethod> values() {
         return values(FrontDoorHealthProbeMethod.class);
     }

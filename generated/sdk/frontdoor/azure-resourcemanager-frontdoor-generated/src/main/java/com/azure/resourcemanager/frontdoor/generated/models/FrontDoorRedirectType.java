@@ -33,7 +33,11 @@ public final class FrontDoorRedirectType extends ExpandableStringEnum<FrontDoorR
         return fromString(name, FrontDoorRedirectType.class);
     }
 
-    /** @return known FrontDoorRedirectType values. */
+    /**
+     * Gets known FrontDoorRedirectType values.
+     *
+     * @return known FrontDoorRedirectType values.
+     */
     public static Collection<FrontDoorRedirectType> values() {
         return values(FrontDoorRedirectType.class);
     }

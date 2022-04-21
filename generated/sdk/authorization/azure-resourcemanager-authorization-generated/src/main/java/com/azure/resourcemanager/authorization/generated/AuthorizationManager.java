@@ -289,7 +289,11 @@ public final class AuthorizationManager {
         }
     }
 
-    /** @return Resource collection API of ClassicAdministrators. */
+    /**
+     * Gets the resource collection API of ClassicAdministrators.
+     *
+     * @return Resource collection API of ClassicAdministrators.
+     */
     public ClassicAdministrators classicAdministrators() {
         if (this.classicAdministrators == null) {
             this.classicAdministrators = new ClassicAdministratorsImpl(clientObject.getClassicAdministrators(), this);
@@ -297,7 +301,11 @@ public final class AuthorizationManager {
         return classicAdministrators;
     }
 
-    /** @return Resource collection API of GlobalAdministrators. */
+    /**
+     * Gets the resource collection API of GlobalAdministrators.
+     *
+     * @return Resource collection API of GlobalAdministrators.
+     */
     public GlobalAdministrators globalAdministrators() {
         if (this.globalAdministrators == null) {
             this.globalAdministrators = new GlobalAdministratorsImpl(clientObject.getGlobalAdministrators(), this);
@@ -305,7 +313,11 @@ public final class AuthorizationManager {
         return globalAdministrators;
     }
 
-    /** @return Resource collection API of ProviderOperationsMetadatas. */
+    /**
+     * Gets the resource collection API of ProviderOperationsMetadatas.
+     *
+     * @return Resource collection API of ProviderOperationsMetadatas.
+     */
     public ProviderOperationsMetadatas providerOperationsMetadatas() {
         if (this.providerOperationsMetadatas == null) {
             this.providerOperationsMetadatas =
@@ -314,7 +326,11 @@ public final class AuthorizationManager {
         return providerOperationsMetadatas;
     }
 
-    /** @return Resource collection API of RoleAssignments. */
+    /**
+     * Gets the resource collection API of RoleAssignments.
+     *
+     * @return Resource collection API of RoleAssignments.
+     */
     public RoleAssignments roleAssignments() {
         if (this.roleAssignments == null) {
             this.roleAssignments = new RoleAssignmentsImpl(clientObject.getRoleAssignments(), this);
@@ -322,7 +338,11 @@ public final class AuthorizationManager {
         return roleAssignments;
     }
 
-    /** @return Resource collection API of Permissions. */
+    /**
+     * Gets the resource collection API of Permissions.
+     *
+     * @return Resource collection API of Permissions.
+     */
     public Permissions permissions() {
         if (this.permissions == null) {
             this.permissions = new PermissionsImpl(clientObject.getPermissions(), this);
@@ -330,7 +350,11 @@ public final class AuthorizationManager {
         return permissions;
     }
 
-    /** @return Resource collection API of RoleDefinitions. */
+    /**
+     * Gets the resource collection API of RoleDefinitions.
+     *
+     * @return Resource collection API of RoleDefinitions.
+     */
     public RoleDefinitions roleDefinitions() {
         if (this.roleDefinitions == null) {
             this.roleDefinitions = new RoleDefinitionsImpl(clientObject.getRoleDefinitions(), this);
@@ -338,7 +362,11 @@ public final class AuthorizationManager {
         return roleDefinitions;
     }
 
-    /** @return Resource collection API of DenyAssignments. */
+    /**
+     * Gets the resource collection API of DenyAssignments.
+     *
+     * @return Resource collection API of DenyAssignments.
+     */
     public DenyAssignments denyAssignments() {
         if (this.denyAssignments == null) {
             this.denyAssignments = new DenyAssignmentsImpl(clientObject.getDenyAssignments(), this);

@@ -39,7 +39,11 @@ public final class CustomDomainStatus extends ExpandableStringEnum<CustomDomainS
         return fromString(name, CustomDomainStatus.class);
     }
 
-    /** @return known CustomDomainStatus values. */
+    /**
+     * Gets known CustomDomainStatus values.
+     *
+     * @return known CustomDomainStatus values.
+     */
     public static Collection<CustomDomainStatus> values() {
         return values(CustomDomainStatus.class);
     }

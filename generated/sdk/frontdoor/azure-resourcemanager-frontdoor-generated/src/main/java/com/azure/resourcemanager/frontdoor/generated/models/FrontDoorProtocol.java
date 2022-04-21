@@ -27,7 +27,11 @@ public final class FrontDoorProtocol extends ExpandableStringEnum<FrontDoorProto
         return fromString(name, FrontDoorProtocol.class);
     }
 
-    /** @return known FrontDoorProtocol values. */
+    /**
+     * Gets known FrontDoorProtocol values.
+     *
+     * @return known FrontDoorProtocol values.
+     */
     public static Collection<FrontDoorProtocol> values() {
         return values(FrontDoorProtocol.class);
     }

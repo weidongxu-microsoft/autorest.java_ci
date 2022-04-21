@@ -42,7 +42,11 @@ public final class AlertTimeGrainType extends ExpandableStringEnum<AlertTimeGrai
         return fromString(name, AlertTimeGrainType.class);
     }
 
-    /** @return known AlertTimeGrainType values. */
+    /**
+     * Gets known AlertTimeGrainType values.
+     *
+     * @return known AlertTimeGrainType values.
+     */
     public static Collection<AlertTimeGrainType> values() {
         return values(AlertTimeGrainType.class);
     }

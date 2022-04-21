@@ -27,7 +27,11 @@ public final class NetworkRuleBypassOptions extends ExpandableStringEnum<Network
         return fromString(name, NetworkRuleBypassOptions.class);
     }
 
-    /** @return known NetworkRuleBypassOptions values. */
+    /**
+     * Gets known NetworkRuleBypassOptions values.
+     *
+     * @return known NetworkRuleBypassOptions values.
+     */
     public static Collection<NetworkRuleBypassOptions> values() {
         return values(NetworkRuleBypassOptions.class);
     }

@@ -30,7 +30,11 @@ public final class AccessRights extends ExpandableStringEnum<AccessRights> {
         return fromString(name, AccessRights.class);
     }
 
-    /** @return known AccessRights values. */
+    /**
+     * Gets known AccessRights values.
+     *
+     * @return known AccessRights values.
+     */
     public static Collection<AccessRights> values() {
         return values(AccessRights.class);
     }

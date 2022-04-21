@@ -30,7 +30,11 @@ public final class DynamicThresholdOperator extends ExpandableStringEnum<Dynamic
         return fromString(name, DynamicThresholdOperator.class);
     }
 
-    /** @return known DynamicThresholdOperator values. */
+    /**
+     * Gets known DynamicThresholdOperator values.
+     *
+     * @return known DynamicThresholdOperator values.
+     */
     public static Collection<DynamicThresholdOperator> values() {
         return values(DynamicThresholdOperator.class);
     }

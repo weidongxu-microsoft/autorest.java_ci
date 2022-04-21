@@ -33,7 +33,11 @@ public final class ReportTimeframeType extends ExpandableStringEnum<ReportTimefr
         return fromString(name, ReportTimeframeType.class);
     }
 
-    /** @return known ReportTimeframeType values. */
+    /**
+     * Gets known ReportTimeframeType values.
+     *
+     * @return known ReportTimeframeType values.
+     */
     public static Collection<ReportTimeframeType> values() {
         return values(ReportTimeframeType.class);
     }

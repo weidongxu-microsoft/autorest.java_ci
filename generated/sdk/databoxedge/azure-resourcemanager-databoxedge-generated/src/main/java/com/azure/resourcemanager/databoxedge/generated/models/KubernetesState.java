@@ -42,7 +42,11 @@ public final class KubernetesState extends ExpandableStringEnum<KubernetesState>
         return fromString(name, KubernetesState.class);
     }
 
-    /** @return known KubernetesState values. */
+    /**
+     * Gets known KubernetesState values.
+     *
+     * @return known KubernetesState values.
+     */
     public static Collection<KubernetesState> values() {
         return values(KubernetesState.class);
     }

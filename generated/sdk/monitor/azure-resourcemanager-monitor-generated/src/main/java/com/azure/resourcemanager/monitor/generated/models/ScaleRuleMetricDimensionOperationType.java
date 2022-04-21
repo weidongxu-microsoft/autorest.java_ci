@@ -28,7 +28,11 @@ public final class ScaleRuleMetricDimensionOperationType
         return fromString(name, ScaleRuleMetricDimensionOperationType.class);
     }
 
-    /** @return known ScaleRuleMetricDimensionOperationType values. */
+    /**
+     * Gets known ScaleRuleMetricDimensionOperationType values.
+     *
+     * @return known ScaleRuleMetricDimensionOperationType values.
+     */
     public static Collection<ScaleRuleMetricDimensionOperationType> values() {
         return values(ScaleRuleMetricDimensionOperationType.class);
     }

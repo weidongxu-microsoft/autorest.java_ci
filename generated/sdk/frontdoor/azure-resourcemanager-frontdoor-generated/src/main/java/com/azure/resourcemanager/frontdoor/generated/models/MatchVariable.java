@@ -48,7 +48,11 @@ public final class MatchVariable extends ExpandableStringEnum<MatchVariable> {
         return fromString(name, MatchVariable.class);
     }
 
-    /** @return known MatchVariable values. */
+    /**
+     * Gets known MatchVariable values.
+     *
+     * @return known MatchVariable values.
+     */
     public static Collection<MatchVariable> values() {
         return values(MatchVariable.class);
     }

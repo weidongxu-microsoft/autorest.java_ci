@@ -34,7 +34,11 @@ public final class DomainPropertiesDomainNotRenewableReasonsItem
         return fromString(name, DomainPropertiesDomainNotRenewableReasonsItem.class);
     }
 
-    /** @return known DomainPropertiesDomainNotRenewableReasonsItem values. */
+    /**
+     * Gets known DomainPropertiesDomainNotRenewableReasonsItem values.
+     *
+     * @return known DomainPropertiesDomainNotRenewableReasonsItem values.
+     */
     public static Collection<DomainPropertiesDomainNotRenewableReasonsItem> values() {
         return values(DomainPropertiesDomainNotRenewableReasonsItem.class);
     }

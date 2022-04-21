@@ -300,7 +300,11 @@ public final class HDInsightManager {
         }
     }
 
-    /** @return Resource collection API of Clusters. */
+    /**
+     * Gets the resource collection API of Clusters.
+     *
+     * @return Resource collection API of Clusters.
+     */
     public Clusters clusters() {
         if (this.clusters == null) {
             this.clusters = new ClustersImpl(clientObject.getClusters(), this);
@@ -308,7 +312,11 @@ public final class HDInsightManager {
         return clusters;
     }
 
-    /** @return Resource collection API of Applications. */
+    /**
+     * Gets the resource collection API of Applications.
+     *
+     * @return Resource collection API of Applications.
+     */
     public Applications applications() {
         if (this.applications == null) {
             this.applications = new ApplicationsImpl(clientObject.getApplications(), this);
@@ -316,7 +324,11 @@ public final class HDInsightManager {
         return applications;
     }
 
-    /** @return Resource collection API of Locations. */
+    /**
+     * Gets the resource collection API of Locations.
+     *
+     * @return Resource collection API of Locations.
+     */
     public Locations locations() {
         if (this.locations == null) {
             this.locations = new LocationsImpl(clientObject.getLocations(), this);
@@ -324,7 +336,11 @@ public final class HDInsightManager {
         return locations;
     }
 
-    /** @return Resource collection API of Configurations. */
+    /**
+     * Gets the resource collection API of Configurations.
+     *
+     * @return Resource collection API of Configurations.
+     */
     public Configurations configurations() {
         if (this.configurations == null) {
             this.configurations = new ConfigurationsImpl(clientObject.getConfigurations(), this);
@@ -332,7 +348,11 @@ public final class HDInsightManager {
         return configurations;
     }
 
-    /** @return Resource collection API of Extensions. */
+    /**
+     * Gets the resource collection API of Extensions.
+     *
+     * @return Resource collection API of Extensions.
+     */
     public Extensions extensions() {
         if (this.extensions == null) {
             this.extensions = new ExtensionsImpl(clientObject.getExtensions(), this);
@@ -340,7 +360,11 @@ public final class HDInsightManager {
         return extensions;
     }
 
-    /** @return Resource collection API of ScriptActions. */
+    /**
+     * Gets the resource collection API of ScriptActions.
+     *
+     * @return Resource collection API of ScriptActions.
+     */
     public ScriptActions scriptActions() {
         if (this.scriptActions == null) {
             this.scriptActions = new ScriptActionsImpl(clientObject.getScriptActions(), this);
@@ -348,7 +372,11 @@ public final class HDInsightManager {
         return scriptActions;
     }
 
-    /** @return Resource collection API of ScriptExecutionHistories. */
+    /**
+     * Gets the resource collection API of ScriptExecutionHistories.
+     *
+     * @return Resource collection API of ScriptExecutionHistories.
+     */
     public ScriptExecutionHistories scriptExecutionHistories() {
         if (this.scriptExecutionHistories == null) {
             this.scriptExecutionHistories =
@@ -357,7 +385,11 @@ public final class HDInsightManager {
         return scriptExecutionHistories;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -365,7 +397,11 @@ public final class HDInsightManager {
         return operations;
     }
 
-    /** @return Resource collection API of VirtualMachines. */
+    /**
+     * Gets the resource collection API of VirtualMachines.
+     *
+     * @return Resource collection API of VirtualMachines.
+     */
     public VirtualMachines virtualMachines() {
         if (this.virtualMachines == null) {
             this.virtualMachines = new VirtualMachinesImpl(clientObject.getVirtualMachines(), this);
@@ -373,7 +409,11 @@ public final class HDInsightManager {
         return virtualMachines;
     }
 
-    /** @return Resource collection API of PrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of PrivateEndpointConnections.
+     *
+     * @return Resource collection API of PrivateEndpointConnections.
+     */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
             this.privateEndpointConnections =
@@ -382,7 +422,11 @@ public final class HDInsightManager {
         return privateEndpointConnections;
     }
 
-    /** @return Resource collection API of PrivateLinkResources. */
+    /**
+     * Gets the resource collection API of PrivateLinkResources.
+     *
+     * @return Resource collection API of PrivateLinkResources.
+     */
     public PrivateLinkResources privateLinkResources() {
         if (this.privateLinkResources == null) {
             this.privateLinkResources = new PrivateLinkResourcesImpl(clientObject.getPrivateLinkResources(), this);

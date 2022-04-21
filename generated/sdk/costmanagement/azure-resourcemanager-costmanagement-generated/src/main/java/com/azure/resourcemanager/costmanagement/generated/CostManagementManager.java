@@ -291,7 +291,11 @@ public final class CostManagementManager {
         }
     }
 
-    /** @return Resource collection API of Settings. */
+    /**
+     * Gets the resource collection API of Settings.
+     *
+     * @return Resource collection API of Settings.
+     */
     public Settings settings() {
         if (this.settings == null) {
             this.settings = new SettingsImpl(clientObject.getSettings(), this);
@@ -299,7 +303,11 @@ public final class CostManagementManager {
         return settings;
     }
 
-    /** @return Resource collection API of Views. */
+    /**
+     * Gets the resource collection API of Views.
+     *
+     * @return Resource collection API of Views.
+     */
     public Views views() {
         if (this.views == null) {
             this.views = new ViewsImpl(clientObject.getViews(), this);
@@ -307,7 +315,11 @@ public final class CostManagementManager {
         return views;
     }
 
-    /** @return Resource collection API of Alerts. */
+    /**
+     * Gets the resource collection API of Alerts.
+     *
+     * @return Resource collection API of Alerts.
+     */
     public Alerts alerts() {
         if (this.alerts == null) {
             this.alerts = new AlertsImpl(clientObject.getAlerts(), this);
@@ -315,7 +327,11 @@ public final class CostManagementManager {
         return alerts;
     }
 
-    /** @return Resource collection API of Forecasts. */
+    /**
+     * Gets the resource collection API of Forecasts.
+     *
+     * @return Resource collection API of Forecasts.
+     */
     public Forecasts forecasts() {
         if (this.forecasts == null) {
             this.forecasts = new ForecastsImpl(clientObject.getForecasts(), this);
@@ -323,7 +339,11 @@ public final class CostManagementManager {
         return forecasts;
     }
 
-    /** @return Resource collection API of Dimensions. */
+    /**
+     * Gets the resource collection API of Dimensions.
+     *
+     * @return Resource collection API of Dimensions.
+     */
     public Dimensions dimensions() {
         if (this.dimensions == null) {
             this.dimensions = new DimensionsImpl(clientObject.getDimensions(), this);
@@ -331,7 +351,11 @@ public final class CostManagementManager {
         return dimensions;
     }
 
-    /** @return Resource collection API of Queries. */
+    /**
+     * Gets the resource collection API of Queries.
+     *
+     * @return Resource collection API of Queries.
+     */
     public Queries queries() {
         if (this.queries == null) {
             this.queries = new QueriesImpl(clientObject.getQueries(), this);
@@ -339,7 +363,11 @@ public final class CostManagementManager {
         return queries;
     }
 
-    /** @return Resource collection API of GenerateReservationDetailsReports. */
+    /**
+     * Gets the resource collection API of GenerateReservationDetailsReports.
+     *
+     * @return Resource collection API of GenerateReservationDetailsReports.
+     */
     public GenerateReservationDetailsReports generateReservationDetailsReports() {
         if (this.generateReservationDetailsReports == null) {
             this.generateReservationDetailsReports =
@@ -348,7 +376,11 @@ public final class CostManagementManager {
         return generateReservationDetailsReports;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -356,7 +388,11 @@ public final class CostManagementManager {
         return operations;
     }
 
-    /** @return Resource collection API of Exports. */
+    /**
+     * Gets the resource collection API of Exports.
+     *
+     * @return Resource collection API of Exports.
+     */
     public Exports exports() {
         if (this.exports == null) {
             this.exports = new ExportsImpl(clientObject.getExports(), this);

@@ -37,7 +37,11 @@ public final class ManagedRuleExclusionSelectorMatchOperator
         return fromString(name, ManagedRuleExclusionSelectorMatchOperator.class);
     }
 
-    /** @return known ManagedRuleExclusionSelectorMatchOperator values. */
+    /**
+     * Gets known ManagedRuleExclusionSelectorMatchOperator values.
+     *
+     * @return known ManagedRuleExclusionSelectorMatchOperator values.
+     */
     public static Collection<ManagedRuleExclusionSelectorMatchOperator> values() {
         return values(ManagedRuleExclusionSelectorMatchOperator.class);
     }

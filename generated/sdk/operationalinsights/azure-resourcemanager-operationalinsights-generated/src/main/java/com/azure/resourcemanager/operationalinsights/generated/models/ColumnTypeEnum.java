@@ -45,7 +45,11 @@ public final class ColumnTypeEnum extends ExpandableStringEnum<ColumnTypeEnum> {
         return fromString(name, ColumnTypeEnum.class);
     }
 
-    /** @return known ColumnTypeEnum values. */
+    /**
+     * Gets known ColumnTypeEnum values.
+     *
+     * @return known ColumnTypeEnum values.
+     */
     public static Collection<ColumnTypeEnum> values() {
         return values(ColumnTypeEnum.class);
     }

@@ -30,7 +30,11 @@ public final class OperationStatusType extends ExpandableStringEnum<OperationSta
         return fromString(name, OperationStatusType.class);
     }
 
-    /** @return known OperationStatusType values. */
+    /**
+     * Gets known OperationStatusType values.
+     *
+     * @return known OperationStatusType values.
+     */
     public static Collection<OperationStatusType> values() {
         return values(OperationStatusType.class);
     }

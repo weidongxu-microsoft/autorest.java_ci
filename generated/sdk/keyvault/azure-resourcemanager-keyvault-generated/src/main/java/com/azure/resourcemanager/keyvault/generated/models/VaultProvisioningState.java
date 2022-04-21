@@ -27,7 +27,11 @@ public final class VaultProvisioningState extends ExpandableStringEnum<VaultProv
         return fromString(name, VaultProvisioningState.class);
     }
 
-    /** @return known VaultProvisioningState values. */
+    /**
+     * Gets known VaultProvisioningState values.
+     *
+     * @return known VaultProvisioningState values.
+     */
     public static Collection<VaultProvisioningState> values() {
         return values(VaultProvisioningState.class);
     }

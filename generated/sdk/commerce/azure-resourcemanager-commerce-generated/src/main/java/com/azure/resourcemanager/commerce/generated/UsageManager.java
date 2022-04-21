@@ -264,7 +264,11 @@ public final class UsageManager {
         }
     }
 
-    /** @return Resource collection API of UsageAggregates. */
+    /**
+     * Gets the resource collection API of UsageAggregates.
+     *
+     * @return Resource collection API of UsageAggregates.
+     */
     public UsageAggregates usageAggregates() {
         if (this.usageAggregates == null) {
             this.usageAggregates = new UsageAggregatesImpl(clientObject.getUsageAggregates(), this);
@@ -272,7 +276,11 @@ public final class UsageManager {
         return usageAggregates;
     }
 
-    /** @return Resource collection API of RateCards. */
+    /**
+     * Gets the resource collection API of RateCards.
+     *
+     * @return Resource collection API of RateCards.
+     */
     public RateCards rateCards() {
         if (this.rateCards == null) {
             this.rateCards = new RateCardsImpl(clientObject.getRateCards(), this);

@@ -24,7 +24,11 @@ public final class ManagedHsmSkuFamily extends ExpandableStringEnum<ManagedHsmSk
         return fromString(name, ManagedHsmSkuFamily.class);
     }
 
-    /** @return known ManagedHsmSkuFamily values. */
+    /**
+     * Gets known ManagedHsmSkuFamily values.
+     *
+     * @return known ManagedHsmSkuFamily values.
+     */
     public static Collection<ManagedHsmSkuFamily> values() {
         return values(ManagedHsmSkuFamily.class);
     }

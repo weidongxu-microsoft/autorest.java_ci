@@ -27,7 +27,11 @@ public final class HealthProbeEnabled extends ExpandableStringEnum<HealthProbeEn
         return fromString(name, HealthProbeEnabled.class);
     }
 
-    /** @return known HealthProbeEnabled values. */
+    /**
+     * Gets known HealthProbeEnabled values.
+     *
+     * @return known HealthProbeEnabled values.
+     */
     public static Collection<HealthProbeEnabled> values() {
         return values(HealthProbeEnabled.class);
     }

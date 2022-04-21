@@ -30,7 +30,11 @@ public final class TableSubTypeEnum extends ExpandableStringEnum<TableSubTypeEnu
         return fromString(name, TableSubTypeEnum.class);
     }
 
-    /** @return known TableSubTypeEnum values. */
+    /**
+     * Gets known TableSubTypeEnum values.
+     *
+     * @return known TableSubTypeEnum values.
+     */
     public static Collection<TableSubTypeEnum> values() {
         return values(TableSubTypeEnum.class);
     }

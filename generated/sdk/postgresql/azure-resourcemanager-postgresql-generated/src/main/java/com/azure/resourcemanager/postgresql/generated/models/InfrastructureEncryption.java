@@ -27,7 +27,11 @@ public final class InfrastructureEncryption extends ExpandableStringEnum<Infrast
         return fromString(name, InfrastructureEncryption.class);
     }
 
-    /** @return known InfrastructureEncryption values. */
+    /**
+     * Gets known InfrastructureEncryption values.
+     *
+     * @return known InfrastructureEncryption values.
+     */
     public static Collection<InfrastructureEncryption> values() {
         return values(InfrastructureEncryption.class);
     }

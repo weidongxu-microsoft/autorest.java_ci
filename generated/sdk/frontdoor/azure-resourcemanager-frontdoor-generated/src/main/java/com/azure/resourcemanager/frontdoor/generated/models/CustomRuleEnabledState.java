@@ -27,7 +27,11 @@ public final class CustomRuleEnabledState extends ExpandableStringEnum<CustomRul
         return fromString(name, CustomRuleEnabledState.class);
     }
 
-    /** @return known CustomRuleEnabledState values. */
+    /**
+     * Gets known CustomRuleEnabledState values.
+     *
+     * @return known CustomRuleEnabledState values.
+     */
     public static Collection<CustomRuleEnabledState> values() {
         return values(CustomRuleEnabledState.class);
     }

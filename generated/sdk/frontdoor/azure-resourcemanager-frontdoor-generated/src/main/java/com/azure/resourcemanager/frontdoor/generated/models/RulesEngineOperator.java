@@ -54,7 +54,11 @@ public final class RulesEngineOperator extends ExpandableStringEnum<RulesEngineO
         return fromString(name, RulesEngineOperator.class);
     }
 
-    /** @return known RulesEngineOperator values. */
+    /**
+     * Gets known RulesEngineOperator values.
+     *
+     * @return known RulesEngineOperator values.
+     */
     public static Collection<RulesEngineOperator> values() {
         return values(RulesEngineOperator.class);
     }

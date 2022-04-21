@@ -27,7 +27,11 @@ public final class TablePlanEnum extends ExpandableStringEnum<TablePlanEnum> {
         return fromString(name, TablePlanEnum.class);
     }
 
-    /** @return known TablePlanEnum values. */
+    /**
+     * Gets known TablePlanEnum values.
+     *
+     * @return known TablePlanEnum values.
+     */
     public static Collection<TablePlanEnum> values() {
         return values(TablePlanEnum.class);
     }

@@ -27,7 +27,11 @@ public final class Enabled extends ExpandableStringEnum<Enabled> {
         return fromString(name, Enabled.class);
     }
 
-    /** @return known Enabled values. */
+    /**
+     * Gets known Enabled values.
+     *
+     * @return known Enabled values.
+     */
     public static Collection<Enabled> values() {
         return values(Enabled.class);
     }

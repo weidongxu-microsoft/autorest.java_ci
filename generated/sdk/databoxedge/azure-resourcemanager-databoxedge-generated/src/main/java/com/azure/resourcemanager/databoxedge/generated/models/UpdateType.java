@@ -30,7 +30,11 @@ public final class UpdateType extends ExpandableStringEnum<UpdateType> {
         return fromString(name, UpdateType.class);
     }
 
-    /** @return known UpdateType values. */
+    /**
+     * Gets known UpdateType values.
+     *
+     * @return known UpdateType values.
+     */
     public static Collection<UpdateType> values() {
         return values(UpdateType.class);
     }

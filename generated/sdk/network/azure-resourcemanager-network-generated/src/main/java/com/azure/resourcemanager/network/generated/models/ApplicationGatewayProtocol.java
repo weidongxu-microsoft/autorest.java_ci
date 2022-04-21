@@ -33,7 +33,11 @@ public final class ApplicationGatewayProtocol extends ExpandableStringEnum<Appli
         return fromString(name, ApplicationGatewayProtocol.class);
     }
 
-    /** @return known ApplicationGatewayProtocol values. */
+    /**
+     * Gets known ApplicationGatewayProtocol values.
+     *
+     * @return known ApplicationGatewayProtocol values.
+     */
     public static Collection<ApplicationGatewayProtocol> values() {
         return values(ApplicationGatewayProtocol.class);
     }

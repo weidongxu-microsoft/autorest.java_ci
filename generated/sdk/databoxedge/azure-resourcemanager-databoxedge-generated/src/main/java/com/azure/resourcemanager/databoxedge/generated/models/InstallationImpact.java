@@ -30,7 +30,11 @@ public final class InstallationImpact extends ExpandableStringEnum<InstallationI
         return fromString(name, InstallationImpact.class);
     }
 
-    /** @return known InstallationImpact values. */
+    /**
+     * Gets known InstallationImpact values.
+     *
+     * @return known InstallationImpact values.
+     */
     public static Collection<InstallationImpact> values() {
         return values(InstallationImpact.class);
     }

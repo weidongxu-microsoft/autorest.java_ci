@@ -279,7 +279,11 @@ public final class PolicyManager {
         }
     }
 
-    /** @return Resource collection API of DataPolicyManifests. */
+    /**
+     * Gets the resource collection API of DataPolicyManifests.
+     *
+     * @return Resource collection API of DataPolicyManifests.
+     */
     public DataPolicyManifests dataPolicyManifests() {
         if (this.dataPolicyManifests == null) {
             this.dataPolicyManifests = new DataPolicyManifestsImpl(clientObject.getDataPolicyManifests(), this);
@@ -287,7 +291,11 @@ public final class PolicyManager {
         return dataPolicyManifests;
     }
 
-    /** @return Resource collection API of PolicyAssignments. */
+    /**
+     * Gets the resource collection API of PolicyAssignments.
+     *
+     * @return Resource collection API of PolicyAssignments.
+     */
     public PolicyAssignments policyAssignments() {
         if (this.policyAssignments == null) {
             this.policyAssignments = new PolicyAssignmentsImpl(clientObject.getPolicyAssignments(), this);
@@ -295,7 +303,11 @@ public final class PolicyManager {
         return policyAssignments;
     }
 
-    /** @return Resource collection API of PolicyDefinitions. */
+    /**
+     * Gets the resource collection API of PolicyDefinitions.
+     *
+     * @return Resource collection API of PolicyDefinitions.
+     */
     public PolicyDefinitions policyDefinitions() {
         if (this.policyDefinitions == null) {
             this.policyDefinitions = new PolicyDefinitionsImpl(clientObject.getPolicyDefinitions(), this);
@@ -303,7 +315,11 @@ public final class PolicyManager {
         return policyDefinitions;
     }
 
-    /** @return Resource collection API of PolicySetDefinitions. */
+    /**
+     * Gets the resource collection API of PolicySetDefinitions.
+     *
+     * @return Resource collection API of PolicySetDefinitions.
+     */
     public PolicySetDefinitions policySetDefinitions() {
         if (this.policySetDefinitions == null) {
             this.policySetDefinitions = new PolicySetDefinitionsImpl(clientObject.getPolicySetDefinitions(), this);
@@ -311,7 +327,11 @@ public final class PolicyManager {
         return policySetDefinitions;
     }
 
-    /** @return Resource collection API of PolicyExemptions. */
+    /**
+     * Gets the resource collection API of PolicyExemptions.
+     *
+     * @return Resource collection API of PolicyExemptions.
+     */
     public PolicyExemptions policyExemptions() {
         if (this.policyExemptions == null) {
             this.policyExemptions = new PolicyExemptionsImpl(clientObject.getPolicyExemptions(), this);

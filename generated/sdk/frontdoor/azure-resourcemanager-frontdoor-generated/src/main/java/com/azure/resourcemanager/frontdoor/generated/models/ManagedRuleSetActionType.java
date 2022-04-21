@@ -30,7 +30,11 @@ public final class ManagedRuleSetActionType extends ExpandableStringEnum<Managed
         return fromString(name, ManagedRuleSetActionType.class);
     }
 
-    /** @return known ManagedRuleSetActionType values. */
+    /**
+     * Gets known ManagedRuleSetActionType values.
+     *
+     * @return known ManagedRuleSetActionType values.
+     */
     public static Collection<ManagedRuleSetActionType> values() {
         return values(ManagedRuleSetActionType.class);
     }

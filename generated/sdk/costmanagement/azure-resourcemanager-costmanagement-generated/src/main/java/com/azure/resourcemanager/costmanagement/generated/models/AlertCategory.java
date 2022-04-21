@@ -33,7 +33,11 @@ public final class AlertCategory extends ExpandableStringEnum<AlertCategory> {
         return fromString(name, AlertCategory.class);
     }
 
-    /** @return known AlertCategory values. */
+    /**
+     * Gets known AlertCategory values.
+     *
+     * @return known AlertCategory values.
+     */
     public static Collection<AlertCategory> values() {
         return values(AlertCategory.class);
     }

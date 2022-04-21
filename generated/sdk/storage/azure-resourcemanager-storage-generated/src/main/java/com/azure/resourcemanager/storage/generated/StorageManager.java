@@ -336,7 +336,11 @@ public final class StorageManager {
         }
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -344,7 +348,11 @@ public final class StorageManager {
         return operations;
     }
 
-    /** @return Resource collection API of Skus. */
+    /**
+     * Gets the resource collection API of Skus.
+     *
+     * @return Resource collection API of Skus.
+     */
     public Skus skus() {
         if (this.skus == null) {
             this.skus = new SkusImpl(clientObject.getSkus(), this);
@@ -352,7 +360,11 @@ public final class StorageManager {
         return skus;
     }
 
-    /** @return Resource collection API of StorageAccounts. */
+    /**
+     * Gets the resource collection API of StorageAccounts.
+     *
+     * @return Resource collection API of StorageAccounts.
+     */
     public StorageAccounts storageAccounts() {
         if (this.storageAccounts == null) {
             this.storageAccounts = new StorageAccountsImpl(clientObject.getStorageAccounts(), this);
@@ -360,7 +372,11 @@ public final class StorageManager {
         return storageAccounts;
     }
 
-    /** @return Resource collection API of DeletedAccounts. */
+    /**
+     * Gets the resource collection API of DeletedAccounts.
+     *
+     * @return Resource collection API of DeletedAccounts.
+     */
     public DeletedAccounts deletedAccounts() {
         if (this.deletedAccounts == null) {
             this.deletedAccounts = new DeletedAccountsImpl(clientObject.getDeletedAccounts(), this);
@@ -368,7 +384,11 @@ public final class StorageManager {
         return deletedAccounts;
     }
 
-    /** @return Resource collection API of Usages. */
+    /**
+     * Gets the resource collection API of Usages.
+     *
+     * @return Resource collection API of Usages.
+     */
     public Usages usages() {
         if (this.usages == null) {
             this.usages = new UsagesImpl(clientObject.getUsages(), this);
@@ -376,7 +396,11 @@ public final class StorageManager {
         return usages;
     }
 
-    /** @return Resource collection API of ManagementPolicies. */
+    /**
+     * Gets the resource collection API of ManagementPolicies.
+     *
+     * @return Resource collection API of ManagementPolicies.
+     */
     public ManagementPolicies managementPolicies() {
         if (this.managementPolicies == null) {
             this.managementPolicies = new ManagementPoliciesImpl(clientObject.getManagementPolicies(), this);
@@ -384,7 +408,11 @@ public final class StorageManager {
         return managementPolicies;
     }
 
-    /** @return Resource collection API of BlobInventoryPolicies. */
+    /**
+     * Gets the resource collection API of BlobInventoryPolicies.
+     *
+     * @return Resource collection API of BlobInventoryPolicies.
+     */
     public BlobInventoryPolicies blobInventoryPolicies() {
         if (this.blobInventoryPolicies == null) {
             this.blobInventoryPolicies = new BlobInventoryPoliciesImpl(clientObject.getBlobInventoryPolicies(), this);
@@ -392,7 +420,11 @@ public final class StorageManager {
         return blobInventoryPolicies;
     }
 
-    /** @return Resource collection API of PrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of PrivateEndpointConnections.
+     *
+     * @return Resource collection API of PrivateEndpointConnections.
+     */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
             this.privateEndpointConnections =
@@ -401,7 +433,11 @@ public final class StorageManager {
         return privateEndpointConnections;
     }
 
-    /** @return Resource collection API of PrivateLinkResources. */
+    /**
+     * Gets the resource collection API of PrivateLinkResources.
+     *
+     * @return Resource collection API of PrivateLinkResources.
+     */
     public PrivateLinkResources privateLinkResources() {
         if (this.privateLinkResources == null) {
             this.privateLinkResources = new PrivateLinkResourcesImpl(clientObject.getPrivateLinkResources(), this);
@@ -409,7 +445,11 @@ public final class StorageManager {
         return privateLinkResources;
     }
 
-    /** @return Resource collection API of ObjectReplicationPoliciesOperations. */
+    /**
+     * Gets the resource collection API of ObjectReplicationPoliciesOperations.
+     *
+     * @return Resource collection API of ObjectReplicationPoliciesOperations.
+     */
     public ObjectReplicationPoliciesOperations objectReplicationPoliciesOperations() {
         if (this.objectReplicationPoliciesOperations == null) {
             this.objectReplicationPoliciesOperations =
@@ -419,7 +459,11 @@ public final class StorageManager {
         return objectReplicationPoliciesOperations;
     }
 
-    /** @return Resource collection API of LocalUsersOperations. */
+    /**
+     * Gets the resource collection API of LocalUsersOperations.
+     *
+     * @return Resource collection API of LocalUsersOperations.
+     */
     public LocalUsersOperations localUsersOperations() {
         if (this.localUsersOperations == null) {
             this.localUsersOperations = new LocalUsersOperationsImpl(clientObject.getLocalUsersOperations(), this);
@@ -427,7 +471,11 @@ public final class StorageManager {
         return localUsersOperations;
     }
 
-    /** @return Resource collection API of EncryptionScopes. */
+    /**
+     * Gets the resource collection API of EncryptionScopes.
+     *
+     * @return Resource collection API of EncryptionScopes.
+     */
     public EncryptionScopes encryptionScopes() {
         if (this.encryptionScopes == null) {
             this.encryptionScopes = new EncryptionScopesImpl(clientObject.getEncryptionScopes(), this);
@@ -435,7 +483,11 @@ public final class StorageManager {
         return encryptionScopes;
     }
 
-    /** @return Resource collection API of BlobServices. */
+    /**
+     * Gets the resource collection API of BlobServices.
+     *
+     * @return Resource collection API of BlobServices.
+     */
     public BlobServices blobServices() {
         if (this.blobServices == null) {
             this.blobServices = new BlobServicesImpl(clientObject.getBlobServices(), this);
@@ -443,7 +495,11 @@ public final class StorageManager {
         return blobServices;
     }
 
-    /** @return Resource collection API of BlobContainers. */
+    /**
+     * Gets the resource collection API of BlobContainers.
+     *
+     * @return Resource collection API of BlobContainers.
+     */
     public BlobContainers blobContainers() {
         if (this.blobContainers == null) {
             this.blobContainers = new BlobContainersImpl(clientObject.getBlobContainers(), this);
@@ -451,7 +507,11 @@ public final class StorageManager {
         return blobContainers;
     }
 
-    /** @return Resource collection API of FileServices. */
+    /**
+     * Gets the resource collection API of FileServices.
+     *
+     * @return Resource collection API of FileServices.
+     */
     public FileServices fileServices() {
         if (this.fileServices == null) {
             this.fileServices = new FileServicesImpl(clientObject.getFileServices(), this);
@@ -459,7 +519,11 @@ public final class StorageManager {
         return fileServices;
     }
 
-    /** @return Resource collection API of FileShares. */
+    /**
+     * Gets the resource collection API of FileShares.
+     *
+     * @return Resource collection API of FileShares.
+     */
     public FileShares fileShares() {
         if (this.fileShares == null) {
             this.fileShares = new FileSharesImpl(clientObject.getFileShares(), this);
@@ -467,7 +531,11 @@ public final class StorageManager {
         return fileShares;
     }
 
-    /** @return Resource collection API of QueueServices. */
+    /**
+     * Gets the resource collection API of QueueServices.
+     *
+     * @return Resource collection API of QueueServices.
+     */
     public QueueServices queueServices() {
         if (this.queueServices == null) {
             this.queueServices = new QueueServicesImpl(clientObject.getQueueServices(), this);
@@ -475,7 +543,11 @@ public final class StorageManager {
         return queueServices;
     }
 
-    /** @return Resource collection API of Queues. */
+    /**
+     * Gets the resource collection API of Queues.
+     *
+     * @return Resource collection API of Queues.
+     */
     public Queues queues() {
         if (this.queues == null) {
             this.queues = new QueuesImpl(clientObject.getQueues(), this);
@@ -483,7 +555,11 @@ public final class StorageManager {
         return queues;
     }
 
-    /** @return Resource collection API of TableServices. */
+    /**
+     * Gets the resource collection API of TableServices.
+     *
+     * @return Resource collection API of TableServices.
+     */
     public TableServices tableServices() {
         if (this.tableServices == null) {
             this.tableServices = new TableServicesImpl(clientObject.getTableServices(), this);
@@ -491,7 +567,11 @@ public final class StorageManager {
         return tableServices;
     }
 
-    /** @return Resource collection API of Tables. */
+    /**
+     * Gets the resource collection API of Tables.
+     *
+     * @return Resource collection API of Tables.
+     */
     public Tables tables() {
         if (this.tables == null) {
             this.tables = new TablesImpl(clientObject.getTables(), this);

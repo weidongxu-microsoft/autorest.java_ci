@@ -27,7 +27,11 @@ public final class DataResidencyType extends ExpandableStringEnum<DataResidencyT
         return fromString(name, DataResidencyType.class);
     }
 
-    /** @return known DataResidencyType values. */
+    /**
+     * Gets known DataResidencyType values.
+     *
+     * @return known DataResidencyType values.
+     */
     public static Collection<DataResidencyType> values() {
         return values(DataResidencyType.class);
     }

@@ -45,7 +45,11 @@ public final class AppServiceCertificateOrderPropertiesAppServiceCertificateNotR
         return fromString(name, AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem.class);
     }
 
-    /** @return known AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem values. */
+    /**
+     * Gets known AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem values.
+     *
+     * @return known AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem values.
+     */
     public static Collection<AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem>
         values() {
         return values(AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem.class);

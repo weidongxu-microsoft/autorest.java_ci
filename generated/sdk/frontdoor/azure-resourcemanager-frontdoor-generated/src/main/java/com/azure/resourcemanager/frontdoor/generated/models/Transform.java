@@ -39,7 +39,11 @@ public final class Transform extends ExpandableStringEnum<Transform> {
         return fromString(name, Transform.class);
     }
 
-    /** @return known Transform values. */
+    /**
+     * Gets known Transform values.
+     *
+     * @return known Transform values.
+     */
     public static Collection<Transform> values() {
         return values(Transform.class);
     }

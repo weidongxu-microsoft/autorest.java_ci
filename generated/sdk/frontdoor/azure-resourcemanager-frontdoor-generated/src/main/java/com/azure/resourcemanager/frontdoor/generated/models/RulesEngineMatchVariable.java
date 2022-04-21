@@ -57,7 +57,11 @@ public final class RulesEngineMatchVariable extends ExpandableStringEnum<RulesEn
         return fromString(name, RulesEngineMatchVariable.class);
     }
 
-    /** @return known RulesEngineMatchVariable values. */
+    /**
+     * Gets known RulesEngineMatchVariable values.
+     *
+     * @return known RulesEngineMatchVariable values.
+     */
     public static Collection<RulesEngineMatchVariable> values() {
         return values(RulesEngineMatchVariable.class);
     }

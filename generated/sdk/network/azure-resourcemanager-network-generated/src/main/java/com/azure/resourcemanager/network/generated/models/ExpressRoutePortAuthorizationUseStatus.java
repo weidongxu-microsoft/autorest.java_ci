@@ -28,7 +28,11 @@ public final class ExpressRoutePortAuthorizationUseStatus
         return fromString(name, ExpressRoutePortAuthorizationUseStatus.class);
     }
 
-    /** @return known ExpressRoutePortAuthorizationUseStatus values. */
+    /**
+     * Gets known ExpressRoutePortAuthorizationUseStatus values.
+     *
+     * @return known ExpressRoutePortAuthorizationUseStatus values.
+     */
     public static Collection<ExpressRoutePortAuthorizationUseStatus> values() {
         return values(ExpressRoutePortAuthorizationUseStatus.class);
     }

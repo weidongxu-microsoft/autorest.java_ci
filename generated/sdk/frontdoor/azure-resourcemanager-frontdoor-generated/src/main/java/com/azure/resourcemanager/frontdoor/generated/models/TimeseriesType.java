@@ -33,7 +33,11 @@ public final class TimeseriesType extends ExpandableStringEnum<TimeseriesType> {
         return fromString(name, TimeseriesType.class);
     }
 
-    /** @return known TimeseriesType values. */
+    /**
+     * Gets known TimeseriesType values.
+     *
+     * @return known TimeseriesType values.
+     */
     public static Collection<TimeseriesType> values() {
         return values(TimeseriesType.class);
     }

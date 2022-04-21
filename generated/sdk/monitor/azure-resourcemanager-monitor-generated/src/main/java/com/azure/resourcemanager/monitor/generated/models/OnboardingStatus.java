@@ -30,7 +30,11 @@ public final class OnboardingStatus extends ExpandableStringEnum<OnboardingStatu
         return fromString(name, OnboardingStatus.class);
     }
 
-    /** @return known OnboardingStatus values. */
+    /**
+     * Gets known OnboardingStatus values.
+     *
+     * @return known OnboardingStatus values.
+     */
     public static Collection<OnboardingStatus> values() {
         return values(OnboardingStatus.class);
     }

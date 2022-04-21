@@ -39,7 +39,11 @@ public final class TransformType extends ExpandableStringEnum<TransformType> {
         return fromString(name, TransformType.class);
     }
 
-    /** @return known TransformType values. */
+    /**
+     * Gets known TransformType values.
+     *
+     * @return known TransformType values.
+     */
     public static Collection<TransformType> values() {
         return values(TransformType.class);
     }

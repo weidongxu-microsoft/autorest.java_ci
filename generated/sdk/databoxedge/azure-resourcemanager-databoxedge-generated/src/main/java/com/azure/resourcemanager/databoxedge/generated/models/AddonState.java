@@ -42,7 +42,11 @@ public final class AddonState extends ExpandableStringEnum<AddonState> {
         return fromString(name, AddonState.class);
     }
 
-    /** @return known AddonState values. */
+    /**
+     * Gets known AddonState values.
+     *
+     * @return known AddonState values.
+     */
     public static Collection<AddonState> values() {
         return values(AddonState.class);
     }

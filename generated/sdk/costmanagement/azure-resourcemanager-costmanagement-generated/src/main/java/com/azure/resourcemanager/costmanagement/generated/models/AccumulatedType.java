@@ -27,7 +27,11 @@ public final class AccumulatedType extends ExpandableStringEnum<AccumulatedType>
         return fromString(name, AccumulatedType.class);
     }
 
-    /** @return known AccumulatedType values. */
+    /**
+     * Gets known AccumulatedType values.
+     *
+     * @return known AccumulatedType values.
+     */
     public static Collection<AccumulatedType> values() {
         return values(AccumulatedType.class);
     }

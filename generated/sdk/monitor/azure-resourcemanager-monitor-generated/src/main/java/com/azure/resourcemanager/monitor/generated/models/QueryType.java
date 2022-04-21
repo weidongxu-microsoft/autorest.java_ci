@@ -24,7 +24,11 @@ public final class QueryType extends ExpandableStringEnum<QueryType> {
         return fromString(name, QueryType.class);
     }
 
-    /** @return known QueryType values. */
+    /**
+     * Gets known QueryType values.
+     *
+     * @return known QueryType values.
+     */
     public static Collection<QueryType> values() {
         return values(QueryType.class);
     }

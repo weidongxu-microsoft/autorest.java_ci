@@ -33,7 +33,11 @@ public final class JsonWebKeyCurveName extends ExpandableStringEnum<JsonWebKeyCu
         return fromString(name, JsonWebKeyCurveName.class);
     }
 
-    /** @return known JsonWebKeyCurveName values. */
+    /**
+     * Gets known JsonWebKeyCurveName values.
+     *
+     * @return known JsonWebKeyCurveName values.
+     */
     public static Collection<JsonWebKeyCurveName> values() {
         return values(JsonWebKeyCurveName.class);
     }

@@ -27,7 +27,11 @@ public final class PublicNetworkAccessFlag extends ExpandableStringEnum<PublicNe
         return fromString(name, PublicNetworkAccessFlag.class);
     }
 
-    /** @return known PublicNetworkAccessFlag values. */
+    /**
+     * Gets known PublicNetworkAccessFlag values.
+     *
+     * @return known PublicNetworkAccessFlag values.
+     */
     public static Collection<PublicNetworkAccessFlag> values() {
         return values(PublicNetworkAccessFlag.class);
     }

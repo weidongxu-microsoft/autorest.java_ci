@@ -30,7 +30,11 @@ public final class ShipmentType extends ExpandableStringEnum<ShipmentType> {
         return fromString(name, ShipmentType.class);
     }
 
-    /** @return known ShipmentType values. */
+    /**
+     * Gets known ShipmentType values.
+     *
+     * @return known ShipmentType values.
+     */
     public static Collection<ShipmentType> values() {
         return values(ShipmentType.class);
     }

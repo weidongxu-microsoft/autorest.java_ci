@@ -27,7 +27,11 @@ public final class ReportConfigSortingDirection extends ExpandableStringEnum<Rep
         return fromString(name, ReportConfigSortingDirection.class);
     }
 
-    /** @return known ReportConfigSortingDirection values. */
+    /**
+     * Gets known ReportConfigSortingDirection values.
+     *
+     * @return known ReportConfigSortingDirection values.
+     */
     public static Collection<ReportConfigSortingDirection> values() {
         return values(ReportConfigSortingDirection.class);
     }

@@ -39,7 +39,11 @@ public final class FrontDoorResourceState extends ExpandableStringEnum<FrontDoor
         return fromString(name, FrontDoorResourceState.class);
     }
 
-    /** @return known FrontDoorResourceState values. */
+    /**
+     * Gets known FrontDoorResourceState values.
+     *
+     * @return known FrontDoorResourceState values.
+     */
     public static Collection<FrontDoorResourceState> values() {
         return values(FrontDoorResourceState.class);
     }

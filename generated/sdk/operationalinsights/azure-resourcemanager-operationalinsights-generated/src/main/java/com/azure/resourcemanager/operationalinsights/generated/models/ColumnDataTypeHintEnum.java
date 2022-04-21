@@ -33,7 +33,11 @@ public final class ColumnDataTypeHintEnum extends ExpandableStringEnum<ColumnDat
         return fromString(name, ColumnDataTypeHintEnum.class);
     }
 
-    /** @return known ColumnDataTypeHintEnum values. */
+    /**
+     * Gets known ColumnDataTypeHintEnum values.
+     *
+     * @return known ColumnDataTypeHintEnum values.
+     */
     public static Collection<ColumnDataTypeHintEnum> values() {
         return values(ColumnDataTypeHintEnum.class);
     }

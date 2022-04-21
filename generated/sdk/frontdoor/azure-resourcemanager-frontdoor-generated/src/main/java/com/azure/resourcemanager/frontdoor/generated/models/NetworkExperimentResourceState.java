@@ -39,7 +39,11 @@ public final class NetworkExperimentResourceState extends ExpandableStringEnum<N
         return fromString(name, NetworkExperimentResourceState.class);
     }
 
-    /** @return known NetworkExperimentResourceState values. */
+    /**
+     * Gets known NetworkExperimentResourceState values.
+     *
+     * @return known NetworkExperimentResourceState values.
+     */
     public static Collection<NetworkExperimentResourceState> values() {
         return values(NetworkExperimentResourceState.class);
     }

@@ -284,7 +284,11 @@ public final class ResourceManager {
         }
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -292,7 +296,11 @@ public final class ResourceManager {
         return operations;
     }
 
-    /** @return Resource collection API of Deployments. */
+    /**
+     * Gets the resource collection API of Deployments.
+     *
+     * @return Resource collection API of Deployments.
+     */
     public Deployments deployments() {
         if (this.deployments == null) {
             this.deployments = new DeploymentsImpl(clientObject.getDeployments(), this);
@@ -300,7 +308,11 @@ public final class ResourceManager {
         return deployments;
     }
 
-    /** @return Resource collection API of Providers. */
+    /**
+     * Gets the resource collection API of Providers.
+     *
+     * @return Resource collection API of Providers.
+     */
     public Providers providers() {
         if (this.providers == null) {
             this.providers = new ProvidersImpl(clientObject.getProviders(), this);
@@ -308,7 +320,11 @@ public final class ResourceManager {
         return providers;
     }
 
-    /** @return Resource collection API of Resources. */
+    /**
+     * Gets the resource collection API of Resources.
+     *
+     * @return Resource collection API of Resources.
+     */
     public Resources resources() {
         if (this.resources == null) {
             this.resources = new ResourcesImpl(clientObject.getResources(), this);
@@ -316,7 +332,11 @@ public final class ResourceManager {
         return resources;
     }
 
-    /** @return Resource collection API of ResourceGroups. */
+    /**
+     * Gets the resource collection API of ResourceGroups.
+     *
+     * @return Resource collection API of ResourceGroups.
+     */
     public ResourceGroups resourceGroups() {
         if (this.resourceGroups == null) {
             this.resourceGroups = new ResourceGroupsImpl(clientObject.getResourceGroups(), this);
@@ -324,7 +344,11 @@ public final class ResourceManager {
         return resourceGroups;
     }
 
-    /** @return Resource collection API of TagOperations. */
+    /**
+     * Gets the resource collection API of TagOperations.
+     *
+     * @return Resource collection API of TagOperations.
+     */
     public TagOperations tagOperations() {
         if (this.tagOperations == null) {
             this.tagOperations = new TagOperationsImpl(clientObject.getTagOperations(), this);
@@ -332,7 +356,11 @@ public final class ResourceManager {
         return tagOperations;
     }
 
-    /** @return Resource collection API of DeploymentOperations. */
+    /**
+     * Gets the resource collection API of DeploymentOperations.
+     *
+     * @return Resource collection API of DeploymentOperations.
+     */
     public DeploymentOperations deploymentOperations() {
         if (this.deploymentOperations == null) {
             this.deploymentOperations = new DeploymentOperationsImpl(clientObject.getDeploymentOperations(), this);

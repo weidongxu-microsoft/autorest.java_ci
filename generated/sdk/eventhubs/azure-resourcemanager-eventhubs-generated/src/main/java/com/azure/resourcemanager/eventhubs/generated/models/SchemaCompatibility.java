@@ -30,7 +30,11 @@ public final class SchemaCompatibility extends ExpandableStringEnum<SchemaCompat
         return fromString(name, SchemaCompatibility.class);
     }
 
-    /** @return known SchemaCompatibility values. */
+    /**
+     * Gets known SchemaCompatibility values.
+     *
+     * @return known SchemaCompatibility values.
+     */
     public static Collection<SchemaCompatibility> values() {
         return values(SchemaCompatibility.class);
     }

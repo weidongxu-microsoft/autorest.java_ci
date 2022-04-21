@@ -332,7 +332,11 @@ public final class MediaServicesManager {
         }
     }
 
-    /** @return Resource collection API of AccountFilters. */
+    /**
+     * Gets the resource collection API of AccountFilters.
+     *
+     * @return Resource collection API of AccountFilters.
+     */
     public AccountFilters accountFilters() {
         if (this.accountFilters == null) {
             this.accountFilters = new AccountFiltersImpl(clientObject.getAccountFilters(), this);
@@ -340,7 +344,11 @@ public final class MediaServicesManager {
         return accountFilters;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -348,7 +356,11 @@ public final class MediaServicesManager {
         return operations;
     }
 
-    /** @return Resource collection API of Mediaservices. */
+    /**
+     * Gets the resource collection API of Mediaservices.
+     *
+     * @return Resource collection API of Mediaservices.
+     */
     public Mediaservices mediaservices() {
         if (this.mediaservices == null) {
             this.mediaservices = new MediaservicesImpl(clientObject.getMediaservices(), this);
@@ -356,7 +368,11 @@ public final class MediaServicesManager {
         return mediaservices;
     }
 
-    /** @return Resource collection API of PrivateLinkResources. */
+    /**
+     * Gets the resource collection API of PrivateLinkResources.
+     *
+     * @return Resource collection API of PrivateLinkResources.
+     */
     public PrivateLinkResources privateLinkResources() {
         if (this.privateLinkResources == null) {
             this.privateLinkResources = new PrivateLinkResourcesImpl(clientObject.getPrivateLinkResources(), this);
@@ -364,7 +380,11 @@ public final class MediaServicesManager {
         return privateLinkResources;
     }
 
-    /** @return Resource collection API of PrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of PrivateEndpointConnections.
+     *
+     * @return Resource collection API of PrivateEndpointConnections.
+     */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
             this.privateEndpointConnections =
@@ -373,7 +393,11 @@ public final class MediaServicesManager {
         return privateEndpointConnections;
     }
 
-    /** @return Resource collection API of Locations. */
+    /**
+     * Gets the resource collection API of Locations.
+     *
+     * @return Resource collection API of Locations.
+     */
     public Locations locations() {
         if (this.locations == null) {
             this.locations = new LocationsImpl(clientObject.getLocations(), this);
@@ -381,7 +405,11 @@ public final class MediaServicesManager {
         return locations;
     }
 
-    /** @return Resource collection API of Assets. */
+    /**
+     * Gets the resource collection API of Assets.
+     *
+     * @return Resource collection API of Assets.
+     */
     public Assets assets() {
         if (this.assets == null) {
             this.assets = new AssetsImpl(clientObject.getAssets(), this);
@@ -389,7 +417,11 @@ public final class MediaServicesManager {
         return assets;
     }
 
-    /** @return Resource collection API of AssetFilters. */
+    /**
+     * Gets the resource collection API of AssetFilters.
+     *
+     * @return Resource collection API of AssetFilters.
+     */
     public AssetFilters assetFilters() {
         if (this.assetFilters == null) {
             this.assetFilters = new AssetFiltersImpl(clientObject.getAssetFilters(), this);
@@ -397,7 +429,11 @@ public final class MediaServicesManager {
         return assetFilters;
     }
 
-    /** @return Resource collection API of Tracks. */
+    /**
+     * Gets the resource collection API of Tracks.
+     *
+     * @return Resource collection API of Tracks.
+     */
     public Tracks tracks() {
         if (this.tracks == null) {
             this.tracks = new TracksImpl(clientObject.getTracks(), this);
@@ -405,7 +441,11 @@ public final class MediaServicesManager {
         return tracks;
     }
 
-    /** @return Resource collection API of OperationStatuses. */
+    /**
+     * Gets the resource collection API of OperationStatuses.
+     *
+     * @return Resource collection API of OperationStatuses.
+     */
     public OperationStatuses operationStatuses() {
         if (this.operationStatuses == null) {
             this.operationStatuses = new OperationStatusesImpl(clientObject.getOperationStatuses(), this);
@@ -413,7 +453,11 @@ public final class MediaServicesManager {
         return operationStatuses;
     }
 
-    /** @return Resource collection API of OperationResults. */
+    /**
+     * Gets the resource collection API of OperationResults.
+     *
+     * @return Resource collection API of OperationResults.
+     */
     public OperationResults operationResults() {
         if (this.operationResults == null) {
             this.operationResults = new OperationResultsImpl(clientObject.getOperationResults(), this);
@@ -421,7 +465,11 @@ public final class MediaServicesManager {
         return operationResults;
     }
 
-    /** @return Resource collection API of ContentKeyPolicies. */
+    /**
+     * Gets the resource collection API of ContentKeyPolicies.
+     *
+     * @return Resource collection API of ContentKeyPolicies.
+     */
     public ContentKeyPolicies contentKeyPolicies() {
         if (this.contentKeyPolicies == null) {
             this.contentKeyPolicies = new ContentKeyPoliciesImpl(clientObject.getContentKeyPolicies(), this);
@@ -429,7 +477,11 @@ public final class MediaServicesManager {
         return contentKeyPolicies;
     }
 
-    /** @return Resource collection API of Transforms. */
+    /**
+     * Gets the resource collection API of Transforms.
+     *
+     * @return Resource collection API of Transforms.
+     */
     public Transforms transforms() {
         if (this.transforms == null) {
             this.transforms = new TransformsImpl(clientObject.getTransforms(), this);
@@ -437,7 +489,11 @@ public final class MediaServicesManager {
         return transforms;
     }
 
-    /** @return Resource collection API of Jobs. */
+    /**
+     * Gets the resource collection API of Jobs.
+     *
+     * @return Resource collection API of Jobs.
+     */
     public Jobs jobs() {
         if (this.jobs == null) {
             this.jobs = new JobsImpl(clientObject.getJobs(), this);
@@ -445,7 +501,11 @@ public final class MediaServicesManager {
         return jobs;
     }
 
-    /** @return Resource collection API of StreamingPolicies. */
+    /**
+     * Gets the resource collection API of StreamingPolicies.
+     *
+     * @return Resource collection API of StreamingPolicies.
+     */
     public StreamingPolicies streamingPolicies() {
         if (this.streamingPolicies == null) {
             this.streamingPolicies = new StreamingPoliciesImpl(clientObject.getStreamingPolicies(), this);
@@ -453,7 +513,11 @@ public final class MediaServicesManager {
         return streamingPolicies;
     }
 
-    /** @return Resource collection API of StreamingLocators. */
+    /**
+     * Gets the resource collection API of StreamingLocators.
+     *
+     * @return Resource collection API of StreamingLocators.
+     */
     public StreamingLocators streamingLocators() {
         if (this.streamingLocators == null) {
             this.streamingLocators = new StreamingLocatorsImpl(clientObject.getStreamingLocators(), this);
@@ -461,7 +525,11 @@ public final class MediaServicesManager {
         return streamingLocators;
     }
 
-    /** @return Resource collection API of LiveEvents. */
+    /**
+     * Gets the resource collection API of LiveEvents.
+     *
+     * @return Resource collection API of LiveEvents.
+     */
     public LiveEvents liveEvents() {
         if (this.liveEvents == null) {
             this.liveEvents = new LiveEventsImpl(clientObject.getLiveEvents(), this);
@@ -469,7 +537,11 @@ public final class MediaServicesManager {
         return liveEvents;
     }
 
-    /** @return Resource collection API of LiveOutputs. */
+    /**
+     * Gets the resource collection API of LiveOutputs.
+     *
+     * @return Resource collection API of LiveOutputs.
+     */
     public LiveOutputs liveOutputs() {
         if (this.liveOutputs == null) {
             this.liveOutputs = new LiveOutputsImpl(clientObject.getLiveOutputs(), this);
@@ -477,7 +549,11 @@ public final class MediaServicesManager {
         return liveOutputs;
     }
 
-    /** @return Resource collection API of StreamingEndpoints. */
+    /**
+     * Gets the resource collection API of StreamingEndpoints.
+     *
+     * @return Resource collection API of StreamingEndpoints.
+     */
     public StreamingEndpoints streamingEndpoints() {
         if (this.streamingEndpoints == null) {
             this.streamingEndpoints = new StreamingEndpointsImpl(clientObject.getStreamingEndpoints(), this);

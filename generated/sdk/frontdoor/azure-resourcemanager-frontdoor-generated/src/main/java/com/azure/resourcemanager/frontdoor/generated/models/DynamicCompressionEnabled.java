@@ -27,7 +27,11 @@ public final class DynamicCompressionEnabled extends ExpandableStringEnum<Dynami
         return fromString(name, DynamicCompressionEnabled.class);
     }
 
-    /** @return known DynamicCompressionEnabled values. */
+    /**
+     * Gets known DynamicCompressionEnabled values.
+     *
+     * @return known DynamicCompressionEnabled values.
+     */
     public static Collection<DynamicCompressionEnabled> values() {
         return values(DynamicCompressionEnabled.class);
     }

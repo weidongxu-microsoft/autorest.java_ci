@@ -30,7 +30,11 @@ public final class PosixComplianceStatus extends ExpandableStringEnum<PosixCompl
         return fromString(name, PosixComplianceStatus.class);
     }
 
-    /** @return known PosixComplianceStatus values. */
+    /**
+     * Gets known PosixComplianceStatus values.
+     *
+     * @return known PosixComplianceStatus values.
+     */
     public static Collection<PosixComplianceStatus> values() {
         return values(PosixComplianceStatus.class);
     }

@@ -33,7 +33,11 @@ public final class AccessLevel extends ExpandableStringEnum<AccessLevel> {
         return fromString(name, AccessLevel.class);
     }
 
-    /** @return known AccessLevel values. */
+    /**
+     * Gets known AccessLevel values.
+     *
+     * @return known AccessLevel values.
+     */
     public static Collection<AccessLevel> values() {
         return values(AccessLevel.class);
     }

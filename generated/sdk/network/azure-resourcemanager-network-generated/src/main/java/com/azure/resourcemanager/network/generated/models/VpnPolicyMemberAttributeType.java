@@ -30,7 +30,11 @@ public final class VpnPolicyMemberAttributeType extends ExpandableStringEnum<Vpn
         return fromString(name, VpnPolicyMemberAttributeType.class);
     }
 
-    /** @return known VpnPolicyMemberAttributeType values. */
+    /**
+     * Gets known VpnPolicyMemberAttributeType values.
+     *
+     * @return known VpnPolicyMemberAttributeType values.
+     */
     public static Collection<VpnPolicyMemberAttributeType> values() {
         return values(VpnPolicyMemberAttributeType.class);
     }

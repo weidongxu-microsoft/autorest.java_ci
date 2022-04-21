@@ -27,7 +27,11 @@ public final class ExternalCloudProviderType extends ExpandableStringEnum<Extern
         return fromString(name, ExternalCloudProviderType.class);
     }
 
-    /** @return known ExternalCloudProviderType values. */
+    /**
+     * Gets known ExternalCloudProviderType values.
+     *
+     * @return known ExternalCloudProviderType values.
+     */
     public static Collection<ExternalCloudProviderType> values() {
         return values(ExternalCloudProviderType.class);
     }

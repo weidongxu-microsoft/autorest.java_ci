@@ -27,7 +27,11 @@ public final class MatchProcessingBehavior extends ExpandableStringEnum<MatchPro
         return fromString(name, MatchProcessingBehavior.class);
     }
 
-    /** @return known MatchProcessingBehavior values. */
+    /**
+     * Gets known MatchProcessingBehavior values.
+     *
+     * @return known MatchProcessingBehavior values.
+     */
     public static Collection<MatchProcessingBehavior> values() {
         return values(MatchProcessingBehavior.class);
     }

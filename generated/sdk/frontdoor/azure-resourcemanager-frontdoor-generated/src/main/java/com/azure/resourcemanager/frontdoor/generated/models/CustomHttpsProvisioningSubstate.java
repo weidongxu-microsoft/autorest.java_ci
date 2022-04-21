@@ -56,7 +56,11 @@ public final class CustomHttpsProvisioningSubstate extends ExpandableStringEnum<
         return fromString(name, CustomHttpsProvisioningSubstate.class);
     }
 
-    /** @return known CustomHttpsProvisioningSubstate values. */
+    /**
+     * Gets known CustomHttpsProvisioningSubstate values.
+     *
+     * @return known CustomHttpsProvisioningSubstate values.
+     */
     public static Collection<CustomHttpsProvisioningSubstate> values() {
         return values(CustomHttpsProvisioningSubstate.class);
     }

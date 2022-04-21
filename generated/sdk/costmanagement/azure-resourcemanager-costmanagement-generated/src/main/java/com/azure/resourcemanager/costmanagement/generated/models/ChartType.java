@@ -36,7 +36,11 @@ public final class ChartType extends ExpandableStringEnum<ChartType> {
         return fromString(name, ChartType.class);
     }
 
-    /** @return known ChartType values. */
+    /**
+     * Gets known ChartType values.
+     *
+     * @return known ChartType values.
+     */
     public static Collection<ChartType> values() {
         return values(ChartType.class);
     }

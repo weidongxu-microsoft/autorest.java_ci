@@ -304,7 +304,11 @@ public final class FrontDoorManager {
         }
     }
 
-    /** @return Resource collection API of NetworkExperimentProfiles. */
+    /**
+     * Gets the resource collection API of NetworkExperimentProfiles.
+     *
+     * @return Resource collection API of NetworkExperimentProfiles.
+     */
     public NetworkExperimentProfiles networkExperimentProfiles() {
         if (this.networkExperimentProfiles == null) {
             this.networkExperimentProfiles =
@@ -313,7 +317,11 @@ public final class FrontDoorManager {
         return networkExperimentProfiles;
     }
 
-    /** @return Resource collection API of PreconfiguredEndpoints. */
+    /**
+     * Gets the resource collection API of PreconfiguredEndpoints.
+     *
+     * @return Resource collection API of PreconfiguredEndpoints.
+     */
     public PreconfiguredEndpoints preconfiguredEndpoints() {
         if (this.preconfiguredEndpoints == null) {
             this.preconfiguredEndpoints =
@@ -322,7 +330,11 @@ public final class FrontDoorManager {
         return preconfiguredEndpoints;
     }
 
-    /** @return Resource collection API of Experiments. */
+    /**
+     * Gets the resource collection API of Experiments.
+     *
+     * @return Resource collection API of Experiments.
+     */
     public Experiments experiments() {
         if (this.experiments == null) {
             this.experiments = new ExperimentsImpl(clientObject.getExperiments(), this);
@@ -330,7 +342,11 @@ public final class FrontDoorManager {
         return experiments;
     }
 
-    /** @return Resource collection API of Reports. */
+    /**
+     * Gets the resource collection API of Reports.
+     *
+     * @return Resource collection API of Reports.
+     */
     public Reports reports() {
         if (this.reports == null) {
             this.reports = new ReportsImpl(clientObject.getReports(), this);
@@ -338,7 +354,11 @@ public final class FrontDoorManager {
         return reports;
     }
 
-    /** @return Resource collection API of FrontDoorNameAvailabilities. */
+    /**
+     * Gets the resource collection API of FrontDoorNameAvailabilities.
+     *
+     * @return Resource collection API of FrontDoorNameAvailabilities.
+     */
     public FrontDoorNameAvailabilities frontDoorNameAvailabilities() {
         if (this.frontDoorNameAvailabilities == null) {
             this.frontDoorNameAvailabilities =
@@ -347,7 +367,11 @@ public final class FrontDoorManager {
         return frontDoorNameAvailabilities;
     }
 
-    /** @return Resource collection API of FrontDoorNameAvailabilityWithSubscriptions. */
+    /**
+     * Gets the resource collection API of FrontDoorNameAvailabilityWithSubscriptions.
+     *
+     * @return Resource collection API of FrontDoorNameAvailabilityWithSubscriptions.
+     */
     public FrontDoorNameAvailabilityWithSubscriptions frontDoorNameAvailabilityWithSubscriptions() {
         if (this.frontDoorNameAvailabilityWithSubscriptions == null) {
             this.frontDoorNameAvailabilityWithSubscriptions =
@@ -357,7 +381,11 @@ public final class FrontDoorManager {
         return frontDoorNameAvailabilityWithSubscriptions;
     }
 
-    /** @return Resource collection API of FrontDoors. */
+    /**
+     * Gets the resource collection API of FrontDoors.
+     *
+     * @return Resource collection API of FrontDoors.
+     */
     public FrontDoors frontDoors() {
         if (this.frontDoors == null) {
             this.frontDoors = new FrontDoorsImpl(clientObject.getFrontDoors(), this);
@@ -365,7 +393,11 @@ public final class FrontDoorManager {
         return frontDoors;
     }
 
-    /** @return Resource collection API of FrontendEndpoints. */
+    /**
+     * Gets the resource collection API of FrontendEndpoints.
+     *
+     * @return Resource collection API of FrontendEndpoints.
+     */
     public FrontendEndpoints frontendEndpoints() {
         if (this.frontendEndpoints == null) {
             this.frontendEndpoints = new FrontendEndpointsImpl(clientObject.getFrontendEndpoints(), this);
@@ -373,7 +405,11 @@ public final class FrontDoorManager {
         return frontendEndpoints;
     }
 
-    /** @return Resource collection API of Endpoints. */
+    /**
+     * Gets the resource collection API of Endpoints.
+     *
+     * @return Resource collection API of Endpoints.
+     */
     public Endpoints endpoints() {
         if (this.endpoints == null) {
             this.endpoints = new EndpointsImpl(clientObject.getEndpoints(), this);
@@ -381,7 +417,11 @@ public final class FrontDoorManager {
         return endpoints;
     }
 
-    /** @return Resource collection API of RulesEngines. */
+    /**
+     * Gets the resource collection API of RulesEngines.
+     *
+     * @return Resource collection API of RulesEngines.
+     */
     public RulesEngines rulesEngines() {
         if (this.rulesEngines == null) {
             this.rulesEngines = new RulesEnginesImpl(clientObject.getRulesEngines(), this);
@@ -389,7 +429,11 @@ public final class FrontDoorManager {
         return rulesEngines;
     }
 
-    /** @return Resource collection API of Policies. */
+    /**
+     * Gets the resource collection API of Policies.
+     *
+     * @return Resource collection API of Policies.
+     */
     public Policies policies() {
         if (this.policies == null) {
             this.policies = new PoliciesImpl(clientObject.getPolicies(), this);
@@ -397,7 +441,11 @@ public final class FrontDoorManager {
         return policies;
     }
 
-    /** @return Resource collection API of ManagedRuleSets. */
+    /**
+     * Gets the resource collection API of ManagedRuleSets.
+     *
+     * @return Resource collection API of ManagedRuleSets.
+     */
     public ManagedRuleSets managedRuleSets() {
         if (this.managedRuleSets == null) {
             this.managedRuleSets = new ManagedRuleSetsImpl(clientObject.getManagedRuleSets(), this);

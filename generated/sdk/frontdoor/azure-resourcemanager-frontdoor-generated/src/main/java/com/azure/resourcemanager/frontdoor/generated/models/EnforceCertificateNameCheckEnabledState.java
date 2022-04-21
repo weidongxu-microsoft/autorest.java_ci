@@ -28,7 +28,11 @@ public final class EnforceCertificateNameCheckEnabledState
         return fromString(name, EnforceCertificateNameCheckEnabledState.class);
     }
 
-    /** @return known EnforceCertificateNameCheckEnabledState values. */
+    /**
+     * Gets known EnforceCertificateNameCheckEnabledState values.
+     *
+     * @return known EnforceCertificateNameCheckEnabledState values.
+     */
     public static Collection<EnforceCertificateNameCheckEnabledState> values() {
         return values(EnforceCertificateNameCheckEnabledState.class);
     }

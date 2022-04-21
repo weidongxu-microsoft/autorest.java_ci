@@ -39,7 +39,11 @@ public final class AlertOperator extends ExpandableStringEnum<AlertOperator> {
         return fromString(name, AlertOperator.class);
     }
 
-    /** @return known AlertOperator values. */
+    /**
+     * Gets known AlertOperator values.
+     *
+     * @return known AlertOperator values.
+     */
     public static Collection<AlertOperator> values() {
         return values(AlertOperator.class);
     }

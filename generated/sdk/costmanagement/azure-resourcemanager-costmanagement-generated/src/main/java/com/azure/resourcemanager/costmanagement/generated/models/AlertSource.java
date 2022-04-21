@@ -27,7 +27,11 @@ public final class AlertSource extends ExpandableStringEnum<AlertSource> {
         return fromString(name, AlertSource.class);
     }
 
-    /** @return known AlertSource values. */
+    /**
+     * Gets known AlertSource values.
+     *
+     * @return known AlertSource values.
+     */
     public static Collection<AlertSource> values() {
         return values(AlertSource.class);
     }

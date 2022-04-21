@@ -344,7 +344,11 @@ public final class DataBoxEdgeManager {
         }
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -352,7 +356,11 @@ public final class DataBoxEdgeManager {
         return operations;
     }
 
-    /** @return Resource collection API of AvailableSkus. */
+    /**
+     * Gets the resource collection API of AvailableSkus.
+     *
+     * @return Resource collection API of AvailableSkus.
+     */
     public AvailableSkus availableSkus() {
         if (this.availableSkus == null) {
             this.availableSkus = new AvailableSkusImpl(clientObject.getAvailableSkus(), this);
@@ -360,7 +368,11 @@ public final class DataBoxEdgeManager {
         return availableSkus;
     }
 
-    /** @return Resource collection API of Devices. */
+    /**
+     * Gets the resource collection API of Devices.
+     *
+     * @return Resource collection API of Devices.
+     */
     public Devices devices() {
         if (this.devices == null) {
             this.devices = new DevicesImpl(clientObject.getDevices(), this);
@@ -368,7 +380,11 @@ public final class DataBoxEdgeManager {
         return devices;
     }
 
-    /** @return Resource collection API of Alerts. */
+    /**
+     * Gets the resource collection API of Alerts.
+     *
+     * @return Resource collection API of Alerts.
+     */
     public Alerts alerts() {
         if (this.alerts == null) {
             this.alerts = new AlertsImpl(clientObject.getAlerts(), this);
@@ -376,7 +392,11 @@ public final class DataBoxEdgeManager {
         return alerts;
     }
 
-    /** @return Resource collection API of BandwidthSchedules. */
+    /**
+     * Gets the resource collection API of BandwidthSchedules.
+     *
+     * @return Resource collection API of BandwidthSchedules.
+     */
     public BandwidthSchedules bandwidthSchedules() {
         if (this.bandwidthSchedules == null) {
             this.bandwidthSchedules = new BandwidthSchedulesImpl(clientObject.getBandwidthSchedules(), this);
@@ -384,7 +404,11 @@ public final class DataBoxEdgeManager {
         return bandwidthSchedules;
     }
 
-    /** @return Resource collection API of DeviceCapacityChecks. */
+    /**
+     * Gets the resource collection API of DeviceCapacityChecks.
+     *
+     * @return Resource collection API of DeviceCapacityChecks.
+     */
     public DeviceCapacityChecks deviceCapacityChecks() {
         if (this.deviceCapacityChecks == null) {
             this.deviceCapacityChecks = new DeviceCapacityChecksImpl(clientObject.getDeviceCapacityChecks(), this);
@@ -392,7 +416,11 @@ public final class DataBoxEdgeManager {
         return deviceCapacityChecks;
     }
 
-    /** @return Resource collection API of DeviceCapacityInfoes. */
+    /**
+     * Gets the resource collection API of DeviceCapacityInfoes.
+     *
+     * @return Resource collection API of DeviceCapacityInfoes.
+     */
     public DeviceCapacityInfoes deviceCapacityInfoes() {
         if (this.deviceCapacityInfoes == null) {
             this.deviceCapacityInfoes = new DeviceCapacityInfoesImpl(clientObject.getDeviceCapacityInfoes(), this);
@@ -400,7 +428,11 @@ public final class DataBoxEdgeManager {
         return deviceCapacityInfoes;
     }
 
-    /** @return Resource collection API of DiagnosticSettings. */
+    /**
+     * Gets the resource collection API of DiagnosticSettings.
+     *
+     * @return Resource collection API of DiagnosticSettings.
+     */
     public DiagnosticSettings diagnosticSettings() {
         if (this.diagnosticSettings == null) {
             this.diagnosticSettings = new DiagnosticSettingsImpl(clientObject.getDiagnosticSettings(), this);
@@ -408,7 +440,11 @@ public final class DataBoxEdgeManager {
         return diagnosticSettings;
     }
 
-    /** @return Resource collection API of Jobs. */
+    /**
+     * Gets the resource collection API of Jobs.
+     *
+     * @return Resource collection API of Jobs.
+     */
     public Jobs jobs() {
         if (this.jobs == null) {
             this.jobs = new JobsImpl(clientObject.getJobs(), this);
@@ -416,7 +452,11 @@ public final class DataBoxEdgeManager {
         return jobs;
     }
 
-    /** @return Resource collection API of Nodes. */
+    /**
+     * Gets the resource collection API of Nodes.
+     *
+     * @return Resource collection API of Nodes.
+     */
     public Nodes nodes() {
         if (this.nodes == null) {
             this.nodes = new NodesImpl(clientObject.getNodes(), this);
@@ -424,7 +464,11 @@ public final class DataBoxEdgeManager {
         return nodes;
     }
 
-    /** @return Resource collection API of OperationsStatus. */
+    /**
+     * Gets the resource collection API of OperationsStatus.
+     *
+     * @return Resource collection API of OperationsStatus.
+     */
     public OperationsStatus operationsStatus() {
         if (this.operationsStatus == null) {
             this.operationsStatus = new OperationsStatusImpl(clientObject.getOperationsStatus(), this);
@@ -432,7 +476,11 @@ public final class DataBoxEdgeManager {
         return operationsStatus;
     }
 
-    /** @return Resource collection API of Orders. */
+    /**
+     * Gets the resource collection API of Orders.
+     *
+     * @return Resource collection API of Orders.
+     */
     public Orders orders() {
         if (this.orders == null) {
             this.orders = new OrdersImpl(clientObject.getOrders(), this);
@@ -440,7 +488,11 @@ public final class DataBoxEdgeManager {
         return orders;
     }
 
-    /** @return Resource collection API of Roles. */
+    /**
+     * Gets the resource collection API of Roles.
+     *
+     * @return Resource collection API of Roles.
+     */
     public Roles roles() {
         if (this.roles == null) {
             this.roles = new RolesImpl(clientObject.getRoles(), this);
@@ -448,7 +500,11 @@ public final class DataBoxEdgeManager {
         return roles;
     }
 
-    /** @return Resource collection API of Addons. */
+    /**
+     * Gets the resource collection API of Addons.
+     *
+     * @return Resource collection API of Addons.
+     */
     public Addons addons() {
         if (this.addons == null) {
             this.addons = new AddonsImpl(clientObject.getAddons(), this);
@@ -456,7 +512,11 @@ public final class DataBoxEdgeManager {
         return addons;
     }
 
-    /** @return Resource collection API of MonitoringConfigs. */
+    /**
+     * Gets the resource collection API of MonitoringConfigs.
+     *
+     * @return Resource collection API of MonitoringConfigs.
+     */
     public MonitoringConfigs monitoringConfigs() {
         if (this.monitoringConfigs == null) {
             this.monitoringConfigs = new MonitoringConfigsImpl(clientObject.getMonitoringConfigs(), this);
@@ -464,7 +524,11 @@ public final class DataBoxEdgeManager {
         return monitoringConfigs;
     }
 
-    /** @return Resource collection API of Shares. */
+    /**
+     * Gets the resource collection API of Shares.
+     *
+     * @return Resource collection API of Shares.
+     */
     public Shares shares() {
         if (this.shares == null) {
             this.shares = new SharesImpl(clientObject.getShares(), this);
@@ -472,7 +536,11 @@ public final class DataBoxEdgeManager {
         return shares;
     }
 
-    /** @return Resource collection API of StorageAccountCredentials. */
+    /**
+     * Gets the resource collection API of StorageAccountCredentials.
+     *
+     * @return Resource collection API of StorageAccountCredentials.
+     */
     public StorageAccountCredentials storageAccountCredentials() {
         if (this.storageAccountCredentials == null) {
             this.storageAccountCredentials =
@@ -481,7 +549,11 @@ public final class DataBoxEdgeManager {
         return storageAccountCredentials;
     }
 
-    /** @return Resource collection API of StorageAccounts. */
+    /**
+     * Gets the resource collection API of StorageAccounts.
+     *
+     * @return Resource collection API of StorageAccounts.
+     */
     public StorageAccounts storageAccounts() {
         if (this.storageAccounts == null) {
             this.storageAccounts = new StorageAccountsImpl(clientObject.getStorageAccounts(), this);
@@ -489,7 +561,11 @@ public final class DataBoxEdgeManager {
         return storageAccounts;
     }
 
-    /** @return Resource collection API of Containers. */
+    /**
+     * Gets the resource collection API of Containers.
+     *
+     * @return Resource collection API of Containers.
+     */
     public Containers containers() {
         if (this.containers == null) {
             this.containers = new ContainersImpl(clientObject.getContainers(), this);
@@ -497,7 +573,11 @@ public final class DataBoxEdgeManager {
         return containers;
     }
 
-    /** @return Resource collection API of Triggers. */
+    /**
+     * Gets the resource collection API of Triggers.
+     *
+     * @return Resource collection API of Triggers.
+     */
     public Triggers triggers() {
         if (this.triggers == null) {
             this.triggers = new TriggersImpl(clientObject.getTriggers(), this);
@@ -505,7 +585,11 @@ public final class DataBoxEdgeManager {
         return triggers;
     }
 
-    /** @return Resource collection API of SupportPackages. */
+    /**
+     * Gets the resource collection API of SupportPackages.
+     *
+     * @return Resource collection API of SupportPackages.
+     */
     public SupportPackages supportPackages() {
         if (this.supportPackages == null) {
             this.supportPackages = new SupportPackagesImpl(clientObject.getSupportPackages(), this);
@@ -513,7 +597,11 @@ public final class DataBoxEdgeManager {
         return supportPackages;
     }
 
-    /** @return Resource collection API of Users. */
+    /**
+     * Gets the resource collection API of Users.
+     *
+     * @return Resource collection API of Users.
+     */
     public Users users() {
         if (this.users == null) {
             this.users = new UsersImpl(clientObject.getUsers(), this);

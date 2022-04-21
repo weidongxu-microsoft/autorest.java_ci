@@ -33,7 +33,11 @@ public final class JsonWebKeyType extends ExpandableStringEnum<JsonWebKeyType> {
         return fromString(name, JsonWebKeyType.class);
     }
 
-    /** @return known JsonWebKeyType values. */
+    /**
+     * Gets known JsonWebKeyType values.
+     *
+     * @return known JsonWebKeyType values.
+     */
     public static Collection<JsonWebKeyType> values() {
         return values(JsonWebKeyType.class);
     }

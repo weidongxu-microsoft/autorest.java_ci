@@ -30,7 +30,11 @@ public final class BaselineSensitivity extends ExpandableStringEnum<BaselineSens
         return fromString(name, BaselineSensitivity.class);
     }
 
-    /** @return known BaselineSensitivity values. */
+    /**
+     * Gets known BaselineSensitivity values.
+     *
+     * @return known BaselineSensitivity values.
+     */
     public static Collection<BaselineSensitivity> values() {
         return values(BaselineSensitivity.class);
     }

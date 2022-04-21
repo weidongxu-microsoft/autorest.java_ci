@@ -42,7 +42,11 @@ public final class ExecutionStatus extends ExpandableStringEnum<ExecutionStatus>
         return fromString(name, ExecutionStatus.class);
     }
 
-    /** @return known ExecutionStatus values. */
+    /**
+     * Gets known ExecutionStatus values.
+     *
+     * @return known ExecutionStatus values.
+     */
     public static Collection<ExecutionStatus> values() {
         return values(ExecutionStatus.class);
     }

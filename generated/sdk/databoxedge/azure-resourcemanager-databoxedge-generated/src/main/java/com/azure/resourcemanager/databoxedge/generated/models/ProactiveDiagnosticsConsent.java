@@ -27,7 +27,11 @@ public final class ProactiveDiagnosticsConsent extends ExpandableStringEnum<Proa
         return fromString(name, ProactiveDiagnosticsConsent.class);
     }
 
-    /** @return known ProactiveDiagnosticsConsent values. */
+    /**
+     * Gets known ProactiveDiagnosticsConsent values.
+     *
+     * @return known ProactiveDiagnosticsConsent values.
+     */
     public static Collection<ProactiveDiagnosticsConsent> values() {
         return values(ProactiveDiagnosticsConsent.class);
     }

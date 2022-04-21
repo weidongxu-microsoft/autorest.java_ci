@@ -27,7 +27,11 @@ public final class FirewallPolicyIdpsQuerySortOrder extends ExpandableStringEnum
         return fromString(name, FirewallPolicyIdpsQuerySortOrder.class);
     }
 
-    /** @return known FirewallPolicyIdpsQuerySortOrder values. */
+    /**
+     * Gets known FirewallPolicyIdpsQuerySortOrder values.
+     *
+     * @return known FirewallPolicyIdpsQuerySortOrder values.
+     */
     public static Collection<FirewallPolicyIdpsQuerySortOrder> values() {
         return values(FirewallPolicyIdpsQuerySortOrder.class);
     }

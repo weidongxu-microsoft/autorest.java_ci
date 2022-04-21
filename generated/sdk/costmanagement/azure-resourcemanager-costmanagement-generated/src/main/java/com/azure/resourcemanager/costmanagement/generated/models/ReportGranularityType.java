@@ -27,7 +27,11 @@ public final class ReportGranularityType extends ExpandableStringEnum<ReportGran
         return fromString(name, ReportGranularityType.class);
     }
 
-    /** @return known ReportGranularityType values. */
+    /**
+     * Gets known ReportGranularityType values.
+     *
+     * @return known ReportGranularityType values.
+     */
     public static Collection<ReportGranularityType> values() {
         return values(ReportGranularityType.class);
     }

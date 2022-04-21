@@ -39,7 +39,11 @@ public final class KeyVaultSyncStatus extends ExpandableStringEnum<KeyVaultSyncS
         return fromString(name, KeyVaultSyncStatus.class);
     }
 
-    /** @return known KeyVaultSyncStatus values. */
+    /**
+     * Gets known KeyVaultSyncStatus values.
+     *
+     * @return known KeyVaultSyncStatus values.
+     */
     public static Collection<KeyVaultSyncStatus> values() {
         return values(KeyVaultSyncStatus.class);
     }

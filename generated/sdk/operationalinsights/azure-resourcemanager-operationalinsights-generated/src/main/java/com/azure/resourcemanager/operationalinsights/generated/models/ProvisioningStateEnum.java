@@ -30,7 +30,11 @@ public final class ProvisioningStateEnum extends ExpandableStringEnum<Provisioni
         return fromString(name, ProvisioningStateEnum.class);
     }
 
-    /** @return known ProvisioningStateEnum values. */
+    /**
+     * Gets known ProvisioningStateEnum values.
+     *
+     * @return known ProvisioningStateEnum values.
+     */
     public static Collection<ProvisioningStateEnum> values() {
         return values(ProvisioningStateEnum.class);
     }

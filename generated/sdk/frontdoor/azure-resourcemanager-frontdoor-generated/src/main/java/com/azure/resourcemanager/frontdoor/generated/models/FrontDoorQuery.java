@@ -33,7 +33,11 @@ public final class FrontDoorQuery extends ExpandableStringEnum<FrontDoorQuery> {
         return fromString(name, FrontDoorQuery.class);
     }
 
-    /** @return known FrontDoorQuery values. */
+    /**
+     * Gets known FrontDoorQuery values.
+     *
+     * @return known FrontDoorQuery values.
+     */
     public static Collection<FrontDoorQuery> values() {
         return values(FrontDoorQuery.class);
     }

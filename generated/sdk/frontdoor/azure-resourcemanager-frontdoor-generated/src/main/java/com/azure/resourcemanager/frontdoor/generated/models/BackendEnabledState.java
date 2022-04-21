@@ -27,7 +27,11 @@ public final class BackendEnabledState extends ExpandableStringEnum<BackendEnabl
         return fromString(name, BackendEnabledState.class);
     }
 
-    /** @return known BackendEnabledState values. */
+    /**
+     * Gets known BackendEnabledState values.
+     *
+     * @return known BackendEnabledState values.
+     */
     public static Collection<BackendEnabledState> values() {
         return values(BackendEnabledState.class);
     }

@@ -27,7 +27,11 @@ public final class FrontDoorCertificateSource extends ExpandableStringEnum<Front
         return fromString(name, FrontDoorCertificateSource.class);
     }
 
-    /** @return known FrontDoorCertificateSource values. */
+    /**
+     * Gets known FrontDoorCertificateSource values.
+     *
+     * @return known FrontDoorCertificateSource values.
+     */
     public static Collection<FrontDoorCertificateSource> values() {
         return values(FrontDoorCertificateSource.class);
     }

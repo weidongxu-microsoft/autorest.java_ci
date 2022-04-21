@@ -712,7 +712,11 @@ public final class NetworkManager {
         }
     }
 
-    /** @return Resource collection API of ApplicationGateways. */
+    /**
+     * Gets the resource collection API of ApplicationGateways.
+     *
+     * @return Resource collection API of ApplicationGateways.
+     */
     public ApplicationGateways applicationGateways() {
         if (this.applicationGateways == null) {
             this.applicationGateways = new ApplicationGatewaysImpl(clientObject.getApplicationGateways(), this);
@@ -720,7 +724,11 @@ public final class NetworkManager {
         return applicationGateways;
     }
 
-    /** @return Resource collection API of ApplicationGatewayPrivateLinkResources. */
+    /**
+     * Gets the resource collection API of ApplicationGatewayPrivateLinkResources.
+     *
+     * @return Resource collection API of ApplicationGatewayPrivateLinkResources.
+     */
     public ApplicationGatewayPrivateLinkResources applicationGatewayPrivateLinkResources() {
         if (this.applicationGatewayPrivateLinkResources == null) {
             this.applicationGatewayPrivateLinkResources =
@@ -730,7 +738,11 @@ public final class NetworkManager {
         return applicationGatewayPrivateLinkResources;
     }
 
-    /** @return Resource collection API of ApplicationGatewayPrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of ApplicationGatewayPrivateEndpointConnections.
+     *
+     * @return Resource collection API of ApplicationGatewayPrivateEndpointConnections.
+     */
     public ApplicationGatewayPrivateEndpointConnections applicationGatewayPrivateEndpointConnections() {
         if (this.applicationGatewayPrivateEndpointConnections == null) {
             this.applicationGatewayPrivateEndpointConnections =
@@ -740,7 +752,11 @@ public final class NetworkManager {
         return applicationGatewayPrivateEndpointConnections;
     }
 
-    /** @return Resource collection API of ApplicationSecurityGroups. */
+    /**
+     * Gets the resource collection API of ApplicationSecurityGroups.
+     *
+     * @return Resource collection API of ApplicationSecurityGroups.
+     */
     public ApplicationSecurityGroups applicationSecurityGroups() {
         if (this.applicationSecurityGroups == null) {
             this.applicationSecurityGroups =
@@ -749,7 +765,11 @@ public final class NetworkManager {
         return applicationSecurityGroups;
     }
 
-    /** @return Resource collection API of AvailableDelegations. */
+    /**
+     * Gets the resource collection API of AvailableDelegations.
+     *
+     * @return Resource collection API of AvailableDelegations.
+     */
     public AvailableDelegations availableDelegations() {
         if (this.availableDelegations == null) {
             this.availableDelegations = new AvailableDelegationsImpl(clientObject.getAvailableDelegations(), this);
@@ -757,7 +777,11 @@ public final class NetworkManager {
         return availableDelegations;
     }
 
-    /** @return Resource collection API of AvailableResourceGroupDelegations. */
+    /**
+     * Gets the resource collection API of AvailableResourceGroupDelegations.
+     *
+     * @return Resource collection API of AvailableResourceGroupDelegations.
+     */
     public AvailableResourceGroupDelegations availableResourceGroupDelegations() {
         if (this.availableResourceGroupDelegations == null) {
             this.availableResourceGroupDelegations =
@@ -766,7 +790,11 @@ public final class NetworkManager {
         return availableResourceGroupDelegations;
     }
 
-    /** @return Resource collection API of AvailableServiceAliases. */
+    /**
+     * Gets the resource collection API of AvailableServiceAliases.
+     *
+     * @return Resource collection API of AvailableServiceAliases.
+     */
     public AvailableServiceAliases availableServiceAliases() {
         if (this.availableServiceAliases == null) {
             this.availableServiceAliases =
@@ -775,7 +803,11 @@ public final class NetworkManager {
         return availableServiceAliases;
     }
 
-    /** @return Resource collection API of AzureFirewalls. */
+    /**
+     * Gets the resource collection API of AzureFirewalls.
+     *
+     * @return Resource collection API of AzureFirewalls.
+     */
     public AzureFirewalls azureFirewalls() {
         if (this.azureFirewalls == null) {
             this.azureFirewalls = new AzureFirewallsImpl(clientObject.getAzureFirewalls(), this);
@@ -783,7 +815,11 @@ public final class NetworkManager {
         return azureFirewalls;
     }
 
-    /** @return Resource collection API of AzureFirewallFqdnTags. */
+    /**
+     * Gets the resource collection API of AzureFirewallFqdnTags.
+     *
+     * @return Resource collection API of AzureFirewallFqdnTags.
+     */
     public AzureFirewallFqdnTags azureFirewallFqdnTags() {
         if (this.azureFirewallFqdnTags == null) {
             this.azureFirewallFqdnTags = new AzureFirewallFqdnTagsImpl(clientObject.getAzureFirewallFqdnTags(), this);
@@ -791,7 +827,11 @@ public final class NetworkManager {
         return azureFirewallFqdnTags;
     }
 
-    /** @return Resource collection API of WebCategories. */
+    /**
+     * Gets the resource collection API of WebCategories.
+     *
+     * @return Resource collection API of WebCategories.
+     */
     public WebCategories webCategories() {
         if (this.webCategories == null) {
             this.webCategories = new WebCategoriesImpl(clientObject.getWebCategories(), this);
@@ -799,7 +839,11 @@ public final class NetworkManager {
         return webCategories;
     }
 
-    /** @return Resource collection API of BastionHosts. */
+    /**
+     * Gets the resource collection API of BastionHosts.
+     *
+     * @return Resource collection API of BastionHosts.
+     */
     public BastionHosts bastionHosts() {
         if (this.bastionHosts == null) {
             this.bastionHosts = new BastionHostsImpl(clientObject.getBastionHosts(), this);
@@ -807,7 +851,11 @@ public final class NetworkManager {
         return bastionHosts;
     }
 
-    /** @return Resource collection API of ResourceProviders. */
+    /**
+     * Gets the resource collection API of ResourceProviders.
+     *
+     * @return Resource collection API of ResourceProviders.
+     */
     public ResourceProviders resourceProviders() {
         if (this.resourceProviders == null) {
             this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
@@ -815,7 +863,11 @@ public final class NetworkManager {
         return resourceProviders;
     }
 
-    /** @return Resource collection API of NetworkInterfaces. */
+    /**
+     * Gets the resource collection API of NetworkInterfaces.
+     *
+     * @return Resource collection API of NetworkInterfaces.
+     */
     public NetworkInterfaces networkInterfaces() {
         if (this.networkInterfaces == null) {
             this.networkInterfaces = new NetworkInterfacesImpl(clientObject.getNetworkInterfaces(), this);
@@ -823,7 +875,11 @@ public final class NetworkManager {
         return networkInterfaces;
     }
 
-    /** @return Resource collection API of PublicIpAddresses. */
+    /**
+     * Gets the resource collection API of PublicIpAddresses.
+     *
+     * @return Resource collection API of PublicIpAddresses.
+     */
     public PublicIpAddresses publicIpAddresses() {
         if (this.publicIpAddresses == null) {
             this.publicIpAddresses = new PublicIpAddressesImpl(clientObject.getPublicIpAddresses(), this);
@@ -831,7 +887,11 @@ public final class NetworkManager {
         return publicIpAddresses;
     }
 
-    /** @return Resource collection API of CustomIpPrefixes. */
+    /**
+     * Gets the resource collection API of CustomIpPrefixes.
+     *
+     * @return Resource collection API of CustomIpPrefixes.
+     */
     public CustomIpPrefixes customIpPrefixes() {
         if (this.customIpPrefixes == null) {
             this.customIpPrefixes = new CustomIpPrefixesImpl(clientObject.getCustomIpPrefixes(), this);
@@ -839,7 +899,11 @@ public final class NetworkManager {
         return customIpPrefixes;
     }
 
-    /** @return Resource collection API of DdosCustomPolicies. */
+    /**
+     * Gets the resource collection API of DdosCustomPolicies.
+     *
+     * @return Resource collection API of DdosCustomPolicies.
+     */
     public DdosCustomPolicies ddosCustomPolicies() {
         if (this.ddosCustomPolicies == null) {
             this.ddosCustomPolicies = new DdosCustomPoliciesImpl(clientObject.getDdosCustomPolicies(), this);
@@ -847,7 +911,11 @@ public final class NetworkManager {
         return ddosCustomPolicies;
     }
 
-    /** @return Resource collection API of DdosProtectionPlans. */
+    /**
+     * Gets the resource collection API of DdosProtectionPlans.
+     *
+     * @return Resource collection API of DdosProtectionPlans.
+     */
     public DdosProtectionPlans ddosProtectionPlans() {
         if (this.ddosProtectionPlans == null) {
             this.ddosProtectionPlans = new DdosProtectionPlansImpl(clientObject.getDdosProtectionPlans(), this);
@@ -855,7 +923,11 @@ public final class NetworkManager {
         return ddosProtectionPlans;
     }
 
-    /** @return Resource collection API of DscpConfigurations. */
+    /**
+     * Gets the resource collection API of DscpConfigurations.
+     *
+     * @return Resource collection API of DscpConfigurations.
+     */
     public DscpConfigurations dscpConfigurations() {
         if (this.dscpConfigurations == null) {
             this.dscpConfigurations = new DscpConfigurationsImpl(clientObject.getDscpConfigurations(), this);
@@ -863,7 +935,11 @@ public final class NetworkManager {
         return dscpConfigurations;
     }
 
-    /** @return Resource collection API of AvailableEndpointServices. */
+    /**
+     * Gets the resource collection API of AvailableEndpointServices.
+     *
+     * @return Resource collection API of AvailableEndpointServices.
+     */
     public AvailableEndpointServices availableEndpointServices() {
         if (this.availableEndpointServices == null) {
             this.availableEndpointServices =
@@ -872,7 +948,11 @@ public final class NetworkManager {
         return availableEndpointServices;
     }
 
-    /** @return Resource collection API of ExpressRouteCircuitAuthorizations. */
+    /**
+     * Gets the resource collection API of ExpressRouteCircuitAuthorizations.
+     *
+     * @return Resource collection API of ExpressRouteCircuitAuthorizations.
+     */
     public ExpressRouteCircuitAuthorizations expressRouteCircuitAuthorizations() {
         if (this.expressRouteCircuitAuthorizations == null) {
             this.expressRouteCircuitAuthorizations =
@@ -881,7 +961,11 @@ public final class NetworkManager {
         return expressRouteCircuitAuthorizations;
     }
 
-    /** @return Resource collection API of ExpressRouteCircuitPeerings. */
+    /**
+     * Gets the resource collection API of ExpressRouteCircuitPeerings.
+     *
+     * @return Resource collection API of ExpressRouteCircuitPeerings.
+     */
     public ExpressRouteCircuitPeerings expressRouteCircuitPeerings() {
         if (this.expressRouteCircuitPeerings == null) {
             this.expressRouteCircuitPeerings =
@@ -890,7 +974,11 @@ public final class NetworkManager {
         return expressRouteCircuitPeerings;
     }
 
-    /** @return Resource collection API of ExpressRouteCircuitConnections. */
+    /**
+     * Gets the resource collection API of ExpressRouteCircuitConnections.
+     *
+     * @return Resource collection API of ExpressRouteCircuitConnections.
+     */
     public ExpressRouteCircuitConnections expressRouteCircuitConnections() {
         if (this.expressRouteCircuitConnections == null) {
             this.expressRouteCircuitConnections =
@@ -899,7 +987,11 @@ public final class NetworkManager {
         return expressRouteCircuitConnections;
     }
 
-    /** @return Resource collection API of PeerExpressRouteCircuitConnections. */
+    /**
+     * Gets the resource collection API of PeerExpressRouteCircuitConnections.
+     *
+     * @return Resource collection API of PeerExpressRouteCircuitConnections.
+     */
     public PeerExpressRouteCircuitConnections peerExpressRouteCircuitConnections() {
         if (this.peerExpressRouteCircuitConnections == null) {
             this.peerExpressRouteCircuitConnections =
@@ -908,7 +1000,11 @@ public final class NetworkManager {
         return peerExpressRouteCircuitConnections;
     }
 
-    /** @return Resource collection API of ExpressRouteCircuits. */
+    /**
+     * Gets the resource collection API of ExpressRouteCircuits.
+     *
+     * @return Resource collection API of ExpressRouteCircuits.
+     */
     public ExpressRouteCircuits expressRouteCircuits() {
         if (this.expressRouteCircuits == null) {
             this.expressRouteCircuits = new ExpressRouteCircuitsImpl(clientObject.getExpressRouteCircuits(), this);
@@ -916,7 +1012,11 @@ public final class NetworkManager {
         return expressRouteCircuits;
     }
 
-    /** @return Resource collection API of ExpressRouteServiceProviders. */
+    /**
+     * Gets the resource collection API of ExpressRouteServiceProviders.
+     *
+     * @return Resource collection API of ExpressRouteServiceProviders.
+     */
     public ExpressRouteServiceProviders expressRouteServiceProviders() {
         if (this.expressRouteServiceProviders == null) {
             this.expressRouteServiceProviders =
@@ -925,7 +1025,11 @@ public final class NetworkManager {
         return expressRouteServiceProviders;
     }
 
-    /** @return Resource collection API of ExpressRouteCrossConnections. */
+    /**
+     * Gets the resource collection API of ExpressRouteCrossConnections.
+     *
+     * @return Resource collection API of ExpressRouteCrossConnections.
+     */
     public ExpressRouteCrossConnections expressRouteCrossConnections() {
         if (this.expressRouteCrossConnections == null) {
             this.expressRouteCrossConnections =
@@ -934,7 +1038,11 @@ public final class NetworkManager {
         return expressRouteCrossConnections;
     }
 
-    /** @return Resource collection API of ExpressRouteCrossConnectionPeerings. */
+    /**
+     * Gets the resource collection API of ExpressRouteCrossConnectionPeerings.
+     *
+     * @return Resource collection API of ExpressRouteCrossConnectionPeerings.
+     */
     public ExpressRouteCrossConnectionPeerings expressRouteCrossConnectionPeerings() {
         if (this.expressRouteCrossConnectionPeerings == null) {
             this.expressRouteCrossConnectionPeerings =
@@ -944,7 +1052,11 @@ public final class NetworkManager {
         return expressRouteCrossConnectionPeerings;
     }
 
-    /** @return Resource collection API of ExpressRoutePortsLocations. */
+    /**
+     * Gets the resource collection API of ExpressRoutePortsLocations.
+     *
+     * @return Resource collection API of ExpressRoutePortsLocations.
+     */
     public ExpressRoutePortsLocations expressRoutePortsLocations() {
         if (this.expressRoutePortsLocations == null) {
             this.expressRoutePortsLocations =
@@ -953,7 +1065,11 @@ public final class NetworkManager {
         return expressRoutePortsLocations;
     }
 
-    /** @return Resource collection API of ExpressRoutePorts. */
+    /**
+     * Gets the resource collection API of ExpressRoutePorts.
+     *
+     * @return Resource collection API of ExpressRoutePorts.
+     */
     public ExpressRoutePorts expressRoutePorts() {
         if (this.expressRoutePorts == null) {
             this.expressRoutePorts = new ExpressRoutePortsImpl(clientObject.getExpressRoutePorts(), this);
@@ -961,7 +1077,11 @@ public final class NetworkManager {
         return expressRoutePorts;
     }
 
-    /** @return Resource collection API of ExpressRouteLinks. */
+    /**
+     * Gets the resource collection API of ExpressRouteLinks.
+     *
+     * @return Resource collection API of ExpressRouteLinks.
+     */
     public ExpressRouteLinks expressRouteLinks() {
         if (this.expressRouteLinks == null) {
             this.expressRouteLinks = new ExpressRouteLinksImpl(clientObject.getExpressRouteLinks(), this);
@@ -969,7 +1089,11 @@ public final class NetworkManager {
         return expressRouteLinks;
     }
 
-    /** @return Resource collection API of ExpressRoutePortAuthorizations. */
+    /**
+     * Gets the resource collection API of ExpressRoutePortAuthorizations.
+     *
+     * @return Resource collection API of ExpressRoutePortAuthorizations.
+     */
     public ExpressRoutePortAuthorizations expressRoutePortAuthorizations() {
         if (this.expressRoutePortAuthorizations == null) {
             this.expressRoutePortAuthorizations =
@@ -978,7 +1102,11 @@ public final class NetworkManager {
         return expressRoutePortAuthorizations;
     }
 
-    /** @return Resource collection API of FirewallPolicies. */
+    /**
+     * Gets the resource collection API of FirewallPolicies.
+     *
+     * @return Resource collection API of FirewallPolicies.
+     */
     public FirewallPolicies firewallPolicies() {
         if (this.firewallPolicies == null) {
             this.firewallPolicies = new FirewallPoliciesImpl(clientObject.getFirewallPolicies(), this);
@@ -986,7 +1114,11 @@ public final class NetworkManager {
         return firewallPolicies;
     }
 
-    /** @return Resource collection API of FirewallPolicyRuleCollectionGroups. */
+    /**
+     * Gets the resource collection API of FirewallPolicyRuleCollectionGroups.
+     *
+     * @return Resource collection API of FirewallPolicyRuleCollectionGroups.
+     */
     public FirewallPolicyRuleCollectionGroups firewallPolicyRuleCollectionGroups() {
         if (this.firewallPolicyRuleCollectionGroups == null) {
             this.firewallPolicyRuleCollectionGroups =
@@ -995,7 +1127,11 @@ public final class NetworkManager {
         return firewallPolicyRuleCollectionGroups;
     }
 
-    /** @return Resource collection API of FirewallPolicyIdpsSignatures. */
+    /**
+     * Gets the resource collection API of FirewallPolicyIdpsSignatures.
+     *
+     * @return Resource collection API of FirewallPolicyIdpsSignatures.
+     */
     public FirewallPolicyIdpsSignatures firewallPolicyIdpsSignatures() {
         if (this.firewallPolicyIdpsSignatures == null) {
             this.firewallPolicyIdpsSignatures =
@@ -1004,7 +1140,11 @@ public final class NetworkManager {
         return firewallPolicyIdpsSignatures;
     }
 
-    /** @return Resource collection API of FirewallPolicyIdpsSignaturesOverrides. */
+    /**
+     * Gets the resource collection API of FirewallPolicyIdpsSignaturesOverrides.
+     *
+     * @return Resource collection API of FirewallPolicyIdpsSignaturesOverrides.
+     */
     public FirewallPolicyIdpsSignaturesOverrides firewallPolicyIdpsSignaturesOverrides() {
         if (this.firewallPolicyIdpsSignaturesOverrides == null) {
             this.firewallPolicyIdpsSignaturesOverrides =
@@ -1014,7 +1154,11 @@ public final class NetworkManager {
         return firewallPolicyIdpsSignaturesOverrides;
     }
 
-    /** @return Resource collection API of FirewallPolicyIdpsSignaturesFilterValues. */
+    /**
+     * Gets the resource collection API of FirewallPolicyIdpsSignaturesFilterValues.
+     *
+     * @return Resource collection API of FirewallPolicyIdpsSignaturesFilterValues.
+     */
     public FirewallPolicyIdpsSignaturesFilterValues firewallPolicyIdpsSignaturesFilterValues() {
         if (this.firewallPolicyIdpsSignaturesFilterValues == null) {
             this.firewallPolicyIdpsSignaturesFilterValues =
@@ -1024,7 +1168,11 @@ public final class NetworkManager {
         return firewallPolicyIdpsSignaturesFilterValues;
     }
 
-    /** @return Resource collection API of IpAllocations. */
+    /**
+     * Gets the resource collection API of IpAllocations.
+     *
+     * @return Resource collection API of IpAllocations.
+     */
     public IpAllocations ipAllocations() {
         if (this.ipAllocations == null) {
             this.ipAllocations = new IpAllocationsImpl(clientObject.getIpAllocations(), this);
@@ -1032,7 +1180,11 @@ public final class NetworkManager {
         return ipAllocations;
     }
 
-    /** @return Resource collection API of IpGroups. */
+    /**
+     * Gets the resource collection API of IpGroups.
+     *
+     * @return Resource collection API of IpGroups.
+     */
     public IpGroups ipGroups() {
         if (this.ipGroups == null) {
             this.ipGroups = new IpGroupsImpl(clientObject.getIpGroups(), this);
@@ -1040,7 +1192,11 @@ public final class NetworkManager {
         return ipGroups;
     }
 
-    /** @return Resource collection API of LoadBalancers. */
+    /**
+     * Gets the resource collection API of LoadBalancers.
+     *
+     * @return Resource collection API of LoadBalancers.
+     */
     public LoadBalancers loadBalancers() {
         if (this.loadBalancers == null) {
             this.loadBalancers = new LoadBalancersImpl(clientObject.getLoadBalancers(), this);
@@ -1048,7 +1204,11 @@ public final class NetworkManager {
         return loadBalancers;
     }
 
-    /** @return Resource collection API of LoadBalancerBackendAddressPools. */
+    /**
+     * Gets the resource collection API of LoadBalancerBackendAddressPools.
+     *
+     * @return Resource collection API of LoadBalancerBackendAddressPools.
+     */
     public LoadBalancerBackendAddressPools loadBalancerBackendAddressPools() {
         if (this.loadBalancerBackendAddressPools == null) {
             this.loadBalancerBackendAddressPools =
@@ -1057,7 +1217,11 @@ public final class NetworkManager {
         return loadBalancerBackendAddressPools;
     }
 
-    /** @return Resource collection API of LoadBalancerFrontendIpConfigurations. */
+    /**
+     * Gets the resource collection API of LoadBalancerFrontendIpConfigurations.
+     *
+     * @return Resource collection API of LoadBalancerFrontendIpConfigurations.
+     */
     public LoadBalancerFrontendIpConfigurations loadBalancerFrontendIpConfigurations() {
         if (this.loadBalancerFrontendIpConfigurations == null) {
             this.loadBalancerFrontendIpConfigurations =
@@ -1067,7 +1231,11 @@ public final class NetworkManager {
         return loadBalancerFrontendIpConfigurations;
     }
 
-    /** @return Resource collection API of InboundNatRules. */
+    /**
+     * Gets the resource collection API of InboundNatRules.
+     *
+     * @return Resource collection API of InboundNatRules.
+     */
     public InboundNatRules inboundNatRules() {
         if (this.inboundNatRules == null) {
             this.inboundNatRules = new InboundNatRulesImpl(clientObject.getInboundNatRules(), this);
@@ -1075,7 +1243,11 @@ public final class NetworkManager {
         return inboundNatRules;
     }
 
-    /** @return Resource collection API of LoadBalancerLoadBalancingRules. */
+    /**
+     * Gets the resource collection API of LoadBalancerLoadBalancingRules.
+     *
+     * @return Resource collection API of LoadBalancerLoadBalancingRules.
+     */
     public LoadBalancerLoadBalancingRules loadBalancerLoadBalancingRules() {
         if (this.loadBalancerLoadBalancingRules == null) {
             this.loadBalancerLoadBalancingRules =
@@ -1084,7 +1256,11 @@ public final class NetworkManager {
         return loadBalancerLoadBalancingRules;
     }
 
-    /** @return Resource collection API of LoadBalancerOutboundRules. */
+    /**
+     * Gets the resource collection API of LoadBalancerOutboundRules.
+     *
+     * @return Resource collection API of LoadBalancerOutboundRules.
+     */
     public LoadBalancerOutboundRules loadBalancerOutboundRules() {
         if (this.loadBalancerOutboundRules == null) {
             this.loadBalancerOutboundRules =
@@ -1093,7 +1269,11 @@ public final class NetworkManager {
         return loadBalancerOutboundRules;
     }
 
-    /** @return Resource collection API of LoadBalancerNetworkInterfaces. */
+    /**
+     * Gets the resource collection API of LoadBalancerNetworkInterfaces.
+     *
+     * @return Resource collection API of LoadBalancerNetworkInterfaces.
+     */
     public LoadBalancerNetworkInterfaces loadBalancerNetworkInterfaces() {
         if (this.loadBalancerNetworkInterfaces == null) {
             this.loadBalancerNetworkInterfaces =
@@ -1102,7 +1282,11 @@ public final class NetworkManager {
         return loadBalancerNetworkInterfaces;
     }
 
-    /** @return Resource collection API of LoadBalancerProbes. */
+    /**
+     * Gets the resource collection API of LoadBalancerProbes.
+     *
+     * @return Resource collection API of LoadBalancerProbes.
+     */
     public LoadBalancerProbes loadBalancerProbes() {
         if (this.loadBalancerProbes == null) {
             this.loadBalancerProbes = new LoadBalancerProbesImpl(clientObject.getLoadBalancerProbes(), this);
@@ -1110,7 +1294,11 @@ public final class NetworkManager {
         return loadBalancerProbes;
     }
 
-    /** @return Resource collection API of NatGateways. */
+    /**
+     * Gets the resource collection API of NatGateways.
+     *
+     * @return Resource collection API of NatGateways.
+     */
     public NatGateways natGateways() {
         if (this.natGateways == null) {
             this.natGateways = new NatGatewaysImpl(clientObject.getNatGateways(), this);
@@ -1118,7 +1306,11 @@ public final class NetworkManager {
         return natGateways;
     }
 
-    /** @return Resource collection API of NetworkInterfaceIpConfigurations. */
+    /**
+     * Gets the resource collection API of NetworkInterfaceIpConfigurations.
+     *
+     * @return Resource collection API of NetworkInterfaceIpConfigurations.
+     */
     public NetworkInterfaceIpConfigurations networkInterfaceIpConfigurations() {
         if (this.networkInterfaceIpConfigurations == null) {
             this.networkInterfaceIpConfigurations =
@@ -1127,7 +1319,11 @@ public final class NetworkManager {
         return networkInterfaceIpConfigurations;
     }
 
-    /** @return Resource collection API of NetworkInterfaceLoadBalancers. */
+    /**
+     * Gets the resource collection API of NetworkInterfaceLoadBalancers.
+     *
+     * @return Resource collection API of NetworkInterfaceLoadBalancers.
+     */
     public NetworkInterfaceLoadBalancers networkInterfaceLoadBalancers() {
         if (this.networkInterfaceLoadBalancers == null) {
             this.networkInterfaceLoadBalancers =
@@ -1136,7 +1332,11 @@ public final class NetworkManager {
         return networkInterfaceLoadBalancers;
     }
 
-    /** @return Resource collection API of NetworkInterfaceTapConfigurations. */
+    /**
+     * Gets the resource collection API of NetworkInterfaceTapConfigurations.
+     *
+     * @return Resource collection API of NetworkInterfaceTapConfigurations.
+     */
     public NetworkInterfaceTapConfigurations networkInterfaceTapConfigurations() {
         if (this.networkInterfaceTapConfigurations == null) {
             this.networkInterfaceTapConfigurations =
@@ -1145,7 +1345,11 @@ public final class NetworkManager {
         return networkInterfaceTapConfigurations;
     }
 
-    /** @return Resource collection API of NetworkProfiles. */
+    /**
+     * Gets the resource collection API of NetworkProfiles.
+     *
+     * @return Resource collection API of NetworkProfiles.
+     */
     public NetworkProfiles networkProfiles() {
         if (this.networkProfiles == null) {
             this.networkProfiles = new NetworkProfilesImpl(clientObject.getNetworkProfiles(), this);
@@ -1153,7 +1357,11 @@ public final class NetworkManager {
         return networkProfiles;
     }
 
-    /** @return Resource collection API of NetworkSecurityGroups. */
+    /**
+     * Gets the resource collection API of NetworkSecurityGroups.
+     *
+     * @return Resource collection API of NetworkSecurityGroups.
+     */
     public NetworkSecurityGroups networkSecurityGroups() {
         if (this.networkSecurityGroups == null) {
             this.networkSecurityGroups = new NetworkSecurityGroupsImpl(clientObject.getNetworkSecurityGroups(), this);
@@ -1161,7 +1369,11 @@ public final class NetworkManager {
         return networkSecurityGroups;
     }
 
-    /** @return Resource collection API of SecurityRules. */
+    /**
+     * Gets the resource collection API of SecurityRules.
+     *
+     * @return Resource collection API of SecurityRules.
+     */
     public SecurityRules securityRules() {
         if (this.securityRules == null) {
             this.securityRules = new SecurityRulesImpl(clientObject.getSecurityRules(), this);
@@ -1169,7 +1381,11 @@ public final class NetworkManager {
         return securityRules;
     }
 
-    /** @return Resource collection API of DefaultSecurityRules. */
+    /**
+     * Gets the resource collection API of DefaultSecurityRules.
+     *
+     * @return Resource collection API of DefaultSecurityRules.
+     */
     public DefaultSecurityRules defaultSecurityRules() {
         if (this.defaultSecurityRules == null) {
             this.defaultSecurityRules = new DefaultSecurityRulesImpl(clientObject.getDefaultSecurityRules(), this);
@@ -1177,7 +1393,11 @@ public final class NetworkManager {
         return defaultSecurityRules;
     }
 
-    /** @return Resource collection API of NetworkVirtualAppliances. */
+    /**
+     * Gets the resource collection API of NetworkVirtualAppliances.
+     *
+     * @return Resource collection API of NetworkVirtualAppliances.
+     */
     public NetworkVirtualAppliances networkVirtualAppliances() {
         if (this.networkVirtualAppliances == null) {
             this.networkVirtualAppliances =
@@ -1186,7 +1406,11 @@ public final class NetworkManager {
         return networkVirtualAppliances;
     }
 
-    /** @return Resource collection API of VirtualApplianceSites. */
+    /**
+     * Gets the resource collection API of VirtualApplianceSites.
+     *
+     * @return Resource collection API of VirtualApplianceSites.
+     */
     public VirtualApplianceSites virtualApplianceSites() {
         if (this.virtualApplianceSites == null) {
             this.virtualApplianceSites = new VirtualApplianceSitesImpl(clientObject.getVirtualApplianceSites(), this);
@@ -1194,7 +1418,11 @@ public final class NetworkManager {
         return virtualApplianceSites;
     }
 
-    /** @return Resource collection API of VirtualApplianceSkus. */
+    /**
+     * Gets the resource collection API of VirtualApplianceSkus.
+     *
+     * @return Resource collection API of VirtualApplianceSkus.
+     */
     public VirtualApplianceSkus virtualApplianceSkus() {
         if (this.virtualApplianceSkus == null) {
             this.virtualApplianceSkus = new VirtualApplianceSkusImpl(clientObject.getVirtualApplianceSkus(), this);
@@ -1202,7 +1430,11 @@ public final class NetworkManager {
         return virtualApplianceSkus;
     }
 
-    /** @return Resource collection API of InboundSecurityRuleOperations. */
+    /**
+     * Gets the resource collection API of InboundSecurityRuleOperations.
+     *
+     * @return Resource collection API of InboundSecurityRuleOperations.
+     */
     public InboundSecurityRuleOperations inboundSecurityRuleOperations() {
         if (this.inboundSecurityRuleOperations == null) {
             this.inboundSecurityRuleOperations =
@@ -1211,7 +1443,11 @@ public final class NetworkManager {
         return inboundSecurityRuleOperations;
     }
 
-    /** @return Resource collection API of NetworkWatchers. */
+    /**
+     * Gets the resource collection API of NetworkWatchers.
+     *
+     * @return Resource collection API of NetworkWatchers.
+     */
     public NetworkWatchers networkWatchers() {
         if (this.networkWatchers == null) {
             this.networkWatchers = new NetworkWatchersImpl(clientObject.getNetworkWatchers(), this);
@@ -1219,7 +1455,11 @@ public final class NetworkManager {
         return networkWatchers;
     }
 
-    /** @return Resource collection API of PacketCaptures. */
+    /**
+     * Gets the resource collection API of PacketCaptures.
+     *
+     * @return Resource collection API of PacketCaptures.
+     */
     public PacketCaptures packetCaptures() {
         if (this.packetCaptures == null) {
             this.packetCaptures = new PacketCapturesImpl(clientObject.getPacketCaptures(), this);
@@ -1227,7 +1467,11 @@ public final class NetworkManager {
         return packetCaptures;
     }
 
-    /** @return Resource collection API of ConnectionMonitors. */
+    /**
+     * Gets the resource collection API of ConnectionMonitors.
+     *
+     * @return Resource collection API of ConnectionMonitors.
+     */
     public ConnectionMonitors connectionMonitors() {
         if (this.connectionMonitors == null) {
             this.connectionMonitors = new ConnectionMonitorsImpl(clientObject.getConnectionMonitors(), this);
@@ -1235,7 +1479,11 @@ public final class NetworkManager {
         return connectionMonitors;
     }
 
-    /** @return Resource collection API of FlowLogs. */
+    /**
+     * Gets the resource collection API of FlowLogs.
+     *
+     * @return Resource collection API of FlowLogs.
+     */
     public FlowLogs flowLogs() {
         if (this.flowLogs == null) {
             this.flowLogs = new FlowLogsImpl(clientObject.getFlowLogs(), this);
@@ -1243,7 +1491,11 @@ public final class NetworkManager {
         return flowLogs;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -1251,7 +1503,11 @@ public final class NetworkManager {
         return operations;
     }
 
-    /** @return Resource collection API of PrivateEndpoints. */
+    /**
+     * Gets the resource collection API of PrivateEndpoints.
+     *
+     * @return Resource collection API of PrivateEndpoints.
+     */
     public PrivateEndpoints privateEndpoints() {
         if (this.privateEndpoints == null) {
             this.privateEndpoints = new PrivateEndpointsImpl(clientObject.getPrivateEndpoints(), this);
@@ -1259,7 +1515,11 @@ public final class NetworkManager {
         return privateEndpoints;
     }
 
-    /** @return Resource collection API of AvailablePrivateEndpointTypes. */
+    /**
+     * Gets the resource collection API of AvailablePrivateEndpointTypes.
+     *
+     * @return Resource collection API of AvailablePrivateEndpointTypes.
+     */
     public AvailablePrivateEndpointTypes availablePrivateEndpointTypes() {
         if (this.availablePrivateEndpointTypes == null) {
             this.availablePrivateEndpointTypes =
@@ -1268,7 +1528,11 @@ public final class NetworkManager {
         return availablePrivateEndpointTypes;
     }
 
-    /** @return Resource collection API of PrivateDnsZoneGroups. */
+    /**
+     * Gets the resource collection API of PrivateDnsZoneGroups.
+     *
+     * @return Resource collection API of PrivateDnsZoneGroups.
+     */
     public PrivateDnsZoneGroups privateDnsZoneGroups() {
         if (this.privateDnsZoneGroups == null) {
             this.privateDnsZoneGroups = new PrivateDnsZoneGroupsImpl(clientObject.getPrivateDnsZoneGroups(), this);
@@ -1276,7 +1540,11 @@ public final class NetworkManager {
         return privateDnsZoneGroups;
     }
 
-    /** @return Resource collection API of PrivateLinkServices. */
+    /**
+     * Gets the resource collection API of PrivateLinkServices.
+     *
+     * @return Resource collection API of PrivateLinkServices.
+     */
     public PrivateLinkServices privateLinkServices() {
         if (this.privateLinkServices == null) {
             this.privateLinkServices = new PrivateLinkServicesImpl(clientObject.getPrivateLinkServices(), this);
@@ -1284,7 +1552,11 @@ public final class NetworkManager {
         return privateLinkServices;
     }
 
-    /** @return Resource collection API of PublicIpPrefixes. */
+    /**
+     * Gets the resource collection API of PublicIpPrefixes.
+     *
+     * @return Resource collection API of PublicIpPrefixes.
+     */
     public PublicIpPrefixes publicIpPrefixes() {
         if (this.publicIpPrefixes == null) {
             this.publicIpPrefixes = new PublicIpPrefixesImpl(clientObject.getPublicIpPrefixes(), this);
@@ -1292,7 +1564,11 @@ public final class NetworkManager {
         return publicIpPrefixes;
     }
 
-    /** @return Resource collection API of RouteFilters. */
+    /**
+     * Gets the resource collection API of RouteFilters.
+     *
+     * @return Resource collection API of RouteFilters.
+     */
     public RouteFilters routeFilters() {
         if (this.routeFilters == null) {
             this.routeFilters = new RouteFiltersImpl(clientObject.getRouteFilters(), this);
@@ -1300,7 +1576,11 @@ public final class NetworkManager {
         return routeFilters;
     }
 
-    /** @return Resource collection API of RouteFilterRules. */
+    /**
+     * Gets the resource collection API of RouteFilterRules.
+     *
+     * @return Resource collection API of RouteFilterRules.
+     */
     public RouteFilterRules routeFilterRules() {
         if (this.routeFilterRules == null) {
             this.routeFilterRules = new RouteFilterRulesImpl(clientObject.getRouteFilterRules(), this);
@@ -1308,7 +1588,11 @@ public final class NetworkManager {
         return routeFilterRules;
     }
 
-    /** @return Resource collection API of RouteTables. */
+    /**
+     * Gets the resource collection API of RouteTables.
+     *
+     * @return Resource collection API of RouteTables.
+     */
     public RouteTables routeTables() {
         if (this.routeTables == null) {
             this.routeTables = new RouteTablesImpl(clientObject.getRouteTables(), this);
@@ -1316,7 +1600,11 @@ public final class NetworkManager {
         return routeTables;
     }
 
-    /** @return Resource collection API of Routes. */
+    /**
+     * Gets the resource collection API of Routes.
+     *
+     * @return Resource collection API of Routes.
+     */
     public Routes routes() {
         if (this.routes == null) {
             this.routes = new RoutesImpl(clientObject.getRoutes(), this);
@@ -1324,7 +1612,11 @@ public final class NetworkManager {
         return routes;
     }
 
-    /** @return Resource collection API of SecurityPartnerProviders. */
+    /**
+     * Gets the resource collection API of SecurityPartnerProviders.
+     *
+     * @return Resource collection API of SecurityPartnerProviders.
+     */
     public SecurityPartnerProviders securityPartnerProviders() {
         if (this.securityPartnerProviders == null) {
             this.securityPartnerProviders =
@@ -1333,7 +1625,11 @@ public final class NetworkManager {
         return securityPartnerProviders;
     }
 
-    /** @return Resource collection API of BgpServiceCommunities. */
+    /**
+     * Gets the resource collection API of BgpServiceCommunities.
+     *
+     * @return Resource collection API of BgpServiceCommunities.
+     */
     public BgpServiceCommunities bgpServiceCommunities() {
         if (this.bgpServiceCommunities == null) {
             this.bgpServiceCommunities = new BgpServiceCommunitiesImpl(clientObject.getBgpServiceCommunities(), this);
@@ -1341,7 +1637,11 @@ public final class NetworkManager {
         return bgpServiceCommunities;
     }
 
-    /** @return Resource collection API of ServiceEndpointPolicies. */
+    /**
+     * Gets the resource collection API of ServiceEndpointPolicies.
+     *
+     * @return Resource collection API of ServiceEndpointPolicies.
+     */
     public ServiceEndpointPolicies serviceEndpointPolicies() {
         if (this.serviceEndpointPolicies == null) {
             this.serviceEndpointPolicies =
@@ -1350,7 +1650,11 @@ public final class NetworkManager {
         return serviceEndpointPolicies;
     }
 
-    /** @return Resource collection API of ServiceEndpointPolicyDefinitions. */
+    /**
+     * Gets the resource collection API of ServiceEndpointPolicyDefinitions.
+     *
+     * @return Resource collection API of ServiceEndpointPolicyDefinitions.
+     */
     public ServiceEndpointPolicyDefinitions serviceEndpointPolicyDefinitions() {
         if (this.serviceEndpointPolicyDefinitions == null) {
             this.serviceEndpointPolicyDefinitions =
@@ -1359,7 +1663,11 @@ public final class NetworkManager {
         return serviceEndpointPolicyDefinitions;
     }
 
-    /** @return Resource collection API of ServiceTags. */
+    /**
+     * Gets the resource collection API of ServiceTags.
+     *
+     * @return Resource collection API of ServiceTags.
+     */
     public ServiceTags serviceTags() {
         if (this.serviceTags == null) {
             this.serviceTags = new ServiceTagsImpl(clientObject.getServiceTags(), this);
@@ -1367,7 +1675,11 @@ public final class NetworkManager {
         return serviceTags;
     }
 
-    /** @return Resource collection API of ServiceTagInformations. */
+    /**
+     * Gets the resource collection API of ServiceTagInformations.
+     *
+     * @return Resource collection API of ServiceTagInformations.
+     */
     public ServiceTagInformations serviceTagInformations() {
         if (this.serviceTagInformations == null) {
             this.serviceTagInformations =
@@ -1376,7 +1688,11 @@ public final class NetworkManager {
         return serviceTagInformations;
     }
 
-    /** @return Resource collection API of Usages. */
+    /**
+     * Gets the resource collection API of Usages.
+     *
+     * @return Resource collection API of Usages.
+     */
     public Usages usages() {
         if (this.usages == null) {
             this.usages = new UsagesImpl(clientObject.getUsages(), this);
@@ -1384,7 +1700,11 @@ public final class NetworkManager {
         return usages;
     }
 
-    /** @return Resource collection API of VirtualNetworks. */
+    /**
+     * Gets the resource collection API of VirtualNetworks.
+     *
+     * @return Resource collection API of VirtualNetworks.
+     */
     public VirtualNetworks virtualNetworks() {
         if (this.virtualNetworks == null) {
             this.virtualNetworks = new VirtualNetworksImpl(clientObject.getVirtualNetworks(), this);
@@ -1392,7 +1712,11 @@ public final class NetworkManager {
         return virtualNetworks;
     }
 
-    /** @return Resource collection API of Subnets. */
+    /**
+     * Gets the resource collection API of Subnets.
+     *
+     * @return Resource collection API of Subnets.
+     */
     public Subnets subnets() {
         if (this.subnets == null) {
             this.subnets = new SubnetsImpl(clientObject.getSubnets(), this);
@@ -1400,7 +1724,11 @@ public final class NetworkManager {
         return subnets;
     }
 
-    /** @return Resource collection API of ResourceNavigationLinks. */
+    /**
+     * Gets the resource collection API of ResourceNavigationLinks.
+     *
+     * @return Resource collection API of ResourceNavigationLinks.
+     */
     public ResourceNavigationLinks resourceNavigationLinks() {
         if (this.resourceNavigationLinks == null) {
             this.resourceNavigationLinks =
@@ -1409,7 +1737,11 @@ public final class NetworkManager {
         return resourceNavigationLinks;
     }
 
-    /** @return Resource collection API of ServiceAssociationLinks. */
+    /**
+     * Gets the resource collection API of ServiceAssociationLinks.
+     *
+     * @return Resource collection API of ServiceAssociationLinks.
+     */
     public ServiceAssociationLinks serviceAssociationLinks() {
         if (this.serviceAssociationLinks == null) {
             this.serviceAssociationLinks =
@@ -1418,7 +1750,11 @@ public final class NetworkManager {
         return serviceAssociationLinks;
     }
 
-    /** @return Resource collection API of VirtualNetworkPeerings. */
+    /**
+     * Gets the resource collection API of VirtualNetworkPeerings.
+     *
+     * @return Resource collection API of VirtualNetworkPeerings.
+     */
     public VirtualNetworkPeerings virtualNetworkPeerings() {
         if (this.virtualNetworkPeerings == null) {
             this.virtualNetworkPeerings =
@@ -1427,7 +1763,11 @@ public final class NetworkManager {
         return virtualNetworkPeerings;
     }
 
-    /** @return Resource collection API of VirtualNetworkGateways. */
+    /**
+     * Gets the resource collection API of VirtualNetworkGateways.
+     *
+     * @return Resource collection API of VirtualNetworkGateways.
+     */
     public VirtualNetworkGateways virtualNetworkGateways() {
         if (this.virtualNetworkGateways == null) {
             this.virtualNetworkGateways =
@@ -1436,7 +1776,11 @@ public final class NetworkManager {
         return virtualNetworkGateways;
     }
 
-    /** @return Resource collection API of VirtualNetworkGatewayConnections. */
+    /**
+     * Gets the resource collection API of VirtualNetworkGatewayConnections.
+     *
+     * @return Resource collection API of VirtualNetworkGatewayConnections.
+     */
     public VirtualNetworkGatewayConnections virtualNetworkGatewayConnections() {
         if (this.virtualNetworkGatewayConnections == null) {
             this.virtualNetworkGatewayConnections =
@@ -1445,7 +1789,11 @@ public final class NetworkManager {
         return virtualNetworkGatewayConnections;
     }
 
-    /** @return Resource collection API of LocalNetworkGateways. */
+    /**
+     * Gets the resource collection API of LocalNetworkGateways.
+     *
+     * @return Resource collection API of LocalNetworkGateways.
+     */
     public LocalNetworkGateways localNetworkGateways() {
         if (this.localNetworkGateways == null) {
             this.localNetworkGateways = new LocalNetworkGatewaysImpl(clientObject.getLocalNetworkGateways(), this);
@@ -1453,7 +1801,11 @@ public final class NetworkManager {
         return localNetworkGateways;
     }
 
-    /** @return Resource collection API of VirtualNetworkGatewayNatRules. */
+    /**
+     * Gets the resource collection API of VirtualNetworkGatewayNatRules.
+     *
+     * @return Resource collection API of VirtualNetworkGatewayNatRules.
+     */
     public VirtualNetworkGatewayNatRules virtualNetworkGatewayNatRules() {
         if (this.virtualNetworkGatewayNatRules == null) {
             this.virtualNetworkGatewayNatRules =
@@ -1462,7 +1814,11 @@ public final class NetworkManager {
         return virtualNetworkGatewayNatRules;
     }
 
-    /** @return Resource collection API of VirtualNetworkTaps. */
+    /**
+     * Gets the resource collection API of VirtualNetworkTaps.
+     *
+     * @return Resource collection API of VirtualNetworkTaps.
+     */
     public VirtualNetworkTaps virtualNetworkTaps() {
         if (this.virtualNetworkTaps == null) {
             this.virtualNetworkTaps = new VirtualNetworkTapsImpl(clientObject.getVirtualNetworkTaps(), this);
@@ -1470,7 +1826,11 @@ public final class NetworkManager {
         return virtualNetworkTaps;
     }
 
-    /** @return Resource collection API of VirtualRouters. */
+    /**
+     * Gets the resource collection API of VirtualRouters.
+     *
+     * @return Resource collection API of VirtualRouters.
+     */
     public VirtualRouters virtualRouters() {
         if (this.virtualRouters == null) {
             this.virtualRouters = new VirtualRoutersImpl(clientObject.getVirtualRouters(), this);
@@ -1478,7 +1838,11 @@ public final class NetworkManager {
         return virtualRouters;
     }
 
-    /** @return Resource collection API of VirtualRouterPeerings. */
+    /**
+     * Gets the resource collection API of VirtualRouterPeerings.
+     *
+     * @return Resource collection API of VirtualRouterPeerings.
+     */
     public VirtualRouterPeerings virtualRouterPeerings() {
         if (this.virtualRouterPeerings == null) {
             this.virtualRouterPeerings = new VirtualRouterPeeringsImpl(clientObject.getVirtualRouterPeerings(), this);
@@ -1486,7 +1850,11 @@ public final class NetworkManager {
         return virtualRouterPeerings;
     }
 
-    /** @return Resource collection API of VirtualWans. */
+    /**
+     * Gets the resource collection API of VirtualWans.
+     *
+     * @return Resource collection API of VirtualWans.
+     */
     public VirtualWans virtualWans() {
         if (this.virtualWans == null) {
             this.virtualWans = new VirtualWansImpl(clientObject.getVirtualWans(), this);
@@ -1494,7 +1862,11 @@ public final class NetworkManager {
         return virtualWans;
     }
 
-    /** @return Resource collection API of VpnSites. */
+    /**
+     * Gets the resource collection API of VpnSites.
+     *
+     * @return Resource collection API of VpnSites.
+     */
     public VpnSites vpnSites() {
         if (this.vpnSites == null) {
             this.vpnSites = new VpnSitesImpl(clientObject.getVpnSites(), this);
@@ -1502,7 +1874,11 @@ public final class NetworkManager {
         return vpnSites;
     }
 
-    /** @return Resource collection API of VpnSiteLinks. */
+    /**
+     * Gets the resource collection API of VpnSiteLinks.
+     *
+     * @return Resource collection API of VpnSiteLinks.
+     */
     public VpnSiteLinks vpnSiteLinks() {
         if (this.vpnSiteLinks == null) {
             this.vpnSiteLinks = new VpnSiteLinksImpl(clientObject.getVpnSiteLinks(), this);
@@ -1510,7 +1886,11 @@ public final class NetworkManager {
         return vpnSiteLinks;
     }
 
-    /** @return Resource collection API of VpnSitesConfigurations. */
+    /**
+     * Gets the resource collection API of VpnSitesConfigurations.
+     *
+     * @return Resource collection API of VpnSitesConfigurations.
+     */
     public VpnSitesConfigurations vpnSitesConfigurations() {
         if (this.vpnSitesConfigurations == null) {
             this.vpnSitesConfigurations =
@@ -1519,7 +1899,11 @@ public final class NetworkManager {
         return vpnSitesConfigurations;
     }
 
-    /** @return Resource collection API of VpnServerConfigurations. */
+    /**
+     * Gets the resource collection API of VpnServerConfigurations.
+     *
+     * @return Resource collection API of VpnServerConfigurations.
+     */
     public VpnServerConfigurations vpnServerConfigurations() {
         if (this.vpnServerConfigurations == null) {
             this.vpnServerConfigurations =
@@ -1528,7 +1912,11 @@ public final class NetworkManager {
         return vpnServerConfigurations;
     }
 
-    /** @return Resource collection API of ConfigurationPolicyGroups. */
+    /**
+     * Gets the resource collection API of ConfigurationPolicyGroups.
+     *
+     * @return Resource collection API of ConfigurationPolicyGroups.
+     */
     public ConfigurationPolicyGroups configurationPolicyGroups() {
         if (this.configurationPolicyGroups == null) {
             this.configurationPolicyGroups =
@@ -1537,7 +1925,11 @@ public final class NetworkManager {
         return configurationPolicyGroups;
     }
 
-    /** @return Resource collection API of VirtualHubs. */
+    /**
+     * Gets the resource collection API of VirtualHubs.
+     *
+     * @return Resource collection API of VirtualHubs.
+     */
     public VirtualHubs virtualHubs() {
         if (this.virtualHubs == null) {
             this.virtualHubs = new VirtualHubsImpl(clientObject.getVirtualHubs(), this);
@@ -1545,7 +1937,11 @@ public final class NetworkManager {
         return virtualHubs;
     }
 
-    /** @return Resource collection API of HubVirtualNetworkConnections. */
+    /**
+     * Gets the resource collection API of HubVirtualNetworkConnections.
+     *
+     * @return Resource collection API of HubVirtualNetworkConnections.
+     */
     public HubVirtualNetworkConnections hubVirtualNetworkConnections() {
         if (this.hubVirtualNetworkConnections == null) {
             this.hubVirtualNetworkConnections =
@@ -1554,7 +1950,11 @@ public final class NetworkManager {
         return hubVirtualNetworkConnections;
     }
 
-    /** @return Resource collection API of VpnGateways. */
+    /**
+     * Gets the resource collection API of VpnGateways.
+     *
+     * @return Resource collection API of VpnGateways.
+     */
     public VpnGateways vpnGateways() {
         if (this.vpnGateways == null) {
             this.vpnGateways = new VpnGatewaysImpl(clientObject.getVpnGateways(), this);
@@ -1562,7 +1962,11 @@ public final class NetworkManager {
         return vpnGateways;
     }
 
-    /** @return Resource collection API of VpnLinkConnections. */
+    /**
+     * Gets the resource collection API of VpnLinkConnections.
+     *
+     * @return Resource collection API of VpnLinkConnections.
+     */
     public VpnLinkConnections vpnLinkConnections() {
         if (this.vpnLinkConnections == null) {
             this.vpnLinkConnections = new VpnLinkConnectionsImpl(clientObject.getVpnLinkConnections(), this);
@@ -1570,7 +1974,11 @@ public final class NetworkManager {
         return vpnLinkConnections;
     }
 
-    /** @return Resource collection API of VpnConnections. */
+    /**
+     * Gets the resource collection API of VpnConnections.
+     *
+     * @return Resource collection API of VpnConnections.
+     */
     public VpnConnections vpnConnections() {
         if (this.vpnConnections == null) {
             this.vpnConnections = new VpnConnectionsImpl(clientObject.getVpnConnections(), this);
@@ -1578,7 +1986,11 @@ public final class NetworkManager {
         return vpnConnections;
     }
 
-    /** @return Resource collection API of VpnSiteLinkConnections. */
+    /**
+     * Gets the resource collection API of VpnSiteLinkConnections.
+     *
+     * @return Resource collection API of VpnSiteLinkConnections.
+     */
     public VpnSiteLinkConnections vpnSiteLinkConnections() {
         if (this.vpnSiteLinkConnections == null) {
             this.vpnSiteLinkConnections =
@@ -1587,7 +1999,11 @@ public final class NetworkManager {
         return vpnSiteLinkConnections;
     }
 
-    /** @return Resource collection API of NatRules. */
+    /**
+     * Gets the resource collection API of NatRules.
+     *
+     * @return Resource collection API of NatRules.
+     */
     public NatRules natRules() {
         if (this.natRules == null) {
             this.natRules = new NatRulesImpl(clientObject.getNatRules(), this);
@@ -1595,7 +2011,11 @@ public final class NetworkManager {
         return natRules;
     }
 
-    /** @return Resource collection API of P2SVpnGateways. */
+    /**
+     * Gets the resource collection API of P2SVpnGateways.
+     *
+     * @return Resource collection API of P2SVpnGateways.
+     */
     public P2SVpnGateways p2SVpnGateways() {
         if (this.p2SVpnGateways == null) {
             this.p2SVpnGateways = new P2SVpnGatewaysImpl(clientObject.getP2SVpnGateways(), this);
@@ -1603,7 +2023,11 @@ public final class NetworkManager {
         return p2SVpnGateways;
     }
 
-    /** @return Resource collection API of VpnServerConfigurationsAssociatedWithVirtualWans. */
+    /**
+     * Gets the resource collection API of VpnServerConfigurationsAssociatedWithVirtualWans.
+     *
+     * @return Resource collection API of VpnServerConfigurationsAssociatedWithVirtualWans.
+     */
     public VpnServerConfigurationsAssociatedWithVirtualWans vpnServerConfigurationsAssociatedWithVirtualWans() {
         if (this.vpnServerConfigurationsAssociatedWithVirtualWans == null) {
             this.vpnServerConfigurationsAssociatedWithVirtualWans =
@@ -1613,7 +2037,11 @@ public final class NetworkManager {
         return vpnServerConfigurationsAssociatedWithVirtualWans;
     }
 
-    /** @return Resource collection API of VirtualHubRouteTableV2S. */
+    /**
+     * Gets the resource collection API of VirtualHubRouteTableV2S.
+     *
+     * @return Resource collection API of VirtualHubRouteTableV2S.
+     */
     public VirtualHubRouteTableV2S virtualHubRouteTableV2S() {
         if (this.virtualHubRouteTableV2S == null) {
             this.virtualHubRouteTableV2S =
@@ -1622,7 +2050,11 @@ public final class NetworkManager {
         return virtualHubRouteTableV2S;
     }
 
-    /** @return Resource collection API of ExpressRouteGateways. */
+    /**
+     * Gets the resource collection API of ExpressRouteGateways.
+     *
+     * @return Resource collection API of ExpressRouteGateways.
+     */
     public ExpressRouteGateways expressRouteGateways() {
         if (this.expressRouteGateways == null) {
             this.expressRouteGateways = new ExpressRouteGatewaysImpl(clientObject.getExpressRouteGateways(), this);
@@ -1630,7 +2062,11 @@ public final class NetworkManager {
         return expressRouteGateways;
     }
 
-    /** @return Resource collection API of ExpressRouteConnections. */
+    /**
+     * Gets the resource collection API of ExpressRouteConnections.
+     *
+     * @return Resource collection API of ExpressRouteConnections.
+     */
     public ExpressRouteConnections expressRouteConnections() {
         if (this.expressRouteConnections == null) {
             this.expressRouteConnections =
@@ -1639,7 +2075,11 @@ public final class NetworkManager {
         return expressRouteConnections;
     }
 
-    /** @return Resource collection API of VirtualHubBgpConnections. */
+    /**
+     * Gets the resource collection API of VirtualHubBgpConnections.
+     *
+     * @return Resource collection API of VirtualHubBgpConnections.
+     */
     public VirtualHubBgpConnections virtualHubBgpConnections() {
         if (this.virtualHubBgpConnections == null) {
             this.virtualHubBgpConnections =
@@ -1648,7 +2088,11 @@ public final class NetworkManager {
         return virtualHubBgpConnections;
     }
 
-    /** @return Resource collection API of VirtualHubIpConfigurations. */
+    /**
+     * Gets the resource collection API of VirtualHubIpConfigurations.
+     *
+     * @return Resource collection API of VirtualHubIpConfigurations.
+     */
     public VirtualHubIpConfigurations virtualHubIpConfigurations() {
         if (this.virtualHubIpConfigurations == null) {
             this.virtualHubIpConfigurations =
@@ -1657,7 +2101,11 @@ public final class NetworkManager {
         return virtualHubIpConfigurations;
     }
 
-    /** @return Resource collection API of HubRouteTables. */
+    /**
+     * Gets the resource collection API of HubRouteTables.
+     *
+     * @return Resource collection API of HubRouteTables.
+     */
     public HubRouteTables hubRouteTables() {
         if (this.hubRouteTables == null) {
             this.hubRouteTables = new HubRouteTablesImpl(clientObject.getHubRouteTables(), this);
@@ -1665,7 +2113,11 @@ public final class NetworkManager {
         return hubRouteTables;
     }
 
-    /** @return Resource collection API of RoutingIntents. */
+    /**
+     * Gets the resource collection API of RoutingIntents.
+     *
+     * @return Resource collection API of RoutingIntents.
+     */
     public RoutingIntents routingIntents() {
         if (this.routingIntents == null) {
             this.routingIntents = new RoutingIntentsImpl(clientObject.getRoutingIntents(), this);
@@ -1673,7 +2125,11 @@ public final class NetworkManager {
         return routingIntents;
     }
 
-    /** @return Resource collection API of WebApplicationFirewallPolicies. */
+    /**
+     * Gets the resource collection API of WebApplicationFirewallPolicies.
+     *
+     * @return Resource collection API of WebApplicationFirewallPolicies.
+     */
     public WebApplicationFirewallPolicies webApplicationFirewallPolicies() {
         if (this.webApplicationFirewallPolicies == null) {
             this.webApplicationFirewallPolicies =

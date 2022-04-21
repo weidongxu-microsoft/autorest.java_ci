@@ -30,7 +30,11 @@ public final class NetworkInterfaceAuxiliaryMode extends ExpandableStringEnum<Ne
         return fromString(name, NetworkInterfaceAuxiliaryMode.class);
     }
 
-    /** @return known NetworkInterfaceAuxiliaryMode values. */
+    /**
+     * Gets known NetworkInterfaceAuxiliaryMode values.
+     *
+     * @return known NetworkInterfaceAuxiliaryMode values.
+     */
     public static Collection<NetworkInterfaceAuxiliaryMode> values() {
         return values(NetworkInterfaceAuxiliaryMode.class);
     }

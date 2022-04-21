@@ -296,7 +296,11 @@ public final class RecoveryServicesManager {
         }
     }
 
-    /** @return Resource collection API of VaultCertificates. */
+    /**
+     * Gets the resource collection API of VaultCertificates.
+     *
+     * @return Resource collection API of VaultCertificates.
+     */
     public VaultCertificates vaultCertificates() {
         if (this.vaultCertificates == null) {
             this.vaultCertificates = new VaultCertificatesImpl(clientObject.getVaultCertificates(), this);
@@ -304,7 +308,11 @@ public final class RecoveryServicesManager {
         return vaultCertificates;
     }
 
-    /** @return Resource collection API of RegisteredIdentities. */
+    /**
+     * Gets the resource collection API of RegisteredIdentities.
+     *
+     * @return Resource collection API of RegisteredIdentities.
+     */
     public RegisteredIdentities registeredIdentities() {
         if (this.registeredIdentities == null) {
             this.registeredIdentities = new RegisteredIdentitiesImpl(clientObject.getRegisteredIdentities(), this);
@@ -312,7 +320,11 @@ public final class RecoveryServicesManager {
         return registeredIdentities;
     }
 
-    /** @return Resource collection API of ReplicationUsages. */
+    /**
+     * Gets the resource collection API of ReplicationUsages.
+     *
+     * @return Resource collection API of ReplicationUsages.
+     */
     public ReplicationUsages replicationUsages() {
         if (this.replicationUsages == null) {
             this.replicationUsages = new ReplicationUsagesImpl(clientObject.getReplicationUsages(), this);
@@ -320,7 +332,11 @@ public final class RecoveryServicesManager {
         return replicationUsages;
     }
 
-    /** @return Resource collection API of PrivateLinkResourcesOperations. */
+    /**
+     * Gets the resource collection API of PrivateLinkResourcesOperations.
+     *
+     * @return Resource collection API of PrivateLinkResourcesOperations.
+     */
     public PrivateLinkResourcesOperations privateLinkResourcesOperations() {
         if (this.privateLinkResourcesOperations == null) {
             this.privateLinkResourcesOperations =
@@ -329,7 +345,11 @@ public final class RecoveryServicesManager {
         return privateLinkResourcesOperations;
     }
 
-    /** @return Resource collection API of RecoveryServices. */
+    /**
+     * Gets the resource collection API of RecoveryServices.
+     *
+     * @return Resource collection API of RecoveryServices.
+     */
     public RecoveryServices recoveryServices() {
         if (this.recoveryServices == null) {
             this.recoveryServices = new RecoveryServicesImpl(clientObject.getRecoveryServices(), this);
@@ -337,7 +357,11 @@ public final class RecoveryServicesManager {
         return recoveryServices;
     }
 
-    /** @return Resource collection API of Vaults. */
+    /**
+     * Gets the resource collection API of Vaults.
+     *
+     * @return Resource collection API of Vaults.
+     */
     public Vaults vaults() {
         if (this.vaults == null) {
             this.vaults = new VaultsImpl(clientObject.getVaults(), this);
@@ -345,7 +369,11 @@ public final class RecoveryServicesManager {
         return vaults;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -353,7 +381,11 @@ public final class RecoveryServicesManager {
         return operations;
     }
 
-    /** @return Resource collection API of VaultExtendedInfoes. */
+    /**
+     * Gets the resource collection API of VaultExtendedInfoes.
+     *
+     * @return Resource collection API of VaultExtendedInfoes.
+     */
     public VaultExtendedInfoes vaultExtendedInfoes() {
         if (this.vaultExtendedInfoes == null) {
             this.vaultExtendedInfoes = new VaultExtendedInfoesImpl(clientObject.getVaultExtendedInfoes(), this);
@@ -361,7 +393,11 @@ public final class RecoveryServicesManager {
         return vaultExtendedInfoes;
     }
 
-    /** @return Resource collection API of ResourceProviders. */
+    /**
+     * Gets the resource collection API of ResourceProviders.
+     *
+     * @return Resource collection API of ResourceProviders.
+     */
     public ResourceProviders resourceProviders() {
         if (this.resourceProviders == null) {
             this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
@@ -369,7 +405,11 @@ public final class RecoveryServicesManager {
         return resourceProviders;
     }
 
-    /** @return Resource collection API of Usages. */
+    /**
+     * Gets the resource collection API of Usages.
+     *
+     * @return Resource collection API of Usages.
+     */
     public Usages usages() {
         if (this.usages == null) {
             this.usages = new UsagesImpl(clientObject.getUsages(), this);

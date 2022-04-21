@@ -72,7 +72,11 @@ public final class OrderState extends ExpandableStringEnum<OrderState> {
         return fromString(name, OrderState.class);
     }
 
-    /** @return known OrderState values. */
+    /**
+     * Gets known OrderState values.
+     *
+     * @return known OrderState values.
+     */
     public static Collection<OrderState> values() {
         return values(OrderState.class);
     }

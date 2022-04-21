@@ -27,7 +27,11 @@ public final class SkuVersion extends ExpandableStringEnum<SkuVersion> {
         return fromString(name, SkuVersion.class);
     }
 
-    /** @return known SkuVersion values. */
+    /**
+     * Gets known SkuVersion values.
+     *
+     * @return known SkuVersion values.
+     */
     public static Collection<SkuVersion> values() {
         return values(SkuVersion.class);
     }

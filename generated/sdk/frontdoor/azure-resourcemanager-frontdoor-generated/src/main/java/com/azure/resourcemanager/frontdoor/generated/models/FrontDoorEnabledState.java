@@ -27,7 +27,11 @@ public final class FrontDoorEnabledState extends ExpandableStringEnum<FrontDoorE
         return fromString(name, FrontDoorEnabledState.class);
     }
 
-    /** @return known FrontDoorEnabledState values. */
+    /**
+     * Gets known FrontDoorEnabledState values.
+     *
+     * @return known FrontDoorEnabledState values.
+     */
     public static Collection<FrontDoorEnabledState> values() {
         return values(FrontDoorEnabledState.class);
     }

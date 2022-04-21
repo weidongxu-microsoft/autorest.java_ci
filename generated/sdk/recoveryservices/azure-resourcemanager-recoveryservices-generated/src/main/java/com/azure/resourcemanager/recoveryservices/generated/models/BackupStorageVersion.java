@@ -30,7 +30,11 @@ public final class BackupStorageVersion extends ExpandableStringEnum<BackupStora
         return fromString(name, BackupStorageVersion.class);
     }
 
-    /** @return known BackupStorageVersion values. */
+    /**
+     * Gets known BackupStorageVersion values.
+     *
+     * @return known BackupStorageVersion values.
+     */
     public static Collection<BackupStorageVersion> values() {
         return values(BackupStorageVersion.class);
     }

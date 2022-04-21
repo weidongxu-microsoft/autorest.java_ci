@@ -27,7 +27,11 @@ public final class DataStatus extends ExpandableStringEnum<DataStatus> {
         return fromString(name, DataStatus.class);
     }
 
-    /** @return known DataStatus values. */
+    /**
+     * Gets known DataStatus values.
+     *
+     * @return known DataStatus values.
+     */
     public static Collection<DataStatus> values() {
         return values(DataStatus.class);
     }

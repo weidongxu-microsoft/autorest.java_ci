@@ -299,7 +299,11 @@ public final class EventHubsManager {
         }
     }
 
-    /** @return Resource collection API of Clusters. */
+    /**
+     * Gets the resource collection API of Clusters.
+     *
+     * @return Resource collection API of Clusters.
+     */
     public Clusters clusters() {
         if (this.clusters == null) {
             this.clusters = new ClustersImpl(clientObject.getClusters(), this);
@@ -307,7 +311,11 @@ public final class EventHubsManager {
         return clusters;
     }
 
-    /** @return Resource collection API of Configurations. */
+    /**
+     * Gets the resource collection API of Configurations.
+     *
+     * @return Resource collection API of Configurations.
+     */
     public Configurations configurations() {
         if (this.configurations == null) {
             this.configurations = new ConfigurationsImpl(clientObject.getConfigurations(), this);
@@ -315,7 +323,11 @@ public final class EventHubsManager {
         return configurations;
     }
 
-    /** @return Resource collection API of Namespaces. */
+    /**
+     * Gets the resource collection API of Namespaces.
+     *
+     * @return Resource collection API of Namespaces.
+     */
     public Namespaces namespaces() {
         if (this.namespaces == null) {
             this.namespaces = new NamespacesImpl(clientObject.getNamespaces(), this);
@@ -323,7 +335,11 @@ public final class EventHubsManager {
         return namespaces;
     }
 
-    /** @return Resource collection API of PrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of PrivateEndpointConnections.
+     *
+     * @return Resource collection API of PrivateEndpointConnections.
+     */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
             this.privateEndpointConnections =
@@ -332,7 +348,11 @@ public final class EventHubsManager {
         return privateEndpointConnections;
     }
 
-    /** @return Resource collection API of PrivateLinkResources. */
+    /**
+     * Gets the resource collection API of PrivateLinkResources.
+     *
+     * @return Resource collection API of PrivateLinkResources.
+     */
     public PrivateLinkResources privateLinkResources() {
         if (this.privateLinkResources == null) {
             this.privateLinkResources = new PrivateLinkResourcesImpl(clientObject.getPrivateLinkResources(), this);
@@ -340,7 +360,11 @@ public final class EventHubsManager {
         return privateLinkResources;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -348,7 +372,11 @@ public final class EventHubsManager {
         return operations;
     }
 
-    /** @return Resource collection API of EventHubs. */
+    /**
+     * Gets the resource collection API of EventHubs.
+     *
+     * @return Resource collection API of EventHubs.
+     */
     public EventHubs eventHubs() {
         if (this.eventHubs == null) {
             this.eventHubs = new EventHubsImpl(clientObject.getEventHubs(), this);
@@ -356,7 +384,11 @@ public final class EventHubsManager {
         return eventHubs;
     }
 
-    /** @return Resource collection API of DisasterRecoveryConfigs. */
+    /**
+     * Gets the resource collection API of DisasterRecoveryConfigs.
+     *
+     * @return Resource collection API of DisasterRecoveryConfigs.
+     */
     public DisasterRecoveryConfigs disasterRecoveryConfigs() {
         if (this.disasterRecoveryConfigs == null) {
             this.disasterRecoveryConfigs =
@@ -365,7 +397,11 @@ public final class EventHubsManager {
         return disasterRecoveryConfigs;
     }
 
-    /** @return Resource collection API of ConsumerGroups. */
+    /**
+     * Gets the resource collection API of ConsumerGroups.
+     *
+     * @return Resource collection API of ConsumerGroups.
+     */
     public ConsumerGroups consumerGroups() {
         if (this.consumerGroups == null) {
             this.consumerGroups = new ConsumerGroupsImpl(clientObject.getConsumerGroups(), this);
@@ -373,7 +409,11 @@ public final class EventHubsManager {
         return consumerGroups;
     }
 
-    /** @return Resource collection API of SchemaRegistries. */
+    /**
+     * Gets the resource collection API of SchemaRegistries.
+     *
+     * @return Resource collection API of SchemaRegistries.
+     */
     public SchemaRegistries schemaRegistries() {
         if (this.schemaRegistries == null) {
             this.schemaRegistries = new SchemaRegistriesImpl(clientObject.getSchemaRegistries(), this);

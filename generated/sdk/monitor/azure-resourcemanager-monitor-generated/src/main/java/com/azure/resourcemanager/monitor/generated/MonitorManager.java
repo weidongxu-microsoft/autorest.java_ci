@@ -356,7 +356,11 @@ public final class MonitorManager {
         }
     }
 
-    /** @return Resource collection API of AutoscaleSettings. */
+    /**
+     * Gets the resource collection API of AutoscaleSettings.
+     *
+     * @return Resource collection API of AutoscaleSettings.
+     */
     public AutoscaleSettings autoscaleSettings() {
         if (this.autoscaleSettings == null) {
             this.autoscaleSettings = new AutoscaleSettingsImpl(clientObject.getAutoscaleSettings(), this);
@@ -364,7 +368,11 @@ public final class MonitorManager {
         return autoscaleSettings;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -372,7 +380,11 @@ public final class MonitorManager {
         return operations;
     }
 
-    /** @return Resource collection API of AlertRuleIncidents. */
+    /**
+     * Gets the resource collection API of AlertRuleIncidents.
+     *
+     * @return Resource collection API of AlertRuleIncidents.
+     */
     public AlertRuleIncidents alertRuleIncidents() {
         if (this.alertRuleIncidents == null) {
             this.alertRuleIncidents = new AlertRuleIncidentsImpl(clientObject.getAlertRuleIncidents(), this);
@@ -380,7 +392,11 @@ public final class MonitorManager {
         return alertRuleIncidents;
     }
 
-    /** @return Resource collection API of AlertRules. */
+    /**
+     * Gets the resource collection API of AlertRules.
+     *
+     * @return Resource collection API of AlertRules.
+     */
     public AlertRules alertRules() {
         if (this.alertRules == null) {
             this.alertRules = new AlertRulesImpl(clientObject.getAlertRules(), this);
@@ -388,7 +404,11 @@ public final class MonitorManager {
         return alertRules;
     }
 
-    /** @return Resource collection API of LogProfiles. */
+    /**
+     * Gets the resource collection API of LogProfiles.
+     *
+     * @return Resource collection API of LogProfiles.
+     */
     public LogProfiles logProfiles() {
         if (this.logProfiles == null) {
             this.logProfiles = new LogProfilesImpl(clientObject.getLogProfiles(), this);
@@ -396,7 +416,11 @@ public final class MonitorManager {
         return logProfiles;
     }
 
-    /** @return Resource collection API of DiagnosticSettingsOperations. */
+    /**
+     * Gets the resource collection API of DiagnosticSettingsOperations.
+     *
+     * @return Resource collection API of DiagnosticSettingsOperations.
+     */
     public DiagnosticSettingsOperations diagnosticSettingsOperations() {
         if (this.diagnosticSettingsOperations == null) {
             this.diagnosticSettingsOperations =
@@ -405,7 +429,11 @@ public final class MonitorManager {
         return diagnosticSettingsOperations;
     }
 
-    /** @return Resource collection API of DiagnosticSettingsCategories. */
+    /**
+     * Gets the resource collection API of DiagnosticSettingsCategories.
+     *
+     * @return Resource collection API of DiagnosticSettingsCategories.
+     */
     public DiagnosticSettingsCategories diagnosticSettingsCategories() {
         if (this.diagnosticSettingsCategories == null) {
             this.diagnosticSettingsCategories =
@@ -414,7 +442,11 @@ public final class MonitorManager {
         return diagnosticSettingsCategories;
     }
 
-    /** @return Resource collection API of ActionGroups. */
+    /**
+     * Gets the resource collection API of ActionGroups.
+     *
+     * @return Resource collection API of ActionGroups.
+     */
     public ActionGroups actionGroups() {
         if (this.actionGroups == null) {
             this.actionGroups = new ActionGroupsImpl(clientObject.getActionGroups(), this);
@@ -422,7 +454,11 @@ public final class MonitorManager {
         return actionGroups;
     }
 
-    /** @return Resource collection API of ActivityLogAlerts. */
+    /**
+     * Gets the resource collection API of ActivityLogAlerts.
+     *
+     * @return Resource collection API of ActivityLogAlerts.
+     */
     public ActivityLogAlerts activityLogAlerts() {
         if (this.activityLogAlerts == null) {
             this.activityLogAlerts = new ActivityLogAlertsImpl(clientObject.getActivityLogAlerts(), this);
@@ -430,7 +466,11 @@ public final class MonitorManager {
         return activityLogAlerts;
     }
 
-    /** @return Resource collection API of ActivityLogs. */
+    /**
+     * Gets the resource collection API of ActivityLogs.
+     *
+     * @return Resource collection API of ActivityLogs.
+     */
     public ActivityLogs activityLogs() {
         if (this.activityLogs == null) {
             this.activityLogs = new ActivityLogsImpl(clientObject.getActivityLogs(), this);
@@ -438,7 +478,11 @@ public final class MonitorManager {
         return activityLogs;
     }
 
-    /** @return Resource collection API of EventCategories. */
+    /**
+     * Gets the resource collection API of EventCategories.
+     *
+     * @return Resource collection API of EventCategories.
+     */
     public EventCategories eventCategories() {
         if (this.eventCategories == null) {
             this.eventCategories = new EventCategoriesImpl(clientObject.getEventCategories(), this);
@@ -446,7 +490,11 @@ public final class MonitorManager {
         return eventCategories;
     }
 
-    /** @return Resource collection API of TenantActivityLogs. */
+    /**
+     * Gets the resource collection API of TenantActivityLogs.
+     *
+     * @return Resource collection API of TenantActivityLogs.
+     */
     public TenantActivityLogs tenantActivityLogs() {
         if (this.tenantActivityLogs == null) {
             this.tenantActivityLogs = new TenantActivityLogsImpl(clientObject.getTenantActivityLogs(), this);
@@ -454,7 +502,11 @@ public final class MonitorManager {
         return tenantActivityLogs;
     }
 
-    /** @return Resource collection API of MetricDefinitions. */
+    /**
+     * Gets the resource collection API of MetricDefinitions.
+     *
+     * @return Resource collection API of MetricDefinitions.
+     */
     public MetricDefinitions metricDefinitions() {
         if (this.metricDefinitions == null) {
             this.metricDefinitions = new MetricDefinitionsImpl(clientObject.getMetricDefinitions(), this);
@@ -462,7 +514,11 @@ public final class MonitorManager {
         return metricDefinitions;
     }
 
-    /** @return Resource collection API of Metrics. */
+    /**
+     * Gets the resource collection API of Metrics.
+     *
+     * @return Resource collection API of Metrics.
+     */
     public Metrics metrics() {
         if (this.metrics == null) {
             this.metrics = new MetricsImpl(clientObject.getMetrics(), this);
@@ -470,7 +526,11 @@ public final class MonitorManager {
         return metrics;
     }
 
-    /** @return Resource collection API of Baselines. */
+    /**
+     * Gets the resource collection API of Baselines.
+     *
+     * @return Resource collection API of Baselines.
+     */
     public Baselines baselines() {
         if (this.baselines == null) {
             this.baselines = new BaselinesImpl(clientObject.getBaselines(), this);
@@ -478,7 +538,11 @@ public final class MonitorManager {
         return baselines;
     }
 
-    /** @return Resource collection API of MetricAlerts. */
+    /**
+     * Gets the resource collection API of MetricAlerts.
+     *
+     * @return Resource collection API of MetricAlerts.
+     */
     public MetricAlerts metricAlerts() {
         if (this.metricAlerts == null) {
             this.metricAlerts = new MetricAlertsImpl(clientObject.getMetricAlerts(), this);
@@ -486,7 +550,11 @@ public final class MonitorManager {
         return metricAlerts;
     }
 
-    /** @return Resource collection API of MetricAlertsStatus. */
+    /**
+     * Gets the resource collection API of MetricAlertsStatus.
+     *
+     * @return Resource collection API of MetricAlertsStatus.
+     */
     public MetricAlertsStatus metricAlertsStatus() {
         if (this.metricAlertsStatus == null) {
             this.metricAlertsStatus = new MetricAlertsStatusImpl(clientObject.getMetricAlertsStatus(), this);
@@ -494,7 +562,11 @@ public final class MonitorManager {
         return metricAlertsStatus;
     }
 
-    /** @return Resource collection API of ScheduledQueryRules. */
+    /**
+     * Gets the resource collection API of ScheduledQueryRules.
+     *
+     * @return Resource collection API of ScheduledQueryRules.
+     */
     public ScheduledQueryRules scheduledQueryRules() {
         if (this.scheduledQueryRules == null) {
             this.scheduledQueryRules = new ScheduledQueryRulesImpl(clientObject.getScheduledQueryRules(), this);
@@ -502,7 +574,11 @@ public final class MonitorManager {
         return scheduledQueryRules;
     }
 
-    /** @return Resource collection API of MetricNamespaces. */
+    /**
+     * Gets the resource collection API of MetricNamespaces.
+     *
+     * @return Resource collection API of MetricNamespaces.
+     */
     public MetricNamespaces metricNamespaces() {
         if (this.metricNamespaces == null) {
             this.metricNamespaces = new MetricNamespacesImpl(clientObject.getMetricNamespaces(), this);
@@ -510,7 +586,11 @@ public final class MonitorManager {
         return metricNamespaces;
     }
 
-    /** @return Resource collection API of VMInsights. */
+    /**
+     * Gets the resource collection API of VMInsights.
+     *
+     * @return Resource collection API of VMInsights.
+     */
     public VMInsights vMInsights() {
         if (this.vMInsights == null) {
             this.vMInsights = new VMInsightsImpl(clientObject.getVMInsights(), this);
@@ -518,7 +598,11 @@ public final class MonitorManager {
         return vMInsights;
     }
 
-    /** @return Resource collection API of PrivateLinkScopes. */
+    /**
+     * Gets the resource collection API of PrivateLinkScopes.
+     *
+     * @return Resource collection API of PrivateLinkScopes.
+     */
     public PrivateLinkScopes privateLinkScopes() {
         if (this.privateLinkScopes == null) {
             this.privateLinkScopes = new PrivateLinkScopesImpl(clientObject.getPrivateLinkScopes(), this);
@@ -526,7 +610,11 @@ public final class MonitorManager {
         return privateLinkScopes;
     }
 
-    /** @return Resource collection API of PrivateLinkScopeOperationStatus. */
+    /**
+     * Gets the resource collection API of PrivateLinkScopeOperationStatus.
+     *
+     * @return Resource collection API of PrivateLinkScopeOperationStatus.
+     */
     public PrivateLinkScopeOperationStatus privateLinkScopeOperationStatus() {
         if (this.privateLinkScopeOperationStatus == null) {
             this.privateLinkScopeOperationStatus =
@@ -535,7 +623,11 @@ public final class MonitorManager {
         return privateLinkScopeOperationStatus;
     }
 
-    /** @return Resource collection API of PrivateLinkResources. */
+    /**
+     * Gets the resource collection API of PrivateLinkResources.
+     *
+     * @return Resource collection API of PrivateLinkResources.
+     */
     public PrivateLinkResources privateLinkResources() {
         if (this.privateLinkResources == null) {
             this.privateLinkResources = new PrivateLinkResourcesImpl(clientObject.getPrivateLinkResources(), this);
@@ -543,7 +635,11 @@ public final class MonitorManager {
         return privateLinkResources;
     }
 
-    /** @return Resource collection API of PrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of PrivateEndpointConnections.
+     *
+     * @return Resource collection API of PrivateEndpointConnections.
+     */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
             this.privateEndpointConnections =
@@ -552,7 +648,11 @@ public final class MonitorManager {
         return privateEndpointConnections;
     }
 
-    /** @return Resource collection API of PrivateLinkScopedResources. */
+    /**
+     * Gets the resource collection API of PrivateLinkScopedResources.
+     *
+     * @return Resource collection API of PrivateLinkScopedResources.
+     */
     public PrivateLinkScopedResources privateLinkScopedResources() {
         if (this.privateLinkScopedResources == null) {
             this.privateLinkScopedResources =

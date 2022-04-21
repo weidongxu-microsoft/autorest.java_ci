@@ -30,7 +30,11 @@ public final class HeaderActionType extends ExpandableStringEnum<HeaderActionTyp
         return fromString(name, HeaderActionType.class);
     }
 
-    /** @return known HeaderActionType values. */
+    /**
+     * Gets known HeaderActionType values.
+     *
+     * @return known HeaderActionType values.
+     */
     public static Collection<HeaderActionType> values() {
         return values(HeaderActionType.class);
     }

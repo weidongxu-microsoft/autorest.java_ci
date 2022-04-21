@@ -295,7 +295,11 @@ public final class KeyVaultManager {
         }
     }
 
-    /** @return Resource collection API of Keys. */
+    /**
+     * Gets the resource collection API of Keys.
+     *
+     * @return Resource collection API of Keys.
+     */
     public Keys keys() {
         if (this.keys == null) {
             this.keys = new KeysImpl(clientObject.getKeys(), this);
@@ -303,7 +307,11 @@ public final class KeyVaultManager {
         return keys;
     }
 
-    /** @return Resource collection API of Vaults. */
+    /**
+     * Gets the resource collection API of Vaults.
+     *
+     * @return Resource collection API of Vaults.
+     */
     public Vaults vaults() {
         if (this.vaults == null) {
             this.vaults = new VaultsImpl(clientObject.getVaults(), this);
@@ -311,7 +319,11 @@ public final class KeyVaultManager {
         return vaults;
     }
 
-    /** @return Resource collection API of PrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of PrivateEndpointConnections.
+     *
+     * @return Resource collection API of PrivateEndpointConnections.
+     */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
             this.privateEndpointConnections =
@@ -320,7 +332,11 @@ public final class KeyVaultManager {
         return privateEndpointConnections;
     }
 
-    /** @return Resource collection API of PrivateLinkResources. */
+    /**
+     * Gets the resource collection API of PrivateLinkResources.
+     *
+     * @return Resource collection API of PrivateLinkResources.
+     */
     public PrivateLinkResources privateLinkResources() {
         if (this.privateLinkResources == null) {
             this.privateLinkResources = new PrivateLinkResourcesImpl(clientObject.getPrivateLinkResources(), this);
@@ -328,7 +344,11 @@ public final class KeyVaultManager {
         return privateLinkResources;
     }
 
-    /** @return Resource collection API of ManagedHsms. */
+    /**
+     * Gets the resource collection API of ManagedHsms.
+     *
+     * @return Resource collection API of ManagedHsms.
+     */
     public ManagedHsms managedHsms() {
         if (this.managedHsms == null) {
             this.managedHsms = new ManagedHsmsImpl(clientObject.getManagedHsms(), this);
@@ -336,7 +356,11 @@ public final class KeyVaultManager {
         return managedHsms;
     }
 
-    /** @return Resource collection API of MhsmPrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of MhsmPrivateEndpointConnections.
+     *
+     * @return Resource collection API of MhsmPrivateEndpointConnections.
+     */
     public MhsmPrivateEndpointConnections mhsmPrivateEndpointConnections() {
         if (this.mhsmPrivateEndpointConnections == null) {
             this.mhsmPrivateEndpointConnections =
@@ -345,7 +369,11 @@ public final class KeyVaultManager {
         return mhsmPrivateEndpointConnections;
     }
 
-    /** @return Resource collection API of MhsmPrivateLinkResources. */
+    /**
+     * Gets the resource collection API of MhsmPrivateLinkResources.
+     *
+     * @return Resource collection API of MhsmPrivateLinkResources.
+     */
     public MhsmPrivateLinkResources mhsmPrivateLinkResources() {
         if (this.mhsmPrivateLinkResources == null) {
             this.mhsmPrivateLinkResources =
@@ -354,7 +382,11 @@ public final class KeyVaultManager {
         return mhsmPrivateLinkResources;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -362,7 +394,11 @@ public final class KeyVaultManager {
         return operations;
     }
 
-    /** @return Resource collection API of Secrets. */
+    /**
+     * Gets the resource collection API of Secrets.
+     *
+     * @return Resource collection API of Secrets.
+     */
     public Secrets secrets() {
         if (this.secrets == null) {
             this.secrets = new SecretsImpl(clientObject.getSecrets(), this);

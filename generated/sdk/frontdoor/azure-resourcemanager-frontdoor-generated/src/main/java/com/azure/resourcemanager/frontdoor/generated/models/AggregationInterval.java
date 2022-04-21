@@ -27,7 +27,11 @@ public final class AggregationInterval extends ExpandableStringEnum<AggregationI
         return fromString(name, AggregationInterval.class);
     }
 
-    /** @return known AggregationInterval values. */
+    /**
+     * Gets known AggregationInterval values.
+     *
+     * @return known AggregationInterval values.
+     */
     public static Collection<AggregationInterval> values() {
         return values(AggregationInterval.class);
     }

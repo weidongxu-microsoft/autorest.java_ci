@@ -30,7 +30,11 @@ public final class FrontDoorRedirectProtocol extends ExpandableStringEnum<FrontD
         return fromString(name, FrontDoorRedirectProtocol.class);
     }
 
-    /** @return known FrontDoorRedirectProtocol values. */
+    /**
+     * Gets known FrontDoorRedirectProtocol values.
+     *
+     * @return known FrontDoorRedirectProtocol values.
+     */
     public static Collection<FrontDoorRedirectProtocol> values() {
         return values(FrontDoorRedirectProtocol.class);
     }

@@ -27,7 +27,11 @@ public final class SourceEnum extends ExpandableStringEnum<SourceEnum> {
         return fromString(name, SourceEnum.class);
     }
 
-    /** @return known SourceEnum values. */
+    /**
+     * Gets known SourceEnum values.
+     *
+     * @return known SourceEnum values.
+     */
     public static Collection<SourceEnum> values() {
         return values(SourceEnum.class);
     }

@@ -39,7 +39,11 @@ public final class PolicyResourceState extends ExpandableStringEnum<PolicyResour
         return fromString(name, PolicyResourceState.class);
     }
 
-    /** @return known PolicyResourceState values. */
+    /**
+     * Gets known PolicyResourceState values.
+     *
+     * @return known PolicyResourceState values.
+     */
     public static Collection<PolicyResourceState> values() {
         return values(PolicyResourceState.class);
     }

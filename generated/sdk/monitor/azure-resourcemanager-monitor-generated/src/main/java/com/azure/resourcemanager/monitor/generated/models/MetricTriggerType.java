@@ -27,7 +27,11 @@ public final class MetricTriggerType extends ExpandableStringEnum<MetricTriggerT
         return fromString(name, MetricTriggerType.class);
     }
 
-    /** @return known MetricTriggerType values. */
+    /**
+     * Gets known MetricTriggerType values.
+     *
+     * @return known MetricTriggerType values.
+     */
     public static Collection<MetricTriggerType> values() {
         return values(MetricTriggerType.class);
     }

@@ -27,7 +27,11 @@ public final class TimeseriesAggregationInterval extends ExpandableStringEnum<Ti
         return fromString(name, TimeseriesAggregationInterval.class);
     }
 
-    /** @return known TimeseriesAggregationInterval values. */
+    /**
+     * Gets known TimeseriesAggregationInterval values.
+     *
+     * @return known TimeseriesAggregationInterval values.
+     */
     public static Collection<TimeseriesAggregationInterval> values() {
         return values(TimeseriesAggregationInterval.class);
     }

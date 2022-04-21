@@ -30,7 +30,11 @@ public final class ClusterWitnessType extends ExpandableStringEnum<ClusterWitnes
         return fromString(name, ClusterWitnessType.class);
     }
 
-    /** @return known ClusterWitnessType values. */
+    /**
+     * Gets known ClusterWitnessType values.
+     *
+     * @return known ClusterWitnessType values.
+     */
     public static Collection<ClusterWitnessType> values() {
         return values(ClusterWitnessType.class);
     }

@@ -268,7 +268,11 @@ public final class DnsManager {
         }
     }
 
-    /** @return Resource collection API of RecordSets. */
+    /**
+     * Gets the resource collection API of RecordSets.
+     *
+     * @return Resource collection API of RecordSets.
+     */
     public RecordSets recordSets() {
         if (this.recordSets == null) {
             this.recordSets = new RecordSetsImpl(clientObject.getRecordSets(), this);
@@ -276,7 +280,11 @@ public final class DnsManager {
         return recordSets;
     }
 
-    /** @return Resource collection API of Zones. */
+    /**
+     * Gets the resource collection API of Zones.
+     *
+     * @return Resource collection API of Zones.
+     */
     public Zones zones() {
         if (this.zones == null) {
             this.zones = new ZonesImpl(clientObject.getZones(), this);
@@ -284,7 +292,11 @@ public final class DnsManager {
         return zones;
     }
 
-    /** @return Resource collection API of DnsResourceReferences. */
+    /**
+     * Gets the resource collection API of DnsResourceReferences.
+     *
+     * @return Resource collection API of DnsResourceReferences.
+     */
     public DnsResourceReferences dnsResourceReferences() {
         if (this.dnsResourceReferences == null) {
             this.dnsResourceReferences = new DnsResourceReferencesImpl(clientObject.getDnsResourceReferences(), this);

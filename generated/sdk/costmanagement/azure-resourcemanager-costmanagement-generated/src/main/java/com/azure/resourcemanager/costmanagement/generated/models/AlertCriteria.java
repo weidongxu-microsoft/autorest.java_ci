@@ -63,7 +63,11 @@ public final class AlertCriteria extends ExpandableStringEnum<AlertCriteria> {
         return fromString(name, AlertCriteria.class);
     }
 
-    /** @return known AlertCriteria values. */
+    /**
+     * Gets known AlertCriteria values.
+     *
+     * @return known AlertCriteria values.
+     */
     public static Collection<AlertCriteria> values() {
         return values(AlertCriteria.class);
     }

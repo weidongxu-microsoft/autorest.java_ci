@@ -33,7 +33,11 @@ public final class FunctionType extends ExpandableStringEnum<FunctionType> {
         return fromString(name, FunctionType.class);
     }
 
-    /** @return known FunctionType values. */
+    /**
+     * Gets known FunctionType values.
+     *
+     * @return known FunctionType values.
+     */
     public static Collection<FunctionType> values() {
         return values(FunctionType.class);
     }

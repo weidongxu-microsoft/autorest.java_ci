@@ -30,7 +30,11 @@ public final class HubRoutingPreference extends ExpandableStringEnum<HubRoutingP
         return fromString(name, HubRoutingPreference.class);
     }
 
-    /** @return known HubRoutingPreference values. */
+    /**
+     * Gets known HubRoutingPreference values.
+     *
+     * @return known HubRoutingPreference values.
+     */
     public static Collection<HubRoutingPreference> values() {
         return values(HubRoutingPreference.class);
     }

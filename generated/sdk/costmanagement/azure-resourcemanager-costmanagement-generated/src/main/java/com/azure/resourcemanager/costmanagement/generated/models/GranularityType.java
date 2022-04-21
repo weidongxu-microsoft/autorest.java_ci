@@ -24,7 +24,11 @@ public final class GranularityType extends ExpandableStringEnum<GranularityType>
         return fromString(name, GranularityType.class);
     }
 
-    /** @return known GranularityType values. */
+    /**
+     * Gets known GranularityType values.
+     *
+     * @return known GranularityType values.
+     */
     public static Collection<GranularityType> values() {
         return values(GranularityType.class);
     }

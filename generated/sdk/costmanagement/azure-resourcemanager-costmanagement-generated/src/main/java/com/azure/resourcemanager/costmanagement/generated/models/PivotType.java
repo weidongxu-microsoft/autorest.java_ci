@@ -27,7 +27,11 @@ public final class PivotType extends ExpandableStringEnum<PivotType> {
         return fromString(name, PivotType.class);
     }
 
-    /** @return known PivotType values. */
+    /**
+     * Gets known PivotType values.
+     *
+     * @return known PivotType values.
+     */
     public static Collection<PivotType> values() {
         return values(PivotType.class);
     }

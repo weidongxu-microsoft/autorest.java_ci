@@ -38,7 +38,11 @@ public final class ManagedRuleExclusionMatchVariable extends ExpandableStringEnu
         return fromString(name, ManagedRuleExclusionMatchVariable.class);
     }
 
-    /** @return known ManagedRuleExclusionMatchVariable values. */
+    /**
+     * Gets known ManagedRuleExclusionMatchVariable values.
+     *
+     * @return known ManagedRuleExclusionMatchVariable values.
+     */
     public static Collection<ManagedRuleExclusionMatchVariable> values() {
         return values(ManagedRuleExclusionMatchVariable.class);
     }

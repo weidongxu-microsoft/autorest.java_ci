@@ -30,7 +30,11 @@ public final class NamespaceClassification extends ExpandableStringEnum<Namespac
         return fromString(name, NamespaceClassification.class);
     }
 
-    /** @return known NamespaceClassification values. */
+    /**
+     * Gets known NamespaceClassification values.
+     *
+     * @return known NamespaceClassification values.
+     */
     public static Collection<NamespaceClassification> values() {
         return values(NamespaceClassification.class);
     }

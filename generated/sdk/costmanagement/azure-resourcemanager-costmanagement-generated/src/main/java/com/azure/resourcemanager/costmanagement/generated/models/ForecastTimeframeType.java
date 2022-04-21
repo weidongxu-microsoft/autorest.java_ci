@@ -39,7 +39,11 @@ public final class ForecastTimeframeType extends ExpandableStringEnum<ForecastTi
         return fromString(name, ForecastTimeframeType.class);
     }
 
-    /** @return known ForecastTimeframeType values. */
+    /**
+     * Gets known ForecastTimeframeType values.
+     *
+     * @return known ForecastTimeframeType values.
+     */
     public static Collection<ForecastTimeframeType> values() {
         return values(ForecastTimeframeType.class);
     }

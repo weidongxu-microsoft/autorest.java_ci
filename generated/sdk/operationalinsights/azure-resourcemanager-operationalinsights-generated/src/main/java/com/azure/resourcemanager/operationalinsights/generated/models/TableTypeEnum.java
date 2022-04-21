@@ -33,7 +33,11 @@ public final class TableTypeEnum extends ExpandableStringEnum<TableTypeEnum> {
         return fromString(name, TableTypeEnum.class);
     }
 
-    /** @return known TableTypeEnum values. */
+    /**
+     * Gets known TableTypeEnum values.
+     *
+     * @return known TableTypeEnum values.
+     */
     public static Collection<TableTypeEnum> values() {
         return values(TableTypeEnum.class);
     }

@@ -34,7 +34,11 @@ public final class DeletionRecoveryLevel extends ExpandableStringEnum<DeletionRe
         return fromString(name, DeletionRecoveryLevel.class);
     }
 
-    /** @return known DeletionRecoveryLevel values. */
+    /**
+     * Gets known DeletionRecoveryLevel values.
+     *
+     * @return known DeletionRecoveryLevel values.
+     */
     public static Collection<DeletionRecoveryLevel> values() {
         return values(DeletionRecoveryLevel.class);
     }

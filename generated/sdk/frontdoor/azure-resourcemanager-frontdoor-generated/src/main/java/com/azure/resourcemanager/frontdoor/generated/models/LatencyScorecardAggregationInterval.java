@@ -31,7 +31,11 @@ public final class LatencyScorecardAggregationInterval
         return fromString(name, LatencyScorecardAggregationInterval.class);
     }
 
-    /** @return known LatencyScorecardAggregationInterval values. */
+    /**
+     * Gets known LatencyScorecardAggregationInterval values.
+     *
+     * @return known LatencyScorecardAggregationInterval values.
+     */
     public static Collection<LatencyScorecardAggregationInterval> values() {
         return values(LatencyScorecardAggregationInterval.class);
     }

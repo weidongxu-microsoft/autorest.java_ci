@@ -27,7 +27,11 @@ public final class QueryColumnType extends ExpandableStringEnum<QueryColumnType>
         return fromString(name, QueryColumnType.class);
     }
 
-    /** @return known QueryColumnType values. */
+    /**
+     * Gets known QueryColumnType values.
+     *
+     * @return known QueryColumnType values.
+     */
     public static Collection<QueryColumnType> values() {
         return values(QueryColumnType.class);
     }

@@ -30,7 +30,11 @@ public final class MsiIdentityType extends ExpandableStringEnum<MsiIdentityType>
         return fromString(name, MsiIdentityType.class);
     }
 
-    /** @return known MsiIdentityType values. */
+    /**
+     * Gets known MsiIdentityType values.
+     *
+     * @return known MsiIdentityType values.
+     */
     public static Collection<MsiIdentityType> values() {
         return values(MsiIdentityType.class);
     }

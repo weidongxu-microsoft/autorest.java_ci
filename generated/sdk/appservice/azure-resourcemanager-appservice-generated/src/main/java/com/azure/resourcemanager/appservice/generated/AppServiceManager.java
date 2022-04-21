@@ -340,7 +340,11 @@ public final class AppServiceManager {
         }
     }
 
-    /** @return Resource collection API of AppServiceCertificateOrders. */
+    /**
+     * Gets the resource collection API of AppServiceCertificateOrders.
+     *
+     * @return Resource collection API of AppServiceCertificateOrders.
+     */
     public AppServiceCertificateOrders appServiceCertificateOrders() {
         if (this.appServiceCertificateOrders == null) {
             this.appServiceCertificateOrders =
@@ -349,7 +353,11 @@ public final class AppServiceManager {
         return appServiceCertificateOrders;
     }
 
-    /** @return Resource collection API of CertificateOrdersDiagnostics. */
+    /**
+     * Gets the resource collection API of CertificateOrdersDiagnostics.
+     *
+     * @return Resource collection API of CertificateOrdersDiagnostics.
+     */
     public CertificateOrdersDiagnostics certificateOrdersDiagnostics() {
         if (this.certificateOrdersDiagnostics == null) {
             this.certificateOrdersDiagnostics =
@@ -358,7 +366,11 @@ public final class AppServiceManager {
         return certificateOrdersDiagnostics;
     }
 
-    /** @return Resource collection API of CertificateRegistrationProviders. */
+    /**
+     * Gets the resource collection API of CertificateRegistrationProviders.
+     *
+     * @return Resource collection API of CertificateRegistrationProviders.
+     */
     public CertificateRegistrationProviders certificateRegistrationProviders() {
         if (this.certificateRegistrationProviders == null) {
             this.certificateRegistrationProviders =
@@ -367,7 +379,11 @@ public final class AppServiceManager {
         return certificateRegistrationProviders;
     }
 
-    /** @return Resource collection API of Domains. */
+    /**
+     * Gets the resource collection API of Domains.
+     *
+     * @return Resource collection API of Domains.
+     */
     public Domains domains() {
         if (this.domains == null) {
             this.domains = new DomainsImpl(clientObject.getDomains(), this);
@@ -375,7 +391,11 @@ public final class AppServiceManager {
         return domains;
     }
 
-    /** @return Resource collection API of TopLevelDomains. */
+    /**
+     * Gets the resource collection API of TopLevelDomains.
+     *
+     * @return Resource collection API of TopLevelDomains.
+     */
     public TopLevelDomains topLevelDomains() {
         if (this.topLevelDomains == null) {
             this.topLevelDomains = new TopLevelDomainsImpl(clientObject.getTopLevelDomains(), this);
@@ -383,7 +403,11 @@ public final class AppServiceManager {
         return topLevelDomains;
     }
 
-    /** @return Resource collection API of DomainRegistrationProviders. */
+    /**
+     * Gets the resource collection API of DomainRegistrationProviders.
+     *
+     * @return Resource collection API of DomainRegistrationProviders.
+     */
     public DomainRegistrationProviders domainRegistrationProviders() {
         if (this.domainRegistrationProviders == null) {
             this.domainRegistrationProviders =
@@ -392,7 +416,11 @@ public final class AppServiceManager {
         return domainRegistrationProviders;
     }
 
-    /** @return Resource collection API of AppServiceEnvironments. */
+    /**
+     * Gets the resource collection API of AppServiceEnvironments.
+     *
+     * @return Resource collection API of AppServiceEnvironments.
+     */
     public AppServiceEnvironments appServiceEnvironments() {
         if (this.appServiceEnvironments == null) {
             this.appServiceEnvironments =
@@ -401,7 +429,11 @@ public final class AppServiceManager {
         return appServiceEnvironments;
     }
 
-    /** @return Resource collection API of AppServicePlans. */
+    /**
+     * Gets the resource collection API of AppServicePlans.
+     *
+     * @return Resource collection API of AppServicePlans.
+     */
     public AppServicePlans appServicePlans() {
         if (this.appServicePlans == null) {
             this.appServicePlans = new AppServicePlansImpl(clientObject.getAppServicePlans(), this);
@@ -409,7 +441,11 @@ public final class AppServiceManager {
         return appServicePlans;
     }
 
-    /** @return Resource collection API of Certificates. */
+    /**
+     * Gets the resource collection API of Certificates.
+     *
+     * @return Resource collection API of Certificates.
+     */
     public Certificates certificates() {
         if (this.certificates == null) {
             this.certificates = new CertificatesImpl(clientObject.getCertificates(), this);
@@ -417,7 +453,11 @@ public final class AppServiceManager {
         return certificates;
     }
 
-    /** @return Resource collection API of ContainerApps. */
+    /**
+     * Gets the resource collection API of ContainerApps.
+     *
+     * @return Resource collection API of ContainerApps.
+     */
     public ContainerApps containerApps() {
         if (this.containerApps == null) {
             this.containerApps = new ContainerAppsImpl(clientObject.getContainerApps(), this);
@@ -425,7 +465,11 @@ public final class AppServiceManager {
         return containerApps;
     }
 
-    /** @return Resource collection API of ContainerAppsRevisions. */
+    /**
+     * Gets the resource collection API of ContainerAppsRevisions.
+     *
+     * @return Resource collection API of ContainerAppsRevisions.
+     */
     public ContainerAppsRevisions containerAppsRevisions() {
         if (this.containerAppsRevisions == null) {
             this.containerAppsRevisions =
@@ -434,7 +478,11 @@ public final class AppServiceManager {
         return containerAppsRevisions;
     }
 
-    /** @return Resource collection API of DeletedWebApps. */
+    /**
+     * Gets the resource collection API of DeletedWebApps.
+     *
+     * @return Resource collection API of DeletedWebApps.
+     */
     public DeletedWebApps deletedWebApps() {
         if (this.deletedWebApps == null) {
             this.deletedWebApps = new DeletedWebAppsImpl(clientObject.getDeletedWebApps(), this);
@@ -442,7 +490,11 @@ public final class AppServiceManager {
         return deletedWebApps;
     }
 
-    /** @return Resource collection API of Diagnostics. */
+    /**
+     * Gets the resource collection API of Diagnostics.
+     *
+     * @return Resource collection API of Diagnostics.
+     */
     public Diagnostics diagnostics() {
         if (this.diagnostics == null) {
             this.diagnostics = new DiagnosticsImpl(clientObject.getDiagnostics(), this);
@@ -450,7 +502,11 @@ public final class AppServiceManager {
         return diagnostics;
     }
 
-    /** @return Resource collection API of Globals. */
+    /**
+     * Gets the resource collection API of Globals.
+     *
+     * @return Resource collection API of Globals.
+     */
     public Globals globals() {
         if (this.globals == null) {
             this.globals = new GlobalsImpl(clientObject.getGlobals(), this);
@@ -458,7 +514,11 @@ public final class AppServiceManager {
         return globals;
     }
 
-    /** @return Resource collection API of KubeEnvironments. */
+    /**
+     * Gets the resource collection API of KubeEnvironments.
+     *
+     * @return Resource collection API of KubeEnvironments.
+     */
     public KubeEnvironments kubeEnvironments() {
         if (this.kubeEnvironments == null) {
             this.kubeEnvironments = new KubeEnvironmentsImpl(clientObject.getKubeEnvironments(), this);
@@ -466,7 +526,11 @@ public final class AppServiceManager {
         return kubeEnvironments;
     }
 
-    /** @return Resource collection API of Providers. */
+    /**
+     * Gets the resource collection API of Providers.
+     *
+     * @return Resource collection API of Providers.
+     */
     public Providers providers() {
         if (this.providers == null) {
             this.providers = new ProvidersImpl(clientObject.getProviders(), this);
@@ -474,7 +538,11 @@ public final class AppServiceManager {
         return providers;
     }
 
-    /** @return Resource collection API of Recommendations. */
+    /**
+     * Gets the resource collection API of Recommendations.
+     *
+     * @return Resource collection API of Recommendations.
+     */
     public Recommendations recommendations() {
         if (this.recommendations == null) {
             this.recommendations = new RecommendationsImpl(clientObject.getRecommendations(), this);
@@ -482,7 +550,11 @@ public final class AppServiceManager {
         return recommendations;
     }
 
-    /** @return Resource collection API of ResourceHealthMetadatas. */
+    /**
+     * Gets the resource collection API of ResourceHealthMetadatas.
+     *
+     * @return Resource collection API of ResourceHealthMetadatas.
+     */
     public ResourceHealthMetadatas resourceHealthMetadatas() {
         if (this.resourceHealthMetadatas == null) {
             this.resourceHealthMetadatas =
@@ -491,7 +563,11 @@ public final class AppServiceManager {
         return resourceHealthMetadatas;
     }
 
-    /** @return Resource collection API of ResourceProviders. */
+    /**
+     * Gets the resource collection API of ResourceProviders.
+     *
+     * @return Resource collection API of ResourceProviders.
+     */
     public ResourceProviders resourceProviders() {
         if (this.resourceProviders == null) {
             this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
@@ -499,7 +575,11 @@ public final class AppServiceManager {
         return resourceProviders;
     }
 
-    /** @return Resource collection API of StaticSites. */
+    /**
+     * Gets the resource collection API of StaticSites.
+     *
+     * @return Resource collection API of StaticSites.
+     */
     public StaticSites staticSites() {
         if (this.staticSites == null) {
             this.staticSites = new StaticSitesImpl(clientObject.getStaticSites(), this);
@@ -507,7 +587,11 @@ public final class AppServiceManager {
         return staticSites;
     }
 
-    /** @return Resource collection API of WebApps. */
+    /**
+     * Gets the resource collection API of WebApps.
+     *
+     * @return Resource collection API of WebApps.
+     */
     public WebApps webApps() {
         if (this.webApps == null) {
             this.webApps = new WebAppsImpl(clientObject.getWebApps(), this);

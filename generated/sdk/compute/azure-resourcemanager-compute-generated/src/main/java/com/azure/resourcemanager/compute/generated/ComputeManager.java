@@ -452,7 +452,11 @@ public final class ComputeManager {
         }
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -460,7 +464,11 @@ public final class ComputeManager {
         return operations;
     }
 
-    /** @return Resource collection API of AvailabilitySets. */
+    /**
+     * Gets the resource collection API of AvailabilitySets.
+     *
+     * @return Resource collection API of AvailabilitySets.
+     */
     public AvailabilitySets availabilitySets() {
         if (this.availabilitySets == null) {
             this.availabilitySets = new AvailabilitySetsImpl(clientObject.getAvailabilitySets(), this);
@@ -468,7 +476,11 @@ public final class ComputeManager {
         return availabilitySets;
     }
 
-    /** @return Resource collection API of ProximityPlacementGroups. */
+    /**
+     * Gets the resource collection API of ProximityPlacementGroups.
+     *
+     * @return Resource collection API of ProximityPlacementGroups.
+     */
     public ProximityPlacementGroups proximityPlacementGroups() {
         if (this.proximityPlacementGroups == null) {
             this.proximityPlacementGroups =
@@ -477,7 +489,11 @@ public final class ComputeManager {
         return proximityPlacementGroups;
     }
 
-    /** @return Resource collection API of DedicatedHostGroups. */
+    /**
+     * Gets the resource collection API of DedicatedHostGroups.
+     *
+     * @return Resource collection API of DedicatedHostGroups.
+     */
     public DedicatedHostGroups dedicatedHostGroups() {
         if (this.dedicatedHostGroups == null) {
             this.dedicatedHostGroups = new DedicatedHostGroupsImpl(clientObject.getDedicatedHostGroups(), this);
@@ -485,7 +501,11 @@ public final class ComputeManager {
         return dedicatedHostGroups;
     }
 
-    /** @return Resource collection API of DedicatedHosts. */
+    /**
+     * Gets the resource collection API of DedicatedHosts.
+     *
+     * @return Resource collection API of DedicatedHosts.
+     */
     public DedicatedHosts dedicatedHosts() {
         if (this.dedicatedHosts == null) {
             this.dedicatedHosts = new DedicatedHostsImpl(clientObject.getDedicatedHosts(), this);
@@ -493,7 +513,11 @@ public final class ComputeManager {
         return dedicatedHosts;
     }
 
-    /** @return Resource collection API of SshPublicKeys. */
+    /**
+     * Gets the resource collection API of SshPublicKeys.
+     *
+     * @return Resource collection API of SshPublicKeys.
+     */
     public SshPublicKeys sshPublicKeys() {
         if (this.sshPublicKeys == null) {
             this.sshPublicKeys = new SshPublicKeysImpl(clientObject.getSshPublicKeys(), this);
@@ -501,7 +525,11 @@ public final class ComputeManager {
         return sshPublicKeys;
     }
 
-    /** @return Resource collection API of VirtualMachineExtensionImages. */
+    /**
+     * Gets the resource collection API of VirtualMachineExtensionImages.
+     *
+     * @return Resource collection API of VirtualMachineExtensionImages.
+     */
     public VirtualMachineExtensionImages virtualMachineExtensionImages() {
         if (this.virtualMachineExtensionImages == null) {
             this.virtualMachineExtensionImages =
@@ -510,7 +538,11 @@ public final class ComputeManager {
         return virtualMachineExtensionImages;
     }
 
-    /** @return Resource collection API of VirtualMachineExtensions. */
+    /**
+     * Gets the resource collection API of VirtualMachineExtensions.
+     *
+     * @return Resource collection API of VirtualMachineExtensions.
+     */
     public VirtualMachineExtensions virtualMachineExtensions() {
         if (this.virtualMachineExtensions == null) {
             this.virtualMachineExtensions =
@@ -519,7 +551,11 @@ public final class ComputeManager {
         return virtualMachineExtensions;
     }
 
-    /** @return Resource collection API of VirtualMachineImages. */
+    /**
+     * Gets the resource collection API of VirtualMachineImages.
+     *
+     * @return Resource collection API of VirtualMachineImages.
+     */
     public VirtualMachineImages virtualMachineImages() {
         if (this.virtualMachineImages == null) {
             this.virtualMachineImages = new VirtualMachineImagesImpl(clientObject.getVirtualMachineImages(), this);
@@ -527,7 +563,11 @@ public final class ComputeManager {
         return virtualMachineImages;
     }
 
-    /** @return Resource collection API of VirtualMachineImagesEdgeZones. */
+    /**
+     * Gets the resource collection API of VirtualMachineImagesEdgeZones.
+     *
+     * @return Resource collection API of VirtualMachineImagesEdgeZones.
+     */
     public VirtualMachineImagesEdgeZones virtualMachineImagesEdgeZones() {
         if (this.virtualMachineImagesEdgeZones == null) {
             this.virtualMachineImagesEdgeZones =
@@ -536,7 +576,11 @@ public final class ComputeManager {
         return virtualMachineImagesEdgeZones;
     }
 
-    /** @return Resource collection API of Usages. */
+    /**
+     * Gets the resource collection API of Usages.
+     *
+     * @return Resource collection API of Usages.
+     */
     public Usages usages() {
         if (this.usages == null) {
             this.usages = new UsagesImpl(clientObject.getUsages(), this);
@@ -544,7 +588,11 @@ public final class ComputeManager {
         return usages;
     }
 
-    /** @return Resource collection API of VirtualMachines. */
+    /**
+     * Gets the resource collection API of VirtualMachines.
+     *
+     * @return Resource collection API of VirtualMachines.
+     */
     public VirtualMachines virtualMachines() {
         if (this.virtualMachines == null) {
             this.virtualMachines = new VirtualMachinesImpl(clientObject.getVirtualMachines(), this);
@@ -552,7 +600,11 @@ public final class ComputeManager {
         return virtualMachines;
     }
 
-    /** @return Resource collection API of VirtualMachineScaleSets. */
+    /**
+     * Gets the resource collection API of VirtualMachineScaleSets.
+     *
+     * @return Resource collection API of VirtualMachineScaleSets.
+     */
     public VirtualMachineScaleSets virtualMachineScaleSets() {
         if (this.virtualMachineScaleSets == null) {
             this.virtualMachineScaleSets =
@@ -561,7 +613,11 @@ public final class ComputeManager {
         return virtualMachineScaleSets;
     }
 
-    /** @return Resource collection API of VirtualMachineSizes. */
+    /**
+     * Gets the resource collection API of VirtualMachineSizes.
+     *
+     * @return Resource collection API of VirtualMachineSizes.
+     */
     public VirtualMachineSizes virtualMachineSizes() {
         if (this.virtualMachineSizes == null) {
             this.virtualMachineSizes = new VirtualMachineSizesImpl(clientObject.getVirtualMachineSizes(), this);
@@ -569,7 +625,11 @@ public final class ComputeManager {
         return virtualMachineSizes;
     }
 
-    /** @return Resource collection API of Images. */
+    /**
+     * Gets the resource collection API of Images.
+     *
+     * @return Resource collection API of Images.
+     */
     public Images images() {
         if (this.images == null) {
             this.images = new ImagesImpl(clientObject.getImages(), this);
@@ -577,7 +637,11 @@ public final class ComputeManager {
         return images;
     }
 
-    /** @return Resource collection API of RestorePointCollections. */
+    /**
+     * Gets the resource collection API of RestorePointCollections.
+     *
+     * @return Resource collection API of RestorePointCollections.
+     */
     public RestorePointCollections restorePointCollections() {
         if (this.restorePointCollections == null) {
             this.restorePointCollections =
@@ -586,7 +650,11 @@ public final class ComputeManager {
         return restorePointCollections;
     }
 
-    /** @return Resource collection API of RestorePoints. */
+    /**
+     * Gets the resource collection API of RestorePoints.
+     *
+     * @return Resource collection API of RestorePoints.
+     */
     public RestorePoints restorePoints() {
         if (this.restorePoints == null) {
             this.restorePoints = new RestorePointsImpl(clientObject.getRestorePoints(), this);
@@ -594,7 +662,11 @@ public final class ComputeManager {
         return restorePoints;
     }
 
-    /** @return Resource collection API of CapacityReservationGroups. */
+    /**
+     * Gets the resource collection API of CapacityReservationGroups.
+     *
+     * @return Resource collection API of CapacityReservationGroups.
+     */
     public CapacityReservationGroups capacityReservationGroups() {
         if (this.capacityReservationGroups == null) {
             this.capacityReservationGroups =
@@ -603,7 +675,11 @@ public final class ComputeManager {
         return capacityReservationGroups;
     }
 
-    /** @return Resource collection API of CapacityReservations. */
+    /**
+     * Gets the resource collection API of CapacityReservations.
+     *
+     * @return Resource collection API of CapacityReservations.
+     */
     public CapacityReservations capacityReservations() {
         if (this.capacityReservations == null) {
             this.capacityReservations = new CapacityReservationsImpl(clientObject.getCapacityReservations(), this);
@@ -611,7 +687,11 @@ public final class ComputeManager {
         return capacityReservations;
     }
 
-    /** @return Resource collection API of VirtualMachineScaleSetExtensions. */
+    /**
+     * Gets the resource collection API of VirtualMachineScaleSetExtensions.
+     *
+     * @return Resource collection API of VirtualMachineScaleSetExtensions.
+     */
     public VirtualMachineScaleSetExtensions virtualMachineScaleSetExtensions() {
         if (this.virtualMachineScaleSetExtensions == null) {
             this.virtualMachineScaleSetExtensions =
@@ -620,7 +700,11 @@ public final class ComputeManager {
         return virtualMachineScaleSetExtensions;
     }
 
-    /** @return Resource collection API of VirtualMachineScaleSetRollingUpgrades. */
+    /**
+     * Gets the resource collection API of VirtualMachineScaleSetRollingUpgrades.
+     *
+     * @return Resource collection API of VirtualMachineScaleSetRollingUpgrades.
+     */
     public VirtualMachineScaleSetRollingUpgrades virtualMachineScaleSetRollingUpgrades() {
         if (this.virtualMachineScaleSetRollingUpgrades == null) {
             this.virtualMachineScaleSetRollingUpgrades =
@@ -630,7 +714,11 @@ public final class ComputeManager {
         return virtualMachineScaleSetRollingUpgrades;
     }
 
-    /** @return Resource collection API of VirtualMachineScaleSetVMExtensions. */
+    /**
+     * Gets the resource collection API of VirtualMachineScaleSetVMExtensions.
+     *
+     * @return Resource collection API of VirtualMachineScaleSetVMExtensions.
+     */
     public VirtualMachineScaleSetVMExtensions virtualMachineScaleSetVMExtensions() {
         if (this.virtualMachineScaleSetVMExtensions == null) {
             this.virtualMachineScaleSetVMExtensions =
@@ -639,7 +727,11 @@ public final class ComputeManager {
         return virtualMachineScaleSetVMExtensions;
     }
 
-    /** @return Resource collection API of VirtualMachineScaleSetVMs. */
+    /**
+     * Gets the resource collection API of VirtualMachineScaleSetVMs.
+     *
+     * @return Resource collection API of VirtualMachineScaleSetVMs.
+     */
     public VirtualMachineScaleSetVMs virtualMachineScaleSetVMs() {
         if (this.virtualMachineScaleSetVMs == null) {
             this.virtualMachineScaleSetVMs =
@@ -648,7 +740,11 @@ public final class ComputeManager {
         return virtualMachineScaleSetVMs;
     }
 
-    /** @return Resource collection API of LogAnalytics. */
+    /**
+     * Gets the resource collection API of LogAnalytics.
+     *
+     * @return Resource collection API of LogAnalytics.
+     */
     public LogAnalytics logAnalytics() {
         if (this.logAnalytics == null) {
             this.logAnalytics = new LogAnalyticsImpl(clientObject.getLogAnalytics(), this);
@@ -656,7 +752,11 @@ public final class ComputeManager {
         return logAnalytics;
     }
 
-    /** @return Resource collection API of VirtualMachineRunCommands. */
+    /**
+     * Gets the resource collection API of VirtualMachineRunCommands.
+     *
+     * @return Resource collection API of VirtualMachineRunCommands.
+     */
     public VirtualMachineRunCommands virtualMachineRunCommands() {
         if (this.virtualMachineRunCommands == null) {
             this.virtualMachineRunCommands =
@@ -665,7 +765,11 @@ public final class ComputeManager {
         return virtualMachineRunCommands;
     }
 
-    /** @return Resource collection API of VirtualMachineScaleSetVMRunCommands. */
+    /**
+     * Gets the resource collection API of VirtualMachineScaleSetVMRunCommands.
+     *
+     * @return Resource collection API of VirtualMachineScaleSetVMRunCommands.
+     */
     public VirtualMachineScaleSetVMRunCommands virtualMachineScaleSetVMRunCommands() {
         if (this.virtualMachineScaleSetVMRunCommands == null) {
             this.virtualMachineScaleSetVMRunCommands =
@@ -675,7 +779,11 @@ public final class ComputeManager {
         return virtualMachineScaleSetVMRunCommands;
     }
 
-    /** @return Resource collection API of ResourceSkus. */
+    /**
+     * Gets the resource collection API of ResourceSkus.
+     *
+     * @return Resource collection API of ResourceSkus.
+     */
     public ResourceSkus resourceSkus() {
         if (this.resourceSkus == null) {
             this.resourceSkus = new ResourceSkusImpl(clientObject.getResourceSkus(), this);
@@ -683,7 +791,11 @@ public final class ComputeManager {
         return resourceSkus;
     }
 
-    /** @return Resource collection API of Disks. */
+    /**
+     * Gets the resource collection API of Disks.
+     *
+     * @return Resource collection API of Disks.
+     */
     public Disks disks() {
         if (this.disks == null) {
             this.disks = new DisksImpl(clientObject.getDisks(), this);
@@ -691,7 +803,11 @@ public final class ComputeManager {
         return disks;
     }
 
-    /** @return Resource collection API of Snapshots. */
+    /**
+     * Gets the resource collection API of Snapshots.
+     *
+     * @return Resource collection API of Snapshots.
+     */
     public Snapshots snapshots() {
         if (this.snapshots == null) {
             this.snapshots = new SnapshotsImpl(clientObject.getSnapshots(), this);
@@ -699,7 +815,11 @@ public final class ComputeManager {
         return snapshots;
     }
 
-    /** @return Resource collection API of DiskEncryptionSets. */
+    /**
+     * Gets the resource collection API of DiskEncryptionSets.
+     *
+     * @return Resource collection API of DiskEncryptionSets.
+     */
     public DiskEncryptionSets diskEncryptionSets() {
         if (this.diskEncryptionSets == null) {
             this.diskEncryptionSets = new DiskEncryptionSetsImpl(clientObject.getDiskEncryptionSets(), this);
@@ -707,7 +827,11 @@ public final class ComputeManager {
         return diskEncryptionSets;
     }
 
-    /** @return Resource collection API of DiskAccesses. */
+    /**
+     * Gets the resource collection API of DiskAccesses.
+     *
+     * @return Resource collection API of DiskAccesses.
+     */
     public DiskAccesses diskAccesses() {
         if (this.diskAccesses == null) {
             this.diskAccesses = new DiskAccessesImpl(clientObject.getDiskAccesses(), this);
@@ -715,7 +839,11 @@ public final class ComputeManager {
         return diskAccesses;
     }
 
-    /** @return Resource collection API of DiskRestorePoints. */
+    /**
+     * Gets the resource collection API of DiskRestorePoints.
+     *
+     * @return Resource collection API of DiskRestorePoints.
+     */
     public DiskRestorePoints diskRestorePoints() {
         if (this.diskRestorePoints == null) {
             this.diskRestorePoints = new DiskRestorePointsImpl(clientObject.getDiskRestorePoints(), this);
@@ -723,7 +851,11 @@ public final class ComputeManager {
         return diskRestorePoints;
     }
 
-    /** @return Resource collection API of Galleries. */
+    /**
+     * Gets the resource collection API of Galleries.
+     *
+     * @return Resource collection API of Galleries.
+     */
     public Galleries galleries() {
         if (this.galleries == null) {
             this.galleries = new GalleriesImpl(clientObject.getGalleries(), this);
@@ -731,7 +863,11 @@ public final class ComputeManager {
         return galleries;
     }
 
-    /** @return Resource collection API of GalleryImages. */
+    /**
+     * Gets the resource collection API of GalleryImages.
+     *
+     * @return Resource collection API of GalleryImages.
+     */
     public GalleryImages galleryImages() {
         if (this.galleryImages == null) {
             this.galleryImages = new GalleryImagesImpl(clientObject.getGalleryImages(), this);
@@ -739,7 +875,11 @@ public final class ComputeManager {
         return galleryImages;
     }
 
-    /** @return Resource collection API of GalleryImageVersions. */
+    /**
+     * Gets the resource collection API of GalleryImageVersions.
+     *
+     * @return Resource collection API of GalleryImageVersions.
+     */
     public GalleryImageVersions galleryImageVersions() {
         if (this.galleryImageVersions == null) {
             this.galleryImageVersions = new GalleryImageVersionsImpl(clientObject.getGalleryImageVersions(), this);
@@ -747,7 +887,11 @@ public final class ComputeManager {
         return galleryImageVersions;
     }
 
-    /** @return Resource collection API of GalleryApplications. */
+    /**
+     * Gets the resource collection API of GalleryApplications.
+     *
+     * @return Resource collection API of GalleryApplications.
+     */
     public GalleryApplications galleryApplications() {
         if (this.galleryApplications == null) {
             this.galleryApplications = new GalleryApplicationsImpl(clientObject.getGalleryApplications(), this);
@@ -755,7 +899,11 @@ public final class ComputeManager {
         return galleryApplications;
     }
 
-    /** @return Resource collection API of GalleryApplicationVersions. */
+    /**
+     * Gets the resource collection API of GalleryApplicationVersions.
+     *
+     * @return Resource collection API of GalleryApplicationVersions.
+     */
     public GalleryApplicationVersions galleryApplicationVersions() {
         if (this.galleryApplicationVersions == null) {
             this.galleryApplicationVersions =
@@ -764,7 +912,11 @@ public final class ComputeManager {
         return galleryApplicationVersions;
     }
 
-    /** @return Resource collection API of GallerySharingProfiles. */
+    /**
+     * Gets the resource collection API of GallerySharingProfiles.
+     *
+     * @return Resource collection API of GallerySharingProfiles.
+     */
     public GallerySharingProfiles gallerySharingProfiles() {
         if (this.gallerySharingProfiles == null) {
             this.gallerySharingProfiles =
@@ -773,7 +925,11 @@ public final class ComputeManager {
         return gallerySharingProfiles;
     }
 
-    /** @return Resource collection API of SharedGalleries. */
+    /**
+     * Gets the resource collection API of SharedGalleries.
+     *
+     * @return Resource collection API of SharedGalleries.
+     */
     public SharedGalleries sharedGalleries() {
         if (this.sharedGalleries == null) {
             this.sharedGalleries = new SharedGalleriesImpl(clientObject.getSharedGalleries(), this);
@@ -781,7 +937,11 @@ public final class ComputeManager {
         return sharedGalleries;
     }
 
-    /** @return Resource collection API of SharedGalleryImages. */
+    /**
+     * Gets the resource collection API of SharedGalleryImages.
+     *
+     * @return Resource collection API of SharedGalleryImages.
+     */
     public SharedGalleryImages sharedGalleryImages() {
         if (this.sharedGalleryImages == null) {
             this.sharedGalleryImages = new SharedGalleryImagesImpl(clientObject.getSharedGalleryImages(), this);
@@ -789,7 +949,11 @@ public final class ComputeManager {
         return sharedGalleryImages;
     }
 
-    /** @return Resource collection API of SharedGalleryImageVersions. */
+    /**
+     * Gets the resource collection API of SharedGalleryImageVersions.
+     *
+     * @return Resource collection API of SharedGalleryImageVersions.
+     */
     public SharedGalleryImageVersions sharedGalleryImageVersions() {
         if (this.sharedGalleryImageVersions == null) {
             this.sharedGalleryImageVersions =
@@ -798,7 +962,11 @@ public final class ComputeManager {
         return sharedGalleryImageVersions;
     }
 
-    /** @return Resource collection API of CommunityGalleries. */
+    /**
+     * Gets the resource collection API of CommunityGalleries.
+     *
+     * @return Resource collection API of CommunityGalleries.
+     */
     public CommunityGalleries communityGalleries() {
         if (this.communityGalleries == null) {
             this.communityGalleries = new CommunityGalleriesImpl(clientObject.getCommunityGalleries(), this);
@@ -806,7 +974,11 @@ public final class ComputeManager {
         return communityGalleries;
     }
 
-    /** @return Resource collection API of CommunityGalleryImages. */
+    /**
+     * Gets the resource collection API of CommunityGalleryImages.
+     *
+     * @return Resource collection API of CommunityGalleryImages.
+     */
     public CommunityGalleryImages communityGalleryImages() {
         if (this.communityGalleryImages == null) {
             this.communityGalleryImages =
@@ -815,7 +987,11 @@ public final class ComputeManager {
         return communityGalleryImages;
     }
 
-    /** @return Resource collection API of CommunityGalleryImageVersions. */
+    /**
+     * Gets the resource collection API of CommunityGalleryImageVersions.
+     *
+     * @return Resource collection API of CommunityGalleryImageVersions.
+     */
     public CommunityGalleryImageVersions communityGalleryImageVersions() {
         if (this.communityGalleryImageVersions == null) {
             this.communityGalleryImageVersions =
@@ -824,7 +1000,11 @@ public final class ComputeManager {
         return communityGalleryImageVersions;
     }
 
-    /** @return Resource collection API of CloudServiceRoleInstances. */
+    /**
+     * Gets the resource collection API of CloudServiceRoleInstances.
+     *
+     * @return Resource collection API of CloudServiceRoleInstances.
+     */
     public CloudServiceRoleInstances cloudServiceRoleInstances() {
         if (this.cloudServiceRoleInstances == null) {
             this.cloudServiceRoleInstances =
@@ -833,7 +1013,11 @@ public final class ComputeManager {
         return cloudServiceRoleInstances;
     }
 
-    /** @return Resource collection API of CloudServiceRoles. */
+    /**
+     * Gets the resource collection API of CloudServiceRoles.
+     *
+     * @return Resource collection API of CloudServiceRoles.
+     */
     public CloudServiceRoles cloudServiceRoles() {
         if (this.cloudServiceRoles == null) {
             this.cloudServiceRoles = new CloudServiceRolesImpl(clientObject.getCloudServiceRoles(), this);
@@ -841,7 +1025,11 @@ public final class ComputeManager {
         return cloudServiceRoles;
     }
 
-    /** @return Resource collection API of CloudServices. */
+    /**
+     * Gets the resource collection API of CloudServices.
+     *
+     * @return Resource collection API of CloudServices.
+     */
     public CloudServices cloudServices() {
         if (this.cloudServices == null) {
             this.cloudServices = new CloudServicesImpl(clientObject.getCloudServices(), this);
@@ -849,7 +1037,11 @@ public final class ComputeManager {
         return cloudServices;
     }
 
-    /** @return Resource collection API of CloudServicesUpdateDomains. */
+    /**
+     * Gets the resource collection API of CloudServicesUpdateDomains.
+     *
+     * @return Resource collection API of CloudServicesUpdateDomains.
+     */
     public CloudServicesUpdateDomains cloudServicesUpdateDomains() {
         if (this.cloudServicesUpdateDomains == null) {
             this.cloudServicesUpdateDomains =
@@ -858,7 +1050,11 @@ public final class ComputeManager {
         return cloudServicesUpdateDomains;
     }
 
-    /** @return Resource collection API of CloudServiceOperatingSystems. */
+    /**
+     * Gets the resource collection API of CloudServiceOperatingSystems.
+     *
+     * @return Resource collection API of CloudServiceOperatingSystems.
+     */
     public CloudServiceOperatingSystems cloudServiceOperatingSystems() {
         if (this.cloudServiceOperatingSystems == null) {
             this.cloudServiceOperatingSystems =

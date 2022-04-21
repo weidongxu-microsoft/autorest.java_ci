@@ -27,7 +27,11 @@ public final class Availability extends ExpandableStringEnum<Availability> {
         return fromString(name, Availability.class);
     }
 
-    /** @return known Availability values. */
+    /**
+     * Gets known Availability values.
+     *
+     * @return known Availability values.
+     */
     public static Collection<Availability> values() {
         return values(Availability.class);
     }

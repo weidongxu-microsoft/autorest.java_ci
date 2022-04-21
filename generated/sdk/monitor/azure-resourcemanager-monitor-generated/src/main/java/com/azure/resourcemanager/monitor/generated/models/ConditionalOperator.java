@@ -36,7 +36,11 @@ public final class ConditionalOperator extends ExpandableStringEnum<ConditionalO
         return fromString(name, ConditionalOperator.class);
     }
 
-    /** @return known ConditionalOperator values. */
+    /**
+     * Gets known ConditionalOperator values.
+     *
+     * @return known ConditionalOperator values.
+     */
     public static Collection<ConditionalOperator> values() {
         return values(ConditionalOperator.class);
     }

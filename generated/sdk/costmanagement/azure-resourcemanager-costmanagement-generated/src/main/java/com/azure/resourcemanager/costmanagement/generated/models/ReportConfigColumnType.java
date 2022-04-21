@@ -27,7 +27,11 @@ public final class ReportConfigColumnType extends ExpandableStringEnum<ReportCon
         return fromString(name, ReportConfigColumnType.class);
     }
 
-    /** @return known ReportConfigColumnType values. */
+    /**
+     * Gets known ReportConfigColumnType values.
+     *
+     * @return known ReportConfigColumnType values.
+     */
     public static Collection<ReportConfigColumnType> values() {
         return values(ReportConfigColumnType.class);
     }

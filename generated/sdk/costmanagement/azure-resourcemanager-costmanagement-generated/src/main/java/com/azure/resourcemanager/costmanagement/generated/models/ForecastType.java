@@ -30,7 +30,11 @@ public final class ForecastType extends ExpandableStringEnum<ForecastType> {
         return fromString(name, ForecastType.class);
     }
 
-    /** @return known ForecastType values. */
+    /**
+     * Gets known ForecastType values.
+     *
+     * @return known ForecastType values.
+     */
     public static Collection<ForecastType> values() {
         return values(ForecastType.class);
     }

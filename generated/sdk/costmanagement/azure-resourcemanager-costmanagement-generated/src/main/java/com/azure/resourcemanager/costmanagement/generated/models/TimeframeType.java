@@ -39,7 +39,11 @@ public final class TimeframeType extends ExpandableStringEnum<TimeframeType> {
         return fromString(name, TimeframeType.class);
     }
 
-    /** @return known TimeframeType values. */
+    /**
+     * Gets known TimeframeType values.
+     *
+     * @return known TimeframeType values.
+     */
     public static Collection<TimeframeType> values() {
         return values(TimeframeType.class);
     }

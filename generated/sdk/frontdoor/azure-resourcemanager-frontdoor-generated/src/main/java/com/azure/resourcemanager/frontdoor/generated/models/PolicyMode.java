@@ -27,7 +27,11 @@ public final class PolicyMode extends ExpandableStringEnum<PolicyMode> {
         return fromString(name, PolicyMode.class);
     }
 
-    /** @return known PolicyMode values. */
+    /**
+     * Gets known PolicyMode values.
+     *
+     * @return known PolicyMode values.
+     */
     public static Collection<PolicyMode> values() {
         return values(PolicyMode.class);
     }

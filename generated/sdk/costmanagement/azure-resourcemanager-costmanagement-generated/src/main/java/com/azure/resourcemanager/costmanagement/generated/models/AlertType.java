@@ -42,7 +42,11 @@ public final class AlertType extends ExpandableStringEnum<AlertType> {
         return fromString(name, AlertType.class);
     }
 
-    /** @return known AlertType values. */
+    /**
+     * Gets known AlertType values.
+     *
+     * @return known AlertType values.
+     */
     public static Collection<AlertType> values() {
         return values(AlertType.class);
     }

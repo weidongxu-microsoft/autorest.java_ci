@@ -33,7 +33,11 @@ public final class RecurrenceType extends ExpandableStringEnum<RecurrenceType> {
         return fromString(name, RecurrenceType.class);
     }
 
-    /** @return known RecurrenceType values. */
+    /**
+     * Gets known RecurrenceType values.
+     *
+     * @return known RecurrenceType values.
+     */
     public static Collection<RecurrenceType> values() {
         return values(RecurrenceType.class);
     }

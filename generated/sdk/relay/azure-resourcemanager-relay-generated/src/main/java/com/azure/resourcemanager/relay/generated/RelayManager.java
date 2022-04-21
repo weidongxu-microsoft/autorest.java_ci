@@ -272,7 +272,11 @@ public final class RelayManager {
         }
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -280,7 +284,11 @@ public final class RelayManager {
         return operations;
     }
 
-    /** @return Resource collection API of Namespaces. */
+    /**
+     * Gets the resource collection API of Namespaces.
+     *
+     * @return Resource collection API of Namespaces.
+     */
     public Namespaces namespaces() {
         if (this.namespaces == null) {
             this.namespaces = new NamespacesImpl(clientObject.getNamespaces(), this);
@@ -288,7 +296,11 @@ public final class RelayManager {
         return namespaces;
     }
 
-    /** @return Resource collection API of HybridConnections. */
+    /**
+     * Gets the resource collection API of HybridConnections.
+     *
+     * @return Resource collection API of HybridConnections.
+     */
     public HybridConnections hybridConnections() {
         if (this.hybridConnections == null) {
             this.hybridConnections = new HybridConnectionsImpl(clientObject.getHybridConnections(), this);
@@ -296,7 +308,11 @@ public final class RelayManager {
         return hybridConnections;
     }
 
-    /** @return Resource collection API of WcfRelays. */
+    /**
+     * Gets the resource collection API of WcfRelays.
+     *
+     * @return Resource collection API of WcfRelays.
+     */
     public WcfRelays wcfRelays() {
         if (this.wcfRelays == null) {
             this.wcfRelays = new WcfRelaysImpl(clientObject.getWcfRelays(), this);

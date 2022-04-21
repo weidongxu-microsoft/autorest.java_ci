@@ -27,7 +27,11 @@ public final class ExecutionType extends ExpandableStringEnum<ExecutionType> {
         return fromString(name, ExecutionType.class);
     }
 
-    /** @return known ExecutionType values. */
+    /**
+     * Gets known ExecutionType values.
+     *
+     * @return known ExecutionType values.
+     */
     public static Collection<ExecutionType> values() {
         return values(ExecutionType.class);
     }

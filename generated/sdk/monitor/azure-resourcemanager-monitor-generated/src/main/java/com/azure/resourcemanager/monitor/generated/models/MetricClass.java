@@ -36,7 +36,11 @@ public final class MetricClass extends ExpandableStringEnum<MetricClass> {
         return fromString(name, MetricClass.class);
     }
 
-    /** @return known MetricClass values. */
+    /**
+     * Gets known MetricClass values.
+     *
+     * @return known MetricClass values.
+     */
     public static Collection<MetricClass> values() {
         return values(MetricClass.class);
     }

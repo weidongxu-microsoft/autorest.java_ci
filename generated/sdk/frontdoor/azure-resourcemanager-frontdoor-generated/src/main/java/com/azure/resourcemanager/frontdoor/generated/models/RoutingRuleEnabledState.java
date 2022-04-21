@@ -27,7 +27,11 @@ public final class RoutingRuleEnabledState extends ExpandableStringEnum<RoutingR
         return fromString(name, RoutingRuleEnabledState.class);
     }
 
-    /** @return known RoutingRuleEnabledState values. */
+    /**
+     * Gets known RoutingRuleEnabledState values.
+     *
+     * @return known RoutingRuleEnabledState values.
+     */
     public static Collection<RoutingRuleEnabledState> values() {
         return values(RoutingRuleEnabledState.class);
     }

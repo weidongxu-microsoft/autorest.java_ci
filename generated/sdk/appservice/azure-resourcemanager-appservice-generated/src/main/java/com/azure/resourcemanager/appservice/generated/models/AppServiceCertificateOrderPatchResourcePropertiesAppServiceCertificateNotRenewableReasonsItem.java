@@ -49,6 +49,8 @@ public final class AppServiceCertificateOrderPatchResourcePropertiesAppServiceCe
     }
 
     /**
+     * Gets known AppServiceCertificateOrderPatchResourcePropertiesAppServiceCertificateNotRenewableReasonsItem values.
+     *
      * @return known AppServiceCertificateOrderPatchResourcePropertiesAppServiceCertificateNotRenewableReasonsItem
      *     values.
      */

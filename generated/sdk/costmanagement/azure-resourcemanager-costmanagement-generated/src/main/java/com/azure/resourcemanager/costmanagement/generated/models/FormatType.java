@@ -24,7 +24,11 @@ public final class FormatType extends ExpandableStringEnum<FormatType> {
         return fromString(name, FormatType.class);
     }
 
-    /** @return known FormatType values. */
+    /**
+     * Gets known FormatType values.
+     *
+     * @return known FormatType values.
+     */
     public static Collection<FormatType> values() {
         return values(FormatType.class);
     }

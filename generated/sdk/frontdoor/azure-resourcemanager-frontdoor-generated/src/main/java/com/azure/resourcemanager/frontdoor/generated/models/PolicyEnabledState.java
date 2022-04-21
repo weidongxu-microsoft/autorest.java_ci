@@ -27,7 +27,11 @@ public final class PolicyEnabledState extends ExpandableStringEnum<PolicyEnabled
         return fromString(name, PolicyEnabledState.class);
     }
 
-    /** @return known PolicyEnabledState values. */
+    /**
+     * Gets known PolicyEnabledState values.
+     *
+     * @return known PolicyEnabledState values.
+     */
     public static Collection<PolicyEnabledState> values() {
         return values(PolicyEnabledState.class);
     }

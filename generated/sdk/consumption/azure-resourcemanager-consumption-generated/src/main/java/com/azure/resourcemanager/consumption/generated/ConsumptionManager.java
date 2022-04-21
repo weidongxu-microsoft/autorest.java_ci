@@ -327,7 +327,11 @@ public final class ConsumptionManager {
         }
     }
 
-    /** @return Resource collection API of UsageDetails. */
+    /**
+     * Gets the resource collection API of UsageDetails.
+     *
+     * @return Resource collection API of UsageDetails.
+     */
     public UsageDetails usageDetails() {
         if (this.usageDetails == null) {
             this.usageDetails = new UsageDetailsImpl(clientObject.getUsageDetails(), this);
@@ -335,7 +339,11 @@ public final class ConsumptionManager {
         return usageDetails;
     }
 
-    /** @return Resource collection API of Marketplaces. */
+    /**
+     * Gets the resource collection API of Marketplaces.
+     *
+     * @return Resource collection API of Marketplaces.
+     */
     public Marketplaces marketplaces() {
         if (this.marketplaces == null) {
             this.marketplaces = new MarketplacesImpl(clientObject.getMarketplaces(), this);
@@ -343,7 +351,11 @@ public final class ConsumptionManager {
         return marketplaces;
     }
 
-    /** @return Resource collection API of Budgets. */
+    /**
+     * Gets the resource collection API of Budgets.
+     *
+     * @return Resource collection API of Budgets.
+     */
     public Budgets budgets() {
         if (this.budgets == null) {
             this.budgets = new BudgetsImpl(clientObject.getBudgets(), this);
@@ -351,7 +363,11 @@ public final class ConsumptionManager {
         return budgets;
     }
 
-    /** @return Resource collection API of Tags. */
+    /**
+     * Gets the resource collection API of Tags.
+     *
+     * @return Resource collection API of Tags.
+     */
     public Tags tags() {
         if (this.tags == null) {
             this.tags = new TagsImpl(clientObject.getTags(), this);
@@ -359,7 +375,11 @@ public final class ConsumptionManager {
         return tags;
     }
 
-    /** @return Resource collection API of Charges. */
+    /**
+     * Gets the resource collection API of Charges.
+     *
+     * @return Resource collection API of Charges.
+     */
     public Charges charges() {
         if (this.charges == null) {
             this.charges = new ChargesImpl(clientObject.getCharges(), this);
@@ -367,7 +387,11 @@ public final class ConsumptionManager {
         return charges;
     }
 
-    /** @return Resource collection API of Balances. */
+    /**
+     * Gets the resource collection API of Balances.
+     *
+     * @return Resource collection API of Balances.
+     */
     public Balances balances() {
         if (this.balances == null) {
             this.balances = new BalancesImpl(clientObject.getBalances(), this);
@@ -375,7 +399,11 @@ public final class ConsumptionManager {
         return balances;
     }
 
-    /** @return Resource collection API of ReservationsSummaries. */
+    /**
+     * Gets the resource collection API of ReservationsSummaries.
+     *
+     * @return Resource collection API of ReservationsSummaries.
+     */
     public ReservationsSummaries reservationsSummaries() {
         if (this.reservationsSummaries == null) {
             this.reservationsSummaries = new ReservationsSummariesImpl(clientObject.getReservationsSummaries(), this);
@@ -383,7 +411,11 @@ public final class ConsumptionManager {
         return reservationsSummaries;
     }
 
-    /** @return Resource collection API of ReservationsDetails. */
+    /**
+     * Gets the resource collection API of ReservationsDetails.
+     *
+     * @return Resource collection API of ReservationsDetails.
+     */
     public ReservationsDetails reservationsDetails() {
         if (this.reservationsDetails == null) {
             this.reservationsDetails = new ReservationsDetailsImpl(clientObject.getReservationsDetails(), this);
@@ -391,7 +423,11 @@ public final class ConsumptionManager {
         return reservationsDetails;
     }
 
-    /** @return Resource collection API of ReservationRecommendations. */
+    /**
+     * Gets the resource collection API of ReservationRecommendations.
+     *
+     * @return Resource collection API of ReservationRecommendations.
+     */
     public ReservationRecommendations reservationRecommendations() {
         if (this.reservationRecommendations == null) {
             this.reservationRecommendations =
@@ -400,7 +436,11 @@ public final class ConsumptionManager {
         return reservationRecommendations;
     }
 
-    /** @return Resource collection API of ReservationRecommendationDetails. */
+    /**
+     * Gets the resource collection API of ReservationRecommendationDetails.
+     *
+     * @return Resource collection API of ReservationRecommendationDetails.
+     */
     public ReservationRecommendationDetails reservationRecommendationDetails() {
         if (this.reservationRecommendationDetails == null) {
             this.reservationRecommendationDetails =
@@ -409,7 +449,11 @@ public final class ConsumptionManager {
         return reservationRecommendationDetails;
     }
 
-    /** @return Resource collection API of ReservationTransactions. */
+    /**
+     * Gets the resource collection API of ReservationTransactions.
+     *
+     * @return Resource collection API of ReservationTransactions.
+     */
     public ReservationTransactions reservationTransactions() {
         if (this.reservationTransactions == null) {
             this.reservationTransactions =
@@ -418,7 +462,11 @@ public final class ConsumptionManager {
         return reservationTransactions;
     }
 
-    /** @return Resource collection API of PriceSheets. */
+    /**
+     * Gets the resource collection API of PriceSheets.
+     *
+     * @return Resource collection API of PriceSheets.
+     */
     public PriceSheets priceSheets() {
         if (this.priceSheets == null) {
             this.priceSheets = new PriceSheetsImpl(clientObject.getPriceSheets(), this);
@@ -426,7 +474,11 @@ public final class ConsumptionManager {
         return priceSheets;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -434,7 +486,11 @@ public final class ConsumptionManager {
         return operations;
     }
 
-    /** @return Resource collection API of AggregatedCosts. */
+    /**
+     * Gets the resource collection API of AggregatedCosts.
+     *
+     * @return Resource collection API of AggregatedCosts.
+     */
     public AggregatedCosts aggregatedCosts() {
         if (this.aggregatedCosts == null) {
             this.aggregatedCosts = new AggregatedCostsImpl(clientObject.getAggregatedCosts(), this);
@@ -442,7 +498,11 @@ public final class ConsumptionManager {
         return aggregatedCosts;
     }
 
-    /** @return Resource collection API of EventsOperations. */
+    /**
+     * Gets the resource collection API of EventsOperations.
+     *
+     * @return Resource collection API of EventsOperations.
+     */
     public EventsOperations eventsOperations() {
         if (this.eventsOperations == null) {
             this.eventsOperations = new EventsOperationsImpl(clientObject.getEventsOperations(), this);
@@ -450,7 +510,11 @@ public final class ConsumptionManager {
         return eventsOperations;
     }
 
-    /** @return Resource collection API of LotsOperations. */
+    /**
+     * Gets the resource collection API of LotsOperations.
+     *
+     * @return Resource collection API of LotsOperations.
+     */
     public LotsOperations lotsOperations() {
         if (this.lotsOperations == null) {
             this.lotsOperations = new LotsOperationsImpl(clientObject.getLotsOperations(), this);
@@ -458,7 +522,11 @@ public final class ConsumptionManager {
         return lotsOperations;
     }
 
-    /** @return Resource collection API of Credits. */
+    /**
+     * Gets the resource collection API of Credits.
+     *
+     * @return Resource collection API of Credits.
+     */
     public Credits credits() {
         if (this.credits == null) {
             this.credits = new CreditsImpl(clientObject.getCredits(), this);

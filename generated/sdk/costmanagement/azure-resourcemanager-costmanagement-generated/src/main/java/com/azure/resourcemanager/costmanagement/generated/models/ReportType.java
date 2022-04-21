@@ -24,7 +24,11 @@ public final class ReportType extends ExpandableStringEnum<ReportType> {
         return fromString(name, ReportType.class);
     }
 
-    /** @return known ReportType values. */
+    /**
+     * Gets known ReportType values.
+     *
+     * @return known ReportType values.
+     */
     public static Collection<ReportType> values() {
         return values(ReportType.class);
     }

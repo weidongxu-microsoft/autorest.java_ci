@@ -27,7 +27,11 @@ public final class KpiType extends ExpandableStringEnum<KpiType> {
         return fromString(name, KpiType.class);
     }
 
-    /** @return known KpiType values. */
+    /**
+     * Gets known KpiType values.
+     *
+     * @return known KpiType values.
+     */
     public static Collection<KpiType> values() {
         return values(KpiType.class);
     }

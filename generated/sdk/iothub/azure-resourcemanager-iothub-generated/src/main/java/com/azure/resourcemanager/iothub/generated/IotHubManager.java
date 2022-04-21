@@ -284,7 +284,11 @@ public final class IotHubManager {
         }
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -292,7 +296,11 @@ public final class IotHubManager {
         return operations;
     }
 
-    /** @return Resource collection API of IotHubResources. */
+    /**
+     * Gets the resource collection API of IotHubResources.
+     *
+     * @return Resource collection API of IotHubResources.
+     */
     public IotHubResources iotHubResources() {
         if (this.iotHubResources == null) {
             this.iotHubResources = new IotHubResourcesImpl(clientObject.getIotHubResources(), this);
@@ -300,7 +308,11 @@ public final class IotHubManager {
         return iotHubResources;
     }
 
-    /** @return Resource collection API of ResourceProviderCommons. */
+    /**
+     * Gets the resource collection API of ResourceProviderCommons.
+     *
+     * @return Resource collection API of ResourceProviderCommons.
+     */
     public ResourceProviderCommons resourceProviderCommons() {
         if (this.resourceProviderCommons == null) {
             this.resourceProviderCommons =
@@ -309,7 +321,11 @@ public final class IotHubManager {
         return resourceProviderCommons;
     }
 
-    /** @return Resource collection API of Certificates. */
+    /**
+     * Gets the resource collection API of Certificates.
+     *
+     * @return Resource collection API of Certificates.
+     */
     public Certificates certificates() {
         if (this.certificates == null) {
             this.certificates = new CertificatesImpl(clientObject.getCertificates(), this);
@@ -317,7 +333,11 @@ public final class IotHubManager {
         return certificates;
     }
 
-    /** @return Resource collection API of IotHubs. */
+    /**
+     * Gets the resource collection API of IotHubs.
+     *
+     * @return Resource collection API of IotHubs.
+     */
     public IotHubs iotHubs() {
         if (this.iotHubs == null) {
             this.iotHubs = new IotHubsImpl(clientObject.getIotHubs(), this);
@@ -325,7 +345,11 @@ public final class IotHubManager {
         return iotHubs;
     }
 
-    /** @return Resource collection API of PrivateLinkResourcesOperations. */
+    /**
+     * Gets the resource collection API of PrivateLinkResourcesOperations.
+     *
+     * @return Resource collection API of PrivateLinkResourcesOperations.
+     */
     public PrivateLinkResourcesOperations privateLinkResourcesOperations() {
         if (this.privateLinkResourcesOperations == null) {
             this.privateLinkResourcesOperations =
@@ -334,7 +358,11 @@ public final class IotHubManager {
         return privateLinkResourcesOperations;
     }
 
-    /** @return Resource collection API of PrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of PrivateEndpointConnections.
+     *
+     * @return Resource collection API of PrivateEndpointConnections.
+     */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
             this.privateEndpointConnections =

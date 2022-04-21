@@ -27,7 +27,11 @@ public final class PolicyRequestBodyCheck extends ExpandableStringEnum<PolicyReq
         return fromString(name, PolicyRequestBodyCheck.class);
     }
 
-    /** @return known PolicyRequestBodyCheck values. */
+    /**
+     * Gets known PolicyRequestBodyCheck values.
+     *
+     * @return known PolicyRequestBodyCheck values.
+     */
     public static Collection<PolicyRequestBodyCheck> values() {
         return values(PolicyRequestBodyCheck.class);
     }

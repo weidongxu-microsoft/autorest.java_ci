@@ -27,7 +27,11 @@ public final class HostPlatformType extends ExpandableStringEnum<HostPlatformTyp
         return fromString(name, HostPlatformType.class);
     }
 
-    /** @return known HostPlatformType values. */
+    /**
+     * Gets known HostPlatformType values.
+     *
+     * @return known HostPlatformType values.
+     */
     public static Collection<HostPlatformType> values() {
         return values(HostPlatformType.class);
     }

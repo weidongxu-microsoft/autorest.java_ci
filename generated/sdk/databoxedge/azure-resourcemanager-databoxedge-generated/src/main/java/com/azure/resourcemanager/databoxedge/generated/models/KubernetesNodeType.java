@@ -30,7 +30,11 @@ public final class KubernetesNodeType extends ExpandableStringEnum<KubernetesNod
         return fromString(name, KubernetesNodeType.class);
     }
 
-    /** @return known KubernetesNodeType values. */
+    /**
+     * Gets known KubernetesNodeType values.
+     *
+     * @return known KubernetesNodeType values.
+     */
     public static Collection<KubernetesNodeType> values() {
         return values(KubernetesNodeType.class);
     }

@@ -33,7 +33,11 @@ public final class DataBoxEdgeDeviceKind extends ExpandableStringEnum<DataBoxEdg
         return fromString(name, DataBoxEdgeDeviceKind.class);
     }
 
-    /** @return known DataBoxEdgeDeviceKind values. */
+    /**
+     * Gets known DataBoxEdgeDeviceKind values.
+     *
+     * @return known DataBoxEdgeDeviceKind values.
+     */
     public static Collection<DataBoxEdgeDeviceKind> values() {
         return values(DataBoxEdgeDeviceKind.class);
     }

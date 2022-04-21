@@ -27,7 +27,11 @@ public final class SessionAffinityEnabledState extends ExpandableStringEnum<Sess
         return fromString(name, SessionAffinityEnabledState.class);
     }
 
-    /** @return known SessionAffinityEnabledState values. */
+    /**
+     * Gets known SessionAffinityEnabledState values.
+     *
+     * @return known SessionAffinityEnabledState values.
+     */
     public static Collection<SessionAffinityEnabledState> values() {
         return values(SessionAffinityEnabledState.class);
     }

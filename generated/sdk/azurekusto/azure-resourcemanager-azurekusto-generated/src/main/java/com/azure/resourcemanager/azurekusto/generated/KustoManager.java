@@ -312,7 +312,11 @@ public final class KustoManager {
         }
     }
 
-    /** @return Resource collection API of Clusters. */
+    /**
+     * Gets the resource collection API of Clusters.
+     *
+     * @return Resource collection API of Clusters.
+     */
     public Clusters clusters() {
         if (this.clusters == null) {
             this.clusters = new ClustersImpl(clientObject.getClusters(), this);
@@ -320,7 +324,11 @@ public final class KustoManager {
         return clusters;
     }
 
-    /** @return Resource collection API of ClusterPrincipalAssignments. */
+    /**
+     * Gets the resource collection API of ClusterPrincipalAssignments.
+     *
+     * @return Resource collection API of ClusterPrincipalAssignments.
+     */
     public ClusterPrincipalAssignments clusterPrincipalAssignments() {
         if (this.clusterPrincipalAssignments == null) {
             this.clusterPrincipalAssignments =
@@ -329,7 +337,11 @@ public final class KustoManager {
         return clusterPrincipalAssignments;
     }
 
-    /** @return Resource collection API of Databases. */
+    /**
+     * Gets the resource collection API of Databases.
+     *
+     * @return Resource collection API of Databases.
+     */
     public Databases databases() {
         if (this.databases == null) {
             this.databases = new DatabasesImpl(clientObject.getDatabases(), this);
@@ -337,7 +349,11 @@ public final class KustoManager {
         return databases;
     }
 
-    /** @return Resource collection API of AttachedDatabaseConfigurations. */
+    /**
+     * Gets the resource collection API of AttachedDatabaseConfigurations.
+     *
+     * @return Resource collection API of AttachedDatabaseConfigurations.
+     */
     public AttachedDatabaseConfigurations attachedDatabaseConfigurations() {
         if (this.attachedDatabaseConfigurations == null) {
             this.attachedDatabaseConfigurations =
@@ -346,7 +362,11 @@ public final class KustoManager {
         return attachedDatabaseConfigurations;
     }
 
-    /** @return Resource collection API of ManagedPrivateEndpoints. */
+    /**
+     * Gets the resource collection API of ManagedPrivateEndpoints.
+     *
+     * @return Resource collection API of ManagedPrivateEndpoints.
+     */
     public ManagedPrivateEndpoints managedPrivateEndpoints() {
         if (this.managedPrivateEndpoints == null) {
             this.managedPrivateEndpoints =
@@ -355,7 +375,11 @@ public final class KustoManager {
         return managedPrivateEndpoints;
     }
 
-    /** @return Resource collection API of DatabasePrincipalAssignments. */
+    /**
+     * Gets the resource collection API of DatabasePrincipalAssignments.
+     *
+     * @return Resource collection API of DatabasePrincipalAssignments.
+     */
     public DatabasePrincipalAssignments databasePrincipalAssignments() {
         if (this.databasePrincipalAssignments == null) {
             this.databasePrincipalAssignments =
@@ -364,7 +388,11 @@ public final class KustoManager {
         return databasePrincipalAssignments;
     }
 
-    /** @return Resource collection API of Scripts. */
+    /**
+     * Gets the resource collection API of Scripts.
+     *
+     * @return Resource collection API of Scripts.
+     */
     public Scripts scripts() {
         if (this.scripts == null) {
             this.scripts = new ScriptsImpl(clientObject.getScripts(), this);
@@ -372,7 +400,11 @@ public final class KustoManager {
         return scripts;
     }
 
-    /** @return Resource collection API of PrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of PrivateEndpointConnections.
+     *
+     * @return Resource collection API of PrivateEndpointConnections.
+     */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
             this.privateEndpointConnections =
@@ -381,7 +413,11 @@ public final class KustoManager {
         return privateEndpointConnections;
     }
 
-    /** @return Resource collection API of PrivateLinkResources. */
+    /**
+     * Gets the resource collection API of PrivateLinkResources.
+     *
+     * @return Resource collection API of PrivateLinkResources.
+     */
     public PrivateLinkResources privateLinkResources() {
         if (this.privateLinkResources == null) {
             this.privateLinkResources = new PrivateLinkResourcesImpl(clientObject.getPrivateLinkResources(), this);
@@ -389,7 +425,11 @@ public final class KustoManager {
         return privateLinkResources;
     }
 
-    /** @return Resource collection API of DataConnections. */
+    /**
+     * Gets the resource collection API of DataConnections.
+     *
+     * @return Resource collection API of DataConnections.
+     */
     public DataConnections dataConnections() {
         if (this.dataConnections == null) {
             this.dataConnections = new DataConnectionsImpl(clientObject.getDataConnections(), this);
@@ -397,7 +437,11 @@ public final class KustoManager {
         return dataConnections;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -405,7 +449,11 @@ public final class KustoManager {
         return operations;
     }
 
-    /** @return Resource collection API of OperationsResults. */
+    /**
+     * Gets the resource collection API of OperationsResults.
+     *
+     * @return Resource collection API of OperationsResults.
+     */
     public OperationsResults operationsResults() {
         if (this.operationsResults == null) {
             this.operationsResults = new OperationsResultsImpl(clientObject.getOperationsResults(), this);
@@ -413,7 +461,11 @@ public final class KustoManager {
         return operationsResults;
     }
 
-    /** @return Resource collection API of OperationsResultsLocations. */
+    /**
+     * Gets the resource collection API of OperationsResultsLocations.
+     *
+     * @return Resource collection API of OperationsResultsLocations.
+     */
     public OperationsResultsLocations operationsResultsLocations() {
         if (this.operationsResultsLocations == null) {
             this.operationsResultsLocations =

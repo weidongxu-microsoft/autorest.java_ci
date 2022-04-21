@@ -45,7 +45,11 @@ public final class JsonWebKeyOperation extends ExpandableStringEnum<JsonWebKeyOp
         return fromString(name, JsonWebKeyOperation.class);
     }
 
-    /** @return known JsonWebKeyOperation values. */
+    /**
+     * Gets known JsonWebKeyOperation values.
+     *
+     * @return known JsonWebKeyOperation values.
+     */
     public static Collection<JsonWebKeyOperation> values() {
         return values(JsonWebKeyOperation.class);
     }

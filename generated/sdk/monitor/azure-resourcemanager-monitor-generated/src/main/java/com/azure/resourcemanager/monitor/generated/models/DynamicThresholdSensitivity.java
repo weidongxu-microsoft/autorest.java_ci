@@ -30,7 +30,11 @@ public final class DynamicThresholdSensitivity extends ExpandableStringEnum<Dyna
         return fromString(name, DynamicThresholdSensitivity.class);
     }
 
-    /** @return known DynamicThresholdSensitivity values. */
+    /**
+     * Gets known DynamicThresholdSensitivity values.
+     *
+     * @return known DynamicThresholdSensitivity values.
+     */
     public static Collection<DynamicThresholdSensitivity> values() {
         return values(DynamicThresholdSensitivity.class);
     }

@@ -27,7 +27,11 @@ public final class SkuSignupOption extends ExpandableStringEnum<SkuSignupOption>
         return fromString(name, SkuSignupOption.class);
     }
 
-    /** @return known SkuSignupOption values. */
+    /**
+     * Gets known SkuSignupOption values.
+     *
+     * @return known SkuSignupOption values.
+     */
     public static Collection<SkuSignupOption> values() {
         return values(SkuSignupOption.class);
     }

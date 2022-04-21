@@ -332,7 +332,11 @@ public final class PostgreSqlManager {
         }
     }
 
-    /** @return Resource collection API of Servers. */
+    /**
+     * Gets the resource collection API of Servers.
+     *
+     * @return Resource collection API of Servers.
+     */
     public Servers servers() {
         if (this.servers == null) {
             this.servers = new ServersImpl(clientObject.getServers(), this);
@@ -340,7 +344,11 @@ public final class PostgreSqlManager {
         return servers;
     }
 
-    /** @return Resource collection API of Replicas. */
+    /**
+     * Gets the resource collection API of Replicas.
+     *
+     * @return Resource collection API of Replicas.
+     */
     public Replicas replicas() {
         if (this.replicas == null) {
             this.replicas = new ReplicasImpl(clientObject.getReplicas(), this);
@@ -348,7 +356,11 @@ public final class PostgreSqlManager {
         return replicas;
     }
 
-    /** @return Resource collection API of FirewallRules. */
+    /**
+     * Gets the resource collection API of FirewallRules.
+     *
+     * @return Resource collection API of FirewallRules.
+     */
     public FirewallRules firewallRules() {
         if (this.firewallRules == null) {
             this.firewallRules = new FirewallRulesImpl(clientObject.getFirewallRules(), this);
@@ -356,7 +368,11 @@ public final class PostgreSqlManager {
         return firewallRules;
     }
 
-    /** @return Resource collection API of VirtualNetworkRules. */
+    /**
+     * Gets the resource collection API of VirtualNetworkRules.
+     *
+     * @return Resource collection API of VirtualNetworkRules.
+     */
     public VirtualNetworkRules virtualNetworkRules() {
         if (this.virtualNetworkRules == null) {
             this.virtualNetworkRules = new VirtualNetworkRulesImpl(clientObject.getVirtualNetworkRules(), this);
@@ -364,7 +380,11 @@ public final class PostgreSqlManager {
         return virtualNetworkRules;
     }
 
-    /** @return Resource collection API of Databases. */
+    /**
+     * Gets the resource collection API of Databases.
+     *
+     * @return Resource collection API of Databases.
+     */
     public Databases databases() {
         if (this.databases == null) {
             this.databases = new DatabasesImpl(clientObject.getDatabases(), this);
@@ -372,7 +392,11 @@ public final class PostgreSqlManager {
         return databases;
     }
 
-    /** @return Resource collection API of Configurations. */
+    /**
+     * Gets the resource collection API of Configurations.
+     *
+     * @return Resource collection API of Configurations.
+     */
     public Configurations configurations() {
         if (this.configurations == null) {
             this.configurations = new ConfigurationsImpl(clientObject.getConfigurations(), this);
@@ -380,7 +404,11 @@ public final class PostgreSqlManager {
         return configurations;
     }
 
-    /** @return Resource collection API of ServerParameters. */
+    /**
+     * Gets the resource collection API of ServerParameters.
+     *
+     * @return Resource collection API of ServerParameters.
+     */
     public ServerParameters serverParameters() {
         if (this.serverParameters == null) {
             this.serverParameters = new ServerParametersImpl(clientObject.getServerParameters(), this);
@@ -388,7 +416,11 @@ public final class PostgreSqlManager {
         return serverParameters;
     }
 
-    /** @return Resource collection API of LogFiles. */
+    /**
+     * Gets the resource collection API of LogFiles.
+     *
+     * @return Resource collection API of LogFiles.
+     */
     public LogFiles logFiles() {
         if (this.logFiles == null) {
             this.logFiles = new LogFilesImpl(clientObject.getLogFiles(), this);
@@ -396,7 +428,11 @@ public final class PostgreSqlManager {
         return logFiles;
     }
 
-    /** @return Resource collection API of ServerAdministrators. */
+    /**
+     * Gets the resource collection API of ServerAdministrators.
+     *
+     * @return Resource collection API of ServerAdministrators.
+     */
     public ServerAdministrators serverAdministrators() {
         if (this.serverAdministrators == null) {
             this.serverAdministrators = new ServerAdministratorsImpl(clientObject.getServerAdministrators(), this);
@@ -404,7 +440,11 @@ public final class PostgreSqlManager {
         return serverAdministrators;
     }
 
-    /** @return Resource collection API of RecoverableServers. */
+    /**
+     * Gets the resource collection API of RecoverableServers.
+     *
+     * @return Resource collection API of RecoverableServers.
+     */
     public RecoverableServers recoverableServers() {
         if (this.recoverableServers == null) {
             this.recoverableServers = new RecoverableServersImpl(clientObject.getRecoverableServers(), this);
@@ -412,7 +452,11 @@ public final class PostgreSqlManager {
         return recoverableServers;
     }
 
-    /** @return Resource collection API of ServerBasedPerformanceTiers. */
+    /**
+     * Gets the resource collection API of ServerBasedPerformanceTiers.
+     *
+     * @return Resource collection API of ServerBasedPerformanceTiers.
+     */
     public ServerBasedPerformanceTiers serverBasedPerformanceTiers() {
         if (this.serverBasedPerformanceTiers == null) {
             this.serverBasedPerformanceTiers =
@@ -421,7 +465,11 @@ public final class PostgreSqlManager {
         return serverBasedPerformanceTiers;
     }
 
-    /** @return Resource collection API of LocationBasedPerformanceTiers. */
+    /**
+     * Gets the resource collection API of LocationBasedPerformanceTiers.
+     *
+     * @return Resource collection API of LocationBasedPerformanceTiers.
+     */
     public LocationBasedPerformanceTiers locationBasedPerformanceTiers() {
         if (this.locationBasedPerformanceTiers == null) {
             this.locationBasedPerformanceTiers =
@@ -430,7 +478,11 @@ public final class PostgreSqlManager {
         return locationBasedPerformanceTiers;
     }
 
-    /** @return Resource collection API of CheckNameAvailabilities. */
+    /**
+     * Gets the resource collection API of CheckNameAvailabilities.
+     *
+     * @return Resource collection API of CheckNameAvailabilities.
+     */
     public CheckNameAvailabilities checkNameAvailabilities() {
         if (this.checkNameAvailabilities == null) {
             this.checkNameAvailabilities =
@@ -439,7 +491,11 @@ public final class PostgreSqlManager {
         return checkNameAvailabilities;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -447,7 +503,11 @@ public final class PostgreSqlManager {
         return operations;
     }
 
-    /** @return Resource collection API of ServerSecurityAlertPolicies. */
+    /**
+     * Gets the resource collection API of ServerSecurityAlertPolicies.
+     *
+     * @return Resource collection API of ServerSecurityAlertPolicies.
+     */
     public ServerSecurityAlertPolicies serverSecurityAlertPolicies() {
         if (this.serverSecurityAlertPolicies == null) {
             this.serverSecurityAlertPolicies =
@@ -456,7 +516,11 @@ public final class PostgreSqlManager {
         return serverSecurityAlertPolicies;
     }
 
-    /** @return Resource collection API of PrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of PrivateEndpointConnections.
+     *
+     * @return Resource collection API of PrivateEndpointConnections.
+     */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
             this.privateEndpointConnections =
@@ -465,7 +529,11 @@ public final class PostgreSqlManager {
         return privateEndpointConnections;
     }
 
-    /** @return Resource collection API of PrivateLinkResources. */
+    /**
+     * Gets the resource collection API of PrivateLinkResources.
+     *
+     * @return Resource collection API of PrivateLinkResources.
+     */
     public PrivateLinkResources privateLinkResources() {
         if (this.privateLinkResources == null) {
             this.privateLinkResources = new PrivateLinkResourcesImpl(clientObject.getPrivateLinkResources(), this);
@@ -473,7 +541,11 @@ public final class PostgreSqlManager {
         return privateLinkResources;
     }
 
-    /** @return Resource collection API of ServerKeys. */
+    /**
+     * Gets the resource collection API of ServerKeys.
+     *
+     * @return Resource collection API of ServerKeys.
+     */
     public ServerKeys serverKeys() {
         if (this.serverKeys == null) {
             this.serverKeys = new ServerKeysImpl(clientObject.getServerKeys(), this);

@@ -34,7 +34,11 @@ public final class LoadBalancerBackendAddressAdminState
         return fromString(name, LoadBalancerBackendAddressAdminState.class);
     }
 
-    /** @return known LoadBalancerBackendAddressAdminState values. */
+    /**
+     * Gets known LoadBalancerBackendAddressAdminState values.
+     *
+     * @return known LoadBalancerBackendAddressAdminState values.
+     */
     public static Collection<LoadBalancerBackendAddressAdminState> values() {
         return values(LoadBalancerBackendAddressAdminState.class);
     }

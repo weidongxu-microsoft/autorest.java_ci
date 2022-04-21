@@ -30,7 +30,11 @@ public final class ExportType extends ExpandableStringEnum<ExportType> {
         return fromString(name, ExportType.class);
     }
 
-    /** @return known ExportType values. */
+    /**
+     * Gets known ExportType values.
+     *
+     * @return known ExportType values.
+     */
     public static Collection<ExportType> values() {
         return values(ExportType.class);
     }

@@ -36,7 +36,11 @@ public final class CustomHttpsProvisioningState extends ExpandableStringEnum<Cus
         return fromString(name, CustomHttpsProvisioningState.class);
     }
 
-    /** @return known CustomHttpsProvisioningState values. */
+    /**
+     * Gets known CustomHttpsProvisioningState values.
+     *
+     * @return known CustomHttpsProvisioningState values.
+     */
     public static Collection<CustomHttpsProvisioningState> values() {
         return values(CustomHttpsProvisioningState.class);
     }

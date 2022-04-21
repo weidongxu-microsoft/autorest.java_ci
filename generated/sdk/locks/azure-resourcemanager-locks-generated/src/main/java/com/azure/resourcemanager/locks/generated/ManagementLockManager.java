@@ -267,7 +267,11 @@ public final class ManagementLockManager {
         }
     }
 
-    /** @return Resource collection API of AuthorizationOperations. */
+    /**
+     * Gets the resource collection API of AuthorizationOperations.
+     *
+     * @return Resource collection API of AuthorizationOperations.
+     */
     public AuthorizationOperations authorizationOperations() {
         if (this.authorizationOperations == null) {
             this.authorizationOperations =
@@ -276,7 +280,11 @@ public final class ManagementLockManager {
         return authorizationOperations;
     }
 
-    /** @return Resource collection API of ManagementLocks. */
+    /**
+     * Gets the resource collection API of ManagementLocks.
+     *
+     * @return Resource collection API of ManagementLocks.
+     */
     public ManagementLocks managementLocks() {
         if (this.managementLocks == null) {
             this.managementLocks = new ManagementLocksImpl(clientObject.getManagementLocks(), this);

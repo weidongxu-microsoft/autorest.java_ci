@@ -344,7 +344,11 @@ public final class LogAnalyticsManager {
         }
     }
 
-    /** @return Resource collection API of QueryPacks. */
+    /**
+     * Gets the resource collection API of QueryPacks.
+     *
+     * @return Resource collection API of QueryPacks.
+     */
     public QueryPacks queryPacks() {
         if (this.queryPacks == null) {
             this.queryPacks = new QueryPacksImpl(clientObject.getQueryPacks(), this);
@@ -352,7 +356,11 @@ public final class LogAnalyticsManager {
         return queryPacks;
     }
 
-    /** @return Resource collection API of Queries. */
+    /**
+     * Gets the resource collection API of Queries.
+     *
+     * @return Resource collection API of Queries.
+     */
     public Queries queries() {
         if (this.queries == null) {
             this.queries = new QueriesImpl(clientObject.getQueries(), this);
@@ -360,7 +368,11 @@ public final class LogAnalyticsManager {
         return queries;
     }
 
-    /** @return Resource collection API of DataExports. */
+    /**
+     * Gets the resource collection API of DataExports.
+     *
+     * @return Resource collection API of DataExports.
+     */
     public DataExports dataExports() {
         if (this.dataExports == null) {
             this.dataExports = new DataExportsImpl(clientObject.getDataExports(), this);
@@ -368,7 +380,11 @@ public final class LogAnalyticsManager {
         return dataExports;
     }
 
-    /** @return Resource collection API of DataSources. */
+    /**
+     * Gets the resource collection API of DataSources.
+     *
+     * @return Resource collection API of DataSources.
+     */
     public DataSources dataSources() {
         if (this.dataSources == null) {
             this.dataSources = new DataSourcesImpl(clientObject.getDataSources(), this);
@@ -376,7 +392,11 @@ public final class LogAnalyticsManager {
         return dataSources;
     }
 
-    /** @return Resource collection API of IntelligencePacks. */
+    /**
+     * Gets the resource collection API of IntelligencePacks.
+     *
+     * @return Resource collection API of IntelligencePacks.
+     */
     public IntelligencePacks intelligencePacks() {
         if (this.intelligencePacks == null) {
             this.intelligencePacks = new IntelligencePacksImpl(clientObject.getIntelligencePacks(), this);
@@ -384,7 +404,11 @@ public final class LogAnalyticsManager {
         return intelligencePacks;
     }
 
-    /** @return Resource collection API of LinkedServices. */
+    /**
+     * Gets the resource collection API of LinkedServices.
+     *
+     * @return Resource collection API of LinkedServices.
+     */
     public LinkedServices linkedServices() {
         if (this.linkedServices == null) {
             this.linkedServices = new LinkedServicesImpl(clientObject.getLinkedServices(), this);
@@ -392,7 +416,11 @@ public final class LogAnalyticsManager {
         return linkedServices;
     }
 
-    /** @return Resource collection API of LinkedStorageAccounts. */
+    /**
+     * Gets the resource collection API of LinkedStorageAccounts.
+     *
+     * @return Resource collection API of LinkedStorageAccounts.
+     */
     public LinkedStorageAccounts linkedStorageAccounts() {
         if (this.linkedStorageAccounts == null) {
             this.linkedStorageAccounts = new LinkedStorageAccountsImpl(clientObject.getLinkedStorageAccounts(), this);
@@ -400,7 +428,11 @@ public final class LogAnalyticsManager {
         return linkedStorageAccounts;
     }
 
-    /** @return Resource collection API of ManagementGroups. */
+    /**
+     * Gets the resource collection API of ManagementGroups.
+     *
+     * @return Resource collection API of ManagementGroups.
+     */
     public ManagementGroups managementGroups() {
         if (this.managementGroups == null) {
             this.managementGroups = new ManagementGroupsImpl(clientObject.getManagementGroups(), this);
@@ -408,7 +440,11 @@ public final class LogAnalyticsManager {
         return managementGroups;
     }
 
-    /** @return Resource collection API of OperationStatuses. */
+    /**
+     * Gets the resource collection API of OperationStatuses.
+     *
+     * @return Resource collection API of OperationStatuses.
+     */
     public OperationStatuses operationStatuses() {
         if (this.operationStatuses == null) {
             this.operationStatuses = new OperationStatusesImpl(clientObject.getOperationStatuses(), this);
@@ -416,7 +452,11 @@ public final class LogAnalyticsManager {
         return operationStatuses;
     }
 
-    /** @return Resource collection API of SharedKeysOperations. */
+    /**
+     * Gets the resource collection API of SharedKeysOperations.
+     *
+     * @return Resource collection API of SharedKeysOperations.
+     */
     public SharedKeysOperations sharedKeysOperations() {
         if (this.sharedKeysOperations == null) {
             this.sharedKeysOperations = new SharedKeysOperationsImpl(clientObject.getSharedKeysOperations(), this);
@@ -424,7 +464,11 @@ public final class LogAnalyticsManager {
         return sharedKeysOperations;
     }
 
-    /** @return Resource collection API of Usages. */
+    /**
+     * Gets the resource collection API of Usages.
+     *
+     * @return Resource collection API of Usages.
+     */
     public Usages usages() {
         if (this.usages == null) {
             this.usages = new UsagesImpl(clientObject.getUsages(), this);
@@ -432,7 +476,11 @@ public final class LogAnalyticsManager {
         return usages;
     }
 
-    /** @return Resource collection API of StorageInsightConfigs. */
+    /**
+     * Gets the resource collection API of StorageInsightConfigs.
+     *
+     * @return Resource collection API of StorageInsightConfigs.
+     */
     public StorageInsightConfigs storageInsightConfigs() {
         if (this.storageInsightConfigs == null) {
             this.storageInsightConfigs = new StorageInsightConfigsImpl(clientObject.getStorageInsightConfigs(), this);
@@ -440,7 +488,11 @@ public final class LogAnalyticsManager {
         return storageInsightConfigs;
     }
 
-    /** @return Resource collection API of SavedSearches. */
+    /**
+     * Gets the resource collection API of SavedSearches.
+     *
+     * @return Resource collection API of SavedSearches.
+     */
     public SavedSearches savedSearches() {
         if (this.savedSearches == null) {
             this.savedSearches = new SavedSearchesImpl(clientObject.getSavedSearches(), this);
@@ -448,7 +500,11 @@ public final class LogAnalyticsManager {
         return savedSearches;
     }
 
-    /** @return Resource collection API of AvailableServiceTiers. */
+    /**
+     * Gets the resource collection API of AvailableServiceTiers.
+     *
+     * @return Resource collection API of AvailableServiceTiers.
+     */
     public AvailableServiceTiers availableServiceTiers() {
         if (this.availableServiceTiers == null) {
             this.availableServiceTiers = new AvailableServiceTiersImpl(clientObject.getAvailableServiceTiers(), this);
@@ -456,7 +512,11 @@ public final class LogAnalyticsManager {
         return availableServiceTiers;
     }
 
-    /** @return Resource collection API of Gateways. */
+    /**
+     * Gets the resource collection API of Gateways.
+     *
+     * @return Resource collection API of Gateways.
+     */
     public Gateways gateways() {
         if (this.gateways == null) {
             this.gateways = new GatewaysImpl(clientObject.getGateways(), this);
@@ -464,7 +524,11 @@ public final class LogAnalyticsManager {
         return gateways;
     }
 
-    /** @return Resource collection API of Schemas. */
+    /**
+     * Gets the resource collection API of Schemas.
+     *
+     * @return Resource collection API of Schemas.
+     */
     public Schemas schemas() {
         if (this.schemas == null) {
             this.schemas = new SchemasImpl(clientObject.getSchemas(), this);
@@ -472,7 +536,11 @@ public final class LogAnalyticsManager {
         return schemas;
     }
 
-    /** @return Resource collection API of WorkspacePurges. */
+    /**
+     * Gets the resource collection API of WorkspacePurges.
+     *
+     * @return Resource collection API of WorkspacePurges.
+     */
     public WorkspacePurges workspacePurges() {
         if (this.workspacePurges == null) {
             this.workspacePurges = new WorkspacePurgesImpl(clientObject.getWorkspacePurges(), this);
@@ -480,7 +548,11 @@ public final class LogAnalyticsManager {
         return workspacePurges;
     }
 
-    /** @return Resource collection API of Clusters. */
+    /**
+     * Gets the resource collection API of Clusters.
+     *
+     * @return Resource collection API of Clusters.
+     */
     public Clusters clusters() {
         if (this.clusters == null) {
             this.clusters = new ClustersImpl(clientObject.getClusters(), this);
@@ -488,7 +560,11 @@ public final class LogAnalyticsManager {
         return clusters;
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -496,7 +572,11 @@ public final class LogAnalyticsManager {
         return operations;
     }
 
-    /** @return Resource collection API of Workspaces. */
+    /**
+     * Gets the resource collection API of Workspaces.
+     *
+     * @return Resource collection API of Workspaces.
+     */
     public Workspaces workspaces() {
         if (this.workspaces == null) {
             this.workspaces = new WorkspacesImpl(clientObject.getWorkspaces(), this);
@@ -504,7 +584,11 @@ public final class LogAnalyticsManager {
         return workspaces;
     }
 
-    /** @return Resource collection API of DeletedWorkspaces. */
+    /**
+     * Gets the resource collection API of DeletedWorkspaces.
+     *
+     * @return Resource collection API of DeletedWorkspaces.
+     */
     public DeletedWorkspaces deletedWorkspaces() {
         if (this.deletedWorkspaces == null) {
             this.deletedWorkspaces = new DeletedWorkspacesImpl(clientObject.getDeletedWorkspaces(), this);
@@ -512,7 +596,11 @@ public final class LogAnalyticsManager {
         return deletedWorkspaces;
     }
 
-    /** @return Resource collection API of Tables. */
+    /**
+     * Gets the resource collection API of Tables.
+     *
+     * @return Resource collection API of Tables.
+     */
     public Tables tables() {
         if (this.tables == null) {
             this.tables = new TablesImpl(clientObject.getTables(), this);

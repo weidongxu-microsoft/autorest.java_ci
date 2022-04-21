@@ -27,7 +27,11 @@ public final class SkuAvailability extends ExpandableStringEnum<SkuAvailability>
         return fromString(name, SkuAvailability.class);
     }
 
-    /** @return known SkuAvailability values. */
+    /**
+     * Gets known SkuAvailability values.
+     *
+     * @return known SkuAvailability values.
+     */
     public static Collection<SkuAvailability> values() {
         return values(SkuAvailability.class);
     }

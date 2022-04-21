@@ -284,7 +284,11 @@ public final class SearchManager {
         }
     }
 
-    /** @return Resource collection API of Operations. */
+    /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
@@ -292,7 +296,11 @@ public final class SearchManager {
         return operations;
     }
 
-    /** @return Resource collection API of AdminKeys. */
+    /**
+     * Gets the resource collection API of AdminKeys.
+     *
+     * @return Resource collection API of AdminKeys.
+     */
     public AdminKeys adminKeys() {
         if (this.adminKeys == null) {
             this.adminKeys = new AdminKeysImpl(clientObject.getAdminKeys(), this);
@@ -300,7 +308,11 @@ public final class SearchManager {
         return adminKeys;
     }
 
-    /** @return Resource collection API of QueryKeys. */
+    /**
+     * Gets the resource collection API of QueryKeys.
+     *
+     * @return Resource collection API of QueryKeys.
+     */
     public QueryKeys queryKeys() {
         if (this.queryKeys == null) {
             this.queryKeys = new QueryKeysImpl(clientObject.getQueryKeys(), this);
@@ -308,7 +320,11 @@ public final class SearchManager {
         return queryKeys;
     }
 
-    /** @return Resource collection API of Services. */
+    /**
+     * Gets the resource collection API of Services.
+     *
+     * @return Resource collection API of Services.
+     */
     public Services services() {
         if (this.services == null) {
             this.services = new ServicesImpl(clientObject.getServices(), this);
@@ -316,7 +332,11 @@ public final class SearchManager {
         return services;
     }
 
-    /** @return Resource collection API of PrivateLinkResources. */
+    /**
+     * Gets the resource collection API of PrivateLinkResources.
+     *
+     * @return Resource collection API of PrivateLinkResources.
+     */
     public PrivateLinkResources privateLinkResources() {
         if (this.privateLinkResources == null) {
             this.privateLinkResources = new PrivateLinkResourcesImpl(clientObject.getPrivateLinkResources(), this);
@@ -324,7 +344,11 @@ public final class SearchManager {
         return privateLinkResources;
     }
 
-    /** @return Resource collection API of PrivateEndpointConnections. */
+    /**
+     * Gets the resource collection API of PrivateEndpointConnections.
+     *
+     * @return Resource collection API of PrivateEndpointConnections.
+     */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
             this.privateEndpointConnections =
@@ -333,7 +357,11 @@ public final class SearchManager {
         return privateEndpointConnections;
     }
 
-    /** @return Resource collection API of SharedPrivateLinkResources. */
+    /**
+     * Gets the resource collection API of SharedPrivateLinkResources.
+     *
+     * @return Resource collection API of SharedPrivateLinkResources.
+     */
     public SharedPrivateLinkResources sharedPrivateLinkResources() {
         if (this.sharedPrivateLinkResources == null) {
             this.sharedPrivateLinkResources =

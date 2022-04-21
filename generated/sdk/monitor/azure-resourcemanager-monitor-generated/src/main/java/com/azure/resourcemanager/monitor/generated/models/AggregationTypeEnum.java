@@ -36,7 +36,11 @@ public final class AggregationTypeEnum extends ExpandableStringEnum<AggregationT
         return fromString(name, AggregationTypeEnum.class);
     }
 
-    /** @return known AggregationTypeEnum values. */
+    /**
+     * Gets known AggregationTypeEnum values.
+     *
+     * @return known AggregationTypeEnum values.
+     */
     public static Collection<AggregationTypeEnum> values() {
         return values(AggregationTypeEnum.class);
     }

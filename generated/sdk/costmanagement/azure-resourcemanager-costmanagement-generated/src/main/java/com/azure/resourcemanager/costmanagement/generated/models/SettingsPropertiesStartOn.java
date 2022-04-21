@@ -30,7 +30,11 @@ public final class SettingsPropertiesStartOn extends ExpandableStringEnum<Settin
         return fromString(name, SettingsPropertiesStartOn.class);
     }
 
-    /** @return known SettingsPropertiesStartOn values. */
+    /**
+     * Gets known SettingsPropertiesStartOn values.
+     *
+     * @return known SettingsPropertiesStartOn values.
+     */
     public static Collection<SettingsPropertiesStartOn> values() {
         return values(SettingsPropertiesStartOn.class);
     }

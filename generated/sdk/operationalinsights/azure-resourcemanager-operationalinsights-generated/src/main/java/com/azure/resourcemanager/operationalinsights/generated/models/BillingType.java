@@ -27,7 +27,11 @@ public final class BillingType extends ExpandableStringEnum<BillingType> {
         return fromString(name, BillingType.class);
     }
 
-    /** @return known BillingType values. */
+    /**
+     * Gets known BillingType values.
+     *
+     * @return known BillingType values.
+     */
     public static Collection<BillingType> values() {
         return values(BillingType.class);
     }
