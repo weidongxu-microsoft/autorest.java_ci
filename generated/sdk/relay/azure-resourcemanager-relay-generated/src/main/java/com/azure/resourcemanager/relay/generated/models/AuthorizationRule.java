@@ -5,6 +5,8 @@
 package com.azure.resourcemanager.relay.generated.models;
 
 import com.azure.core.http.rest.Response;
+import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.relay.generated.fluent.models.AuthorizationRuleInner;
 import java.util.List;
@@ -33,11 +35,39 @@ public interface AuthorizationRule {
     String type();
 
     /**
+     * Gets the systemData property: The system meta data relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
+     * Gets the location property: The geo-location where the resource lives.
+     *
+     * @return the location value.
+     */
+    String location();
+
+    /**
      * Gets the rights property: The rights associated with the rule.
      *
      * @return the rights value.
      */
     List<AccessRights> rights();
+
+    /**
+     * Gets the region of the resource.
+     *
+     * @return the region of the resource.
+     */
+    Region region();
+
+    /**
+     * Gets the name of the resource region.
+     *
+     * @return the name of the resource region.
+     */
+    String regionName();
 
     /**
      * Gets the inner com.azure.resourcemanager.relay.generated.fluent.models.AuthorizationRuleInner object.
@@ -48,10 +78,7 @@ public interface AuthorizationRule {
 
     /** The entirety of the AuthorizationRule definition. */
     interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithParentResource,
-            DefinitionStages.WithRights,
-            DefinitionStages.WithCreate {
+        extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
     /** The AuthorizationRule definition stages. */
     interface DefinitionStages {
@@ -67,23 +94,13 @@ public interface AuthorizationRule {
              * @param namespaceName The namespace name.
              * @return the next definition stage.
              */
-            WithRights withExistingNamespace(String resourceGroupName, String namespaceName);
-        }
-        /** The stage of the AuthorizationRule definition allowing to specify rights. */
-        interface WithRights {
-            /**
-             * Specifies the rights property: The rights associated with the rule..
-             *
-             * @param rights The rights associated with the rule.
-             * @return the next definition stage.
-             */
-            WithCreate withRights(List<AccessRights> rights);
+            WithCreate withExistingNamespace(String resourceGroupName, String namespaceName);
         }
         /**
          * The stage of the AuthorizationRule definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate {
+        interface WithCreate extends DefinitionStages.WithRights {
             /**
              * Executes the create request.
              *
@@ -98,6 +115,16 @@ public interface AuthorizationRule {
              * @return the created resource.
              */
             AuthorizationRule create(Context context);
+        }
+        /** The stage of the AuthorizationRule definition allowing to specify rights. */
+        interface WithRights {
+            /**
+             * Specifies the rights property: The rights associated with the rule..
+             *
+             * @param rights The rights associated with the rule.
+             * @return the next definition stage.
+             */
+            WithCreate withRights(List<AccessRights> rights);
         }
     }
     /**

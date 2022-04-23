@@ -8,7 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Parameters supplied to the regenerate authorization rule operation, specifies which key neeeds to be reset. */
+/** Parameters supplied to the regenerate authorization rule operation, specifies which key needs to be reset. */
 @Fluent
 public final class RegenerateAccessKeyParameters {
     /*

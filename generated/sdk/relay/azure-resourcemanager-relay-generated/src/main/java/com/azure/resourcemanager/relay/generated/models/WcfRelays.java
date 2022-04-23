@@ -12,86 +12,6 @@ import com.azure.resourcemanager.relay.generated.fluent.models.AuthorizationRule
 /** Resource collection API of WcfRelays. */
 public interface WcfRelays {
     /**
-     * Lists the WCF relays within the namespace.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation as paginated response with {@link PagedIterable}.
-     */
-    PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName);
-
-    /**
-     * Lists the WCF relays within the namespace.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation as paginated response with {@link PagedIterable}.
-     */
-    PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName, Context context);
-
-    /**
-     * Deletes a WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void delete(String resourceGroupName, String namespaceName, String relayName);
-
-    /**
-     * Deletes a WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    Response<Void> deleteWithResponse(
-        String resourceGroupName, String namespaceName, String relayName, Context context);
-
-    /**
-     * Returns the description for the specified WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource.
-     */
-    WcfRelay get(String resourceGroupName, String namespaceName, String relayName);
-
-    /**
-     * Returns the description for the specified WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource along with {@link Response}.
-     */
-    Response<WcfRelay> getWithResponse(
-        String resourceGroupName, String namespaceName, String relayName, Context context);
-
-    /**
      * Authorization rules for a WCF relay.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
@@ -131,7 +51,7 @@ public interface WcfRelays {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return single item in a List or Get AuthorizationRule operation.
      */
     AuthorizationRule createOrUpdateAuthorizationRule(
         String resourceGroupName,
@@ -152,7 +72,7 @@ public interface WcfRelays {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule along with {@link Response}.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response}.
      */
     Response<AuthorizationRule> createOrUpdateAuthorizationRuleWithResponse(
         String resourceGroupName,
@@ -306,6 +226,86 @@ public interface WcfRelays {
         String authorizationRuleName,
         RegenerateAccessKeyParameters parameters,
         Context context);
+
+    /**
+     * Lists the WCF relays within the namespace.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the list WCF relay operation as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName);
+
+    /**
+     * Lists the WCF relays within the namespace.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the list WCF relay operation as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName, Context context);
+
+    /**
+     * Deletes a WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void delete(String resourceGroupName, String namespaceName, String relayName);
+
+    /**
+     * Deletes a WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> deleteWithResponse(
+        String resourceGroupName, String namespaceName, String relayName, Context context);
+
+    /**
+     * Returns the description for the specified WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of the WCF relay resource.
+     */
+    WcfRelay get(String resourceGroupName, String namespaceName, String relayName);
+
+    /**
+     * Returns the description for the specified WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of the WCF relay resource along with {@link Response}.
+     */
+    Response<WcfRelay> getWithResponse(
+        String resourceGroupName, String namespaceName, String relayName, Context context);
 
     /**
      * Returns the description for the specified WCF relay.

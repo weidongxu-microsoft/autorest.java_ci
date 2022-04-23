@@ -13,12 +13,14 @@ import com.azure.resourcemanager.relay.generated.fluent.NamespacesClient;
 import com.azure.resourcemanager.relay.generated.fluent.models.AccessKeysInner;
 import com.azure.resourcemanager.relay.generated.fluent.models.AuthorizationRuleInner;
 import com.azure.resourcemanager.relay.generated.fluent.models.CheckNameAvailabilityResultInner;
+import com.azure.resourcemanager.relay.generated.fluent.models.NetworkRuleSetInner;
 import com.azure.resourcemanager.relay.generated.fluent.models.RelayNamespaceInner;
 import com.azure.resourcemanager.relay.generated.models.AccessKeys;
 import com.azure.resourcemanager.relay.generated.models.AuthorizationRule;
 import com.azure.resourcemanager.relay.generated.models.CheckNameAvailability;
 import com.azure.resourcemanager.relay.generated.models.CheckNameAvailabilityResult;
 import com.azure.resourcemanager.relay.generated.models.Namespaces;
+import com.azure.resourcemanager.relay.generated.models.NetworkRuleSet;
 import com.azure.resourcemanager.relay.generated.models.RegenerateAccessKeyParameters;
 import com.azure.resourcemanager.relay.generated.models.RelayNamespace;
 
@@ -33,82 +35,6 @@ public final class NamespacesImpl implements Namespaces {
         NamespacesClient innerClient, com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
-    }
-
-    public CheckNameAvailabilityResult checkNameAvailability(CheckNameAvailability parameters) {
-        CheckNameAvailabilityResultInner inner = this.serviceClient().checkNameAvailability(parameters);
-        if (inner != null) {
-            return new CheckNameAvailabilityResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(
-        CheckNameAvailability parameters, Context context) {
-        Response<CheckNameAvailabilityResultInner> inner =
-            this.serviceClient().checkNameAvailabilityWithResponse(parameters, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new CheckNameAvailabilityResultImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
-    public PagedIterable<RelayNamespace> list() {
-        PagedIterable<RelayNamespaceInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<RelayNamespace> list(Context context) {
-        PagedIterable<RelayNamespaceInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<RelayNamespace> listByResourceGroup(String resourceGroupName) {
-        PagedIterable<RelayNamespaceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<RelayNamespace> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<RelayNamespaceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
-    }
-
-    public void deleteByResourceGroup(String resourceGroupName, String namespaceName) {
-        this.serviceClient().delete(resourceGroupName, namespaceName);
-    }
-
-    public void delete(String resourceGroupName, String namespaceName, Context context) {
-        this.serviceClient().delete(resourceGroupName, namespaceName, context);
-    }
-
-    public RelayNamespace getByResourceGroup(String resourceGroupName, String namespaceName) {
-        RelayNamespaceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, namespaceName);
-        if (inner != null) {
-            return new RelayNamespaceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<RelayNamespace> getByResourceGroupWithResponse(
-        String resourceGroupName, String namespaceName, Context context) {
-        Response<RelayNamespaceInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, namespaceName, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new RelayNamespaceImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
     }
 
     public PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName) {
@@ -218,6 +144,134 @@ public final class NamespacesImpl implements Namespaces {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CheckNameAvailabilityResult checkNameAvailability(CheckNameAvailability parameters) {
+        CheckNameAvailabilityResultInner inner = this.serviceClient().checkNameAvailability(parameters);
+        if (inner != null) {
+            return new CheckNameAvailabilityResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(
+        CheckNameAvailability parameters, Context context) {
+        Response<CheckNameAvailabilityResultInner> inner =
+            this.serviceClient().checkNameAvailabilityWithResponse(parameters, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new CheckNameAvailabilityResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PagedIterable<RelayNamespace> list() {
+        PagedIterable<RelayNamespaceInner> inner = this.serviceClient().list();
+        return Utils.mapPage(inner, inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<RelayNamespace> list(Context context) {
+        PagedIterable<RelayNamespaceInner> inner = this.serviceClient().list(context);
+        return Utils.mapPage(inner, inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<RelayNamespace> listByResourceGroup(String resourceGroupName) {
+        PagedIterable<RelayNamespaceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
+        return Utils.mapPage(inner, inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<RelayNamespace> listByResourceGroup(String resourceGroupName, Context context) {
+        PagedIterable<RelayNamespaceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        return Utils.mapPage(inner, inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
+    }
+
+    public void deleteByResourceGroup(String resourceGroupName, String namespaceName) {
+        this.serviceClient().delete(resourceGroupName, namespaceName);
+    }
+
+    public void delete(String resourceGroupName, String namespaceName, Context context) {
+        this.serviceClient().delete(resourceGroupName, namespaceName, context);
+    }
+
+    public RelayNamespace getByResourceGroup(String resourceGroupName, String namespaceName) {
+        RelayNamespaceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, namespaceName);
+        if (inner != null) {
+            return new RelayNamespaceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<RelayNamespace> getByResourceGroupWithResponse(
+        String resourceGroupName, String namespaceName, Context context) {
+        Response<RelayNamespaceInner> inner =
+            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, namespaceName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new RelayNamespaceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkRuleSet createOrUpdateNetworkRuleSet(
+        String resourceGroupName, String namespaceName, NetworkRuleSetInner parameters) {
+        NetworkRuleSetInner inner =
+            this.serviceClient().createOrUpdateNetworkRuleSet(resourceGroupName, namespaceName, parameters);
+        if (inner != null) {
+            return new NetworkRuleSetImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<NetworkRuleSet> createOrUpdateNetworkRuleSetWithResponse(
+        String resourceGroupName, String namespaceName, NetworkRuleSetInner parameters, Context context) {
+        Response<NetworkRuleSetInner> inner =
+            this
+                .serviceClient()
+                .createOrUpdateNetworkRuleSetWithResponse(resourceGroupName, namespaceName, parameters, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new NetworkRuleSetImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkRuleSet getNetworkRuleSet(String resourceGroupName, String namespaceName) {
+        NetworkRuleSetInner inner = this.serviceClient().getNetworkRuleSet(resourceGroupName, namespaceName);
+        if (inner != null) {
+            return new NetworkRuleSetImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<NetworkRuleSet> getNetworkRuleSetWithResponse(
+        String resourceGroupName, String namespaceName, Context context) {
+        Response<NetworkRuleSetInner> inner =
+            this.serviceClient().getNetworkRuleSetWithResponse(resourceGroupName, namespaceName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new NetworkRuleSetImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }

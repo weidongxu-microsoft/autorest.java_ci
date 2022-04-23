@@ -32,50 +32,6 @@ public final class WcfRelaysImpl implements WcfRelays {
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName) {
-        PagedIterable<WcfRelayInner> inner = this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
-        return Utils.mapPage(inner, inner1 -> new WcfRelayImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName, Context context) {
-        PagedIterable<WcfRelayInner> inner =
-            this.serviceClient().listByNamespace(resourceGroupName, namespaceName, context);
-        return Utils.mapPage(inner, inner1 -> new WcfRelayImpl(inner1, this.manager()));
-    }
-
-    public void delete(String resourceGroupName, String namespaceName, String relayName) {
-        this.serviceClient().delete(resourceGroupName, namespaceName, relayName);
-    }
-
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String namespaceName, String relayName, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, relayName, context);
-    }
-
-    public WcfRelay get(String resourceGroupName, String namespaceName, String relayName) {
-        WcfRelayInner inner = this.serviceClient().get(resourceGroupName, namespaceName, relayName);
-        if (inner != null) {
-            return new WcfRelayImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<WcfRelay> getWithResponse(
-        String resourceGroupName, String namespaceName, String relayName, Context context) {
-        Response<WcfRelayInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, namespaceName, relayName, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new WcfRelayImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
     public PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, String relayName) {
         PagedIterable<AuthorizationRuleInner> inner =
@@ -252,6 +208,50 @@ public final class WcfRelaysImpl implements WcfRelays {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName) {
+        PagedIterable<WcfRelayInner> inner = this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
+        return Utils.mapPage(inner, inner1 -> new WcfRelayImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName, Context context) {
+        PagedIterable<WcfRelayInner> inner =
+            this.serviceClient().listByNamespace(resourceGroupName, namespaceName, context);
+        return Utils.mapPage(inner, inner1 -> new WcfRelayImpl(inner1, this.manager()));
+    }
+
+    public void delete(String resourceGroupName, String namespaceName, String relayName) {
+        this.serviceClient().delete(resourceGroupName, namespaceName, relayName);
+    }
+
+    public Response<Void> deleteWithResponse(
+        String resourceGroupName, String namespaceName, String relayName, Context context) {
+        return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, relayName, context);
+    }
+
+    public WcfRelay get(String resourceGroupName, String namespaceName, String relayName) {
+        WcfRelayInner inner = this.serviceClient().get(resourceGroupName, namespaceName, relayName);
+        if (inner != null) {
+            return new WcfRelayImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<WcfRelay> getWithResponse(
+        String resourceGroupName, String namespaceName, String relayName, Context context) {
+        Response<WcfRelayInner> inner =
+            this.serviceClient().getWithResponse(resourceGroupName, namespaceName, relayName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new WcfRelayImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }

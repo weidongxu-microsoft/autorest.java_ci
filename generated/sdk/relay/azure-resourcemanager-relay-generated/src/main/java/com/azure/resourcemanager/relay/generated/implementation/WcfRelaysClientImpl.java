@@ -67,70 +67,6 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces"
-                + "/{namespaceName}/wcfRelays")
-        @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<WcfRelaysListResult>> listByNamespace(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("namespaceName") String namespaceName,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces"
-                + "/{namespaceName}/wcfRelays/{relayName}")
-        @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<WcfRelayInner>> createOrUpdate(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("namespaceName") String namespaceName,
-            @PathParam("relayName") String relayName,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") WcfRelayInner parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces"
-                + "/{namespaceName}/wcfRelays/{relayName}")
-        @ExpectedResponses({200, 204})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Void>> delete(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("namespaceName") String namespaceName,
-            @PathParam("relayName") String relayName,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces"
-                + "/{namespaceName}/wcfRelays/{relayName}")
-        @ExpectedResponses({200, 204})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<WcfRelayInner>> get(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("namespaceName") String namespaceName,
-            @PathParam("relayName") String relayName,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces"
                 + "/{namespaceName}/wcfRelays/{relayName}/authorizationRules")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -232,12 +168,66 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Get("{nextLink}")
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces"
+                + "/{namespaceName}/wcfRelays")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<WcfRelaysListResult>> listByNamespaceNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
+        Mono<Response<WcfRelaysListResult>> listByNamespace(
             @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("namespaceName") String namespaceName,
+            @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Put(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces"
+                + "/{namespaceName}/wcfRelays/{relayName}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<WcfRelayInner>> createOrUpdate(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("namespaceName") String namespaceName,
+            @PathParam("relayName") String relayName,
+            @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId,
+            @BodyParam("application/json") WcfRelayInner parameters,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Delete(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces"
+                + "/{namespaceName}/wcfRelays/{relayName}")
+        @ExpectedResponses({200, 204})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<Void>> delete(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("namespaceName") String namespaceName,
+            @PathParam("relayName") String relayName,
+            @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces"
+                + "/{namespaceName}/wcfRelays/{relayName}")
+        @ExpectedResponses({200, 204})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<WcfRelayInner>> get(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("namespaceName") String namespaceName,
+            @PathParam("relayName") String relayName,
+            @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -250,690 +240,16 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
             @HostParam("$host") String endpoint,
             @HeaderParam("Accept") String accept,
             Context context);
-    }
 
-    /**
-     * Lists the WCF relays within the namespace.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<WcfRelayInner>> listByNamespaceSinglePageAsync(
-        String resourceGroupName, String namespaceName) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (namespaceName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listByNamespace(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            namespaceName,
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
-            .<PagedResponse<WcfRelayInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
-            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
-    }
-
-    /**
-     * Lists the WCF relays within the namespace.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<WcfRelayInner>> listByNamespaceSinglePageAsync(
-        String resourceGroupName, String namespaceName, Context context) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (namespaceName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        context = this.client.mergeContext(context);
-        return service
-            .listByNamespace(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                namespaceName,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
-    }
-
-    /**
-     * Lists the WCF relays within the namespace.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation as paginated response with {@link PagedFlux}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<WcfRelayInner> listByNamespaceAsync(String resourceGroupName, String namespaceName) {
-        return new PagedFlux<>(
-            () -> listByNamespaceSinglePageAsync(resourceGroupName, namespaceName),
-            nextLink -> listByNamespaceNextSinglePageAsync(nextLink));
-    }
-
-    /**
-     * Lists the WCF relays within the namespace.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation as paginated response with {@link PagedFlux}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<WcfRelayInner> listByNamespaceAsync(
-        String resourceGroupName, String namespaceName, Context context) {
-        return new PagedFlux<>(
-            () -> listByNamespaceSinglePageAsync(resourceGroupName, namespaceName, context),
-            nextLink -> listByNamespaceNextSinglePageAsync(nextLink, context));
-    }
-
-    /**
-     * Lists the WCF relays within the namespace.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation as paginated response with {@link PagedIterable}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<WcfRelayInner> listByNamespace(String resourceGroupName, String namespaceName) {
-        return new PagedIterable<>(listByNamespaceAsync(resourceGroupName, namespaceName));
-    }
-
-    /**
-     * Lists the WCF relays within the namespace.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation as paginated response with {@link PagedIterable}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<WcfRelayInner> listByNamespace(
-        String resourceGroupName, String namespaceName, Context context) {
-        return new PagedIterable<>(listByNamespaceAsync(resourceGroupName, namespaceName, context));
-    }
-
-    /**
-     * Creates or updates a WCF relay. This operation is idempotent.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @param parameters Parameters supplied to create a WCF relay.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource along with {@link Response} on successful completion of {@link
-     *     Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<WcfRelayInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String namespaceName, String relayName, WcfRelayInner parameters) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (namespaceName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
-        }
-        if (relayName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter relayName is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        if (parameters == null) {
-            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
-        } else {
-            parameters.validate();
-        }
-        final String accept = "application/json";
-        return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .createOrUpdate(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            namespaceName,
-                            relayName,
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
-            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
-    }
-
-    /**
-     * Creates or updates a WCF relay. This operation is idempotent.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @param parameters Parameters supplied to create a WCF relay.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource along with {@link Response} on successful completion of {@link
-     *     Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<WcfRelayInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String namespaceName, String relayName, WcfRelayInner parameters, Context context) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (namespaceName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
-        }
-        if (relayName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter relayName is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        if (parameters == null) {
-            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
-        } else {
-            parameters.validate();
-        }
-        final String accept = "application/json";
-        context = this.client.mergeContext(context);
-        return service
-            .createOrUpdate(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                namespaceName,
-                relayName,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
-    }
-
-    /**
-     * Creates or updates a WCF relay. This operation is idempotent.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @param parameters Parameters supplied to create a WCF relay.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<WcfRelayInner> createOrUpdateAsync(
-        String resourceGroupName, String namespaceName, String relayName, WcfRelayInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, relayName, parameters)
-            .flatMap(
-                (Response<WcfRelayInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
-    }
-
-    /**
-     * Creates or updates a WCF relay. This operation is idempotent.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @param parameters Parameters supplied to create a WCF relay.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public WcfRelayInner createOrUpdate(
-        String resourceGroupName, String namespaceName, String relayName, WcfRelayInner parameters) {
-        return createOrUpdateAsync(resourceGroupName, namespaceName, relayName, parameters).block();
-    }
-
-    /**
-     * Creates or updates a WCF relay. This operation is idempotent.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @param parameters Parameters supplied to create a WCF relay.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WcfRelayInner> createOrUpdateWithResponse(
-        String resourceGroupName, String namespaceName, String relayName, WcfRelayInner parameters, Context context) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, relayName, parameters, context)
-            .block();
-    }
-
-    /**
-     * Deletes a WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Void>> deleteWithResponseAsync(
-        String resourceGroupName, String namespaceName, String relayName) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (namespaceName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
-        }
-        if (relayName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter relayName is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .delete(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            namespaceName,
-                            relayName,
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
-            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
-    }
-
-    /**
-     * Deletes a WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response} on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Void>> deleteWithResponseAsync(
-        String resourceGroupName, String namespaceName, String relayName, Context context) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (namespaceName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
-        }
-        if (relayName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter relayName is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        context = this.client.mergeContext(context);
-        return service
-            .delete(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                namespaceName,
-                relayName,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context);
-    }
-
-    /**
-     * Deletes a WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return A {@link Mono} that completes when a successful response is received.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, String relayName) {
-        return deleteWithResponseAsync(resourceGroupName, namespaceName, relayName)
-            .flatMap((Response<Void> res) -> Mono.empty());
-    }
-
-    /**
-     * Deletes a WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String namespaceName, String relayName) {
-        deleteAsync(resourceGroupName, namespaceName, relayName).block();
-    }
-
-    /**
-     * Deletes a WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String namespaceName, String relayName, Context context) {
-        return deleteWithResponseAsync(resourceGroupName, namespaceName, relayName, context).block();
-    }
-
-    /**
-     * Returns the description for the specified WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource along with {@link Response} on successful completion of {@link
-     *     Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<WcfRelayInner>> getWithResponseAsync(
-        String resourceGroupName, String namespaceName, String relayName) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (namespaceName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
-        }
-        if (relayName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter relayName is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            namespaceName,
-                            relayName,
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
-            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
-    }
-
-    /**
-     * Returns the description for the specified WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource along with {@link Response} on successful completion of {@link
-     *     Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<WcfRelayInner>> getWithResponseAsync(
-        String resourceGroupName, String namespaceName, String relayName, Context context) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (namespaceName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
-        }
-        if (relayName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter relayName is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        context = this.client.mergeContext(context);
-        return service
-            .get(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                namespaceName,
-                relayName,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context);
-    }
-
-    /**
-     * Returns the description for the specified WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<WcfRelayInner> getAsync(String resourceGroupName, String namespaceName, String relayName) {
-        return getWithResponseAsync(resourceGroupName, namespaceName, relayName)
-            .flatMap(
-                (Response<WcfRelayInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
-    }
-
-    /**
-     * Returns the description for the specified WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public WcfRelayInner get(String resourceGroupName, String namespaceName, String relayName) {
-        return getAsync(resourceGroupName, namespaceName, relayName).block();
-    }
-
-    /**
-     * Returns the description for the specified WCF relay.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param relayName The relay name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WcfRelayInner> getWithResponse(
-        String resourceGroupName, String namespaceName, String relayName, Context context) {
-        return getWithResponseAsync(resourceGroupName, namespaceName, relayName, context).block();
+        @Headers({"Content-Type: application/json"})
+        @Get("{nextLink}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<WcfRelaysListResult>> listByNamespaceNext(
+            @PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept,
+            Context context);
     }
 
     /**
@@ -1145,8 +461,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> createOrUpdateAuthorizationRuleWithResponseAsync(
@@ -1217,8 +533,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> createOrUpdateAuthorizationRuleWithResponseAsync(
@@ -1286,7 +602,7 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule on successful completion of {@link Mono}.
+     * @return single item in a List or Get AuthorizationRule operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AuthorizationRuleInner> createOrUpdateAuthorizationRuleAsync(
@@ -1318,7 +634,7 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule.
+     * @return single item in a List or Get AuthorizationRule operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public AuthorizationRuleInner createOrUpdateAuthorizationRule(
@@ -1344,7 +660,7 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a namespace authorization rule along with {@link Response}.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AuthorizationRuleInner> createOrUpdateAuthorizationRuleWithResponse(
@@ -2143,9 +1459,10 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
     }
 
     /**
-     * Get the next page of items.
+     * Lists the WCF relays within the namespace.
      *
-     * @param nextLink The nextLink parameter.
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2153,19 +1470,40 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<WcfRelayInner>> listByNamespaceNextSinglePageAsync(String nextLink) {
-        if (nextLink == null) {
-            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
-        }
+    private Mono<PagedResponse<WcfRelayInner>> listByNamespaceSinglePageAsync(
+        String resourceGroupName, String namespaceName) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
                     new IllegalArgumentException(
                         "Parameter this.client.getEndpoint() is required and cannot be null."));
         }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (namespaceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.listByNamespaceNext(nextLink, this.client.getEndpoint(), accept, context))
+            .withContext(
+                context ->
+                    service
+                        .listByNamespace(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            namespaceName,
+                            this.client.getApiVersion(),
+                            this.client.getSubscriptionId(),
+                            accept,
+                            context))
             .<PagedResponse<WcfRelayInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -2179,9 +1517,10 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
     }
 
     /**
-     * Get the next page of items.
+     * Lists the WCF relays within the namespace.
      *
-     * @param nextLink The nextLink parameter.
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2190,20 +1529,38 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<WcfRelayInner>> listByNamespaceNextSinglePageAsync(String nextLink, Context context) {
-        if (nextLink == null) {
-            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
-        }
+    private Mono<PagedResponse<WcfRelayInner>> listByNamespaceSinglePageAsync(
+        String resourceGroupName, String namespaceName, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
                     new IllegalArgumentException(
                         "Parameter this.client.getEndpoint() is required and cannot be null."));
         }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (namespaceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByNamespaceNext(nextLink, this.client.getEndpoint(), accept, context)
+            .listByNamespace(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                namespaceName,
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                accept,
+                context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -2213,6 +1570,576 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null));
+    }
+
+    /**
+     * Lists the WCF relays within the namespace.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the list WCF relay operation as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<WcfRelayInner> listByNamespaceAsync(String resourceGroupName, String namespaceName) {
+        return new PagedFlux<>(
+            () -> listByNamespaceSinglePageAsync(resourceGroupName, namespaceName),
+            nextLink -> listByNamespaceNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Lists the WCF relays within the namespace.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the list WCF relay operation as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<WcfRelayInner> listByNamespaceAsync(
+        String resourceGroupName, String namespaceName, Context context) {
+        return new PagedFlux<>(
+            () -> listByNamespaceSinglePageAsync(resourceGroupName, namespaceName, context),
+            nextLink -> listByNamespaceNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * Lists the WCF relays within the namespace.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the list WCF relay operation as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<WcfRelayInner> listByNamespace(String resourceGroupName, String namespaceName) {
+        return new PagedIterable<>(listByNamespaceAsync(resourceGroupName, namespaceName));
+    }
+
+    /**
+     * Lists the WCF relays within the namespace.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the list WCF relay operation as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<WcfRelayInner> listByNamespace(
+        String resourceGroupName, String namespaceName, Context context) {
+        return new PagedIterable<>(listByNamespaceAsync(resourceGroupName, namespaceName, context));
+    }
+
+    /**
+     * Creates or updates a WCF relay. This operation is idempotent.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @param parameters Parameters supplied to create a WCF relay.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of the WCF relay resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<WcfRelayInner>> createOrUpdateWithResponseAsync(
+        String resourceGroupName, String namespaceName, String relayName, WcfRelayInner parameters) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (namespaceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
+        }
+        if (relayName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter relayName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .createOrUpdate(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            namespaceName,
+                            relayName,
+                            this.client.getApiVersion(),
+                            this.client.getSubscriptionId(),
+                            parameters,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Creates or updates a WCF relay. This operation is idempotent.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @param parameters Parameters supplied to create a WCF relay.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of the WCF relay resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<WcfRelayInner>> createOrUpdateWithResponseAsync(
+        String resourceGroupName, String namespaceName, String relayName, WcfRelayInner parameters, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (namespaceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
+        }
+        if (relayName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter relayName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .createOrUpdate(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                namespaceName,
+                relayName,
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                parameters,
+                accept,
+                context);
+    }
+
+    /**
+     * Creates or updates a WCF relay. This operation is idempotent.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @param parameters Parameters supplied to create a WCF relay.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of the WCF relay resource on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<WcfRelayInner> createOrUpdateAsync(
+        String resourceGroupName, String namespaceName, String relayName, WcfRelayInner parameters) {
+        return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, relayName, parameters)
+            .flatMap(
+                (Response<WcfRelayInner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Creates or updates a WCF relay. This operation is idempotent.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @param parameters Parameters supplied to create a WCF relay.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of the WCF relay resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public WcfRelayInner createOrUpdate(
+        String resourceGroupName, String namespaceName, String relayName, WcfRelayInner parameters) {
+        return createOrUpdateAsync(resourceGroupName, namespaceName, relayName, parameters).block();
+    }
+
+    /**
+     * Creates or updates a WCF relay. This operation is idempotent.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @param parameters Parameters supplied to create a WCF relay.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of the WCF relay resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<WcfRelayInner> createOrUpdateWithResponse(
+        String resourceGroupName, String namespaceName, String relayName, WcfRelayInner parameters, Context context) {
+        return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, relayName, parameters, context)
+            .block();
+    }
+
+    /**
+     * Deletes a WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Void>> deleteWithResponseAsync(
+        String resourceGroupName, String namespaceName, String relayName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (namespaceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
+        }
+        if (relayName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter relayName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .delete(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            namespaceName,
+                            relayName,
+                            this.client.getApiVersion(),
+                            this.client.getSubscriptionId(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Deletes a WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Void>> deleteWithResponseAsync(
+        String resourceGroupName, String namespaceName, String relayName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (namespaceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
+        }
+        if (relayName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter relayName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .delete(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                namespaceName,
+                relayName,
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                accept,
+                context);
+    }
+
+    /**
+     * Deletes a WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, String relayName) {
+        return deleteWithResponseAsync(resourceGroupName, namespaceName, relayName)
+            .flatMap((Response<Void> res) -> Mono.empty());
+    }
+
+    /**
+     * Deletes a WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String namespaceName, String relayName) {
+        deleteAsync(resourceGroupName, namespaceName, relayName).block();
+    }
+
+    /**
+     * Deletes a WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<Void> deleteWithResponse(
+        String resourceGroupName, String namespaceName, String relayName, Context context) {
+        return deleteWithResponseAsync(resourceGroupName, namespaceName, relayName, context).block();
+    }
+
+    /**
+     * Returns the description for the specified WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of the WCF relay resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<WcfRelayInner>> getWithResponseAsync(
+        String resourceGroupName, String namespaceName, String relayName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (namespaceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
+        }
+        if (relayName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter relayName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .get(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            namespaceName,
+                            relayName,
+                            this.client.getApiVersion(),
+                            this.client.getSubscriptionId(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Returns the description for the specified WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of the WCF relay resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<WcfRelayInner>> getWithResponseAsync(
+        String resourceGroupName, String namespaceName, String relayName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (namespaceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
+        }
+        if (relayName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter relayName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .get(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                namespaceName,
+                relayName,
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                accept,
+                context);
+    }
+
+    /**
+     * Returns the description for the specified WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of the WCF relay resource on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<WcfRelayInner> getAsync(String resourceGroupName, String namespaceName, String relayName) {
+        return getWithResponseAsync(resourceGroupName, namespaceName, relayName)
+            .flatMap(
+                (Response<WcfRelayInner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Returns the description for the specified WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of the WCF relay resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public WcfRelayInner get(String resourceGroupName, String namespaceName, String relayName) {
+        return getAsync(resourceGroupName, namespaceName, relayName).block();
+    }
+
+    /**
+     * Returns the description for the specified WCF relay.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param relayName The relay name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of the WCF relay resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<WcfRelayInner> getWithResponse(
+        String resourceGroupName, String namespaceName, String relayName, Context context) {
+        return getWithResponseAsync(resourceGroupName, namespaceName, relayName, context).block();
     }
 
     /**
@@ -2279,6 +2206,79 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
         context = this.client.mergeContext(context);
         return service
             .listAuthorizationRulesNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the list WCF relay operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<WcfRelayInner>> listByNamespaceNextSinglePageAsync(String nextLink) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(context -> service.listByNamespaceNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<WcfRelayInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the list WCF relay operation along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<WcfRelayInner>> listByNamespaceNextSinglePageAsync(String nextLink, Context context) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .listByNamespaceNext(nextLink, this.client.getEndpoint(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
