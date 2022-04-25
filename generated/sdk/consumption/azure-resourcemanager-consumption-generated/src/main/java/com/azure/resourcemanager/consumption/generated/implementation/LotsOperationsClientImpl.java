@@ -129,8 +129,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft
+     * Customer Agreements (MCA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -181,8 +181,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft
+     * Customer Agreements (MCA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -231,8 +231,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft
+     * Customer Agreements (MCA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -249,8 +249,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft
+     * Customer Agreements (MCA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -269,8 +269,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft
+     * Customer Agreements (MCA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -285,8 +285,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft
+     * Customer Agreements (MCA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -303,8 +303,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
@@ -353,8 +353,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
@@ -396,8 +396,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
@@ -416,8 +416,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -434,8 +434,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
@@ -456,8 +456,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -472,8 +472,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile.
-     * Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
@@ -492,8 +492,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile
-     * and a customer. Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
@@ -546,8 +546,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile
-     * and a customer. Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
@@ -598,8 +598,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile
-     * and a customer. Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
@@ -618,8 +618,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile
-     * and a customer. Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
@@ -637,8 +637,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile
-     * and a customer. Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
@@ -659,8 +659,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile
-     * and a customer. Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
@@ -676,8 +676,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits and Microsoft Azure consumption commitments for a billing account or a billing profile
-     * and a customer. Microsoft Azure consumption commitments are only supported for the billing account scope.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      *
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
