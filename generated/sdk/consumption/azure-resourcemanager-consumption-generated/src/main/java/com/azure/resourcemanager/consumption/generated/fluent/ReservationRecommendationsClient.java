@@ -15,7 +15,7 @@ public interface ReservationRecommendationsClient {
     /**
      * List of recommendations for purchasing reserved instances.
      *
-     * @param scope The scope associated with reservation recommendations operations. This includes
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
@@ -27,12 +27,12 @@ public interface ReservationRecommendationsClient {
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ReservationRecommendationInner> list(String scope);
+    PagedIterable<ReservationRecommendationInner> list(String resourceScope);
 
     /**
      * List of recommendations for purchasing reserved instances.
      *
-     * @param scope The scope associated with reservation recommendations operations. This includes
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
@@ -51,5 +51,5 @@ public interface ReservationRecommendationsClient {
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ReservationRecommendationInner> list(String scope, String filter, Context context);
+    PagedIterable<ReservationRecommendationInner> list(String resourceScope, String filter, Context context);
 }

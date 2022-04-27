@@ -79,7 +79,7 @@ public interface ReservationsSummariesClient {
     /**
      * Lists the reservations summaries for the defined scope daily or monthly grain.
      *
-     * @param scope The scope associated with reservations summaries operations. This includes
+     * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     BillingProfile scope (modern).
@@ -90,12 +90,12 @@ public interface ReservationsSummariesClient {
      * @return result of listing reservation summaries as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ReservationSummaryInner> list(String scope, Datagrain grain);
+    PagedIterable<ReservationSummaryInner> list(String resourceScope, Datagrain grain);
 
     /**
      * Lists the reservations summaries for the defined scope daily or monthly grain.
      *
-     * @param scope The scope associated with reservations summaries operations. This includes
+     * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     BillingProfile scope (modern).
@@ -116,7 +116,7 @@ public interface ReservationsSummariesClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ReservationSummaryInner> list(
-        String scope,
+        String resourceScope,
         Datagrain grain,
         String startDate,
         String endDate,

@@ -78,7 +78,7 @@ public interface ReservationsDetailsClient {
     /**
      * Lists the reservations details for the defined scope and provided date range.
      *
-     * @param scope The scope associated with reservations details operations. This includes
+     * @param resourceScope The scope associated with reservations details operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     BillingProfile scope (modern).
@@ -88,12 +88,12 @@ public interface ReservationsDetailsClient {
      * @return result of listing reservation details as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ReservationDetailInner> list(String scope);
+    PagedIterable<ReservationDetailInner> list(String resourceScope);
 
     /**
      * Lists the reservations details for the defined scope and provided date range.
      *
-     * @param scope The scope associated with reservations details operations. This includes
+     * @param resourceScope The scope associated with reservations details operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     BillingProfile scope (modern).
@@ -113,7 +113,7 @@ public interface ReservationsDetailsClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ReservationDetailInner> list(
-        String scope,
+        String resourceScope,
         String startDate,
         String endDate,
         String filter,

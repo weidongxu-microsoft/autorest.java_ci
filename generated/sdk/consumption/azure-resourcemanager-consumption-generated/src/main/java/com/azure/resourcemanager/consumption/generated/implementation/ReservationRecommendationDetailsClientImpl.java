@@ -24,6 +24,7 @@ import com.azure.core.util.FluxUtil;
 import com.azure.resourcemanager.consumption.generated.fluent.ReservationRecommendationDetailsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationDetailsModelInner;
 import com.azure.resourcemanager.consumption.generated.models.LookBackPeriod;
+import com.azure.resourcemanager.consumption.generated.models.Scope;
 import com.azure.resourcemanager.consumption.generated.models.Term;
 import reactor.core.publisher.Mono;
 
@@ -60,13 +61,14 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
     @ServiceInterface(name = "ConsumptionManagemen")
     private interface ReservationRecommendationDetailsService {
         @Headers({"Content-Type: application/json"})
-        @Get("/{scope}/providers/Microsoft.Consumption/reservationRecommendationDetails")
+        @Get("/{resourceScope}/providers/Microsoft.Consumption/reservationRecommendationDetails")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ReservationRecommendationDetailsModelInner>> get(
             @HostParam("$host") String endpoint,
             @QueryParam("api-version") String apiVersion,
-            @PathParam(value = "scope", encoded = true) String scope,
+            @PathParam(value = "resourceScope", encoded = true) String resourceScope,
+            @QueryParam("scope") Scope scope,
             @QueryParam("region") String region,
             @QueryParam("term") Term term,
             @QueryParam("lookBackPeriod") LookBackPeriod lookBackPeriod,
@@ -78,12 +80,13 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
     /**
      * Details of a reservation recommendation for what-if analysis of reserved instances.
      *
-     * @param scope The scope associated with reservation recommendation details operations. This includes
+     * @param resourceScope The scope associated with reservation recommendation details operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope.
+     * @param scope Scope of the reservation.
      * @param region Used to select the region the recommendation should be generated for.
      * @param term Specify length of reservation recommendation term.
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
@@ -96,12 +99,15 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ReservationRecommendationDetailsModelInner>> getWithResponseAsync(
-        String scope, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
+        String resourceScope, Scope scope, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
                     new IllegalArgumentException(
                         "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceScope == null) {
+            return Mono.error(new IllegalArgumentException("Parameter resourceScope is required and cannot be null."));
         }
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
@@ -126,6 +132,7 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
                         .get(
                             this.client.getEndpoint(),
                             this.client.getApiVersion(),
+                            resourceScope,
                             scope,
                             region,
                             term,
@@ -139,12 +146,13 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
     /**
      * Details of a reservation recommendation for what-if analysis of reserved instances.
      *
-     * @param scope The scope associated with reservation recommendation details operations. This includes
+     * @param resourceScope The scope associated with reservation recommendation details operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope.
+     * @param scope Scope of the reservation.
      * @param region Used to select the region the recommendation should be generated for.
      * @param term Specify length of reservation recommendation term.
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
@@ -158,12 +166,21 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ReservationRecommendationDetailsModelInner>> getWithResponseAsync(
-        String scope, String region, Term term, LookBackPeriod lookBackPeriod, String product, Context context) {
+        String resourceScope,
+        Scope scope,
+        String region,
+        Term term,
+        LookBackPeriod lookBackPeriod,
+        String product,
+        Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
                     new IllegalArgumentException(
                         "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceScope == null) {
+            return Mono.error(new IllegalArgumentException("Parameter resourceScope is required and cannot be null."));
         }
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
@@ -186,6 +203,7 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
             .get(
                 this.client.getEndpoint(),
                 this.client.getApiVersion(),
+                resourceScope,
                 scope,
                 region,
                 term,
@@ -198,12 +216,13 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
     /**
      * Details of a reservation recommendation for what-if analysis of reserved instances.
      *
-     * @param scope The scope associated with reservation recommendation details operations. This includes
+     * @param resourceScope The scope associated with reservation recommendation details operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope.
+     * @param scope Scope of the reservation.
      * @param region Used to select the region the recommendation should be generated for.
      * @param term Specify length of reservation recommendation term.
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
@@ -216,8 +235,8 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ReservationRecommendationDetailsModelInner> getAsync(
-        String scope, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
-        return getWithResponseAsync(scope, region, term, lookBackPeriod, product)
+        String resourceScope, Scope scope, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
+        return getWithResponseAsync(resourceScope, scope, region, term, lookBackPeriod, product)
             .flatMap(
                 (Response<ReservationRecommendationDetailsModelInner> res) -> {
                     if (res.getValue() != null) {
@@ -231,12 +250,13 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
     /**
      * Details of a reservation recommendation for what-if analysis of reserved instances.
      *
-     * @param scope The scope associated with reservation recommendation details operations. This includes
+     * @param resourceScope The scope associated with reservation recommendation details operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope.
+     * @param scope Scope of the reservation.
      * @param region Used to select the region the recommendation should be generated for.
      * @param term Specify length of reservation recommendation term.
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
@@ -249,19 +269,20 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ReservationRecommendationDetailsModelInner get(
-        String scope, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
-        return getAsync(scope, region, term, lookBackPeriod, product).block();
+        String resourceScope, Scope scope, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
+        return getAsync(resourceScope, scope, region, term, lookBackPeriod, product).block();
     }
 
     /**
      * Details of a reservation recommendation for what-if analysis of reserved instances.
      *
-     * @param scope The scope associated with reservation recommendation details operations. This includes
+     * @param resourceScope The scope associated with reservation recommendation details operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope.
+     * @param scope Scope of the reservation.
      * @param region Used to select the region the recommendation should be generated for.
      * @param term Specify length of reservation recommendation term.
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
@@ -275,7 +296,13 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ReservationRecommendationDetailsModelInner> getWithResponse(
-        String scope, String region, Term term, LookBackPeriod lookBackPeriod, String product, Context context) {
-        return getWithResponseAsync(scope, region, term, lookBackPeriod, product, context).block();
+        String resourceScope,
+        Scope scope,
+        String region,
+        Term term,
+        LookBackPeriod lookBackPeriod,
+        String product,
+        Context context) {
+        return getWithResponseAsync(resourceScope, scope, region, term, lookBackPeriod, product, context).block();
     }
 }

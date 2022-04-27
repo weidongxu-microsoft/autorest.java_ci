@@ -59,14 +59,14 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
     @ServiceInterface(name = "ConsumptionManagemen")
     private interface ReservationRecommendationsService {
         @Headers({"Content-Type: application/json"})
-        @Get("/{scope}/providers/Microsoft.Consumption/reservationRecommendations")
+        @Get("/{resourceScope}/providers/Microsoft.Consumption/reservationRecommendations")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ReservationRecommendationsListResult>> list(
             @HostParam("$host") String endpoint,
             @QueryParam("$filter") String filter,
             @QueryParam("api-version") String apiVersion,
-            @PathParam(value = "scope", encoded = true) String scope,
+            @PathParam(value = "resourceScope", encoded = true) String resourceScope,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -84,7 +84,7 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
     /**
      * List of recommendations for purchasing reserved instances.
      *
-     * @param scope The scope associated with reservation recommendations operations. This includes
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
@@ -103,22 +103,29 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
      *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ReservationRecommendationInner>> listSinglePageAsync(String scope, String filter) {
+    private Mono<PagedResponse<ReservationRecommendationInner>> listSinglePageAsync(
+        String resourceScope, String filter) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
                     new IllegalArgumentException(
                         "Parameter this.client.getEndpoint() is required and cannot be null."));
         }
-        if (scope == null) {
-            return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
+        if (resourceScope == null) {
+            return Mono.error(new IllegalArgumentException("Parameter resourceScope is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .list(this.client.getEndpoint(), filter, this.client.getApiVersion(), scope, accept, context))
+                        .list(
+                            this.client.getEndpoint(),
+                            filter,
+                            this.client.getApiVersion(),
+                            resourceScope,
+                            accept,
+                            context))
             .<PagedResponse<ReservationRecommendationInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -134,7 +141,7 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
     /**
      * List of recommendations for purchasing reserved instances.
      *
-     * @param scope The scope associated with reservation recommendations operations. This includes
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
@@ -155,20 +162,20 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationRecommendationInner>> listSinglePageAsync(
-        String scope, String filter, Context context) {
+        String resourceScope, String filter, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
                     new IllegalArgumentException(
                         "Parameter this.client.getEndpoint() is required and cannot be null."));
         }
-        if (scope == null) {
-            return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
+        if (resourceScope == null) {
+            return Mono.error(new IllegalArgumentException("Parameter resourceScope is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), filter, this.client.getApiVersion(), scope, accept, context)
+            .list(this.client.getEndpoint(), filter, this.client.getApiVersion(), resourceScope, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -183,7 +190,7 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
     /**
      * List of recommendations for purchasing reserved instances.
      *
-     * @param scope The scope associated with reservation recommendations operations. This includes
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
@@ -201,61 +208,64 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
      * @return result of listing reservation recommendations as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ReservationRecommendationInner> listAsync(String scope, String filter) {
-        return new PagedFlux<>(() -> listSinglePageAsync(scope, filter), nextLink -> listNextSinglePageAsync(nextLink));
-    }
-
-    /**
-     * List of recommendations for purchasing reserved instances.
-     *
-     * @param scope The scope associated with reservation recommendations operations. This includes
-     *     '/subscriptions/{subscriptionId}/' for subscription scope,
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     *     billingProfile scope.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations as paginated response with {@link PagedFlux}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ReservationRecommendationInner> listAsync(String scope) {
-        final String filter = null;
-        return new PagedFlux<>(() -> listSinglePageAsync(scope, filter), nextLink -> listNextSinglePageAsync(nextLink));
-    }
-
-    /**
-     * List of recommendations for purchasing reserved instances.
-     *
-     * @param scope The scope associated with reservation recommendations operations. This includes
-     *     '/subscriptions/{subscriptionId}/' for subscription scope,
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     *     billingProfile scope.
-     * @param filter May be used to filter reservationRecommendations by: properties/scope with allowed values
-     *     ['Single', 'Shared'] and default value 'Single'; properties/resourceType with allowed values
-     *     ['VirtualMachines', 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache',
-     *     'CosmosDB', 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer',
-     *     'VMwareCloudSimple'] and default value 'VirtualMachines'; and properties/lookBackPeriod with allowed values
-     *     ['Last7Days', 'Last30Days', 'Last60Days'] and default value 'Last7Days'.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations as paginated response with {@link PagedFlux}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ReservationRecommendationInner> listAsync(String scope, String filter, Context context) {
+    private PagedFlux<ReservationRecommendationInner> listAsync(String resourceScope, String filter) {
         return new PagedFlux<>(
-            () -> listSinglePageAsync(scope, filter, context), nextLink -> listNextSinglePageAsync(nextLink, context));
+            () -> listSinglePageAsync(resourceScope, filter), nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * List of recommendations for purchasing reserved instances.
      *
-     * @param scope The scope associated with reservation recommendations operations. This includes
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
+     *     '/subscriptions/{subscriptionId}/' for subscription scope,
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of listing reservation recommendations as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<ReservationRecommendationInner> listAsync(String resourceScope) {
+        final String filter = null;
+        return new PagedFlux<>(
+            () -> listSinglePageAsync(resourceScope, filter), nextLink -> listNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * List of recommendations for purchasing reserved instances.
+     *
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
+     *     '/subscriptions/{subscriptionId}/' for subscription scope,
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope.
+     * @param filter May be used to filter reservationRecommendations by: properties/scope with allowed values
+     *     ['Single', 'Shared'] and default value 'Single'; properties/resourceType with allowed values
+     *     ['VirtualMachines', 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache',
+     *     'CosmosDB', 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer',
+     *     'VMwareCloudSimple'] and default value 'VirtualMachines'; and properties/lookBackPeriod with allowed values
+     *     ['Last7Days', 'Last30Days', 'Last60Days'] and default value 'Last7Days'.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of listing reservation recommendations as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<ReservationRecommendationInner> listAsync(String resourceScope, String filter, Context context) {
+        return new PagedFlux<>(
+            () -> listSinglePageAsync(resourceScope, filter, context),
+            nextLink -> listNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * List of recommendations for purchasing reserved instances.
+     *
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
@@ -267,15 +277,15 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<ReservationRecommendationInner> list(String scope) {
+    public PagedIterable<ReservationRecommendationInner> list(String resourceScope) {
         final String filter = null;
-        return new PagedIterable<>(listAsync(scope, filter));
+        return new PagedIterable<>(listAsync(resourceScope, filter));
     }
 
     /**
      * List of recommendations for purchasing reserved instances.
      *
-     * @param scope The scope associated with reservation recommendations operations. This includes
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
@@ -294,8 +304,8 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<ReservationRecommendationInner> list(String scope, String filter, Context context) {
-        return new PagedIterable<>(listAsync(scope, filter, context));
+    public PagedIterable<ReservationRecommendationInner> list(String resourceScope, String filter, Context context) {
+        return new PagedIterable<>(listAsync(resourceScope, filter, context));
     }
 
     /**

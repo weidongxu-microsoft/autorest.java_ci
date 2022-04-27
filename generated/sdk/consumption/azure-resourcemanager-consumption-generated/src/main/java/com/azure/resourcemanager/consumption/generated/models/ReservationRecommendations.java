@@ -12,7 +12,7 @@ public interface ReservationRecommendations {
     /**
      * List of recommendations for purchasing reserved instances.
      *
-     * @param scope The scope associated with reservation recommendations operations. This includes
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
@@ -23,12 +23,12 @@ public interface ReservationRecommendations {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<ReservationRecommendation> list(String scope);
+    PagedIterable<ReservationRecommendation> list(String resourceScope);
 
     /**
      * List of recommendations for purchasing reserved instances.
      *
-     * @param scope The scope associated with reservation recommendations operations. This includes
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
@@ -46,5 +46,5 @@ public interface ReservationRecommendations {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<ReservationRecommendation> list(String scope, String filter, Context context);
+    PagedIterable<ReservationRecommendation> list(String resourceScope, String filter, Context context);
 }

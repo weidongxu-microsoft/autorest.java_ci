@@ -90,12 +90,12 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Get("/{scope}/providers/Microsoft.Consumption/reservationSummaries")
+        @Get("/{resourceScope}/providers/Microsoft.Consumption/reservationSummaries")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ReservationSummariesListResult>> list(
             @HostParam("$host") String endpoint,
-            @PathParam(value = "scope", encoded = true) String scope,
+            @PathParam(value = "resourceScope", encoded = true) String resourceScope,
             @QueryParam("grain") Datagrain grain,
             @QueryParam("startDate") String startDate,
             @QueryParam("endDate") String endDate,
@@ -561,7 +561,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     /**
      * Lists the reservations summaries for the defined scope daily or monthly grain.
      *
-     * @param scope The scope associated with reservations summaries operations. This includes
+     * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     BillingProfile scope (modern).
@@ -582,7 +582,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listSinglePageAsync(
-        String scope,
+        String resourceScope,
         Datagrain grain,
         String startDate,
         String endDate,
@@ -595,8 +595,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
                     new IllegalArgumentException(
                         "Parameter this.client.getEndpoint() is required and cannot be null."));
         }
-        if (scope == null) {
-            return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
+        if (resourceScope == null) {
+            return Mono.error(new IllegalArgumentException("Parameter resourceScope is required and cannot be null."));
         }
         if (grain == null) {
             return Mono.error(new IllegalArgumentException("Parameter grain is required and cannot be null."));
@@ -608,7 +608,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
                     service
                         .list(
                             this.client.getEndpoint(),
-                            scope,
+                            resourceScope,
                             grain,
                             startDate,
                             endDate,
@@ -633,7 +633,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     /**
      * Lists the reservations summaries for the defined scope daily or monthly grain.
      *
-     * @param scope The scope associated with reservations summaries operations. This includes
+     * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     BillingProfile scope (modern).
@@ -655,7 +655,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationSummaryInner>> listSinglePageAsync(
-        String scope,
+        String resourceScope,
         Datagrain grain,
         String startDate,
         String endDate,
@@ -669,8 +669,8 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
                     new IllegalArgumentException(
                         "Parameter this.client.getEndpoint() is required and cannot be null."));
         }
-        if (scope == null) {
-            return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
+        if (resourceScope == null) {
+            return Mono.error(new IllegalArgumentException("Parameter resourceScope is required and cannot be null."));
         }
         if (grain == null) {
             return Mono.error(new IllegalArgumentException("Parameter grain is required and cannot be null."));
@@ -680,7 +680,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
         return service
             .list(
                 this.client.getEndpoint(),
-                scope,
+                resourceScope,
                 grain,
                 startDate,
                 endDate,
@@ -704,7 +704,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     /**
      * Lists the reservations summaries for the defined scope daily or monthly grain.
      *
-     * @param scope The scope associated with reservations summaries operations. This includes
+     * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     BillingProfile scope (modern).
@@ -724,7 +724,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReservationSummaryInner> listAsync(
-        String scope,
+        String resourceScope,
         Datagrain grain,
         String startDate,
         String endDate,
@@ -732,14 +732,16 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
         String reservationId,
         String reservationOrderId) {
         return new PagedFlux<>(
-            () -> listSinglePageAsync(scope, grain, startDate, endDate, filter, reservationId, reservationOrderId),
+            () ->
+                listSinglePageAsync(
+                    resourceScope, grain, startDate, endDate, filter, reservationId, reservationOrderId),
             nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * Lists the reservations summaries for the defined scope daily or monthly grain.
      *
-     * @param scope The scope associated with reservations summaries operations. This includes
+     * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     BillingProfile scope (modern).
@@ -750,21 +752,23 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @return result of listing reservation summaries as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ReservationSummaryInner> listAsync(String scope, Datagrain grain) {
+    private PagedFlux<ReservationSummaryInner> listAsync(String resourceScope, Datagrain grain) {
         final String startDate = null;
         final String endDate = null;
         final String filter = null;
         final String reservationId = null;
         final String reservationOrderId = null;
         return new PagedFlux<>(
-            () -> listSinglePageAsync(scope, grain, startDate, endDate, filter, reservationId, reservationOrderId),
+            () ->
+                listSinglePageAsync(
+                    resourceScope, grain, startDate, endDate, filter, reservationId, reservationOrderId),
             nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * Lists the reservations summaries for the defined scope daily or monthly grain.
      *
-     * @param scope The scope associated with reservations summaries operations. This includes
+     * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     BillingProfile scope (modern).
@@ -785,7 +789,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReservationSummaryInner> listAsync(
-        String scope,
+        String resourceScope,
         Datagrain grain,
         String startDate,
         String endDate,
@@ -796,14 +800,14 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
         return new PagedFlux<>(
             () ->
                 listSinglePageAsync(
-                    scope, grain, startDate, endDate, filter, reservationId, reservationOrderId, context),
+                    resourceScope, grain, startDate, endDate, filter, reservationId, reservationOrderId, context),
             nextLink -> listNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Lists the reservations summaries for the defined scope daily or monthly grain.
      *
-     * @param scope The scope associated with reservations summaries operations. This includes
+     * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     BillingProfile scope (modern).
@@ -814,20 +818,20 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      * @return result of listing reservation summaries as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<ReservationSummaryInner> list(String scope, Datagrain grain) {
+    public PagedIterable<ReservationSummaryInner> list(String resourceScope, Datagrain grain) {
         final String startDate = null;
         final String endDate = null;
         final String filter = null;
         final String reservationId = null;
         final String reservationOrderId = null;
         return new PagedIterable<>(
-            listAsync(scope, grain, startDate, endDate, filter, reservationId, reservationOrderId));
+            listAsync(resourceScope, grain, startDate, endDate, filter, reservationId, reservationOrderId));
     }
 
     /**
      * Lists the reservations summaries for the defined scope daily or monthly grain.
      *
-     * @param scope The scope associated with reservations summaries operations. This includes
+     * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     BillingProfile scope (modern).
@@ -848,7 +852,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ReservationSummaryInner> list(
-        String scope,
+        String resourceScope,
         Datagrain grain,
         String startDate,
         String endDate,
@@ -857,7 +861,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
         String reservationOrderId,
         Context context) {
         return new PagedIterable<>(
-            listAsync(scope, grain, startDate, endDate, filter, reservationId, reservationOrderId, context));
+            listAsync(resourceScope, grain, startDate, endDate, filter, reservationId, reservationOrderId, context));
     }
 
     /**
