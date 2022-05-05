@@ -91,6 +91,13 @@ public interface Cluster {
     String status();
 
     /**
+     * Gets the supportsScaling property: A value that indicates whether Scaling is Supported.
+     *
+     * @return the supportsScaling value.
+     */
+    Boolean supportsScaling();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -155,7 +162,8 @@ public interface Cluster {
          * The stage of the Cluster definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku {
+        interface WithCreate
+            extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithSupportsScaling {
             /**
              * Executes the create request.
              *
@@ -191,6 +199,16 @@ public interface Cluster {
              */
             WithCreate withSku(ClusterSku sku);
         }
+        /** The stage of the Cluster definition allowing to specify supportsScaling. */
+        interface WithSupportsScaling {
+            /**
+             * Specifies the supportsScaling property: A value that indicates whether Scaling is Supported..
+             *
+             * @param supportsScaling A value that indicates whether Scaling is Supported.
+             * @return the next definition stage.
+             */
+            WithCreate withSupportsScaling(Boolean supportsScaling);
+        }
     }
     /**
      * Begins update for the Cluster resource.
@@ -200,7 +218,7 @@ public interface Cluster {
     Cluster.Update update();
 
     /** The template for Cluster update. */
-    interface Update extends UpdateStages.WithTags, UpdateStages.WithSku {
+    interface Update extends UpdateStages.WithTags, UpdateStages.WithSku, UpdateStages.WithSupportsScaling {
         /**
          * Executes the update request.
          *
@@ -237,6 +255,16 @@ public interface Cluster {
              * @return the next definition stage.
              */
             Update withSku(ClusterSku sku);
+        }
+        /** The stage of the Cluster update allowing to specify supportsScaling. */
+        interface WithSupportsScaling {
+            /**
+             * Specifies the supportsScaling property: A value that indicates whether Scaling is Supported..
+             *
+             * @param supportsScaling A value that indicates whether Scaling is Supported.
+             * @return the next definition stage.
+             */
+            Update withSupportsScaling(Boolean supportsScaling);
         }
     }
     /**

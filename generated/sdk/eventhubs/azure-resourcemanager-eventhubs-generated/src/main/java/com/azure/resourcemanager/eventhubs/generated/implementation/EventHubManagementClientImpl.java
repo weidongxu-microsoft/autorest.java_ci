@@ -21,6 +21,7 @@ import com.azure.core.util.polling.LongRunningOperationStatus;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
+import com.azure.resourcemanager.eventhubs.generated.fluent.ApplicationGroupsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.ClustersClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.ConfigurationsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.ConsumerGroupsClient;
@@ -28,6 +29,8 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.DisasterRecoveryConf
 import com.azure.resourcemanager.eventhubs.generated.fluent.EventHubManagementClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.EventHubsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.NamespacesClient;
+import com.azure.resourcemanager.eventhubs.generated.fluent.NetworkSecurityPerimeterConfigurationsClient;
+import com.azure.resourcemanager.eventhubs.generated.fluent.NetworkSecurityPerimeterConfigurationsOperationsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.PrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.PrivateLinkResourcesClient;
@@ -133,18 +136,6 @@ public final class EventHubManagementClientImpl implements EventHubManagementCli
         return this.clusters;
     }
 
-    /** The ConfigurationsClient object to access its operations. */
-    private final ConfigurationsClient configurations;
-
-    /**
-     * Gets the ConfigurationsClient object to access its operations.
-     *
-     * @return the ConfigurationsClient object.
-     */
-    public ConfigurationsClient getConfigurations() {
-        return this.configurations;
-    }
-
     /** The NamespacesClient object to access its operations. */
     private final NamespacesClient namespaces;
 
@@ -181,28 +172,42 @@ public final class EventHubManagementClientImpl implements EventHubManagementCli
         return this.privateLinkResources;
     }
 
-    /** The OperationsClient object to access its operations. */
-    private final OperationsClient operations;
+    /** The NetworkSecurityPerimeterConfigurationsClient object to access its operations. */
+    private final NetworkSecurityPerimeterConfigurationsClient networkSecurityPerimeterConfigurations;
 
     /**
-     * Gets the OperationsClient object to access its operations.
+     * Gets the NetworkSecurityPerimeterConfigurationsClient object to access its operations.
      *
-     * @return the OperationsClient object.
+     * @return the NetworkSecurityPerimeterConfigurationsClient object.
      */
-    public OperationsClient getOperations() {
-        return this.operations;
+    public NetworkSecurityPerimeterConfigurationsClient getNetworkSecurityPerimeterConfigurations() {
+        return this.networkSecurityPerimeterConfigurations;
     }
 
-    /** The EventHubsClient object to access its operations. */
-    private final EventHubsClient eventHubs;
+    /** The NetworkSecurityPerimeterConfigurationsOperationsClient object to access its operations. */
+    private final NetworkSecurityPerimeterConfigurationsOperationsClient
+        networkSecurityPerimeterConfigurationsOperations;
 
     /**
-     * Gets the EventHubsClient object to access its operations.
+     * Gets the NetworkSecurityPerimeterConfigurationsOperationsClient object to access its operations.
      *
-     * @return the EventHubsClient object.
+     * @return the NetworkSecurityPerimeterConfigurationsOperationsClient object.
      */
-    public EventHubsClient getEventHubs() {
-        return this.eventHubs;
+    public NetworkSecurityPerimeterConfigurationsOperationsClient
+        getNetworkSecurityPerimeterConfigurationsOperations() {
+        return this.networkSecurityPerimeterConfigurationsOperations;
+    }
+
+    /** The ConfigurationsClient object to access its operations. */
+    private final ConfigurationsClient configurations;
+
+    /**
+     * Gets the ConfigurationsClient object to access its operations.
+     *
+     * @return the ConfigurationsClient object.
+     */
+    public ConfigurationsClient getConfigurations() {
+        return this.configurations;
     }
 
     /** The DisasterRecoveryConfigsClient object to access its operations. */
@@ -217,6 +222,18 @@ public final class EventHubManagementClientImpl implements EventHubManagementCli
         return this.disasterRecoveryConfigs;
     }
 
+    /** The EventHubsClient object to access its operations. */
+    private final EventHubsClient eventHubs;
+
+    /**
+     * Gets the EventHubsClient object to access its operations.
+     *
+     * @return the EventHubsClient object.
+     */
+    public EventHubsClient getEventHubs() {
+        return this.eventHubs;
+    }
+
     /** The ConsumerGroupsClient object to access its operations. */
     private final ConsumerGroupsClient consumerGroups;
 
@@ -229,6 +246,18 @@ public final class EventHubManagementClientImpl implements EventHubManagementCli
         return this.consumerGroups;
     }
 
+    /** The OperationsClient object to access its operations. */
+    private final OperationsClient operations;
+
+    /**
+     * Gets the OperationsClient object to access its operations.
+     *
+     * @return the OperationsClient object.
+     */
+    public OperationsClient getOperations() {
+        return this.operations;
+    }
+
     /** The SchemaRegistriesClient object to access its operations. */
     private final SchemaRegistriesClient schemaRegistries;
 
@@ -239,6 +268,18 @@ public final class EventHubManagementClientImpl implements EventHubManagementCli
      */
     public SchemaRegistriesClient getSchemaRegistries() {
         return this.schemaRegistries;
+    }
+
+    /** The ApplicationGroupsClient object to access its operations. */
+    private final ApplicationGroupsClient applicationGroups;
+
+    /**
+     * Gets the ApplicationGroupsClient object to access its operations.
+     *
+     * @return the ApplicationGroupsClient object.
+     */
+    public ApplicationGroupsClient getApplicationGroups() {
+        return this.applicationGroups;
     }
 
     /**
@@ -264,17 +305,21 @@ public final class EventHubManagementClientImpl implements EventHubManagementCli
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2021-11-01";
+        this.apiVersion = "2022-01-01-preview";
         this.clusters = new ClustersClientImpl(this);
-        this.configurations = new ConfigurationsClientImpl(this);
         this.namespaces = new NamespacesClientImpl(this);
         this.privateEndpointConnections = new PrivateEndpointConnectionsClientImpl(this);
         this.privateLinkResources = new PrivateLinkResourcesClientImpl(this);
-        this.operations = new OperationsClientImpl(this);
-        this.eventHubs = new EventHubsClientImpl(this);
+        this.networkSecurityPerimeterConfigurations = new NetworkSecurityPerimeterConfigurationsClientImpl(this);
+        this.networkSecurityPerimeterConfigurationsOperations =
+            new NetworkSecurityPerimeterConfigurationsOperationsClientImpl(this);
+        this.configurations = new ConfigurationsClientImpl(this);
         this.disasterRecoveryConfigs = new DisasterRecoveryConfigsClientImpl(this);
+        this.eventHubs = new EventHubsClientImpl(this);
         this.consumerGroups = new ConsumerGroupsClientImpl(this);
+        this.operations = new OperationsClientImpl(this);
         this.schemaRegistries = new SchemaRegistriesClientImpl(this);
+        this.applicationGroups = new ApplicationGroupsClientImpl(this);
     }
 
     /**

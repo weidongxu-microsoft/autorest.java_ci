@@ -32,51 +32,6 @@ public final class EventHubsImpl implements EventHubs {
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<Eventhub> listByNamespace(String resourceGroupName, String namespaceName) {
-        PagedIterable<EventhubInner> inner = this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
-        return Utils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<Eventhub> listByNamespace(
-        String resourceGroupName, String namespaceName, Integer skip, Integer top, Context context) {
-        PagedIterable<EventhubInner> inner =
-            this.serviceClient().listByNamespace(resourceGroupName, namespaceName, skip, top, context);
-        return Utils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
-    }
-
-    public void delete(String resourceGroupName, String namespaceName, String eventHubName) {
-        this.serviceClient().delete(resourceGroupName, namespaceName, eventHubName);
-    }
-
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, eventHubName, context);
-    }
-
-    public Eventhub get(String resourceGroupName, String namespaceName, String eventHubName) {
-        EventhubInner inner = this.serviceClient().get(resourceGroupName, namespaceName, eventHubName);
-        if (inner != null) {
-            return new EventhubImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<Eventhub> getWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, Context context) {
-        Response<EventhubInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, namespaceName, eventHubName, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new EventhubImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
     public PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, String eventHubName) {
         PagedIterable<AuthorizationRuleInner> inner =
@@ -253,6 +208,51 @@ public final class EventHubsImpl implements EventHubs {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PagedIterable<Eventhub> listByNamespace(String resourceGroupName, String namespaceName) {
+        PagedIterable<EventhubInner> inner = this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
+        return Utils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<Eventhub> listByNamespace(
+        String resourceGroupName, String namespaceName, Integer skip, Integer top, Context context) {
+        PagedIterable<EventhubInner> inner =
+            this.serviceClient().listByNamespace(resourceGroupName, namespaceName, skip, top, context);
+        return Utils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
+    }
+
+    public void delete(String resourceGroupName, String namespaceName, String eventHubName) {
+        this.serviceClient().delete(resourceGroupName, namespaceName, eventHubName);
+    }
+
+    public Response<Void> deleteWithResponse(
+        String resourceGroupName, String namespaceName, String eventHubName, Context context) {
+        return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, eventHubName, context);
+    }
+
+    public Eventhub get(String resourceGroupName, String namespaceName, String eventHubName) {
+        EventhubInner inner = this.serviceClient().get(resourceGroupName, namespaceName, eventHubName);
+        if (inner != null) {
+            return new EventhubImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<Eventhub> getWithResponse(
+        String resourceGroupName, String namespaceName, String eventHubName, Context context) {
+        Response<EventhubInner> inner =
+            this.serviceClient().getWithResponse(resourceGroupName, namespaceName, eventHubName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new EventhubImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }

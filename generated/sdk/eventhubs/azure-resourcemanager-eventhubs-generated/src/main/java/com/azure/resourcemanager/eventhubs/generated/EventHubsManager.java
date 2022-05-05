@@ -24,6 +24,7 @@ import com.azure.core.management.profile.AzureProfile;
 import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.fluent.EventHubManagementClient;
+import com.azure.resourcemanager.eventhubs.generated.implementation.ApplicationGroupsImpl;
 import com.azure.resourcemanager.eventhubs.generated.implementation.ClustersImpl;
 import com.azure.resourcemanager.eventhubs.generated.implementation.ConfigurationsImpl;
 import com.azure.resourcemanager.eventhubs.generated.implementation.ConsumerGroupsImpl;
@@ -31,16 +32,21 @@ import com.azure.resourcemanager.eventhubs.generated.implementation.DisasterReco
 import com.azure.resourcemanager.eventhubs.generated.implementation.EventHubManagementClientBuilder;
 import com.azure.resourcemanager.eventhubs.generated.implementation.EventHubsImpl;
 import com.azure.resourcemanager.eventhubs.generated.implementation.NamespacesImpl;
+import com.azure.resourcemanager.eventhubs.generated.implementation.NetworkSecurityPerimeterConfigurationsImpl;
+import com.azure.resourcemanager.eventhubs.generated.implementation.NetworkSecurityPerimeterConfigurationsOperationsImpl;
 import com.azure.resourcemanager.eventhubs.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.eventhubs.generated.implementation.PrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.eventhubs.generated.implementation.PrivateLinkResourcesImpl;
 import com.azure.resourcemanager.eventhubs.generated.implementation.SchemaRegistriesImpl;
+import com.azure.resourcemanager.eventhubs.generated.models.ApplicationGroups;
 import com.azure.resourcemanager.eventhubs.generated.models.Clusters;
 import com.azure.resourcemanager.eventhubs.generated.models.Configurations;
 import com.azure.resourcemanager.eventhubs.generated.models.ConsumerGroups;
 import com.azure.resourcemanager.eventhubs.generated.models.DisasterRecoveryConfigs;
 import com.azure.resourcemanager.eventhubs.generated.models.EventHubs;
 import com.azure.resourcemanager.eventhubs.generated.models.Namespaces;
+import com.azure.resourcemanager.eventhubs.generated.models.NetworkSecurityPerimeterConfigurations;
+import com.azure.resourcemanager.eventhubs.generated.models.NetworkSecurityPerimeterConfigurationsOperations;
 import com.azure.resourcemanager.eventhubs.generated.models.Operations;
 import com.azure.resourcemanager.eventhubs.generated.models.PrivateEndpointConnections;
 import com.azure.resourcemanager.eventhubs.generated.models.PrivateLinkResources;
@@ -59,23 +65,29 @@ import java.util.stream.Collectors;
 public final class EventHubsManager {
     private Clusters clusters;
 
-    private Configurations configurations;
-
     private Namespaces namespaces;
 
     private PrivateEndpointConnections privateEndpointConnections;
 
     private PrivateLinkResources privateLinkResources;
 
-    private Operations operations;
+    private NetworkSecurityPerimeterConfigurations networkSecurityPerimeterConfigurations;
 
-    private EventHubs eventHubs;
+    private NetworkSecurityPerimeterConfigurationsOperations networkSecurityPerimeterConfigurationsOperations;
+
+    private Configurations configurations;
 
     private DisasterRecoveryConfigs disasterRecoveryConfigs;
 
+    private EventHubs eventHubs;
+
     private ConsumerGroups consumerGroups;
 
+    private Operations operations;
+
     private SchemaRegistries schemaRegistries;
+
+    private ApplicationGroups applicationGroups;
 
     private final EventHubManagementClient clientObject;
 
@@ -312,18 +324,6 @@ public final class EventHubsManager {
     }
 
     /**
-     * Gets the resource collection API of Configurations.
-     *
-     * @return Resource collection API of Configurations.
-     */
-    public Configurations configurations() {
-        if (this.configurations == null) {
-            this.configurations = new ConfigurationsImpl(clientObject.getConfigurations(), this);
-        }
-        return configurations;
-    }
-
-    /**
      * Gets the resource collection API of Namespaces.
      *
      * @return Resource collection API of Namespaces.
@@ -361,27 +361,43 @@ public final class EventHubsManager {
     }
 
     /**
-     * Gets the resource collection API of Operations.
+     * Gets the resource collection API of NetworkSecurityPerimeterConfigurations.
      *
-     * @return Resource collection API of Operations.
+     * @return Resource collection API of NetworkSecurityPerimeterConfigurations.
      */
-    public Operations operations() {
-        if (this.operations == null) {
-            this.operations = new OperationsImpl(clientObject.getOperations(), this);
+    public NetworkSecurityPerimeterConfigurations networkSecurityPerimeterConfigurations() {
+        if (this.networkSecurityPerimeterConfigurations == null) {
+            this.networkSecurityPerimeterConfigurations =
+                new NetworkSecurityPerimeterConfigurationsImpl(
+                    clientObject.getNetworkSecurityPerimeterConfigurations(), this);
         }
-        return operations;
+        return networkSecurityPerimeterConfigurations;
     }
 
     /**
-     * Gets the resource collection API of EventHubs.
+     * Gets the resource collection API of NetworkSecurityPerimeterConfigurationsOperations.
      *
-     * @return Resource collection API of EventHubs.
+     * @return Resource collection API of NetworkSecurityPerimeterConfigurationsOperations.
      */
-    public EventHubs eventHubs() {
-        if (this.eventHubs == null) {
-            this.eventHubs = new EventHubsImpl(clientObject.getEventHubs(), this);
+    public NetworkSecurityPerimeterConfigurationsOperations networkSecurityPerimeterConfigurationsOperations() {
+        if (this.networkSecurityPerimeterConfigurationsOperations == null) {
+            this.networkSecurityPerimeterConfigurationsOperations =
+                new NetworkSecurityPerimeterConfigurationsOperationsImpl(
+                    clientObject.getNetworkSecurityPerimeterConfigurationsOperations(), this);
         }
-        return eventHubs;
+        return networkSecurityPerimeterConfigurationsOperations;
+    }
+
+    /**
+     * Gets the resource collection API of Configurations.
+     *
+     * @return Resource collection API of Configurations.
+     */
+    public Configurations configurations() {
+        if (this.configurations == null) {
+            this.configurations = new ConfigurationsImpl(clientObject.getConfigurations(), this);
+        }
+        return configurations;
     }
 
     /**
@@ -398,6 +414,18 @@ public final class EventHubsManager {
     }
 
     /**
+     * Gets the resource collection API of EventHubs.
+     *
+     * @return Resource collection API of EventHubs.
+     */
+    public EventHubs eventHubs() {
+        if (this.eventHubs == null) {
+            this.eventHubs = new EventHubsImpl(clientObject.getEventHubs(), this);
+        }
+        return eventHubs;
+    }
+
+    /**
      * Gets the resource collection API of ConsumerGroups.
      *
      * @return Resource collection API of ConsumerGroups.
@@ -410,6 +438,18 @@ public final class EventHubsManager {
     }
 
     /**
+     * Gets the resource collection API of Operations.
+     *
+     * @return Resource collection API of Operations.
+     */
+    public Operations operations() {
+        if (this.operations == null) {
+            this.operations = new OperationsImpl(clientObject.getOperations(), this);
+        }
+        return operations;
+    }
+
+    /**
      * Gets the resource collection API of SchemaRegistries.
      *
      * @return Resource collection API of SchemaRegistries.
@@ -419,6 +459,18 @@ public final class EventHubsManager {
             this.schemaRegistries = new SchemaRegistriesImpl(clientObject.getSchemaRegistries(), this);
         }
         return schemaRegistries;
+    }
+
+    /**
+     * Gets the resource collection API of ApplicationGroups.
+     *
+     * @return Resource collection API of ApplicationGroups.
+     */
+    public ApplicationGroups applicationGroups() {
+        if (this.applicationGroups == null) {
+            this.applicationGroups = new ApplicationGroupsImpl(clientObject.getApplicationGroups(), this);
+        }
+        return applicationGroups;
     }
 
     /**

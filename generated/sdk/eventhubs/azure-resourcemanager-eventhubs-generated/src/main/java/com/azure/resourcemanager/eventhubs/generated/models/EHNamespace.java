@@ -93,6 +93,13 @@ public interface EHNamespace {
     Map<String, UserAssignedIdentity> userAssignedIdentities();
 
     /**
+     * Gets the minimumTlsVersion property: The minimum TLS version for the cluster to support, e.g. '1.2'.
+     *
+     * @return the minimumTlsVersion value.
+     */
+    TlsVersion minimumTlsVersion();
+
+    /**
      * Gets the provisioningState property: Provisioning state of the Namespace.
      *
      * @return the provisioningState value.
@@ -148,6 +155,14 @@ public interface EHNamespace {
      * @return the isAutoInflateEnabled value.
      */
     Boolean isAutoInflateEnabled();
+
+    /**
+     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    PublicNetworkAccess publicNetworkAccess();
 
     /**
      * Gets the maximumThroughputUnits property: Upper limit of throughput units when AutoInflate is enabled, value
@@ -284,8 +299,10 @@ public interface EHNamespace {
                 DefinitionStages.WithSku,
                 DefinitionStages.WithTypeIdentityType,
                 DefinitionStages.WithUserAssignedIdentities,
+                DefinitionStages.WithMinimumTlsVersion,
                 DefinitionStages.WithClusterArmId,
                 DefinitionStages.WithIsAutoInflateEnabled,
+                DefinitionStages.WithPublicNetworkAccess,
                 DefinitionStages.WithMaximumThroughputUnits,
                 DefinitionStages.WithKafkaEnabled,
                 DefinitionStages.WithZoneRedundant,
@@ -350,6 +367,16 @@ public interface EHNamespace {
              */
             WithCreate withUserAssignedIdentities(Map<String, UserAssignedIdentity> userAssignedIdentities);
         }
+        /** The stage of the EHNamespace definition allowing to specify minimumTlsVersion. */
+        interface WithMinimumTlsVersion {
+            /**
+             * Specifies the minimumTlsVersion property: The minimum TLS version for the cluster to support, e.g. '1.2'.
+             *
+             * @param minimumTlsVersion The minimum TLS version for the cluster to support, e.g. '1.2'.
+             * @return the next definition stage.
+             */
+            WithCreate withMinimumTlsVersion(TlsVersion minimumTlsVersion);
+        }
         /** The stage of the EHNamespace definition allowing to specify clusterArmId. */
         interface WithClusterArmId {
             /**
@@ -370,6 +397,18 @@ public interface EHNamespace {
              * @return the next definition stage.
              */
             WithCreate withIsAutoInflateEnabled(Boolean isAutoInflateEnabled);
+        }
+        /** The stage of the EHNamespace definition allowing to specify publicNetworkAccess. */
+        interface WithPublicNetworkAccess {
+            /**
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
+             * default it is enabled..
+             *
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
+             *     enabled.
+             * @return the next definition stage.
+             */
+            WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
         /** The stage of the EHNamespace definition allowing to specify maximumThroughputUnits. */
         interface WithMaximumThroughputUnits {
@@ -482,8 +521,10 @@ public interface EHNamespace {
             UpdateStages.WithSku,
             UpdateStages.WithTypeIdentityType,
             UpdateStages.WithUserAssignedIdentities,
+            UpdateStages.WithMinimumTlsVersion,
             UpdateStages.WithClusterArmId,
             UpdateStages.WithIsAutoInflateEnabled,
+            UpdateStages.WithPublicNetworkAccess,
             UpdateStages.WithMaximumThroughputUnits,
             UpdateStages.WithKafkaEnabled,
             UpdateStages.WithZoneRedundant,
@@ -550,6 +591,16 @@ public interface EHNamespace {
              */
             Update withUserAssignedIdentities(Map<String, UserAssignedIdentity> userAssignedIdentities);
         }
+        /** The stage of the EHNamespace update allowing to specify minimumTlsVersion. */
+        interface WithMinimumTlsVersion {
+            /**
+             * Specifies the minimumTlsVersion property: The minimum TLS version for the cluster to support, e.g. '1.2'.
+             *
+             * @param minimumTlsVersion The minimum TLS version for the cluster to support, e.g. '1.2'.
+             * @return the next definition stage.
+             */
+            Update withMinimumTlsVersion(TlsVersion minimumTlsVersion);
+        }
         /** The stage of the EHNamespace update allowing to specify clusterArmId. */
         interface WithClusterArmId {
             /**
@@ -570,6 +621,18 @@ public interface EHNamespace {
              * @return the next definition stage.
              */
             Update withIsAutoInflateEnabled(Boolean isAutoInflateEnabled);
+        }
+        /** The stage of the EHNamespace update allowing to specify publicNetworkAccess. */
+        interface WithPublicNetworkAccess {
+            /**
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
+             * default it is enabled..
+             *
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
+             *     enabled.
+             * @return the next definition stage.
+             */
+            Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
         /** The stage of the EHNamespace update allowing to specify maximumThroughputUnits. */
         interface WithMaximumThroughputUnits {

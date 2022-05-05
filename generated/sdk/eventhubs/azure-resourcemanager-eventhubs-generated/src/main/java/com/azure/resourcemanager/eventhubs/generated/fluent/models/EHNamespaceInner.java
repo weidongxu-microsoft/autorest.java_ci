@@ -10,7 +10,9 @@ import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.eventhubs.generated.models.KeySource;
 import com.azure.resourcemanager.eventhubs.generated.models.KeyVaultProperties;
 import com.azure.resourcemanager.eventhubs.generated.models.ManagedServiceIdentityType;
+import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.eventhubs.generated.models.Sku;
+import com.azure.resourcemanager.eventhubs.generated.models.TlsVersion;
 import com.azure.resourcemanager.eventhubs.generated.models.UserAssignedIdentity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -170,6 +172,29 @@ public final class EHNamespaceInner extends Resource {
     }
 
     /**
+     * Get the minimumTlsVersion property: The minimum TLS version for the cluster to support, e.g. '1.2'.
+     *
+     * @return the minimumTlsVersion value.
+     */
+    public TlsVersion minimumTlsVersion() {
+        return this.innerProperties() == null ? null : this.innerProperties().minimumTlsVersion();
+    }
+
+    /**
+     * Set the minimumTlsVersion property: The minimum TLS version for the cluster to support, e.g. '1.2'.
+     *
+     * @param minimumTlsVersion the minimumTlsVersion value to set.
+     * @return the EHNamespaceInner object itself.
+     */
+    public EHNamespaceInner withMinimumTlsVersion(TlsVersion minimumTlsVersion) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new EHNamespaceProperties();
+        }
+        this.innerProperties().withMinimumTlsVersion(minimumTlsVersion);
+        return this;
+    }
+
+    /**
      * Get the provisioningState property: Provisioning state of the Namespace.
      *
      * @return the provisioningState value.
@@ -268,6 +293,31 @@ public final class EHNamespaceInner extends Resource {
             this.innerProperties = new EHNamespaceProperties();
         }
         this.innerProperties().withIsAutoInflateEnabled(isAutoInflateEnabled);
+        return this;
+    }
+
+    /**
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    public PublicNetworkAccess publicNetworkAccess() {
+        return this.innerProperties() == null ? null : this.innerProperties().publicNetworkAccess();
+    }
+
+    /**
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     *
+     * @param publicNetworkAccess the publicNetworkAccess value to set.
+     * @return the EHNamespaceInner object itself.
+     */
+    public EHNamespaceInner withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new EHNamespaceProperties();
+        }
+        this.innerProperties().withPublicNetworkAccess(publicNetworkAccess);
         return this;
     }
 

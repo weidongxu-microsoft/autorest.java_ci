@@ -7,6 +7,8 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventhubs.generated.models.KeySource;
 import com.azure.resourcemanager.eventhubs.generated.models.KeyVaultProperties;
+import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventhubs.generated.models.TlsVersion;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -14,6 +16,12 @@ import java.util.List;
 /** Namespace properties supplied for create namespace operation. */
 @Fluent
 public final class EHNamespaceProperties {
+    /*
+     * The minimum TLS version for the cluster to support, e.g. '1.2'
+     */
+    @JsonProperty(value = "minimumTlsVersion")
+    private TlsVersion minimumTlsVersion;
+
     /*
      * Provisioning state of the Namespace.
      */
@@ -64,6 +72,13 @@ public final class EHNamespaceProperties {
     private Boolean isAutoInflateEnabled;
 
     /*
+     * This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     */
+    @JsonProperty(value = "publicNetworkAccess")
+    private PublicNetworkAccess publicNetworkAccess;
+
+    /*
      * Upper limit of throughput units when AutoInflate is enabled, value
      * should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled =
      * true)
@@ -107,6 +122,26 @@ public final class EHNamespaceProperties {
      */
     @JsonProperty(value = "alternateName")
     private String alternateName;
+
+    /**
+     * Get the minimumTlsVersion property: The minimum TLS version for the cluster to support, e.g. '1.2'.
+     *
+     * @return the minimumTlsVersion value.
+     */
+    public TlsVersion minimumTlsVersion() {
+        return this.minimumTlsVersion;
+    }
+
+    /**
+     * Set the minimumTlsVersion property: The minimum TLS version for the cluster to support, e.g. '1.2'.
+     *
+     * @param minimumTlsVersion the minimumTlsVersion value to set.
+     * @return the EHNamespaceProperties object itself.
+     */
+    public EHNamespaceProperties withMinimumTlsVersion(TlsVersion minimumTlsVersion) {
+        this.minimumTlsVersion = minimumTlsVersion;
+        return this;
+    }
 
     /**
      * Get the provisioningState property: Provisioning state of the Namespace.
@@ -201,6 +236,28 @@ public final class EHNamespaceProperties {
      */
     public EHNamespaceProperties withIsAutoInflateEnabled(Boolean isAutoInflateEnabled) {
         this.isAutoInflateEnabled = isAutoInflateEnabled;
+        return this;
+    }
+
+    /**
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    public PublicNetworkAccess publicNetworkAccess() {
+        return this.publicNetworkAccess;
+    }
+
+    /**
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     *
+     * @param publicNetworkAccess the publicNetworkAccess value to set.
+     * @return the EHNamespaceProperties object itself.
+     */
+    public EHNamespaceProperties withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess) {
+        this.publicNetworkAccess = publicNetworkAccess;
         return this;
     }
 

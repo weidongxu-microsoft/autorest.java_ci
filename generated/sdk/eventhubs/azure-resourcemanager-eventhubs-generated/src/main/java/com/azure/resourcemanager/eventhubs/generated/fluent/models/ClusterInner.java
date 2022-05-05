@@ -123,6 +123,29 @@ public final class ClusterInner extends Resource {
     }
 
     /**
+     * Get the supportsScaling property: A value that indicates whether Scaling is Supported.
+     *
+     * @return the supportsScaling value.
+     */
+    public Boolean supportsScaling() {
+        return this.innerProperties() == null ? null : this.innerProperties().supportsScaling();
+    }
+
+    /**
+     * Set the supportsScaling property: A value that indicates whether Scaling is Supported.
+     *
+     * @param supportsScaling the supportsScaling value to set.
+     * @return the ClusterInner object itself.
+     */
+    public ClusterInner withSupportsScaling(Boolean supportsScaling) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ClusterProperties();
+        }
+        this.innerProperties().withSupportsScaling(supportsScaling);
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

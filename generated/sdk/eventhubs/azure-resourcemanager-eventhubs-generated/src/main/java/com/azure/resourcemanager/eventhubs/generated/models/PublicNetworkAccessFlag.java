@@ -16,6 +16,9 @@ public final class PublicNetworkAccessFlag extends ExpandableStringEnum<PublicNe
     /** Static value Disabled for PublicNetworkAccessFlag. */
     public static final PublicNetworkAccessFlag DISABLED = fromString("Disabled");
 
+    /** Static value SecuredByPerimeter for PublicNetworkAccessFlag. */
+    public static final PublicNetworkAccessFlag SECURED_BY_PERIMETER = fromString("SecuredByPerimeter");
+
     /**
      * Creates or finds a PublicNetworkAccessFlag from its string representation.
      *

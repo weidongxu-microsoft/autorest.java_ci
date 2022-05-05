@@ -4,11 +4,11 @@
 
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Event Hubs Cluster properties supplied in responses in List or Get operations. */
-@Immutable
+@Fluent
 public final class ClusterProperties {
     /*
      * The UTC time when the Event Hubs Cluster was created.
@@ -34,6 +34,12 @@ public final class ClusterProperties {
      */
     @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private String status;
+
+    /*
+     * A value that indicates whether Scaling is Supported.
+     */
+    @JsonProperty(value = "supportsScaling")
+    private Boolean supportsScaling;
 
     /**
      * Get the createdAt property: The UTC time when the Event Hubs Cluster was created.
@@ -70,6 +76,26 @@ public final class ClusterProperties {
      */
     public String status() {
         return this.status;
+    }
+
+    /**
+     * Get the supportsScaling property: A value that indicates whether Scaling is Supported.
+     *
+     * @return the supportsScaling value.
+     */
+    public Boolean supportsScaling() {
+        return this.supportsScaling;
+    }
+
+    /**
+     * Set the supportsScaling property: A value that indicates whether Scaling is Supported.
+     *
+     * @param supportsScaling the supportsScaling value to set.
+     * @return the ClusterProperties object itself.
+     */
+    public ClusterProperties withSupportsScaling(Boolean supportsScaling) {
+        this.supportsScaling = supportsScaling;
+        return this;
     }
 
     /**

@@ -14,7 +14,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.KeySource;
 import com.azure.resourcemanager.eventhubs.generated.models.KeyVaultProperties;
 import com.azure.resourcemanager.eventhubs.generated.models.ManagedServiceIdentityType;
 import com.azure.resourcemanager.eventhubs.generated.models.PrivateEndpointConnection;
+import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.eventhubs.generated.models.Sku;
+import com.azure.resourcemanager.eventhubs.generated.models.TlsVersion;
 import com.azure.resourcemanager.eventhubs.generated.models.UserAssignedIdentity;
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -81,6 +83,10 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         }
     }
 
+    public TlsVersion minimumTlsVersion() {
+        return this.innerModel().minimumTlsVersion();
+    }
+
     public String provisioningState() {
         return this.innerModel().provisioningState();
     }
@@ -111,6 +117,10 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
 
     public Boolean isAutoInflateEnabled() {
         return this.innerModel().isAutoInflateEnabled();
+    }
+
+    public PublicNetworkAccess publicNetworkAccess() {
+        return this.innerModel().publicNetworkAccess();
     }
 
     public Integer maximumThroughputUnits() {
@@ -295,6 +305,11 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
+    public EHNamespaceImpl withMinimumTlsVersion(TlsVersion minimumTlsVersion) {
+        this.innerModel().withMinimumTlsVersion(minimumTlsVersion);
+        return this;
+    }
+
     public EHNamespaceImpl withClusterArmId(String clusterArmId) {
         this.innerModel().withClusterArmId(clusterArmId);
         return this;
@@ -302,6 +317,11 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
 
     public EHNamespaceImpl withIsAutoInflateEnabled(Boolean isAutoInflateEnabled) {
         this.innerModel().withIsAutoInflateEnabled(isAutoInflateEnabled);
+        return this;
+    }
+
+    public EHNamespaceImpl withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess) {
+        this.innerModel().withPublicNetworkAccess(publicNetworkAccess);
         return this;
     }
 

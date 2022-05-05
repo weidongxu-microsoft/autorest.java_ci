@@ -67,6 +67,10 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         return this.innerModel().status();
     }
 
+    public Boolean supportsScaling() {
+        return this.innerModel().supportsScaling();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -183,6 +187,11 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
 
     public ClusterImpl withSku(ClusterSku sku) {
         this.innerModel().withSku(sku);
+        return this;
+    }
+
+    public ClusterImpl withSupportsScaling(Boolean supportsScaling) {
+        this.innerModel().withSupportsScaling(supportsScaling);
         return this;
     }
 }
