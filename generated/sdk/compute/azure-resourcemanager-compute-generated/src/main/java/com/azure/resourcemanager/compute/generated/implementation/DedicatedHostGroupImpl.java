@@ -9,6 +9,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.DedicatedHostGroupInner;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroup;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroupInstanceView;
+import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroupPropertiesAdditionalCapabilities;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroupUpdate;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.SubResourceReadOnly;
@@ -75,6 +76,10 @@ public final class DedicatedHostGroupImpl
 
     public Boolean supportAutomaticPlacement() {
         return this.innerModel().supportAutomaticPlacement();
+    }
+
+    public DedicatedHostGroupPropertiesAdditionalCapabilities additionalCapabilities() {
+        return this.innerModel().additionalCapabilities();
     }
 
     public Region region() {
@@ -232,6 +237,17 @@ public final class DedicatedHostGroupImpl
             return this;
         } else {
             this.updateParameters.withSupportAutomaticPlacement(supportAutomaticPlacement);
+            return this;
+        }
+    }
+
+    public DedicatedHostGroupImpl withAdditionalCapabilities(
+        DedicatedHostGroupPropertiesAdditionalCapabilities additionalCapabilities) {
+        if (isInCreateMode()) {
+            this.innerModel().withAdditionalCapabilities(additionalCapabilities);
+            return this;
+        } else {
+            this.updateParameters.withAdditionalCapabilities(additionalCapabilities);
             return this;
         }
     }

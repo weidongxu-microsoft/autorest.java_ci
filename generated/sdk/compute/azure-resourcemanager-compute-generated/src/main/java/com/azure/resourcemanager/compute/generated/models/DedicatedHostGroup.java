@@ -89,6 +89,14 @@ public interface DedicatedHostGroup {
     Boolean supportAutomaticPlacement();
 
     /**
+     * Gets the additionalCapabilities property: Enables or disables a capability on the dedicated host
+     * group.&lt;br&gt;&lt;br&gt;Minimum api-version: 2022-03-01.
+     *
+     * @return the additionalCapabilities value.
+     */
+    DedicatedHostGroupPropertiesAdditionalCapabilities additionalCapabilities();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -157,7 +165,8 @@ public interface DedicatedHostGroup {
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithZones,
                 DefinitionStages.WithPlatformFaultDomainCount,
-                DefinitionStages.WithSupportAutomaticPlacement {
+                DefinitionStages.WithSupportAutomaticPlacement,
+                DefinitionStages.WithAdditionalCapabilities {
             /**
              * Executes the create request.
              *
@@ -223,6 +232,19 @@ public interface DedicatedHostGroup {
              */
             WithCreate withSupportAutomaticPlacement(Boolean supportAutomaticPlacement);
         }
+        /** The stage of the DedicatedHostGroup definition allowing to specify additionalCapabilities. */
+        interface WithAdditionalCapabilities {
+            /**
+             * Specifies the additionalCapabilities property: Enables or disables a capability on the dedicated host
+             * group.&lt;br&gt;&lt;br&gt;Minimum api-version: 2022-03-01..
+             *
+             * @param additionalCapabilities Enables or disables a capability on the dedicated host
+             *     group.&lt;br&gt;&lt;br&gt;Minimum api-version: 2022-03-01.
+             * @return the next definition stage.
+             */
+            WithCreate withAdditionalCapabilities(
+                DedicatedHostGroupPropertiesAdditionalCapabilities additionalCapabilities);
+        }
     }
     /**
      * Begins update for the DedicatedHostGroup resource.
@@ -236,7 +258,8 @@ public interface DedicatedHostGroup {
         extends UpdateStages.WithTags,
             UpdateStages.WithZones,
             UpdateStages.WithPlatformFaultDomainCount,
-            UpdateStages.WithSupportAutomaticPlacement {
+            UpdateStages.WithSupportAutomaticPlacement,
+            UpdateStages.WithAdditionalCapabilities {
         /**
          * Executes the update request.
          *
@@ -303,6 +326,19 @@ public interface DedicatedHostGroup {
              * @return the next definition stage.
              */
             Update withSupportAutomaticPlacement(Boolean supportAutomaticPlacement);
+        }
+        /** The stage of the DedicatedHostGroup update allowing to specify additionalCapabilities. */
+        interface WithAdditionalCapabilities {
+            /**
+             * Specifies the additionalCapabilities property: Enables or disables a capability on the dedicated host
+             * group.&lt;br&gt;&lt;br&gt;Minimum api-version: 2022-03-01..
+             *
+             * @param additionalCapabilities Enables or disables a capability on the dedicated host
+             *     group.&lt;br&gt;&lt;br&gt;Minimum api-version: 2022-03-01.
+             * @return the next definition stage.
+             */
+            Update withAdditionalCapabilities(
+                DedicatedHostGroupPropertiesAdditionalCapabilities additionalCapabilities);
         }
     }
     /**

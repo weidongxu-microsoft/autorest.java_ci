@@ -6,6 +6,7 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewStatus;
+import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupPropertiesIntent;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupType;
 import com.azure.resourcemanager.compute.generated.models.SubResourceWithColocationStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -48,6 +49,12 @@ public final class ProximityPlacementGroupProperties {
      */
     @JsonProperty(value = "colocationStatus")
     private InstanceViewStatus colocationStatus;
+
+    /*
+     * Specifies the user intent of the proximity placement group.
+     */
+    @JsonProperty(value = "intent")
+    private ProximityPlacementGroupPropertiesIntent intent;
 
     /**
      * Get the proximityPlacementGroupType property: Specifies the type of the proximity placement group.
@@ -124,6 +131,26 @@ public final class ProximityPlacementGroupProperties {
     }
 
     /**
+     * Get the intent property: Specifies the user intent of the proximity placement group.
+     *
+     * @return the intent value.
+     */
+    public ProximityPlacementGroupPropertiesIntent intent() {
+        return this.intent;
+    }
+
+    /**
+     * Set the intent property: Specifies the user intent of the proximity placement group.
+     *
+     * @param intent the intent value to set.
+     * @return the ProximityPlacementGroupProperties object itself.
+     */
+    public ProximityPlacementGroupProperties withIntent(ProximityPlacementGroupPropertiesIntent intent) {
+        this.intent = intent;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -140,6 +167,9 @@ public final class ProximityPlacementGroupProperties {
         }
         if (colocationStatus() != null) {
             colocationStatus().validate();
+        }
+        if (intent() != null) {
+            intent().validate();
         }
     }
 }

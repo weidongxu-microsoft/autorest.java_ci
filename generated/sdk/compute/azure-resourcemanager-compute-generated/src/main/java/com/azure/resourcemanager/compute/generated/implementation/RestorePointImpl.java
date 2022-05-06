@@ -146,6 +146,11 @@ public final class RestorePointImpl implements RestorePoint, RestorePoint.Defini
         return this;
     }
 
+    public RestorePointImpl withConsistencyMode(ConsistencyModeTypes consistencyMode) {
+        this.innerModel().withConsistencyMode(consistencyMode);
+        return this;
+    }
+
     public RestorePointImpl withTimeCreated(OffsetDateTime timeCreated) {
         this.innerModel().withTimeCreated(timeCreated);
         return this;

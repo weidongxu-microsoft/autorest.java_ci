@@ -55,7 +55,8 @@ public interface RestorePoint {
     String provisioningState();
 
     /**
-     * Gets the consistencyMode property: Gets the consistency mode for the restore point. Please refer to
+     * Gets the consistencyMode property: ConsistencyMode of the RestorePoint. Can be specified in the input while
+     * creating a restore point. For now, only CrashConsistent is accepted as a valid input. Please refer to
      * https://aka.ms/RestorePoints for more details.
      *
      * @return the consistencyMode value.
@@ -117,6 +118,7 @@ public interface RestorePoint {
          */
         interface WithCreate
             extends DefinitionStages.WithExcludeDisks,
+                DefinitionStages.WithConsistencyMode,
                 DefinitionStages.WithTimeCreated,
                 DefinitionStages.WithSourceRestorePoint {
             /**
@@ -145,6 +147,20 @@ public interface RestorePoint {
              * @return the next definition stage.
              */
             WithCreate withExcludeDisks(List<ApiEntityReference> excludeDisks);
+        }
+        /** The stage of the RestorePoint definition allowing to specify consistencyMode. */
+        interface WithConsistencyMode {
+            /**
+             * Specifies the consistencyMode property: ConsistencyMode of the RestorePoint. Can be specified in the
+             * input while creating a restore point. For now, only CrashConsistent is accepted as a valid input. Please
+             * refer to https://aka.ms/RestorePoints for more details..
+             *
+             * @param consistencyMode ConsistencyMode of the RestorePoint. Can be specified in the input while creating
+             *     a restore point. For now, only CrashConsistent is accepted as a valid input. Please refer to
+             *     https://aka.ms/RestorePoints for more details.
+             * @return the next definition stage.
+             */
+            WithCreate withConsistencyMode(ConsistencyModeTypes consistencyMode);
         }
         /** The stage of the RestorePoint definition allowing to specify timeCreated. */
         interface WithTimeCreated {

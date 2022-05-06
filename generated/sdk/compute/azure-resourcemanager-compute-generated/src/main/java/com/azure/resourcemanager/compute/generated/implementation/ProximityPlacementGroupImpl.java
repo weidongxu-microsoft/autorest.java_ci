@@ -9,6 +9,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.ProximityPlacementGroupInner;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewStatus;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroup;
+import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupPropertiesIntent;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupType;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupUpdate;
 import com.azure.resourcemanager.compute.generated.models.SubResourceWithColocationStatus;
@@ -47,6 +48,15 @@ public final class ProximityPlacementGroupImpl
         }
     }
 
+    public List<String> zones() {
+        List<String> inner = this.innerModel().zones();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public ProximityPlacementGroupType proximityPlacementGroupType() {
         return this.innerModel().proximityPlacementGroupType();
     }
@@ -80,6 +90,10 @@ public final class ProximityPlacementGroupImpl
 
     public InstanceViewStatus colocationStatus() {
         return this.innerModel().colocationStatus();
+    }
+
+    public ProximityPlacementGroupPropertiesIntent intent() {
+        return this.innerModel().intent();
     }
 
     public Region region() {
@@ -215,6 +229,11 @@ public final class ProximityPlacementGroupImpl
         }
     }
 
+    public ProximityPlacementGroupImpl withZones(List<String> zones) {
+        this.innerModel().withZones(zones);
+        return this;
+    }
+
     public ProximityPlacementGroupImpl withProximityPlacementGroupType(
         ProximityPlacementGroupType proximityPlacementGroupType) {
         this.innerModel().withProximityPlacementGroupType(proximityPlacementGroupType);
@@ -223,6 +242,11 @@ public final class ProximityPlacementGroupImpl
 
     public ProximityPlacementGroupImpl withColocationStatus(InstanceViewStatus colocationStatus) {
         this.innerModel().withColocationStatus(colocationStatus);
+        return this;
+    }
+
+    public ProximityPlacementGroupImpl withIntent(ProximityPlacementGroupPropertiesIntent intent) {
+        this.innerModel().withIntent(intent);
         return this;
     }
 

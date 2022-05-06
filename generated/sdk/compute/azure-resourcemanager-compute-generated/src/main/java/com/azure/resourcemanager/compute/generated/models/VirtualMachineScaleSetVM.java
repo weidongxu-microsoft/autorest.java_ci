@@ -86,6 +86,13 @@ public interface VirtualMachineScaleSetVM {
     List<String> zones();
 
     /**
+     * Gets the identity property: The identity of the virtual machine, if configured.
+     *
+     * @return the identity value.
+     */
+    VirtualMachineIdentity identity();
+
+    /**
      * Gets the latestModelApplied property: Specifies whether the latest model has been applied to the virtual machine.
      *
      * @return the latestModelApplied value.

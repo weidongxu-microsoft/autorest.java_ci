@@ -48,6 +48,14 @@ public interface ProximityPlacementGroup {
     Map<String, String> tags();
 
     /**
+     * Gets the zones property: Specifies the Availability Zone where virtual machine, virtual machine scale set or
+     * availability set associated with the proximity placement group can be created.
+     *
+     * @return the zones value.
+     */
+    List<String> zones();
+
+    /**
      * Gets the proximityPlacementGroupType property: Specifies the type of the proximity placement group.
      * &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Standard** : Co-locate resources within an Azure
      * region or Availability Zone. &lt;br&gt;&lt;br&gt; **Ultra** : For future use.
@@ -85,6 +93,13 @@ public interface ProximityPlacementGroup {
      * @return the colocationStatus value.
      */
     InstanceViewStatus colocationStatus();
+
+    /**
+     * Gets the intent property: Specifies the user intent of the proximity placement group.
+     *
+     * @return the intent value.
+     */
+    ProximityPlacementGroupPropertiesIntent intent();
 
     /**
      * Gets the region of the resource.
@@ -153,8 +168,10 @@ public interface ProximityPlacementGroup {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithZones,
                 DefinitionStages.WithProximityPlacementGroupType,
-                DefinitionStages.WithColocationStatus {
+                DefinitionStages.WithColocationStatus,
+                DefinitionStages.WithIntent {
             /**
              * Executes the create request.
              *
@@ -180,6 +197,18 @@ public interface ProximityPlacementGroup {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+        /** The stage of the ProximityPlacementGroup definition allowing to specify zones. */
+        interface WithZones {
+            /**
+             * Specifies the zones property: Specifies the Availability Zone where virtual machine, virtual machine
+             * scale set or availability set associated with the proximity placement group can be created..
+             *
+             * @param zones Specifies the Availability Zone where virtual machine, virtual machine scale set or
+             *     availability set associated with the proximity placement group can be created.
+             * @return the next definition stage.
+             */
+            WithCreate withZones(List<String> zones);
+        }
         /** The stage of the ProximityPlacementGroup definition allowing to specify proximityPlacementGroupType. */
         interface WithProximityPlacementGroupType {
             /**
@@ -203,6 +232,16 @@ public interface ProximityPlacementGroup {
              * @return the next definition stage.
              */
             WithCreate withColocationStatus(InstanceViewStatus colocationStatus);
+        }
+        /** The stage of the ProximityPlacementGroup definition allowing to specify intent. */
+        interface WithIntent {
+            /**
+             * Specifies the intent property: Specifies the user intent of the proximity placement group..
+             *
+             * @param intent Specifies the user intent of the proximity placement group.
+             * @return the next definition stage.
+             */
+            WithCreate withIntent(ProximityPlacementGroupPropertiesIntent intent);
         }
     }
     /**

@@ -134,6 +134,30 @@ import java.util.stream.Collectors;
 public final class ComputeManager {
     private Operations operations;
 
+    private Usages usages;
+
+    private VirtualMachineSizes virtualMachineSizes;
+
+    private VirtualMachineScaleSets virtualMachineScaleSets;
+
+    private VirtualMachineScaleSetExtensions virtualMachineScaleSetExtensions;
+
+    private VirtualMachineScaleSetRollingUpgrades virtualMachineScaleSetRollingUpgrades;
+
+    private VirtualMachineScaleSetVMExtensions virtualMachineScaleSetVMExtensions;
+
+    private VirtualMachineScaleSetVMs virtualMachineScaleSetVMs;
+
+    private VirtualMachineExtensions virtualMachineExtensions;
+
+    private VirtualMachines virtualMachines;
+
+    private VirtualMachineImages virtualMachineImages;
+
+    private VirtualMachineImagesEdgeZones virtualMachineImagesEdgeZones;
+
+    private VirtualMachineExtensionImages virtualMachineExtensionImages;
+
     private AvailabilitySets availabilitySets;
 
     private ProximityPlacementGroups proximityPlacementGroups;
@@ -144,22 +168,6 @@ public final class ComputeManager {
 
     private SshPublicKeys sshPublicKeys;
 
-    private VirtualMachineExtensionImages virtualMachineExtensionImages;
-
-    private VirtualMachineExtensions virtualMachineExtensions;
-
-    private VirtualMachineImages virtualMachineImages;
-
-    private VirtualMachineImagesEdgeZones virtualMachineImagesEdgeZones;
-
-    private Usages usages;
-
-    private VirtualMachines virtualMachines;
-
-    private VirtualMachineScaleSets virtualMachineScaleSets;
-
-    private VirtualMachineSizes virtualMachineSizes;
-
     private Images images;
 
     private RestorePointCollections restorePointCollections;
@@ -169,14 +177,6 @@ public final class ComputeManager {
     private CapacityReservationGroups capacityReservationGroups;
 
     private CapacityReservations capacityReservations;
-
-    private VirtualMachineScaleSetExtensions virtualMachineScaleSetExtensions;
-
-    private VirtualMachineScaleSetRollingUpgrades virtualMachineScaleSetRollingUpgrades;
-
-    private VirtualMachineScaleSetVMExtensions virtualMachineScaleSetVMExtensions;
-
-    private VirtualMachineScaleSetVMs virtualMachineScaleSetVMs;
 
     private LogAnalytics logAnalytics;
 
@@ -465,6 +465,159 @@ public final class ComputeManager {
     }
 
     /**
+     * Gets the resource collection API of Usages.
+     *
+     * @return Resource collection API of Usages.
+     */
+    public Usages usages() {
+        if (this.usages == null) {
+            this.usages = new UsagesImpl(clientObject.getUsages(), this);
+        }
+        return usages;
+    }
+
+    /**
+     * Gets the resource collection API of VirtualMachineSizes.
+     *
+     * @return Resource collection API of VirtualMachineSizes.
+     */
+    public VirtualMachineSizes virtualMachineSizes() {
+        if (this.virtualMachineSizes == null) {
+            this.virtualMachineSizes = new VirtualMachineSizesImpl(clientObject.getVirtualMachineSizes(), this);
+        }
+        return virtualMachineSizes;
+    }
+
+    /**
+     * Gets the resource collection API of VirtualMachineScaleSets.
+     *
+     * @return Resource collection API of VirtualMachineScaleSets.
+     */
+    public VirtualMachineScaleSets virtualMachineScaleSets() {
+        if (this.virtualMachineScaleSets == null) {
+            this.virtualMachineScaleSets =
+                new VirtualMachineScaleSetsImpl(clientObject.getVirtualMachineScaleSets(), this);
+        }
+        return virtualMachineScaleSets;
+    }
+
+    /**
+     * Gets the resource collection API of VirtualMachineScaleSetExtensions.
+     *
+     * @return Resource collection API of VirtualMachineScaleSetExtensions.
+     */
+    public VirtualMachineScaleSetExtensions virtualMachineScaleSetExtensions() {
+        if (this.virtualMachineScaleSetExtensions == null) {
+            this.virtualMachineScaleSetExtensions =
+                new VirtualMachineScaleSetExtensionsImpl(clientObject.getVirtualMachineScaleSetExtensions(), this);
+        }
+        return virtualMachineScaleSetExtensions;
+    }
+
+    /**
+     * Gets the resource collection API of VirtualMachineScaleSetRollingUpgrades.
+     *
+     * @return Resource collection API of VirtualMachineScaleSetRollingUpgrades.
+     */
+    public VirtualMachineScaleSetRollingUpgrades virtualMachineScaleSetRollingUpgrades() {
+        if (this.virtualMachineScaleSetRollingUpgrades == null) {
+            this.virtualMachineScaleSetRollingUpgrades =
+                new VirtualMachineScaleSetRollingUpgradesImpl(
+                    clientObject.getVirtualMachineScaleSetRollingUpgrades(), this);
+        }
+        return virtualMachineScaleSetRollingUpgrades;
+    }
+
+    /**
+     * Gets the resource collection API of VirtualMachineScaleSetVMExtensions.
+     *
+     * @return Resource collection API of VirtualMachineScaleSetVMExtensions.
+     */
+    public VirtualMachineScaleSetVMExtensions virtualMachineScaleSetVMExtensions() {
+        if (this.virtualMachineScaleSetVMExtensions == null) {
+            this.virtualMachineScaleSetVMExtensions =
+                new VirtualMachineScaleSetVMExtensionsImpl(clientObject.getVirtualMachineScaleSetVMExtensions(), this);
+        }
+        return virtualMachineScaleSetVMExtensions;
+    }
+
+    /**
+     * Gets the resource collection API of VirtualMachineScaleSetVMs.
+     *
+     * @return Resource collection API of VirtualMachineScaleSetVMs.
+     */
+    public VirtualMachineScaleSetVMs virtualMachineScaleSetVMs() {
+        if (this.virtualMachineScaleSetVMs == null) {
+            this.virtualMachineScaleSetVMs =
+                new VirtualMachineScaleSetVMsImpl(clientObject.getVirtualMachineScaleSetVMs(), this);
+        }
+        return virtualMachineScaleSetVMs;
+    }
+
+    /**
+     * Gets the resource collection API of VirtualMachineExtensions.
+     *
+     * @return Resource collection API of VirtualMachineExtensions.
+     */
+    public VirtualMachineExtensions virtualMachineExtensions() {
+        if (this.virtualMachineExtensions == null) {
+            this.virtualMachineExtensions =
+                new VirtualMachineExtensionsImpl(clientObject.getVirtualMachineExtensions(), this);
+        }
+        return virtualMachineExtensions;
+    }
+
+    /**
+     * Gets the resource collection API of VirtualMachines.
+     *
+     * @return Resource collection API of VirtualMachines.
+     */
+    public VirtualMachines virtualMachines() {
+        if (this.virtualMachines == null) {
+            this.virtualMachines = new VirtualMachinesImpl(clientObject.getVirtualMachines(), this);
+        }
+        return virtualMachines;
+    }
+
+    /**
+     * Gets the resource collection API of VirtualMachineImages.
+     *
+     * @return Resource collection API of VirtualMachineImages.
+     */
+    public VirtualMachineImages virtualMachineImages() {
+        if (this.virtualMachineImages == null) {
+            this.virtualMachineImages = new VirtualMachineImagesImpl(clientObject.getVirtualMachineImages(), this);
+        }
+        return virtualMachineImages;
+    }
+
+    /**
+     * Gets the resource collection API of VirtualMachineImagesEdgeZones.
+     *
+     * @return Resource collection API of VirtualMachineImagesEdgeZones.
+     */
+    public VirtualMachineImagesEdgeZones virtualMachineImagesEdgeZones() {
+        if (this.virtualMachineImagesEdgeZones == null) {
+            this.virtualMachineImagesEdgeZones =
+                new VirtualMachineImagesEdgeZonesImpl(clientObject.getVirtualMachineImagesEdgeZones(), this);
+        }
+        return virtualMachineImagesEdgeZones;
+    }
+
+    /**
+     * Gets the resource collection API of VirtualMachineExtensionImages.
+     *
+     * @return Resource collection API of VirtualMachineExtensionImages.
+     */
+    public VirtualMachineExtensionImages virtualMachineExtensionImages() {
+        if (this.virtualMachineExtensionImages == null) {
+            this.virtualMachineExtensionImages =
+                new VirtualMachineExtensionImagesImpl(clientObject.getVirtualMachineExtensionImages(), this);
+        }
+        return virtualMachineExtensionImages;
+    }
+
+    /**
      * Gets the resource collection API of AvailabilitySets.
      *
      * @return Resource collection API of AvailabilitySets.
@@ -523,106 +676,6 @@ public final class ComputeManager {
             this.sshPublicKeys = new SshPublicKeysImpl(clientObject.getSshPublicKeys(), this);
         }
         return sshPublicKeys;
-    }
-
-    /**
-     * Gets the resource collection API of VirtualMachineExtensionImages.
-     *
-     * @return Resource collection API of VirtualMachineExtensionImages.
-     */
-    public VirtualMachineExtensionImages virtualMachineExtensionImages() {
-        if (this.virtualMachineExtensionImages == null) {
-            this.virtualMachineExtensionImages =
-                new VirtualMachineExtensionImagesImpl(clientObject.getVirtualMachineExtensionImages(), this);
-        }
-        return virtualMachineExtensionImages;
-    }
-
-    /**
-     * Gets the resource collection API of VirtualMachineExtensions.
-     *
-     * @return Resource collection API of VirtualMachineExtensions.
-     */
-    public VirtualMachineExtensions virtualMachineExtensions() {
-        if (this.virtualMachineExtensions == null) {
-            this.virtualMachineExtensions =
-                new VirtualMachineExtensionsImpl(clientObject.getVirtualMachineExtensions(), this);
-        }
-        return virtualMachineExtensions;
-    }
-
-    /**
-     * Gets the resource collection API of VirtualMachineImages.
-     *
-     * @return Resource collection API of VirtualMachineImages.
-     */
-    public VirtualMachineImages virtualMachineImages() {
-        if (this.virtualMachineImages == null) {
-            this.virtualMachineImages = new VirtualMachineImagesImpl(clientObject.getVirtualMachineImages(), this);
-        }
-        return virtualMachineImages;
-    }
-
-    /**
-     * Gets the resource collection API of VirtualMachineImagesEdgeZones.
-     *
-     * @return Resource collection API of VirtualMachineImagesEdgeZones.
-     */
-    public VirtualMachineImagesEdgeZones virtualMachineImagesEdgeZones() {
-        if (this.virtualMachineImagesEdgeZones == null) {
-            this.virtualMachineImagesEdgeZones =
-                new VirtualMachineImagesEdgeZonesImpl(clientObject.getVirtualMachineImagesEdgeZones(), this);
-        }
-        return virtualMachineImagesEdgeZones;
-    }
-
-    /**
-     * Gets the resource collection API of Usages.
-     *
-     * @return Resource collection API of Usages.
-     */
-    public Usages usages() {
-        if (this.usages == null) {
-            this.usages = new UsagesImpl(clientObject.getUsages(), this);
-        }
-        return usages;
-    }
-
-    /**
-     * Gets the resource collection API of VirtualMachines.
-     *
-     * @return Resource collection API of VirtualMachines.
-     */
-    public VirtualMachines virtualMachines() {
-        if (this.virtualMachines == null) {
-            this.virtualMachines = new VirtualMachinesImpl(clientObject.getVirtualMachines(), this);
-        }
-        return virtualMachines;
-    }
-
-    /**
-     * Gets the resource collection API of VirtualMachineScaleSets.
-     *
-     * @return Resource collection API of VirtualMachineScaleSets.
-     */
-    public VirtualMachineScaleSets virtualMachineScaleSets() {
-        if (this.virtualMachineScaleSets == null) {
-            this.virtualMachineScaleSets =
-                new VirtualMachineScaleSetsImpl(clientObject.getVirtualMachineScaleSets(), this);
-        }
-        return virtualMachineScaleSets;
-    }
-
-    /**
-     * Gets the resource collection API of VirtualMachineSizes.
-     *
-     * @return Resource collection API of VirtualMachineSizes.
-     */
-    public VirtualMachineSizes virtualMachineSizes() {
-        if (this.virtualMachineSizes == null) {
-            this.virtualMachineSizes = new VirtualMachineSizesImpl(clientObject.getVirtualMachineSizes(), this);
-        }
-        return virtualMachineSizes;
     }
 
     /**
@@ -685,59 +738,6 @@ public final class ComputeManager {
             this.capacityReservations = new CapacityReservationsImpl(clientObject.getCapacityReservations(), this);
         }
         return capacityReservations;
-    }
-
-    /**
-     * Gets the resource collection API of VirtualMachineScaleSetExtensions.
-     *
-     * @return Resource collection API of VirtualMachineScaleSetExtensions.
-     */
-    public VirtualMachineScaleSetExtensions virtualMachineScaleSetExtensions() {
-        if (this.virtualMachineScaleSetExtensions == null) {
-            this.virtualMachineScaleSetExtensions =
-                new VirtualMachineScaleSetExtensionsImpl(clientObject.getVirtualMachineScaleSetExtensions(), this);
-        }
-        return virtualMachineScaleSetExtensions;
-    }
-
-    /**
-     * Gets the resource collection API of VirtualMachineScaleSetRollingUpgrades.
-     *
-     * @return Resource collection API of VirtualMachineScaleSetRollingUpgrades.
-     */
-    public VirtualMachineScaleSetRollingUpgrades virtualMachineScaleSetRollingUpgrades() {
-        if (this.virtualMachineScaleSetRollingUpgrades == null) {
-            this.virtualMachineScaleSetRollingUpgrades =
-                new VirtualMachineScaleSetRollingUpgradesImpl(
-                    clientObject.getVirtualMachineScaleSetRollingUpgrades(), this);
-        }
-        return virtualMachineScaleSetRollingUpgrades;
-    }
-
-    /**
-     * Gets the resource collection API of VirtualMachineScaleSetVMExtensions.
-     *
-     * @return Resource collection API of VirtualMachineScaleSetVMExtensions.
-     */
-    public VirtualMachineScaleSetVMExtensions virtualMachineScaleSetVMExtensions() {
-        if (this.virtualMachineScaleSetVMExtensions == null) {
-            this.virtualMachineScaleSetVMExtensions =
-                new VirtualMachineScaleSetVMExtensionsImpl(clientObject.getVirtualMachineScaleSetVMExtensions(), this);
-        }
-        return virtualMachineScaleSetVMExtensions;
-    }
-
-    /**
-     * Gets the resource collection API of VirtualMachineScaleSetVMs.
-     *
-     * @return Resource collection API of VirtualMachineScaleSetVMs.
-     */
-    public VirtualMachineScaleSetVMs virtualMachineScaleSetVMs() {
-        if (this.virtualMachineScaleSetVMs == null) {
-            this.virtualMachineScaleSetVMs =
-                new VirtualMachineScaleSetVMsImpl(clientObject.getVirtualMachineScaleSetVMs(), this);
-        }
-        return virtualMachineScaleSetVMs;
     }
 
     /**

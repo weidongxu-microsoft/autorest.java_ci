@@ -18,6 +18,7 @@ import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.Sku;
 import com.azure.resourcemanager.compute.generated.models.StorageProfile;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtension;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineIdentity;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVM;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMNetworkProfileConfiguration;
@@ -97,6 +98,10 @@ public final class VirtualMachineScaleSetVMImpl implements VirtualMachineScaleSe
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public VirtualMachineIdentity identity() {
+        return this.innerModel().identity();
     }
 
     public Boolean latestModelApplied() {
