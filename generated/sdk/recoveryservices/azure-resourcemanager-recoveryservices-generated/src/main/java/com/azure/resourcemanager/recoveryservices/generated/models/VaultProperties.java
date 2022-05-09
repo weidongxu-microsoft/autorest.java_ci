@@ -48,6 +48,12 @@ public final class VaultProperties {
     private VaultPropertiesEncryption encryption;
 
     /*
+     * Monitoring Settings of the vault
+     */
+    @JsonProperty(value = "monitoringSettings")
+    private MonitoringSettings monitoringSettings;
+
+    /*
      * The details of the latest move operation performed on the Azure Resource
      */
     @JsonProperty(value = "moveDetails")
@@ -142,6 +148,26 @@ public final class VaultProperties {
     }
 
     /**
+     * Get the monitoringSettings property: Monitoring Settings of the vault.
+     *
+     * @return the monitoringSettings value.
+     */
+    public MonitoringSettings monitoringSettings() {
+        return this.monitoringSettings;
+    }
+
+    /**
+     * Set the monitoringSettings property: Monitoring Settings of the vault.
+     *
+     * @param monitoringSettings the monitoringSettings value to set.
+     * @return the VaultProperties object itself.
+     */
+    public VaultProperties withMonitoringSettings(MonitoringSettings monitoringSettings) {
+        this.monitoringSettings = monitoringSettings;
+        return this;
+    }
+
+    /**
      * Get the moveDetails property: The details of the latest move operation performed on the Azure Resource.
      *
      * @return the moveDetails value.
@@ -193,6 +219,9 @@ public final class VaultProperties {
         }
         if (encryption() != null) {
             encryption().validate();
+        }
+        if (monitoringSettings() != null) {
+            monitoringSettings().validate();
         }
         if (moveDetails() != null) {
             moveDetails().validate();
