@@ -184,7 +184,6 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -195,7 +194,7 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                             resourceGroupName,
                             firewallPolicyName,
                             ruleCollectionGroupName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -242,7 +241,6 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -251,7 +249,7 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                 resourceGroupName,
                 firewallPolicyName,
                 ruleCollectionGroupName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -449,7 +447,6 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -460,7 +457,7 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                             resourceGroupName,
                             firewallPolicyName,
                             ruleCollectionGroupName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -508,7 +505,6 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -517,7 +513,7 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                 resourceGroupName,
                 firewallPolicyName,
                 ruleCollectionGroupName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -631,7 +627,6 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -642,7 +637,7 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                             resourceGroupName,
                             firewallPolicyName,
                             ruleCollectionGroupName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -700,7 +695,6 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -709,7 +703,7 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                 resourceGroupName,
                 firewallPolicyName,
                 ruleCollectionGroupName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -959,7 +953,6 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -969,7 +962,7 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                             this.client.getEndpoint(),
                             resourceGroupName,
                             firewallPolicyName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1020,7 +1013,6 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1028,7 +1020,7 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
                 this.client.getEndpoint(),
                 resourceGroupName,
                 firewallPolicyName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)

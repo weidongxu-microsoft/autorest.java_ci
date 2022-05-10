@@ -201,7 +201,6 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
         } else {
             vpnServerConfigurationPolicyGroupParameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -213,7 +212,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                             resourceGroupName,
                             vpnServerConfigurationName,
                             configurationPolicyGroupName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             vpnServerConfigurationPolicyGroupParameters,
                             accept,
                             context))
@@ -278,7 +277,6 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
         } else {
             vpnServerConfigurationPolicyGroupParameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -288,7 +286,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                 resourceGroupName,
                 vpnServerConfigurationName,
                 configurationPolicyGroupName,
-                apiVersion,
+                this.client.getApiVersion(),
                 vpnServerConfigurationPolicyGroupParameters,
                 accept,
                 context);
@@ -587,7 +585,6 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                     new IllegalArgumentException(
                         "Parameter configurationPolicyGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -599,7 +596,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                             resourceGroupName,
                             vpnServerConfigurationName,
                             configurationPolicyGroupName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -651,7 +648,6 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                     new IllegalArgumentException(
                         "Parameter configurationPolicyGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -661,7 +657,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                 resourceGroupName,
                 vpnServerConfigurationName,
                 configurationPolicyGroupName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -876,7 +872,6 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                     new IllegalArgumentException(
                         "Parameter configurationPolicyGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -888,7 +883,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                             resourceGroupName,
                             vpnServerConfigurationName,
                             configurationPolicyGroupName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -941,7 +936,6 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                     new IllegalArgumentException(
                         "Parameter configurationPolicyGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -951,7 +945,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                 resourceGroupName,
                 vpnServerConfigurationName,
                 configurationPolicyGroupName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -1057,7 +1051,6 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                     new IllegalArgumentException(
                         "Parameter vpnServerConfigurationName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1068,7 +1061,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             vpnServerConfigurationName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .<PagedResponse<VpnServerConfigurationPolicyGroupInner>>map(
@@ -1120,7 +1113,6 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                     new IllegalArgumentException(
                         "Parameter vpnServerConfigurationName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1129,7 +1121,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 vpnServerConfigurationName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context)
             .map(

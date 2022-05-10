@@ -361,7 +361,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -371,7 +370,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                             this.client.getEndpoint(),
                             resourceGroupName,
                             cloudServiceName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -422,7 +421,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -430,7 +428,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 this.client.getEndpoint(),
                 resourceGroupName,
                 cloudServiceName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -573,7 +571,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -586,7 +583,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                             roleInstanceName,
                             networkInterfaceName,
                             ipConfigurationName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -657,7 +654,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -668,7 +664,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 roleInstanceName,
                 networkInterfaceName,
                 ipConfigurationName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -866,7 +862,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -880,7 +875,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                             networkInterfaceName,
                             ipConfigurationName,
                             publicIpAddressName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             expand,
                             accept,
@@ -951,7 +946,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -963,7 +957,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 networkInterfaceName,
                 ipConfigurationName,
                 publicIpAddressName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 expand,
                 accept,
@@ -1158,7 +1152,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1168,7 +1161,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                             this.client.getEndpoint(),
                             resourceGroupName,
                             publicIpAddressName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1209,7 +1202,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1217,7 +1209,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 this.client.getEndpoint(),
                 resourceGroupName,
                 publicIpAddressName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1395,7 +1387,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1405,7 +1396,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                             this.client.getEndpoint(),
                             resourceGroupName,
                             publicIpAddressName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             expand,
                             accept,
@@ -1449,7 +1440,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1457,7 +1447,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 this.client.getEndpoint(),
                 resourceGroupName,
                 publicIpAddressName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 expand,
                 accept,
@@ -1586,7 +1576,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1596,7 +1585,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                             this.client.getEndpoint(),
                             resourceGroupName,
                             publicIpAddressName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -1644,7 +1633,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1652,7 +1640,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 this.client.getEndpoint(),
                 resourceGroupName,
                 publicIpAddressName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -1857,7 +1845,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1867,7 +1854,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                             this.client.getEndpoint(),
                             resourceGroupName,
                             publicIpAddressName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -1915,7 +1902,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1923,7 +1909,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 this.client.getEndpoint(),
                 resourceGroupName,
                 publicIpAddressName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -2012,13 +1998,17 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
+                        .list(
+                            this.client.getEndpoint(),
+                            this.client.getApiVersion(),
+                            this.client.getSubscriptionId(),
+                            accept,
+                            context))
             .<PagedResponse<PublicIpAddressInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -2055,11 +2045,15 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
+            .list(
+                this.client.getEndpoint(),
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                accept,
+                context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -2152,7 +2146,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2161,7 +2154,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                         .listByResourceGroup(
                             this.client.getEndpoint(),
                             resourceGroupName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -2207,14 +2200,13 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listByResourceGroup(
                 this.client.getEndpoint(),
                 resourceGroupName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -2326,7 +2318,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2336,7 +2327,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                             this.client.getEndpoint(),
                             resourceGroupName,
                             virtualMachineScaleSetName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -2389,7 +2380,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2397,7 +2387,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 this.client.getEndpoint(),
                 resourceGroupName,
                 virtualMachineScaleSetName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -2548,7 +2538,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2561,7 +2550,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                             virtualmachineIndex,
                             networkInterfaceName,
                             ipConfigurationName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -2635,7 +2624,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2646,7 +2634,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 virtualmachineIndex,
                 networkInterfaceName,
                 ipConfigurationName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -2858,7 +2846,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2872,7 +2859,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                             networkInterfaceName,
                             ipConfigurationName,
                             publicIpAddressName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             expand,
                             accept,
@@ -2945,7 +2932,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2957,7 +2943,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 networkInterfaceName,
                 ipConfigurationName,
                 publicIpAddressName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 expand,
                 accept,

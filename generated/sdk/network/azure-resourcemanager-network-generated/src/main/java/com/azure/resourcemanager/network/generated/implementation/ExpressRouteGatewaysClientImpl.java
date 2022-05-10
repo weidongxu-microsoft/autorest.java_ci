@@ -172,14 +172,17 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listBySubscription(
-                            this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
+                            this.client.getEndpoint(),
+                            this.client.getApiVersion(),
+                            this.client.getSubscriptionId(),
+                            accept,
+                            context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -206,12 +209,15 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listBySubscription(
-                this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context);
+                this.client.getEndpoint(),
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                accept,
+                context);
     }
 
     /**
@@ -288,7 +294,6 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -297,7 +302,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                         .listByResourceGroup(
                             this.client.getEndpoint(),
                             resourceGroupName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -333,14 +338,13 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listByResourceGroup(
                 this.client.getEndpoint(),
                 resourceGroupName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -443,7 +447,6 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
         } else {
             putExpressRouteGatewayParameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -453,7 +456,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                             this.client.getEndpoint(),
                             resourceGroupName,
                             expressRouteGatewayName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             putExpressRouteGatewayParameters,
                             accept,
@@ -508,7 +511,6 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
         } else {
             putExpressRouteGatewayParameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -516,7 +518,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                 this.client.getEndpoint(),
                 resourceGroupName,
                 expressRouteGatewayName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 putExpressRouteGatewayParameters,
                 accept,
@@ -758,7 +760,6 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
         } else {
             expressRouteGatewayParameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -769,7 +770,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             expressRouteGatewayName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             expressRouteGatewayParameters,
                             accept,
                             context))
@@ -823,7 +824,6 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
         } else {
             expressRouteGatewayParameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -832,7 +832,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 expressRouteGatewayName,
-                apiVersion,
+                this.client.getApiVersion(),
                 expressRouteGatewayParameters,
                 accept,
                 context);
@@ -1051,7 +1051,6 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1061,7 +1060,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                             this.client.getEndpoint(),
                             resourceGroupName,
                             expressRouteGatewayName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1103,7 +1102,6 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1111,7 +1109,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                 this.client.getEndpoint(),
                 resourceGroupName,
                 expressRouteGatewayName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1208,7 +1206,6 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1218,7 +1215,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                             this.client.getEndpoint(),
                             resourceGroupName,
                             expressRouteGatewayName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1261,7 +1258,6 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1269,7 +1265,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                 this.client.getEndpoint(),
                 resourceGroupName,
                 expressRouteGatewayName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);

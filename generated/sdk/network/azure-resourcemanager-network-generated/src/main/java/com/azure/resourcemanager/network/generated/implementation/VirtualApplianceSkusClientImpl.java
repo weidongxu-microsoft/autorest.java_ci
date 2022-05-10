@@ -113,13 +113,17 @@ public final class VirtualApplianceSkusClientImpl implements VirtualApplianceSku
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .list(this.client.getEndpoint(), this.client.getSubscriptionId(), apiVersion, accept, context))
+                        .list(
+                            this.client.getEndpoint(),
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
             .<PagedResponse<NetworkVirtualApplianceSkuInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -156,11 +160,15 @@ public final class VirtualApplianceSkusClientImpl implements VirtualApplianceSku
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), this.client.getSubscriptionId(), apiVersion, accept, context)
+            .list(
+                this.client.getEndpoint(),
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -256,7 +264,6 @@ public final class VirtualApplianceSkusClientImpl implements VirtualApplianceSku
         if (skuName == null) {
             return Mono.error(new IllegalArgumentException("Parameter skuName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -265,7 +272,7 @@ public final class VirtualApplianceSkusClientImpl implements VirtualApplianceSku
                         .get(
                             this.client.getEndpoint(),
                             this.client.getSubscriptionId(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             skuName,
                             accept,
                             context))
@@ -300,11 +307,16 @@ public final class VirtualApplianceSkusClientImpl implements VirtualApplianceSku
         if (skuName == null) {
             return Mono.error(new IllegalArgumentException("Parameter skuName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .get(this.client.getEndpoint(), this.client.getSubscriptionId(), apiVersion, skuName, accept, context);
+            .get(
+                this.client.getEndpoint(),
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                skuName,
+                accept,
+                context);
     }
 
     /**

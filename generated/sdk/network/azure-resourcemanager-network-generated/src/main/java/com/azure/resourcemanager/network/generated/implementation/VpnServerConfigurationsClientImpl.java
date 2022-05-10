@@ -210,7 +210,6 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                     new IllegalArgumentException(
                         "Parameter vpnServerConfigurationName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -221,7 +220,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             vpnServerConfigurationName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -263,7 +262,6 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                     new IllegalArgumentException(
                         "Parameter vpnServerConfigurationName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -272,7 +270,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 vpnServerConfigurationName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -379,7 +377,6 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
         } else {
             vpnServerConfigurationParameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -390,7 +387,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             vpnServerConfigurationName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             vpnServerConfigurationParameters,
                             accept,
                             context))
@@ -445,7 +442,6 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
         } else {
             vpnServerConfigurationParameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -454,7 +450,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 vpnServerConfigurationName,
-                apiVersion,
+                this.client.getApiVersion(),
                 vpnServerConfigurationParameters,
                 accept,
                 context);
@@ -696,7 +692,6 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
         } else {
             vpnServerConfigurationParameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -707,7 +702,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             vpnServerConfigurationName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             vpnServerConfigurationParameters,
                             accept,
                             context))
@@ -762,7 +757,6 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
         } else {
             vpnServerConfigurationParameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -771,7 +765,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 vpnServerConfigurationName,
-                apiVersion,
+                this.client.getApiVersion(),
                 vpnServerConfigurationParameters,
                 accept,
                 context);
@@ -878,7 +872,6 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                     new IllegalArgumentException(
                         "Parameter vpnServerConfigurationName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -889,7 +882,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             vpnServerConfigurationName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -931,7 +924,6 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                     new IllegalArgumentException(
                         "Parameter vpnServerConfigurationName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -940,7 +932,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 vpnServerConfigurationName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -1112,7 +1104,6 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1122,7 +1113,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                             this.client.getEndpoint(),
                             this.client.getSubscriptionId(),
                             resourceGroupName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .<PagedResponse<VpnServerConfigurationInner>>map(
@@ -1167,7 +1158,6 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1175,7 +1165,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                 this.client.getEndpoint(),
                 this.client.getSubscriptionId(),
                 resourceGroupName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context)
             .map(
@@ -1275,13 +1265,17 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .list(this.client.getEndpoint(), this.client.getSubscriptionId(), apiVersion, accept, context))
+                        .list(
+                            this.client.getEndpoint(),
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
             .<PagedResponse<VpnServerConfigurationInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -1318,11 +1312,15 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), this.client.getSubscriptionId(), apiVersion, accept, context)
+            .list(
+                this.client.getEndpoint(),
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context)
             .map(
                 res ->
                     new PagedResponseBase<>(

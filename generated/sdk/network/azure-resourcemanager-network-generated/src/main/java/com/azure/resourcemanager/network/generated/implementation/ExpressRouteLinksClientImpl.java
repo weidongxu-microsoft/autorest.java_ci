@@ -135,7 +135,6 @@ public final class ExpressRouteLinksClientImpl implements ExpressRouteLinksClien
         if (linkName == null) {
             return Mono.error(new IllegalArgumentException("Parameter linkName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -144,7 +143,7 @@ public final class ExpressRouteLinksClientImpl implements ExpressRouteLinksClien
                         .get(
                             this.client.getEndpoint(),
                             this.client.getSubscriptionId(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             resourceGroupName,
                             expressRoutePortName,
                             linkName,
@@ -191,14 +190,13 @@ public final class ExpressRouteLinksClientImpl implements ExpressRouteLinksClien
         if (linkName == null) {
             return Mono.error(new IllegalArgumentException("Parameter linkName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .get(
                 this.client.getEndpoint(),
                 this.client.getSubscriptionId(),
-                apiVersion,
+                this.client.getApiVersion(),
                 resourceGroupName,
                 expressRoutePortName,
                 linkName,
@@ -298,7 +296,6 @@ public final class ExpressRouteLinksClientImpl implements ExpressRouteLinksClien
             return Mono
                 .error(new IllegalArgumentException("Parameter expressRoutePortName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -307,7 +304,7 @@ public final class ExpressRouteLinksClientImpl implements ExpressRouteLinksClien
                         .list(
                             this.client.getEndpoint(),
                             this.client.getSubscriptionId(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             resourceGroupName,
                             expressRoutePortName,
                             accept,
@@ -358,14 +355,13 @@ public final class ExpressRouteLinksClientImpl implements ExpressRouteLinksClien
             return Mono
                 .error(new IllegalArgumentException("Parameter expressRoutePortName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .list(
                 this.client.getEndpoint(),
                 this.client.getSubscriptionId(),
-                apiVersion,
+                this.client.getApiVersion(),
                 resourceGroupName,
                 expressRoutePortName,
                 accept,

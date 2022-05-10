@@ -212,7 +212,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         if (connectionName == null) {
             return Mono.error(new IllegalArgumentException("Parameter connectionName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -224,7 +223,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
                             resourceGroupName,
                             gatewayName,
                             connectionName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -267,7 +266,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         if (connectionName == null) {
             return Mono.error(new IllegalArgumentException("Parameter connectionName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -277,7 +275,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
                 resourceGroupName,
                 gatewayName,
                 connectionName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -387,7 +385,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         } else {
             vpnConnectionParameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -399,7 +396,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
                             resourceGroupName,
                             gatewayName,
                             connectionName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             vpnConnectionParameters,
                             accept,
                             context))
@@ -455,7 +452,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         } else {
             vpnConnectionParameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -465,7 +461,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
                 resourceGroupName,
                 gatewayName,
                 connectionName,
-                apiVersion,
+                this.client.getApiVersion(),
                 vpnConnectionParameters,
                 accept,
                 context);
@@ -708,7 +704,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         if (connectionName == null) {
             return Mono.error(new IllegalArgumentException("Parameter connectionName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -720,7 +715,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
                             resourceGroupName,
                             gatewayName,
                             connectionName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -763,7 +758,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         if (connectionName == null) {
             return Mono.error(new IllegalArgumentException("Parameter connectionName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -773,7 +767,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
                 resourceGroupName,
                 gatewayName,
                 connectionName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -971,7 +965,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -982,7 +975,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
                             resourceGroupName,
                             gatewayName,
                             vpnConnectionName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -1037,7 +1030,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1046,7 +1038,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
                 resourceGroupName,
                 gatewayName,
                 vpnConnectionName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -1334,7 +1326,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1345,7 +1336,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
                             resourceGroupName,
                             gatewayName,
                             vpnConnectionName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -1399,7 +1390,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1408,7 +1398,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
                 resourceGroupName,
                 gatewayName,
                 vpnConnectionName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -1677,7 +1667,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         if (gatewayName == null) {
             return Mono.error(new IllegalArgumentException("Parameter gatewayName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1688,7 +1677,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             gatewayName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .<PagedResponse<VpnConnectionInner>>map(
@@ -1737,7 +1726,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         if (gatewayName == null) {
             return Mono.error(new IllegalArgumentException("Parameter gatewayName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1746,7 +1734,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 gatewayName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context)
             .map(

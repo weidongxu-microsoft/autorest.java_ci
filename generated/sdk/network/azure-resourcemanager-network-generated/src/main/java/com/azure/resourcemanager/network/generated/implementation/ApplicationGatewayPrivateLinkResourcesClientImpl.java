@@ -125,7 +125,6 @@ public final class ApplicationGatewayPrivateLinkResourcesClientImpl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -135,7 +134,7 @@ public final class ApplicationGatewayPrivateLinkResourcesClientImpl
                             this.client.getEndpoint(),
                             resourceGroupName,
                             applicationGatewayName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -187,7 +186,6 @@ public final class ApplicationGatewayPrivateLinkResourcesClientImpl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -195,7 +193,7 @@ public final class ApplicationGatewayPrivateLinkResourcesClientImpl
                 this.client.getEndpoint(),
                 resourceGroupName,
                 applicationGatewayName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)

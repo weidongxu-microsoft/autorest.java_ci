@@ -206,7 +206,6 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -216,7 +215,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             routeTableName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -256,7 +255,6 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -264,7 +262,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 routeTableName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -439,7 +437,6 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -449,7 +446,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             routeTableName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             expand,
                             accept,
@@ -491,7 +488,6 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -499,7 +495,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 routeTableName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 expand,
                 accept,
@@ -627,7 +623,6 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -637,7 +632,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             routeTableName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -684,7 +679,6 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -692,7 +686,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 routeTableName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -895,7 +889,6 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -905,7 +898,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             routeTableName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -952,7 +945,6 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -960,7 +952,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 routeTableName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -1054,7 +1046,6 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1063,7 +1054,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                         .listByResourceGroup(
                             this.client.getEndpoint(),
                             resourceGroupName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1109,14 +1100,13 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listByResourceGroup(
                 this.client.getEndpoint(),
                 resourceGroupName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -1214,13 +1204,17 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
+                        .list(
+                            this.client.getEndpoint(),
+                            this.client.getApiVersion(),
+                            this.client.getSubscriptionId(),
+                            accept,
+                            context))
             .<PagedResponse<RouteTableInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -1257,11 +1251,15 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
+            .list(
+                this.client.getEndpoint(),
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                accept,
+                context)
             .map(
                 res ->
                     new PagedResponseBase<>(

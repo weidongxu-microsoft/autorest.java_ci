@@ -132,7 +132,6 @@ public final class AvailableServiceAliasesClientImpl implements AvailableService
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -142,7 +141,7 @@ public final class AvailableServiceAliasesClientImpl implements AvailableService
                             this.client.getEndpoint(),
                             location,
                             this.client.getSubscriptionId(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .<PagedResponse<AvailableServiceAliasInner>>map(
@@ -185,11 +184,16 @@ public final class AvailableServiceAliasesClientImpl implements AvailableService
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), location, this.client.getSubscriptionId(), apiVersion, accept, context)
+            .list(
+                this.client.getEndpoint(),
+                location,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -297,7 +301,6 @@ public final class AvailableServiceAliasesClientImpl implements AvailableService
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -308,7 +311,7 @@ public final class AvailableServiceAliasesClientImpl implements AvailableService
                             resourceGroupName,
                             location,
                             this.client.getSubscriptionId(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .<PagedResponse<AvailableServiceAliasInner>>map(
@@ -357,7 +360,6 @@ public final class AvailableServiceAliasesClientImpl implements AvailableService
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -366,7 +368,7 @@ public final class AvailableServiceAliasesClientImpl implements AvailableService
                 resourceGroupName,
                 location,
                 this.client.getSubscriptionId(),
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context)
             .map(

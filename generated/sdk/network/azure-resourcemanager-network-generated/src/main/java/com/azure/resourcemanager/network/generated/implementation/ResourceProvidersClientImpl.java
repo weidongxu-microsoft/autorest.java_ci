@@ -278,7 +278,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             bslRequest.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -289,7 +288,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                                 this.client.getEndpoint(),
                                 resourceGroupName,
                                 bastionHostname,
-                                apiVersion,
+                                this.client.getApiVersion(),
                                 this.client.getSubscriptionId(),
                                 bslRequest,
                                 accept,
@@ -362,7 +361,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             bslRequest.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono =
@@ -371,7 +369,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                     this.client.getEndpoint(),
                     resourceGroupName,
                     bastionHostname,
-                    apiVersion,
+                    this.client.getApiVersion(),
                     this.client.getSubscriptionId(),
                     bslRequest,
                     accept,
@@ -515,7 +513,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             bslRequest.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -525,7 +522,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                             this.client.getEndpoint(),
                             resourceGroupName,
                             bastionHostname,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             bslRequest,
                             accept,
@@ -573,7 +570,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             bslRequest.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -581,7 +577,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                 this.client.getEndpoint(),
                 resourceGroupName,
                 bastionHostname,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 bslRequest,
                 accept,
@@ -781,7 +777,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             bslRequest.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -791,7 +786,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                             this.client.getEndpoint(),
                             resourceGroupName,
                             bastionHostname,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             bslRequest,
                             accept,
@@ -849,7 +844,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             bslRequest.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -857,7 +851,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                 this.client.getEndpoint(),
                 resourceGroupName,
                 bastionHostname,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 bslRequest,
                 accept,
@@ -981,7 +975,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -992,7 +985,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                                 this.client.getEndpoint(),
                                 resourceGroupName,
                                 bastionHostname,
-                                apiVersion,
+                                this.client.getApiVersion(),
                                 this.client.getSubscriptionId(),
                                 accept,
                                 context)
@@ -1057,7 +1050,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono =
@@ -1066,7 +1058,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                     this.client.getEndpoint(),
                     resourceGroupName,
                     bastionHostname,
-                    apiVersion,
+                    this.client.getApiVersion(),
                     this.client.getSubscriptionId(),
                     accept,
                     context)
@@ -1205,7 +1197,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             sessionIds.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1215,7 +1206,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                             this.client.getEndpoint(),
                             resourceGroupName,
                             bastionHostname,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             sessionIds,
                             accept,
@@ -1273,7 +1264,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             sessionIds.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1281,7 +1271,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                 this.client.getEndpoint(),
                 resourceGroupName,
                 bastionHostname,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 sessionIds,
                 accept,
@@ -1406,7 +1396,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1416,7 +1405,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                             this.client.getEndpoint(),
                             location,
                             domainNameLabel,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1458,7 +1447,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1466,7 +1454,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                 this.client.getEndpoint(),
                 location,
                 domainNameLabel,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1563,7 +1551,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         if (virtualWanName == null) {
             return Mono.error(new IllegalArgumentException("Parameter virtualWanName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1574,7 +1561,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             virtualWanName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -1613,7 +1600,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         if (virtualWanName == null) {
             return Mono.error(new IllegalArgumentException("Parameter virtualWanName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1622,7 +1608,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 virtualWanName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -1725,7 +1711,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             vpnClientParams.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1736,7 +1721,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             virtualWanName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             vpnClientParams,
                             accept,
                             context))
@@ -1788,7 +1773,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             vpnClientParams.validate();
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1797,7 +1781,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 virtualWanName,
-                apiVersion,
+                this.client.getApiVersion(),
                 vpnClientParams,
                 accept,
                 context);

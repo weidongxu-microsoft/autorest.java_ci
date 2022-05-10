@@ -113,7 +113,6 @@ public final class VpnServerConfigurationsAssociatedWithVirtualWansClientImpl
         if (virtualWanName == null) {
             return Mono.error(new IllegalArgumentException("Parameter virtualWanName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -124,7 +123,7 @@ public final class VpnServerConfigurationsAssociatedWithVirtualWansClientImpl
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             virtualWanName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -164,7 +163,6 @@ public final class VpnServerConfigurationsAssociatedWithVirtualWansClientImpl
         if (virtualWanName == null) {
             return Mono.error(new IllegalArgumentException("Parameter virtualWanName is required and cannot be null."));
         }
-        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -173,7 +171,7 @@ public final class VpnServerConfigurationsAssociatedWithVirtualWansClientImpl
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 virtualWanName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
