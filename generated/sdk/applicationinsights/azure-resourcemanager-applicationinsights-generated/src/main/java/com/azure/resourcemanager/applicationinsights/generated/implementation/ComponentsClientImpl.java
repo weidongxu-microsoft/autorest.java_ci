@@ -619,7 +619,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String resourceName) {
-        return deleteWithResponseAsync(resourceGroupName, resourceName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, resourceName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -764,14 +764,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
     private Mono<ApplicationInsightsComponentInner> getByResourceGroupAsync(
         String resourceGroupName, String resourceName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, resourceName)
-            .flatMap(
-                (Response<ApplicationInsightsComponentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -941,14 +934,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
     private Mono<ApplicationInsightsComponentInner> createOrUpdateAsync(
         String resourceGroupName, String resourceName, ApplicationInsightsComponentInner insightProperties) {
         return createOrUpdateWithResponseAsync(resourceGroupName, resourceName, insightProperties)
-            .flatMap(
-                (Response<ApplicationInsightsComponentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1118,14 +1104,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
     private Mono<ApplicationInsightsComponentInner> updateTagsAsync(
         String resourceGroupName, String resourceName, TagsResource componentTags) {
         return updateTagsWithResponseAsync(resourceGroupName, resourceName, componentTags)
-            .flatMap(
-                (Response<ApplicationInsightsComponentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1305,14 +1284,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
     private Mono<ComponentPurgeResponseInner> purgeAsync(
         String resourceGroupName, String resourceName, ComponentPurgeBody body) {
         return purgeWithResponseAsync(resourceGroupName, resourceName, body)
-            .flatMap(
-                (Response<ComponentPurgeResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1482,14 +1454,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
     private Mono<ComponentPurgeStatusResponseInner> getPurgeStatusAsync(
         String resourceGroupName, String resourceName, String purgeId) {
         return getPurgeStatusWithResponseAsync(resourceGroupName, resourceName, purgeId)
-            .flatMap(
-                (Response<ComponentPurgeStatusResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

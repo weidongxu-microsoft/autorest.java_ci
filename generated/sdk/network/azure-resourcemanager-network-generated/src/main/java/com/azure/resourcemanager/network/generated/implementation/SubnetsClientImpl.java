@@ -559,14 +559,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
     private Mono<SubnetInner> getAsync(
         String resourceGroupName, String virtualNetworkName, String subnetName, String expand) {
         return getWithResponseAsync(resourceGroupName, virtualNetworkName, subnetName, expand)
-            .flatMap(
-                (Response<SubnetInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -584,14 +577,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
     private Mono<SubnetInner> getAsync(String resourceGroupName, String virtualNetworkName, String subnetName) {
         final String expand = null;
         return getWithResponseAsync(resourceGroupName, virtualNetworkName, subnetName, expand)
-            .flatMap(
-                (Response<SubnetInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

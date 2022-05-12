@@ -289,14 +289,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
     private Mono<VpnServerConfigurationInner> getByResourceGroupAsync(
         String resourceGroupName, String vpnServerConfigurationName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, vpnServerConfigurationName)
-            .flatMap(
-                (Response<VpnServerConfigurationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -787,14 +780,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
         String resourceGroupName, String vpnServerConfigurationName, TagsObject vpnServerConfigurationParameters) {
         return updateTagsWithResponseAsync(
                 resourceGroupName, vpnServerConfigurationName, vpnServerConfigurationParameters)
-            .flatMap(
-                (Response<VpnServerConfigurationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

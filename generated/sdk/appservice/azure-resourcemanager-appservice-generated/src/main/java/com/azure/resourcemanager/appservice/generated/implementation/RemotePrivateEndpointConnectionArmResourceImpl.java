@@ -58,6 +58,10 @@ public final class RemotePrivateEndpointConnectionArmResourceImpl
         }
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public RemotePrivateEndpointConnectionArmResourceInner innerModel() {
         return this.innerObject;
     }

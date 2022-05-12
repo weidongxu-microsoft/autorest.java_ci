@@ -80,6 +80,10 @@ public final class ContainerAppImpl implements ContainerApp, ContainerApp.Defini
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ContainerAppInner innerModel() {
         return this.innerObject;
     }

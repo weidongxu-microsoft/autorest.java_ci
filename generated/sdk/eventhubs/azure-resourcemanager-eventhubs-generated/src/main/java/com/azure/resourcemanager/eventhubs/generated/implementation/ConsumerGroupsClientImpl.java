@@ -303,14 +303,7 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
         ConsumerGroupInner parameters) {
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, namespaceName, eventHubName, consumerGroupName, parameters)
-            .flatMap(
-                (Response<ConsumerGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -500,7 +493,7 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
     private Mono<Void> deleteAsync(
         String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName) {
         return deleteWithResponseAsync(resourceGroupName, namespaceName, eventHubName, consumerGroupName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -681,14 +674,7 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
     private Mono<ConsumerGroupInner> getAsync(
         String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName) {
         return getWithResponseAsync(resourceGroupName, namespaceName, eventHubName, consumerGroupName)
-            .flatMap(
-                (Response<ConsumerGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

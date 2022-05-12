@@ -34,6 +34,10 @@ public final class DomainOwnershipIdentifierImpl
         return this.innerModel().ownershipId();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public DomainOwnershipIdentifierInner innerModel() {
         return this.innerObject;
     }

@@ -1551,14 +1551,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
                 resourceType,
                 resourceName,
                 apiVersion)
-            .flatMap(
-                (Response<Boolean> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3204,14 +3197,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
                 resourceType,
                 resourceName,
                 apiVersion)
-            .flatMap(
-                (Response<GenericResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3365,14 +3351,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Boolean> checkExistenceByIdAsync(String resourceId, String apiVersion) {
         return checkExistenceByIdWithResponseAsync(resourceId, apiVersion)
-            .flatMap(
-                (Response<Boolean> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -4219,15 +4198,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GenericResourceInner> getByIdAsync(String resourceId, String apiVersion) {
-        return getByIdWithResponseAsync(resourceId, apiVersion)
-            .flatMap(
-                (Response<GenericResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getByIdWithResponseAsync(resourceId, apiVersion).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

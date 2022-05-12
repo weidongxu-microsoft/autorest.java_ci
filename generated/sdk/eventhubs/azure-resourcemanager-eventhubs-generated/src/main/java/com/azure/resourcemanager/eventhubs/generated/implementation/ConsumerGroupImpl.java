@@ -56,6 +56,10 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ConsumerGroupInner innerModel() {
         return this.innerObject;
     }

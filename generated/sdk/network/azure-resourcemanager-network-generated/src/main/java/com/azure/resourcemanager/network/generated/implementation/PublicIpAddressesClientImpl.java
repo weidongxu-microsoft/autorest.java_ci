@@ -996,14 +996,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 ipConfigurationName,
                 publicIpAddressName,
                 expand)
-            .flatMap(
-                (Response<PublicIpAddressInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1037,14 +1030,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 ipConfigurationName,
                 publicIpAddressName,
                 expand)
-            .flatMap(
-                (Response<PublicIpAddressInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1469,14 +1455,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
     private Mono<PublicIpAddressInner> getByResourceGroupAsync(
         String resourceGroupName, String publicIpAddressName, String expand) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, publicIpAddressName, expand)
-            .flatMap(
-                (Response<PublicIpAddressInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1493,14 +1472,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
     private Mono<PublicIpAddressInner> getByResourceGroupAsync(String resourceGroupName, String publicIpAddressName) {
         final String expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, publicIpAddressName, expand)
-            .flatMap(
-                (Response<PublicIpAddressInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1931,14 +1903,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
     private Mono<PublicIpAddressInner> updateTagsAsync(
         String resourceGroupName, String publicIpAddressName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, publicIpAddressName, parameters)
-            .flatMap(
-                (Response<PublicIpAddressInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2982,14 +2947,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 ipConfigurationName,
                 publicIpAddressName,
                 expand)
-            .flatMap(
-                (Response<PublicIpAddressInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3023,14 +2981,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 ipConfigurationName,
                 publicIpAddressName,
                 expand)
-            .flatMap(
-                (Response<PublicIpAddressInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

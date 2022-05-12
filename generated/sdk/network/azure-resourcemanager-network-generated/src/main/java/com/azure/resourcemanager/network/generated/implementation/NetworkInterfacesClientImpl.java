@@ -957,14 +957,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         String expand) {
         return getCloudServiceNetworkInterfaceWithResponseAsync(
                 resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand)
-            .flatMap(
-                (Response<NetworkInterfaceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -985,14 +978,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         final String expand = null;
         return getCloudServiceNetworkInterfaceWithResponseAsync(
                 resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand)
-            .flatMap(
-                (Response<NetworkInterfaceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1393,14 +1379,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
     private Mono<NetworkInterfaceInner> getByResourceGroupAsync(
         String resourceGroupName, String networkInterfaceName, String expand) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkInterfaceName, expand)
-            .flatMap(
-                (Response<NetworkInterfaceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1417,14 +1396,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
     private Mono<NetworkInterfaceInner> getByResourceGroupAsync(String resourceGroupName, String networkInterfaceName) {
         final String expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkInterfaceName, expand)
-            .flatMap(
-                (Response<NetworkInterfaceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1859,14 +1831,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
     private Mono<NetworkInterfaceInner> updateTagsAsync(
         String resourceGroupName, String networkInterfaceName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, networkInterfaceName, parameters)
-            .flatMap(
-                (Response<NetworkInterfaceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3297,14 +3262,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         String expand) {
         return getVirtualMachineScaleSetNetworkInterfaceWithResponseAsync(
                 resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, expand)
-            .flatMap(
-                (Response<NetworkInterfaceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3328,14 +3286,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         final String expand = null;
         return getVirtualMachineScaleSetNetworkInterfaceWithResponseAsync(
                 resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, expand)
-            .flatMap(
-                (Response<NetworkInterfaceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3886,14 +3837,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                 networkInterfaceName,
                 ipConfigurationName,
                 expand)
-            .flatMap(
-                (Response<NetworkInterfaceIpConfigurationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3925,14 +3869,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                 networkInterfaceName,
                 ipConfigurationName,
                 expand)
-            .flatMap(
-                (Response<NetworkInterfaceIpConfigurationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

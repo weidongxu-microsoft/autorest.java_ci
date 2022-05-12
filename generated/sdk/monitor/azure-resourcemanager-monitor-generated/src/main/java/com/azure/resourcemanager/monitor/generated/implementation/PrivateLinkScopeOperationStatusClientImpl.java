@@ -185,14 +185,7 @@ public final class PrivateLinkScopeOperationStatusClientImpl implements PrivateL
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<OperationStatusInner> getByResourceGroupAsync(String resourceGroupName, String asyncOperationId) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, asyncOperationId)
-            .flatMap(
-                (Response<OperationStatusInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

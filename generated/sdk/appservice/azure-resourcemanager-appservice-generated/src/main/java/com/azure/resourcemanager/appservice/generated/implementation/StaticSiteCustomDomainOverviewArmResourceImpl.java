@@ -55,6 +55,10 @@ public final class StaticSiteCustomDomainOverviewArmResourceImpl
         return this.innerModel().errorMessage();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public StaticSiteCustomDomainOverviewArmResourceInner innerModel() {
         return this.innerObject;
     }

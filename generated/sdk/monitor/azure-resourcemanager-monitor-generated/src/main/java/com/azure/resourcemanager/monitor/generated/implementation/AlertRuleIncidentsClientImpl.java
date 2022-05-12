@@ -210,14 +210,7 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<IncidentInner> getAsync(String resourceGroupName, String ruleName, String incidentName) {
         return getWithResponseAsync(resourceGroupName, ruleName, incidentName)
-            .flatMap(
-                (Response<IncidentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

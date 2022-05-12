@@ -459,14 +459,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExperimentInner> getAsync(String resourceGroupName, String profileName, String experimentName) {
         return getWithResponseAsync(resourceGroupName, profileName, experimentName)
-            .flatMap(
-                (Response<ExperimentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -75,6 +75,10 @@ public final class SecurityPartnerProviderImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public SecurityPartnerProviderInner innerModel() {
         return this.innerObject;
     }

@@ -646,14 +646,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     private Mono<ExpressRouteCrossConnectionInner> getByResourceGroupAsync(
         String resourceGroupName, String crossConnectionName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, crossConnectionName)
-            .flatMap(
-                (Response<ExpressRouteCrossConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1115,14 +1108,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     private Mono<ExpressRouteCrossConnectionInner> updateTagsAsync(
         String resourceGroupName, String crossConnectionName, TagsObject crossConnectionParameters) {
         return updateTagsWithResponseAsync(resourceGroupName, crossConnectionName, crossConnectionParameters)
-            .flatMap(
-                (Response<ExpressRouteCrossConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -100,6 +100,10 @@ public final class VirtualMachineExtensionImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualMachineExtensionInner innerModel() {
         return this.innerObject;
     }

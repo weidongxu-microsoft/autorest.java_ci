@@ -437,15 +437,7 @@ public final class OrdersClientImpl implements OrdersClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<OrderInner> getAsync(String deviceName, String resourceGroupName) {
-        return getWithResponseAsync(deviceName, resourceGroupName)
-            .flatMap(
-                (Response<OrderInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(deviceName, resourceGroupName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1072,14 +1064,7 @@ public final class OrdersClientImpl implements OrdersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DCAccessCodeInner> listDCAccessCodeAsync(String deviceName, String resourceGroupName) {
         return listDCAccessCodeWithResponseAsync(deviceName, resourceGroupName)
-            .flatMap(
-                (Response<DCAccessCodeInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

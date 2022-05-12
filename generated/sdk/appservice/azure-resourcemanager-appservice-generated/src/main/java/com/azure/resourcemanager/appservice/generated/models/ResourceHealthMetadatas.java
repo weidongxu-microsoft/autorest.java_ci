@@ -11,7 +11,7 @@ import com.azure.core.util.Context;
 /** Resource collection API of ResourceHealthMetadatas. */
 public interface ResourceHealthMetadatas {
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the subscription.
+     * List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -21,7 +21,7 @@ public interface ResourceHealthMetadatas {
     PagedIterable<ResourceHealthMetadata> list();
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the subscription.
+     * List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -33,7 +33,7 @@ public interface ResourceHealthMetadatas {
     PagedIterable<ResourceHealthMetadata> list(Context context);
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -45,7 +45,7 @@ public interface ResourceHealthMetadatas {
     PagedIterable<ResourceHealthMetadata> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -58,7 +58,7 @@ public interface ResourceHealthMetadatas {
     PagedIterable<ResourceHealthMetadata> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -66,12 +66,13 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
+     * @return the category of ResourceHealthMetadata to use for the given site as a collection as paginated response
+     *     with {@link PagedIterable}.
      */
     PagedIterable<ResourceHealthMetadata> listBySite(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -80,12 +81,13 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
+     * @return the category of ResourceHealthMetadata to use for the given site as a collection as paginated response
+     *     with {@link PagedIterable}.
      */
     PagedIterable<ResourceHealthMetadata> listBySite(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -93,12 +95,12 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings.
+     * @return the category of ResourceHealthMetadata to use for the given site.
      */
     ResourceHealthMetadata getBySite(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -107,12 +109,12 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings along with {@link Response}.
+     * @return the category of ResourceHealthMetadata to use for the given site along with {@link Response}.
      */
     Response<ResourceHealthMetadata> getBySiteWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -121,12 +123,13 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
+     * @return the category of ResourceHealthMetadata to use for the given site as a collection as paginated response
+     *     with {@link PagedIterable}.
      */
     PagedIterable<ResourceHealthMetadata> listBySiteSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -136,13 +139,14 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
+     * @return the category of ResourceHealthMetadata to use for the given site as a collection as paginated response
+     *     with {@link PagedIterable}.
      */
     PagedIterable<ResourceHealthMetadata> listBySiteSlot(
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -151,12 +155,12 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings.
+     * @return the category of ResourceHealthMetadata to use for the given site.
      */
     ResourceHealthMetadata getBySiteSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -166,7 +170,7 @@ public interface ResourceHealthMetadatas {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings along with {@link Response}.
+     * @return the category of ResourceHealthMetadata to use for the given site along with {@link Response}.
      */
     Response<ResourceHealthMetadata> getBySiteSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);

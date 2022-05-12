@@ -217,6 +217,13 @@ public interface AppServiceCertificateOrder {
     String regionName();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateOrderInner
      * object.
      *
@@ -461,7 +468,7 @@ public interface AppServiceCertificateOrder {
     AppServiceCertificateOrder refresh(Context context);
 
     /**
-     * Description for Reissue an existing certificate order.
+     * Reissue an existing certificate order.
      *
      * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -472,7 +479,7 @@ public interface AppServiceCertificateOrder {
     void reissue(ReissueCertificateOrderRequest reissueCertificateOrderRequest);
 
     /**
-     * Description for Reissue an existing certificate order.
+     * Reissue an existing certificate order.
      *
      * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @param context The context to associate with this operation.
@@ -485,7 +492,7 @@ public interface AppServiceCertificateOrder {
     Response<Void> reissueWithResponse(ReissueCertificateOrderRequest reissueCertificateOrderRequest, Context context);
 
     /**
-     * Description for Renew an existing certificate order.
+     * Renew an existing certificate order.
      *
      * @param renewCertificateOrderRequest Renew parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -496,7 +503,7 @@ public interface AppServiceCertificateOrder {
     void renew(RenewCertificateOrderRequest renewCertificateOrderRequest);
 
     /**
-     * Description for Renew an existing certificate order.
+     * Renew an existing certificate order.
      *
      * @param renewCertificateOrderRequest Renew parameters.
      * @param context The context to associate with this operation.
@@ -509,7 +516,7 @@ public interface AppServiceCertificateOrder {
     Response<Void> renewWithResponse(RenewCertificateOrderRequest renewCertificateOrderRequest, Context context);
 
     /**
-     * Description for Resend certificate email.
+     * Resend certificate email.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -518,7 +525,7 @@ public interface AppServiceCertificateOrder {
     void resendEmail();
 
     /**
-     * Description for Resend certificate email.
+     * Resend certificate email.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -593,7 +600,7 @@ public interface AppServiceCertificateOrder {
     Response<SiteSeal> retrieveSiteSealWithResponse(SiteSealRequest siteSealRequest, Context context);
 
     /**
-     * Description for Verify domain ownership for this certificate order.
+     * Verify domain ownership for this certificate order.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -602,7 +609,7 @@ public interface AppServiceCertificateOrder {
     void verifyDomainOwnership();
 
     /**
-     * Description for Verify domain ownership for this certificate order.
+     * Verify domain ownership for this certificate order.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

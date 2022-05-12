@@ -524,14 +524,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
     private Mono<NetworkProfileInner> getByResourceGroupAsync(
         String resourceGroupName, String networkProfileName, String expand) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkProfileName, expand)
-            .flatMap(
-                (Response<NetworkProfileInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -548,14 +541,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
     private Mono<NetworkProfileInner> getByResourceGroupAsync(String resourceGroupName, String networkProfileName) {
         final String expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkProfileName, expand)
-            .flatMap(
-                (Response<NetworkProfileInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -717,14 +703,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
     private Mono<NetworkProfileInner> createOrUpdateAsync(
         String resourceGroupName, String networkProfileName, NetworkProfileInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, networkProfileName, parameters)
-            .flatMap(
-                (Response<NetworkProfileInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -887,14 +866,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
     private Mono<NetworkProfileInner> updateTagsAsync(
         String resourceGroupName, String networkProfileName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, networkProfileName, parameters)
-            .flatMap(
-                (Response<NetworkProfileInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

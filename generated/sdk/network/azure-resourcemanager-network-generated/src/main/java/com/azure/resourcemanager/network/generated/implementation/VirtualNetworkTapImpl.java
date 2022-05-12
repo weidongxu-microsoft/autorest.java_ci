@@ -108,6 +108,10 @@ public final class VirtualNetworkTapImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualNetworkTapInner innerModel() {
         return this.innerObject;
     }

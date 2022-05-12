@@ -216,14 +216,7 @@ public final class VaultCertificatesClientImpl implements VaultCertificatesClien
     private Mono<VaultCertificateResponseInner> createAsync(
         String resourceGroupName, String vaultName, String certificateName, CertificateRequest certificateRequest) {
         return createWithResponseAsync(resourceGroupName, vaultName, certificateName, certificateRequest)
-            .flatMap(
-                (Response<VaultCertificateResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

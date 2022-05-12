@@ -234,14 +234,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
     private Mono<DiagnosticProactiveLogCollectionSettingsInner> getDiagnosticProactiveLogCollectionSettingsAsync(
         String deviceName, String resourceGroupName) {
         return getDiagnosticProactiveLogCollectionSettingsWithResponseAsync(deviceName, resourceGroupName)
-            .flatMap(
-                (Response<DiagnosticProactiveLogCollectionSettingsInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -715,14 +708,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
     private Mono<DiagnosticRemoteSupportSettingsInner> getDiagnosticRemoteSupportSettingsAsync(
         String deviceName, String resourceGroupName) {
         return getDiagnosticRemoteSupportSettingsWithResponseAsync(deviceName, resourceGroupName)
-            .flatMap(
-                (Response<DiagnosticRemoteSupportSettingsInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

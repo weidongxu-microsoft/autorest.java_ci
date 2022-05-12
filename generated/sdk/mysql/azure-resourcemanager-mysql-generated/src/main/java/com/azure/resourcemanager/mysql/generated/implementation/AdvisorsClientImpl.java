@@ -217,14 +217,7 @@ public final class AdvisorsClientImpl implements AdvisorsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AdvisorInner> getAsync(String resourceGroupName, String serverName, String advisorName) {
         return getWithResponseAsync(resourceGroupName, serverName, advisorName)
-            .flatMap(
-                (Response<AdvisorInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

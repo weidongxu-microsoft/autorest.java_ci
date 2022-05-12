@@ -263,14 +263,7 @@ public final class ReportsClientImpl implements ReportsClient {
         String country) {
         return getLatencyScorecardsWithResponseAsync(
                 resourceGroupName, profileName, experimentName, aggregationInterval, endDateTimeUtc, country)
-            .flatMap(
-                (Response<LatencyScorecardInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -295,14 +288,7 @@ public final class ReportsClientImpl implements ReportsClient {
         final String country = null;
         return getLatencyScorecardsWithResponseAsync(
                 resourceGroupName, profileName, experimentName, aggregationInterval, endDateTimeUtc, country)
-            .flatMap(
-                (Response<LatencyScorecardInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -576,14 +562,7 @@ public final class ReportsClientImpl implements ReportsClient {
                 timeseriesType,
                 endpointParam,
                 country)
-            .flatMap(
-                (Response<TimeseriesInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -622,14 +601,7 @@ public final class ReportsClientImpl implements ReportsClient {
                 timeseriesType,
                 endpointParam,
                 country)
-            .flatMap(
-                (Response<TimeseriesInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

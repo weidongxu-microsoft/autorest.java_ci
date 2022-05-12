@@ -603,14 +603,7 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
     private Mono<PacketCaptureResultInner> getAsync(
         String resourceGroupName, String networkWatcherName, String packetCaptureName) {
         return getWithResponseAsync(resourceGroupName, networkWatcherName, packetCaptureName)
-            .flatMap(
-                (Response<PacketCaptureResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

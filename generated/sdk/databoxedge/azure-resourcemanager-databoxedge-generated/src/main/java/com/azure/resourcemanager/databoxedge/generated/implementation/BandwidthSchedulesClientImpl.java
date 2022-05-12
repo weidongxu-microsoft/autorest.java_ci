@@ -446,14 +446,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<BandwidthScheduleInner> getAsync(String deviceName, String name, String resourceGroupName) {
         return getWithResponseAsync(deviceName, name, resourceGroupName)
-            .flatMap(
-                (Response<BandwidthScheduleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

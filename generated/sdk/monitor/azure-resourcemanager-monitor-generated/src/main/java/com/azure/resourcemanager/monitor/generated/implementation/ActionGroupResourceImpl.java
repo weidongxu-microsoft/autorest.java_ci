@@ -170,6 +170,10 @@ public final class ActionGroupResourceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ActionGroupResourceInner innerModel() {
         return this.innerObject;
     }

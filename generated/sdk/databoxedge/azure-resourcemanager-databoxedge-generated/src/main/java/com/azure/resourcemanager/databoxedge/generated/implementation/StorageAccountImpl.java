@@ -56,6 +56,10 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.innerModel().containerCount();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public StorageAccountInner innerModel() {
         return this.innerObject;
     }

@@ -145,15 +145,7 @@ public final class ResourceProviderCommonsClientImpl implements ResourceProvider
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<UserSubscriptionQuotaListResultInner> getSubscriptionQuotaAsync() {
-        return getSubscriptionQuotaWithResponseAsync()
-            .flatMap(
-                (Response<UserSubscriptionQuotaListResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getSubscriptionQuotaWithResponseAsync().flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

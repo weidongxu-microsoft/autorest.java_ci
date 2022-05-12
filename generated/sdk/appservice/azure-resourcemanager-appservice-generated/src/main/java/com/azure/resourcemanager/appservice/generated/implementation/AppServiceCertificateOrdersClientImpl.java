@@ -418,7 +418,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for List all certificate orders in a subscription.
+     * List all certificate orders in a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -463,7 +463,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for List all certificate orders in a subscription.
+     * List all certificate orders in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -507,7 +507,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for List all certificate orders in a subscription.
+     * List all certificate orders in a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -519,7 +519,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for List all certificate orders in a subscription.
+     * List all certificate orders in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -534,7 +534,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for List all certificate orders in a subscription.
+     * List all certificate orders in a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -546,7 +546,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for List all certificate orders in a subscription.
+     * List all certificate orders in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -560,7 +560,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Validate information for a certificate order.
+     * Validate information for a certificate order.
      *
      * @param appServiceCertificateOrder Information for a certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -607,7 +607,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Validate information for a certificate order.
+     * Validate information for a certificate order.
      *
      * @param appServiceCertificateOrder Information for a certificate order.
      * @param context The context to associate with this operation.
@@ -652,7 +652,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Validate information for a certificate order.
+     * Validate information for a certificate order.
      *
      * @param appServiceCertificateOrder Information for a certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -663,11 +663,11 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> validatePurchaseInformationAsync(AppServiceCertificateOrderInner appServiceCertificateOrder) {
         return validatePurchaseInformationWithResponseAsync(appServiceCertificateOrder)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Validate information for a certificate order.
+     * Validate information for a certificate order.
      *
      * @param appServiceCertificateOrder Information for a certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -680,7 +680,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Validate information for a certificate order.
+     * Validate information for a certificate order.
      *
      * @param appServiceCertificateOrder Information for a certificate order.
      * @param context The context to associate with this operation.
@@ -696,14 +696,14 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get certificate orders in a resource group.
+     * Get certificate orders in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return certificate orders in a resource group along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listByResourceGroupSinglePageAsync(
@@ -749,15 +749,15 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get certificate orders in a resource group.
+     * Get certificate orders in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return certificate orders in a resource group along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceCertificateOrderInner>> listByResourceGroupSinglePageAsync(
@@ -800,13 +800,13 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get certificate orders in a resource group.
+     * Get certificate orders in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders as paginated response with {@link PagedFlux}.
+     * @return certificate orders in a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServiceCertificateOrderInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -816,14 +816,14 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get certificate orders in a resource group.
+     * Get certificate orders in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders as paginated response with {@link PagedFlux}.
+     * @return certificate orders in a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServiceCertificateOrderInner> listByResourceGroupAsync(
@@ -834,13 +834,13 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get certificate orders in a resource group.
+     * Get certificate orders in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
+     * @return certificate orders in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServiceCertificateOrderInner> listByResourceGroup(String resourceGroupName) {
@@ -848,14 +848,14 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get certificate orders in a resource group.
+     * Get certificate orders in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
+     * @return certificate orders in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServiceCertificateOrderInner> listByResourceGroup(
@@ -864,14 +864,14 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get a certificate order.
+     * Get a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order..
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
+     * @return a certificate order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateOrderInner>> getByResourceGroupWithResponseAsync(
@@ -913,7 +913,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get a certificate order.
+     * Get a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order..
@@ -921,7 +921,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order along with {@link Response} on successful completion of {@link Mono}.
+     * @return a certificate order along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateOrderInner>> getByResourceGroupWithResponseAsync(
@@ -960,38 +960,31 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get a certificate order.
+     * Get a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order..
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order on successful completion of {@link Mono}.
+     * @return a certificate order on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateOrderInner> getByResourceGroupAsync(
         String resourceGroupName, String certificateOrderName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, certificateOrderName)
-            .flatMap(
-                (Response<AppServiceCertificateOrderInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Get a certificate order.
+     * Get a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order..
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
+     * @return a certificate order.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public AppServiceCertificateOrderInner getByResourceGroup(String resourceGroupName, String certificateOrderName) {
@@ -999,7 +992,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get a certificate order.
+     * Get a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order..
@@ -1007,7 +1000,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order along with {@link Response}.
+     * @return a certificate order along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AppServiceCertificateOrderInner> getByResourceGroupWithResponse(
@@ -1016,7 +1009,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1077,7 +1070,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1137,7 +1130,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1166,7 +1159,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1199,7 +1192,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1219,7 +1212,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1241,7 +1234,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1262,7 +1255,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1285,7 +1278,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1304,7 +1297,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1326,7 +1319,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Delete an existing certificate order.
+     * Delete an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1374,7 +1367,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Delete an existing certificate order.
+     * Delete an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1421,7 +1414,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Delete an existing certificate order.
+     * Delete an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1432,12 +1425,11 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String certificateOrderName) {
-        return deleteWithResponseAsync(resourceGroupName, certificateOrderName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, certificateOrderName).flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Delete an existing certificate order.
+     * Delete an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1451,7 +1443,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Delete an existing certificate order.
+     * Delete an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1467,7 +1459,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1528,7 +1520,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1588,7 +1580,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1604,18 +1596,11 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         String certificateOrderName,
         AppServiceCertificateOrderPatchResource certificateDistinguishedName) {
         return updateWithResponseAsync(resourceGroupName, certificateOrderName, certificateDistinguishedName)
-            .flatMap(
-                (Response<AppServiceCertificateOrderInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1634,7 +1619,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Create or update a certificate purchase order.
+     * Create or update a certificate purchase order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1656,7 +1641,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for List all certificates associated with a certificate order.
+     * List all certificates associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1715,7 +1700,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for List all certificates associated with a certificate order.
+     * List all certificates associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1772,7 +1757,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for List all certificates associated with a certificate order.
+     * List all certificates associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1790,7 +1775,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for List all certificates associated with a certificate order.
+     * List all certificates associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1809,7 +1794,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for List all certificates associated with a certificate order.
+     * List all certificates associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1825,7 +1810,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for List all certificates associated with a certificate order.
+     * List all certificates associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1842,7 +1827,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get the certificate associated with a certificate order.
+     * Get the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1850,8 +1835,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
-     *     Response} on successful completion of {@link Mono}.
+     * @return the certificate associated with a certificate order along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateResourceInner>> getCertificateWithResponseAsync(
@@ -1897,7 +1882,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get the certificate associated with a certificate order.
+     * Get the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1906,8 +1891,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
-     *     Response} on successful completion of {@link Mono}.
+     * @return the certificate associated with a certificate order along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceCertificateResourceInner>> getCertificateWithResponseAsync(
@@ -1950,7 +1935,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get the certificate associated with a certificate order.
+     * Get the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1958,25 +1943,17 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure on successful
-     *     completion of {@link Mono}.
+     * @return the certificate associated with a certificate order on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceCertificateResourceInner> getCertificateAsync(
         String resourceGroupName, String certificateOrderName, String name) {
         return getCertificateWithResponseAsync(resourceGroupName, certificateOrderName, name)
-            .flatMap(
-                (Response<AppServiceCertificateResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Get the certificate associated with a certificate order.
+     * Get the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -1984,7 +1961,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @return the certificate associated with a certificate order.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public AppServiceCertificateResourceInner getCertificate(
@@ -1993,7 +1970,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Get the certificate associated with a certificate order.
+     * Get the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2002,8 +1979,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
-     *     Response}.
+     * @return the certificate associated with a certificate order along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AppServiceCertificateResourceInner> getCertificateWithResponse(
@@ -2012,7 +1988,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2078,7 +2054,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2143,7 +2119,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2176,7 +2152,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2212,7 +2188,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2236,7 +2212,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2263,7 +2239,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2287,7 +2263,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2314,7 +2290,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2336,7 +2312,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2361,7 +2337,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Delete the certificate associated with a certificate order.
+     * Delete the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2415,7 +2391,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Delete the certificate associated with a certificate order.
+     * Delete the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2467,7 +2443,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Delete the certificate associated with a certificate order.
+     * Delete the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2480,11 +2456,11 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteCertificateAsync(String resourceGroupName, String certificateOrderName, String name) {
         return deleteCertificateWithResponseAsync(resourceGroupName, certificateOrderName, name)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Delete the certificate associated with a certificate order.
+     * Delete the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2499,7 +2475,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Delete the certificate associated with a certificate order.
+     * Delete the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2517,7 +2493,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2583,7 +2559,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2648,7 +2624,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2667,18 +2643,11 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         String name,
         AppServiceCertificatePatchResource keyVaultCertificate) {
         return updateCertificateWithResponseAsync(resourceGroupName, certificateOrderName, name, keyVaultCertificate)
-            .flatMap(
-                (Response<AppServiceCertificateResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2699,7 +2668,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Creates or updates a certificate and associates with key vault secret.
+     * Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2725,7 +2694,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Reissue an existing certificate order.
+     * Reissue an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2786,7 +2755,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Reissue an existing certificate order.
+     * Reissue an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2846,7 +2815,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Reissue an existing certificate order.
+     * Reissue an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2862,11 +2831,11 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         String certificateOrderName,
         ReissueCertificateOrderRequest reissueCertificateOrderRequest) {
         return reissueWithResponseAsync(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Reissue an existing certificate order.
+     * Reissue an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2884,7 +2853,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Reissue an existing certificate order.
+     * Reissue an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2907,7 +2876,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Renew an existing certificate order.
+     * Renew an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -2968,7 +2937,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Renew an existing certificate order.
+     * Renew an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3028,7 +2997,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Renew an existing certificate order.
+     * Renew an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3044,11 +3013,11 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         String certificateOrderName,
         RenewCertificateOrderRequest renewCertificateOrderRequest) {
         return renewWithResponseAsync(resourceGroupName, certificateOrderName, renewCertificateOrderRequest)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Renew an existing certificate order.
+     * Renew an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3066,7 +3035,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Renew an existing certificate order.
+     * Renew an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3088,7 +3057,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Resend certificate email.
+     * Resend certificate email.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3136,7 +3105,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Resend certificate email.
+     * Resend certificate email.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3183,7 +3152,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Resend certificate email.
+     * Resend certificate email.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3194,12 +3163,11 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> resendEmailAsync(String resourceGroupName, String certificateOrderName) {
-        return resendEmailWithResponseAsync(resourceGroupName, certificateOrderName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return resendEmailWithResponseAsync(resourceGroupName, certificateOrderName).flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Resend certificate email.
+     * Resend certificate email.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3213,7 +3181,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Resend certificate email.
+     * Resend certificate email.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3357,7 +3325,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     private Mono<Void> resendRequestEmailsAsync(
         String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier) {
         return resendRequestEmailsWithResponseAsync(resourceGroupName, certificateOrderName, nameIdentifier)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -3542,14 +3510,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     private Mono<SiteSealInner> retrieveSiteSealAsync(
         String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest) {
         return retrieveSiteSealWithResponseAsync(resourceGroupName, certificateOrderName, siteSealRequest)
-            .flatMap(
-                (Response<SiteSealInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3601,7 +3562,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Verify domain ownership for this certificate order.
+     * Verify domain ownership for this certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3650,7 +3611,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Verify domain ownership for this certificate order.
+     * Verify domain ownership for this certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3697,7 +3658,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Verify domain ownership for this certificate order.
+     * Verify domain ownership for this certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3709,11 +3670,11 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> verifyDomainOwnershipAsync(String resourceGroupName, String certificateOrderName) {
         return verifyDomainOwnershipWithResponseAsync(resourceGroupName, certificateOrderName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Verify domain ownership for this certificate order.
+     * Verify domain ownership for this certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3727,7 +3688,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Verify domain ownership for this certificate order.
+     * Verify domain ownership for this certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -3744,7 +3705,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Retrieve the list of certificate actions.
+     * Retrieve the list of certificate actions.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -3792,7 +3753,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Retrieve the list of certificate actions.
+     * Retrieve the list of certificate actions.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -3838,7 +3799,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Retrieve the list of certificate actions.
+     * Retrieve the list of certificate actions.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -3851,18 +3812,11 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     private Mono<List<CertificateOrderActionInner>> retrieveCertificateActionsAsync(
         String resourceGroupName, String name) {
         return retrieveCertificateActionsWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<List<CertificateOrderActionInner>> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Retrieve the list of certificate actions.
+     * Retrieve the list of certificate actions.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -3877,7 +3831,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Retrieve the list of certificate actions.
+     * Retrieve the list of certificate actions.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -3894,7 +3848,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Retrieve email history.
+     * Retrieve email history.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -3942,7 +3896,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Retrieve email history.
+     * Retrieve email history.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -3988,7 +3942,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Retrieve email history.
+     * Retrieve email history.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -4001,18 +3955,11 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     private Mono<List<CertificateEmailInner>> retrieveCertificateEmailHistoryAsync(
         String resourceGroupName, String name) {
         return retrieveCertificateEmailHistoryWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<List<CertificateEmailInner>> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Retrieve email history.
+     * Retrieve email history.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -4027,7 +3974,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     }
 
     /**
-     * Description for Retrieve email history.
+     * Retrieve email history.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.

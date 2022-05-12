@@ -317,14 +317,7 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
     private Mono<AvailabilitySetInner> createOrUpdateAsync(
         String resourceGroupName, String availabilitySetName, AvailabilitySetInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, availabilitySetName, parameters)
-            .flatMap(
-                (Response<AvailabilitySetInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -493,14 +486,7 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
     private Mono<AvailabilitySetInner> updateAsync(
         String resourceGroupName, String availabilitySetName, AvailabilitySetUpdate parameters) {
         return updateWithResponseAsync(resourceGroupName, availabilitySetName, parameters)
-            .flatMap(
-                (Response<AvailabilitySetInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -648,8 +634,7 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String availabilitySetName) {
-        return deleteWithResponseAsync(resourceGroupName, availabilitySetName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, availabilitySetName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -796,14 +781,7 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AvailabilitySetInner> getByResourceGroupAsync(String resourceGroupName, String availabilitySetName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, availabilitySetName)
-            .flatMap(
-                (Response<AvailabilitySetInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

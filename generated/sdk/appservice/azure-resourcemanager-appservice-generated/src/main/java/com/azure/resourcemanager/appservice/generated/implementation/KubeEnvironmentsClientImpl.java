@@ -175,12 +175,12 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return all Kubernetes Environments for a subscription along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KubeEnvironmentInner>> listSinglePageAsync() {
@@ -220,14 +220,14 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return all Kubernetes Environments for a subscription along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KubeEnvironmentInner>> listSinglePageAsync(Context context) {
@@ -264,11 +264,11 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments as paginated response with {@link PagedFlux}.
+     * @return all Kubernetes Environments for a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<KubeEnvironmentInner> listAsync() {
@@ -277,13 +277,13 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments as paginated response with {@link PagedFlux}.
+     * @return all Kubernetes Environments for a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<KubeEnvironmentInner> listAsync(Context context) {
@@ -292,11 +292,11 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments as paginated response with {@link PagedIterable}.
+     * @return all Kubernetes Environments for a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<KubeEnvironmentInner> list() {
@@ -304,13 +304,13 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments as paginated response with {@link PagedIterable}.
+     * @return all Kubernetes Environments for a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<KubeEnvironmentInner> list(Context context) {
@@ -318,14 +318,14 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return all the Kubernetes Environments in a resource group along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KubeEnvironmentInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -370,15 +370,15 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return all the Kubernetes Environments in a resource group along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KubeEnvironmentInner>> listByResourceGroupSinglePageAsync(
@@ -421,13 +421,13 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments as paginated response with {@link PagedFlux}.
+     * @return all the Kubernetes Environments in a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<KubeEnvironmentInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -437,14 +437,14 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments as paginated response with {@link PagedFlux}.
+     * @return all the Kubernetes Environments in a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<KubeEnvironmentInner> listByResourceGroupAsync(String resourceGroupName, Context context) {
@@ -454,13 +454,13 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments as paginated response with {@link PagedIterable}.
+     * @return all the Kubernetes Environments in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<KubeEnvironmentInner> listByResourceGroup(String resourceGroupName) {
@@ -468,14 +468,14 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments as paginated response with {@link PagedIterable}.
+     * @return all the Kubernetes Environments in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<KubeEnvironmentInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -483,15 +483,15 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * @return the properties of a Kubernetes Environment along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KubeEnvironmentInner>> getByResourceGroupWithResponseAsync(
@@ -532,7 +532,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -540,8 +540,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * @return the properties of a Kubernetes Environment along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KubeEnvironmentInner>> getByResourceGroupWithResponseAsync(
@@ -579,38 +579,30 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service on successful completion of
-     *     {@link Mono}.
+     * @return the properties of a Kubernetes Environment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<KubeEnvironmentInner> getByResourceGroupAsync(String resourceGroupName, String name) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<KubeEnvironmentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service.
+     * @return the properties of a Kubernetes Environment.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public KubeEnvironmentInner getByResourceGroup(String resourceGroupName, String name) {
@@ -618,7 +610,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -626,7 +618,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response}.
+     * @return the properties of a Kubernetes Environment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<KubeEnvironmentInner> getByResourceGroupWithResponse(
@@ -635,7 +627,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -693,7 +685,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -749,7 +741,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -776,7 +768,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -801,7 +793,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -819,7 +811,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -838,7 +830,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -858,7 +850,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -879,7 +871,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -896,7 +888,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -914,7 +906,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -961,7 +953,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1007,7 +999,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1026,7 +1018,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1047,7 +1039,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1062,7 +1054,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1078,7 +1070,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1093,7 +1085,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1109,7 +1101,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1123,7 +1115,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1138,7 +1130,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1196,7 +1188,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1252,7 +1244,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1267,18 +1259,11 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     private Mono<KubeEnvironmentInner> updateAsync(
         String resourceGroupName, String name, KubeEnvironmentPatchResource kubeEnvironmentEnvelope) {
         return updateWithResponseAsync(resourceGroupName, name, kubeEnvironmentEnvelope)
-            .flatMap(
-                (Response<KubeEnvironmentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1295,7 +1280,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.

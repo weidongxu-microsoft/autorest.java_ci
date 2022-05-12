@@ -78,6 +78,10 @@ public final class SchemaGroupImpl implements SchemaGroup, SchemaGroup.Definitio
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public SchemaGroupInner innerModel() {
         return this.innerObject;
     }

@@ -126,6 +126,10 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return this.innerModel().snapshotTime();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public FileShareInner innerModel() {
         return this.innerObject;
     }

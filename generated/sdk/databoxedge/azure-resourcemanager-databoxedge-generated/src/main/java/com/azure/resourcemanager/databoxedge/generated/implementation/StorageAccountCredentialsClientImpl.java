@@ -449,14 +449,7 @@ public final class StorageAccountCredentialsClientImpl implements StorageAccount
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageAccountCredentialInner> getAsync(String deviceName, String name, String resourceGroupName) {
         return getWithResponseAsync(deviceName, name, resourceGroupName)
-            .flatMap(
-                (Response<StorageAccountCredentialInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

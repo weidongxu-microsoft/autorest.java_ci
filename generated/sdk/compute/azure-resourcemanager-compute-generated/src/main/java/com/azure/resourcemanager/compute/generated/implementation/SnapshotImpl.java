@@ -163,6 +163,10 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public SnapshotInner innerModel() {
         return this.innerObject;
     }

@@ -112,6 +112,10 @@ public final class ServiceEndpointPolicyImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ServiceEndpointPolicyInner innerModel() {
         return this.innerObject;
     }

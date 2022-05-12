@@ -408,14 +408,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     private Mono<PrivateLinkResourceInner> getAsync(
         String resourceGroupName, String vaultName, String privateLinkResourceName) {
         return getWithResponseAsync(resourceGroupName, vaultName, privateLinkResourceName)
-            .flatMap(
-                (Response<PrivateLinkResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -88,6 +88,10 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public IpGroupInner innerModel() {
         return this.innerObject;
     }

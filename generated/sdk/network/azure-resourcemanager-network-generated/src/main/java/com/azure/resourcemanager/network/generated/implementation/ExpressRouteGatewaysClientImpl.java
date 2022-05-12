@@ -229,15 +229,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteGatewayListInner> listBySubscriptionAsync() {
-        return listBySubscriptionWithResponseAsync()
-            .flatMap(
-                (Response<ExpressRouteGatewayListInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listBySubscriptionWithResponseAsync().flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -361,15 +353,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteGatewayListInner> listByResourceGroupAsync(String resourceGroupName) {
-        return listByResourceGroupWithResponseAsync(resourceGroupName)
-            .flatMap(
-                (Response<ExpressRouteGatewayListInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listByResourceGroupWithResponseAsync(resourceGroupName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1129,14 +1113,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     private Mono<ExpressRouteGatewayInner> getByResourceGroupAsync(
         String resourceGroupName, String expressRouteGatewayName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, expressRouteGatewayName)
-            .flatMap(
-                (Response<ExpressRouteGatewayInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

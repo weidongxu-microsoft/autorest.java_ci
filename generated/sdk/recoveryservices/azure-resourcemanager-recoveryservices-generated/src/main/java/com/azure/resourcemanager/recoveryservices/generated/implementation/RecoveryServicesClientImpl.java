@@ -201,14 +201,7 @@ public final class RecoveryServicesClientImpl implements RecoveryServicesClient 
     private Mono<CheckNameAvailabilityResultInner> checkNameAvailabilityAsync(
         String resourceGroupName, String location, CheckNameAvailabilityParameters input) {
         return checkNameAvailabilityWithResponseAsync(resourceGroupName, location, input)
-            .flatMap(
-                (Response<CheckNameAvailabilityResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

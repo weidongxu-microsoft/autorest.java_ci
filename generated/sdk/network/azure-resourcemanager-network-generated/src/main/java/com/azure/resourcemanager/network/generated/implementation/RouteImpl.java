@@ -51,6 +51,10 @@ public final class RouteImpl implements Route, Route.Definition, Route.Update {
         return this.innerModel().hasBgpOverride();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public RouteInner innerModel() {
         return this.innerObject;
     }

@@ -46,6 +46,10 @@ public final class RoutingIntentImpl implements RoutingIntent, RoutingIntent.Def
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public RoutingIntentInner innerModel() {
         return this.innerObject;
     }

@@ -259,14 +259,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     private Mono<QueryKeyInner> createAsync(
         String resourceGroupName, String searchServiceName, String name, UUID clientRequestId) {
         return createWithResponseAsync(resourceGroupName, searchServiceName, name, clientRequestId)
-            .flatMap(
-                (Response<QueryKeyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -287,14 +280,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     private Mono<QueryKeyInner> createAsync(String resourceGroupName, String searchServiceName, String name) {
         final UUID clientRequestId = null;
         return createWithResponseAsync(resourceGroupName, searchServiceName, name, clientRequestId)
-            .flatMap(
-                (Response<QueryKeyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -714,7 +700,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     private Mono<Void> deleteAsync(
         String resourceGroupName, String searchServiceName, String key, UUID clientRequestId) {
         return deleteWithResponseAsync(resourceGroupName, searchServiceName, key, clientRequestId)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -735,7 +721,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     private Mono<Void> deleteAsync(String resourceGroupName, String searchServiceName, String key) {
         final UUID clientRequestId = null;
         return deleteWithResponseAsync(resourceGroupName, searchServiceName, key, clientRequestId)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**

@@ -53,6 +53,13 @@ public interface PrivateEndpointConnection {
     String provisioningState();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.postgresql.generated.fluent.models.PrivateEndpointConnectionInner
      * object.
      *

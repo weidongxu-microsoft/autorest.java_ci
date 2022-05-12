@@ -534,14 +534,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MetricAlertResourceInner> getByResourceGroupAsync(String resourceGroupName, String ruleName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, ruleName)
-            .flatMap(
-                (Response<MetricAlertResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -701,14 +694,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
     private Mono<MetricAlertResourceInner> createOrUpdateAsync(
         String resourceGroupName, String ruleName, MetricAlertResourceInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, ruleName, parameters)
-            .flatMap(
-                (Response<MetricAlertResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -871,14 +857,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
     private Mono<MetricAlertResourceInner> updateAsync(
         String resourceGroupName, String ruleName, MetricAlertResourcePatch parameters) {
         return updateWithResponseAsync(resourceGroupName, ruleName, parameters)
-            .flatMap(
-                (Response<MetricAlertResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1022,7 +1001,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String ruleName) {
-        return deleteWithResponseAsync(resourceGroupName, ruleName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, ruleName).flatMap(ignored -> Mono.empty());
     }
 
     /**

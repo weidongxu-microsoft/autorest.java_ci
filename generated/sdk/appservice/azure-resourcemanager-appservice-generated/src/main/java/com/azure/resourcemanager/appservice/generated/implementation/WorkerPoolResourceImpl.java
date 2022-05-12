@@ -63,6 +63,10 @@ public final class WorkerPoolResourceImpl
         }
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public WorkerPoolResourceInner innerModel() {
         return this.innerObject;
     }

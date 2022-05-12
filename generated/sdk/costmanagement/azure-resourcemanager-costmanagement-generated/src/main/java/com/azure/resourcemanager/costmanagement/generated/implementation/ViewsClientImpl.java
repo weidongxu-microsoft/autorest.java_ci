@@ -570,15 +570,7 @@ public final class ViewsClientImpl implements ViewsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ViewInner> getAsync(String viewName) {
-        return getWithResponseAsync(viewName)
-            .flatMap(
-                (Response<ViewInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(viewName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -703,15 +695,7 @@ public final class ViewsClientImpl implements ViewsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ViewInner> createOrUpdateAsync(String viewName, ViewInner parameters) {
-        return createOrUpdateWithResponseAsync(viewName, parameters)
-            .flatMap(
-                (Response<ViewInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return createOrUpdateWithResponseAsync(viewName, parameters).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -812,7 +796,7 @@ public final class ViewsClientImpl implements ViewsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String viewName) {
-        return deleteWithResponseAsync(viewName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(viewName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -964,15 +948,7 @@ public final class ViewsClientImpl implements ViewsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ViewInner> getByScopeAsync(String scope, String viewName) {
-        return getByScopeWithResponseAsync(scope, viewName)
-            .flatMap(
-                (Response<ViewInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getByScopeWithResponseAsync(scope, viewName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1181,14 +1157,7 @@ public final class ViewsClientImpl implements ViewsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ViewInner> createOrUpdateByScopeAsync(String scope, String viewName, ViewInner parameters) {
         return createOrUpdateByScopeWithResponseAsync(scope, viewName, parameters)
-            .flatMap(
-                (Response<ViewInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1374,7 +1343,7 @@ public final class ViewsClientImpl implements ViewsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteByScopeAsync(String scope, String viewName) {
-        return deleteByScopeWithResponseAsync(scope, viewName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteByScopeWithResponseAsync(scope, viewName).flatMap(ignored -> Mono.empty());
     }
 
     /**

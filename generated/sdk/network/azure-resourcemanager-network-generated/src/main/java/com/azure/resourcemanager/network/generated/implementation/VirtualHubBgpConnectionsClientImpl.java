@@ -292,14 +292,7 @@ public final class VirtualHubBgpConnectionsClientImpl implements VirtualHubBgpCo
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<BgpConnectionInner> getAsync(String resourceGroupName, String virtualHubName, String connectionName) {
         return getWithResponseAsync(resourceGroupName, virtualHubName, connectionName)
-            .flatMap(
-                (Response<BgpConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

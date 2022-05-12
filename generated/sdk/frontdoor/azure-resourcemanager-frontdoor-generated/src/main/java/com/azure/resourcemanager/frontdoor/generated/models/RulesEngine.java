@@ -46,6 +46,13 @@ public interface RulesEngine {
     List<RulesEngineRule> rules();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.frontdoor.generated.fluent.models.RulesEngineInner object.
      *
      * @return the inner object.

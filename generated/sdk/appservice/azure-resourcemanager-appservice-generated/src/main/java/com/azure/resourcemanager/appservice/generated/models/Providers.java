@@ -10,17 +10,17 @@ import com.azure.core.util.Context;
 /** Resource collection API of Providers. */
 public interface Providers {
     /**
-     * Description for Get available application frameworks and their versions.
+     * Get available application frameworks and their versions.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks as paginated response with {@link PagedIterable}.
+     * @return available application frameworks and their versions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationStackResource> getAvailableStacks();
 
     /**
-     * Description for Get available application frameworks and their versions.
+     * Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @param context The context to associate with this operation.
@@ -28,22 +28,22 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks as paginated response with {@link PagedIterable}.
+     * @return available application frameworks and their versions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationStackResource> getAvailableStacks(ProviderOsTypeSelected osTypeSelected, Context context);
 
     /**
-     * Description for Get available Function app frameworks and their versions.
+     * Get available Function app frameworks and their versions.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks as paginated response with {@link PagedIterable}.
+     * @return available Function app frameworks and their versions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FunctionAppStack> getFunctionAppStacks();
 
     /**
-     * Description for Get available Function app frameworks and their versions.
+     * Get available Function app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
@@ -51,24 +51,25 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks as paginated response with {@link PagedIterable}.
+     * @return available Function app frameworks and their versions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<FunctionAppStack> getFunctionAppStacks(ProviderStackOsType stackOsType, Context context);
 
     /**
-     * Description for Get available Function app frameworks and their versions for location.
+     * Get available Function app frameworks and their versions for location.
      *
      * @param location Function App stack location.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks as paginated response with {@link PagedIterable}.
+     * @return available Function app frameworks and their versions for location as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<FunctionAppStack> getFunctionAppStacksForLocation(String location);
 
     /**
-     * Description for Get available Function app frameworks and their versions for location.
+     * Get available Function app frameworks and their versions for location.
      *
      * @param location Function App stack location.
      * @param stackOsType Stack OS Type.
@@ -77,25 +78,27 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks as paginated response with {@link PagedIterable}.
+     * @return available Function app frameworks and their versions for location as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<FunctionAppStack> getFunctionAppStacksForLocation(
         String location, ProviderStackOsType stackOsType, Context context);
 
     /**
-     * Description for Get available Web app frameworks and their versions for location.
+     * Get available Web app frameworks and their versions for location.
      *
      * @param location Web App stack location.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Web app Stacks as paginated response with {@link PagedIterable}.
+     * @return available Web app frameworks and their versions for location as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<WebAppStack> getWebAppStacksForLocation(String location);
 
     /**
-     * Description for Get available Web app frameworks and their versions for location.
+     * Get available Web app frameworks and their versions for location.
      *
      * @param location Web App stack location.
      * @param stackOsType Stack OS Type.
@@ -104,47 +107,48 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Web app Stacks as paginated response with {@link PagedIterable}.
+     * @return available Web app frameworks and their versions for location as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<WebAppStack> getWebAppStacksForLocation(
         String location, ProviderStackOsType stackOsType, Context context);
 
     /**
-     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
-     * metric definitions.
+     * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Azure resource manager operation metadata as paginated response with {@link PagedIterable}.
+     * @return all available operations for the Microsoft.Web resource provider as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<CsmOperationDescription> listOperations();
 
     /**
-     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
-     * metric definitions.
+     * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Azure resource manager operation metadata as paginated response with {@link PagedIterable}.
+     * @return all available operations for the Microsoft.Web resource provider as paginated response with {@link
+     *     PagedIterable}.
      */
     PagedIterable<CsmOperationDescription> listOperations(Context context);
 
     /**
-     * Description for Get available Web app frameworks and their versions.
+     * Get available Web app frameworks and their versions.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Web app Stacks as paginated response with {@link PagedIterable}.
+     * @return available Web app frameworks and their versions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebAppStack> getWebAppStacks();
 
     /**
-     * Description for Get available Web app frameworks and their versions.
+     * Get available Web app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
@@ -152,22 +156,22 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Web app Stacks as paginated response with {@link PagedIterable}.
+     * @return available Web app frameworks and their versions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<WebAppStack> getWebAppStacks(ProviderStackOsType stackOsType, Context context);
 
     /**
-     * Description for Get available application frameworks and their versions.
+     * Get available application frameworks and their versions.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks as paginated response with {@link PagedIterable}.
+     * @return available application frameworks and their versions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationStackResource> list();
 
     /**
-     * Description for Get available application frameworks and their versions.
+     * Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @param context The context to associate with this operation.
@@ -175,7 +179,7 @@ public interface Providers {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks as paginated response with {@link PagedIterable}.
+     * @return available application frameworks and their versions as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ApplicationStackResource> list(ProviderOsTypeSelected osTypeSelected, Context context);
 }

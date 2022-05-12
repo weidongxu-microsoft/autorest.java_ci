@@ -493,14 +493,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     private Mono<NetworkWatcherInner> createOrUpdateAsync(
         String resourceGroupName, String networkWatcherName, NetworkWatcherInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, networkWatcherName, parameters)
-            .flatMap(
-                (Response<NetworkWatcherInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -649,14 +642,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkWatcherInner> getByResourceGroupAsync(String resourceGroupName, String networkWatcherName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkWatcherName)
-            .flatMap(
-                (Response<NetworkWatcherInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1048,14 +1034,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     private Mono<NetworkWatcherInner> updateTagsAsync(
         String resourceGroupName, String networkWatcherName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, networkWatcherName, parameters)
-            .flatMap(
-                (Response<NetworkWatcherInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1501,14 +1480,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     private Mono<TopologyInner> getTopologyAsync(
         String resourceGroupName, String networkWatcherName, TopologyParameters parameters) {
         return getTopologyWithResponseAsync(resourceGroupName, networkWatcherName, parameters)
-            .flatMap(
-                (Response<TopologyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

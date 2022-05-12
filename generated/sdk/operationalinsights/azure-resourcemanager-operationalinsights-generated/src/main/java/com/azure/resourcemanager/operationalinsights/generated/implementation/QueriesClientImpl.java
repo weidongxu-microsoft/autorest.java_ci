@@ -861,14 +861,7 @@ public final class QueriesClientImpl implements QueriesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LogAnalyticsQueryPackQueryInner> getAsync(String resourceGroupName, String queryPackName, String id) {
         return getWithResponseAsync(resourceGroupName, queryPackName, id)
-            .flatMap(
-                (Response<LogAnalyticsQueryPackQueryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1050,14 +1043,7 @@ public final class QueriesClientImpl implements QueriesClient {
     private Mono<LogAnalyticsQueryPackQueryInner> putAsync(
         String resourceGroupName, String queryPackName, String id, LogAnalyticsQueryPackQueryInner queryPayload) {
         return putWithResponseAsync(resourceGroupName, queryPackName, id, queryPayload)
-            .flatMap(
-                (Response<LogAnalyticsQueryPackQueryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1248,14 +1234,7 @@ public final class QueriesClientImpl implements QueriesClient {
     private Mono<LogAnalyticsQueryPackQueryInner> updateAsync(
         String resourceGroupName, String queryPackName, String id, LogAnalyticsQueryPackQueryInner queryPayload) {
         return updateWithResponseAsync(resourceGroupName, queryPackName, id, queryPayload)
-            .flatMap(
-                (Response<LogAnalyticsQueryPackQueryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1419,8 +1398,7 @@ public final class QueriesClientImpl implements QueriesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String queryPackName, String id) {
-        return deleteWithResponseAsync(resourceGroupName, queryPackName, id)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, queryPackName, id).flatMap(ignored -> Mono.empty());
     }
 
     /**

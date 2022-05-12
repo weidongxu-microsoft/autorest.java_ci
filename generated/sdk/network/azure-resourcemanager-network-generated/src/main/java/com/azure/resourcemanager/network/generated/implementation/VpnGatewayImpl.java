@@ -127,6 +127,10 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VpnGatewayInner innerModel() {
         return this.innerObject;
     }

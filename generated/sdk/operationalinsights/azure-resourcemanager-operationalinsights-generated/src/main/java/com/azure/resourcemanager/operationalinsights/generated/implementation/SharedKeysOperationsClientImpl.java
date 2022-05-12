@@ -192,14 +192,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedKeysInner> getSharedKeysAsync(String resourceGroupName, String workspaceName) {
         return getSharedKeysWithResponseAsync(resourceGroupName, workspaceName)
-            .flatMap(
-                (Response<SharedKeysInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -346,14 +339,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedKeysInner> regenerateAsync(String resourceGroupName, String workspaceName) {
         return regenerateWithResponseAsync(resourceGroupName, workspaceName)
-            .flatMap(
-                (Response<SharedKeysInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

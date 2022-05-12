@@ -110,6 +110,10 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public NatGatewayInner innerModel() {
         return this.innerObject;
     }

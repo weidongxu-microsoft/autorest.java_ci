@@ -109,6 +109,10 @@ public final class VirtualMachineRunCommandImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualMachineRunCommandInner innerModel() {
         return this.innerObject;
     }

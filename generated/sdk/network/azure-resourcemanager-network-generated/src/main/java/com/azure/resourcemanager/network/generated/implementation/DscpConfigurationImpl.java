@@ -147,6 +147,10 @@ public final class DscpConfigurationImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public DscpConfigurationInner innerModel() {
         return this.innerObject;
     }

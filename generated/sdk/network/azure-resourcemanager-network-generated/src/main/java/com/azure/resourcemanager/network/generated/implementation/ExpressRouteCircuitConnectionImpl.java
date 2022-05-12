@@ -64,6 +64,10 @@ public final class ExpressRouteCircuitConnectionImpl
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ExpressRouteCircuitConnectionInner innerModel() {
         return this.innerObject;
     }

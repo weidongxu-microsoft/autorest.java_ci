@@ -278,14 +278,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
     private Mono<StorageInsightInner> createOrUpdateAsync(
         String resourceGroupName, String workspaceName, String storageInsightName, StorageInsightInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, workspaceName, storageInsightName, parameters)
-            .flatMap(
-                (Response<StorageInsightInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -454,14 +447,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
     private Mono<StorageInsightInner> getAsync(
         String resourceGroupName, String workspaceName, String storageInsightName) {
         return getWithResponseAsync(resourceGroupName, workspaceName, storageInsightName)
-            .flatMap(
-                (Response<StorageInsightInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -616,7 +602,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String workspaceName, String storageInsightName) {
         return deleteWithResponseAsync(resourceGroupName, workspaceName, storageInsightName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**

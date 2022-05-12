@@ -216,15 +216,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ClusterConfigurationsInner> listAsync(String resourceGroupName, String clusterName) {
-        return listWithResponseAsync(resourceGroupName, clusterName)
-            .flatMap(
-                (Response<ClusterConfigurationsInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listWithResponseAsync(resourceGroupName, clusterName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -691,14 +683,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Map<String, String>> getAsync(String resourceGroupName, String clusterName, String configurationName) {
         return getWithResponseAsync(resourceGroupName, clusterName, configurationName)
-            .flatMap(
-                (Response<Map<String, String>> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

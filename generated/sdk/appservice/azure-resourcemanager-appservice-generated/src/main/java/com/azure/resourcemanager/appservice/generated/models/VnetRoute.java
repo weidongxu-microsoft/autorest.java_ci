@@ -65,6 +65,13 @@ public interface VnetRoute {
     RouteType routeType();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.VnetRouteInner object.
      *
      * @return the inner object.

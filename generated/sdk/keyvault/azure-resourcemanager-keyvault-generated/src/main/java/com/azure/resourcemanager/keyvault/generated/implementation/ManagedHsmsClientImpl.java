@@ -1090,14 +1090,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ManagedHsmInner> getByResourceGroupAsync(String resourceGroupName, String name) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<ManagedHsmInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1741,15 +1734,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeletedManagedHsmInner> getDeletedAsync(String name, String location) {
-        return getDeletedWithResponseAsync(name, location)
-            .flatMap(
-                (Response<DeletedManagedHsmInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getDeletedWithResponseAsync(name, location).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

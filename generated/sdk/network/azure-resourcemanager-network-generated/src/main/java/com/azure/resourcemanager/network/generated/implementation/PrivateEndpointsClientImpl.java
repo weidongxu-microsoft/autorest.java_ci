@@ -507,14 +507,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
     private Mono<PrivateEndpointInner> getByResourceGroupAsync(
         String resourceGroupName, String privateEndpointName, String expand) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, privateEndpointName, expand)
-            .flatMap(
-                (Response<PrivateEndpointInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -531,14 +524,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
     private Mono<PrivateEndpointInner> getByResourceGroupAsync(String resourceGroupName, String privateEndpointName) {
         final String expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, privateEndpointName, expand)
-            .flatMap(
-                (Response<PrivateEndpointInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -524,14 +524,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
     private Mono<DdosProtectionPlanInner> getByResourceGroupAsync(
         String resourceGroupName, String ddosProtectionPlanName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, ddosProtectionPlanName)
-            .flatMap(
-                (Response<DdosProtectionPlanInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -972,14 +965,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
     private Mono<DdosProtectionPlanInner> updateTagsAsync(
         String resourceGroupName, String ddosProtectionPlanName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, ddosProtectionPlanName, parameters)
-            .flatMap(
-                (Response<DdosProtectionPlanInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

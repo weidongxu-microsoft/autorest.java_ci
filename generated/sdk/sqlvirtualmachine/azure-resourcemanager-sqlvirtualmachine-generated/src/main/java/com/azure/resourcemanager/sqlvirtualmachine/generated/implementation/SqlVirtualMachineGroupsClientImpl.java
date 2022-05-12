@@ -291,14 +291,7 @@ public final class SqlVirtualMachineGroupsClientImpl implements SqlVirtualMachin
     private Mono<SqlVirtualMachineGroupInner> getByResourceGroupAsync(
         String resourceGroupName, String sqlVirtualMachineGroupName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, sqlVirtualMachineGroupName)
-            .flatMap(
-                (Response<SqlVirtualMachineGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

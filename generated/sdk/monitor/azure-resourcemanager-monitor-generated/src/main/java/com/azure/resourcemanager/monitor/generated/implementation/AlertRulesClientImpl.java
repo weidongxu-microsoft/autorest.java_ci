@@ -274,14 +274,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     private Mono<AlertRuleResourceInner> createOrUpdateAsync(
         String resourceGroupName, String ruleName, AlertRuleResourceInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, ruleName, parameters)
-            .flatMap(
-                (Response<AlertRuleResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -425,7 +418,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String ruleName) {
-        return deleteWithResponseAsync(resourceGroupName, ruleName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, ruleName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -567,14 +560,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AlertRuleResourceInner> getByResourceGroupAsync(String resourceGroupName, String ruleName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, ruleName)
-            .flatMap(
-                (Response<AlertRuleResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -736,14 +722,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     private Mono<AlertRuleResourceInner> updateAsync(
         String resourceGroupName, String ruleName, AlertRuleResourcePatch alertRulesResource) {
         return updateWithResponseAsync(resourceGroupName, ruleName, alertRulesResource)
-            .flatMap(
-                (Response<AlertRuleResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

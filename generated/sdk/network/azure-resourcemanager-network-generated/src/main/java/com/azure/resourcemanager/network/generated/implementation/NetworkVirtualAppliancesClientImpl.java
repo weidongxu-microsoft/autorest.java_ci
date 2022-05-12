@@ -536,14 +536,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
     private Mono<NetworkVirtualApplianceInner> getByResourceGroupAsync(
         String resourceGroupName, String networkVirtualApplianceName, String expand) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkVirtualApplianceName, expand)
-            .flatMap(
-                (Response<NetworkVirtualApplianceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -561,14 +554,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
         String resourceGroupName, String networkVirtualApplianceName) {
         final String expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkVirtualApplianceName, expand)
-            .flatMap(
-                (Response<NetworkVirtualApplianceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -736,14 +722,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
     private Mono<NetworkVirtualApplianceInner> updateTagsAsync(
         String resourceGroupName, String networkVirtualApplianceName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, networkVirtualApplianceName, parameters)
-            .flatMap(
-                (Response<NetworkVirtualApplianceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

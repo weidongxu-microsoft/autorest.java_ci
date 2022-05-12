@@ -450,14 +450,7 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RulesEngineInner> getAsync(String resourceGroupName, String frontDoorName, String rulesEngineName) {
         return getWithResponseAsync(resourceGroupName, frontDoorName, rulesEngineName)
-            .flatMap(
-                (Response<RulesEngineInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

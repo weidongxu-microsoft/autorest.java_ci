@@ -103,6 +103,10 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public BastionHostInner innerModel() {
         return this.innerObject;
     }

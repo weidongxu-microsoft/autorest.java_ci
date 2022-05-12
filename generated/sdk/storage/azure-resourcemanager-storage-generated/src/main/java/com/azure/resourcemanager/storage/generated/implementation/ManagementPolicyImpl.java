@@ -37,6 +37,10 @@ public final class ManagementPolicyImpl
         return this.innerModel().policy();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ManagementPolicyInner innerModel() {
         return this.innerObject;
     }

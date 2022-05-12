@@ -873,14 +873,7 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
     private Mono<HubVirtualNetworkConnectionInner> getAsync(
         String resourceGroupName, String virtualHubName, String connectionName) {
         return getWithResponseAsync(resourceGroupName, virtualHubName, connectionName)
-            .flatMap(
-                (Response<HubVirtualNetworkConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

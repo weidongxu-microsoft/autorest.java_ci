@@ -140,6 +140,10 @@ public final class AppServiceEnvironmentResourceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public AppServiceEnvironmentResourceInner innerModel() {
         return this.innerObject;
     }

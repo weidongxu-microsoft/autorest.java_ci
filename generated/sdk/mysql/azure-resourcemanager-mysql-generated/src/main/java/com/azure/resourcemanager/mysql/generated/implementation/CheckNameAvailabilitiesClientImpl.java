@@ -172,15 +172,7 @@ public final class CheckNameAvailabilitiesClientImpl implements CheckNameAvailab
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NameAvailabilityInner> executeAsync(NameAvailabilityRequest nameAvailabilityRequest) {
-        return executeWithResponseAsync(nameAvailabilityRequest)
-            .flatMap(
-                (Response<NameAvailabilityInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return executeWithResponseAsync(nameAvailabilityRequest).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

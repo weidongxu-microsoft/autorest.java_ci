@@ -75,6 +75,10 @@ public final class AzureMonitorPrivateLinkScopeImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public AzureMonitorPrivateLinkScopeInner innerModel() {
         return this.innerObject;
     }

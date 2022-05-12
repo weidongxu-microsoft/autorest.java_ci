@@ -534,14 +534,7 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
     private Mono<FirewallPolicyRuleCollectionGroupInner> getAsync(
         String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName) {
         return getWithResponseAsync(resourceGroupName, firewallPolicyName, ruleCollectionGroupName)
-            .flatMap(
-                (Response<FirewallPolicyRuleCollectionGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

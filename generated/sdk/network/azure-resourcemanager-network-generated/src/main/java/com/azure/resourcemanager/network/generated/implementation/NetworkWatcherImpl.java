@@ -82,6 +82,10 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public NetworkWatcherInner innerModel() {
         return this.innerObject;
     }

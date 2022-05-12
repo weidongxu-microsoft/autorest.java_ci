@@ -85,6 +85,10 @@ public final class DdosCustomPolicyImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public DdosCustomPolicyInner innerModel() {
         return this.innerObject;
     }

@@ -535,14 +535,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRoutePortInner> getByResourceGroupAsync(String resourceGroupName, String expressRoutePortName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, expressRoutePortName)
-            .flatMap(
-                (Response<ExpressRoutePortInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -971,14 +964,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
     private Mono<ExpressRoutePortInner> updateTagsAsync(
         String resourceGroupName, String expressRoutePortName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, expressRoutePortName, parameters)
-            .flatMap(
-                (Response<ExpressRoutePortInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1449,14 +1435,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
     private Mono<GenerateExpressRoutePortsLoaResultInner> generateLoaAsync(
         String resourceGroupName, String expressRoutePortName, GenerateExpressRoutePortsLoaRequest request) {
         return generateLoaWithResponseAsync(resourceGroupName, expressRoutePortName, request)
-            .flatMap(
-                (Response<GenerateExpressRoutePortsLoaResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

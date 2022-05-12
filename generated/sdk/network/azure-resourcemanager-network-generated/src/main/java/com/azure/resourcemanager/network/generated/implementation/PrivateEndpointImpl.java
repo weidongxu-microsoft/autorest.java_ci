@@ -151,6 +151,10 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public PrivateEndpointInner innerModel() {
         return this.innerObject;
     }

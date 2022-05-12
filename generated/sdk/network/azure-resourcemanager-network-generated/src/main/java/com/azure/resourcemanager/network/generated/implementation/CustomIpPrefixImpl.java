@@ -122,6 +122,10 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public CustomIpPrefixInner innerModel() {
         return this.innerObject;
     }

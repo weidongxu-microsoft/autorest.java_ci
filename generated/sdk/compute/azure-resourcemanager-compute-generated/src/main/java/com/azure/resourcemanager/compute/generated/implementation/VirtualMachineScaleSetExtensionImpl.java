@@ -84,6 +84,10 @@ public final class VirtualMachineScaleSetExtensionImpl
         return this.innerModel().protectedSettingsFromKeyVault();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualMachineScaleSetExtensionInner innerModel() {
         return this.innerObject;
     }

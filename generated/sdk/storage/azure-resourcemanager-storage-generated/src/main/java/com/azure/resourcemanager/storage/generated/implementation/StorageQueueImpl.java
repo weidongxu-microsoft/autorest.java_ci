@@ -40,6 +40,10 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
         return this.innerModel().approximateMessageCount();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public StorageQueueInner innerModel() {
         return this.innerObject;
     }

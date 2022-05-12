@@ -53,6 +53,10 @@ public final class FirewallPolicyRuleCollectionGroupImpl
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public FirewallPolicyRuleCollectionGroupInner innerModel() {
         return this.innerObject;
     }

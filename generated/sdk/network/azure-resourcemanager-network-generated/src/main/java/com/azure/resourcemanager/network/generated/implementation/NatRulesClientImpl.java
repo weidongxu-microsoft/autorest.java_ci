@@ -256,14 +256,7 @@ public final class NatRulesClientImpl implements NatRulesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnGatewayNatRuleInner> getAsync(String resourceGroupName, String gatewayName, String natRuleName) {
         return getWithResponseAsync(resourceGroupName, gatewayName, natRuleName)
-            .flatMap(
-                (Response<VpnGatewayNatRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -306,14 +306,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
         DatabasePrincipalAssignmentCheckNameRequest principalAssignmentName) {
         return checkNameAvailabilityWithResponseAsync(
                 resourceGroupName, clusterName, databaseName, principalAssignmentName)
-            .flatMap(
-                (Response<CheckNameResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -503,14 +496,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
     private Mono<DatabasePrincipalAssignmentInner> getAsync(
         String resourceGroupName, String clusterName, String databaseName, String principalAssignmentName) {
         return getWithResponseAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName)
-            .flatMap(
-                (Response<DatabasePrincipalAssignmentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

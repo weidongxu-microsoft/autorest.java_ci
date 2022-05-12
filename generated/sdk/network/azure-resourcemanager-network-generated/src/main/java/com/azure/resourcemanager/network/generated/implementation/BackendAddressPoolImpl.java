@@ -123,6 +123,10 @@ public final class BackendAddressPoolImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public BackendAddressPoolInner innerModel() {
         return this.innerObject;
     }

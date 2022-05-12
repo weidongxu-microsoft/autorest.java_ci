@@ -237,14 +237,7 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
     private Mono<ReservationRecommendationDetailsModelInner> getAsync(
         String resourceScope, Scope scope, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
         return getWithResponseAsync(resourceScope, scope, region, term, lookBackPeriod, product)
-            .flatMap(
-                (Response<ReservationRecommendationDetailsModelInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -217,7 +217,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> disableAsync(String resourceGroupName, String workspaceName, String intelligencePackName) {
         return disableWithResponseAsync(resourceGroupName, workspaceName, intelligencePackName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -371,7 +371,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> enableAsync(String resourceGroupName, String workspaceName, String intelligencePackName) {
         return enableWithResponseAsync(resourceGroupName, workspaceName, intelligencePackName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -515,15 +515,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<IntelligencePackInner>> listAsync(String resourceGroupName, String workspaceName) {
-        return listWithResponseAsync(resourceGroupName, workspaceName)
-            .flatMap(
-                (Response<List<IntelligencePackInner>> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listWithResponseAsync(resourceGroupName, workspaceName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

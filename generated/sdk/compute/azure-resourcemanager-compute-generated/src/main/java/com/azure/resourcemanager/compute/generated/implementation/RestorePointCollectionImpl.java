@@ -83,6 +83,10 @@ public final class RestorePointCollectionImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public RestorePointCollectionInner innerModel() {
         return this.innerObject;
     }

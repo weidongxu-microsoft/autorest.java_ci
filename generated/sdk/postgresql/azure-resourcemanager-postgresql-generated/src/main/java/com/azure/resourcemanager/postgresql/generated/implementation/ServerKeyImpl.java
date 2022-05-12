@@ -43,6 +43,10 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
         return this.innerModel().creationDate();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ServerKeyInner innerModel() {
         return this.innerObject;
     }

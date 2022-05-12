@@ -275,14 +275,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
     private Mono<DataSourceInner> createOrUpdateAsync(
         String resourceGroupName, String workspaceName, String dataSourceName, DataSourceInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, workspaceName, dataSourceName, parameters)
-            .flatMap(
-                (Response<DataSourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -443,7 +436,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String workspaceName, String dataSourceName) {
         return deleteWithResponseAsync(resourceGroupName, workspaceName, dataSourceName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -599,14 +592,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DataSourceInner> getAsync(String resourceGroupName, String workspaceName, String dataSourceName) {
         return getWithResponseAsync(resourceGroupName, workspaceName, dataSourceName)
-            .flatMap(
-                (Response<DataSourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -280,14 +280,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
     private Mono<CheckNameResultInner> checkNameAvailabilityAsync(
         String resourceGroupName, String clusterName, AttachedDatabaseConfigurationsCheckNameRequest resourceName) {
         return checkNameAvailabilityWithResponseAsync(resourceGroupName, clusterName, resourceName)
-            .flatMap(
-                (Response<CheckNameResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -629,14 +622,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
     private Mono<AttachedDatabaseConfigurationInner> getAsync(
         String resourceGroupName, String clusterName, String attachedDatabaseConfigurationName) {
         return getWithResponseAsync(resourceGroupName, clusterName, attachedDatabaseConfigurationName)
-            .flatMap(
-                (Response<AttachedDatabaseConfigurationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

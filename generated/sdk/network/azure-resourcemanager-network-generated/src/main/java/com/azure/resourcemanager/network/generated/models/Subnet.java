@@ -182,6 +182,13 @@ public interface Subnet {
     List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.SubnetInner object.
      *
      * @return the inner object.

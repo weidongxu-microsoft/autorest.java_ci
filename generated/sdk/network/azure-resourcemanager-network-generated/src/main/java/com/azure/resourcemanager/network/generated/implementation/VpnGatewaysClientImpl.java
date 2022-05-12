@@ -331,14 +331,7 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnGatewayInner> getByResourceGroupAsync(String resourceGroupName, String gatewayName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, gatewayName)
-            .flatMap(
-                (Response<VpnGatewayInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

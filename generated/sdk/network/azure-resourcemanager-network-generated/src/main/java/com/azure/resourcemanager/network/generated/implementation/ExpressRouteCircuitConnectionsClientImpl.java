@@ -553,14 +553,7 @@ public final class ExpressRouteCircuitConnectionsClientImpl implements ExpressRo
     private Mono<ExpressRouteCircuitConnectionInner> getAsync(
         String resourceGroupName, String circuitName, String peeringName, String connectionName) {
         return getWithResponseAsync(resourceGroupName, circuitName, peeringName, connectionName)
-            .flatMap(
-                (Response<ExpressRouteCircuitConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

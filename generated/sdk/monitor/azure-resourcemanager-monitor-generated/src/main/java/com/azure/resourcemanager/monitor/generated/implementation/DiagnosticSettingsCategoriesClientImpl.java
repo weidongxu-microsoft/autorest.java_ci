@@ -157,15 +157,7 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiagnosticSettingsCategoryResourceInner> getAsync(String resourceUri, String name) {
-        return getWithResponseAsync(resourceUri, name)
-            .flatMap(
-                (Response<DiagnosticSettingsCategoryResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(resourceUri, name).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -270,15 +262,7 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiagnosticSettingsCategoryResourceCollectionInner> listAsync(String resourceUri) {
-        return listWithResponseAsync(resourceUri)
-            .flatMap(
-                (Response<DiagnosticSettingsCategoryResourceCollectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listWithResponseAsync(resourceUri).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

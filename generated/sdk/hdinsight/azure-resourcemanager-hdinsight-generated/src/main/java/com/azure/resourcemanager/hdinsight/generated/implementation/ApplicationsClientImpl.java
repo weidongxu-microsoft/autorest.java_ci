@@ -461,14 +461,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ApplicationInner> getAsync(String resourceGroupName, String clusterName, String applicationName) {
         return getWithResponseAsync(resourceGroupName, clusterName, applicationName)
-            .flatMap(
-                (Response<ApplicationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1200,14 +1193,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
         String resourceGroupName, String clusterName, String applicationName, String operationId) {
         return getAzureAsyncOperationStatusWithResponseAsync(
                 resourceGroupName, clusterName, applicationName, operationId)
-            .flatMap(
-                (Response<AsyncOperationResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

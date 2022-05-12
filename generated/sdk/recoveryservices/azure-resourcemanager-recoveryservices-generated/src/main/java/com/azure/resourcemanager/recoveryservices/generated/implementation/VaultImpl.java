@@ -70,6 +70,10 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VaultInner innerModel() {
         return this.innerObject;
     }

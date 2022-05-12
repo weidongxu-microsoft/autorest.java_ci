@@ -90,6 +90,10 @@ public final class DedicatedHostGroupImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public DedicatedHostGroupInner innerModel() {
         return this.innerObject;
     }

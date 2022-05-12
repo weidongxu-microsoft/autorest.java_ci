@@ -613,14 +613,7 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
         AuthorizationRuleInner parameters) {
         return createOrUpdateAuthorizationRuleWithResponseAsync(
                 resourceGroupName, namespaceName, relayName, authorizationRuleName, parameters)
-            .flatMap(
-                (Response<AuthorizationRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -812,7 +805,7 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
         String resourceGroupName, String namespaceName, String relayName, String authorizationRuleName) {
         return deleteAuthorizationRuleWithResponseAsync(
                 resourceGroupName, namespaceName, relayName, authorizationRuleName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -995,14 +988,7 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
     private Mono<AuthorizationRuleInner> getAuthorizationRuleAsync(
         String resourceGroupName, String namespaceName, String relayName, String authorizationRuleName) {
         return getAuthorizationRuleWithResponseAsync(resourceGroupName, namespaceName, relayName, authorizationRuleName)
-            .flatMap(
-                (Response<AuthorizationRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1184,14 +1170,7 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
     private Mono<AccessKeysInner> listKeysAsync(
         String resourceGroupName, String namespaceName, String relayName, String authorizationRuleName) {
         return listKeysWithResponseAsync(resourceGroupName, namespaceName, relayName, authorizationRuleName)
-            .flatMap(
-                (Response<AccessKeysInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1397,14 +1376,7 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
         RegenerateAccessKeyParameters parameters) {
         return regenerateKeysWithResponseAsync(
                 resourceGroupName, namespaceName, relayName, authorizationRuleName, parameters)
-            .flatMap(
-                (Response<AccessKeysInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1776,14 +1748,7 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
     private Mono<WcfRelayInner> createOrUpdateAsync(
         String resourceGroupName, String namespaceName, String relayName, WcfRelayInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, relayName, parameters)
-            .flatMap(
-                (Response<WcfRelayInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1941,8 +1906,7 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, String relayName) {
-        return deleteWithResponseAsync(resourceGroupName, namespaceName, relayName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, namespaceName, relayName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -2098,14 +2062,7 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WcfRelayInner> getAsync(String resourceGroupName, String namespaceName, String relayName) {
         return getWithResponseAsync(resourceGroupName, namespaceName, relayName)
-            .flatMap(
-                (Response<WcfRelayInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

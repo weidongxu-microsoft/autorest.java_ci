@@ -87,6 +87,10 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public InboundNatRuleInner innerModel() {
         return this.innerObject;
     }

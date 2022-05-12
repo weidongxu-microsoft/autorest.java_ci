@@ -278,14 +278,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnSiteInner> getByResourceGroupAsync(String resourceGroupName, String vpnSiteName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, vpnSiteName)
-            .flatMap(
-                (Response<VpnSiteInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -709,14 +702,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
     private Mono<VpnSiteInner> updateTagsAsync(
         String resourceGroupName, String vpnSiteName, TagsObject vpnSiteParameters) {
         return updateTagsWithResponseAsync(resourceGroupName, vpnSiteName, vpnSiteParameters)
-            .flatMap(
-                (Response<VpnSiteInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

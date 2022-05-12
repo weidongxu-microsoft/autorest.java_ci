@@ -407,14 +407,7 @@ public final class LoadBalancerOutboundRulesClientImpl implements LoadBalancerOu
     private Mono<OutboundRuleInner> getAsync(
         String resourceGroupName, String loadBalancerName, String outboundRuleName) {
         return getWithResponseAsync(resourceGroupName, loadBalancerName, outboundRuleName)
-            .flatMap(
-                (Response<OutboundRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

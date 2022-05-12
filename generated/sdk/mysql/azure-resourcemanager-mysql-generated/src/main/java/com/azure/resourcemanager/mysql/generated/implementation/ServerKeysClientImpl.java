@@ -437,14 +437,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ServerKeyInner> getAsync(String resourceGroupName, String serverName, String keyName) {
         return getWithResponseAsync(resourceGroupName, serverName, keyName)
-            .flatMap(
-                (Response<ServerKeyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

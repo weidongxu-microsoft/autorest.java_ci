@@ -47,6 +47,10 @@ public final class ImmutabilityPolicyImpl
         return this.innerModel().allowProtectedAppendWritesAll();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ImmutabilityPolicyInner innerModel() {
         return this.innerObject;
     }

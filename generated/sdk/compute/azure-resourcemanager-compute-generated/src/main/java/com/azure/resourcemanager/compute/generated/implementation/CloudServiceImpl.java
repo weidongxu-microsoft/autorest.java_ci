@@ -56,6 +56,10 @@ public final class CloudServiceImpl implements CloudService, CloudService.Defini
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public CloudServiceInner innerModel() {
         return this.innerObject;
     }

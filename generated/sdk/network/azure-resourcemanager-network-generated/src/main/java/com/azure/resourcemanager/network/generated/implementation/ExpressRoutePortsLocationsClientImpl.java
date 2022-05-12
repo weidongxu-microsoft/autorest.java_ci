@@ -334,15 +334,7 @@ public final class ExpressRoutePortsLocationsClientImpl implements ExpressRouteP
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRoutePortsLocationInner> getAsync(String locationName) {
-        return getWithResponseAsync(locationName)
-            .flatMap(
-                (Response<ExpressRoutePortsLocationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(locationName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

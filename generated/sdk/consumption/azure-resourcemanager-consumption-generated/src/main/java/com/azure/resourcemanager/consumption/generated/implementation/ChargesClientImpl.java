@@ -224,14 +224,7 @@ public final class ChargesClientImpl implements ChargesClient {
     private Mono<ChargesListResultInner> listAsync(
         String scope, String startDate, String endDate, String filter, String apply) {
         return listWithResponseAsync(scope, startDate, endDate, filter, apply)
-            .flatMap(
-                (Response<ChargesListResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -265,14 +258,7 @@ public final class ChargesClientImpl implements ChargesClient {
         final String filter = null;
         final String apply = null;
         return listWithResponseAsync(scope, startDate, endDate, filter, apply)
-            .flatMap(
-                (Response<ChargesListResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

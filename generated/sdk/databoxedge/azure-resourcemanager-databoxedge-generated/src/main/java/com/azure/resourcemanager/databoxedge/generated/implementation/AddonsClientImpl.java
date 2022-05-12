@@ -471,14 +471,7 @@ public final class AddonsClientImpl implements AddonsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AddonInner> getAsync(String deviceName, String roleName, String addonName, String resourceGroupName) {
         return getWithResponseAsync(deviceName, roleName, addonName, resourceGroupName)
-            .flatMap(
-                (Response<AddonInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

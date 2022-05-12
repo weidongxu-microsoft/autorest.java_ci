@@ -100,6 +100,10 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ZoneInner innerModel() {
         return this.innerObject;
     }

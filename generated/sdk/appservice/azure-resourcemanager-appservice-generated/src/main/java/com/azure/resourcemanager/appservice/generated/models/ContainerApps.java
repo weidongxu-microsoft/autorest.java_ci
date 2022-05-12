@@ -83,7 +83,7 @@ public interface ContainerApps {
     Response<ContainerApp> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -95,7 +95,7 @@ public interface ContainerApps {
     void deleteByResourceGroup(String resourceGroupName, String name);
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -156,7 +156,7 @@ public interface ContainerApps {
     Response<ContainerApp> getByIdWithResponse(String id, Context context);
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -167,7 +167,7 @@ public interface ContainerApps {
     void deleteById(String id);
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.

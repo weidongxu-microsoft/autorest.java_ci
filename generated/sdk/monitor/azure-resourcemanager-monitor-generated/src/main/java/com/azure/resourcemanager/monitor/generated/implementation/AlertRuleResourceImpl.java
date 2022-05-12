@@ -92,6 +92,10 @@ public final class AlertRuleResourceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public AlertRuleResourceInner innerModel() {
         return this.innerObject;
     }

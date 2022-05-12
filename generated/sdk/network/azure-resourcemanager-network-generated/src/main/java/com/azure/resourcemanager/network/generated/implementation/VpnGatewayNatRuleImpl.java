@@ -89,6 +89,10 @@ public final class VpnGatewayNatRuleImpl
         }
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VpnGatewayNatRuleInner innerModel() {
         return this.innerObject;
     }

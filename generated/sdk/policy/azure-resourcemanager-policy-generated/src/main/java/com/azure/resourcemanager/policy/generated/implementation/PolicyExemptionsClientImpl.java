@@ -294,7 +294,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String scope, String policyExemptionName) {
-        return deleteWithResponseAsync(scope, policyExemptionName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(scope, policyExemptionName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -465,14 +465,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
     private Mono<PolicyExemptionInner> createOrUpdateAsync(
         String scope, String policyExemptionName, PolicyExemptionInner parameters) {
         return createOrUpdateWithResponseAsync(scope, policyExemptionName, parameters)
-            .flatMap(
-                (Response<PolicyExemptionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -615,15 +608,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PolicyExemptionInner> getAsync(String scope, String policyExemptionName) {
-        return getWithResponseAsync(scope, policyExemptionName)
-            .flatMap(
-                (Response<PolicyExemptionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(scope, policyExemptionName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

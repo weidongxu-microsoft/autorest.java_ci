@@ -518,14 +518,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
     private Mono<VirtualRouterPeeringInner> getAsync(
         String resourceGroupName, String virtualRouterName, String peeringName) {
         return getWithResponseAsync(resourceGroupName, virtualRouterName, peeringName)
-            .flatMap(
-                (Response<VirtualRouterPeeringInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

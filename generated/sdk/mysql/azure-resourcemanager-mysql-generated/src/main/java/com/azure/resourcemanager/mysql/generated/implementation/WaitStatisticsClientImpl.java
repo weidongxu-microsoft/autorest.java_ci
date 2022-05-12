@@ -223,14 +223,7 @@ public final class WaitStatisticsClientImpl implements WaitStatisticsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WaitStatisticInner> getAsync(String resourceGroupName, String serverName, String waitStatisticsId) {
         return getWithResponseAsync(resourceGroupName, serverName, waitStatisticsId)
-            .flatMap(
-                (Response<WaitStatisticInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

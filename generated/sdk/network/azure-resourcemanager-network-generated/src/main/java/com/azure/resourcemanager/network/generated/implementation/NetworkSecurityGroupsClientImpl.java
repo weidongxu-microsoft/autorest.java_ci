@@ -531,14 +531,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
     private Mono<NetworkSecurityGroupInner> getByResourceGroupAsync(
         String resourceGroupName, String networkSecurityGroupName, String expand) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkSecurityGroupName, expand)
-            .flatMap(
-                (Response<NetworkSecurityGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -556,14 +549,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
         String resourceGroupName, String networkSecurityGroupName) {
         final String expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkSecurityGroupName, expand)
-            .flatMap(
-                (Response<NetworkSecurityGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1019,14 +1005,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
     private Mono<NetworkSecurityGroupInner> updateTagsAsync(
         String resourceGroupName, String networkSecurityGroupName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, networkSecurityGroupName, parameters)
-            .flatMap(
-                (Response<NetworkSecurityGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

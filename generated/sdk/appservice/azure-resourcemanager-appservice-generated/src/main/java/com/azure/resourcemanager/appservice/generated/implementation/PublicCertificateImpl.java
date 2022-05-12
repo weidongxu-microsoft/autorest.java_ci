@@ -43,6 +43,10 @@ public final class PublicCertificateImpl
         return this.innerModel().thumbprint();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public PublicCertificateInner innerModel() {
         return this.innerObject;
     }

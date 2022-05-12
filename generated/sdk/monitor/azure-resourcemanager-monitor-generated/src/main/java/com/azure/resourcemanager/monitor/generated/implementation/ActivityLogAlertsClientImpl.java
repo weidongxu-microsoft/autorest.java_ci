@@ -281,14 +281,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
     private Mono<ActivityLogAlertResourceInner> createOrUpdateAsync(
         String resourceGroupName, String activityLogAlertName, ActivityLogAlertResourceInner activityLogAlert) {
         return createOrUpdateWithResponseAsync(resourceGroupName, activityLogAlertName, activityLogAlert)
-            .flatMap(
-                (Response<ActivityLogAlertResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -442,14 +435,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
     private Mono<ActivityLogAlertResourceInner> getByResourceGroupAsync(
         String resourceGroupName, String activityLogAlertName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, activityLogAlertName)
-            .flatMap(
-                (Response<ActivityLogAlertResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -593,8 +579,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String activityLogAlertName) {
-        return deleteWithResponseAsync(resourceGroupName, activityLogAlertName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, activityLogAlertName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -759,14 +744,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
     private Mono<ActivityLogAlertResourceInner> updateAsync(
         String resourceGroupName, String activityLogAlertName, ActivityLogAlertPatchBody activityLogAlertPatch) {
         return updateWithResponseAsync(resourceGroupName, activityLogAlertName, activityLogAlertPatch)
-            .flatMap(
-                (Response<ActivityLogAlertResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

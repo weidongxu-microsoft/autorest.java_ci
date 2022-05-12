@@ -209,14 +209,7 @@ public final class FirewallPolicyIdpsSignaturesFilterValuesClientImpl
     private Mono<SignatureOverridesFilterValuesResponseInner> listAsync(
         String resourceGroupName, String firewallPolicyName, SignatureOverridesFilterValuesQuery parameters) {
         return listWithResponseAsync(resourceGroupName, firewallPolicyName, parameters)
-            .flatMap(
-                (Response<SignatureOverridesFilterValuesResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -139,6 +139,13 @@ public interface PartnerTopic {
     String regionName();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerTopicInner object.
      *
      * @return the inner object.

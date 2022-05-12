@@ -250,14 +250,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
     private Mono<ServerSecurityAlertPolicyInner> getAsync(
         String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName) {
         return getWithResponseAsync(resourceGroupName, serverName, securityAlertPolicyName)
-            .flatMap(
-                (Response<ServerSecurityAlertPolicyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

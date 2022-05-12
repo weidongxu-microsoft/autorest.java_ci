@@ -185,15 +185,7 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkSecurityPerimeterConfigurationListInner> listAsync(
         String resourceGroupName, String namespaceName) {
-        return listWithResponseAsync(resourceGroupName, namespaceName)
-            .flatMap(
-                (Response<NetworkSecurityPerimeterConfigurationListInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listWithResponseAsync(resourceGroupName, namespaceName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

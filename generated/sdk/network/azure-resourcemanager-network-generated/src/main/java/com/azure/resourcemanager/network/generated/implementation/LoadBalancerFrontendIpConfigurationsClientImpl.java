@@ -419,14 +419,7 @@ public final class LoadBalancerFrontendIpConfigurationsClientImpl
     private Mono<FrontendIpConfigurationInner> getAsync(
         String resourceGroupName, String loadBalancerName, String frontendIpConfigurationName) {
         return getWithResponseAsync(resourceGroupName, loadBalancerName, frontendIpConfigurationName)
-            .flatMap(
-                (Response<FrontendIpConfigurationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

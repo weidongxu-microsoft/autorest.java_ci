@@ -208,15 +208,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultExtendedInfoResourceInner> getAsync(String resourceGroupName, String vaultName) {
-        return getWithResponseAsync(resourceGroupName, vaultName)
-            .flatMap(
-                (Response<VaultExtendedInfoResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(resourceGroupName, vaultName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -383,14 +375,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
     private Mono<VaultExtendedInfoResourceInner> createOrUpdateAsync(
         String resourceGroupName, String vaultName, VaultExtendedInfoResourceInner resourceExtendedInfoDetails) {
         return createOrUpdateWithResponseAsync(resourceGroupName, vaultName, resourceExtendedInfoDetails)
-            .flatMap(
-                (Response<VaultExtendedInfoResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -564,14 +549,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
     private Mono<VaultExtendedInfoResourceInner> updateAsync(
         String resourceGroupName, String vaultName, VaultExtendedInfoResourceInner resourceExtendedInfoDetails) {
         return updateWithResponseAsync(resourceGroupName, vaultName, resourceExtendedInfoDetails)
-            .flatMap(
-                (Response<VaultExtendedInfoResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

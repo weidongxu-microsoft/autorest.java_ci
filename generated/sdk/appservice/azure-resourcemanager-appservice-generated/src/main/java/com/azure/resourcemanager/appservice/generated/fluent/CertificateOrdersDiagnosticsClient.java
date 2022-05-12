@@ -15,7 +15,7 @@ import java.time.OffsetDateTime;
 /** An instance of this class provides access to all the operations defined in CertificateOrdersDiagnosticsClient. */
 public interface CertificateOrdersDiagnosticsClient {
     /**
-     * Description for Microsoft.CertificateRegistration to get the list of detectors for this RP.
+     * Microsoft.CertificateRegistration to get the list of detectors for this RP.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.
@@ -30,7 +30,7 @@ public interface CertificateOrdersDiagnosticsClient {
         String resourceGroupName, String certificateOrderName);
 
     /**
-     * Description for Microsoft.CertificateRegistration to get the list of detectors for this RP.
+     * Microsoft.CertificateRegistration to get the list of detectors for this RP.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.
@@ -46,7 +46,7 @@ public interface CertificateOrdersDiagnosticsClient {
         String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Description for Microsoft.CertificateRegistration call to get a detector response from App Lens.
+     * Microsoft.CertificateRegistration call to get a detector response from App Lens.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.
@@ -62,7 +62,7 @@ public interface CertificateOrdersDiagnosticsClient {
         String resourceGroupName, String certificateOrderName, String detectorName);
 
     /**
-     * Description for Microsoft.CertificateRegistration call to get a detector response from App Lens.
+     * Microsoft.CertificateRegistration call to get a detector response from App Lens.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.

@@ -294,15 +294,7 @@ public final class SettingsClientImpl implements SettingsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SettingInner> getAsync(String settingName) {
-        return getWithResponseAsync(settingName)
-            .flatMap(
-                (Response<SettingInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(settingName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -423,14 +415,7 @@ public final class SettingsClientImpl implements SettingsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SettingInner> createOrUpdateAsync(String settingName, SettingInner parameters) {
         return createOrUpdateWithResponseAsync(settingName, parameters)
-            .flatMap(
-                (Response<SettingInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -531,7 +516,7 @@ public final class SettingsClientImpl implements SettingsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String settingName) {
-        return deleteWithResponseAsync(settingName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(settingName).flatMap(ignored -> Mono.empty());
     }
 
     /**

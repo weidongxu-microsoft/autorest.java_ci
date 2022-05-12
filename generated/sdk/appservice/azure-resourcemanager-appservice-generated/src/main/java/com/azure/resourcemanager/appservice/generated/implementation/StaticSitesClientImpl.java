@@ -958,7 +958,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Generates a preview workflow file for the static site.
+     * Generates a preview workflow file for the static site.
      *
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
@@ -1012,7 +1012,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Generates a preview workflow file for the static site.
+     * Generates a preview workflow file for the static site.
      *
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
@@ -1064,7 +1064,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Generates a preview workflow file for the static site.
+     * Generates a preview workflow file for the static site.
      *
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
@@ -1078,18 +1078,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     private Mono<StaticSitesWorkflowPreviewInner> previewWorkflowAsync(
         String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest) {
         return previewWorkflowWithResponseAsync(location, staticSitesWorkflowPreviewRequest)
-            .flatMap(
-                (Response<StaticSitesWorkflowPreviewInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Generates a preview workflow file for the static site.
+     * Generates a preview workflow file for the static site.
      *
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
@@ -1106,7 +1099,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Generates a preview workflow file for the static site.
+     * Generates a preview workflow file for the static site.
      *
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
@@ -1124,11 +1117,12 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static sites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all Static Sites for a subscription along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteArmResourceInner>> listSinglePageAsync() {
@@ -1168,13 +1162,14 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static sites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all Static Sites for a subscription along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteArmResourceInner>> listSinglePageAsync(Context context) {
@@ -1211,11 +1206,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static sites as paginated response with {@link PagedFlux}.
+     * @return all Static Sites for a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteArmResourceInner> listAsync() {
@@ -1223,13 +1218,13 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static sites as paginated response with {@link PagedFlux}.
+     * @return all Static Sites for a subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteArmResourceInner> listAsync(Context context) {
@@ -1238,11 +1233,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static sites as paginated response with {@link PagedIterable}.
+     * @return all Static Sites for a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteArmResourceInner> list() {
@@ -1250,13 +1245,13 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static sites as paginated response with {@link PagedIterable}.
+     * @return all Static Sites for a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteArmResourceInner> list(Context context) {
@@ -1264,13 +1259,14 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static sites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all static sites in the specified resource group along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteArmResourceInner>> listByResourceGroupSinglePageAsync(
@@ -1316,14 +1312,15 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static sites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all static sites in the specified resource group along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteArmResourceInner>> listByResourceGroupSinglePageAsync(
@@ -1366,13 +1363,13 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static sites as paginated response with {@link PagedFlux}.
+     * @return all static sites in the specified resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteArmResourceInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -1382,14 +1379,14 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static sites as paginated response with {@link PagedFlux}.
+     * @return all static sites in the specified resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteArmResourceInner> listByResourceGroupAsync(String resourceGroupName, Context context) {
@@ -1399,13 +1396,13 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static sites as paginated response with {@link PagedIterable}.
+     * @return all static sites in the specified resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteArmResourceInner> listByResourceGroup(String resourceGroupName) {
@@ -1413,14 +1410,14 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static sites as paginated response with {@link PagedIterable}.
+     * @return all static sites in the specified resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteArmResourceInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -1428,14 +1425,14 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the details of a static site along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StaticSiteArmResourceInner>> getByResourceGroupWithResponseAsync(
@@ -1476,7 +1473,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1484,7 +1481,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the details of a static site along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StaticSiteArmResourceInner>> getByResourceGroupWithResponseAsync(
@@ -1522,37 +1519,30 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource on successful completion of {@link Mono}.
+     * @return the details of a static site on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StaticSiteArmResourceInner> getByResourceGroupAsync(String resourceGroupName, String name) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<StaticSiteArmResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource.
+     * @return the details of a static site.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public StaticSiteArmResourceInner getByResourceGroup(String resourceGroupName, String name) {
@@ -1560,7 +1550,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1568,7 +1558,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource along with {@link Response}.
+     * @return the details of a static site along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StaticSiteArmResourceInner> getByResourceGroupWithResponse(
@@ -1577,7 +1567,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1633,7 +1623,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1687,7 +1677,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1714,7 +1704,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1743,7 +1733,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1760,7 +1750,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1778,7 +1768,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1797,7 +1787,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1817,7 +1807,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1834,7 +1824,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1852,7 +1842,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -1899,7 +1889,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -1945,7 +1935,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -1964,7 +1954,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -1985,7 +1975,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2000,7 +1990,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2016,7 +2006,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2031,7 +2021,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2047,7 +2037,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2061,7 +2051,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2076,7 +2066,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -2132,7 +2122,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -2186,7 +2176,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -2200,18 +2190,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     private Mono<StaticSiteArmResourceInner> updateStaticSiteAsync(
         String resourceGroupName, String name, StaticSitePatchResource staticSiteEnvelope) {
         return updateStaticSiteWithResponseAsync(resourceGroupName, name, staticSiteEnvelope)
-            .flatMap(
-                (Response<StaticSiteArmResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -2228,7 +2211,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -2246,7 +2229,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2254,8 +2237,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site custom users along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return the list of users of a static site along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteUserArmResourceInner>> listStaticSiteUsersSinglePageAsync(
@@ -2309,7 +2292,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2318,8 +2301,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site custom users along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return the list of users of a static site along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteUserArmResourceInner>> listStaticSiteUsersSinglePageAsync(
@@ -2370,7 +2353,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2378,7 +2361,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site custom users as paginated response with {@link PagedFlux}.
+     * @return the list of users of a static site as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteUserArmResourceInner> listStaticSiteUsersAsync(
@@ -2389,7 +2372,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2398,7 +2381,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site custom users as paginated response with {@link PagedFlux}.
+     * @return the list of users of a static site as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteUserArmResourceInner> listStaticSiteUsersAsync(
@@ -2409,7 +2392,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2417,7 +2400,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site custom users as paginated response with {@link PagedIterable}.
+     * @return the list of users of a static site as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteUserArmResourceInner> listStaticSiteUsers(
@@ -2426,7 +2409,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2435,7 +2418,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site custom users as paginated response with {@link PagedIterable}.
+     * @return the list of users of a static site as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteUserArmResourceInner> listStaticSiteUsers(
@@ -2444,7 +2427,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes the user entry from the static site.
+     * Deletes the user entry from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the staticsite.
@@ -2502,7 +2485,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes the user entry from the static site.
+     * Deletes the user entry from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the staticsite.
@@ -2558,7 +2541,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes the user entry from the static site.
+     * Deletes the user entry from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the staticsite.
@@ -2573,11 +2556,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     private Mono<Void> deleteStaticSiteUserAsync(
         String resourceGroupName, String name, String authprovider, String userid) {
         return deleteStaticSiteUserWithResponseAsync(resourceGroupName, name, authprovider, userid)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Deletes the user entry from the static site.
+     * Deletes the user entry from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the staticsite.
@@ -2593,7 +2576,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes the user entry from the static site.
+     * Deletes the user entry from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the staticsite.
@@ -2612,7 +2595,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Updates a user entry with the listed roles.
+     * Updates a user entry with the listed roles.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2683,7 +2666,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Updates a user entry with the listed roles.
+     * Updates a user entry with the listed roles.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2753,7 +2736,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Updates a user entry with the listed roles.
+     * Updates a user entry with the listed roles.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2774,18 +2757,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         StaticSiteUserArmResourceInner staticSiteUserEnvelope) {
         return updateStaticSiteUserWithResponseAsync(
                 resourceGroupName, name, authprovider, userid, staticSiteUserEnvelope)
-            .flatMap(
-                (Response<StaticSiteUserArmResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Updates a user entry with the listed roles.
+     * Updates a user entry with the listed roles.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2808,7 +2784,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Updates a user entry with the listed roles.
+     * Updates a user entry with the listed roles.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2835,15 +2811,15 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site builds along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return all static site builds for a particular static site along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteBuildArmResourceInner>> getStaticSiteBuildsSinglePageAsync(
@@ -2893,7 +2869,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2901,8 +2877,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site builds along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return all static site builds for a particular static site along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteBuildArmResourceInner>> getStaticSiteBuildsSinglePageAsync(
@@ -2949,14 +2925,14 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site builds as paginated response with {@link PagedFlux}.
+     * @return all static site builds for a particular static site as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteBuildArmResourceInner> getStaticSiteBuildsAsync(String resourceGroupName, String name) {
@@ -2966,7 +2942,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2974,7 +2950,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site builds as paginated response with {@link PagedFlux}.
+     * @return all static site builds for a particular static site as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteBuildArmResourceInner> getStaticSiteBuildsAsync(
@@ -2985,14 +2961,14 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site builds as paginated response with {@link PagedIterable}.
+     * @return all static site builds for a particular static site as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteBuildArmResourceInner> getStaticSiteBuilds(String resourceGroupName, String name) {
@@ -3000,7 +2976,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3008,7 +2984,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site builds as paginated response with {@link PagedIterable}.
+     * @return all static site builds for a particular static site as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteBuildArmResourceInner> getStaticSiteBuilds(
@@ -3017,7 +2993,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site build.
+     * Gets the details of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3025,7 +3001,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Build ARM resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the details of a static site build along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StaticSiteBuildArmResourceInner>> getStaticSiteBuildWithResponseAsync(
@@ -3071,7 +3047,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site build.
+     * Gets the details of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3080,7 +3056,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Build ARM resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the details of a static site build along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StaticSiteBuildArmResourceInner>> getStaticSiteBuildWithResponseAsync(
@@ -3123,7 +3099,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site build.
+     * Gets the details of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3131,24 +3107,17 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Build ARM resource on successful completion of {@link Mono}.
+     * @return the details of a static site build on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StaticSiteBuildArmResourceInner> getStaticSiteBuildAsync(
         String resourceGroupName, String name, String environmentName) {
         return getStaticSiteBuildWithResponseAsync(resourceGroupName, name, environmentName)
-            .flatMap(
-                (Response<StaticSiteBuildArmResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Gets the details of a static site build.
+     * Gets the details of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3156,7 +3125,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Build ARM resource.
+     * @return the details of a static site build.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public StaticSiteBuildArmResourceInner getStaticSiteBuild(
@@ -3165,7 +3134,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site build.
+     * Gets the details of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3174,7 +3143,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Build ARM resource along with {@link Response}.
+     * @return the details of a static site build along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StaticSiteBuildArmResourceInner> getStaticSiteBuildWithResponse(
@@ -3183,7 +3152,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3237,7 +3206,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3289,7 +3258,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3311,7 +3280,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3334,7 +3303,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3351,7 +3320,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3369,7 +3338,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3387,7 +3356,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3407,7 +3376,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3422,7 +3391,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3438,7 +3407,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site build.
+     * Creates or updates the app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3499,7 +3468,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site build.
+     * Creates or updates the app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3562,7 +3531,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site build.
+     * Creates or updates the app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3578,18 +3547,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings) {
         return createOrUpdateStaticSiteBuildAppSettingsWithResponseAsync(
                 resourceGroupName, name, environmentName, appSettings)
-            .flatMap(
-                (Response<StringDictionaryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site build.
+     * Creates or updates the app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3608,7 +3570,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site build.
+     * Creates or updates the app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3633,7 +3595,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site build.
+     * Creates or updates the function app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3694,7 +3656,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site build.
+     * Creates or updates the function app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3757,7 +3719,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site build.
+     * Creates or updates the function app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3773,18 +3735,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings) {
         return createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponseAsync(
                 resourceGroupName, name, environmentName, appSettings)
-            .flatMap(
-                (Response<StringDictionaryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site build.
+     * Creates or updates the function app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3804,7 +3759,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site build.
+     * Creates or updates the function app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3829,7 +3784,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3837,8 +3792,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site functions along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return the functions of a particular static site build along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteFunctionOverviewArmResourceInner>> listStaticSiteBuildFunctionsSinglePageAsync(
@@ -3893,7 +3848,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3902,8 +3857,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site functions along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return the functions of a particular static site build along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteFunctionOverviewArmResourceInner>> listStaticSiteBuildFunctionsSinglePageAsync(
@@ -3955,7 +3910,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3963,7 +3918,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site functions as paginated response with {@link PagedFlux}.
+     * @return the functions of a particular static site build as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteFunctionOverviewArmResourceInner> listStaticSiteBuildFunctionsAsync(
@@ -3974,7 +3929,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3983,7 +3938,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site functions as paginated response with {@link PagedFlux}.
+     * @return the functions of a particular static site build as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteFunctionOverviewArmResourceInner> listStaticSiteBuildFunctionsAsync(
@@ -3994,7 +3949,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4002,7 +3957,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site functions as paginated response with {@link PagedIterable}.
+     * @return the functions of a particular static site build as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteFunctionOverviewArmResourceInner> listStaticSiteBuildFunctions(
@@ -4011,7 +3966,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4020,7 +3975,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site functions as paginated response with {@link PagedIterable}.
+     * @return the functions of a particular static site build as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteFunctionOverviewArmResourceInner> listStaticSiteBuildFunctions(
@@ -4030,7 +3985,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4038,7 +3993,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the application settings of a static site build along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StringDictionaryInner>> listStaticSiteBuildAppSettingsWithResponseAsync(
@@ -4084,7 +4040,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4093,7 +4049,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the application settings of a static site build along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StringDictionaryInner>> listStaticSiteBuildAppSettingsWithResponseAsync(
@@ -4136,7 +4093,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4144,24 +4101,17 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource on successful completion of {@link Mono}.
+     * @return the application settings of a static site build on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StringDictionaryInner> listStaticSiteBuildAppSettingsAsync(
         String resourceGroupName, String name, String environmentName) {
         return listStaticSiteBuildAppSettingsWithResponseAsync(resourceGroupName, name, environmentName)
-            .flatMap(
-                (Response<StringDictionaryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4169,7 +4119,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return the application settings of a static site build.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public StringDictionaryInner listStaticSiteBuildAppSettings(
@@ -4178,7 +4128,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4187,7 +4137,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
+     * @return the application settings of a static site build along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StringDictionaryInner> listStaticSiteBuildAppSettingsWithResponse(
@@ -4197,7 +4147,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4205,7 +4155,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the application settings of a static site build along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StringDictionaryInner>> listStaticSiteBuildFunctionAppSettingsWithResponseAsync(
@@ -4251,7 +4202,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4260,7 +4211,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the application settings of a static site build along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StringDictionaryInner>> listStaticSiteBuildFunctionAppSettingsWithResponseAsync(
@@ -4303,7 +4255,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4311,24 +4263,17 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource on successful completion of {@link Mono}.
+     * @return the application settings of a static site build on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StringDictionaryInner> listStaticSiteBuildFunctionAppSettingsAsync(
         String resourceGroupName, String name, String environmentName) {
         return listStaticSiteBuildFunctionAppSettingsWithResponseAsync(resourceGroupName, name, environmentName)
-            .flatMap(
-                (Response<StringDictionaryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4336,7 +4281,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return the application settings of a static site build.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public StringDictionaryInner listStaticSiteBuildFunctionAppSettings(
@@ -4345,7 +4290,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4354,7 +4299,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
+     * @return the application settings of a static site build along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StringDictionaryInner> listStaticSiteBuildFunctionAppSettingsWithResponse(
@@ -4365,7 +4310,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4373,8 +4318,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site user provided function apps along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return the details of the user provided function apps registered with a static site build along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteUserProvidedFunctionAppArmResourceInner>>
@@ -4430,7 +4375,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4439,8 +4384,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site user provided function apps along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return the details of the user provided function apps registered with a static site build along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteUserProvidedFunctionAppArmResourceInner>>
@@ -4493,7 +4438,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4501,7 +4446,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site user provided function apps as paginated response with {@link PagedFlux}.
+     * @return the details of the user provided function apps registered with a static site build as paginated response
+     *     with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteUserProvidedFunctionAppArmResourceInner>
@@ -4514,7 +4460,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4523,7 +4469,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site user provided function apps as paginated response with {@link PagedFlux}.
+     * @return the details of the user provided function apps registered with a static site build as paginated response
+     *     with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteUserProvidedFunctionAppArmResourceInner>
@@ -4537,7 +4484,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4545,7 +4492,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site user provided function apps as paginated response with {@link PagedIterable}.
+     * @return the details of the user provided function apps registered with a static site build as paginated response
+     *     with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner>
@@ -4555,7 +4503,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4564,7 +4512,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site user provided function apps as paginated response with {@link PagedIterable}.
+     * @return the details of the user provided function apps registered with a static site build as paginated response
+     *     with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner>
@@ -4575,7 +4524,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4584,8 +4533,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * @return the details of the user provided function app registered with a static site build along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StaticSiteUserProvidedFunctionAppArmResourceInner>>
@@ -4637,7 +4586,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4647,8 +4596,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * @return the details of the user provided function app registered with a static site build along with {@link
+     *     Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StaticSiteUserProvidedFunctionAppArmResourceInner>>
@@ -4697,7 +4646,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4706,25 +4655,19 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource on successful completion of {@link Mono}.
+     * @return the details of the user provided function app registered with a static site build on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StaticSiteUserProvidedFunctionAppArmResourceInner> getUserProvidedFunctionAppForStaticSiteBuildAsync(
         String resourceGroupName, String name, String environmentName, String functionAppName) {
         return getUserProvidedFunctionAppForStaticSiteBuildWithResponseAsync(
                 resourceGroupName, name, environmentName, functionAppName)
-            .flatMap(
-                (Response<StaticSiteUserProvidedFunctionAppArmResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4733,7 +4676,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
+     * @return the details of the user provided function app registered with a static site build.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public StaticSiteUserProvidedFunctionAppArmResourceInner getUserProvidedFunctionAppForStaticSiteBuild(
@@ -4744,7 +4687,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4754,7 +4697,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource along with {@link Response}.
+     * @return the details of the user provided function app registered with a static site build along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StaticSiteUserProvidedFunctionAppArmResourceInner>
@@ -4766,7 +4710,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4847,7 +4791,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4927,7 +4871,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4974,7 +4918,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5025,7 +4969,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5063,7 +5007,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5104,7 +5048,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5141,7 +5085,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5175,7 +5119,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5215,7 +5159,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5250,7 +5194,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5282,7 +5226,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5320,7 +5264,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site build.
+     * Detach the user provided function app from the static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5380,7 +5324,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site build.
+     * Detach the user provided function app from the static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5438,7 +5382,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site build.
+     * Detach the user provided function app from the static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5454,11 +5398,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String resourceGroupName, String name, String environmentName, String functionAppName) {
         return detachUserProvidedFunctionAppFromStaticSiteBuildWithResponseAsync(
                 resourceGroupName, name, environmentName, functionAppName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Detach the user provided function app from the static site build.
+     * Detach the user provided function app from the static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5476,7 +5420,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site build.
+     * Detach the user provided function app from the static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5497,7 +5441,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5565,7 +5509,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5632,7 +5576,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5660,7 +5604,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5690,7 +5634,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5714,7 +5658,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5740,7 +5684,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5765,7 +5709,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5792,7 +5736,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5815,7 +5759,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5840,7 +5784,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site.
+     * Creates or updates the app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5895,7 +5839,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site.
+     * Creates or updates the app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5948,7 +5892,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site.
+     * Creates or updates the app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5962,18 +5906,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     private Mono<StringDictionaryInner> createOrUpdateStaticSiteAppSettingsAsync(
         String resourceGroupName, String name, StringDictionaryInner appSettings) {
         return createOrUpdateStaticSiteAppSettingsWithResponseAsync(resourceGroupName, name, appSettings)
-            .flatMap(
-                (Response<StringDictionaryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site.
+     * Creates or updates the app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5990,7 +5927,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site.
+     * Creates or updates the app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6009,7 +5946,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site.
+     * Creates or updates the function app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6064,7 +6001,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site.
+     * Creates or updates the function app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6117,7 +6054,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site.
+     * Creates or updates the function app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6131,18 +6068,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     private Mono<StringDictionaryInner> createOrUpdateStaticSiteFunctionAppSettingsAsync(
         String resourceGroupName, String name, StringDictionaryInner appSettings) {
         return createOrUpdateStaticSiteFunctionAppSettingsWithResponseAsync(resourceGroupName, name, appSettings)
-            .flatMap(
-                (Response<StringDictionaryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site.
+     * Creates or updates the function app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6159,7 +6089,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site.
+     * Creates or updates the function app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6179,7 +6109,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6241,7 +6171,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6302,7 +6232,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6319,18 +6249,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope) {
         return createUserRolesInvitationLinkWithResponseAsync(
                 resourceGroupName, name, staticSiteUserRolesInvitationEnvelope)
-            .flatMap(
-                (Response<StaticSiteUserInvitationResponseResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6350,7 +6273,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6373,15 +6296,15 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site custom domains along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return all static site custom domains for a particular static site along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteCustomDomainOverviewArmResourceInner>>
@@ -6431,7 +6354,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6439,8 +6362,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site custom domains along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return all static site custom domains for a particular static site along with {@link PagedResponse} on
+     *     successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteCustomDomainOverviewArmResourceInner>>
@@ -6487,14 +6410,14 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site custom domains as paginated response with {@link PagedFlux}.
+     * @return all static site custom domains for a particular static site as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteCustomDomainOverviewArmResourceInner> listStaticSiteCustomDomainsAsync(
@@ -6505,7 +6428,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6513,7 +6436,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site custom domains as paginated response with {@link PagedFlux}.
+     * @return all static site custom domains for a particular static site as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteCustomDomainOverviewArmResourceInner> listStaticSiteCustomDomainsAsync(
@@ -6524,14 +6447,15 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site custom domains as paginated response with {@link PagedIterable}.
+     * @return all static site custom domains for a particular static site as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteCustomDomainOverviewArmResourceInner> listStaticSiteCustomDomains(
@@ -6540,7 +6464,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6548,7 +6472,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site custom domains as paginated response with {@link PagedIterable}.
+     * @return all static site custom domains for a particular static site as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteCustomDomainOverviewArmResourceInner> listStaticSiteCustomDomains(
@@ -6557,7 +6482,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6565,8 +6490,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Custom Domain Overview ARM resource along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return an existing custom domain for a particular static site along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StaticSiteCustomDomainOverviewArmResourceInner>> getStaticSiteCustomDomainWithResponseAsync(
@@ -6611,7 +6536,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6620,8 +6545,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Custom Domain Overview ARM resource along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return an existing custom domain for a particular static site along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StaticSiteCustomDomainOverviewArmResourceInner>> getStaticSiteCustomDomainWithResponseAsync(
@@ -6663,7 +6588,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6671,24 +6596,17 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Custom Domain Overview ARM resource on successful completion of {@link Mono}.
+     * @return an existing custom domain for a particular static site on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StaticSiteCustomDomainOverviewArmResourceInner> getStaticSiteCustomDomainAsync(
         String resourceGroupName, String name, String domainName) {
         return getStaticSiteCustomDomainWithResponseAsync(resourceGroupName, name, domainName)
-            .flatMap(
-                (Response<StaticSiteCustomDomainOverviewArmResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6696,7 +6614,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Custom Domain Overview ARM resource.
+     * @return an existing custom domain for a particular static site.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public StaticSiteCustomDomainOverviewArmResourceInner getStaticSiteCustomDomain(
@@ -6705,7 +6623,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6714,7 +6632,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Custom Domain Overview ARM resource along with {@link Response}.
+     * @return an existing custom domain for a particular static site along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StaticSiteCustomDomainOverviewArmResourceInner> getStaticSiteCustomDomainWithResponse(
@@ -6723,7 +6641,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6791,7 +6709,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6858,7 +6776,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6893,7 +6811,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6931,7 +6849,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6957,7 +6875,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6985,7 +6903,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7010,7 +6928,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7037,7 +6955,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7061,7 +6979,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7087,7 +7005,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7140,7 +7058,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7191,7 +7109,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7213,7 +7131,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7236,7 +7154,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7253,7 +7171,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7271,7 +7189,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7289,7 +7207,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7309,7 +7227,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7324,7 +7242,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7341,7 +7259,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7408,7 +7326,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7474,7 +7392,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7502,7 +7420,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7532,7 +7450,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7556,7 +7474,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7582,7 +7500,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7607,7 +7525,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7634,7 +7552,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7657,7 +7575,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7682,7 +7600,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7729,7 +7647,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7775,7 +7693,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7794,7 +7712,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7815,7 +7733,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7830,7 +7748,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7847,7 +7765,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7864,7 +7782,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7882,7 +7800,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7896,7 +7814,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7911,15 +7829,14 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site functions along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return the functions of a static site along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteFunctionOverviewArmResourceInner>> listStaticSiteFunctionsSinglePageAsync(
@@ -7969,7 +7886,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7977,8 +7894,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site functions along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return the functions of a static site along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteFunctionOverviewArmResourceInner>> listStaticSiteFunctionsSinglePageAsync(
@@ -8025,14 +7941,14 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site functions as paginated response with {@link PagedFlux}.
+     * @return the functions of a static site as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteFunctionOverviewArmResourceInner> listStaticSiteFunctionsAsync(
@@ -8043,7 +7959,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8051,7 +7967,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site functions as paginated response with {@link PagedFlux}.
+     * @return the functions of a static site as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteFunctionOverviewArmResourceInner> listStaticSiteFunctionsAsync(
@@ -8062,14 +7978,14 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site functions as paginated response with {@link PagedIterable}.
+     * @return the functions of a static site as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteFunctionOverviewArmResourceInner> listStaticSiteFunctions(
@@ -8078,7 +7994,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8086,7 +8002,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site functions as paginated response with {@link PagedIterable}.
+     * @return the functions of a static site as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteFunctionOverviewArmResourceInner> listStaticSiteFunctions(
@@ -8095,14 +8011,15 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the application settings of a static site along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StringDictionaryInner>> listStaticSiteAppSettingsWithResponseAsync(
@@ -8143,7 +8060,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8151,7 +8068,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the application settings of a static site along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StringDictionaryInner>> listStaticSiteAppSettingsWithResponseAsync(
@@ -8189,37 +8107,30 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource on successful completion of {@link Mono}.
+     * @return the application settings of a static site on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StringDictionaryInner> listStaticSiteAppSettingsAsync(String resourceGroupName, String name) {
         return listStaticSiteAppSettingsWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<StringDictionaryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return the application settings of a static site.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public StringDictionaryInner listStaticSiteAppSettings(String resourceGroupName, String name) {
@@ -8227,7 +8138,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8235,7 +8146,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
+     * @return the application settings of a static site along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StringDictionaryInner> listStaticSiteAppSettingsWithResponse(
@@ -8244,7 +8155,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8292,7 +8203,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8338,7 +8249,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8350,18 +8261,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StringListInner> listStaticSiteConfiguredRolesAsync(String resourceGroupName, String name) {
         return listStaticSiteConfiguredRolesWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<StringListInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8376,7 +8280,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8393,14 +8297,15 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the application settings of a static site along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StringDictionaryInner>> listStaticSiteFunctionAppSettingsWithResponseAsync(
@@ -8441,7 +8346,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8449,7 +8354,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the application settings of a static site along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StringDictionaryInner>> listStaticSiteFunctionAppSettingsWithResponseAsync(
@@ -8487,37 +8393,30 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource on successful completion of {@link Mono}.
+     * @return the application settings of a static site on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StringDictionaryInner> listStaticSiteFunctionAppSettingsAsync(String resourceGroupName, String name) {
         return listStaticSiteFunctionAppSettingsWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<StringDictionaryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return the application settings of a static site.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public StringDictionaryInner listStaticSiteFunctionAppSettings(String resourceGroupName, String name) {
@@ -8525,7 +8424,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8533,7 +8432,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
+     * @return the application settings of a static site along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StringDictionaryInner> listStaticSiteFunctionAppSettingsWithResponse(
@@ -8542,7 +8441,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8590,7 +8489,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8636,7 +8535,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8648,18 +8547,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StringDictionaryInner> listStaticSiteSecretsAsync(String resourceGroupName, String name) {
         return listStaticSiteSecretsWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<StringDictionaryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8674,7 +8566,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8691,14 +8583,15 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response body along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of private endpoint connections associated with a static site along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RemotePrivateEndpointConnectionArmResourceInner>>
@@ -8748,7 +8641,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8756,7 +8649,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response body along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of private endpoint connections associated with a static site along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RemotePrivateEndpointConnectionArmResourceInner>>
@@ -8803,14 +8697,15 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the paginated response with {@link PagedFlux}.
+     * @return the list of private endpoint connections associated with a static site as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionListAsync(
@@ -8821,7 +8716,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8829,7 +8724,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the paginated response with {@link PagedFlux}.
+     * @return the list of private endpoint connections associated with a static site as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionListAsync(
@@ -8840,14 +8736,15 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the paginated response with {@link PagedIterable}.
+     * @return the list of private endpoint connections associated with a static site as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionList(
@@ -8856,7 +8753,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8864,7 +8761,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the paginated response with {@link PagedIterable}.
+     * @return the list of private endpoint connections associated with a static site as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionList(
@@ -8873,7 +8771,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8881,8 +8779,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RemotePrivateEndpointConnectionArmResourceInner>>
@@ -8931,7 +8828,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8940,8 +8837,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RemotePrivateEndpointConnectionArmResourceInner>>
@@ -8987,7 +8883,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8995,24 +8891,17 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource on successful completion of {@link Mono}.
+     * @return a private endpoint connection on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionAsync(
         String resourceGroupName, String name, String privateEndpointConnectionName) {
         return getPrivateEndpointConnectionWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName)
-            .flatMap(
-                (Response<RemotePrivateEndpointConnectionArmResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9020,7 +8909,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
+     * @return a private endpoint connection.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public RemotePrivateEndpointConnectionArmResourceInner getPrivateEndpointConnection(
@@ -9029,7 +8918,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9038,7 +8927,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource along with {@link Response}.
+     * @return a private endpoint connection along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionWithResponse(
@@ -9049,7 +8938,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9118,7 +9007,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9186,7 +9075,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9221,7 +9110,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9259,7 +9148,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9285,7 +9174,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9313,7 +9202,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9337,7 +9226,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9363,7 +9252,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9386,7 +9275,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9411,7 +9300,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9467,7 +9356,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9521,7 +9410,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9543,7 +9432,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9567,7 +9456,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9585,7 +9474,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9605,7 +9494,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9624,7 +9513,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9645,7 +9534,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9662,7 +9551,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9681,15 +9570,14 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * @return the private link resources along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourcesWrapperInner>> getPrivateLinkResourcesWithResponseAsync(
@@ -9730,7 +9618,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -9738,8 +9626,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * @return the private link resources along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourcesWrapperInner>> getPrivateLinkResourcesWithResponseAsync(
@@ -9777,37 +9664,30 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources on successful completion of {@link Mono}.
+     * @return the private link resources on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkResourcesWrapperInner> getPrivateLinkResourcesAsync(String resourceGroupName, String name) {
         return getPrivateLinkResourcesWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<PrivateLinkResourcesWrapperInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources.
+     * @return the private link resources.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public PrivateLinkResourcesWrapperInner getPrivateLinkResources(String resourceGroupName, String name) {
@@ -9815,7 +9695,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -9823,7 +9703,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources along with {@link Response}.
+     * @return the private link resources along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PrivateLinkResourcesWrapperInner> getPrivateLinkResourcesWithResponse(
@@ -9832,7 +9712,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9889,7 +9769,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9947,7 +9827,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9961,11 +9841,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     private Mono<Void> resetStaticSiteApiKeyAsync(
         String resourceGroupName, String name, StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
         return resetStaticSiteApiKeyWithResponseAsync(resourceGroupName, name, resetPropertiesEnvelope)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9981,7 +9861,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10003,15 +9883,15 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site user provided function apps along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return the details of the user provided function apps registered with a static site along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteUserProvidedFunctionAppArmResourceInner>>
@@ -10061,7 +9941,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10069,8 +9949,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site user provided function apps along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return the details of the user provided function apps registered with a static site along with {@link
+     *     PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StaticSiteUserProvidedFunctionAppArmResourceInner>>
@@ -10118,14 +9998,15 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site user provided function apps as paginated response with {@link PagedFlux}.
+     * @return the details of the user provided function apps registered with a static site as paginated response with
+     *     {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteUserProvidedFunctionAppArmResourceInner> getUserProvidedFunctionAppsForStaticSiteAsync(
@@ -10136,7 +10017,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10144,7 +10025,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site user provided function apps as paginated response with {@link PagedFlux}.
+     * @return the details of the user provided function apps registered with a static site as paginated response with
+     *     {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StaticSiteUserProvidedFunctionAppArmResourceInner> getUserProvidedFunctionAppsForStaticSiteAsync(
@@ -10155,14 +10037,15 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site user provided function apps as paginated response with {@link PagedIterable}.
+     * @return the details of the user provided function apps registered with a static site as paginated response with
+     *     {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> getUserProvidedFunctionAppsForStaticSite(
@@ -10171,7 +10054,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10179,7 +10062,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of static site user provided function apps as paginated response with {@link PagedIterable}.
+     * @return the details of the user provided function apps registered with a static site as paginated response with
+     *     {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> getUserProvidedFunctionAppsForStaticSite(
@@ -10188,7 +10072,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site.
+     * Gets the details of the user provided function app registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10196,8 +10080,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * @return the details of the user provided function app registered with a static site along with {@link Response}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StaticSiteUserProvidedFunctionAppArmResourceInner>>
@@ -10244,7 +10128,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site.
+     * Gets the details of the user provided function app registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10253,8 +10137,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * @return the details of the user provided function app registered with a static site along with {@link Response}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StaticSiteUserProvidedFunctionAppArmResourceInner>>
@@ -10298,7 +10182,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site.
+     * Gets the details of the user provided function app registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10306,24 +10190,18 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource on successful completion of {@link Mono}.
+     * @return the details of the user provided function app registered with a static site on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StaticSiteUserProvidedFunctionAppArmResourceInner> getUserProvidedFunctionAppForStaticSiteAsync(
         String resourceGroupName, String name, String functionAppName) {
         return getUserProvidedFunctionAppForStaticSiteWithResponseAsync(resourceGroupName, name, functionAppName)
-            .flatMap(
-                (Response<StaticSiteUserProvidedFunctionAppArmResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site.
+     * Gets the details of the user provided function app registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10331,7 +10209,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
+     * @return the details of the user provided function app registered with a static site.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public StaticSiteUserProvidedFunctionAppArmResourceInner getUserProvidedFunctionAppForStaticSite(
@@ -10340,7 +10218,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site.
+     * Gets the details of the user provided function app registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10349,7 +10227,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource along with {@link Response}.
+     * @return the details of the user provided function app registered with a static site along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StaticSiteUserProvidedFunctionAppArmResourceInner>
@@ -10361,7 +10239,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10435,7 +10313,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10508,7 +10386,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10548,7 +10426,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10591,7 +10469,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10622,7 +10500,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10655,7 +10533,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10684,7 +10562,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10710,7 +10588,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10741,7 +10619,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10769,7 +10647,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10794,7 +10672,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10824,7 +10702,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site.
+     * Detach the user provided function app from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10878,7 +10756,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site.
+     * Detach the user provided function app from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10930,7 +10808,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site.
+     * Detach the user provided function app from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10944,11 +10822,11 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     private Mono<Void> detachUserProvidedFunctionAppFromStaticSiteAsync(
         String resourceGroupName, String name, String functionAppName) {
         return detachUserProvidedFunctionAppFromStaticSiteWithResponseAsync(resourceGroupName, name, functionAppName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Detach the user provided function app from the static site.
+     * Detach the user provided function app from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10964,7 +10842,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site.
+     * Detach the user provided function app from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10984,7 +10862,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11043,7 +10921,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11103,7 +10981,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11126,7 +11004,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11154,7 +11032,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11173,7 +11051,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11197,7 +11075,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11217,7 +11095,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11242,7 +11120,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11259,7 +11137,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.

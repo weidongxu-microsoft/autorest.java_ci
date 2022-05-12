@@ -294,14 +294,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnConnectionInner> getAsync(String resourceGroupName, String gatewayName, String connectionName) {
         return getWithResponseAsync(resourceGroupName, gatewayName, connectionName)
-            .flatMap(
-                (Response<VpnConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

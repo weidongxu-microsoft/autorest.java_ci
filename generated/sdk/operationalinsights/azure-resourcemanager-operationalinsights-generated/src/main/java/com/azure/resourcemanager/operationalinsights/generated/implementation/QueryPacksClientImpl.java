@@ -584,7 +584,7 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String queryPackName) {
-        return deleteWithResponseAsync(resourceGroupName, queryPackName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, queryPackName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -728,14 +728,7 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LogAnalyticsQueryPackInner> getByResourceGroupAsync(String resourceGroupName, String queryPackName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, queryPackName)
-            .flatMap(
-                (Response<LogAnalyticsQueryPackInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -912,14 +905,7 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
     private Mono<LogAnalyticsQueryPackInner> createOrUpdateAsync(
         String resourceGroupName, String queryPackName, LogAnalyticsQueryPackInner logAnalyticsQueryPackPayload) {
         return createOrUpdateWithResponseAsync(resourceGroupName, queryPackName, logAnalyticsQueryPackPayload)
-            .flatMap(
-                (Response<LogAnalyticsQueryPackInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1092,14 +1078,7 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
     private Mono<LogAnalyticsQueryPackInner> updateTagsAsync(
         String resourceGroupName, String queryPackName, TagsResource queryPackTags) {
         return updateTagsWithResponseAsync(resourceGroupName, queryPackName, queryPackTags)
-            .flatMap(
-                (Response<LogAnalyticsQueryPackInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

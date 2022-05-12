@@ -260,14 +260,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
     private Mono<VirtualHubRouteTableV2Inner> getAsync(
         String resourceGroupName, String virtualHubName, String routeTableName) {
         return getWithResponseAsync(resourceGroupName, virtualHubName, routeTableName)
-            .flatMap(
-                (Response<VirtualHubRouteTableV2Inner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

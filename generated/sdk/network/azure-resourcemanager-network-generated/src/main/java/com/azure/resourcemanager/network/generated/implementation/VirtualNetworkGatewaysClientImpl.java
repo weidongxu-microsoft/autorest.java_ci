@@ -853,14 +853,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     private Mono<VirtualNetworkGatewayInner> getByResourceGroupAsync(
         String resourceGroupName, String virtualNetworkGatewayName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, virtualNetworkGatewayName)
-            .flatMap(
-                (Response<VirtualNetworkGatewayInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3552,14 +3545,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<String> supportedVpnDevicesAsync(String resourceGroupName, String virtualNetworkGatewayName) {
         return supportedVpnDevicesWithResponseAsync(resourceGroupName, virtualNetworkGatewayName)
-            .flatMap(
-                (Response<String> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -4887,14 +4873,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         String resourceGroupName, String virtualNetworkGatewayConnectionName, VpnDeviceScriptParameters parameters) {
         return vpnDeviceConfigurationScriptWithResponseAsync(
                 resourceGroupName, virtualNetworkGatewayConnectionName, parameters)
-            .flatMap(
-                (Response<String> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

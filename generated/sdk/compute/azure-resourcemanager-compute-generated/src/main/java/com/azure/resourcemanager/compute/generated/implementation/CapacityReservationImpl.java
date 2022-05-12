@@ -99,6 +99,10 @@ public final class CapacityReservationImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public CapacityReservationInner innerModel() {
         return this.innerObject;
     }

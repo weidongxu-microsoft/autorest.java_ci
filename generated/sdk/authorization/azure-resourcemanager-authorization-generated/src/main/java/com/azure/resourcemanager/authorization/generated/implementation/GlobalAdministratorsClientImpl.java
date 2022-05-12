@@ -115,7 +115,7 @@ public final class GlobalAdministratorsClientImpl implements GlobalAdministrator
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> elevateAccessAsync() {
-        return elevateAccessWithResponseAsync().flatMap((Response<Void> res) -> Mono.empty());
+        return elevateAccessWithResponseAsync().flatMap(ignored -> Mono.empty());
     }
 
     /**

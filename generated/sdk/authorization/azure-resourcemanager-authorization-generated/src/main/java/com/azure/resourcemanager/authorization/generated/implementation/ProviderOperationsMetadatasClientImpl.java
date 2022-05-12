@@ -174,15 +174,7 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ProviderOperationsMetadataInner> getAsync(String resourceProviderNamespace, String expand) {
-        return getWithResponseAsync(resourceProviderNamespace, expand)
-            .flatMap(
-                (Response<ProviderOperationsMetadataInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(resourceProviderNamespace, expand).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -198,15 +190,7 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ProviderOperationsMetadataInner> getAsync(String resourceProviderNamespace) {
         final String expand = null;
-        return getWithResponseAsync(resourceProviderNamespace, expand)
-            .flatMap(
-                (Response<ProviderOperationsMetadataInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(resourceProviderNamespace, expand).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

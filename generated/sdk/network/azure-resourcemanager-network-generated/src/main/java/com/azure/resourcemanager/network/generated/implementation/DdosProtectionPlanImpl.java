@@ -75,6 +75,10 @@ public final class DdosProtectionPlanImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public DdosProtectionPlanInner innerModel() {
         return this.innerObject;
     }

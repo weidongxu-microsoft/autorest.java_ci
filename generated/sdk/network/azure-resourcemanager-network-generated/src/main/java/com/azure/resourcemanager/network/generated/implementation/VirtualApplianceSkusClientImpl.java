@@ -330,15 +330,7 @@ public final class VirtualApplianceSkusClientImpl implements VirtualApplianceSku
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkVirtualApplianceSkuInner> getAsync(String skuName) {
-        return getWithResponseAsync(skuName)
-            .flatMap(
-                (Response<NetworkVirtualApplianceSkuInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(skuName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

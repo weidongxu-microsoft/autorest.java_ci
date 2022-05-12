@@ -599,14 +599,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
     private Mono<RoutingIntentInner> getAsync(
         String resourceGroupName, String virtualHubName, String routingIntentName) {
         return getWithResponseAsync(resourceGroupName, virtualHubName, routingIntentName)
-            .flatMap(
-                (Response<RoutingIntentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

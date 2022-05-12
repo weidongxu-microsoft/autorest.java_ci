@@ -573,14 +573,7 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
     private Mono<ServiceEndpointPolicyDefinitionInner> getAsync(
         String resourceGroupName, String serviceEndpointPolicyName, String serviceEndpointPolicyDefinitionName) {
         return getWithResponseAsync(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName)
-            .flatMap(
-                (Response<ServiceEndpointPolicyDefinitionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

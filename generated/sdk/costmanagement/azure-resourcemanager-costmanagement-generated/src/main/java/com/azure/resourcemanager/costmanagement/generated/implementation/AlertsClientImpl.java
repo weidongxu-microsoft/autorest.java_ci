@@ -207,15 +207,7 @@ public final class AlertsClientImpl implements AlertsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AlertsResultInner> listAsync(String scope) {
-        return listWithResponseAsync(scope)
-            .flatMap(
-                (Response<AlertsResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listWithResponseAsync(scope).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -387,15 +379,7 @@ public final class AlertsClientImpl implements AlertsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AlertInner> getAsync(String scope, String alertId) {
-        return getWithResponseAsync(scope, alertId)
-            .flatMap(
-                (Response<AlertInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(scope, alertId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -593,15 +577,7 @@ public final class AlertsClientImpl implements AlertsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AlertInner> dismissAsync(String scope, String alertId, DismissAlertPayload parameters) {
-        return dismissWithResponseAsync(scope, alertId, parameters)
-            .flatMap(
-                (Response<AlertInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return dismissWithResponseAsync(scope, alertId, parameters).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -775,14 +751,7 @@ public final class AlertsClientImpl implements AlertsClient {
     private Mono<AlertsResultInner> listExternalAsync(
         ExternalCloudProviderType externalCloudProviderType, String externalCloudProviderId) {
         return listExternalWithResponseAsync(externalCloudProviderType, externalCloudProviderId)
-            .flatMap(
-                (Response<AlertsResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

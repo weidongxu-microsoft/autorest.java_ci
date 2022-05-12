@@ -350,14 +350,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentOperationInner> getAtScopeAsync(String scope, String deploymentName, String operationId) {
         return getAtScopeWithResponseAsync(scope, deploymentName, operationId)
-            .flatMap(
-                (Response<DeploymentOperationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -666,14 +659,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentOperationInner> getAtTenantScopeAsync(String deploymentName, String operationId) {
         return getAtTenantScopeWithResponseAsync(deploymentName, operationId)
-            .flatMap(
-                (Response<DeploymentOperationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -983,14 +969,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
     private Mono<DeploymentOperationInner> getAtManagementGroupScopeAsync(
         String groupId, String deploymentName, String operationId) {
         return getAtManagementGroupScopeWithResponseAsync(groupId, deploymentName, operationId)
-            .flatMap(
-                (Response<DeploymentOperationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1320,14 +1299,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeploymentOperationInner> getAtSubscriptionScopeAsync(String deploymentName, String operationId) {
         return getAtSubscriptionScopeWithResponseAsync(deploymentName, operationId)
-            .flatMap(
-                (Response<DeploymentOperationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1672,14 +1644,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
     private Mono<DeploymentOperationInner> getAsync(
         String resourceGroupName, String deploymentName, String operationId) {
         return getWithResponseAsync(resourceGroupName, deploymentName, operationId)
-            .flatMap(
-                (Response<DeploymentOperationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

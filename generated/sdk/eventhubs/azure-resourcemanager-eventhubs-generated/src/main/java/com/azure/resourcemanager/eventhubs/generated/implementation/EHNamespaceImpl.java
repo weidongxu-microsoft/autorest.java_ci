@@ -182,6 +182,10 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public EHNamespaceInner innerModel() {
         return this.innerObject;
     }

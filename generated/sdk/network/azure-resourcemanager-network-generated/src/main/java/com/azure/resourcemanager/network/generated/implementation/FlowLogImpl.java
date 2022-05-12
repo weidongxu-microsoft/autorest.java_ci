@@ -90,6 +90,10 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public FlowLogInner innerModel() {
         return this.innerObject;
     }

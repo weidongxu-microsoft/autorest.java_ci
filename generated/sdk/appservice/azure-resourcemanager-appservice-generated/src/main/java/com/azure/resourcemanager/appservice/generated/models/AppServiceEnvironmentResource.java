@@ -186,6 +186,13 @@ public interface AppServiceEnvironmentResource {
     String regionName();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner
      * object.
      *
@@ -558,7 +565,7 @@ public interface AppServiceEnvironmentResource {
     AppServiceEnvironmentResource refresh(Context context);
 
     /**
-     * Description for Move an App Service Environment to a different VNET.
+     * Move an App Service Environment to a different VNET.
      *
      * @param vnetInfo Details for the new virtual network.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -570,7 +577,7 @@ public interface AppServiceEnvironmentResource {
     PagedIterable<Site> changeVnet(VirtualNetworkProfile vnetInfo);
 
     /**
-     * Description for Move an App Service Environment to a different VNET.
+     * Move an App Service Environment to a different VNET.
      *
      * @param vnetInfo Details for the new virtual network.
      * @param context The context to associate with this operation.
@@ -583,7 +590,7 @@ public interface AppServiceEnvironmentResource {
     PagedIterable<Site> changeVnet(VirtualNetworkProfile vnetInfo, Context context);
 
     /**
-     * Description for Reboot all machines in an App Service Environment.
+     * Reboot all machines in an App Service Environment.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -592,7 +599,7 @@ public interface AppServiceEnvironmentResource {
     void reboot();
 
     /**
-     * Description for Reboot all machines in an App Service Environment.
+     * Reboot all machines in an App Service Environment.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -604,7 +611,7 @@ public interface AppServiceEnvironmentResource {
     Response<Void> rebootWithResponse(Context context);
 
     /**
-     * Description for Resume an App Service Environment.
+     * Resume an App Service Environment.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -614,7 +621,7 @@ public interface AppServiceEnvironmentResource {
     PagedIterable<Site> resume();
 
     /**
-     * Description for Resume an App Service Environment.
+     * Resume an App Service Environment.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -626,7 +633,7 @@ public interface AppServiceEnvironmentResource {
     PagedIterable<Site> resume(Context context);
 
     /**
-     * Description for Suspend an App Service Environment.
+     * Suspend an App Service Environment.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -636,7 +643,7 @@ public interface AppServiceEnvironmentResource {
     PagedIterable<Site> suspend();
 
     /**
-     * Description for Suspend an App Service Environment.
+     * Suspend an App Service Environment.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

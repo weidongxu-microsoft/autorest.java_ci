@@ -214,14 +214,7 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     private Mono<AdminKeyResultInner> getAsync(
         String resourceGroupName, String searchServiceName, UUID clientRequestId) {
         return getWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId)
-            .flatMap(
-                (Response<AdminKeyResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -241,14 +234,7 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     private Mono<AdminKeyResultInner> getAsync(String resourceGroupName, String searchServiceName) {
         final UUID clientRequestId = null;
         return getWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId)
-            .flatMap(
-                (Response<AdminKeyResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -433,14 +419,7 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     private Mono<AdminKeyResultInner> regenerateAsync(
         String resourceGroupName, String searchServiceName, AdminKeyKind keyKind, UUID clientRequestId) {
         return regenerateWithResponseAsync(resourceGroupName, searchServiceName, keyKind, clientRequestId)
-            .flatMap(
-                (Response<AdminKeyResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -462,14 +441,7 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
         String resourceGroupName, String searchServiceName, AdminKeyKind keyKind) {
         final UUID clientRequestId = null;
         return regenerateWithResponseAsync(resourceGroupName, searchServiceName, keyKind, clientRequestId)
-            .flatMap(
-                (Response<AdminKeyResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

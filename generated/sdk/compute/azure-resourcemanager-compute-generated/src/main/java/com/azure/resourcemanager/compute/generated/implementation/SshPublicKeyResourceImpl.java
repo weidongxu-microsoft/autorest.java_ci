@@ -57,6 +57,10 @@ public final class SshPublicKeyResourceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public SshPublicKeyResourceInner innerModel() {
         return this.innerObject;
     }

@@ -72,6 +72,10 @@ public final class VirtualNetworkGatewayNatRuleImpl
         return this.innerModel().ipConfigurationId();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualNetworkGatewayNatRuleInner innerModel() {
         return this.innerObject;
     }

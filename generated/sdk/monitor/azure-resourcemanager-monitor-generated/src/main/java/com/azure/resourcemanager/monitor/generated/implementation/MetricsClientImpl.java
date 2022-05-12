@@ -278,14 +278,7 @@ public final class MetricsClientImpl implements MetricsClient {
                 filter,
                 resultType,
                 metricnamespace)
-            .flatMap(
-                (Response<ResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -319,14 +312,7 @@ public final class MetricsClientImpl implements MetricsClient {
                 filter,
                 resultType,
                 metricnamespace)
-            .flatMap(
-                (Response<ResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

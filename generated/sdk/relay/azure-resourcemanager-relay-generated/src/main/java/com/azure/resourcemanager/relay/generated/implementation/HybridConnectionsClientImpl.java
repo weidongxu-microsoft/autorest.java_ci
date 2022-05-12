@@ -624,14 +624,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
         AuthorizationRuleInner parameters) {
         return createOrUpdateAuthorizationRuleWithResponseAsync(
                 resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, parameters)
-            .flatMap(
-                (Response<AuthorizationRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -825,7 +818,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
         String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName) {
         return deleteAuthorizationRuleWithResponseAsync(
                 resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -1012,14 +1005,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
         String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName) {
         return getAuthorizationRuleWithResponseAsync(
                 resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName)
-            .flatMap(
-                (Response<AuthorizationRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1204,14 +1190,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
     private Mono<AccessKeysInner> listKeysAsync(
         String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName) {
         return listKeysWithResponseAsync(resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName)
-            .flatMap(
-                (Response<AccessKeysInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1420,14 +1399,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
         RegenerateAccessKeyParameters parameters) {
         return regenerateKeysWithResponseAsync(
                 resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, parameters)
-            .flatMap(
-                (Response<AccessKeysInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1806,14 +1778,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
     private Mono<HybridConnectionInner> createOrUpdateAsync(
         String resourceGroupName, String namespaceName, String hybridConnectionName, HybridConnectionInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, hybridConnectionName, parameters)
-            .flatMap(
-                (Response<HybridConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1979,7 +1944,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, String hybridConnectionName) {
         return deleteWithResponseAsync(resourceGroupName, namespaceName, hybridConnectionName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -2138,14 +2103,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
     private Mono<HybridConnectionInner> getAsync(
         String resourceGroupName, String namespaceName, String hybridConnectionName) {
         return getWithResponseAsync(resourceGroupName, namespaceName, hybridConnectionName)
-            .flatMap(
-                (Response<HybridConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

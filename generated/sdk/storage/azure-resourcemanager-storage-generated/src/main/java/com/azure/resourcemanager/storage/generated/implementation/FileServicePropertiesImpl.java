@@ -46,6 +46,10 @@ public final class FileServicePropertiesImpl
         return this.innerModel().protocolSettings();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public FileServicePropertiesInner innerModel() {
         return this.innerObject;
     }

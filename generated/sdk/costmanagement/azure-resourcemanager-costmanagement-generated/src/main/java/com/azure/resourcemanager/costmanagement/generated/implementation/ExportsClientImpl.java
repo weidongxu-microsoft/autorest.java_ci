@@ -235,15 +235,7 @@ public final class ExportsClientImpl implements ExportsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExportListResultInner> listAsync(String scope) {
-        return listWithResponseAsync(scope)
-            .flatMap(
-                (Response<ExportListResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listWithResponseAsync(scope).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -421,15 +413,7 @@ public final class ExportsClientImpl implements ExportsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExportInner> getAsync(String scope, String exportName) {
-        return getWithResponseAsync(scope, exportName)
-            .flatMap(
-                (Response<ExportInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(scope, exportName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -636,14 +620,7 @@ public final class ExportsClientImpl implements ExportsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExportInner> createOrUpdateAsync(String scope, String exportName, ExportInner parameters) {
         return createOrUpdateWithResponseAsync(scope, exportName, parameters)
-            .flatMap(
-                (Response<ExportInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -829,7 +806,7 @@ public final class ExportsClientImpl implements ExportsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String scope, String exportName) {
-        return deleteWithResponseAsync(scope, exportName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(scope, exportName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -1009,7 +986,7 @@ public final class ExportsClientImpl implements ExportsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> executeAsync(String scope, String exportName) {
-        return executeWithResponseAsync(scope, exportName).flatMap((Response<Void> res) -> Mono.empty());
+        return executeWithResponseAsync(scope, exportName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -1194,15 +1171,7 @@ public final class ExportsClientImpl implements ExportsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExportExecutionListResultInner> getExecutionHistoryAsync(String scope, String exportName) {
-        return getExecutionHistoryWithResponseAsync(scope, exportName)
-            .flatMap(
-                (Response<ExportExecutionListResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getExecutionHistoryWithResponseAsync(scope, exportName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

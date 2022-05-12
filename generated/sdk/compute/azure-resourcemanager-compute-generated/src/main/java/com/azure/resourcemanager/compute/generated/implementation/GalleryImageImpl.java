@@ -127,6 +127,10 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public GalleryImageInner innerModel() {
         return this.innerObject;
     }

@@ -100,6 +100,10 @@ public final class WorkbookImpl implements Workbook, Workbook.Definition, Workbo
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public WorkbookInner innerModel() {
         return this.innerObject;
     }

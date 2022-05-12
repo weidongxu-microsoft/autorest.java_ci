@@ -69,6 +69,10 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this.innerModel().virtualIp();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public HostnameBindingInner innerModel() {
         return this.innerObject;
     }

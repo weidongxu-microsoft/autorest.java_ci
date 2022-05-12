@@ -166,6 +166,10 @@ public final class VirtualMachineScaleSetImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualMachineScaleSetInner innerModel() {
         return this.innerObject;
     }

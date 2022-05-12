@@ -85,6 +85,10 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public NetworkProfileInner innerModel() {
         return this.innerObject;
     }

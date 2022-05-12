@@ -504,14 +504,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
     private Mono<VirtualRouterInner> getByResourceGroupAsync(
         String resourceGroupName, String virtualRouterName, String expand) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, virtualRouterName, expand)
-            .flatMap(
-                (Response<VirtualRouterInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -528,14 +521,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
     private Mono<VirtualRouterInner> getByResourceGroupAsync(String resourceGroupName, String virtualRouterName) {
         final String expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, virtualRouterName, expand)
-            .flatMap(
-                (Response<VirtualRouterInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

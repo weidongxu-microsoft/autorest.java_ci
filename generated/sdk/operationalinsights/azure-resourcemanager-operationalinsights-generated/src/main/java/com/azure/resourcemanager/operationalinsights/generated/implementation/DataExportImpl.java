@@ -65,6 +65,10 @@ public final class DataExportImpl implements DataExport, DataExport.Definition, 
         return this.innerModel().eventHubName();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public DataExportInner innerModel() {
         return this.innerObject;
     }

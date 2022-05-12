@@ -457,14 +457,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
     private Mono<MonitoringMetricConfigurationInner> getAsync(
         String deviceName, String roleName, String resourceGroupName) {
         return getWithResponseAsync(deviceName, roleName, resourceGroupName)
-            .flatMap(
-                (Response<MonitoringMetricConfigurationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

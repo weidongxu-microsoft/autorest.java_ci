@@ -229,14 +229,7 @@ public final class WorkspacePurgesClientImpl implements WorkspacePurgesClient {
     private Mono<WorkspacePurgeResponseInner> purgeAsync(
         String resourceGroupName, String workspaceName, WorkspacePurgeBody body) {
         return purgeWithResponseAsync(resourceGroupName, workspaceName, body)
-            .flatMap(
-                (WorkspacePurgesPurgeResponse res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -406,14 +399,7 @@ public final class WorkspacePurgesClientImpl implements WorkspacePurgesClient {
     private Mono<WorkspacePurgeStatusResponseInner> getPurgeStatusAsync(
         String resourceGroupName, String workspaceName, String purgeId) {
         return getPurgeStatusWithResponseAsync(resourceGroupName, workspaceName, purgeId)
-            .flatMap(
-                (Response<WorkspacePurgeStatusResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

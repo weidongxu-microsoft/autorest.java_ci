@@ -94,6 +94,10 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public IpAllocationInner innerModel() {
         return this.innerObject;
     }

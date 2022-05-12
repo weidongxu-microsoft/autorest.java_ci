@@ -179,8 +179,7 @@ public final class GatewaysClientImpl implements GatewaysClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String workspaceName, String gatewayId) {
-        return deleteWithResponseAsync(resourceGroupName, workspaceName, gatewayId)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, workspaceName, gatewayId).flatMap(ignored -> Mono.empty());
     }
 
     /**

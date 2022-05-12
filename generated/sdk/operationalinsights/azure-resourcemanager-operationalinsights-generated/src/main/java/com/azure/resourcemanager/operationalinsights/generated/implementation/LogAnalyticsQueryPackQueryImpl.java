@@ -81,6 +81,10 @@ public final class LogAnalyticsQueryPackQueryImpl
         return this.innerModel().properties();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public LogAnalyticsQueryPackQueryInner innerModel() {
         return this.innerObject;
     }

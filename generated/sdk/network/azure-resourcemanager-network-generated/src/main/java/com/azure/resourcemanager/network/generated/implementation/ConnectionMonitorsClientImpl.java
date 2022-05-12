@@ -734,14 +734,7 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
     private Mono<ConnectionMonitorResultInner> getAsync(
         String resourceGroupName, String networkWatcherName, String connectionMonitorName) {
         return getWithResponseAsync(resourceGroupName, networkWatcherName, connectionMonitorName)
-            .flatMap(
-                (Response<ConnectionMonitorResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1181,14 +1174,7 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
     private Mono<ConnectionMonitorResultInner> updateTagsAsync(
         String resourceGroupName, String networkWatcherName, String connectionMonitorName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, networkWatcherName, connectionMonitorName, parameters)
-            .flatMap(
-                (Response<ConnectionMonitorResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

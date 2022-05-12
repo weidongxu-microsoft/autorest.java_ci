@@ -56,6 +56,10 @@ public final class ServiceEndpointPolicyDefinitionImpl
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ServiceEndpointPolicyDefinitionInner innerModel() {
         return this.innerObject;
     }

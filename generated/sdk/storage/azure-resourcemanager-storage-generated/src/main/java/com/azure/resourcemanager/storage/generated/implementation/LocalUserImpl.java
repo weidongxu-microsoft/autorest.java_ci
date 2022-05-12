@@ -75,6 +75,10 @@ public final class LocalUserImpl implements LocalUser, LocalUser.Definition, Loc
         return this.innerModel().hasSshPassword();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public LocalUserInner innerModel() {
         return this.innerObject;
     }

@@ -209,15 +209,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RoleDefinitionInner> deleteAsync(String scope, String roleDefinitionId) {
-        return deleteWithResponseAsync(scope, roleDefinitionId)
-            .flatMap(
-                (Response<RoleDefinitionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return deleteWithResponseAsync(scope, roleDefinitionId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -329,15 +321,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RoleDefinitionInner> getAsync(String scope, String roleDefinitionId) {
-        return getWithResponseAsync(scope, roleDefinitionId)
-            .flatMap(
-                (Response<RoleDefinitionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(scope, roleDefinitionId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -476,14 +460,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
     private Mono<RoleDefinitionInner> createOrUpdateAsync(
         String scope, String roleDefinitionId, RoleDefinitionInner roleDefinition) {
         return createOrUpdateWithResponseAsync(scope, roleDefinitionId, roleDefinition)
-            .flatMap(
-                (Response<RoleDefinitionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -757,15 +734,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RoleDefinitionInner> getByIdAsync(String roleId) {
-        return getByIdWithResponseAsync(roleId)
-            .flatMap(
-                (Response<RoleDefinitionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getByIdWithResponseAsync(roleId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

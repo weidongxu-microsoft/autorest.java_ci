@@ -839,14 +839,7 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
         UUID clientRequestId) {
         return getWithResponseAsync(
                 resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId)
-            .flatMap(
-                (Response<SharedPrivateLinkResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -870,14 +863,7 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
         final UUID clientRequestId = null;
         return getWithResponseAsync(
                 resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId)
-            .flatMap(
-                (Response<SharedPrivateLinkResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

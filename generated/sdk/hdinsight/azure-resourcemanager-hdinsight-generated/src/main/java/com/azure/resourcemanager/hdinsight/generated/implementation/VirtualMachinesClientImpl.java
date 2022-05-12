@@ -217,14 +217,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<HostInfoInner>> listHostsAsync(String resourceGroupName, String clusterName) {
         return listHostsWithResponseAsync(resourceGroupName, clusterName)
-            .flatMap(
-                (Response<List<HostInfoInner>> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -630,14 +623,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     private Mono<AsyncOperationResultInner> getAsyncOperationStatusAsync(
         String resourceGroupName, String clusterName, String operationId) {
         return getAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, operationId)
-            .flatMap(
-                (Response<AsyncOperationResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -180,14 +180,7 @@ public final class AvailableServiceTiersClientImpl implements AvailableServiceTi
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<AvailableServiceTierInner>> listByWorkspaceAsync(String resourceGroupName, String workspaceName) {
         return listByWorkspaceWithResponseAsync(resourceGroupName, workspaceName)
-            .flatMap(
-                (Response<List<AvailableServiceTierInner>> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

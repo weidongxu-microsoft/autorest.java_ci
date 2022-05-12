@@ -59,6 +59,10 @@ public final class AuthorizationRuleImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public AuthorizationRuleInner innerModel() {
         return this.innerObject;
     }

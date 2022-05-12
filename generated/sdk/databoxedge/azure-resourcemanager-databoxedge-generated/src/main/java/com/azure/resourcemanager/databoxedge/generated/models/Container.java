@@ -68,6 +68,13 @@ public interface Container {
     OffsetDateTime createdDateTime();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.ContainerInner object.
      *
      * @return the inner object.

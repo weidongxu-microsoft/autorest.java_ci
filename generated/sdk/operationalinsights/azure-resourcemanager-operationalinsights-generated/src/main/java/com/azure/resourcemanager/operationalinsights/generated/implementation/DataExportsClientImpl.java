@@ -436,14 +436,7 @@ public final class DataExportsClientImpl implements DataExportsClient {
     private Mono<DataExportInner> createOrUpdateAsync(
         String resourceGroupName, String workspaceName, String dataExportName, DataExportInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, workspaceName, dataExportName, parameters)
-            .flatMap(
-                (Response<DataExportInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -608,14 +601,7 @@ public final class DataExportsClientImpl implements DataExportsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DataExportInner> getAsync(String resourceGroupName, String workspaceName, String dataExportName) {
         return getWithResponseAsync(resourceGroupName, workspaceName, dataExportName)
-            .flatMap(
-                (Response<DataExportInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -772,7 +758,7 @@ public final class DataExportsClientImpl implements DataExportsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String workspaceName, String dataExportName) {
         return deleteWithResponseAsync(resourceGroupName, workspaceName, dataExportName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**

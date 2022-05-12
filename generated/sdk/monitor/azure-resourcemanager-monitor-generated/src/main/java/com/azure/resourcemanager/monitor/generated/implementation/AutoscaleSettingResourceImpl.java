@@ -88,6 +88,10 @@ public final class AutoscaleSettingResourceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public AutoscaleSettingResourceInner innerModel() {
         return this.innerObject;
     }

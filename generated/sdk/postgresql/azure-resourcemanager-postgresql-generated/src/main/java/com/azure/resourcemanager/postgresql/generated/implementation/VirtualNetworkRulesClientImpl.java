@@ -263,14 +263,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
     private Mono<VirtualNetworkRuleInner> getAsync(
         String resourceGroupName, String serverName, String virtualNetworkRuleName) {
         return getWithResponseAsync(resourceGroupName, serverName, virtualNetworkRuleName)
-            .flatMap(
-                (Response<VirtualNetworkRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

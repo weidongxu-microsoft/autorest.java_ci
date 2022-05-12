@@ -103,6 +103,10 @@ public final class KubeEnvironmentImpl implements KubeEnvironment, KubeEnvironme
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public KubeEnvironmentInner innerModel() {
         return this.innerObject;
     }

@@ -90,6 +90,10 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualRouterInner innerModel() {
         return this.innerObject;
     }

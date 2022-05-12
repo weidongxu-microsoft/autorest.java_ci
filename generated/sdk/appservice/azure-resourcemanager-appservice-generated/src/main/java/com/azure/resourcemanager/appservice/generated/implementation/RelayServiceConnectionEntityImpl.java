@@ -60,6 +60,10 @@ public final class RelayServiceConnectionEntityImpl
         return this.innerModel().biztalkUri();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public RelayServiceConnectionEntityInner innerModel() {
         return this.innerObject;
     }

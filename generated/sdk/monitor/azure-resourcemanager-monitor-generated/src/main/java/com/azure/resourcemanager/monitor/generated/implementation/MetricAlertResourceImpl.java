@@ -118,6 +118,10 @@ public final class MetricAlertResourceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public MetricAlertResourceInner innerModel() {
         return this.innerObject;
     }

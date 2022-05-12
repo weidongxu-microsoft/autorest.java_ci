@@ -70,6 +70,10 @@ public final class AppServiceCertificateResourceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public AppServiceCertificateResourceInner innerModel() {
         return this.innerObject;
     }

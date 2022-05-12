@@ -593,14 +593,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
     private Mono<ClusterMonitoringResponseInner> getMonitoringStatusAsync(
         String resourceGroupName, String clusterName) {
         return getMonitoringStatusWithResponseAsync(resourceGroupName, clusterName)
-            .flatMap(
-                (Response<ClusterMonitoringResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1235,14 +1228,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AzureMonitorResponseInner> getAzureMonitorStatusAsync(String resourceGroupName, String clusterName) {
         return getAzureMonitorStatusWithResponseAsync(resourceGroupName, clusterName)
-            .flatMap(
-                (Response<AzureMonitorResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1908,14 +1894,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
     private Mono<ClusterMonitoringResponseInner> getAsync(
         String resourceGroupName, String clusterName, String extensionName) {
         return getWithResponseAsync(resourceGroupName, clusterName, extensionName)
-            .flatMap(
-                (Response<ClusterMonitoringResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2334,14 +2313,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
     private Mono<AsyncOperationResultInner> getAzureAsyncOperationStatusAsync(
         String resourceGroupName, String clusterName, String extensionName, String operationId) {
         return getAzureAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, extensionName, operationId)
-            .flatMap(
-                (Response<AsyncOperationResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

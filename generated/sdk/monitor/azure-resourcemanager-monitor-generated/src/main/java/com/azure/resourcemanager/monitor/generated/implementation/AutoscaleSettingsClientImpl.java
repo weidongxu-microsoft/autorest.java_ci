@@ -468,14 +468,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     private Mono<AutoscaleSettingResourceInner> createOrUpdateAsync(
         String resourceGroupName, String autoscaleSettingName, AutoscaleSettingResourceInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, autoscaleSettingName, parameters)
-            .flatMap(
-                (Response<AutoscaleSettingResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -625,8 +618,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String autoscaleSettingName) {
-        return deleteWithResponseAsync(resourceGroupName, autoscaleSettingName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, autoscaleSettingName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -771,14 +763,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     private Mono<AutoscaleSettingResourceInner> getByResourceGroupAsync(
         String resourceGroupName, String autoscaleSettingName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, autoscaleSettingName)
-            .flatMap(
-                (Response<AutoscaleSettingResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -947,14 +932,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     private Mono<AutoscaleSettingResourceInner> updateAsync(
         String resourceGroupName, String autoscaleSettingName, AutoscaleSettingResourcePatch autoscaleSettingResource) {
         return updateWithResponseAsync(resourceGroupName, autoscaleSettingName, autoscaleSettingResource)
-            .flatMap(
-                (Response<AutoscaleSettingResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

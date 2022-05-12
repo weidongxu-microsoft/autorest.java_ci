@@ -47,6 +47,10 @@ public final class InboundSecurityRuleImpl
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public InboundSecurityRuleInner innerModel() {
         return this.innerObject;
     }

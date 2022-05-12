@@ -178,14 +178,7 @@ public final class MhsmPrivateLinkResourcesClientImpl implements MhsmPrivateLink
     private Mono<MhsmPrivateLinkResourceListResultInner> listByMhsmResourceAsync(
         String resourceGroupName, String name) {
         return listByMhsmResourceWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<MhsmPrivateLinkResourceListResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -203,15 +203,7 @@ public final class QueriesClientImpl implements QueriesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<QueryResultInner> usageAsync(String scope, QueryDefinition parameters) {
-        return usageWithResponseAsync(scope, parameters)
-            .flatMap(
-                (Response<QueryResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return usageWithResponseAsync(scope, parameters).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -407,14 +399,7 @@ public final class QueriesClientImpl implements QueriesClient {
         QueryDefinition parameters) {
         return usageByExternalCloudProviderTypeWithResponseAsync(
                 externalCloudProviderType, externalCloudProviderId, parameters)
-            .flatMap(
-                (Response<QueryResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

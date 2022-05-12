@@ -44,6 +44,10 @@ public final class VirtualApplianceSiteImpl
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualApplianceSiteInner innerModel() {
         return this.innerObject;
     }

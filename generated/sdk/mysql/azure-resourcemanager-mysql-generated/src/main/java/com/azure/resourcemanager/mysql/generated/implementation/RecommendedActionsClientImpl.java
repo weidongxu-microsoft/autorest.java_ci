@@ -239,14 +239,7 @@ public final class RecommendedActionsClientImpl implements RecommendedActionsCli
     private Mono<RecommendationActionInner> getAsync(
         String resourceGroupName, String serverName, String advisorName, String recommendedActionName) {
         return getWithResponseAsync(resourceGroupName, serverName, advisorName, recommendedActionName)
-            .flatMap(
-                (Response<RecommendationActionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

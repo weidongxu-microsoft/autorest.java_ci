@@ -526,14 +526,7 @@ public final class VirtualApplianceSitesClientImpl implements VirtualApplianceSi
     private Mono<VirtualApplianceSiteInner> getAsync(
         String resourceGroupName, String networkVirtualApplianceName, String siteName) {
         return getWithResponseAsync(resourceGroupName, networkVirtualApplianceName, siteName)
-            .flatMap(
-                (Response<VirtualApplianceSiteInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -57,6 +57,10 @@ public final class SecretImpl implements Secret, Secret.Definition, Secret.Updat
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public SecretInner innerModel() {
         return this.innerObject;
     }

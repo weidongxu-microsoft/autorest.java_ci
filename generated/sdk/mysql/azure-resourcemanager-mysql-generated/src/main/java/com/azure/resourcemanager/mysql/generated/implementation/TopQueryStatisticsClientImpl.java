@@ -223,14 +223,7 @@ public final class TopQueryStatisticsClientImpl implements TopQueryStatisticsCli
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<QueryStatisticInner> getAsync(String resourceGroupName, String serverName, String queryStatisticId) {
         return getWithResponseAsync(resourceGroupName, serverName, queryStatisticId)
-            .flatMap(
-                (Response<QueryStatisticInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

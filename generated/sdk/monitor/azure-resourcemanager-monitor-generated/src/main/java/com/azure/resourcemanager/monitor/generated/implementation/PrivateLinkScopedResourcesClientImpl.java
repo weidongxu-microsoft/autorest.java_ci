@@ -262,14 +262,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ScopedResourceInner> getAsync(String resourceGroupName, String scopeName, String name) {
         return getWithResponseAsync(resourceGroupName, scopeName, name)
-            .flatMap(
-                (Response<ScopedResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

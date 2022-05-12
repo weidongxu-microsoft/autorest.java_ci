@@ -176,6 +176,10 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public PublicIpAddressInner innerModel() {
         return this.innerObject;
     }

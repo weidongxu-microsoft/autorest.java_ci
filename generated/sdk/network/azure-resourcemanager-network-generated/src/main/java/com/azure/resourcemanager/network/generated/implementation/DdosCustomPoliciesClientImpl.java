@@ -468,14 +468,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DdosCustomPolicyInner> getByResourceGroupAsync(String resourceGroupName, String ddosCustomPolicyName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, ddosCustomPolicyName)
-            .flatMap(
-                (Response<DdosCustomPolicyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -908,14 +901,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
     private Mono<DdosCustomPolicyInner> updateTagsAsync(
         String resourceGroupName, String ddosCustomPolicyName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, ddosCustomPolicyName, parameters)
-            .flatMap(
-                (Response<DdosCustomPolicyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -582,14 +582,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
     private Mono<AuthorizationRuleInner> getAuthorizationRuleAsync(
         String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
         return getAuthorizationRuleWithResponseAsync(resourceGroupName, namespaceName, alias, authorizationRuleName)
-            .flatMap(
-                (Response<AuthorizationRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -765,14 +758,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
     private Mono<AccessKeysInner> listKeysAsync(
         String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
         return listKeysWithResponseAsync(resourceGroupName, namespaceName, alias, authorizationRuleName)
-            .flatMap(
-                (Response<AccessKeysInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -938,14 +924,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
     private Mono<CheckNameAvailabilityResultInner> checkNameAvailabilityAsync(
         String resourceGroupName, String namespaceName, CheckNameAvailabilityParameter parameters) {
         return checkNameAvailabilityWithResponseAsync(resourceGroupName, namespaceName, parameters)
-            .flatMap(
-                (Response<CheckNameAvailabilityResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1305,14 +1284,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
     private Mono<ArmDisasterRecoveryInner> createOrUpdateAsync(
         String resourceGroupName, String namespaceName, String alias, ArmDisasterRecoveryInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, alias, parameters)
-            .flatMap(
-                (Response<ArmDisasterRecoveryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1472,8 +1444,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, String alias) {
-        return deleteWithResponseAsync(resourceGroupName, namespaceName, alias)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, namespaceName, alias).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -1630,14 +1601,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ArmDisasterRecoveryInner> getAsync(String resourceGroupName, String namespaceName, String alias) {
         return getWithResponseAsync(resourceGroupName, namespaceName, alias)
-            .flatMap(
-                (Response<ArmDisasterRecoveryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1791,8 +1755,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> breakPairingAsync(String resourceGroupName, String namespaceName, String alias) {
-        return breakPairingWithResponseAsync(resourceGroupName, namespaceName, alias)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return breakPairingWithResponseAsync(resourceGroupName, namespaceName, alias).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -1945,8 +1908,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> failOverAsync(String resourceGroupName, String namespaceName, String alias) {
-        return failOverWithResponseAsync(resourceGroupName, namespaceName, alias)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return failOverWithResponseAsync(resourceGroupName, namespaceName, alias).flatMap(ignored -> Mono.empty());
     }
 
     /**

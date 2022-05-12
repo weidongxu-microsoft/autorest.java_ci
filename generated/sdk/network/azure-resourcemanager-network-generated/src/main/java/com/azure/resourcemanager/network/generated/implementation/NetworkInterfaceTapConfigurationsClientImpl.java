@@ -528,14 +528,7 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
     private Mono<NetworkInterfaceTapConfigurationInner> getAsync(
         String resourceGroupName, String networkInterfaceName, String tapConfigurationName) {
         return getWithResponseAsync(resourceGroupName, networkInterfaceName, tapConfigurationName)
-            .flatMap(
-                (Response<NetworkInterfaceTapConfigurationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

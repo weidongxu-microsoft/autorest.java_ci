@@ -333,6 +333,13 @@ public interface VirtualMachine {
     String regionName();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInner object.
      *
      * @return the inner object.

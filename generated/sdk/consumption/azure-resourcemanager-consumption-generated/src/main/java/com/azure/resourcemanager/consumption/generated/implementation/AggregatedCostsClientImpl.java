@@ -171,14 +171,7 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
     private Mono<ManagementGroupAggregatedCostResultInner> getByManagementGroupAsync(
         String managementGroupId, String filter) {
         return getByManagementGroupWithResponseAsync(managementGroupId, filter)
-            .flatMap(
-                (Response<ManagementGroupAggregatedCostResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -194,14 +187,7 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
     private Mono<ManagementGroupAggregatedCostResultInner> getByManagementGroupAsync(String managementGroupId) {
         final String filter = null;
         return getByManagementGroupWithResponseAsync(managementGroupId, filter)
-            .flatMap(
-                (Response<ManagementGroupAggregatedCostResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -337,14 +323,7 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
     private Mono<ManagementGroupAggregatedCostResultInner> getForBillingPeriodByManagementGroupAsync(
         String managementGroupId, String billingPeriodName) {
         return getForBillingPeriodByManagementGroupWithResponseAsync(managementGroupId, billingPeriodName)
-            .flatMap(
-                (Response<ManagementGroupAggregatedCostResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

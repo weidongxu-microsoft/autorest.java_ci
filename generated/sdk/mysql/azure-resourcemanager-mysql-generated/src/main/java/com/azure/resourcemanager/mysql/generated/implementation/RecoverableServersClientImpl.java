@@ -175,15 +175,7 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecoverableServerResourceInner> getAsync(String resourceGroupName, String serverName) {
-        return getWithResponseAsync(resourceGroupName, serverName)
-            .flatMap(
-                (Response<RecoverableServerResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(resourceGroupName, serverName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

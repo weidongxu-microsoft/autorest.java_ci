@@ -1887,14 +1887,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     private Mono<VirtualMachineInner> getByResourceGroupAsync(
         String resourceGroupName, String vmName, InstanceViewTypes expand) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, vmName, expand)
-            .flatMap(
-                (Response<VirtualMachineInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1911,14 +1904,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     private Mono<VirtualMachineInner> getByResourceGroupAsync(String resourceGroupName, String vmName) {
         final InstanceViewTypes expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, vmName, expand)
-            .flatMap(
-                (Response<VirtualMachineInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2069,14 +2055,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualMachineInstanceViewInner> instanceViewAsync(String resourceGroupName, String vmName) {
         return instanceViewWithResponseAsync(resourceGroupName, vmName)
-            .flatMap(
-                (Response<VirtualMachineInstanceViewInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2765,7 +2744,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> generalizeAsync(String resourceGroupName, String vmName) {
-        return generalizeWithResponseAsync(resourceGroupName, vmName).flatMap((Response<Void> res) -> Mono.empty());
+        return generalizeWithResponseAsync(resourceGroupName, vmName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -5021,14 +5000,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     private Mono<RetrieveBootDiagnosticsDataResultInner> retrieveBootDiagnosticsDataAsync(
         String resourceGroupName, String vmName, Integer sasUriExpirationTimeInMinutes) {
         return retrieveBootDiagnosticsDataWithResponseAsync(resourceGroupName, vmName, sasUriExpirationTimeInMinutes)
-            .flatMap(
-                (Response<RetrieveBootDiagnosticsDataResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -5046,14 +5018,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         String resourceGroupName, String vmName) {
         final Integer sasUriExpirationTimeInMinutes = null;
         return retrieveBootDiagnosticsDataWithResponseAsync(resourceGroupName, vmName, sasUriExpirationTimeInMinutes)
-            .flatMap(
-                (Response<RetrieveBootDiagnosticsDataResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -5433,8 +5398,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> simulateEvictionAsync(String resourceGroupName, String vmName) {
-        return simulateEvictionWithResponseAsync(resourceGroupName, vmName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return simulateEvictionWithResponseAsync(resourceGroupName, vmName).flatMap(ignored -> Mono.empty());
     }
 
     /**

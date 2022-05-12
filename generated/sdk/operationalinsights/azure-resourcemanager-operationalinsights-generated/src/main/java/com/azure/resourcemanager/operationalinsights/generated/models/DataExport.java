@@ -90,6 +90,13 @@ public interface DataExport {
     String eventHubName();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.DataExportInner object.
      *
      * @return the inner object.

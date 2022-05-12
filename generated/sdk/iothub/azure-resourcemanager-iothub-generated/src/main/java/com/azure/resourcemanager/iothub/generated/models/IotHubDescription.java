@@ -100,6 +100,13 @@ public interface IotHubDescription {
     String regionName();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.iothub.generated.fluent.models.IotHubDescriptionInner object.
      *
      * @return the inner object.

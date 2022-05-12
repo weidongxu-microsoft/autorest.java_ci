@@ -40,6 +40,13 @@ public interface SharedPrivateLinkResource {
     SharedPrivateLinkResourceProperties properties();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.search.generated.fluent.models.SharedPrivateLinkResourceInner object.
      *
      * @return the inner object.

@@ -1020,14 +1020,7 @@ public final class TablesClientImpl implements TablesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TableInner> getAsync(String resourceGroupName, String workspaceName, String tableName) {
         return getWithResponseAsync(resourceGroupName, workspaceName, tableName)
-            .flatMap(
-                (Response<TableInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1439,8 +1432,7 @@ public final class TablesClientImpl implements TablesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> migrateAsync(String resourceGroupName, String workspaceName, String tableName) {
-        return migrateWithResponseAsync(resourceGroupName, workspaceName, tableName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return migrateWithResponseAsync(resourceGroupName, workspaceName, tableName).flatMap(ignored -> Mono.empty());
     }
 
     /**

@@ -821,14 +821,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     private Mono<AzureMonitorPrivateLinkScopeInner> getByResourceGroupAsync(
         String resourceGroupName, String scopeName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, scopeName)
-            .flatMap(
-                (Response<AzureMonitorPrivateLinkScopeInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1009,14 +1002,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
         String scopeName,
         AzureMonitorPrivateLinkScopeInner azureMonitorPrivateLinkScopePayload) {
         return createOrUpdateWithResponseAsync(resourceGroupName, scopeName, azureMonitorPrivateLinkScopePayload)
-            .flatMap(
-                (Response<AzureMonitorPrivateLinkScopeInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1194,14 +1180,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
     private Mono<AzureMonitorPrivateLinkScopeInner> updateTagsAsync(
         String resourceGroupName, String scopeName, TagsResource privateLinkScopeTags) {
         return updateTagsWithResponseAsync(resourceGroupName, scopeName, privateLinkScopeTags)
-            .flatMap(
-                (Response<AzureMonitorPrivateLinkScopeInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

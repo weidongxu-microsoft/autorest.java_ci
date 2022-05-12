@@ -42,6 +42,10 @@ public final class RulesEngineImpl implements RulesEngine, RulesEngine.Definitio
         }
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public RulesEngineInner innerModel() {
         return this.innerObject;
     }

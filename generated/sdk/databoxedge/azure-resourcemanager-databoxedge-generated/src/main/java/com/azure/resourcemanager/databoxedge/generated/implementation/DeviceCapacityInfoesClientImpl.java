@@ -177,14 +177,7 @@ public final class DeviceCapacityInfoesClientImpl implements DeviceCapacityInfoe
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DeviceCapacityInfoInner> getDeviceCapacityInfoAsync(String resourceGroupName, String deviceName) {
         return getDeviceCapacityInfoWithResponseAsync(resourceGroupName, deviceName)
-            .flatMap(
-                (Response<DeviceCapacityInfoInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

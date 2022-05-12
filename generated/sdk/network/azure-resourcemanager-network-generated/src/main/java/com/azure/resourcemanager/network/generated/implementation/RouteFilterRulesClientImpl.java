@@ -514,14 +514,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RouteFilterRuleInner> getAsync(String resourceGroupName, String routeFilterName, String ruleName) {
         return getWithResponseAsync(resourceGroupName, routeFilterName, ruleName)
-            .flatMap(
-                (Response<RouteFilterRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

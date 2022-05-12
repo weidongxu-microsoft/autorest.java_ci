@@ -514,14 +514,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<BastionHostInner> getByResourceGroupAsync(String resourceGroupName, String bastionHostname) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, bastionHostname)
-            .flatMap(
-                (Response<BastionHostInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -73,6 +73,10 @@ public final class VnetInfoResourceImpl
         return this.innerModel().isSwift();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VnetInfoResourceInner innerModel() {
         return this.innerObject;
     }

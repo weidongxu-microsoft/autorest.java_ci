@@ -414,14 +414,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
     private Mono<WebApplicationFirewallPolicyInner> getByResourceGroupAsync(
         String resourceGroupName, String policyName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, policyName)
-            .flatMap(
-                (Response<WebApplicationFirewallPolicyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

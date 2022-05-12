@@ -84,6 +84,13 @@ public interface ServerSecurityAlertPolicy {
     Integer retentionDays();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.ServerSecurityAlertPolicyInner object.
      *
      * @return the inner object.

@@ -107,6 +107,10 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public RouteFilterInner innerModel() {
         return this.innerObject;
     }

@@ -691,14 +691,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MyWorkbookInner> getByResourceGroupAsync(String resourceGroupName, String resourceName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, resourceName)
-            .flatMap(
-                (Response<MyWorkbookInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -840,7 +833,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String resourceName) {
-        return deleteWithResponseAsync(resourceGroupName, resourceName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, resourceName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -1002,14 +995,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
     private Mono<MyWorkbookInner> createOrUpdateAsync(
         String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties) {
         return createOrUpdateWithResponseAsync(resourceGroupName, resourceName, workbookProperties)
-            .flatMap(
-                (Response<MyWorkbookInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1176,14 +1162,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
     private Mono<MyWorkbookInner> updateAsync(
         String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties) {
         return updateWithResponseAsync(resourceGroupName, resourceName, workbookProperties)
-            .flatMap(
-                (Response<MyWorkbookInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

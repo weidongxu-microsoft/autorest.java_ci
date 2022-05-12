@@ -132,6 +132,10 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public SearchServiceInner innerModel() {
         return this.innerObject;
     }

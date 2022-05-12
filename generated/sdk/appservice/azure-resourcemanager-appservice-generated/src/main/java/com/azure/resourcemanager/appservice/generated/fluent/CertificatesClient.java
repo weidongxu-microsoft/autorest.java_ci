@@ -15,18 +15,18 @@ import com.azure.resourcemanager.appservice.generated.models.CertificatePatchRes
 /** An instance of this class provides access to all the operations defined in CertificatesClient. */
 public interface CertificatesClient {
     /**
-     * Description for Get all certificates for a subscription.
+     * Get all certificates for a subscription.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificates as paginated response with {@link PagedIterable}.
+     * @return all certificates for a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<CertificateInner> list();
 
     /**
-     * Description for Get all certificates for a subscription.
+     * Get all certificates for a subscription.
      *
      * @param filter Return only information specified in the filter (using OData syntax). For example:
      *     $filter=KeyVaultId eq 'KeyVaultId'.
@@ -35,26 +35,26 @@ public interface CertificatesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificates as paginated response with {@link PagedIterable}.
+     * @return all certificates for a subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<CertificateInner> list(String filter, Context context);
 
     /**
-     * Description for Get all certificates in a resource group.
+     * Get all certificates in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificates as paginated response with {@link PagedIterable}.
+     * @return all certificates in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<CertificateInner> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Description for Get all certificates in a resource group.
+     * Get all certificates in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -62,13 +62,13 @@ public interface CertificatesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of certificates as paginated response with {@link PagedIterable}.
+     * @return all certificates in a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<CertificateInner> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Description for Get a certificate.
+     * Get a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -76,13 +76,13 @@ public interface CertificatesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
+     * @return a certificate.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     CertificateInner getByResourceGroup(String resourceGroupName, String name);
 
     /**
-     * Description for Get a certificate.
+     * Get a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -91,13 +91,13 @@ public interface CertificatesClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app along with {@link Response}.
+     * @return a certificate along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CertificateInner> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -112,7 +112,7 @@ public interface CertificatesClient {
     CertificateInner createOrUpdate(String resourceGroupName, String name, CertificateInner certificateEnvelope);
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -129,7 +129,7 @@ public interface CertificatesClient {
         String resourceGroupName, String name, CertificateInner certificateEnvelope, Context context);
 
     /**
-     * Description for Delete a certificate.
+     * Delete a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -142,7 +142,7 @@ public interface CertificatesClient {
     void delete(String resourceGroupName, String name);
 
     /**
-     * Description for Delete a certificate.
+     * Delete a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -157,7 +157,7 @@ public interface CertificatesClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -172,7 +172,7 @@ public interface CertificatesClient {
     CertificateInner update(String resourceGroupName, String name, CertificatePatchResource certificateEnvelope);
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.

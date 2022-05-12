@@ -445,14 +445,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageAccountInner> getAsync(String deviceName, String storageAccountName, String resourceGroupName) {
         return getWithResponseAsync(deviceName, storageAccountName, resourceGroupName)
-            .flatMap(
-                (Response<StorageAccountInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

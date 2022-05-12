@@ -48,6 +48,10 @@ public final class NetworkInterfaceTapConfigurationImpl
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public NetworkInterfaceTapConfigurationInner innerModel() {
         return this.innerObject;
     }

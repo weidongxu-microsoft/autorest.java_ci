@@ -67,6 +67,10 @@ public final class VpnServerConfigurationPolicyGroupImpl
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VpnServerConfigurationPolicyGroupInner innerModel() {
         return this.innerObject;
     }

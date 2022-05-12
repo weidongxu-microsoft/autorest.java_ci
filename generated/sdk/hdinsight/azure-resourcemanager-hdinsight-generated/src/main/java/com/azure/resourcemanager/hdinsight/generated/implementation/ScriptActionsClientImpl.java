@@ -249,8 +249,7 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String clusterName, String scriptName) {
-        return deleteWithResponseAsync(resourceGroupName, clusterName, scriptName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, clusterName, scriptName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -591,14 +590,7 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
     private Mono<RuntimeScriptActionDetailInner> getExecutionDetailAsync(
         String resourceGroupName, String clusterName, String scriptExecutionId) {
         return getExecutionDetailWithResponseAsync(resourceGroupName, clusterName, scriptExecutionId)
-            .flatMap(
-                (Response<RuntimeScriptActionDetailInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -757,14 +749,7 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
     private Mono<AsyncOperationResultInner> getExecutionAsyncOperationStatusAsync(
         String resourceGroupName, String clusterName, String operationId) {
         return getExecutionAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, operationId)
-            .flatMap(
-                (Response<AsyncOperationResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

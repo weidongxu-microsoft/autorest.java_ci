@@ -166,15 +166,7 @@ public final class DnsResourceReferencesClientImpl implements DnsResourceReferen
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DnsResourceReferenceResultInner> getByTargetResourcesAsync(DnsResourceReferenceRequest parameters) {
-        return getByTargetResourcesWithResponseAsync(parameters)
-            .flatMap(
-                (Response<DnsResourceReferenceResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getByTargetResourcesWithResponseAsync(parameters).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

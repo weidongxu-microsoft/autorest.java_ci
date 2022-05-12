@@ -276,14 +276,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
     private Mono<LogSearchRuleResourceInner> createOrUpdateAsync(
         String resourceGroupName, String ruleName, LogSearchRuleResourceInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, ruleName, parameters)
-            .flatMap(
-                (Response<LogSearchRuleResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -430,14 +423,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LogSearchRuleResourceInner> getByResourceGroupAsync(String resourceGroupName, String ruleName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, ruleName)
-            .flatMap(
-                (Response<LogSearchRuleResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -597,14 +583,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
     private Mono<LogSearchRuleResourceInner> updateAsync(
         String resourceGroupName, String ruleName, LogSearchRuleResourcePatch parameters) {
         return updateWithResponseAsync(resourceGroupName, ruleName, parameters)
-            .flatMap(
-                (Response<LogSearchRuleResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -748,7 +727,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String ruleName) {
-        return deleteWithResponseAsync(resourceGroupName, ruleName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, ruleName).flatMap(ignored -> Mono.empty());
     }
 
     /**

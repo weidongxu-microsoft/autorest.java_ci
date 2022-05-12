@@ -206,14 +206,7 @@ public final class VpnSiteLinkConnectionsClientImpl implements VpnSiteLinkConnec
     private Mono<VpnSiteLinkConnectionInner> getAsync(
         String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
         return getWithResponseAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName)
-            .flatMap(
-                (Response<VpnSiteLinkConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

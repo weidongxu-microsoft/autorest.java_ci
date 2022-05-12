@@ -102,6 +102,10 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public DedicatedHostInner innerModel() {
         return this.innerObject;
     }

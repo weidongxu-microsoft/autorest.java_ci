@@ -239,14 +239,7 @@ public final class PeerExpressRouteCircuitConnectionsClientImpl implements PeerE
     private Mono<PeerExpressRouteCircuitConnectionInner> getAsync(
         String resourceGroupName, String circuitName, String peeringName, String connectionName) {
         return getWithResponseAsync(resourceGroupName, circuitName, peeringName, connectionName)
-            .flatMap(
-                (Response<PeerExpressRouteCircuitConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -42,6 +42,10 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
         return this.innerModel().routeType();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VnetRouteInner innerModel() {
         return this.innerObject;
     }

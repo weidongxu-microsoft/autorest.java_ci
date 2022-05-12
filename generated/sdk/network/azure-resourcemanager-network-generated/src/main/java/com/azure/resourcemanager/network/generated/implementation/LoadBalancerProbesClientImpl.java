@@ -397,14 +397,7 @@ public final class LoadBalancerProbesClientImpl implements LoadBalancerProbesCli
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ProbeInner> getAsync(String resourceGroupName, String loadBalancerName, String probeName) {
         return getWithResponseAsync(resourceGroupName, loadBalancerName, probeName)
-            .flatMap(
-                (Response<ProbeInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

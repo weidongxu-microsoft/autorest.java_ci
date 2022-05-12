@@ -215,6 +215,13 @@ public interface Domain {
     String regionName();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DomainInner object.
      *
      * @return the inner object.
@@ -542,7 +549,7 @@ public interface Domain {
     Domain refresh(Context context);
 
     /**
-     * Description for Renew a domain.
+     * Renew a domain.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -551,7 +558,7 @@ public interface Domain {
     void renew();
 
     /**
-     * Description for Renew a domain.
+     * Renew a domain.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

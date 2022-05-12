@@ -568,14 +568,7 @@ public final class VirtualNetworksClientImpl implements VirtualNetworksClient {
     private Mono<VirtualNetworkInner> getByResourceGroupAsync(
         String resourceGroupName, String virtualNetworkName, String expand) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, virtualNetworkName, expand)
-            .flatMap(
-                (Response<VirtualNetworkInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -592,14 +585,7 @@ public final class VirtualNetworksClientImpl implements VirtualNetworksClient {
     private Mono<VirtualNetworkInner> getByResourceGroupAsync(String resourceGroupName, String virtualNetworkName) {
         final String expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, virtualNetworkName, expand)
-            .flatMap(
-                (Response<VirtualNetworkInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1030,14 +1016,7 @@ public final class VirtualNetworksClientImpl implements VirtualNetworksClient {
     private Mono<VirtualNetworkInner> updateTagsAsync(
         String resourceGroupName, String virtualNetworkName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, virtualNetworkName, parameters)
-            .flatMap(
-                (Response<VirtualNetworkInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1503,14 +1482,7 @@ public final class VirtualNetworksClientImpl implements VirtualNetworksClient {
     private Mono<IpAddressAvailabilityResultInner> checkIpAddressAvailabilityAsync(
         String resourceGroupName, String virtualNetworkName, String ipAddress) {
         return checkIpAddressAvailabilityWithResponseAsync(resourceGroupName, virtualNetworkName, ipAddress)
-            .flatMap(
-                (Response<IpAddressAvailabilityResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

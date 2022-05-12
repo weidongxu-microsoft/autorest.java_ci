@@ -126,6 +126,10 @@ public final class ExpressRoutePortImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ExpressRoutePortInner innerModel() {
         return this.innerObject;
     }

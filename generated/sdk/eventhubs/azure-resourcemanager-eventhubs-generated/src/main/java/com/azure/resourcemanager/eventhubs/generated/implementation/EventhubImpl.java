@@ -81,6 +81,10 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public EventhubInner innerModel() {
         return this.innerObject;
     }

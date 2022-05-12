@@ -449,14 +449,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
     private Mono<FrontendEndpointInner> getAsync(
         String resourceGroupName, String frontDoorName, String frontendEndpointName) {
         return getWithResponseAsync(resourceGroupName, frontDoorName, frontendEndpointName)
-            .flatMap(
-                (Response<FrontendEndpointInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -877,14 +877,7 @@ public final class DisksClientImpl implements DisksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiskInner> getByResourceGroupAsync(String resourceGroupName, String diskName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, diskName)
-            .flatMap(
-                (Response<DiskInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -112,6 +112,10 @@ public final class ExpressRouteCrossConnectionImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ExpressRouteCrossConnectionInner innerModel() {
         return this.innerObject;
     }

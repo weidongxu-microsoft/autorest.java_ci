@@ -513,14 +513,7 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
     private Mono<ExpressRouteCircuitPeeringInner> getAsync(
         String resourceGroupName, String circuitName, String peeringName) {
         return getWithResponseAsync(resourceGroupName, circuitName, peeringName)
-            .flatMap(
-                (Response<ExpressRouteCircuitPeeringInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

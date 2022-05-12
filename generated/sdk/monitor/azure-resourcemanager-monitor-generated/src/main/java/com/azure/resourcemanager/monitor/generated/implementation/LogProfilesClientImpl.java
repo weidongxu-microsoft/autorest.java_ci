@@ -206,7 +206,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String logProfileName) {
-        return deleteWithResponseAsync(logProfileName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(logProfileName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -330,15 +330,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LogProfileResourceInner> getAsync(String logProfileName) {
-        return getWithResponseAsync(logProfileName)
-            .flatMap(
-                (Response<LogProfileResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(logProfileName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -482,14 +474,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
     private Mono<LogProfileResourceInner> createOrUpdateAsync(
         String logProfileName, LogProfileResourceInner parameters) {
         return createOrUpdateWithResponseAsync(logProfileName, parameters)
-            .flatMap(
-                (Response<LogProfileResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -638,14 +623,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
     private Mono<LogProfileResourceInner> updateAsync(
         String logProfileName, LogProfileResourcePatch logProfilesResource) {
         return updateWithResponseAsync(logProfileName, logProfilesResource)
-            .flatMap(
-                (Response<LogProfileResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

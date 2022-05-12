@@ -286,14 +286,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
         String clusterName,
         ClusterPrincipalAssignmentCheckNameRequest principalAssignmentName) {
         return checkNameAvailabilityWithResponseAsync(resourceGroupName, clusterName, principalAssignmentName)
-            .flatMap(
-                (Response<CheckNameResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -460,14 +453,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
     private Mono<ClusterPrincipalAssignmentInner> getAsync(
         String resourceGroupName, String clusterName, String principalAssignmentName) {
         return getWithResponseAsync(resourceGroupName, clusterName, principalAssignmentName)
-            .flatMap(
-                (Response<ClusterPrincipalAssignmentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

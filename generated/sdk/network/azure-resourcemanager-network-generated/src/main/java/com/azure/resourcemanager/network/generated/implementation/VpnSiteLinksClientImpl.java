@@ -218,14 +218,7 @@ public final class VpnSiteLinksClientImpl implements VpnSiteLinksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnSiteLinkInner> getAsync(String resourceGroupName, String vpnSiteName, String vpnSiteLinkName) {
         return getWithResponseAsync(resourceGroupName, vpnSiteName, vpnSiteLinkName)
-            .flatMap(
-                (Response<VpnSiteLinkInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -95,6 +95,10 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public RouteTableInner innerModel() {
         return this.innerObject;
     }

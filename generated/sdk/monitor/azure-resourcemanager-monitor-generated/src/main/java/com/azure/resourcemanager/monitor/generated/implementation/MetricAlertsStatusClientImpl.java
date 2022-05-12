@@ -193,15 +193,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MetricAlertStatusCollectionInner> listAsync(String resourceGroupName, String ruleName) {
-        return listWithResponseAsync(resourceGroupName, ruleName)
-            .flatMap(
-                (Response<MetricAlertStatusCollectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listWithResponseAsync(resourceGroupName, ruleName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -359,14 +351,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
     private Mono<MetricAlertStatusCollectionInner> listByNameAsync(
         String resourceGroupName, String ruleName, String statusName) {
         return listByNameWithResponseAsync(resourceGroupName, ruleName, statusName)
-            .flatMap(
-                (Response<MetricAlertStatusCollectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

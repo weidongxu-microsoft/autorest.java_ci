@@ -223,6 +223,10 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualNetworkGatewayConnectionInner innerModel() {
         return this.innerObject;
     }

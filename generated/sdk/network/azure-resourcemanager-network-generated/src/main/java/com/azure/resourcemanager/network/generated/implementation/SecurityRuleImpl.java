@@ -142,6 +142,10 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public SecurityRuleInner innerModel() {
         return this.innerObject;
     }

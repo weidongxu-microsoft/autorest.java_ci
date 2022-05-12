@@ -95,7 +95,7 @@ public interface ContainerAppsClient {
     Response<ContainerAppInner> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -111,7 +111,7 @@ public interface ContainerAppsClient {
         String resourceGroupName, String name, ContainerAppInner containerAppEnvelope);
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -128,7 +128,7 @@ public interface ContainerAppsClient {
         String resourceGroupName, String name, ContainerAppInner containerAppEnvelope, Context context);
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -143,7 +143,7 @@ public interface ContainerAppsClient {
     ContainerAppInner createOrUpdate(String resourceGroupName, String name, ContainerAppInner containerAppEnvelope);
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -160,7 +160,7 @@ public interface ContainerAppsClient {
         String resourceGroupName, String name, ContainerAppInner containerAppEnvelope, Context context);
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -174,7 +174,7 @@ public interface ContainerAppsClient {
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name);
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -189,7 +189,7 @@ public interface ContainerAppsClient {
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -202,7 +202,7 @@ public interface ContainerAppsClient {
     void delete(String resourceGroupName, String name);
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.

@@ -452,14 +452,7 @@ public final class LoadBalancerBackendAddressPoolsClientImpl implements LoadBala
     private Mono<BackendAddressPoolInner> getAsync(
         String resourceGroupName, String loadBalancerName, String backendAddressPoolName) {
         return getWithResponseAsync(resourceGroupName, loadBalancerName, backendAddressPoolName)
-            .flatMap(
-                (Response<BackendAddressPoolInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

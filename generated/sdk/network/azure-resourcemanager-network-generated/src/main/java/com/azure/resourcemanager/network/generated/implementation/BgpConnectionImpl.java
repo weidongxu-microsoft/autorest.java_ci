@@ -52,6 +52,10 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
         return this.innerModel().connectionState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public BgpConnectionInner innerModel() {
         return this.innerObject;
     }

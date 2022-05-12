@@ -281,14 +281,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualWanInner> getByResourceGroupAsync(String resourceGroupName, String virtualWanName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, virtualWanName)
-            .flatMap(
-                (Response<VirtualWanInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -713,14 +706,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
     private Mono<VirtualWanInner> updateTagsAsync(
         String resourceGroupName, String virtualWanName, TagsObject wanParameters) {
         return updateTagsWithResponseAsync(resourceGroupName, virtualWanName, wanParameters)
-            .flatMap(
-                (Response<VirtualWanInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

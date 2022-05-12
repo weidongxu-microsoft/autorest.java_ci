@@ -561,14 +561,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
     private Mono<LocalNetworkGatewayInner> getByResourceGroupAsync(
         String resourceGroupName, String localNetworkGatewayName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, localNetworkGatewayName)
-            .flatMap(
-                (Response<LocalNetworkGatewayInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -968,14 +961,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
     private Mono<LocalNetworkGatewayInner> updateTagsAsync(
         String resourceGroupName, String localNetworkGatewayName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, localNetworkGatewayName, parameters)
-            .flatMap(
-                (Response<LocalNetworkGatewayInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

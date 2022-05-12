@@ -859,15 +859,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RoleAssignmentInner> deleteAsync(String scope, String roleAssignmentName) {
-        return deleteWithResponseAsync(scope, roleAssignmentName)
-            .flatMap(
-                (Response<RoleAssignmentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return deleteWithResponseAsync(scope, roleAssignmentName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1020,14 +1012,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     private Mono<RoleAssignmentInner> createAsync(
         String scope, String roleAssignmentName, RoleAssignmentCreateParameters parameters) {
         return createWithResponseAsync(scope, roleAssignmentName, parameters)
-            .flatMap(
-                (Response<RoleAssignmentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1154,15 +1139,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RoleAssignmentInner> getAsync(String scope, String roleAssignmentName) {
-        return getWithResponseAsync(scope, roleAssignmentName)
-            .flatMap(
-                (Response<RoleAssignmentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(scope, roleAssignmentName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1261,15 +1238,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RoleAssignmentInner> deleteByIdAsync(String roleId) {
-        return deleteByIdWithResponseAsync(roleId)
-            .flatMap(
-                (Response<RoleAssignmentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return deleteByIdWithResponseAsync(roleId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1383,15 +1352,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RoleAssignmentInner> createByIdAsync(String roleId, RoleAssignmentCreateParameters parameters) {
-        return createByIdWithResponseAsync(roleId, parameters)
-            .flatMap(
-                (Response<RoleAssignmentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return createByIdWithResponseAsync(roleId, parameters).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1491,15 +1452,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RoleAssignmentInner> getByIdAsync(String roleId) {
-        return getByIdWithResponseAsync(roleId)
-            .flatMap(
-                (Response<RoleAssignmentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getByIdWithResponseAsync(roleId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

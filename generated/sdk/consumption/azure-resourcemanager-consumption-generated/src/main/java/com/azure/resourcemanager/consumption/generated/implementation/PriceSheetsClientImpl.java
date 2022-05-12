@@ -188,15 +188,7 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PriceSheetResultInner> getAsync(String expand, String skiptoken, Integer top) {
-        return getWithResponseAsync(expand, skiptoken, top)
-            .flatMap(
-                (Response<PriceSheetResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(expand, skiptoken, top).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -211,15 +203,7 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
         final String expand = null;
         final String skiptoken = null;
         final Integer top = null;
-        return getWithResponseAsync(expand, skiptoken, top)
-            .flatMap(
-                (Response<PriceSheetResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(expand, skiptoken, top).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -385,14 +369,7 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
     private Mono<PriceSheetResultInner> getByBillingPeriodAsync(
         String billingPeriodName, String expand, String skiptoken, Integer top) {
         return getByBillingPeriodWithResponseAsync(billingPeriodName, expand, skiptoken, top)
-            .flatMap(
-                (Response<PriceSheetResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -412,14 +389,7 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
         final String skiptoken = null;
         final Integer top = null;
         return getByBillingPeriodWithResponseAsync(billingPeriodName, expand, skiptoken, top)
-            .flatMap(
-                (Response<PriceSheetResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

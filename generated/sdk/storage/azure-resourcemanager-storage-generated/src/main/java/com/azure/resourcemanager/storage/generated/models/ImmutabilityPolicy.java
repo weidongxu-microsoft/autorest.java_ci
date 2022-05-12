@@ -75,6 +75,13 @@ public interface ImmutabilityPolicy {
     Boolean allowProtectedAppendWritesAll();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.ImmutabilityPolicyInner object.
      *
      * @return the inner object.

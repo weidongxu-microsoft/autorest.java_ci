@@ -662,14 +662,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
     private Mono<PrivateLinkServiceInner> getByResourceGroupAsync(
         String resourceGroupName, String serviceName, String expand) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, serviceName, expand)
-            .flatMap(
-                (Response<PrivateLinkServiceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -686,14 +679,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
     private Mono<PrivateLinkServiceInner> getByResourceGroupAsync(String resourceGroupName, String serviceName) {
         final String expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, serviceName, expand)
-            .flatMap(
-                (Response<PrivateLinkServiceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1437,14 +1423,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
     private Mono<PrivateEndpointConnectionInner> getPrivateEndpointConnectionAsync(
         String resourceGroupName, String serviceName, String peConnectionName, String expand) {
         return getPrivateEndpointConnectionWithResponseAsync(resourceGroupName, serviceName, peConnectionName, expand)
-            .flatMap(
-                (Response<PrivateEndpointConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1464,14 +1443,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
         String resourceGroupName, String serviceName, String peConnectionName) {
         final String expand = null;
         return getPrivateEndpointConnectionWithResponseAsync(resourceGroupName, serviceName, peConnectionName, expand)
-            .flatMap(
-                (Response<PrivateEndpointConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1661,14 +1633,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
         PrivateEndpointConnectionInner parameters) {
         return updatePrivateEndpointConnectionWithResponseAsync(
                 resourceGroupName, serviceName, peConnectionName, parameters)
-            .flatMap(
-                (Response<PrivateEndpointConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -499,14 +499,7 @@ public final class ContainersClientImpl implements ContainersClient {
     private Mono<ContainerInner> getAsync(
         String deviceName, String storageAccountName, String containerName, String resourceGroupName) {
         return getWithResponseAsync(deviceName, storageAccountName, containerName, resourceGroupName)
-            .flatMap(
-                (Response<ContainerInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

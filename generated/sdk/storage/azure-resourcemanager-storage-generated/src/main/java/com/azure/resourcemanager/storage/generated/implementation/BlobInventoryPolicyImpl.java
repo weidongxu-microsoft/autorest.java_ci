@@ -42,6 +42,10 @@ public final class BlobInventoryPolicyImpl
         return this.innerModel().policy();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public BlobInventoryPolicyInner innerModel() {
         return this.innerObject;
     }

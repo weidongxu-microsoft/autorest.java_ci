@@ -67,6 +67,10 @@ public final class ArmDisasterRecoveryImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ArmDisasterRecoveryInner innerModel() {
         return this.innerObject;
     }

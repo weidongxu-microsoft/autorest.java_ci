@@ -105,6 +105,10 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public P2SVpnGatewayInner innerModel() {
         return this.innerObject;
     }

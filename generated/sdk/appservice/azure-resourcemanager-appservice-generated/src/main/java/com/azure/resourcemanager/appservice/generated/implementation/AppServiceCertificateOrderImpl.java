@@ -162,6 +162,10 @@ public final class AppServiceCertificateOrderImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public AppServiceCertificateOrderInner innerModel() {
         return this.innerObject;
     }

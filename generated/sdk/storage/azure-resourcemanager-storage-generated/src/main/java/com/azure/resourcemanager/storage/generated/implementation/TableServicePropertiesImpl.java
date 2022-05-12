@@ -31,6 +31,10 @@ public final class TableServicePropertiesImpl
         return this.innerModel().cors();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public TableServicePropertiesInner innerModel() {
         return this.innerObject;
     }

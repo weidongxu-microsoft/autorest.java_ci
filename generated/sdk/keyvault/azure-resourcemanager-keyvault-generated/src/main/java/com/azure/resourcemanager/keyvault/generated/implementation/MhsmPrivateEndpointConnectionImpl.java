@@ -81,6 +81,10 @@ public final class MhsmPrivateEndpointConnectionImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public MhsmPrivateEndpointConnectionInner innerModel() {
         return this.innerObject;
     }

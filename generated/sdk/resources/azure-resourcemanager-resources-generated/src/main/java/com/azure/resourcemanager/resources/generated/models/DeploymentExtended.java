@@ -69,6 +69,13 @@ public interface DeploymentExtended {
     String regionName();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.resources.generated.fluent.models.DeploymentExtendedInner object.
      *
      * @return the inner object.

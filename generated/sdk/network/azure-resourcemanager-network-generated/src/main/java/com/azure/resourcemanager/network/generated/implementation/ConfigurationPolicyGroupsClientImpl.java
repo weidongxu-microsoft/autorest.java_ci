@@ -965,14 +965,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
     private Mono<VpnServerConfigurationPolicyGroupInner> getAsync(
         String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName) {
         return getWithResponseAsync(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName)
-            .flatMap(
-                (Response<VpnServerConfigurationPolicyGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

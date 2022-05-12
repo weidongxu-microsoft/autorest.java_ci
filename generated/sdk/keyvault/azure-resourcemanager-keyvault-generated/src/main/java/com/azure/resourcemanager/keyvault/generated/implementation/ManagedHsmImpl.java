@@ -64,6 +64,10 @@ public final class ManagedHsmImpl implements ManagedHsm, ManagedHsm.Definition, 
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ManagedHsmInner innerModel() {
         return this.innerObject;
     }

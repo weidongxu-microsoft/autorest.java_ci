@@ -833,14 +833,7 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
     private Mono<LinkedServiceInner> getAsync(
         String resourceGroupName, String workspaceName, String linkedServiceName) {
         return getWithResponseAsync(resourceGroupName, workspaceName, linkedServiceName)
-            .flatMap(
-                (Response<LinkedServiceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

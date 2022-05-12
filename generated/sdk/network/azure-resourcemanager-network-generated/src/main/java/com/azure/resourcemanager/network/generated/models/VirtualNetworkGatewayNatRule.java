@@ -82,6 +82,13 @@ public interface VirtualNetworkGatewayNatRule {
     String ipConfigurationId();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayNatRuleInner
      * object.
      *

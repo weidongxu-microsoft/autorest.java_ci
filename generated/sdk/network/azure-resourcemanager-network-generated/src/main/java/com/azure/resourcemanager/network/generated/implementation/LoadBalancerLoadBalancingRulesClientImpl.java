@@ -411,14 +411,7 @@ public final class LoadBalancerLoadBalancingRulesClientImpl implements LoadBalan
     private Mono<LoadBalancingRuleInner> getAsync(
         String resourceGroupName, String loadBalancerName, String loadBalancingRuleName) {
         return getWithResponseAsync(resourceGroupName, loadBalancerName, loadBalancingRuleName)
-            .flatMap(
-                (Response<LoadBalancingRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

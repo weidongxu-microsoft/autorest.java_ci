@@ -156,6 +156,13 @@ public interface CustomIpPrefix {
     String regionName();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.CustomIpPrefixInner object.
      *
      * @return the inner object.

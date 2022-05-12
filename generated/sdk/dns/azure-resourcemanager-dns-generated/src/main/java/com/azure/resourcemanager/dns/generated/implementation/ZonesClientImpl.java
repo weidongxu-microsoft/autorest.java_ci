@@ -321,14 +321,7 @@ public final class ZonesClientImpl implements ZonesClient {
     private Mono<ZoneInner> createOrUpdateAsync(
         String resourceGroupName, String zoneName, ZoneInner parameters, String ifMatch, String ifNoneMatch) {
         return createOrUpdateWithResponseAsync(resourceGroupName, zoneName, parameters, ifMatch, ifNoneMatch)
-            .flatMap(
-                (Response<ZoneInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -347,14 +340,7 @@ public final class ZonesClientImpl implements ZonesClient {
         final String ifMatch = null;
         final String ifNoneMatch = null;
         return createOrUpdateWithResponseAsync(resourceGroupName, zoneName, parameters, ifMatch, ifNoneMatch)
-            .flatMap(
-                (Response<ZoneInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -795,14 +781,7 @@ public final class ZonesClientImpl implements ZonesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ZoneInner> getByResourceGroupAsync(String resourceGroupName, String zoneName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, zoneName)
-            .flatMap(
-                (Response<ZoneInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -968,14 +947,7 @@ public final class ZonesClientImpl implements ZonesClient {
     private Mono<ZoneInner> updateAsync(
         String resourceGroupName, String zoneName, ZoneUpdate parameters, String ifMatch) {
         return updateWithResponseAsync(resourceGroupName, zoneName, parameters, ifMatch)
-            .flatMap(
-                (Response<ZoneInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -993,14 +965,7 @@ public final class ZonesClientImpl implements ZonesClient {
     private Mono<ZoneInner> updateAsync(String resourceGroupName, String zoneName, ZoneUpdate parameters) {
         final String ifMatch = null;
         return updateWithResponseAsync(resourceGroupName, zoneName, parameters, ifMatch)
-            .flatMap(
-                (Response<ZoneInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -81,6 +81,10 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public GalleryInner innerModel() {
         return this.innerObject;
     }

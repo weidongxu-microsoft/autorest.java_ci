@@ -200,6 +200,10 @@ public final class NetworkInterfaceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public NetworkInterfaceInner innerModel() {
         return this.innerObject;
     }

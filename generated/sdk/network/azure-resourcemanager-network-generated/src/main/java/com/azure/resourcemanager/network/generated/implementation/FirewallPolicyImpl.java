@@ -147,6 +147,10 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public FirewallPolicyInner innerModel() {
         return this.innerObject;
     }

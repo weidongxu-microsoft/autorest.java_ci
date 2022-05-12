@@ -77,6 +77,10 @@ public final class GalleryApplicationImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public GalleryApplicationInner innerModel() {
         return this.innerObject;
     }

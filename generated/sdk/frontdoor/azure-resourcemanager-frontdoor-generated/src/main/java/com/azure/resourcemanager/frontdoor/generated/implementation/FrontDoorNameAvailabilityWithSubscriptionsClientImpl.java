@@ -183,14 +183,7 @@ public final class FrontDoorNameAvailabilityWithSubscriptionsClientImpl
     private Mono<CheckNameAvailabilityOutputInner> checkAsync(
         CheckNameAvailabilityInput checkFrontDoorNameAvailabilityInput) {
         return checkWithResponseAsync(checkFrontDoorNameAvailabilityInput)
-            .flatMap(
-                (Response<CheckNameAvailabilityOutputInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

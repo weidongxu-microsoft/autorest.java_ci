@@ -47,6 +47,10 @@ public final class ManagementLockObjectImpl
         }
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ManagementLockObjectInner innerModel() {
         return this.innerObject;
     }

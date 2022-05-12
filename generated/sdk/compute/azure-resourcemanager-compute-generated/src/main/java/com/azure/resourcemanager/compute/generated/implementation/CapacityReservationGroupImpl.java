@@ -86,6 +86,10 @@ public final class CapacityReservationGroupImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public CapacityReservationGroupInner innerModel() {
         return this.innerObject;
     }

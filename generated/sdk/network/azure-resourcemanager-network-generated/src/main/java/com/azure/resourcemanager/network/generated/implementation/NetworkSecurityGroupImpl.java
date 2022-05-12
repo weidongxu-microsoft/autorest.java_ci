@@ -138,6 +138,10 @@ public final class NetworkSecurityGroupImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public NetworkSecurityGroupInner innerModel() {
         return this.innerObject;
     }

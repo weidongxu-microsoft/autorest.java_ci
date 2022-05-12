@@ -294,14 +294,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
         String expand) {
         return getWithResponseAsync(
                 resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, expand)
-            .flatMap(
-                (Response<AvailabilityGroupListenerInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -322,14 +315,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
         final String expand = null;
         return getWithResponseAsync(
                 resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, expand)
-            .flatMap(
-                (Response<AvailabilityGroupListenerInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

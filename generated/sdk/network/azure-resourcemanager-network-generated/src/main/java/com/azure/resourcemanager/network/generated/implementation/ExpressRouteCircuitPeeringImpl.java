@@ -151,6 +151,10 @@ public final class ExpressRouteCircuitPeeringImpl
         }
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ExpressRouteCircuitPeeringInner innerModel() {
         return this.innerObject;
     }

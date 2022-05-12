@@ -535,14 +535,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
     private Mono<VirtualNetworkPeeringInner> getAsync(
         String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName) {
         return getWithResponseAsync(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName)
-            .flatMap(
-                (Response<VirtualNetworkPeeringInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

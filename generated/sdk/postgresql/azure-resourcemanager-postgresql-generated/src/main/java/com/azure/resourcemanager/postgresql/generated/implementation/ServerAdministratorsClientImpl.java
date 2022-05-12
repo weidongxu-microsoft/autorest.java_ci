@@ -237,15 +237,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ServerAdministratorResourceInner> getAsync(String resourceGroupName, String serverName) {
-        return getWithResponseAsync(resourceGroupName, serverName)
-            .flatMap(
-                (Response<ServerAdministratorResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(resourceGroupName, serverName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

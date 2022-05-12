@@ -45,6 +45,13 @@ public interface Database {
     String collation();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.DatabaseInner object.
      *
      * @return the inner object.

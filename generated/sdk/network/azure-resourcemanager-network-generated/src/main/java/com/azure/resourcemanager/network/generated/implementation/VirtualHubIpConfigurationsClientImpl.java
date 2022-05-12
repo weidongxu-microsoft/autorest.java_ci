@@ -260,14 +260,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     private Mono<HubIpConfigurationInner> getAsync(
         String resourceGroupName, String virtualHubName, String ipConfigName) {
         return getWithResponseAsync(resourceGroupName, virtualHubName, ipConfigName)
-            .flatMap(
-                (Response<HubIpConfigurationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

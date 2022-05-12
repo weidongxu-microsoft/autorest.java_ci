@@ -138,6 +138,10 @@ public final class NetworkVirtualApplianceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public NetworkVirtualApplianceInner innerModel() {
         return this.innerObject;
     }

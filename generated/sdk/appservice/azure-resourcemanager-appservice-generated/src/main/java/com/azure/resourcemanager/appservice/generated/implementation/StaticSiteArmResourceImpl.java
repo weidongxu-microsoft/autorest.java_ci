@@ -155,6 +155,10 @@ public final class StaticSiteArmResourceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public StaticSiteArmResourceInner innerModel() {
         return this.innerObject;
     }

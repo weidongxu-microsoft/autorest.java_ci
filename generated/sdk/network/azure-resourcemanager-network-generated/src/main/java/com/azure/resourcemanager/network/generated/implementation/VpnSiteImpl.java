@@ -114,6 +114,10 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VpnSiteInner innerModel() {
         return this.innerObject;
     }

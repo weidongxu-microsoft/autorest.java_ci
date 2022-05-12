@@ -185,6 +185,13 @@ public interface Server {
     String regionName();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.postgresql.generated.fluent.models.ServerInner object.
      *
      * @return the inner object.

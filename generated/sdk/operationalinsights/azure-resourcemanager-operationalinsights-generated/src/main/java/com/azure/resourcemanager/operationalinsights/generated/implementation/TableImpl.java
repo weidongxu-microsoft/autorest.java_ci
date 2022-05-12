@@ -77,6 +77,10 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public TableInner innerModel() {
         return this.innerObject;
     }

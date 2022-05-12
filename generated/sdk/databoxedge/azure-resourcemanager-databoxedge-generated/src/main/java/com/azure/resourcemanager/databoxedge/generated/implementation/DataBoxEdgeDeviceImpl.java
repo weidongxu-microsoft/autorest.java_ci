@@ -166,6 +166,10 @@ public final class DataBoxEdgeDeviceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public DataBoxEdgeDeviceInner innerModel() {
         return this.innerObject;
     }

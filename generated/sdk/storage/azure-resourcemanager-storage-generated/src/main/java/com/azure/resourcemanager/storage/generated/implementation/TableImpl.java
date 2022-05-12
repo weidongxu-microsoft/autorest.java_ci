@@ -41,6 +41,10 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
         }
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public TableInner innerModel() {
         return this.innerObject;
     }

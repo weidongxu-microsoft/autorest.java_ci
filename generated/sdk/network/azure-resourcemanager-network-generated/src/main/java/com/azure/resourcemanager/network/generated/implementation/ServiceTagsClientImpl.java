@@ -163,15 +163,7 @@ public final class ServiceTagsClientImpl implements ServiceTagsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ServiceTagsListResultInner> listAsync(String location) {
-        return listWithResponseAsync(location)
-            .flatMap(
-                (Response<ServiceTagsListResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listWithResponseAsync(location).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

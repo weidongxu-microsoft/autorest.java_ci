@@ -73,6 +73,10 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public HubRouteTableInner innerModel() {
         return this.innerObject;
     }

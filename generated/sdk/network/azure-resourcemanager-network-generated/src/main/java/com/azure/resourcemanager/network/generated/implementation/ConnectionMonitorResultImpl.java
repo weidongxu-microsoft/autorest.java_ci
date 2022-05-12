@@ -139,6 +139,10 @@ public final class ConnectionMonitorResultImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ConnectionMonitorResultInner innerModel() {
         return this.innerObject;
     }

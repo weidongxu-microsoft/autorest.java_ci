@@ -78,6 +78,13 @@ public interface EncryptionScope {
     Boolean requireInfrastructureEncryption();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.EncryptionScopeInner object.
      *
      * @return the inner object.

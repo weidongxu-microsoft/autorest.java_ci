@@ -530,14 +530,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
     private Mono<SecurityPartnerProviderInner> getByResourceGroupAsync(
         String resourceGroupName, String securityPartnerProviderName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, securityPartnerProviderName)
-            .flatMap(
-                (Response<SecurityPartnerProviderInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -995,14 +988,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
     private Mono<SecurityPartnerProviderInner> updateTagsAsync(
         String resourceGroupName, String securityPartnerProviderName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, securityPartnerProviderName, parameters)
-            .flatMap(
-                (Response<SecurityPartnerProviderInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

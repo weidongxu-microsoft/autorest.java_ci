@@ -632,14 +632,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<IotHubDescriptionInner> getByResourceGroupAsync(String resourceGroupName, String resourceName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, resourceName)
-            .flatMap(
-                (Response<IotHubDescriptionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1988,14 +1981,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RegistryStatisticsInner> getStatsAsync(String resourceGroupName, String resourceName) {
         return getStatsWithResponseAsync(resourceGroupName, resourceName)
-            .flatMap(
-                (Response<RegistryStatisticsInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2555,14 +2541,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     private Mono<EventHubConsumerGroupInfoInner> getEventHubConsumerGroupAsync(
         String resourceGroupName, String resourceName, String eventHubEndpointName, String name) {
         return getEventHubConsumerGroupWithResponseAsync(resourceGroupName, resourceName, eventHubEndpointName, name)
-            .flatMap(
-                (Response<EventHubConsumerGroupInfoInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2770,14 +2749,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
         EventHubConsumerGroupBodyDescription consumerGroupBody) {
         return createEventHubConsumerGroupWithResponseAsync(
                 resourceGroupName, resourceName, eventHubEndpointName, name, consumerGroupBody)
-            .flatMap(
-                (Response<EventHubConsumerGroupInfoInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2964,7 +2936,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     private Mono<Void> deleteEventHubConsumerGroupAsync(
         String resourceGroupName, String resourceName, String eventHubEndpointName, String name) {
         return deleteEventHubConsumerGroupWithResponseAsync(resourceGroupName, resourceName, eventHubEndpointName, name)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -3314,14 +3286,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<JobResponseInner> getJobAsync(String resourceGroupName, String resourceName, String jobId) {
         return getJobWithResponseAsync(resourceGroupName, resourceName, jobId)
-            .flatMap(
-                (Response<JobResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3829,15 +3794,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<IotHubNameAvailabilityInfoInner> checkNameAvailabilityAsync(OperationInputs operationInputs) {
-        return checkNameAvailabilityWithResponseAsync(operationInputs)
-            .flatMap(
-                (Response<IotHubNameAvailabilityInfoInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return checkNameAvailabilityWithResponseAsync(operationInputs).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3995,14 +3952,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     private Mono<TestAllRoutesResultInner> testAllRoutesAsync(
         String iotHubName, String resourceGroupName, TestAllRoutesInput input) {
         return testAllRoutesWithResponseAsync(iotHubName, resourceGroupName, input)
-            .flatMap(
-                (Response<TestAllRoutesResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -4163,14 +4113,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     private Mono<TestRouteResultInner> testRouteAsync(
         String iotHubName, String resourceGroupName, TestRouteInput input) {
         return testRouteWithResponseAsync(iotHubName, resourceGroupName, input)
-            .flatMap(
-                (Response<TestRouteResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -4521,14 +4464,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     private Mono<SharedAccessSignatureAuthorizationRuleInner> getKeysForKeyNameAsync(
         String resourceGroupName, String resourceName, String keyName) {
         return getKeysForKeyNameWithResponseAsync(resourceGroupName, resourceName, keyName)
-            .flatMap(
-                (Response<SharedAccessSignatureAuthorizationRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -4703,14 +4639,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     private Mono<JobResponseInner> exportDevicesAsync(
         String resourceGroupName, String resourceName, ExportDevicesRequest exportDevicesParameters) {
         return exportDevicesWithResponseAsync(resourceGroupName, resourceName, exportDevicesParameters)
-            .flatMap(
-                (Response<JobResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -4888,14 +4817,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     private Mono<JobResponseInner> importDevicesAsync(
         String resourceGroupName, String resourceName, ImportDevicesRequest importDevicesParameters) {
         return importDevicesWithResponseAsync(resourceGroupName, resourceName, importDevicesParameters)
-            .flatMap(
-                (Response<JobResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -216,14 +216,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
     private Mono<ClusterQuotaConfigurationPropertiesInner> patchAsync(
         String resourceGroupName, String clusterName, ClusterQuotaConfigurationPropertiesInner parameters) {
         return patchWithResponseAsync(resourceGroupName, clusterName, parameters)
-            .flatMap(
-                (Response<ClusterQuotaConfigurationPropertiesInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -378,15 +371,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ClusterQuotaConfigurationPropertiesInner> getAsync(String resourceGroupName, String clusterName) {
-        return getWithResponseAsync(resourceGroupName, clusterName)
-            .flatMap(
-                (Response<ClusterQuotaConfigurationPropertiesInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(resourceGroupName, clusterName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

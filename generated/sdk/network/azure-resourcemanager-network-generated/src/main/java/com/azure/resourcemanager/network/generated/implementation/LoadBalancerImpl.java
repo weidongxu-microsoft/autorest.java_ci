@@ -178,6 +178,10 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public LoadBalancerInner innerModel() {
         return this.innerObject;
     }

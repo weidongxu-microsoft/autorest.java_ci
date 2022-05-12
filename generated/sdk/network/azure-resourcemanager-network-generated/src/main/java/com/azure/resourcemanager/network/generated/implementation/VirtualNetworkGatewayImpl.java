@@ -179,6 +179,10 @@ public final class VirtualNetworkGatewayImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualNetworkGatewayInner innerModel() {
         return this.innerObject;
     }

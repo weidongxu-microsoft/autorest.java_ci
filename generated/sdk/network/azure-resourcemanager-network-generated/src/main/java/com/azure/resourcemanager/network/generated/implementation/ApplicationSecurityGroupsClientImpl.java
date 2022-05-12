@@ -532,14 +532,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
     private Mono<ApplicationSecurityGroupInner> getByResourceGroupAsync(
         String resourceGroupName, String applicationSecurityGroupName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, applicationSecurityGroupName)
-            .flatMap(
-                (Response<ApplicationSecurityGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1003,14 +996,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
     private Mono<ApplicationSecurityGroupInner> updateTagsAsync(
         String resourceGroupName, String applicationSecurityGroupName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, applicationSecurityGroupName, parameters)
-            .flatMap(
-                (Response<ApplicationSecurityGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

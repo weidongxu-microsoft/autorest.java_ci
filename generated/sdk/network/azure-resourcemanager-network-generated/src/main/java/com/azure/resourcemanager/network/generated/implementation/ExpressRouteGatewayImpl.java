@@ -88,6 +88,10 @@ public final class ExpressRouteGatewayImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ExpressRouteGatewayInner innerModel() {
         return this.innerObject;
     }

@@ -500,14 +500,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     private Mono<SchemaGroupInner> createOrUpdateAsync(
         String resourceGroupName, String namespaceName, String schemaGroupName, SchemaGroupInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName, parameters)
-            .flatMap(
-                (Response<SchemaGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -662,7 +655,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, String schemaGroupName) {
         return deleteWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -810,14 +803,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SchemaGroupInner> getAsync(String resourceGroupName, String namespaceName, String schemaGroupName) {
         return getWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName)
-            .flatMap(
-                (Response<SchemaGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

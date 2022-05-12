@@ -848,14 +848,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
         String databaseName,
         DataConnectionCheckNameRequest dataConnectionName) {
         return checkNameAvailabilityWithResponseAsync(resourceGroupName, clusterName, databaseName, dataConnectionName)
-            .flatMap(
-                (Response<CheckNameResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1038,14 +1031,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
     private Mono<DataConnectionInner> getAsync(
         String resourceGroupName, String clusterName, String databaseName, String dataConnectionName) {
         return getWithResponseAsync(resourceGroupName, clusterName, databaseName, dataConnectionName)
-            .flatMap(
-                (Response<DataConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

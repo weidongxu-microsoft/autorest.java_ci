@@ -219,15 +219,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<QueryResultInner> usageAsync(String scope, ForecastDefinition parameters, String filter) {
-        return usageWithResponseAsync(scope, parameters, filter)
-            .flatMap(
-                (Response<QueryResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return usageWithResponseAsync(scope, parameters, filter).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -256,15 +248,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<QueryResultInner> usageAsync(String scope, ForecastDefinition parameters) {
         final String filter = null;
-        return usageWithResponseAsync(scope, parameters, filter)
-            .flatMap(
-                (Response<QueryResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return usageWithResponseAsync(scope, parameters, filter).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -477,14 +461,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
         String filter) {
         return externalCloudProviderUsageWithResponseAsync(
                 externalCloudProviderType, externalCloudProviderId, parameters, filter)
-            .flatMap(
-                (Response<QueryResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -509,14 +486,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
         final String filter = null;
         return externalCloudProviderUsageWithResponseAsync(
                 externalCloudProviderType, externalCloudProviderId, parameters, filter)
-            .flatMap(
-                (Response<QueryResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

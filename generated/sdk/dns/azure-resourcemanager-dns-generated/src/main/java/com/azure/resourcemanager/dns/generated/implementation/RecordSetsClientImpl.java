@@ -393,14 +393,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
         String ifMatch) {
         return updateWithResponseAsync(
                 resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch)
-            .flatMap(
-                (Response<RecordSetInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -427,14 +420,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
         final String ifMatch = null;
         return updateWithResponseAsync(
                 resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch)
-            .flatMap(
-                (Response<RecordSetInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -681,14 +667,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
         String ifNoneMatch) {
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch, ifNoneMatch)
-            .flatMap(
-                (Response<RecordSetInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -717,14 +696,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
         final String ifNoneMatch = null;
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch, ifNoneMatch)
-            .flatMap(
-                (Response<RecordSetInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -953,7 +925,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
         RecordType recordType,
         String ifMatch) {
         return deleteWithResponseAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType, ifMatch)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -974,7 +946,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
         String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
         final String ifMatch = null;
         return deleteWithResponseAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType, ifMatch)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -1159,14 +1131,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     private Mono<RecordSetInner> getAsync(
         String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
         return getWithResponseAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType)
-            .flatMap(
-                (Response<RecordSetInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

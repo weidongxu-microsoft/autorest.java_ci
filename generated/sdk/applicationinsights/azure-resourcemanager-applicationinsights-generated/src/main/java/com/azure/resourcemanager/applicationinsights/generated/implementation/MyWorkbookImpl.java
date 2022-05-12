@@ -92,6 +92,10 @@ public final class MyWorkbookImpl implements MyWorkbook, MyWorkbook.Definition, 
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public MyWorkbookInner innerModel() {
         return this.innerObject;
     }

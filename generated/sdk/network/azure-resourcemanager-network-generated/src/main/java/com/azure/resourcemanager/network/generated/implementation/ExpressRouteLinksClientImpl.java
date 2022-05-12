@@ -219,14 +219,7 @@ public final class ExpressRouteLinksClientImpl implements ExpressRouteLinksClien
     private Mono<ExpressRouteLinkInner> getAsync(
         String resourceGroupName, String expressRoutePortName, String linkName) {
         return getWithResponseAsync(resourceGroupName, expressRoutePortName, linkName)
-            .flatMap(
-                (Response<ExpressRouteLinkInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

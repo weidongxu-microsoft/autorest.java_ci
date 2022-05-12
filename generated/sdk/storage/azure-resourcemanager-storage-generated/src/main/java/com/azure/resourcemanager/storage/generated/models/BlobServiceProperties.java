@@ -106,6 +106,13 @@ public interface BlobServiceProperties {
     LastAccessTimeTrackingPolicy lastAccessTimeTrackingPolicy();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.BlobServicePropertiesInner object.
      *
      * @return the inner object.

@@ -138,6 +138,10 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ServerInner innerModel() {
         return this.innerObject;
     }

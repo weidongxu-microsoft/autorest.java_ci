@@ -33,6 +33,10 @@ public final class ScopedResourceImpl implements ScopedResource, ScopedResource.
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ScopedResourceInner innerModel() {
         return this.innerObject;
     }

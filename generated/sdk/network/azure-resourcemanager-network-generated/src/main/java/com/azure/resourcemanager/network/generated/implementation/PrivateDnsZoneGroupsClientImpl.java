@@ -531,14 +531,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
     private Mono<PrivateDnsZoneGroupInner> getAsync(
         String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName) {
         return getWithResponseAsync(resourceGroupName, privateEndpointName, privateDnsZoneGroupName)
-            .flatMap(
-                (Response<PrivateDnsZoneGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

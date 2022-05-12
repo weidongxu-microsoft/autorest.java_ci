@@ -194,6 +194,10 @@ public final class VpnServerConfigurationImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VpnServerConfigurationInner innerModel() {
         return this.innerObject;
     }

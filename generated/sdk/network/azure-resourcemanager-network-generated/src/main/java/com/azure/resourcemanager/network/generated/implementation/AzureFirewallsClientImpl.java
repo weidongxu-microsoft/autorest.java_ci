@@ -515,14 +515,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AzureFirewallInner> getByResourceGroupAsync(String resourceGroupName, String azureFirewallName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, azureFirewallName)
-            .flatMap(
-                (Response<AzureFirewallInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

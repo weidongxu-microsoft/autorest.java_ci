@@ -32,6 +32,10 @@ public final class SharedPrivateLinkResourceImpl
         return this.innerModel().properties();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public SharedPrivateLinkResourceInner innerModel() {
         return this.innerObject;
     }

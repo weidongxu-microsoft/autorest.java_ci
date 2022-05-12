@@ -345,7 +345,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
      *
      * @param featured Specify &lt;code&gt;true&lt;/code&gt; to return only the most critical recommendations. The
      *     default is &lt;code&gt;false&lt;/code&gt;, which returns all recommendations.
@@ -397,7 +397,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
      *
      * @param featured Specify &lt;code&gt;true&lt;/code&gt; to return only the most critical recommendations. The
      *     default is &lt;code&gt;false&lt;/code&gt;, which returns all recommendations.
@@ -448,7 +448,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
      *
      * @param featured Specify &lt;code&gt;true&lt;/code&gt; to return only the most critical recommendations. The
      *     default is &lt;code&gt;false&lt;/code&gt;, which returns all recommendations.
@@ -467,7 +467,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -482,7 +482,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
      *
      * @param featured Specify &lt;code&gt;true&lt;/code&gt; to return only the most critical recommendations. The
      *     default is &lt;code&gt;false&lt;/code&gt;, which returns all recommendations.
@@ -503,7 +503,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -517,7 +517,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
      *
      * @param featured Specify &lt;code&gt;true&lt;/code&gt; to return only the most critical recommendations. The
      *     default is &lt;code&gt;false&lt;/code&gt;, which returns all recommendations.
@@ -536,7 +536,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for a subscription.
+     * Reset all recommendation opt-out settings for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -571,7 +571,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for a subscription.
+     * Reset all recommendation opt-out settings for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -605,7 +605,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for a subscription.
+     * Reset all recommendation opt-out settings for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -613,11 +613,11 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> resetAllFiltersAsync() {
-        return resetAllFiltersWithResponseAsync().flatMap((Response<Void> res) -> Mono.empty());
+        return resetAllFiltersWithResponseAsync().flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for a subscription.
+     * Reset all recommendation opt-out settings for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -628,7 +628,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for a subscription.
+     * Reset all recommendation opt-out settings for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -642,7 +642,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specified rule so it will not apply to a subscription in the future.
+     * Disables the specified rule so it will not apply to a subscription in the future.
      *
      * @param name Rule name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -683,7 +683,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specified rule so it will not apply to a subscription in the future.
+     * Disables the specified rule so it will not apply to a subscription in the future.
      *
      * @param name Rule name.
      * @param context The context to associate with this operation.
@@ -722,7 +722,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specified rule so it will not apply to a subscription in the future.
+     * Disables the specified rule so it will not apply to a subscription in the future.
      *
      * @param name Rule name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -732,12 +732,11 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> disableRecommendationForSubscriptionAsync(String name) {
-        return disableRecommendationForSubscriptionWithResponseAsync(name)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return disableRecommendationForSubscriptionWithResponseAsync(name).flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Disables the specified rule so it will not apply to a subscription in the future.
+     * Disables the specified rule so it will not apply to a subscription in the future.
      *
      * @param name Rule name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -750,7 +749,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specified rule so it will not apply to a subscription in the future.
+     * Disables the specified rule so it will not apply to a subscription in the future.
      *
      * @param name Rule name.
      * @param context The context to associate with this operation.
@@ -765,7 +764,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -777,7 +776,8 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return past recommendations for an app, optionally specified by the time range along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecommendationInner>> listHistoryForHostingEnvironmentSinglePageAsync(
@@ -831,7 +831,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -844,7 +844,8 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return past recommendations for an app, optionally specified by the time range along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecommendationInner>> listHistoryForHostingEnvironmentSinglePageAsync(
@@ -895,7 +896,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -907,7 +908,8 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedFlux}.
+     * @return past recommendations for an app, optionally specified by the time range as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationInner> listHistoryForHostingEnvironmentAsync(
@@ -920,14 +922,15 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedFlux}.
+     * @return past recommendations for an app, optionally specified by the time range as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationInner> listHistoryForHostingEnvironmentAsync(
@@ -942,7 +945,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -955,7 +958,8 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedFlux}.
+     * @return past recommendations for an app, optionally specified by the time range as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationInner> listHistoryForHostingEnvironmentAsync(
@@ -968,14 +972,15 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedIterable}.
+     * @return past recommendations for an app, optionally specified by the time range as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RecommendationInner> listHistoryForHostingEnvironment(
@@ -987,7 +992,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1000,7 +1005,8 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedIterable}.
+     * @return past recommendations for an app, optionally specified by the time range as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RecommendationInner> listHistoryForHostingEnvironment(
@@ -1011,7 +1017,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1022,7 +1028,8 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all recommendations for a hosting environment along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecommendationInner>> listRecommendedRulesForHostingEnvironmentSinglePageAsync(
@@ -1076,7 +1083,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1088,7 +1095,8 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all recommendations for a hosting environment along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecommendationInner>> listRecommendedRulesForHostingEnvironmentSinglePageAsync(
@@ -1139,7 +1147,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1150,7 +1158,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedFlux}.
+     * @return all recommendations for a hosting environment as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationInner> listRecommendedRulesForHostingEnvironmentAsync(
@@ -1163,14 +1171,14 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedFlux}.
+     * @return all recommendations for a hosting environment as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationInner> listRecommendedRulesForHostingEnvironmentAsync(
@@ -1185,7 +1193,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1197,7 +1205,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedFlux}.
+     * @return all recommendations for a hosting environment as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationInner> listRecommendedRulesForHostingEnvironmentAsync(
@@ -1210,14 +1218,14 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedIterable}.
+     * @return all recommendations for a hosting environment as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RecommendationInner> listRecommendedRulesForHostingEnvironment(
@@ -1230,7 +1238,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1242,7 +1250,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedIterable}.
+     * @return all recommendations for a hosting environment as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RecommendationInner> listRecommendedRulesForHostingEnvironment(
@@ -1253,7 +1261,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1309,7 +1317,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1363,7 +1371,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1378,11 +1386,11 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
         String resourceGroupName, String environmentName, String hostingEnvironmentName) {
         return disableAllForHostingEnvironmentWithResponseAsync(
                 resourceGroupName, environmentName, hostingEnvironmentName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1398,7 +1406,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1418,7 +1426,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1474,7 +1482,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1528,7 +1536,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1543,11 +1551,11 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
         String resourceGroupName, String environmentName, String hostingEnvironmentName) {
         return resetAllFiltersForHostingEnvironmentWithResponseAsync(
                 resourceGroupName, environmentName, hostingEnvironmentName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1563,7 +1571,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1583,7 +1591,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1595,8 +1603,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform along with {@link Response}
-     *     on successful completion of {@link Mono}.
+     * @return a recommendation rule for an app along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecommendationRuleInner>> getRuleDetailsByHostingEnvironmentWithResponseAsync(
@@ -1649,7 +1656,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1662,8 +1669,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform along with {@link Response}
-     *     on successful completion of {@link Mono}.
+     * @return a recommendation rule for an app along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecommendationRuleInner>> getRuleDetailsByHostingEnvironmentWithResponseAsync(
@@ -1714,7 +1720,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1726,8 +1732,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform on successful completion of
-     *     {@link Mono}.
+     * @return a recommendation rule for an app on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecommendationRuleInner> getRuleDetailsByHostingEnvironmentAsync(
@@ -1738,18 +1743,11 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
         String recommendationId) {
         return getRuleDetailsByHostingEnvironmentWithResponseAsync(
                 resourceGroupName, hostingEnvironmentName, name, updateSeen, recommendationId)
-            .flatMap(
-                (Response<RecommendationRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1757,8 +1755,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform on successful completion of
-     *     {@link Mono}.
+     * @return a recommendation rule for an app on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecommendationRuleInner> getRuleDetailsByHostingEnvironmentAsync(
@@ -1767,18 +1764,11 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
         final String recommendationId = null;
         return getRuleDetailsByHostingEnvironmentWithResponseAsync(
                 resourceGroupName, hostingEnvironmentName, name, updateSeen, recommendationId)
-            .flatMap(
-                (Response<RecommendationRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1786,7 +1776,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform.
+     * @return a recommendation rule for an app.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public RecommendationRuleInner getRuleDetailsByHostingEnvironment(
@@ -1799,7 +1789,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1812,7 +1802,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform along with {@link Response}.
+     * @return a recommendation rule for an app along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RecommendationRuleInner> getRuleDetailsByHostingEnvironmentWithResponse(
@@ -1828,7 +1818,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Site name.
@@ -1889,7 +1879,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Site name.
@@ -1948,7 +1938,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Site name.
@@ -1964,11 +1954,11 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
         String resourceGroupName, String environmentName, String name, String hostingEnvironmentName) {
         return disableRecommendationForHostingEnvironmentWithResponseAsync(
                 resourceGroupName, environmentName, name, hostingEnvironmentName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Site name.
@@ -1987,7 +1977,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Site name.
@@ -2008,7 +1998,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2020,7 +2010,8 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return past recommendations for an app, optionally specified by the time range along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecommendationInner>> listHistoryForWebAppSinglePageAsync(
@@ -2072,7 +2063,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2085,7 +2076,8 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return past recommendations for an app, optionally specified by the time range along with {@link PagedResponse}
+     *     on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecommendationInner>> listHistoryForWebAppSinglePageAsync(
@@ -2134,7 +2126,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2146,7 +2138,8 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedFlux}.
+     * @return past recommendations for an app, optionally specified by the time range as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationInner> listHistoryForWebAppAsync(
@@ -2157,14 +2150,15 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedFlux}.
+     * @return past recommendations for an app, optionally specified by the time range as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationInner> listHistoryForWebAppAsync(String resourceGroupName, String siteName) {
@@ -2176,7 +2170,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2189,7 +2183,8 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedFlux}.
+     * @return past recommendations for an app, optionally specified by the time range as paginated response with {@link
+     *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationInner> listHistoryForWebAppAsync(
@@ -2200,14 +2195,15 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedIterable}.
+     * @return past recommendations for an app, optionally specified by the time range as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RecommendationInner> listHistoryForWebApp(String resourceGroupName, String siteName) {
@@ -2217,7 +2213,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2230,7 +2226,8 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedIterable}.
+     * @return past recommendations for an app, optionally specified by the time range as paginated response with {@link
+     *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RecommendationInner> listHistoryForWebApp(
@@ -2240,7 +2237,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2251,7 +2248,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all recommendations for an app along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecommendationInner>> listRecommendedRulesForWebAppSinglePageAsync(
@@ -2303,7 +2300,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2315,7 +2312,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all recommendations for an app along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecommendationInner>> listRecommendedRulesForWebAppSinglePageAsync(
@@ -2364,7 +2361,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2375,7 +2372,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedFlux}.
+     * @return all recommendations for an app as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationInner> listRecommendedRulesForWebAppAsync(
@@ -2386,14 +2383,14 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedFlux}.
+     * @return all recommendations for an app as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationInner> listRecommendedRulesForWebAppAsync(
@@ -2406,7 +2403,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2418,7 +2415,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedFlux}.
+     * @return all recommendations for an app as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RecommendationInner> listRecommendedRulesForWebAppAsync(
@@ -2429,14 +2426,14 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedIterable}.
+     * @return all recommendations for an app as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RecommendationInner> listRecommendedRulesForWebApp(String resourceGroupName, String siteName) {
@@ -2446,7 +2443,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2458,7 +2455,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of recommendations as paginated response with {@link PagedIterable}.
+     * @return all recommendations for an app as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RecommendationInner> listRecommendedRulesForWebApp(
@@ -2468,7 +2465,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2515,7 +2512,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2561,7 +2558,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2572,12 +2569,11 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> disableAllForWebAppAsync(String resourceGroupName, String siteName) {
-        return disableAllForWebAppWithResponseAsync(resourceGroupName, siteName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return disableAllForWebAppWithResponseAsync(resourceGroupName, siteName).flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2591,7 +2587,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2607,7 +2603,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2654,7 +2650,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2700,7 +2696,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2711,12 +2707,11 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> resetAllFiltersForWebAppAsync(String resourceGroupName, String siteName) {
-        return resetAllFiltersForWebAppWithResponseAsync(resourceGroupName, siteName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return resetAllFiltersForWebAppWithResponseAsync(resourceGroupName, siteName).flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2730,7 +2725,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2747,7 +2742,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2759,8 +2754,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform along with {@link Response}
-     *     on successful completion of {@link Mono}.
+     * @return a recommendation rule for an app along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecommendationRuleInner>> getRuleDetailsByWebAppWithResponseAsync(
@@ -2807,7 +2801,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2820,8 +2814,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform along with {@link Response}
-     *     on successful completion of {@link Mono}.
+     * @return a recommendation rule for an app along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecommendationRuleInner>> getRuleDetailsByWebAppWithResponseAsync(
@@ -2870,7 +2863,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2882,25 +2875,17 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform on successful completion of
-     *     {@link Mono}.
+     * @return a recommendation rule for an app on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecommendationRuleInner> getRuleDetailsByWebAppAsync(
         String resourceGroupName, String siteName, String name, Boolean updateSeen, String recommendationId) {
         return getRuleDetailsByWebAppWithResponseAsync(resourceGroupName, siteName, name, updateSeen, recommendationId)
-            .flatMap(
-                (Response<RecommendationRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2908,8 +2893,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform on successful completion of
-     *     {@link Mono}.
+     * @return a recommendation rule for an app on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecommendationRuleInner> getRuleDetailsByWebAppAsync(
@@ -2917,18 +2901,11 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
         final Boolean updateSeen = null;
         final String recommendationId = null;
         return getRuleDetailsByWebAppWithResponseAsync(resourceGroupName, siteName, name, updateSeen, recommendationId)
-            .flatMap(
-                (Response<RecommendationRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2936,7 +2913,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform.
+     * @return a recommendation rule for an app.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public RecommendationRuleInner getRuleDetailsByWebApp(String resourceGroupName, String siteName, String name) {
@@ -2946,7 +2923,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2959,7 +2936,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform along with {@link Response}.
+     * @return a recommendation rule for an app along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RecommendationRuleInner> getRuleDetailsByWebAppWithResponse(
@@ -2975,7 +2952,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site name.
@@ -3028,7 +3005,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site name.
@@ -3079,7 +3056,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site name.
@@ -3092,11 +3069,11 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> disableRecommendationForSiteAsync(String resourceGroupName, String siteName, String name) {
         return disableRecommendationForSiteWithResponseAsync(resourceGroupName, siteName, name)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site name.
@@ -3111,7 +3088,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site name.

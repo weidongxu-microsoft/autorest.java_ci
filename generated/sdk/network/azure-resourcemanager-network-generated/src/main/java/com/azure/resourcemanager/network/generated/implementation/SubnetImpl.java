@@ -216,6 +216,10 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
         }
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public SubnetInner innerModel() {
         return this.innerObject;
     }

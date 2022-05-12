@@ -108,6 +108,10 @@ public final class RelayNamespaceImpl implements RelayNamespace, RelayNamespace.
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public RelayNamespaceInner innerModel() {
         return this.innerObject;
     }

@@ -31,6 +31,10 @@ public final class QueueServicePropertiesImpl
         return this.innerModel().cors();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public QueueServicePropertiesInner innerModel() {
         return this.innerObject;
     }

@@ -235,7 +235,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String workspaceName, String savedSearchId) {
         return deleteWithResponseAsync(resourceGroupName, workspaceName, savedSearchId)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -413,14 +413,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
     private Mono<SavedSearchInner> createOrUpdateAsync(
         String resourceGroupName, String workspaceName, String savedSearchId, SavedSearchInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, workspaceName, savedSearchId, parameters)
-            .flatMap(
-                (Response<SavedSearchInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -587,14 +580,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SavedSearchInner> getAsync(String resourceGroupName, String workspaceName, String savedSearchId) {
         return getWithResponseAsync(resourceGroupName, workspaceName, savedSearchId)
-            .flatMap(
-                (Response<SavedSearchInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -742,14 +728,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SavedSearchesListResultInner> listByWorkspaceAsync(String resourceGroupName, String workspaceName) {
         return listByWorkspaceWithResponseAsync(resourceGroupName, workspaceName)
-            .flatMap(
-                (Response<SavedSearchesListResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

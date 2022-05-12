@@ -781,14 +781,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
     private Mono<DscpConfigurationInner> getByResourceGroupAsync(
         String resourceGroupName, String dscpConfigurationName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, dscpConfigurationName)
-            .flatMap(
-                (Response<DscpConfigurationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

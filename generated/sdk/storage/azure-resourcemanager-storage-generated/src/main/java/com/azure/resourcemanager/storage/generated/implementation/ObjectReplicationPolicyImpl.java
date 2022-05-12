@@ -55,6 +55,10 @@ public final class ObjectReplicationPolicyImpl
         }
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ObjectReplicationPolicyInner innerModel() {
         return this.innerObject;
     }

@@ -72,6 +72,10 @@ public final class BlobServicePropertiesImpl
         return this.innerModel().lastAccessTimeTrackingPolicy();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public BlobServicePropertiesInner innerModel() {
         return this.innerObject;
     }

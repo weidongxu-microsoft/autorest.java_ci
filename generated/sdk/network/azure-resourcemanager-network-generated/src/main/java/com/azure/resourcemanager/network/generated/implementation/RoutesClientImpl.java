@@ -509,14 +509,7 @@ public final class RoutesClientImpl implements RoutesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RouteInner> getAsync(String resourceGroupName, String routeTableName, String routeName) {
         return getWithResponseAsync(resourceGroupName, routeTableName, routeName)
-            .flatMap(
-                (Response<RouteInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -72,6 +72,10 @@ public final class GalleryImageVersionImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public GalleryImageVersionInner innerModel() {
         return this.innerObject;
     }

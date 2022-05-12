@@ -82,6 +82,10 @@ public final class LocalNetworkGatewayImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public LocalNetworkGatewayInner innerModel() {
         return this.innerObject;
     }

@@ -270,14 +270,7 @@ public final class VirtualNetworkGatewayNatRulesClientImpl implements VirtualNet
     private Mono<VirtualNetworkGatewayNatRuleInner> getAsync(
         String resourceGroupName, String virtualNetworkGatewayName, String natRuleName) {
         return getWithResponseAsync(resourceGroupName, virtualNetworkGatewayName, natRuleName)
-            .flatMap(
-                (Response<VirtualNetworkGatewayNatRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

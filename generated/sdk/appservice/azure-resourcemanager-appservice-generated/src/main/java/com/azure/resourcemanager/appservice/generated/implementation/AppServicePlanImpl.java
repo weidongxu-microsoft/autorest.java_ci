@@ -158,6 +158,10 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public AppServicePlanInner innerModel() {
         return this.innerObject;
     }

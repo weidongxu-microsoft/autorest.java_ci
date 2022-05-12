@@ -613,14 +613,7 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
     private Mono<ExpressRouteConnectionInner> getAsync(
         String resourceGroupName, String expressRouteGatewayName, String connectionName) {
         return getWithResponseAsync(resourceGroupName, expressRouteGatewayName, connectionName)
-            .flatMap(
-                (Response<ExpressRouteConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1027,14 +1020,7 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteConnectionListInner> listAsync(String resourceGroupName, String expressRouteGatewayName) {
         return listWithResponseAsync(resourceGroupName, expressRouteGatewayName)
-            .flatMap(
-                (Response<ExpressRouteConnectionListInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

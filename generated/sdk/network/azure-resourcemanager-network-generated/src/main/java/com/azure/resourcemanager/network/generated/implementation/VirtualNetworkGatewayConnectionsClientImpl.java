@@ -702,14 +702,7 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     private Mono<VirtualNetworkGatewayConnectionInner> getByResourceGroupAsync(
         String resourceGroupName, String virtualNetworkGatewayConnectionName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, virtualNetworkGatewayConnectionName)
-            .flatMap(
-                (Response<VirtualNetworkGatewayConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1711,14 +1704,7 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     private Mono<ConnectionSharedKeyInner> getSharedKeyAsync(
         String resourceGroupName, String virtualNetworkGatewayConnectionName) {
         return getSharedKeyWithResponseAsync(resourceGroupName, virtualNetworkGatewayConnectionName)
-            .flatMap(
-                (Response<ConnectionSharedKeyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

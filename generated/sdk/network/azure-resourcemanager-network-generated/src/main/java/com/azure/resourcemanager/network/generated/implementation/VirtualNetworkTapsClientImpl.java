@@ -509,14 +509,7 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualNetworkTapInner> getByResourceGroupAsync(String resourceGroupName, String tapName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, tapName)
-            .flatMap(
-                (Response<VirtualNetworkTapInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -944,14 +937,7 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
     private Mono<VirtualNetworkTapInner> updateTagsAsync(
         String resourceGroupName, String tapName, TagsObject tapParameters) {
         return updateTagsWithResponseAsync(resourceGroupName, tapName, tapParameters)
-            .flatMap(
-                (Response<VirtualNetworkTapInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

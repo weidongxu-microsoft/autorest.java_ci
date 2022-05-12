@@ -328,14 +328,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
                 privateEndpointConnectionName,
                 privateEndpointConnection,
                 clientRequestId)
-            .flatMap(
-                (Response<PrivateEndpointConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -367,14 +360,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
                 privateEndpointConnectionName,
                 privateEndpointConnection,
                 clientRequestId)
-            .flatMap(
-                (Response<PrivateEndpointConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -603,14 +589,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         UUID clientRequestId) {
         return getWithResponseAsync(
                 resourceGroupName, searchServiceName, privateEndpointConnectionName, clientRequestId)
-            .flatMap(
-                (Response<PrivateEndpointConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -634,14 +613,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         final UUID clientRequestId = null;
         return getWithResponseAsync(
                 resourceGroupName, searchServiceName, privateEndpointConnectionName, clientRequestId)
-            .flatMap(
-                (Response<PrivateEndpointConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -853,14 +825,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         UUID clientRequestId) {
         return deleteWithResponseAsync(
                 resourceGroupName, searchServiceName, privateEndpointConnectionName, clientRequestId)
-            .flatMap(
-                (Response<PrivateEndpointConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -884,14 +849,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         final UUID clientRequestId = null;
         return deleteWithResponseAsync(
                 resourceGroupName, searchServiceName, privateEndpointConnectionName, clientRequestId)
-            .flatMap(
-                (Response<PrivateEndpointConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

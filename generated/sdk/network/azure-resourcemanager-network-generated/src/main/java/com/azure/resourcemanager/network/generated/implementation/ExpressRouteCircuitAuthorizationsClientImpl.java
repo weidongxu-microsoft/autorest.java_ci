@@ -524,14 +524,7 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
     private Mono<ExpressRouteCircuitAuthorizationInner> getAsync(
         String resourceGroupName, String circuitName, String authorizationName) {
         return getWithResponseAsync(resourceGroupName, circuitName, authorizationName)
-            .flatMap(
-                (Response<ExpressRouteCircuitAuthorizationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

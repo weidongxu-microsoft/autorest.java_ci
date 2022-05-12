@@ -402,7 +402,7 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> promoteAsync(String resourceGroupName, String clusterName, String scriptExecutionId) {
         return promoteWithResponseAsync(resourceGroupName, clusterName, scriptExecutionId)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**

@@ -77,6 +77,10 @@ public final class WcfRelayImpl implements WcfRelay, WcfRelay.Definition, WcfRel
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public WcfRelayInner innerModel() {
         return this.innerObject;
     }

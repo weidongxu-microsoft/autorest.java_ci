@@ -771,14 +771,7 @@ public final class ServicesClientImpl implements ServicesClient {
     private Mono<SearchServiceInner> updateAsync(
         String resourceGroupName, String searchServiceName, SearchServiceUpdate serviceParam, UUID clientRequestId) {
         return updateWithResponseAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId)
-            .flatMap(
-                (Response<SearchServiceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -799,14 +792,7 @@ public final class ServicesClientImpl implements ServicesClient {
         String resourceGroupName, String searchServiceName, SearchServiceUpdate serviceParam) {
         final UUID clientRequestId = null;
         return updateWithResponseAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId)
-            .flatMap(
-                (Response<SearchServiceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -981,14 +967,7 @@ public final class ServicesClientImpl implements ServicesClient {
     private Mono<SearchServiceInner> getByResourceGroupAsync(
         String resourceGroupName, String searchServiceName, UUID clientRequestId) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId)
-            .flatMap(
-                (Response<SearchServiceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1008,14 +987,7 @@ public final class ServicesClientImpl implements ServicesClient {
     private Mono<SearchServiceInner> getByResourceGroupAsync(String resourceGroupName, String searchServiceName) {
         final UUID clientRequestId = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId)
-            .flatMap(
-                (Response<SearchServiceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1181,7 +1153,7 @@ public final class ServicesClientImpl implements ServicesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String searchServiceName, UUID clientRequestId) {
         return deleteWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -1200,7 +1172,7 @@ public final class ServicesClientImpl implements ServicesClient {
     private Mono<Void> deleteAsync(String resourceGroupName, String searchServiceName) {
         final UUID clientRequestId = null;
         return deleteWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -1741,14 +1713,7 @@ public final class ServicesClientImpl implements ServicesClient {
     private Mono<CheckNameAvailabilityOutputInner> checkNameAvailabilityAsync(
         CheckNameAvailabilityInput checkNameAvailabilityInput, UUID clientRequestId) {
         return checkNameAvailabilityWithResponseAsync(checkNameAvailabilityInput, clientRequestId)
-            .flatMap(
-                (Response<CheckNameAvailabilityOutputInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1766,14 +1731,7 @@ public final class ServicesClientImpl implements ServicesClient {
         CheckNameAvailabilityInput checkNameAvailabilityInput) {
         final UUID clientRequestId = null;
         return checkNameAvailabilityWithResponseAsync(checkNameAvailabilityInput, clientRequestId)
-            .flatMap(
-                (Response<CheckNameAvailabilityOutputInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

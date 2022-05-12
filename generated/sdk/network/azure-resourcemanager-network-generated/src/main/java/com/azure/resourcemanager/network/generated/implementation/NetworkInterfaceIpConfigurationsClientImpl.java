@@ -415,14 +415,7 @@ public final class NetworkInterfaceIpConfigurationsClientImpl implements Network
     private Mono<NetworkInterfaceIpConfigurationInner> getAsync(
         String resourceGroupName, String networkInterfaceName, String ipConfigurationName) {
         return getWithResponseAsync(resourceGroupName, networkInterfaceName, ipConfigurationName)
-            .flatMap(
-                (Response<NetworkInterfaceIpConfigurationInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

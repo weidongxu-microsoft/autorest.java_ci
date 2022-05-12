@@ -827,14 +827,7 @@ public final class DevicesClientImpl implements DevicesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DataBoxEdgeDeviceInner> getByResourceGroupAsync(String resourceGroupName, String deviceName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, deviceName)
-            .flatMap(
-                (Response<DataBoxEdgeDeviceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -994,14 +987,7 @@ public final class DevicesClientImpl implements DevicesClient {
     private Mono<DataBoxEdgeDeviceInner> createOrUpdateAsync(
         String deviceName, String resourceGroupName, DataBoxEdgeDeviceInner dataBoxEdgeDevice) {
         return createOrUpdateWithResponseAsync(deviceName, resourceGroupName, dataBoxEdgeDevice)
-            .flatMap(
-                (Response<DataBoxEdgeDeviceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1389,14 +1375,7 @@ public final class DevicesClientImpl implements DevicesClient {
     private Mono<DataBoxEdgeDeviceInner> updateAsync(
         String deviceName, String resourceGroupName, DataBoxEdgeDevicePatch parameters) {
         return updateWithResponseAsync(deviceName, resourceGroupName, parameters)
-            .flatMap(
-                (Response<DataBoxEdgeDeviceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1774,14 +1753,7 @@ public final class DevicesClientImpl implements DevicesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GenerateCertResponseInner> generateCertificateAsync(String deviceName, String resourceGroupName) {
         return generateCertificateWithResponseAsync(deviceName, resourceGroupName)
-            .flatMap(
-                (Response<GenerateCertResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1927,14 +1899,7 @@ public final class DevicesClientImpl implements DevicesClient {
     private Mono<DataBoxEdgeDeviceExtendedInfoInner> getExtendedInformationAsync(
         String deviceName, String resourceGroupName) {
         return getExtendedInformationWithResponseAsync(deviceName, resourceGroupName)
-            .flatMap(
-                (Response<DataBoxEdgeDeviceExtendedInfoInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2310,14 +2275,7 @@ public final class DevicesClientImpl implements DevicesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkSettingsInner> getNetworkSettingsAsync(String deviceName, String resourceGroupName) {
         return getNetworkSettingsWithResponseAsync(deviceName, resourceGroupName)
-            .flatMap(
-                (Response<NetworkSettingsInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2972,14 +2930,7 @@ public final class DevicesClientImpl implements DevicesClient {
     private Mono<DataBoxEdgeDeviceExtendedInfoInner> updateExtendedInformationAsync(
         String deviceName, String resourceGroupName, DataBoxEdgeDeviceExtendedInfoPatch parameters) {
         return updateExtendedInformationWithResponseAsync(deviceName, resourceGroupName, parameters)
-            .flatMap(
-                (Response<DataBoxEdgeDeviceExtendedInfoInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3131,14 +3082,7 @@ public final class DevicesClientImpl implements DevicesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<UpdateSummaryInner> getUpdateSummaryAsync(String deviceName, String resourceGroupName) {
         return getUpdateSummaryWithResponseAsync(deviceName, resourceGroupName)
-            .flatMap(
-                (Response<UpdateSummaryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3301,14 +3245,7 @@ public final class DevicesClientImpl implements DevicesClient {
     private Mono<UploadCertificateResponseInner> uploadCertificateAsync(
         String deviceName, String resourceGroupName, UploadCertificateRequest parameters) {
         return uploadCertificateWithResponseAsync(deviceName, resourceGroupName, parameters)
-            .flatMap(
-                (Response<UploadCertificateResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

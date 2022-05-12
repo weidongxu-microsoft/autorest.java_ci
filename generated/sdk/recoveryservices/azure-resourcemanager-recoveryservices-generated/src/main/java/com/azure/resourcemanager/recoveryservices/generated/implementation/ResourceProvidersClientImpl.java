@@ -204,14 +204,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     private Mono<OperationResourceInner> getOperationStatusAsync(
         String resourceGroupName, String vaultName, String operationId) {
         return getOperationStatusWithResponseAsync(resourceGroupName, vaultName, operationId)
-            .flatMap(
-                (Response<OperationResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -366,14 +359,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultInner> getOperationResultAsync(String resourceGroupName, String vaultName, String operationId) {
         return getOperationResultWithResponseAsync(resourceGroupName, vaultName, operationId)
-            .flatMap(
-                (Response<VaultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

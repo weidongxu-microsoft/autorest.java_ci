@@ -587,14 +587,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<FrontDoorInner> getByResourceGroupAsync(String resourceGroupName, String frontDoorName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, frontDoorName)
-            .flatMap(
-                (Response<FrontDoorInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1272,14 +1265,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
     private Mono<ValidateCustomDomainOutputInner> validateCustomDomainAsync(
         String resourceGroupName, String frontDoorName, ValidateCustomDomainInput customDomainProperties) {
         return validateCustomDomainWithResponseAsync(resourceGroupName, frontDoorName, customDomainProperties)
-            .flatMap(
-                (Response<ValidateCustomDomainOutputInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

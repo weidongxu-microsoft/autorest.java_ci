@@ -74,6 +74,13 @@ public interface StaticSiteCustomDomainOverviewArmResource {
     String errorMessage();
 
     /**
+     * Gets the name of the resource group.
+     *
+     * @return the name of the resource group.
+     */
+    String resourceGroupName();
+
+    /**
      * Gets the inner
      * com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCustomDomainOverviewArmResourceInner
      * object.
@@ -210,7 +217,7 @@ public interface StaticSiteCustomDomainOverviewArmResource {
     StaticSiteCustomDomainOverviewArmResource refresh(Context context);
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
      *
      * @param staticSiteCustomDomainRequestPropertiesEnvelope A JSON representation of the static site custom domain
      *     request properties. See example.
@@ -223,7 +230,7 @@ public interface StaticSiteCustomDomainOverviewArmResource {
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope);
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
      *
      * @param staticSiteCustomDomainRequestPropertiesEnvelope A JSON representation of the static site custom domain
      *     request properties. See example.

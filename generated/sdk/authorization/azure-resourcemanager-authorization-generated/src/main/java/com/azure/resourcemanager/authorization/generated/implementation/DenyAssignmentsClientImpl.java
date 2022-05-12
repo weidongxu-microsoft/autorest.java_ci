@@ -1052,15 +1052,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DenyAssignmentInner> getAsync(String scope, String denyAssignmentId) {
-        return getWithResponseAsync(scope, denyAssignmentId)
-            .flatMap(
-                (Response<DenyAssignmentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(scope, denyAssignmentId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1171,15 +1163,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DenyAssignmentInner> getByIdAsync(String denyAssignmentId) {
-        return getByIdWithResponseAsync(denyAssignmentId)
-            .flatMap(
-                (Response<DenyAssignmentInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getByIdWithResponseAsync(denyAssignmentId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -1475,14 +1475,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     private Mono<DnsNameAvailabilityResultInner> checkDnsNameAvailabilityAsync(
         String location, String domainNameLabel) {
         return checkDnsNameAvailabilityWithResponseAsync(location, domainNameLabel)
-            .flatMap(
-                (Response<DnsNameAvailabilityResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1627,14 +1620,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     private Mono<VirtualWanSecurityProvidersInner> supportedSecurityProvidersAsync(
         String resourceGroupName, String virtualWanName) {
         return supportedSecurityProvidersWithResponseAsync(resourceGroupName, virtualWanName)
-            .flatMap(
-                (Response<VirtualWanSecurityProvidersInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

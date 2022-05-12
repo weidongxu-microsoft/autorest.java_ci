@@ -74,6 +74,10 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public PremierAddOnInner innerModel() {
         return this.innerObject;
     }

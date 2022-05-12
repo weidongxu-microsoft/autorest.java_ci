@@ -710,14 +710,7 @@ public final class InboundNatRulesClientImpl implements InboundNatRulesClient {
     private Mono<InboundNatRuleInner> getAsync(
         String resourceGroupName, String loadBalancerName, String inboundNatRuleName, String expand) {
         return getWithResponseAsync(resourceGroupName, loadBalancerName, inboundNatRuleName, expand)
-            .flatMap(
-                (Response<InboundNatRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -736,14 +729,7 @@ public final class InboundNatRulesClientImpl implements InboundNatRulesClient {
         String resourceGroupName, String loadBalancerName, String inboundNatRuleName) {
         final String expand = null;
         return getWithResponseAsync(resourceGroupName, loadBalancerName, inboundNatRuleName, expand)
-            .flatMap(
-                (Response<InboundNatRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

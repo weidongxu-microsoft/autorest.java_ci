@@ -585,14 +585,7 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
     private Mono<WebApplicationFirewallPolicyInner> getByResourceGroupAsync(
         String resourceGroupName, String policyName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, policyName)
-            .flatMap(
-                (Response<WebApplicationFirewallPolicyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -752,14 +745,7 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
     private Mono<WebApplicationFirewallPolicyInner> createOrUpdateAsync(
         String resourceGroupName, String policyName, WebApplicationFirewallPolicyInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, policyName, parameters)
-            .flatMap(
-                (Response<WebApplicationFirewallPolicyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

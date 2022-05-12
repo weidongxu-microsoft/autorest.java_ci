@@ -79,6 +79,10 @@ public final class ActivityLogAlertResourceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ActivityLogAlertResourceInner innerModel() {
         return this.innerObject;
     }

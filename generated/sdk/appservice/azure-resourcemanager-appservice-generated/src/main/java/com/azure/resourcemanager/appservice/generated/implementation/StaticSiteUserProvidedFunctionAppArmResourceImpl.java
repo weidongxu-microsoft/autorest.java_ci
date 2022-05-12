@@ -45,6 +45,10 @@ public final class StaticSiteUserProvidedFunctionAppArmResourceImpl
         return this.innerModel().createdOn();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public StaticSiteUserProvidedFunctionAppArmResourceInner innerModel() {
         return this.innerObject;
     }

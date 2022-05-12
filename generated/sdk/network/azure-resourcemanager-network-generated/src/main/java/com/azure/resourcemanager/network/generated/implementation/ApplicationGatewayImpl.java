@@ -366,6 +366,10 @@ public final class ApplicationGatewayImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ApplicationGatewayInner innerModel() {
         return this.innerObject;
     }

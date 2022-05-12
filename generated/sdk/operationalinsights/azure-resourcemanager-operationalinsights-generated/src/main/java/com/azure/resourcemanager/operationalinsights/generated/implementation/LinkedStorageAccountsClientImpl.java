@@ -276,14 +276,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
         DataSourceType dataSourceType,
         LinkedStorageAccountsResourceInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, workspaceName, dataSourceType, parameters)
-            .flatMap(
-                (Response<LinkedStorageAccountsResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -449,7 +442,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String workspaceName, DataSourceType dataSourceType) {
         return deleteWithResponseAsync(resourceGroupName, workspaceName, dataSourceType)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -609,14 +602,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
     private Mono<LinkedStorageAccountsResourceInner> getAsync(
         String resourceGroupName, String workspaceName, DataSourceType dataSourceType) {
         return getWithResponseAsync(resourceGroupName, workspaceName, dataSourceType)
-            .flatMap(
-                (Response<LinkedStorageAccountsResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

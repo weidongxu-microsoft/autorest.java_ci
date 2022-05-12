@@ -269,14 +269,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<CertificateListDescriptionInner> listByIotHubAsync(String resourceGroupName, String resourceName) {
         return listByIotHubWithResponseAsync(resourceGroupName, resourceName)
-            .flatMap(
-                (Response<CertificateListDescriptionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -432,14 +425,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     private Mono<CertificateDescriptionInner> getAsync(
         String resourceGroupName, String resourceName, String certificateName) {
         return getWithResponseAsync(resourceGroupName, resourceName, certificateName)
-            .flatMap(
-                (Response<CertificateDescriptionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -638,14 +624,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
         String ifMatch) {
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, resourceName, certificateName, certificateDescription, ifMatch)
-            .flatMap(
-                (Response<CertificateDescriptionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -669,14 +648,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
         final String ifMatch = null;
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, resourceName, certificateName, certificateDescription, ifMatch)
-            .flatMap(
-                (Response<CertificateDescriptionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -862,7 +834,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     private Mono<Void> deleteAsync(
         String resourceGroupName, String resourceName, String certificateName, String ifMatch) {
         return deleteWithResponseAsync(resourceGroupName, resourceName, certificateName, ifMatch)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -1035,14 +1007,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     private Mono<CertificateWithNonceDescriptionInner> generateVerificationCodeAsync(
         String resourceGroupName, String resourceName, String certificateName, String ifMatch) {
         return generateVerificationCodeWithResponseAsync(resourceGroupName, resourceName, certificateName, ifMatch)
-            .flatMap(
-                (Response<CertificateWithNonceDescriptionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1256,14 +1221,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
         CertificateVerificationDescription certificateVerificationBody) {
         return verifyWithResponseAsync(
                 resourceGroupName, resourceName, certificateName, ifMatch, certificateVerificationBody)
-            .flatMap(
-                (Response<CertificateDescriptionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

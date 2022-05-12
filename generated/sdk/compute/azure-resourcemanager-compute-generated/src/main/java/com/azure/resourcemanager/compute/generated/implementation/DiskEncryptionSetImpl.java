@@ -94,6 +94,10 @@ public final class DiskEncryptionSetImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public DiskEncryptionSetInner innerModel() {
         return this.innerObject;
     }

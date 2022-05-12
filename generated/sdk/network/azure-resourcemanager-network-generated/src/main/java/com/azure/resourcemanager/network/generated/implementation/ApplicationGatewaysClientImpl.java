@@ -688,14 +688,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     private Mono<ApplicationGatewayInner> getByResourceGroupAsync(
         String resourceGroupName, String applicationGatewayName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, applicationGatewayName)
-            .flatMap(
-                (Response<ApplicationGatewayInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1132,14 +1125,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     private Mono<ApplicationGatewayInner> updateTagsAsync(
         String resourceGroupName, String applicationGatewayName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, applicationGatewayName, parameters)
-            .flatMap(
-                (Response<ApplicationGatewayInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2741,15 +2727,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<String>> listAvailableServerVariablesAsync() {
-        return listAvailableServerVariablesWithResponseAsync()
-            .flatMap(
-                (Response<List<String>> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listAvailableServerVariablesWithResponseAsync().flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2859,15 +2837,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<String>> listAvailableRequestHeadersAsync() {
-        return listAvailableRequestHeadersWithResponseAsync()
-            .flatMap(
-                (Response<List<String>> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listAvailableRequestHeadersWithResponseAsync().flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2977,15 +2947,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<String>> listAvailableResponseHeadersAsync() {
-        return listAvailableResponseHeadersWithResponseAsync()
-            .flatMap(
-                (Response<List<String>> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listAvailableResponseHeadersWithResponseAsync().flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3097,15 +3059,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ApplicationGatewayAvailableWafRuleSetsResultInner> listAvailableWafRuleSetsAsync() {
-        return listAvailableWafRuleSetsWithResponseAsync()
-            .flatMap(
-                (Response<ApplicationGatewayAvailableWafRuleSetsResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listAvailableWafRuleSetsWithResponseAsync().flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3217,15 +3171,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ApplicationGatewayAvailableSslOptionsInner> listAvailableSslOptionsAsync() {
-        return listAvailableSslOptionsWithResponseAsync()
-            .flatMap(
-                (Response<ApplicationGatewayAvailableSslOptionsInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listAvailableSslOptionsWithResponseAsync().flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -3505,14 +3451,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ApplicationGatewaySslPredefinedPolicyInner> getSslPredefinedPolicyAsync(String predefinedPolicyName) {
         return getSslPredefinedPolicyWithResponseAsync(predefinedPolicyName)
-            .flatMap(
-                (Response<ApplicationGatewaySslPredefinedPolicyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

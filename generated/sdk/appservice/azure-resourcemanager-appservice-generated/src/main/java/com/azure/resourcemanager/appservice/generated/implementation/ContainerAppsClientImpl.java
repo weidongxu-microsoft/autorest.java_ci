@@ -584,14 +584,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ContainerAppInner> getByResourceGroupAsync(String resourceGroupName, String name) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<ContainerAppInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -627,7 +620,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -683,7 +676,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -737,7 +730,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -763,7 +756,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -787,7 +780,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -804,7 +797,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -822,7 +815,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -841,7 +834,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -861,7 +854,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -878,7 +871,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Create or update a Container App.
+     * Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -896,7 +889,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -943,7 +936,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -989,7 +982,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1008,7 +1001,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1029,7 +1022,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1044,7 +1037,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1060,7 +1053,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1075,7 +1068,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1091,7 +1084,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1105,7 +1098,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Description for Delete a Container App.
+     * Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1212,15 +1205,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SecretsCollectionInner> listSecretsAsync(String name) {
-        return listSecretsWithResponseAsync(name)
-            .flatMap(
-                (Response<SecretsCollectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listSecretsWithResponseAsync(name).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

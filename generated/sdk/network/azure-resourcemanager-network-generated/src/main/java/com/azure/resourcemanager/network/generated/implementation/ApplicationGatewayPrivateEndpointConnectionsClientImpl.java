@@ -876,14 +876,7 @@ public final class ApplicationGatewayPrivateEndpointConnectionsClientImpl
     private Mono<ApplicationGatewayPrivateEndpointConnectionInner> getAsync(
         String resourceGroupName, String applicationGatewayName, String connectionName) {
         return getWithResponseAsync(resourceGroupName, applicationGatewayName, connectionName)
-            .flatMap(
-                (Response<ApplicationGatewayPrivateEndpointConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

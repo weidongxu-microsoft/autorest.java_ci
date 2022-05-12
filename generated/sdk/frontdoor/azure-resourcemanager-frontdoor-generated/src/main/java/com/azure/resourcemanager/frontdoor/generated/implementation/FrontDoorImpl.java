@@ -157,6 +157,10 @@ public final class FrontDoorImpl implements FrontDoor, FrontDoor.Definition, Fro
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public FrontDoorInner innerModel() {
         return this.innerObject;
     }

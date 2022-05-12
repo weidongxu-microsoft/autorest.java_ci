@@ -159,14 +159,7 @@ public final class CreditsClientImpl implements CreditsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<CreditSummaryInner> getAsync(String billingAccountId, String billingProfileId) {
         return getWithResponseAsync(billingAccountId, billingProfileId)
-            .flatMap(
-                (Response<CreditSummaryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

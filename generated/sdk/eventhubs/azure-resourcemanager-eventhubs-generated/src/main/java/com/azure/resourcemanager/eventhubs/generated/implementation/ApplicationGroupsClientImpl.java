@@ -457,14 +457,7 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
         String resourceGroupName, String namespaceName, String applicationGroupName, ApplicationGroupInner parameters) {
         return createOrUpdateApplicationGroupWithResponseAsync(
                 resourceGroupName, namespaceName, applicationGroupName, parameters)
-            .flatMap(
-                (Response<ApplicationGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -631,7 +624,7 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, String applicationGroupName) {
         return deleteWithResponseAsync(resourceGroupName, namespaceName, applicationGroupName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -788,14 +781,7 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
     private Mono<ApplicationGroupInner> getAsync(
         String resourceGroupName, String namespaceName, String applicationGroupName) {
         return getWithResponseAsync(resourceGroupName, namespaceName, applicationGroupName)
-            .flatMap(
-                (Response<ApplicationGroupInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

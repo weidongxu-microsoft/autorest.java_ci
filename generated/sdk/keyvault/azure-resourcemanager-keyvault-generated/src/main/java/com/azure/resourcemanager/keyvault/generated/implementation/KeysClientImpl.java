@@ -300,14 +300,7 @@ public final class KeysClientImpl implements KeysClient {
     private Mono<KeyInner> createIfNotExistAsync(
         String resourceGroupName, String vaultName, String keyName, KeyCreateParameters parameters) {
         return createIfNotExistWithResponseAsync(resourceGroupName, vaultName, keyName, parameters)
-            .flatMap(
-                (Response<KeyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -471,14 +464,7 @@ public final class KeysClientImpl implements KeysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<KeyInner> getAsync(String resourceGroupName, String vaultName, String keyName) {
         return getWithResponseAsync(resourceGroupName, vaultName, keyName)
-            .flatMap(
-                (Response<KeyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -824,14 +810,7 @@ public final class KeysClientImpl implements KeysClient {
     private Mono<KeyInner> getVersionAsync(
         String resourceGroupName, String vaultName, String keyName, String keyVersion) {
         return getVersionWithResponseAsync(resourceGroupName, vaultName, keyName, keyVersion)
-            .flatMap(
-                (Response<KeyInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

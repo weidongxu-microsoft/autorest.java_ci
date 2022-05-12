@@ -619,14 +619,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
         AuthorizationRuleInner parameters) {
         return createOrUpdateAuthorizationRuleWithResponseAsync(
                 resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters)
-            .flatMap(
-                (Response<AuthorizationRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -822,14 +815,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
         String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
         return getAuthorizationRuleWithResponseAsync(
                 resourceGroupName, namespaceName, eventHubName, authorizationRuleName)
-            .flatMap(
-                (Response<AuthorizationRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1012,7 +998,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
         String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
         return deleteAuthorizationRuleWithResponseAsync(
                 resourceGroupName, namespaceName, eventHubName, authorizationRuleName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -1195,14 +1181,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
     private Mono<AccessKeysInner> listKeysAsync(
         String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
         return listKeysWithResponseAsync(resourceGroupName, namespaceName, eventHubName, authorizationRuleName)
-            .flatMap(
-                (Response<AccessKeysInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1410,14 +1389,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
         RegenerateAccessKeyParameters parameters) {
         return regenerateKeysWithResponseAsync(
                 resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters)
-            .flatMap(
-                (Response<AccessKeysInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1839,14 +1811,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
     private Mono<EventhubInner> createOrUpdateAsync(
         String resourceGroupName, String namespaceName, String eventHubName, EventhubInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, eventHubName, parameters)
-            .flatMap(
-                (Response<EventhubInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2008,8 +1973,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, String eventHubName) {
-        return deleteWithResponseAsync(resourceGroupName, namespaceName, eventHubName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, namespaceName, eventHubName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -2165,14 +2129,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EventhubInner> getAsync(String resourceGroupName, String namespaceName, String eventHubName) {
         return getWithResponseAsync(resourceGroupName, namespaceName, eventHubName)
-            .flatMap(
-                (Response<EventhubInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

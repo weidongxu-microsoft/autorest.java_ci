@@ -62,6 +62,10 @@ public final class DeploymentExtendedImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public DeploymentExtendedInner innerModel() {
         return this.innerObject;
     }

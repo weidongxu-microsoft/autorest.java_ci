@@ -524,14 +524,7 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
     private Mono<SecurityRuleInner> getAsync(
         String resourceGroupName, String networkSecurityGroupName, String securityRuleName) {
         return getWithResponseAsync(resourceGroupName, networkSecurityGroupName, securityRuleName)
-            .flatMap(
-                (Response<SecurityRuleInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

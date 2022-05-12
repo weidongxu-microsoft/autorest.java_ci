@@ -558,14 +558,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
     private Mono<LoadBalancerInner> getByResourceGroupAsync(
         String resourceGroupName, String loadBalancerName, String expand) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, loadBalancerName, expand)
-            .flatMap(
-                (Response<LoadBalancerInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -582,14 +575,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
     private Mono<LoadBalancerInner> getByResourceGroupAsync(String resourceGroupName, String loadBalancerName) {
         final String expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, loadBalancerName, expand)
-            .flatMap(
-                (Response<LoadBalancerInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1020,14 +1006,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
     private Mono<LoadBalancerInner> updateTagsAsync(
         String resourceGroupName, String loadBalancerName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, loadBalancerName, parameters)
-            .flatMap(
-                (Response<LoadBalancerInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

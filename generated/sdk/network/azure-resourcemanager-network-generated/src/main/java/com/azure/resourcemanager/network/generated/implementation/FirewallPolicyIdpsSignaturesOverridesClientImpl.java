@@ -253,14 +253,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
     private Mono<SignaturesOverridesInner> patchAsync(
         String resourceGroupName, String firewallPolicyName, SignaturesOverridesInner parameters) {
         return patchWithResponseAsync(resourceGroupName, firewallPolicyName, parameters)
-            .flatMap(
-                (Response<SignaturesOverridesInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -425,14 +418,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
     private Mono<SignaturesOverridesInner> putAsync(
         String resourceGroupName, String firewallPolicyName, SignaturesOverridesInner parameters) {
         return putWithResponseAsync(resourceGroupName, firewallPolicyName, parameters)
-            .flatMap(
-                (Response<SignaturesOverridesInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -581,14 +567,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SignaturesOverridesInner> getAsync(String resourceGroupName, String firewallPolicyName) {
         return getWithResponseAsync(resourceGroupName, firewallPolicyName)
-            .flatMap(
-                (Response<SignaturesOverridesInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -734,14 +713,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SignaturesOverridesListInner> listAsync(String resourceGroupName, String firewallPolicyName) {
         return listWithResponseAsync(resourceGroupName, firewallPolicyName)
-            .flatMap(
-                (Response<SignaturesOverridesListInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -136,15 +136,7 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VMInsightsOnboardingStatusInner> getOnboardingStatusAsync(String resourceUri) {
-        return getOnboardingStatusWithResponseAsync(resourceUri)
-            .flatMap(
-                (Response<VMInsightsOnboardingStatusInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getOnboardingStatusWithResponseAsync(resourceUri).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

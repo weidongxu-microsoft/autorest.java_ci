@@ -598,14 +598,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitInner> getByResourceGroupAsync(String resourceGroupName, String circuitName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, circuitName)
-            .flatMap(
-                (Response<ExpressRouteCircuitInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1034,14 +1027,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     private Mono<ExpressRouteCircuitInner> updateTagsAsync(
         String resourceGroupName, String circuitName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, circuitName, parameters)
-            .flatMap(
-                (Response<ExpressRouteCircuitInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2101,14 +2087,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitStatsInner> getStatsAsync(String resourceGroupName, String circuitName) {
         return getStatsWithResponseAsync(resourceGroupName, circuitName)
-            .flatMap(
-                (Response<ExpressRouteCircuitStatsInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -2264,14 +2243,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     private Mono<ExpressRouteCircuitStatsInner> getPeeringStatsAsync(
         String resourceGroupName, String circuitName, String peeringName) {
         return getPeeringStatsWithResponseAsync(resourceGroupName, circuitName, peeringName)
-            .flatMap(
-                (Response<ExpressRouteCircuitStatsInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

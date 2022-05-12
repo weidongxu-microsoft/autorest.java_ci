@@ -486,14 +486,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
     private Mono<ScriptInner> getAsync(
         String resourceGroupName, String clusterName, String databaseName, String scriptName) {
         return getWithResponseAsync(resourceGroupName, clusterName, databaseName, scriptName)
-            .flatMap(
-                (Response<ScriptInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1602,14 +1595,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
     private Mono<CheckNameResultInner> checkNameAvailabilityAsync(
         String resourceGroupName, String clusterName, String databaseName, ScriptCheckNameRequest scriptName) {
         return checkNameAvailabilityWithResponseAsync(resourceGroupName, clusterName, databaseName, scriptName)
-            .flatMap(
-                (Response<CheckNameResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

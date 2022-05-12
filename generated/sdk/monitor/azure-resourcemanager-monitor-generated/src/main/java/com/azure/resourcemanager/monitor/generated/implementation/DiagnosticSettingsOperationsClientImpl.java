@@ -184,15 +184,7 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiagnosticSettingsResourceInner> getAsync(String resourceUri, String name) {
-        return getWithResponseAsync(resourceUri, name)
-            .flatMap(
-                (Response<DiagnosticSettingsResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(resourceUri, name).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -322,14 +314,7 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
     private Mono<DiagnosticSettingsResourceInner> createOrUpdateAsync(
         String resourceUri, String name, DiagnosticSettingsResourceInner parameters) {
         return createOrUpdateWithResponseAsync(resourceUri, name, parameters)
-            .flatMap(
-                (Response<DiagnosticSettingsResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -442,7 +427,7 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceUri, String name) {
-        return deleteWithResponseAsync(resourceUri, name).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceUri, name).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -543,15 +528,7 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiagnosticSettingsResourceCollectionInner> listAsync(String resourceUri) {
-        return listWithResponseAsync(resourceUri)
-            .flatMap(
-                (Response<DiagnosticSettingsResourceCollectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return listWithResponseAsync(resourceUri).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

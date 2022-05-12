@@ -294,14 +294,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
     private Mono<ActionGroupResourceInner> createOrUpdateAsync(
         String resourceGroupName, String actionGroupName, ActionGroupResourceInner actionGroup) {
         return createOrUpdateWithResponseAsync(resourceGroupName, actionGroupName, actionGroup)
-            .flatMap(
-                (Response<ActionGroupResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -450,14 +443,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ActionGroupResourceInner> getByResourceGroupAsync(String resourceGroupName, String actionGroupName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, actionGroupName)
-            .flatMap(
-                (Response<ActionGroupResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -601,8 +587,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String actionGroupName) {
-        return deleteWithResponseAsync(resourceGroupName, actionGroupName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, actionGroupName).flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -764,14 +749,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
     private Mono<ActionGroupResourceInner> updateAsync(
         String resourceGroupName, String actionGroupName, ActionGroupPatchBody actionGroupPatch) {
         return updateWithResponseAsync(resourceGroupName, actionGroupName, actionGroupPatch)
-            .flatMap(
-                (Response<ActionGroupResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1215,7 +1193,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
     private Mono<Void> enableReceiverAsync(
         String resourceGroupName, String actionGroupName, EnableRequest enableRequest) {
         return enableReceiverWithResponseAsync(resourceGroupName, actionGroupName, enableRequest)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**

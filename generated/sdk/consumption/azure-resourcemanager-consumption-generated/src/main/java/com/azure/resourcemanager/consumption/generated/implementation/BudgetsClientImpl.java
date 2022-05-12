@@ -425,15 +425,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<BudgetInner> getAsync(String scope, String budgetName) {
-        return getWithResponseAsync(scope, budgetName)
-            .flatMap(
-                (Response<BudgetInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(scope, budgetName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -628,14 +620,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<BudgetInner> createOrUpdateAsync(String scope, String budgetName, BudgetInner parameters) {
         return createOrUpdateWithResponseAsync(scope, budgetName, parameters)
-            .flatMap(
-                (Response<BudgetInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -808,7 +793,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String scope, String budgetName) {
-        return deleteWithResponseAsync(scope, budgetName).flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(scope, budgetName).flatMap(ignored -> Mono.empty());
     }
 
     /**

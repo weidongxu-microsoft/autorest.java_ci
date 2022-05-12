@@ -65,6 +65,10 @@ public final class HybridConnectionImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public HybridConnectionInner innerModel() {
         return this.innerObject;
     }

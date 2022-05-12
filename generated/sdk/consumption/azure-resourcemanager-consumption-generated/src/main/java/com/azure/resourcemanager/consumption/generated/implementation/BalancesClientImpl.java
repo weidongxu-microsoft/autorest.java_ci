@@ -153,15 +153,7 @@ public final class BalancesClientImpl implements BalancesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<BalanceInner> getByBillingAccountAsync(String billingAccountId) {
-        return getByBillingAccountWithResponseAsync(billingAccountId)
-            .flatMap(
-                (Response<BalanceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getByBillingAccountWithResponseAsync(billingAccountId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -296,14 +288,7 @@ public final class BalancesClientImpl implements BalancesClient {
     private Mono<BalanceInner> getForBillingPeriodByBillingAccountAsync(
         String billingAccountId, String billingPeriodName) {
         return getForBillingPeriodByBillingAccountWithResponseAsync(billingAccountId, billingPeriodName)
-            .flatMap(
-                (Response<BalanceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

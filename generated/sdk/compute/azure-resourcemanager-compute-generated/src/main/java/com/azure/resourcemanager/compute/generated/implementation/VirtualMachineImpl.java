@@ -229,6 +229,10 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualMachineInner innerModel() {
         return this.innerObject;
     }

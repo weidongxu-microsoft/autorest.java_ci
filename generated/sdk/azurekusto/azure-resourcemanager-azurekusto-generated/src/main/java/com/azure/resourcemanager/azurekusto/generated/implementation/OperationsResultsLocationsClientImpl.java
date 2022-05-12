@@ -164,7 +164,7 @@ public final class OperationsResultsLocationsClientImpl implements OperationsRes
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> getAsync(String location, String operationId) {
-        return getWithResponseAsync(location, operationId).flatMap((Response<Void> res) -> Mono.empty());
+        return getWithResponseAsync(location, operationId).flatMap(ignored -> Mono.empty());
     }
 
     /**

@@ -157,6 +157,10 @@ public final class PrivateLinkServiceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public PrivateLinkServiceInner innerModel() {
         return this.innerObject;
     }

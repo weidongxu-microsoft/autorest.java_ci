@@ -33,6 +33,10 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
         return this.innerModel().value();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public IdentifierInner innerModel() {
         return this.innerObject;
     }

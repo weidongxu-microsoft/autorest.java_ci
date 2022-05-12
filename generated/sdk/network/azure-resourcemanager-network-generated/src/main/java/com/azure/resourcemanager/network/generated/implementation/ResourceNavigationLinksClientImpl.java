@@ -192,14 +192,7 @@ public final class ResourceNavigationLinksClientImpl implements ResourceNavigati
     private Mono<ResourceNavigationLinksListResultInner> listAsync(
         String resourceGroupName, String virtualNetworkName, String subnetName) {
         return listWithResponseAsync(resourceGroupName, virtualNetworkName, subnetName)
-            .flatMap(
-                (Response<ResourceNavigationLinksListResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

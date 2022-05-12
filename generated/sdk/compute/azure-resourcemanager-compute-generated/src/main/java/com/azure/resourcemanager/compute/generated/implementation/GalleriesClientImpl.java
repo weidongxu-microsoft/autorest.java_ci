@@ -863,14 +863,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
     private Mono<GalleryInner> getByResourceGroupAsync(
         String resourceGroupName, String galleryName, SelectPermissions select, GalleryExpandParams expand) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, galleryName, select, expand)
-            .flatMap(
-                (Response<GalleryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -889,14 +882,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
         final SelectPermissions select = null;
         final GalleryExpandParams expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, galleryName, select, expand)
-            .flatMap(
-                (Response<GalleryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

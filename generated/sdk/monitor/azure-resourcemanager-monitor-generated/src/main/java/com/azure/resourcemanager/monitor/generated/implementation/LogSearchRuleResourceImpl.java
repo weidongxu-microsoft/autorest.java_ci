@@ -109,6 +109,10 @@ public final class LogSearchRuleResourceImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public LogSearchRuleResourceInner innerModel() {
         return this.innerObject;
     }

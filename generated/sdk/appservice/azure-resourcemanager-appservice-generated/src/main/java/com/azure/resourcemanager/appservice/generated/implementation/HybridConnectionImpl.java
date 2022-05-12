@@ -62,6 +62,10 @@ public final class HybridConnectionImpl
         return this.innerModel().serviceBusSuffix();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public HybridConnectionInner innerModel() {
         return this.innerObject;
     }

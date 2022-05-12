@@ -136,6 +136,10 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public PublicIpPrefixInner innerModel() {
         return this.innerObject;
     }

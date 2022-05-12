@@ -452,14 +452,7 @@ public final class ContainerAppsRevisionsClientImpl implements ContainerAppsRevi
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RevisionInner> getRevisionAsync(String resourceGroupName, String containerAppName, String name) {
         return getRevisionWithResponseAsync(resourceGroupName, containerAppName, name)
-            .flatMap(
-                (Response<RevisionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -616,7 +609,7 @@ public final class ContainerAppsRevisionsClientImpl implements ContainerAppsRevi
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> activateRevisionAsync(String resourceGroupName, String containerAppName, String name) {
         return activateRevisionWithResponseAsync(resourceGroupName, containerAppName, name)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -772,7 +765,7 @@ public final class ContainerAppsRevisionsClientImpl implements ContainerAppsRevi
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deactivateRevisionAsync(String resourceGroupName, String containerAppName, String name) {
         return deactivateRevisionWithResponseAsync(resourceGroupName, containerAppName, name)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**
@@ -928,7 +921,7 @@ public final class ContainerAppsRevisionsClientImpl implements ContainerAppsRevi
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> restartRevisionAsync(String resourceGroupName, String containerAppName, String name) {
         return restartRevisionWithResponseAsync(resourceGroupName, containerAppName, name)
-            .flatMap((Response<Void> res) -> Mono.empty());
+            .flatMap(ignored -> Mono.empty());
     }
 
     /**

@@ -174,6 +174,10 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualHubInner innerModel() {
         return this.innerObject;
     }

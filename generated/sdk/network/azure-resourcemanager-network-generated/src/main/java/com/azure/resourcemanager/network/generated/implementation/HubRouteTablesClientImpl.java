@@ -589,14 +589,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<HubRouteTableInner> getAsync(String resourceGroupName, String virtualHubName, String routeTableName) {
         return getWithResponseAsync(resourceGroupName, virtualHubName, routeTableName)
-            .flatMap(
-                (Response<HubRouteTableInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

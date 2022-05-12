@@ -178,15 +178,7 @@ public final class RateCardsClientImpl implements RateCardsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ResourceRateCardInfoInner> getAsync(String filter) {
-        return getWithResponseAsync(filter)
-            .flatMap(
-                (Response<ResourceRateCardInfoInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(filter).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -709,14 +709,7 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
     private Mono<ExpressRouteCrossConnectionPeeringInner> getAsync(
         String resourceGroupName, String crossConnectionName, String peeringName) {
         return getWithResponseAsync(resourceGroupName, crossConnectionName, peeringName)
-            .flatMap(
-                (Response<ExpressRouteCrossConnectionPeeringInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

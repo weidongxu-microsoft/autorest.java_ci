@@ -125,6 +125,10 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
         return this.innerModel().enableNfsV3AllSquash();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public BlobContainerInner innerModel() {
         return this.innerObject;
     }

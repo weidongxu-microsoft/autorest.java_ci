@@ -187,15 +187,7 @@ public final class WebCategoriesClientImpl implements WebCategoriesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AzureWebCategoryInner> getAsync(String name, String expand) {
-        return getWithResponseAsync(name, expand)
-            .flatMap(
-                (Response<AzureWebCategoryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(name, expand).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -210,15 +202,7 @@ public final class WebCategoriesClientImpl implements WebCategoriesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AzureWebCategoryInner> getAsync(String name) {
         final String expand = null;
-        return getWithResponseAsync(name, expand)
-            .flatMap(
-                (Response<AzureWebCategoryInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(name, expand).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -66,6 +66,10 @@ public final class HubIpConfigurationImpl
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public HubIpConfigurationInner innerModel() {
         return this.innerObject;
     }

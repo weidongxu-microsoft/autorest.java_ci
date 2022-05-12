@@ -37,6 +37,10 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
         return this.innerModel().vpnPackageUri();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VnetGatewayInner innerModel() {
         return this.innerObject;
     }

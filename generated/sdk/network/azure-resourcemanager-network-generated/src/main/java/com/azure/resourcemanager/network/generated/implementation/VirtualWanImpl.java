@@ -100,6 +100,10 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualWanInner innerModel() {
         return this.innerObject;
     }

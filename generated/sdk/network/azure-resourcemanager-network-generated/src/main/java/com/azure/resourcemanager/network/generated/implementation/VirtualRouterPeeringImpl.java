@@ -43,6 +43,10 @@ public final class VirtualRouterPeeringImpl
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public VirtualRouterPeeringInner innerModel() {
         return this.innerObject;
     }

@@ -201,14 +201,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     private Mono<QueryPerformanceInsightResetDataResultInner> resetQueryPerformanceInsightDataAsync(
         String resourceGroupName, String serverName) {
         return resetQueryPerformanceInsightDataWithResponseAsync(resourceGroupName, serverName)
-            .flatMap(
-                (Response<QueryPerformanceInsightResetDataResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

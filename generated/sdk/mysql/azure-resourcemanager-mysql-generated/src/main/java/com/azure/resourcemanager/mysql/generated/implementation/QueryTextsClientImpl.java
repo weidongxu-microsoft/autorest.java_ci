@@ -28,12 +28,9 @@ import com.azure.core.util.FluxUtil;
 import com.azure.resourcemanager.mysql.generated.fluent.QueryTextsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.QueryTextInner;
 import com.azure.resourcemanager.mysql.generated.models.QueryTextsResultList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in QueryTextsClient. */
@@ -225,14 +222,7 @@ public final class QueryTextsClientImpl implements QueryTextsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<QueryTextInner> getAsync(String resourceGroupName, String serverName, String queryId) {
         return getWithResponseAsync(resourceGroupName, serverName, queryId)
-            .flatMap(
-                (Response<QueryTextInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -308,12 +298,7 @@ public final class QueryTextsClientImpl implements QueryTextsClient {
         final String apiVersion = "2018-06-01";
         final String accept = "application/json";
         List<String> queryIdsConverted =
-            Optional
-                .ofNullable(queryIds)
-                .map(Collection::stream)
-                .orElseGet(Stream::empty)
-                .map((item) -> Objects.toString(item, ""))
-                .collect(Collectors.toList());
+            queryIds.stream().map(item -> Objects.toString(item, "")).collect(Collectors.toList());
         return FluxUtil
             .withContext(
                 context ->
@@ -379,12 +364,7 @@ public final class QueryTextsClientImpl implements QueryTextsClient {
         final String apiVersion = "2018-06-01";
         final String accept = "application/json";
         List<String> queryIdsConverted =
-            Optional
-                .ofNullable(queryIds)
-                .map(Collection::stream)
-                .orElseGet(Stream::empty)
-                .map((item) -> Objects.toString(item, ""))
-                .collect(Collectors.toList());
+            queryIds.stream().map(item -> Objects.toString(item, "")).collect(Collectors.toList());
         context = this.client.mergeContext(context);
         return service
             .listByServer(

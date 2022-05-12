@@ -197,14 +197,7 @@ public final class FirewallPolicyIdpsSignaturesClientImpl implements FirewallPol
     private Mono<QueryResultsInner> listAsync(
         String resourceGroupName, String firewallPolicyName, IdpsQueryObject parameters) {
         return listWithResponseAsync(resourceGroupName, firewallPolicyName, parameters)
-            .flatMap(
-                (Response<QueryResultsInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

@@ -462,14 +462,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
     private Mono<MhsmPrivateEndpointConnectionInner> getAsync(
         String resourceGroupName, String name, String privateEndpointConnectionName) {
         return getWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName)
-            .flatMap(
-                (Response<MhsmPrivateEndpointConnectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -663,14 +656,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
         String privateEndpointConnectionName,
         MhsmPrivateEndpointConnectionInner properties) {
         return putWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName, properties)
-            .flatMap(
-                (MhsmPrivateEndpointConnectionsPutResponse res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

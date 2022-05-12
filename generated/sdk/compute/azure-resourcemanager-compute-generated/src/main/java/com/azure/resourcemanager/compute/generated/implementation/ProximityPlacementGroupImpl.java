@@ -104,6 +104,10 @@ public final class ProximityPlacementGroupImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ProximityPlacementGroupInner innerModel() {
         return this.innerObject;
     }

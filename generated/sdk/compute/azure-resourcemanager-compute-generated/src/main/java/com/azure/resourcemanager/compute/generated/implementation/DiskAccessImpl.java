@@ -82,6 +82,10 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public DiskAccessInner innerModel() {
         return this.innerObject;
     }

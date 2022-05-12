@@ -156,6 +156,10 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public AzureFirewallInner innerModel() {
         return this.innerObject;
     }

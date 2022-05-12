@@ -50,6 +50,10 @@ public final class ExpressRoutePortAuthorizationImpl
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ExpressRoutePortAuthorizationInner innerModel() {
         return this.innerObject;
     }

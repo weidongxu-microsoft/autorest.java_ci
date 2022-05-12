@@ -184,15 +184,7 @@ public final class LocationBasedRecommendedActionSessionsOperationStatusClientIm
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecommendedActionSessionsOperationStatusInner> getAsync(String locationName, String operationId) {
-        return getWithResponseAsync(locationName, operationId)
-            .flatMap(
-                (Response<RecommendedActionSessionsOperationStatusInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+        return getWithResponseAsync(locationName, operationId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

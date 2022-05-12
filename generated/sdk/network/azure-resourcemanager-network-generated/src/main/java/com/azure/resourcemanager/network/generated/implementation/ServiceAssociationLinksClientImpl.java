@@ -192,14 +192,7 @@ public final class ServiceAssociationLinksClientImpl implements ServiceAssociati
     private Mono<ServiceAssociationLinksListResultInner> listAsync(
         String resourceGroupName, String virtualNetworkName, String subnetName) {
         return listWithResponseAsync(resourceGroupName, virtualNetworkName, subnetName)
-            .flatMap(
-                (Response<ServiceAssociationLinksListResultInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**

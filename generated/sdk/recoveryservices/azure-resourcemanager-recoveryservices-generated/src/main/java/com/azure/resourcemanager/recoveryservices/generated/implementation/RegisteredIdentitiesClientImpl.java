@@ -179,8 +179,7 @@ public final class RegisteredIdentitiesClientImpl implements RegisteredIdentitie
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String vaultName, String identityName) {
-        return deleteWithResponseAsync(resourceGroupName, vaultName, identityName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+        return deleteWithResponseAsync(resourceGroupName, vaultName, identityName).flatMap(ignored -> Mono.empty());
     }
 
     /**

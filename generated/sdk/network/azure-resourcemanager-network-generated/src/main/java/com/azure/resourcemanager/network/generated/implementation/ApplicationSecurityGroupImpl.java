@@ -64,6 +64,10 @@ public final class ApplicationSecurityGroupImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ApplicationSecurityGroupInner innerModel() {
         return this.innerObject;
     }

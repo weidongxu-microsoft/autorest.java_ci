@@ -46,6 +46,10 @@ public final class ExpressRouteCircuitAuthorizationImpl
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ExpressRouteCircuitAuthorizationInner innerModel() {
         return this.innerObject;
     }

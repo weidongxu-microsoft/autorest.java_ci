@@ -150,6 +150,10 @@ public final class ExpressRouteCircuitImpl
         return this.location();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public ExpressRouteCircuitInner innerModel() {
         return this.innerObject;
     }

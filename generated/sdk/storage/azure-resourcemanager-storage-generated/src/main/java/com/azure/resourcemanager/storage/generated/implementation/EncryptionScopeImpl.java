@@ -53,6 +53,10 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
         return this.innerModel().requireInfrastructureEncryption();
     }
 
+    public String resourceGroupName() {
+        return resourceGroupName;
+    }
+
     public EncryptionScopeInner innerModel() {
         return this.innerObject;
     }
