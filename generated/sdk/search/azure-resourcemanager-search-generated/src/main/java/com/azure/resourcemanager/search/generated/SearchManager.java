@@ -321,7 +321,7 @@ public final class SearchManager {
     }
 
     /**
-     * Gets the resource collection API of Services.
+     * Gets the resource collection API of Services. It manages SearchService.
      *
      * @return Resource collection API of Services.
      */
@@ -358,7 +358,7 @@ public final class SearchManager {
     }
 
     /**
-     * Gets the resource collection API of SharedPrivateLinkResources.
+     * Gets the resource collection API of SharedPrivateLinkResources. It manages SharedPrivateLinkResource.
      *
      * @return Resource collection API of SharedPrivateLinkResources.
      */

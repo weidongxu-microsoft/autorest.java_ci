@@ -278,7 +278,7 @@ public final class SqlVirtualMachineManager {
     }
 
     /**
-     * Gets the resource collection API of AvailabilityGroupListeners.
+     * Gets the resource collection API of AvailabilityGroupListeners. It manages AvailabilityGroupListener.
      *
      * @return Resource collection API of AvailabilityGroupListeners.
      */
@@ -303,7 +303,7 @@ public final class SqlVirtualMachineManager {
     }
 
     /**
-     * Gets the resource collection API of SqlVirtualMachineGroups.
+     * Gets the resource collection API of SqlVirtualMachineGroups. It manages SqlVirtualMachineGroup.
      *
      * @return Resource collection API of SqlVirtualMachineGroups.
      */
@@ -316,7 +316,7 @@ public final class SqlVirtualMachineManager {
     }
 
     /**
-     * Gets the resource collection API of SqlVirtualMachines.
+     * Gets the resource collection API of SqlVirtualMachines. It manages SqlVirtualMachine.
      *
      * @return Resource collection API of SqlVirtualMachines.
      */

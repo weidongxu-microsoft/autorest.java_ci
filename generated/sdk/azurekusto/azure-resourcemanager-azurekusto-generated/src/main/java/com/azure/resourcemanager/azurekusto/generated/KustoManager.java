@@ -313,7 +313,7 @@ public final class KustoManager {
     }
 
     /**
-     * Gets the resource collection API of Clusters.
+     * Gets the resource collection API of Clusters. It manages Cluster.
      *
      * @return Resource collection API of Clusters.
      */
@@ -325,7 +325,7 @@ public final class KustoManager {
     }
 
     /**
-     * Gets the resource collection API of ClusterPrincipalAssignments.
+     * Gets the resource collection API of ClusterPrincipalAssignments. It manages ClusterPrincipalAssignment.
      *
      * @return Resource collection API of ClusterPrincipalAssignments.
      */
@@ -350,7 +350,7 @@ public final class KustoManager {
     }
 
     /**
-     * Gets the resource collection API of AttachedDatabaseConfigurations.
+     * Gets the resource collection API of AttachedDatabaseConfigurations. It manages AttachedDatabaseConfiguration.
      *
      * @return Resource collection API of AttachedDatabaseConfigurations.
      */
@@ -363,7 +363,7 @@ public final class KustoManager {
     }
 
     /**
-     * Gets the resource collection API of ManagedPrivateEndpoints.
+     * Gets the resource collection API of ManagedPrivateEndpoints. It manages ManagedPrivateEndpoint.
      *
      * @return Resource collection API of ManagedPrivateEndpoints.
      */
@@ -376,7 +376,7 @@ public final class KustoManager {
     }
 
     /**
-     * Gets the resource collection API of DatabasePrincipalAssignments.
+     * Gets the resource collection API of DatabasePrincipalAssignments. It manages DatabasePrincipalAssignment.
      *
      * @return Resource collection API of DatabasePrincipalAssignments.
      */
@@ -389,7 +389,7 @@ public final class KustoManager {
     }
 
     /**
-     * Gets the resource collection API of Scripts.
+     * Gets the resource collection API of Scripts. It manages Script.
      *
      * @return Resource collection API of Scripts.
      */
@@ -401,7 +401,7 @@ public final class KustoManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateEndpointConnections.
+     * Gets the resource collection API of PrivateEndpointConnections. It manages PrivateEndpointConnection.
      *
      * @return Resource collection API of PrivateEndpointConnections.
      */

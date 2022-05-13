@@ -341,7 +341,8 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of AppServiceCertificateOrders.
+     * Gets the resource collection API of AppServiceCertificateOrders. It manages AppServiceCertificateOrder,
+     * AppServiceCertificateResource.
      *
      * @return Resource collection API of AppServiceCertificateOrders.
      */
@@ -380,7 +381,7 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of Domains.
+     * Gets the resource collection API of Domains. It manages Domain, DomainOwnershipIdentifier.
      *
      * @return Resource collection API of Domains.
      */
@@ -417,7 +418,8 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of AppServiceEnvironments.
+     * Gets the resource collection API of AppServiceEnvironments. It manages AppServiceEnvironmentResource,
+     * RemotePrivateEndpointConnectionArmResource, WorkerPoolResource.
      *
      * @return Resource collection API of AppServiceEnvironments.
      */
@@ -430,7 +432,7 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of AppServicePlans.
+     * Gets the resource collection API of AppServicePlans. It manages AppServicePlan, VnetRoute.
      *
      * @return Resource collection API of AppServicePlans.
      */
@@ -442,7 +444,7 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of Certificates.
+     * Gets the resource collection API of Certificates. It manages Certificate.
      *
      * @return Resource collection API of Certificates.
      */
@@ -454,7 +456,7 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of ContainerApps.
+     * Gets the resource collection API of ContainerApps. It manages ContainerApp.
      *
      * @return Resource collection API of ContainerApps.
      */
@@ -515,7 +517,7 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of KubeEnvironments.
+     * Gets the resource collection API of KubeEnvironments. It manages KubeEnvironment.
      *
      * @return Resource collection API of KubeEnvironments.
      */
@@ -576,7 +578,8 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of StaticSites.
+     * Gets the resource collection API of StaticSites. It manages StaticSiteArmResource,
+     * StaticSiteUserProvidedFunctionAppArmResource, StaticSiteCustomDomainOverviewArmResource.
      *
      * @return Resource collection API of StaticSites.
      */
@@ -588,7 +591,9 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of WebApps.
+     * Gets the resource collection API of WebApps. It manages Site, Deployment, Identifier, FunctionEnvelope,
+     * HostnameBinding, HybridConnection, RelayServiceConnectionEntity, PremierAddOn, PublicCertificate,
+     * VnetInfoResource, VnetGateway.
      *
      * @return Resource collection API of WebApps.
      */

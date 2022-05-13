@@ -297,7 +297,7 @@ public final class RecoveryServicesManager {
     }
 
     /**
-     * Gets the resource collection API of VaultCertificates.
+     * Gets the resource collection API of VaultCertificates. It manages VaultCertificateResponse.
      *
      * @return Resource collection API of VaultCertificates.
      */
@@ -358,7 +358,7 @@ public final class RecoveryServicesManager {
     }
 
     /**
-     * Gets the resource collection API of Vaults.
+     * Gets the resource collection API of Vaults. It manages Vault.
      *
      * @return Resource collection API of Vaults.
      */

@@ -345,7 +345,7 @@ public final class LogAnalyticsManager {
     }
 
     /**
-     * Gets the resource collection API of QueryPacks.
+     * Gets the resource collection API of QueryPacks. It manages LogAnalyticsQueryPack.
      *
      * @return Resource collection API of QueryPacks.
      */
@@ -357,7 +357,7 @@ public final class LogAnalyticsManager {
     }
 
     /**
-     * Gets the resource collection API of Queries.
+     * Gets the resource collection API of Queries. It manages LogAnalyticsQueryPackQuery.
      *
      * @return Resource collection API of Queries.
      */
@@ -369,7 +369,7 @@ public final class LogAnalyticsManager {
     }
 
     /**
-     * Gets the resource collection API of DataExports.
+     * Gets the resource collection API of DataExports. It manages DataExport.
      *
      * @return Resource collection API of DataExports.
      */
@@ -381,7 +381,7 @@ public final class LogAnalyticsManager {
     }
 
     /**
-     * Gets the resource collection API of DataSources.
+     * Gets the resource collection API of DataSources. It manages DataSource.
      *
      * @return Resource collection API of DataSources.
      */
@@ -405,7 +405,7 @@ public final class LogAnalyticsManager {
     }
 
     /**
-     * Gets the resource collection API of LinkedServices.
+     * Gets the resource collection API of LinkedServices. It manages LinkedService.
      *
      * @return Resource collection API of LinkedServices.
      */
@@ -417,7 +417,7 @@ public final class LogAnalyticsManager {
     }
 
     /**
-     * Gets the resource collection API of LinkedStorageAccounts.
+     * Gets the resource collection API of LinkedStorageAccounts. It manages LinkedStorageAccountsResource.
      *
      * @return Resource collection API of LinkedStorageAccounts.
      */
@@ -477,7 +477,7 @@ public final class LogAnalyticsManager {
     }
 
     /**
-     * Gets the resource collection API of StorageInsightConfigs.
+     * Gets the resource collection API of StorageInsightConfigs. It manages StorageInsight.
      *
      * @return Resource collection API of StorageInsightConfigs.
      */
@@ -489,7 +489,7 @@ public final class LogAnalyticsManager {
     }
 
     /**
-     * Gets the resource collection API of SavedSearches.
+     * Gets the resource collection API of SavedSearches. It manages SavedSearch.
      *
      * @return Resource collection API of SavedSearches.
      */
@@ -549,7 +549,7 @@ public final class LogAnalyticsManager {
     }
 
     /**
-     * Gets the resource collection API of Clusters.
+     * Gets the resource collection API of Clusters. It manages Cluster.
      *
      * @return Resource collection API of Clusters.
      */
@@ -573,7 +573,7 @@ public final class LogAnalyticsManager {
     }
 
     /**
-     * Gets the resource collection API of Workspaces.
+     * Gets the resource collection API of Workspaces. It manages Workspace.
      *
      * @return Resource collection API of Workspaces.
      */
@@ -597,7 +597,7 @@ public final class LogAnalyticsManager {
     }
 
     /**
-     * Gets the resource collection API of Tables.
+     * Gets the resource collection API of Tables. It manages Table.
      *
      * @return Resource collection API of Tables.
      */

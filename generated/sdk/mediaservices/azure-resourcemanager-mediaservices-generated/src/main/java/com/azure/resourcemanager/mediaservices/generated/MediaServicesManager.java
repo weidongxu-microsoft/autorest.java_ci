@@ -333,7 +333,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of AccountFilters.
+     * Gets the resource collection API of AccountFilters. It manages AccountFilter.
      *
      * @return Resource collection API of AccountFilters.
      */
@@ -357,7 +357,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of Mediaservices.
+     * Gets the resource collection API of Mediaservices. It manages MediaService.
      *
      * @return Resource collection API of Mediaservices.
      */
@@ -381,7 +381,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateEndpointConnections.
+     * Gets the resource collection API of PrivateEndpointConnections. It manages PrivateEndpointConnection.
      *
      * @return Resource collection API of PrivateEndpointConnections.
      */
@@ -406,7 +406,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of Assets.
+     * Gets the resource collection API of Assets. It manages Asset.
      *
      * @return Resource collection API of Assets.
      */
@@ -418,7 +418,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of AssetFilters.
+     * Gets the resource collection API of AssetFilters. It manages AssetFilter.
      *
      * @return Resource collection API of AssetFilters.
      */
@@ -430,7 +430,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of Tracks.
+     * Gets the resource collection API of Tracks. It manages AssetTrack.
      *
      * @return Resource collection API of Tracks.
      */
@@ -466,7 +466,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of ContentKeyPolicies.
+     * Gets the resource collection API of ContentKeyPolicies. It manages ContentKeyPolicy.
      *
      * @return Resource collection API of ContentKeyPolicies.
      */
@@ -478,7 +478,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of Transforms.
+     * Gets the resource collection API of Transforms. It manages Transform.
      *
      * @return Resource collection API of Transforms.
      */
@@ -490,7 +490,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of Jobs.
+     * Gets the resource collection API of Jobs. It manages Job.
      *
      * @return Resource collection API of Jobs.
      */
@@ -502,7 +502,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of StreamingPolicies.
+     * Gets the resource collection API of StreamingPolicies. It manages StreamingPolicy.
      *
      * @return Resource collection API of StreamingPolicies.
      */
@@ -514,7 +514,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of StreamingLocators.
+     * Gets the resource collection API of StreamingLocators. It manages StreamingLocator.
      *
      * @return Resource collection API of StreamingLocators.
      */
@@ -526,7 +526,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of LiveEvents.
+     * Gets the resource collection API of LiveEvents. It manages LiveEvent.
      *
      * @return Resource collection API of LiveEvents.
      */
@@ -538,7 +538,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of LiveOutputs.
+     * Gets the resource collection API of LiveOutputs. It manages LiveOutput.
      *
      * @return Resource collection API of LiveOutputs.
      */
@@ -550,7 +550,7 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets the resource collection API of StreamingEndpoints.
+     * Gets the resource collection API of StreamingEndpoints. It manages StreamingEndpoint.
      *
      * @return Resource collection API of StreamingEndpoints.
      */

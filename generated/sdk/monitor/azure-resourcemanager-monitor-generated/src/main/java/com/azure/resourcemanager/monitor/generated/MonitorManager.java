@@ -357,7 +357,7 @@ public final class MonitorManager {
     }
 
     /**
-     * Gets the resource collection API of AutoscaleSettings.
+     * Gets the resource collection API of AutoscaleSettings. It manages AutoscaleSettingResource.
      *
      * @return Resource collection API of AutoscaleSettings.
      */
@@ -393,7 +393,7 @@ public final class MonitorManager {
     }
 
     /**
-     * Gets the resource collection API of AlertRules.
+     * Gets the resource collection API of AlertRules. It manages AlertRuleResource.
      *
      * @return Resource collection API of AlertRules.
      */
@@ -405,7 +405,7 @@ public final class MonitorManager {
     }
 
     /**
-     * Gets the resource collection API of LogProfiles.
+     * Gets the resource collection API of LogProfiles. It manages LogProfileResource.
      *
      * @return Resource collection API of LogProfiles.
      */
@@ -417,7 +417,7 @@ public final class MonitorManager {
     }
 
     /**
-     * Gets the resource collection API of DiagnosticSettingsOperations.
+     * Gets the resource collection API of DiagnosticSettingsOperations. It manages DiagnosticSettingsResource.
      *
      * @return Resource collection API of DiagnosticSettingsOperations.
      */
@@ -443,7 +443,7 @@ public final class MonitorManager {
     }
 
     /**
-     * Gets the resource collection API of ActionGroups.
+     * Gets the resource collection API of ActionGroups. It manages ActionGroupResource.
      *
      * @return Resource collection API of ActionGroups.
      */
@@ -455,7 +455,7 @@ public final class MonitorManager {
     }
 
     /**
-     * Gets the resource collection API of ActivityLogAlerts.
+     * Gets the resource collection API of ActivityLogAlerts. It manages ActivityLogAlertResource.
      *
      * @return Resource collection API of ActivityLogAlerts.
      */
@@ -539,7 +539,7 @@ public final class MonitorManager {
     }
 
     /**
-     * Gets the resource collection API of MetricAlerts.
+     * Gets the resource collection API of MetricAlerts. It manages MetricAlertResource.
      *
      * @return Resource collection API of MetricAlerts.
      */
@@ -563,7 +563,7 @@ public final class MonitorManager {
     }
 
     /**
-     * Gets the resource collection API of ScheduledQueryRules.
+     * Gets the resource collection API of ScheduledQueryRules. It manages LogSearchRuleResource.
      *
      * @return Resource collection API of ScheduledQueryRules.
      */
@@ -599,7 +599,7 @@ public final class MonitorManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateLinkScopes.
+     * Gets the resource collection API of PrivateLinkScopes. It manages AzureMonitorPrivateLinkScope.
      *
      * @return Resource collection API of PrivateLinkScopes.
      */
@@ -636,7 +636,7 @@ public final class MonitorManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateEndpointConnections.
+     * Gets the resource collection API of PrivateEndpointConnections. It manages PrivateEndpointConnection.
      *
      * @return Resource collection API of PrivateEndpointConnections.
      */
@@ -649,7 +649,7 @@ public final class MonitorManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateLinkScopedResources.
+     * Gets the resource collection API of PrivateLinkScopedResources. It manages ScopedResource.
      *
      * @return Resource collection API of PrivateLinkScopedResources.
      */

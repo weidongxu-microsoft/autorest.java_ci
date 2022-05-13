@@ -312,7 +312,7 @@ public final class EventHubsManager {
     }
 
     /**
-     * Gets the resource collection API of Clusters.
+     * Gets the resource collection API of Clusters. It manages Cluster.
      *
      * @return Resource collection API of Clusters.
      */
@@ -324,7 +324,7 @@ public final class EventHubsManager {
     }
 
     /**
-     * Gets the resource collection API of Namespaces.
+     * Gets the resource collection API of Namespaces. It manages EHNamespace, AuthorizationRule.
      *
      * @return Resource collection API of Namespaces.
      */
@@ -336,7 +336,7 @@ public final class EventHubsManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateEndpointConnections.
+     * Gets the resource collection API of PrivateEndpointConnections. It manages PrivateEndpointConnection.
      *
      * @return Resource collection API of PrivateEndpointConnections.
      */
@@ -401,7 +401,7 @@ public final class EventHubsManager {
     }
 
     /**
-     * Gets the resource collection API of DisasterRecoveryConfigs.
+     * Gets the resource collection API of DisasterRecoveryConfigs. It manages ArmDisasterRecovery.
      *
      * @return Resource collection API of DisasterRecoveryConfigs.
      */
@@ -414,7 +414,7 @@ public final class EventHubsManager {
     }
 
     /**
-     * Gets the resource collection API of EventHubs.
+     * Gets the resource collection API of EventHubs. It manages Eventhub.
      *
      * @return Resource collection API of EventHubs.
      */
@@ -426,7 +426,7 @@ public final class EventHubsManager {
     }
 
     /**
-     * Gets the resource collection API of ConsumerGroups.
+     * Gets the resource collection API of ConsumerGroups. It manages ConsumerGroup.
      *
      * @return Resource collection API of ConsumerGroups.
      */
@@ -450,7 +450,7 @@ public final class EventHubsManager {
     }
 
     /**
-     * Gets the resource collection API of SchemaRegistries.
+     * Gets the resource collection API of SchemaRegistries. It manages SchemaGroup.
      *
      * @return Resource collection API of SchemaRegistries.
      */
@@ -462,7 +462,7 @@ public final class EventHubsManager {
     }
 
     /**
-     * Gets the resource collection API of ApplicationGroups.
+     * Gets the resource collection API of ApplicationGroups. It manages ApplicationGroup.
      *
      * @return Resource collection API of ApplicationGroups.
      */

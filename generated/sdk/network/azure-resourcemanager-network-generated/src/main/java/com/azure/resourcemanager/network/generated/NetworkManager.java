@@ -713,7 +713,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ApplicationGateways.
+     * Gets the resource collection API of ApplicationGateways. It manages ApplicationGateway.
      *
      * @return Resource collection API of ApplicationGateways.
      */
@@ -753,7 +753,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ApplicationSecurityGroups.
+     * Gets the resource collection API of ApplicationSecurityGroups. It manages ApplicationSecurityGroup.
      *
      * @return Resource collection API of ApplicationSecurityGroups.
      */
@@ -804,7 +804,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of AzureFirewalls.
+     * Gets the resource collection API of AzureFirewalls. It manages AzureFirewall.
      *
      * @return Resource collection API of AzureFirewalls.
      */
@@ -840,7 +840,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of BastionHosts.
+     * Gets the resource collection API of BastionHosts. It manages BastionHost.
      *
      * @return Resource collection API of BastionHosts.
      */
@@ -864,7 +864,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of NetworkInterfaces.
+     * Gets the resource collection API of NetworkInterfaces. It manages NetworkInterface.
      *
      * @return Resource collection API of NetworkInterfaces.
      */
@@ -876,7 +876,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of PublicIpAddresses.
+     * Gets the resource collection API of PublicIpAddresses. It manages PublicIpAddress.
      *
      * @return Resource collection API of PublicIpAddresses.
      */
@@ -888,7 +888,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of CustomIpPrefixes.
+     * Gets the resource collection API of CustomIpPrefixes. It manages CustomIpPrefix.
      *
      * @return Resource collection API of CustomIpPrefixes.
      */
@@ -900,7 +900,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of DdosCustomPolicies.
+     * Gets the resource collection API of DdosCustomPolicies. It manages DdosCustomPolicy.
      *
      * @return Resource collection API of DdosCustomPolicies.
      */
@@ -912,7 +912,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of DdosProtectionPlans.
+     * Gets the resource collection API of DdosProtectionPlans. It manages DdosProtectionPlan.
      *
      * @return Resource collection API of DdosProtectionPlans.
      */
@@ -924,7 +924,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of DscpConfigurations.
+     * Gets the resource collection API of DscpConfigurations. It manages DscpConfiguration.
      *
      * @return Resource collection API of DscpConfigurations.
      */
@@ -949,7 +949,8 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ExpressRouteCircuitAuthorizations.
+     * Gets the resource collection API of ExpressRouteCircuitAuthorizations. It manages
+     * ExpressRouteCircuitAuthorization.
      *
      * @return Resource collection API of ExpressRouteCircuitAuthorizations.
      */
@@ -962,7 +963,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ExpressRouteCircuitPeerings.
+     * Gets the resource collection API of ExpressRouteCircuitPeerings. It manages ExpressRouteCircuitPeering.
      *
      * @return Resource collection API of ExpressRouteCircuitPeerings.
      */
@@ -975,7 +976,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ExpressRouteCircuitConnections.
+     * Gets the resource collection API of ExpressRouteCircuitConnections. It manages ExpressRouteCircuitConnection.
      *
      * @return Resource collection API of ExpressRouteCircuitConnections.
      */
@@ -1001,7 +1002,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ExpressRouteCircuits.
+     * Gets the resource collection API of ExpressRouteCircuits. It manages ExpressRouteCircuit.
      *
      * @return Resource collection API of ExpressRouteCircuits.
      */
@@ -1026,7 +1027,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ExpressRouteCrossConnections.
+     * Gets the resource collection API of ExpressRouteCrossConnections. It manages ExpressRouteCrossConnection.
      *
      * @return Resource collection API of ExpressRouteCrossConnections.
      */
@@ -1066,7 +1067,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ExpressRoutePorts.
+     * Gets the resource collection API of ExpressRoutePorts. It manages ExpressRoutePort.
      *
      * @return Resource collection API of ExpressRoutePorts.
      */
@@ -1090,7 +1091,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ExpressRoutePortAuthorizations.
+     * Gets the resource collection API of ExpressRoutePortAuthorizations. It manages ExpressRoutePortAuthorization.
      *
      * @return Resource collection API of ExpressRoutePortAuthorizations.
      */
@@ -1103,7 +1104,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of FirewallPolicies.
+     * Gets the resource collection API of FirewallPolicies. It manages FirewallPolicy.
      *
      * @return Resource collection API of FirewallPolicies.
      */
@@ -1115,7 +1116,8 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of FirewallPolicyRuleCollectionGroups.
+     * Gets the resource collection API of FirewallPolicyRuleCollectionGroups. It manages
+     * FirewallPolicyRuleCollectionGroup.
      *
      * @return Resource collection API of FirewallPolicyRuleCollectionGroups.
      */
@@ -1169,7 +1171,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of IpAllocations.
+     * Gets the resource collection API of IpAllocations. It manages IpAllocation.
      *
      * @return Resource collection API of IpAllocations.
      */
@@ -1181,7 +1183,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of IpGroups.
+     * Gets the resource collection API of IpGroups. It manages IpGroup.
      *
      * @return Resource collection API of IpGroups.
      */
@@ -1193,7 +1195,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of LoadBalancers.
+     * Gets the resource collection API of LoadBalancers. It manages LoadBalancer.
      *
      * @return Resource collection API of LoadBalancers.
      */
@@ -1205,7 +1207,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of LoadBalancerBackendAddressPools.
+     * Gets the resource collection API of LoadBalancerBackendAddressPools. It manages BackendAddressPool.
      *
      * @return Resource collection API of LoadBalancerBackendAddressPools.
      */
@@ -1232,7 +1234,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of InboundNatRules.
+     * Gets the resource collection API of InboundNatRules. It manages InboundNatRule.
      *
      * @return Resource collection API of InboundNatRules.
      */
@@ -1295,7 +1297,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of NatGateways.
+     * Gets the resource collection API of NatGateways. It manages NatGateway.
      *
      * @return Resource collection API of NatGateways.
      */
@@ -1333,7 +1335,8 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of NetworkInterfaceTapConfigurations.
+     * Gets the resource collection API of NetworkInterfaceTapConfigurations. It manages
+     * NetworkInterfaceTapConfiguration.
      *
      * @return Resource collection API of NetworkInterfaceTapConfigurations.
      */
@@ -1346,7 +1349,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of NetworkProfiles.
+     * Gets the resource collection API of NetworkProfiles. It manages NetworkProfile.
      *
      * @return Resource collection API of NetworkProfiles.
      */
@@ -1358,7 +1361,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of NetworkSecurityGroups.
+     * Gets the resource collection API of NetworkSecurityGroups. It manages NetworkSecurityGroup.
      *
      * @return Resource collection API of NetworkSecurityGroups.
      */
@@ -1370,7 +1373,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of SecurityRules.
+     * Gets the resource collection API of SecurityRules. It manages SecurityRule.
      *
      * @return Resource collection API of SecurityRules.
      */
@@ -1394,7 +1397,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of NetworkVirtualAppliances.
+     * Gets the resource collection API of NetworkVirtualAppliances. It manages NetworkVirtualAppliance.
      *
      * @return Resource collection API of NetworkVirtualAppliances.
      */
@@ -1407,7 +1410,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualApplianceSites.
+     * Gets the resource collection API of VirtualApplianceSites. It manages VirtualApplianceSite.
      *
      * @return Resource collection API of VirtualApplianceSites.
      */
@@ -1431,7 +1434,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of InboundSecurityRuleOperations.
+     * Gets the resource collection API of InboundSecurityRuleOperations. It manages InboundSecurityRule.
      *
      * @return Resource collection API of InboundSecurityRuleOperations.
      */
@@ -1444,7 +1447,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of NetworkWatchers.
+     * Gets the resource collection API of NetworkWatchers. It manages NetworkWatcher.
      *
      * @return Resource collection API of NetworkWatchers.
      */
@@ -1468,7 +1471,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ConnectionMonitors.
+     * Gets the resource collection API of ConnectionMonitors. It manages ConnectionMonitorResult.
      *
      * @return Resource collection API of ConnectionMonitors.
      */
@@ -1480,7 +1483,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of FlowLogs.
+     * Gets the resource collection API of FlowLogs. It manages FlowLog.
      *
      * @return Resource collection API of FlowLogs.
      */
@@ -1504,7 +1507,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateEndpoints.
+     * Gets the resource collection API of PrivateEndpoints. It manages PrivateEndpoint.
      *
      * @return Resource collection API of PrivateEndpoints.
      */
@@ -1541,7 +1544,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateLinkServices.
+     * Gets the resource collection API of PrivateLinkServices. It manages PrivateLinkService.
      *
      * @return Resource collection API of PrivateLinkServices.
      */
@@ -1553,7 +1556,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of PublicIpPrefixes.
+     * Gets the resource collection API of PublicIpPrefixes. It manages PublicIpPrefix.
      *
      * @return Resource collection API of PublicIpPrefixes.
      */
@@ -1565,7 +1568,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of RouteFilters.
+     * Gets the resource collection API of RouteFilters. It manages RouteFilter.
      *
      * @return Resource collection API of RouteFilters.
      */
@@ -1589,7 +1592,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of RouteTables.
+     * Gets the resource collection API of RouteTables. It manages RouteTable.
      *
      * @return Resource collection API of RouteTables.
      */
@@ -1601,7 +1604,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of Routes.
+     * Gets the resource collection API of Routes. It manages Route.
      *
      * @return Resource collection API of Routes.
      */
@@ -1613,7 +1616,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of SecurityPartnerProviders.
+     * Gets the resource collection API of SecurityPartnerProviders. It manages SecurityPartnerProvider.
      *
      * @return Resource collection API of SecurityPartnerProviders.
      */
@@ -1638,7 +1641,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ServiceEndpointPolicies.
+     * Gets the resource collection API of ServiceEndpointPolicies. It manages ServiceEndpointPolicy.
      *
      * @return Resource collection API of ServiceEndpointPolicies.
      */
@@ -1651,7 +1654,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ServiceEndpointPolicyDefinitions.
+     * Gets the resource collection API of ServiceEndpointPolicyDefinitions. It manages ServiceEndpointPolicyDefinition.
      *
      * @return Resource collection API of ServiceEndpointPolicyDefinitions.
      */
@@ -1701,7 +1704,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualNetworks.
+     * Gets the resource collection API of VirtualNetworks. It manages VirtualNetwork.
      *
      * @return Resource collection API of VirtualNetworks.
      */
@@ -1713,7 +1716,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of Subnets.
+     * Gets the resource collection API of Subnets. It manages Subnet.
      *
      * @return Resource collection API of Subnets.
      */
@@ -1751,7 +1754,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualNetworkPeerings.
+     * Gets the resource collection API of VirtualNetworkPeerings. It manages VirtualNetworkPeering.
      *
      * @return Resource collection API of VirtualNetworkPeerings.
      */
@@ -1764,7 +1767,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualNetworkGateways.
+     * Gets the resource collection API of VirtualNetworkGateways. It manages VirtualNetworkGateway.
      *
      * @return Resource collection API of VirtualNetworkGateways.
      */
@@ -1777,7 +1780,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualNetworkGatewayConnections.
+     * Gets the resource collection API of VirtualNetworkGatewayConnections. It manages VirtualNetworkGatewayConnection.
      *
      * @return Resource collection API of VirtualNetworkGatewayConnections.
      */
@@ -1790,7 +1793,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of LocalNetworkGateways.
+     * Gets the resource collection API of LocalNetworkGateways. It manages LocalNetworkGateway.
      *
      * @return Resource collection API of LocalNetworkGateways.
      */
@@ -1802,7 +1805,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualNetworkGatewayNatRules.
+     * Gets the resource collection API of VirtualNetworkGatewayNatRules. It manages VirtualNetworkGatewayNatRule.
      *
      * @return Resource collection API of VirtualNetworkGatewayNatRules.
      */
@@ -1815,7 +1818,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualNetworkTaps.
+     * Gets the resource collection API of VirtualNetworkTaps. It manages VirtualNetworkTap.
      *
      * @return Resource collection API of VirtualNetworkTaps.
      */
@@ -1827,7 +1830,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualRouters.
+     * Gets the resource collection API of VirtualRouters. It manages VirtualRouter.
      *
      * @return Resource collection API of VirtualRouters.
      */
@@ -1839,7 +1842,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualRouterPeerings.
+     * Gets the resource collection API of VirtualRouterPeerings. It manages VirtualRouterPeering.
      *
      * @return Resource collection API of VirtualRouterPeerings.
      */
@@ -1851,7 +1854,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualWans.
+     * Gets the resource collection API of VirtualWans. It manages VirtualWan.
      *
      * @return Resource collection API of VirtualWans.
      */
@@ -1863,7 +1866,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VpnSites.
+     * Gets the resource collection API of VpnSites. It manages VpnSite.
      *
      * @return Resource collection API of VpnSites.
      */
@@ -1900,7 +1903,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VpnServerConfigurations.
+     * Gets the resource collection API of VpnServerConfigurations. It manages VpnServerConfiguration.
      *
      * @return Resource collection API of VpnServerConfigurations.
      */
@@ -1913,7 +1916,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ConfigurationPolicyGroups.
+     * Gets the resource collection API of ConfigurationPolicyGroups. It manages VpnServerConfigurationPolicyGroup.
      *
      * @return Resource collection API of ConfigurationPolicyGroups.
      */
@@ -1926,7 +1929,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualHubs.
+     * Gets the resource collection API of VirtualHubs. It manages VirtualHub.
      *
      * @return Resource collection API of VirtualHubs.
      */
@@ -1951,7 +1954,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VpnGateways.
+     * Gets the resource collection API of VpnGateways. It manages VpnGateway.
      *
      * @return Resource collection API of VpnGateways.
      */
@@ -2000,7 +2003,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of NatRules.
+     * Gets the resource collection API of NatRules. It manages VpnGatewayNatRule.
      *
      * @return Resource collection API of NatRules.
      */
@@ -2012,7 +2015,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of P2SVpnGateways.
+     * Gets the resource collection API of P2SVpnGateways. It manages P2SVpnGateway.
      *
      * @return Resource collection API of P2SVpnGateways.
      */
@@ -2051,7 +2054,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ExpressRouteGateways.
+     * Gets the resource collection API of ExpressRouteGateways. It manages ExpressRouteGateway.
      *
      * @return Resource collection API of ExpressRouteGateways.
      */
@@ -2076,7 +2079,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualHubBgpConnections.
+     * Gets the resource collection API of VirtualHubBgpConnections. It manages BgpConnection.
      *
      * @return Resource collection API of VirtualHubBgpConnections.
      */
@@ -2089,7 +2092,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualHubIpConfigurations.
+     * Gets the resource collection API of VirtualHubIpConfigurations. It manages HubIpConfiguration.
      *
      * @return Resource collection API of VirtualHubIpConfigurations.
      */
@@ -2102,7 +2105,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of HubRouteTables.
+     * Gets the resource collection API of HubRouteTables. It manages HubRouteTable.
      *
      * @return Resource collection API of HubRouteTables.
      */
@@ -2114,7 +2117,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of RoutingIntents.
+     * Gets the resource collection API of RoutingIntents. It manages RoutingIntent.
      *
      * @return Resource collection API of RoutingIntents.
      */
@@ -2126,7 +2129,7 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of WebApplicationFirewallPolicies.
+     * Gets the resource collection API of WebApplicationFirewallPolicies. It manages WebApplicationFirewallPolicy.
      *
      * @return Resource collection API of WebApplicationFirewallPolicies.
      */

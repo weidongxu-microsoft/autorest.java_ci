@@ -305,7 +305,7 @@ public final class FrontDoorManager {
     }
 
     /**
-     * Gets the resource collection API of NetworkExperimentProfiles.
+     * Gets the resource collection API of NetworkExperimentProfiles. It manages Profile.
      *
      * @return Resource collection API of NetworkExperimentProfiles.
      */
@@ -331,7 +331,7 @@ public final class FrontDoorManager {
     }
 
     /**
-     * Gets the resource collection API of Experiments.
+     * Gets the resource collection API of Experiments. It manages Experiment.
      *
      * @return Resource collection API of Experiments.
      */
@@ -382,7 +382,7 @@ public final class FrontDoorManager {
     }
 
     /**
-     * Gets the resource collection API of FrontDoors.
+     * Gets the resource collection API of FrontDoors. It manages FrontDoor.
      *
      * @return Resource collection API of FrontDoors.
      */
@@ -418,7 +418,7 @@ public final class FrontDoorManager {
     }
 
     /**
-     * Gets the resource collection API of RulesEngines.
+     * Gets the resource collection API of RulesEngines. It manages RulesEngine.
      *
      * @return Resource collection API of RulesEngines.
      */
@@ -430,7 +430,7 @@ public final class FrontDoorManager {
     }
 
     /**
-     * Gets the resource collection API of Policies.
+     * Gets the resource collection API of Policies. It manages WebApplicationFirewallPolicy.
      *
      * @return Resource collection API of Policies.
      */

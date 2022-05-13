@@ -304,7 +304,7 @@ public final class CostManagementManager {
     }
 
     /**
-     * Gets the resource collection API of Views.
+     * Gets the resource collection API of Views. It manages View.
      *
      * @return Resource collection API of Views.
      */
@@ -389,7 +389,7 @@ public final class CostManagementManager {
     }
 
     /**
-     * Gets the resource collection API of Exports.
+     * Gets the resource collection API of Exports. It manages Export.
      *
      * @return Resource collection API of Exports.
      */

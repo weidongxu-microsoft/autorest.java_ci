@@ -369,7 +369,7 @@ public final class DataBoxEdgeManager {
     }
 
     /**
-     * Gets the resource collection API of Devices.
+     * Gets the resource collection API of Devices. It manages DataBoxEdgeDevice.
      *
      * @return Resource collection API of Devices.
      */
@@ -393,7 +393,7 @@ public final class DataBoxEdgeManager {
     }
 
     /**
-     * Gets the resource collection API of BandwidthSchedules.
+     * Gets the resource collection API of BandwidthSchedules. It manages BandwidthSchedule.
      *
      * @return Resource collection API of BandwidthSchedules.
      */
@@ -525,7 +525,7 @@ public final class DataBoxEdgeManager {
     }
 
     /**
-     * Gets the resource collection API of Shares.
+     * Gets the resource collection API of Shares. It manages Share.
      *
      * @return Resource collection API of Shares.
      */
@@ -537,7 +537,7 @@ public final class DataBoxEdgeManager {
     }
 
     /**
-     * Gets the resource collection API of StorageAccountCredentials.
+     * Gets the resource collection API of StorageAccountCredentials. It manages StorageAccountCredential.
      *
      * @return Resource collection API of StorageAccountCredentials.
      */
@@ -550,7 +550,7 @@ public final class DataBoxEdgeManager {
     }
 
     /**
-     * Gets the resource collection API of StorageAccounts.
+     * Gets the resource collection API of StorageAccounts. It manages StorageAccount.
      *
      * @return Resource collection API of StorageAccounts.
      */
@@ -562,7 +562,7 @@ public final class DataBoxEdgeManager {
     }
 
     /**
-     * Gets the resource collection API of Containers.
+     * Gets the resource collection API of Containers. It manages Container.
      *
      * @return Resource collection API of Containers.
      */
@@ -598,7 +598,7 @@ public final class DataBoxEdgeManager {
     }
 
     /**
-     * Gets the resource collection API of Users.
+     * Gets the resource collection API of Users. It manages User.
      *
      * @return Resource collection API of Users.
      */

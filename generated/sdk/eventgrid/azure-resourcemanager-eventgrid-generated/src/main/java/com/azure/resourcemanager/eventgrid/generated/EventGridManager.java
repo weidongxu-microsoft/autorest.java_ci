@@ -349,7 +349,7 @@ public final class EventGridManager {
     }
 
     /**
-     * Gets the resource collection API of Channels.
+     * Gets the resource collection API of Channels. It manages Channel.
      *
      * @return Resource collection API of Channels.
      */
@@ -361,7 +361,7 @@ public final class EventGridManager {
     }
 
     /**
-     * Gets the resource collection API of Domains.
+     * Gets the resource collection API of Domains. It manages Domain.
      *
      * @return Resource collection API of Domains.
      */
@@ -385,7 +385,7 @@ public final class EventGridManager {
     }
 
     /**
-     * Gets the resource collection API of EventChannels.
+     * Gets the resource collection API of EventChannels. It manages EventChannel.
      *
      * @return Resource collection API of EventChannels.
      */
@@ -397,7 +397,7 @@ public final class EventGridManager {
     }
 
     /**
-     * Gets the resource collection API of EventSubscriptions.
+     * Gets the resource collection API of EventSubscriptions. It manages EventSubscription.
      *
      * @return Resource collection API of EventSubscriptions.
      */
@@ -498,7 +498,7 @@ public final class EventGridManager {
     }
 
     /**
-     * Gets the resource collection API of PartnerDestinations.
+     * Gets the resource collection API of PartnerDestinations. It manages PartnerDestination.
      *
      * @return Resource collection API of PartnerDestinations.
      */
@@ -510,7 +510,7 @@ public final class EventGridManager {
     }
 
     /**
-     * Gets the resource collection API of PartnerNamespaces.
+     * Gets the resource collection API of PartnerNamespaces. It manages PartnerNamespace.
      *
      * @return Resource collection API of PartnerNamespaces.
      */
@@ -522,7 +522,7 @@ public final class EventGridManager {
     }
 
     /**
-     * Gets the resource collection API of PartnerRegistrations.
+     * Gets the resource collection API of PartnerRegistrations. It manages PartnerRegistration.
      *
      * @return Resource collection API of PartnerRegistrations.
      */
@@ -534,7 +534,7 @@ public final class EventGridManager {
     }
 
     /**
-     * Gets the resource collection API of PartnerTopics.
+     * Gets the resource collection API of PartnerTopics. It manages PartnerTopic.
      *
      * @return Resource collection API of PartnerTopics.
      */
@@ -571,7 +571,7 @@ public final class EventGridManager {
     }
 
     /**
-     * Gets the resource collection API of SystemTopics.
+     * Gets the resource collection API of SystemTopics. It manages SystemTopic.
      *
      * @return Resource collection API of SystemTopics.
      */
@@ -583,7 +583,7 @@ public final class EventGridManager {
     }
 
     /**
-     * Gets the resource collection API of Topics.
+     * Gets the resource collection API of Topics. It manages Topic.
      *
      * @return Resource collection API of Topics.
      */

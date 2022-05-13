@@ -281,7 +281,7 @@ public final class ManagementLockManager {
     }
 
     /**
-     * Gets the resource collection API of ManagementLocks.
+     * Gets the resource collection API of ManagementLocks. It manages ManagementLockObject.
      *
      * @return Resource collection API of ManagementLocks.
      */

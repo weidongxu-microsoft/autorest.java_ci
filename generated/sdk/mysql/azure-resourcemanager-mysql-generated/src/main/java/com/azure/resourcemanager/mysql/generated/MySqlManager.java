@@ -365,7 +365,7 @@ public final class MySqlManager {
     }
 
     /**
-     * Gets the resource collection API of Servers.
+     * Gets the resource collection API of Servers. It manages Server.
      *
      * @return Resource collection API of Servers.
      */
@@ -389,7 +389,7 @@ public final class MySqlManager {
     }
 
     /**
-     * Gets the resource collection API of FirewallRules.
+     * Gets the resource collection API of FirewallRules. It manages FirewallRule.
      *
      * @return Resource collection API of FirewallRules.
      */
@@ -401,7 +401,7 @@ public final class MySqlManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualNetworkRules.
+     * Gets the resource collection API of VirtualNetworkRules. It manages VirtualNetworkRule.
      *
      * @return Resource collection API of VirtualNetworkRules.
      */
@@ -413,7 +413,7 @@ public final class MySqlManager {
     }
 
     /**
-     * Gets the resource collection API of Databases.
+     * Gets the resource collection API of Databases. It manages Database.
      *
      * @return Resource collection API of Databases.
      */
@@ -425,7 +425,7 @@ public final class MySqlManager {
     }
 
     /**
-     * Gets the resource collection API of Configurations.
+     * Gets the resource collection API of Configurations. It manages Configuration.
      *
      * @return Resource collection API of Configurations.
      */
@@ -536,7 +536,7 @@ public final class MySqlManager {
     }
 
     /**
-     * Gets the resource collection API of ServerSecurityAlertPolicies.
+     * Gets the resource collection API of ServerSecurityAlertPolicies. It manages ServerSecurityAlertPolicy.
      *
      * @return Resource collection API of ServerSecurityAlertPolicies.
      */
@@ -650,7 +650,7 @@ public final class MySqlManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateEndpointConnections.
+     * Gets the resource collection API of PrivateEndpointConnections. It manages PrivateEndpointConnection.
      *
      * @return Resource collection API of PrivateEndpointConnections.
      */
@@ -675,7 +675,7 @@ public final class MySqlManager {
     }
 
     /**
-     * Gets the resource collection API of ServerKeys.
+     * Gets the resource collection API of ServerKeys. It manages ServerKey.
      *
      * @return Resource collection API of ServerKeys.
      */

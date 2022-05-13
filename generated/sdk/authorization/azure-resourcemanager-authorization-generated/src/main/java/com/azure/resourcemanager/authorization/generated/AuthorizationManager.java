@@ -327,7 +327,7 @@ public final class AuthorizationManager {
     }
 
     /**
-     * Gets the resource collection API of RoleAssignments.
+     * Gets the resource collection API of RoleAssignments. It manages RoleAssignment.
      *
      * @return Resource collection API of RoleAssignments.
      */
@@ -351,7 +351,7 @@ public final class AuthorizationManager {
     }
 
     /**
-     * Gets the resource collection API of RoleDefinitions.
+     * Gets the resource collection API of RoleDefinitions. It manages RoleDefinition.
      *
      * @return Resource collection API of RoleDefinitions.
      */

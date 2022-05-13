@@ -361,7 +361,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of StorageAccounts.
+     * Gets the resource collection API of StorageAccounts. It manages StorageAccount.
      *
      * @return Resource collection API of StorageAccounts.
      */
@@ -397,7 +397,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of ManagementPolicies.
+     * Gets the resource collection API of ManagementPolicies. It manages ManagementPolicy.
      *
      * @return Resource collection API of ManagementPolicies.
      */
@@ -409,7 +409,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of BlobInventoryPolicies.
+     * Gets the resource collection API of BlobInventoryPolicies. It manages BlobInventoryPolicy.
      *
      * @return Resource collection API of BlobInventoryPolicies.
      */
@@ -421,7 +421,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateEndpointConnections.
+     * Gets the resource collection API of PrivateEndpointConnections. It manages PrivateEndpointConnection.
      *
      * @return Resource collection API of PrivateEndpointConnections.
      */
@@ -446,7 +446,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of ObjectReplicationPoliciesOperations.
+     * Gets the resource collection API of ObjectReplicationPoliciesOperations. It manages ObjectReplicationPolicy.
      *
      * @return Resource collection API of ObjectReplicationPoliciesOperations.
      */
@@ -460,7 +460,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of LocalUsersOperations.
+     * Gets the resource collection API of LocalUsersOperations. It manages LocalUser.
      *
      * @return Resource collection API of LocalUsersOperations.
      */
@@ -472,7 +472,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of EncryptionScopes.
+     * Gets the resource collection API of EncryptionScopes. It manages EncryptionScope.
      *
      * @return Resource collection API of EncryptionScopes.
      */
@@ -484,7 +484,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of BlobServices.
+     * Gets the resource collection API of BlobServices. It manages BlobServiceProperties.
      *
      * @return Resource collection API of BlobServices.
      */
@@ -496,7 +496,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of BlobContainers.
+     * Gets the resource collection API of BlobContainers. It manages BlobContainer, ImmutabilityPolicy.
      *
      * @return Resource collection API of BlobContainers.
      */
@@ -508,7 +508,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of FileServices.
+     * Gets the resource collection API of FileServices. It manages FileServiceProperties.
      *
      * @return Resource collection API of FileServices.
      */
@@ -520,7 +520,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of FileShares.
+     * Gets the resource collection API of FileShares. It manages FileShare.
      *
      * @return Resource collection API of FileShares.
      */
@@ -532,7 +532,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of QueueServices.
+     * Gets the resource collection API of QueueServices. It manages QueueServiceProperties.
      *
      * @return Resource collection API of QueueServices.
      */
@@ -544,7 +544,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of Queues.
+     * Gets the resource collection API of Queues. It manages StorageQueue.
      *
      * @return Resource collection API of Queues.
      */
@@ -556,7 +556,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of TableServices.
+     * Gets the resource collection API of TableServices. It manages TableServiceProperties.
      *
      * @return Resource collection API of TableServices.
      */
@@ -568,7 +568,7 @@ public final class StorageManager {
     }
 
     /**
-     * Gets the resource collection API of Tables.
+     * Gets the resource collection API of Tables. It manages Table.
      *
      * @return Resource collection API of Tables.
      */

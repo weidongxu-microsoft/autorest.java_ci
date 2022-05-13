@@ -292,7 +292,7 @@ public final class PolicyManager {
     }
 
     /**
-     * Gets the resource collection API of PolicyAssignments.
+     * Gets the resource collection API of PolicyAssignments. It manages PolicyAssignment.
      *
      * @return Resource collection API of PolicyAssignments.
      */
@@ -304,7 +304,7 @@ public final class PolicyManager {
     }
 
     /**
-     * Gets the resource collection API of PolicyDefinitions.
+     * Gets the resource collection API of PolicyDefinitions. It manages PolicyDefinition.
      *
      * @return Resource collection API of PolicyDefinitions.
      */
@@ -316,7 +316,7 @@ public final class PolicyManager {
     }
 
     /**
-     * Gets the resource collection API of PolicySetDefinitions.
+     * Gets the resource collection API of PolicySetDefinitions. It manages PolicySetDefinition.
      *
      * @return Resource collection API of PolicySetDefinitions.
      */
@@ -328,7 +328,7 @@ public final class PolicyManager {
     }
 
     /**
-     * Gets the resource collection API of PolicyExemptions.
+     * Gets the resource collection API of PolicyExemptions. It manages PolicyExemption.
      *
      * @return Resource collection API of PolicyExemptions.
      */

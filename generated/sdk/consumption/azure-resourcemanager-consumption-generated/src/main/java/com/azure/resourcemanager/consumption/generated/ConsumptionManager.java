@@ -352,7 +352,7 @@ public final class ConsumptionManager {
     }
 
     /**
-     * Gets the resource collection API of Budgets.
+     * Gets the resource collection API of Budgets. It manages Budget.
      *
      * @return Resource collection API of Budgets.
      */

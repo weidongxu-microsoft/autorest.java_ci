@@ -297,7 +297,7 @@ public final class ResourceManager {
     }
 
     /**
-     * Gets the resource collection API of Deployments.
+     * Gets the resource collection API of Deployments. It manages DeploymentExtended.
      *
      * @return Resource collection API of Deployments.
      */
@@ -333,7 +333,7 @@ public final class ResourceManager {
     }
 
     /**
-     * Gets the resource collection API of ResourceGroups.
+     * Gets the resource collection API of ResourceGroups. It manages ResourceGroup.
      *
      * @return Resource collection API of ResourceGroups.
      */

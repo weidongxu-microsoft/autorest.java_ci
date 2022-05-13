@@ -489,7 +489,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualMachineScaleSets.
+     * Gets the resource collection API of VirtualMachineScaleSets. It manages VirtualMachineScaleSet.
      *
      * @return Resource collection API of VirtualMachineScaleSets.
      */
@@ -502,7 +502,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualMachineScaleSetExtensions.
+     * Gets the resource collection API of VirtualMachineScaleSetExtensions. It manages VirtualMachineScaleSetExtension.
      *
      * @return Resource collection API of VirtualMachineScaleSetExtensions.
      */
@@ -529,7 +529,8 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualMachineScaleSetVMExtensions.
+     * Gets the resource collection API of VirtualMachineScaleSetVMExtensions. It manages
+     * VirtualMachineScaleSetVMExtension.
      *
      * @return Resource collection API of VirtualMachineScaleSetVMExtensions.
      */
@@ -555,7 +556,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualMachineExtensions.
+     * Gets the resource collection API of VirtualMachineExtensions. It manages VirtualMachineExtension.
      *
      * @return Resource collection API of VirtualMachineExtensions.
      */
@@ -568,7 +569,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualMachines.
+     * Gets the resource collection API of VirtualMachines. It manages VirtualMachine.
      *
      * @return Resource collection API of VirtualMachines.
      */
@@ -618,7 +619,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of AvailabilitySets.
+     * Gets the resource collection API of AvailabilitySets. It manages AvailabilitySet.
      *
      * @return Resource collection API of AvailabilitySets.
      */
@@ -630,7 +631,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of ProximityPlacementGroups.
+     * Gets the resource collection API of ProximityPlacementGroups. It manages ProximityPlacementGroup.
      *
      * @return Resource collection API of ProximityPlacementGroups.
      */
@@ -643,7 +644,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of DedicatedHostGroups.
+     * Gets the resource collection API of DedicatedHostGroups. It manages DedicatedHostGroup.
      *
      * @return Resource collection API of DedicatedHostGroups.
      */
@@ -655,7 +656,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of DedicatedHosts.
+     * Gets the resource collection API of DedicatedHosts. It manages DedicatedHost.
      *
      * @return Resource collection API of DedicatedHosts.
      */
@@ -667,7 +668,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of SshPublicKeys.
+     * Gets the resource collection API of SshPublicKeys. It manages SshPublicKeyResource.
      *
      * @return Resource collection API of SshPublicKeys.
      */
@@ -679,7 +680,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of Images.
+     * Gets the resource collection API of Images. It manages Image.
      *
      * @return Resource collection API of Images.
      */
@@ -691,7 +692,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of RestorePointCollections.
+     * Gets the resource collection API of RestorePointCollections. It manages RestorePointCollection.
      *
      * @return Resource collection API of RestorePointCollections.
      */
@@ -704,7 +705,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of RestorePoints.
+     * Gets the resource collection API of RestorePoints. It manages RestorePoint.
      *
      * @return Resource collection API of RestorePoints.
      */
@@ -716,7 +717,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of CapacityReservationGroups.
+     * Gets the resource collection API of CapacityReservationGroups. It manages CapacityReservationGroup.
      *
      * @return Resource collection API of CapacityReservationGroups.
      */
@@ -729,7 +730,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of CapacityReservations.
+     * Gets the resource collection API of CapacityReservations. It manages CapacityReservation.
      *
      * @return Resource collection API of CapacityReservations.
      */
@@ -753,7 +754,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualMachineRunCommands.
+     * Gets the resource collection API of VirtualMachineRunCommands. It manages VirtualMachineRunCommand.
      *
      * @return Resource collection API of VirtualMachineRunCommands.
      */
@@ -792,7 +793,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of Disks.
+     * Gets the resource collection API of Disks. It manages Disk.
      *
      * @return Resource collection API of Disks.
      */
@@ -804,7 +805,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of Snapshots.
+     * Gets the resource collection API of Snapshots. It manages Snapshot.
      *
      * @return Resource collection API of Snapshots.
      */
@@ -816,7 +817,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of DiskEncryptionSets.
+     * Gets the resource collection API of DiskEncryptionSets. It manages DiskEncryptionSet.
      *
      * @return Resource collection API of DiskEncryptionSets.
      */
@@ -828,7 +829,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of DiskAccesses.
+     * Gets the resource collection API of DiskAccesses. It manages DiskAccess.
      *
      * @return Resource collection API of DiskAccesses.
      */
@@ -852,7 +853,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of Galleries.
+     * Gets the resource collection API of Galleries. It manages Gallery.
      *
      * @return Resource collection API of Galleries.
      */
@@ -864,7 +865,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of GalleryImages.
+     * Gets the resource collection API of GalleryImages. It manages GalleryImage.
      *
      * @return Resource collection API of GalleryImages.
      */
@@ -876,7 +877,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of GalleryImageVersions.
+     * Gets the resource collection API of GalleryImageVersions. It manages GalleryImageVersion.
      *
      * @return Resource collection API of GalleryImageVersions.
      */
@@ -888,7 +889,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of GalleryApplications.
+     * Gets the resource collection API of GalleryApplications. It manages GalleryApplication.
      *
      * @return Resource collection API of GalleryApplications.
      */
@@ -900,7 +901,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of GalleryApplicationVersions.
+     * Gets the resource collection API of GalleryApplicationVersions. It manages GalleryApplicationVersion.
      *
      * @return Resource collection API of GalleryApplicationVersions.
      */
@@ -1026,7 +1027,7 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of CloudServices.
+     * Gets the resource collection API of CloudServices. It manages CloudService.
      *
      * @return Resource collection API of CloudServices.
      */

@@ -281,7 +281,7 @@ public final class DnsManager {
     }
 
     /**
-     * Gets the resource collection API of Zones.
+     * Gets the resource collection API of Zones. It manages Zone.
      *
      * @return Resource collection API of Zones.
      */

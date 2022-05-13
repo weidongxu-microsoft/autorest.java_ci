@@ -296,7 +296,7 @@ public final class KeyVaultManager {
     }
 
     /**
-     * Gets the resource collection API of Keys.
+     * Gets the resource collection API of Keys. It manages Key.
      *
      * @return Resource collection API of Keys.
      */
@@ -308,7 +308,7 @@ public final class KeyVaultManager {
     }
 
     /**
-     * Gets the resource collection API of Vaults.
+     * Gets the resource collection API of Vaults. It manages Vault.
      *
      * @return Resource collection API of Vaults.
      */
@@ -320,7 +320,7 @@ public final class KeyVaultManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateEndpointConnections.
+     * Gets the resource collection API of PrivateEndpointConnections. It manages PrivateEndpointConnection.
      *
      * @return Resource collection API of PrivateEndpointConnections.
      */
@@ -345,7 +345,7 @@ public final class KeyVaultManager {
     }
 
     /**
-     * Gets the resource collection API of ManagedHsms.
+     * Gets the resource collection API of ManagedHsms. It manages ManagedHsm.
      *
      * @return Resource collection API of ManagedHsms.
      */
@@ -357,7 +357,7 @@ public final class KeyVaultManager {
     }
 
     /**
-     * Gets the resource collection API of MhsmPrivateEndpointConnections.
+     * Gets the resource collection API of MhsmPrivateEndpointConnections. It manages MhsmPrivateEndpointConnection.
      *
      * @return Resource collection API of MhsmPrivateEndpointConnections.
      */
@@ -395,7 +395,7 @@ public final class KeyVaultManager {
     }
 
     /**
-     * Gets the resource collection API of Secrets.
+     * Gets the resource collection API of Secrets. It manages Secret.
      *
      * @return Resource collection API of Secrets.
      */

@@ -478,7 +478,7 @@ public final class ApplicationInsightsManager {
     }
 
     /**
-     * Gets the resource collection API of WebTests.
+     * Gets the resource collection API of WebTests. It manages WebTest.
      *
      * @return Resource collection API of WebTests.
      */
@@ -502,7 +502,7 @@ public final class ApplicationInsightsManager {
     }
 
     /**
-     * Gets the resource collection API of Workbooks.
+     * Gets the resource collection API of Workbooks. It manages Workbook.
      *
      * @return Resource collection API of Workbooks.
      */
@@ -514,7 +514,7 @@ public final class ApplicationInsightsManager {
     }
 
     /**
-     * Gets the resource collection API of MyWorkbooks.
+     * Gets the resource collection API of MyWorkbooks. It manages MyWorkbook.
      *
      * @return Resource collection API of MyWorkbooks.
      */
@@ -526,7 +526,7 @@ public final class ApplicationInsightsManager {
     }
 
     /**
-     * Gets the resource collection API of Components.
+     * Gets the resource collection API of Components. It manages ApplicationInsightsComponent.
      *
      * @return Resource collection API of Components.
      */
@@ -538,7 +538,8 @@ public final class ApplicationInsightsManager {
     }
 
     /**
-     * Gets the resource collection API of ComponentLinkedStorageAccountsOperations.
+     * Gets the resource collection API of ComponentLinkedStorageAccountsOperations. It manages
+     * ComponentLinkedStorageAccounts.
      *
      * @return Resource collection API of ComponentLinkedStorageAccountsOperations.
      */

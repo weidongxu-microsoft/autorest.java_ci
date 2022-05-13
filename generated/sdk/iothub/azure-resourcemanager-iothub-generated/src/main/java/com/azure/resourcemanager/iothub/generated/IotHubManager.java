@@ -297,7 +297,7 @@ public final class IotHubManager {
     }
 
     /**
-     * Gets the resource collection API of IotHubResources.
+     * Gets the resource collection API of IotHubResources. It manages IotHubDescription, EventHubConsumerGroupInfo.
      *
      * @return Resource collection API of IotHubResources.
      */
@@ -322,7 +322,7 @@ public final class IotHubManager {
     }
 
     /**
-     * Gets the resource collection API of Certificates.
+     * Gets the resource collection API of Certificates. It manages CertificateDescription.
      *
      * @return Resource collection API of Certificates.
      */

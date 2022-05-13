@@ -301,7 +301,7 @@ public final class HDInsightManager {
     }
 
     /**
-     * Gets the resource collection API of Clusters.
+     * Gets the resource collection API of Clusters. It manages Cluster.
      *
      * @return Resource collection API of Clusters.
      */
@@ -313,7 +313,7 @@ public final class HDInsightManager {
     }
 
     /**
-     * Gets the resource collection API of Applications.
+     * Gets the resource collection API of Applications. It manages Application.
      *
      * @return Resource collection API of Applications.
      */
@@ -410,7 +410,7 @@ public final class HDInsightManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateEndpointConnections.
+     * Gets the resource collection API of PrivateEndpointConnections. It manages PrivateEndpointConnection.
      *
      * @return Resource collection API of PrivateEndpointConnections.
      */

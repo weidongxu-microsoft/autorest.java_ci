@@ -281,7 +281,7 @@ public final class RelayManager {
     }
 
     /**
-     * Gets the resource collection API of Namespaces.
+     * Gets the resource collection API of Namespaces. It manages RelayNamespace, AuthorizationRule.
      *
      * @return Resource collection API of Namespaces.
      */
@@ -293,7 +293,7 @@ public final class RelayManager {
     }
 
     /**
-     * Gets the resource collection API of HybridConnections.
+     * Gets the resource collection API of HybridConnections. It manages HybridConnection.
      *
      * @return Resource collection API of HybridConnections.
      */
@@ -305,7 +305,7 @@ public final class RelayManager {
     }
 
     /**
-     * Gets the resource collection API of WcfRelays.
+     * Gets the resource collection API of WcfRelays. It manages WcfRelay.
      *
      * @return Resource collection API of WcfRelays.
      */
@@ -317,7 +317,7 @@ public final class RelayManager {
     }
 
     /**
-     * Gets the resource collection API of PrivateEndpointConnections.
+     * Gets the resource collection API of PrivateEndpointConnections. It manages PrivateEndpointConnection.
      *
      * @return Resource collection API of PrivateEndpointConnections.
      */
