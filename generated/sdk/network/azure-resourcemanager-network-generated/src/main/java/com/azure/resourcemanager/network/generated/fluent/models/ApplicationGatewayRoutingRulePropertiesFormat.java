@@ -20,6 +20,12 @@ public final class ApplicationGatewayRoutingRulePropertiesFormat {
     private ApplicationGatewayRequestRoutingRuleType ruleType;
 
     /*
+     * Priority of the routing rule.
+     */
+    @JsonProperty(value = "priority", required = true)
+    private int priority;
+
+    /*
      * Backend address pool resource of the application gateway.
      */
     @JsonProperty(value = "backendAddressPool")
@@ -61,6 +67,26 @@ public final class ApplicationGatewayRoutingRulePropertiesFormat {
     public ApplicationGatewayRoutingRulePropertiesFormat withRuleType(
         ApplicationGatewayRequestRoutingRuleType ruleType) {
         this.ruleType = ruleType;
+        return this;
+    }
+
+    /**
+     * Get the priority property: Priority of the routing rule.
+     *
+     * @return the priority value.
+     */
+    public int priority() {
+        return this.priority;
+    }
+
+    /**
+     * Set the priority property: Priority of the routing rule.
+     *
+     * @param priority the priority value to set.
+     * @return the ApplicationGatewayRoutingRulePropertiesFormat object itself.
+     */
+    public ApplicationGatewayRoutingRulePropertiesFormat withPriority(int priority) {
+        this.priority = priority;
         return this;
     }
 

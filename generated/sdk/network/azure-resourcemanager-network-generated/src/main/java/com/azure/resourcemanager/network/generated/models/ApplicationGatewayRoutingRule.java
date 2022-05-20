@@ -114,6 +114,29 @@ public final class ApplicationGatewayRoutingRule extends SubResource {
     }
 
     /**
+     * Get the priority property: Priority of the routing rule.
+     *
+     * @return the priority value.
+     */
+    public Integer priority() {
+        return this.innerProperties() == null ? null : this.innerProperties().priority();
+    }
+
+    /**
+     * Set the priority property: Priority of the routing rule.
+     *
+     * @param priority the priority value to set.
+     * @return the ApplicationGatewayRoutingRule object itself.
+     */
+    public ApplicationGatewayRoutingRule withPriority(Integer priority) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ApplicationGatewayRoutingRulePropertiesFormat();
+        }
+        this.innerProperties().withPriority(priority);
+        return this;
+    }
+
+    /**
      * Get the backendAddressPool property: Backend address pool resource of the application gateway.
      *
      * @return the backendAddressPool value.
