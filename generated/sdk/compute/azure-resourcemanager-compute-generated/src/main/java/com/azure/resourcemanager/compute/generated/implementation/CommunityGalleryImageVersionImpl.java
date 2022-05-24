@@ -6,6 +6,7 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryImageVersionInner;
 import com.azure.resourcemanager.compute.generated.models.CommunityGalleryImageVersion;
+import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersionStorageProfile;
 import java.time.OffsetDateTime;
 
 public final class CommunityGalleryImageVersionImpl implements CommunityGalleryImageVersion {
@@ -42,6 +43,14 @@ public final class CommunityGalleryImageVersionImpl implements CommunityGalleryI
 
     public OffsetDateTime endOfLifeDate() {
         return this.innerModel().endOfLifeDate();
+    }
+
+    public Boolean excludeFromLatest() {
+        return this.innerModel().excludeFromLatest();
+    }
+
+    public SharedGalleryImageVersionStorageProfile storageProfile() {
+        return this.innerModel().storageProfile();
     }
 
     public CommunityGalleryImageVersionInner innerModel() {

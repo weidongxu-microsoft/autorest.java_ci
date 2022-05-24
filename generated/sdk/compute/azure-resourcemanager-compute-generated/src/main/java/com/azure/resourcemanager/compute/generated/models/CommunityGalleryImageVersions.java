@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
+import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
@@ -49,4 +50,37 @@ public interface CommunityGalleryImageVersions {
         String galleryImageName,
         String galleryImageVersionName,
         Context context);
+
+    /**
+     * List community gallery image versions inside an image.
+     *
+     * @param location Resource location.
+     * @param publicGalleryName The public name of the community gallery.
+     * @param galleryImageName The name of the community gallery image definition.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List Community Gallery Image versions operation response as paginated response with {@link
+     *     PagedIterable}.
+     */
+    PagedIterable<CommunityGalleryImageVersion> list(
+        String location, String publicGalleryName, String galleryImageName);
+
+    /**
+     * List community gallery image versions inside an image.
+     *
+     * @param location Resource location.
+     * @param publicGalleryName The public name of the community gallery.
+     * @param galleryImageName The name of the community gallery image definition.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List Community Gallery Image versions operation response as paginated response with {@link
+     *     PagedIterable}.
+     */
+    PagedIterable<CommunityGalleryImageVersion> list(
+        String location, String publicGalleryName, String galleryImageName, Context context);
 }

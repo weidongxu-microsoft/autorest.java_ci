@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryImageInner;
+import com.azure.resourcemanager.compute.generated.models.Architecture;
 import com.azure.resourcemanager.compute.generated.models.CommunityGalleryImage;
 import com.azure.resourcemanager.compute.generated.models.Disallowed;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageFeature;
@@ -85,6 +86,18 @@ public final class CommunityGalleryImageImpl implements CommunityGalleryImage {
 
     public ImagePurchasePlan purchasePlan() {
         return this.innerModel().purchasePlan();
+    }
+
+    public Architecture architecture() {
+        return this.innerModel().architecture();
+    }
+
+    public String privacyStatementUri() {
+        return this.innerModel().privacyStatementUri();
+    }
+
+    public String eula() {
+        return this.innerModel().eula();
     }
 
     public CommunityGalleryImageInner innerModel() {

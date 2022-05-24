@@ -10,7 +10,7 @@ import com.azure.resourcemanager.compute.generated.models.Architecture;
 import com.azure.resourcemanager.compute.generated.models.Disallowed;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageFeature;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageIdentifier;
-import com.azure.resourcemanager.compute.generated.models.GalleryImagePropertiesProvisioningState;
+import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.HyperVGeneration;
 import com.azure.resourcemanager.compute.generated.models.ImagePurchasePlan;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemStateTypes;
@@ -344,12 +344,12 @@ public final class GalleryImageInner extends Resource {
     }
 
     /**
-     * Get the provisioningState property: The current state of the gallery image definition. The provisioning state,
+     * Get the provisioningState property: The current state of the gallery or gallery artifact. The provisioning state,
      * which only appears in the response.
      *
      * @return the provisioningState value.
      */
-    public GalleryImagePropertiesProvisioningState provisioningState() {
+    public GalleryProvisioningState provisioningState() {
         return this.innerProperties() == null ? null : this.innerProperties().provisioningState();
     }
 
@@ -377,7 +377,7 @@ public final class GalleryImageInner extends Resource {
     }
 
     /**
-     * Get the architecture property: The architecture of the image. Applicable to OS disks only.
+     * Get the architecture property: CPU architecture supported by an OS disk.
      *
      * @return the architecture value.
      */
@@ -386,7 +386,7 @@ public final class GalleryImageInner extends Resource {
     }
 
     /**
-     * Set the architecture property: The architecture of the image. Applicable to OS disks only.
+     * Set the architecture property: CPU architecture supported by an OS disk.
      *
      * @param architecture the architecture value to set.
      * @return the GalleryImageInner object itself.

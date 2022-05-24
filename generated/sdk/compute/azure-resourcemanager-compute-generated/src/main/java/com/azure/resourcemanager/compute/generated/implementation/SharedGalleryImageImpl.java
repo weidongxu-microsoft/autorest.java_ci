@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryImageInner;
+import com.azure.resourcemanager.compute.generated.models.Architecture;
 import com.azure.resourcemanager.compute.generated.models.Disallowed;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageFeature;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageIdentifier;
@@ -81,6 +82,10 @@ public final class SharedGalleryImageImpl implements SharedGalleryImage {
 
     public ImagePurchasePlan purchasePlan() {
         return this.innerModel().purchasePlan();
+    }
+
+    public Architecture architecture() {
+        return this.innerModel().architecture();
     }
 
     public SharedGalleryImageInner innerModel() {

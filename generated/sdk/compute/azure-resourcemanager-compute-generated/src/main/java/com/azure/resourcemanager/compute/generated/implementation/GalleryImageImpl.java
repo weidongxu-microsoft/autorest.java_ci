@@ -12,8 +12,8 @@ import com.azure.resourcemanager.compute.generated.models.Disallowed;
 import com.azure.resourcemanager.compute.generated.models.GalleryImage;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageFeature;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageIdentifier;
-import com.azure.resourcemanager.compute.generated.models.GalleryImagePropertiesProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageUpdate;
+import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.HyperVGeneration;
 import com.azure.resourcemanager.compute.generated.models.ImagePurchasePlan;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemStateTypes;
@@ -102,7 +102,7 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         return this.innerModel().purchasePlan();
     }
 
-    public GalleryImagePropertiesProvisioningState provisioningState() {
+    public GalleryProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
     }
 

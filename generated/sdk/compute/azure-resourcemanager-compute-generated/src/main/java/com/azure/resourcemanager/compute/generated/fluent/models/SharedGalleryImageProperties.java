@@ -6,6 +6,7 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.compute.generated.models.Architecture;
 import com.azure.resourcemanager.compute.generated.models.Disallowed;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageFeature;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageIdentifier;
@@ -81,6 +82,12 @@ public final class SharedGalleryImageProperties {
      */
     @JsonProperty(value = "purchasePlan")
     private ImagePurchasePlan purchasePlan;
+
+    /*
+     * CPU architecture supported by an OS disk.
+     */
+    @JsonProperty(value = "architecture")
+    private Architecture architecture;
 
     /**
      * Get the osType property: This property allows you to specify the type of the OS that is included in the disk when
@@ -271,6 +278,26 @@ public final class SharedGalleryImageProperties {
      */
     public SharedGalleryImageProperties withPurchasePlan(ImagePurchasePlan purchasePlan) {
         this.purchasePlan = purchasePlan;
+        return this;
+    }
+
+    /**
+     * Get the architecture property: CPU architecture supported by an OS disk.
+     *
+     * @return the architecture value.
+     */
+    public Architecture architecture() {
+        return this.architecture;
+    }
+
+    /**
+     * Set the architecture property: CPU architecture supported by an OS disk.
+     *
+     * @param architecture the architecture value to set.
+     * @return the SharedGalleryImageProperties object itself.
+     */
+    public SharedGalleryImageProperties withArchitecture(Architecture architecture) {
+        this.architecture = architecture;
         return this;
     }
 

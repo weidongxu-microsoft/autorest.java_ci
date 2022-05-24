@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
+import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
@@ -57,6 +58,20 @@ public final class CommunityGalleryImageVersionsImpl implements CommunityGallery
         } else {
             return null;
         }
+    }
+
+    public PagedIterable<CommunityGalleryImageVersion> list(
+        String location, String publicGalleryName, String galleryImageName) {
+        PagedIterable<CommunityGalleryImageVersionInner> inner =
+            this.serviceClient().list(location, publicGalleryName, galleryImageName);
+        return Utils.mapPage(inner, inner1 -> new CommunityGalleryImageVersionImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<CommunityGalleryImageVersion> list(
+        String location, String publicGalleryName, String galleryImageName, Context context) {
+        PagedIterable<CommunityGalleryImageVersionInner> inner =
+            this.serviceClient().list(location, publicGalleryName, galleryImageName, context);
+        return Utils.mapPage(inner, inner1 -> new CommunityGalleryImageVersionImpl(inner1, this.manager()));
     }
 
     private CommunityGalleryImageVersionsClient serviceClient() {

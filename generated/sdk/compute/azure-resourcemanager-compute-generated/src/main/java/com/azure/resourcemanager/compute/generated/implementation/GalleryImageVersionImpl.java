@@ -8,10 +8,10 @@ import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryImageVersionInner;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersion;
-import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionPropertiesProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionPublishingProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionStorageProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionUpdate;
+import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatusTypes;
 import java.util.Collections;
@@ -52,7 +52,7 @@ public final class GalleryImageVersionImpl
         return this.innerModel().publishingProfile();
     }
 
-    public GalleryImageVersionPropertiesProvisioningState provisioningState() {
+    public GalleryProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
     }
 

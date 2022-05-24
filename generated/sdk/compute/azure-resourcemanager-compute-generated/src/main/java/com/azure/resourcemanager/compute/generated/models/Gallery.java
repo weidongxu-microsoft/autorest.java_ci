@@ -61,12 +61,12 @@ public interface Gallery {
     GalleryIdentifier identifier();
 
     /**
-     * Gets the provisioningState property: The current state of the gallery. The provisioning state, which only appears
-     * in the response.
+     * Gets the provisioningState property: The current state of the gallery or gallery artifact. The provisioning
+     * state, which only appears in the response.
      *
      * @return the provisioningState value.
      */
-    GalleryPropertiesProvisioningState provisioningState();
+    GalleryProvisioningState provisioningState();
 
     /**
      * Gets the sharingProfile property: Profile for gallery sharing to subscription or tenant.

@@ -54,12 +54,12 @@ public interface GalleryApplicationVersion {
     GalleryApplicationVersionPublishingProfile publishingProfile();
 
     /**
-     * Gets the provisioningState property: The current state of the gallery Application Version. The provisioning
+     * Gets the provisioningState property: The current state of the gallery or gallery artifact. The provisioning
      * state, which only appears in the response.
      *
      * @return the provisioningState value.
      */
-    GalleryApplicationVersionPropertiesProvisioningState provisioningState();
+    GalleryProvisioningState provisioningState();
 
     /**
      * Gets the replicationStatus property: This is the replication status of the gallery image version.

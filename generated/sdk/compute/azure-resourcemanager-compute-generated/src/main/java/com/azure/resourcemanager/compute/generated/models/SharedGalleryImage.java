@@ -102,6 +102,13 @@ public interface SharedGalleryImage {
     ImagePurchasePlan purchasePlan();
 
     /**
+     * Gets the architecture property: CPU architecture supported by an OS disk.
+     *
+     * @return the architecture value.
+     */
+    Architecture architecture();
+
+    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryImageInner object.
      *
      * @return the inner object.

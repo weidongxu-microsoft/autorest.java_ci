@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.compute.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.compute.generated.models.Architecture;
 import com.azure.resourcemanager.compute.generated.models.Disallowed;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageFeature;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageIdentifier;
@@ -259,6 +260,29 @@ public final class SharedGalleryImageInner extends PirSharedGalleryResource {
             this.innerProperties = new SharedGalleryImageProperties();
         }
         this.innerProperties().withPurchasePlan(purchasePlan);
+        return this;
+    }
+
+    /**
+     * Get the architecture property: CPU architecture supported by an OS disk.
+     *
+     * @return the architecture value.
+     */
+    public Architecture architecture() {
+        return this.innerProperties() == null ? null : this.innerProperties().architecture();
+    }
+
+    /**
+     * Set the architecture property: CPU architecture supported by an OS disk.
+     *
+     * @param architecture the architecture value to set.
+     * @return the SharedGalleryImageInner object itself.
+     */
+    public SharedGalleryImageInner withArchitecture(Architecture architecture) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SharedGalleryImageProperties();
+        }
+        this.innerProperties().withArchitecture(architecture);
         return this;
     }
 

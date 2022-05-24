@@ -10,7 +10,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.GalleryInner;
 import com.azure.resourcemanager.compute.generated.models.Gallery;
 import com.azure.resourcemanager.compute.generated.models.GalleryExpandParams;
 import com.azure.resourcemanager.compute.generated.models.GalleryIdentifier;
-import com.azure.resourcemanager.compute.generated.models.GalleryPropertiesProvisioningState;
+import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.GalleryUpdate;
 import com.azure.resourcemanager.compute.generated.models.SelectPermissions;
 import com.azure.resourcemanager.compute.generated.models.SharingProfile;
@@ -57,7 +57,7 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
         return this.innerModel().identifier();
     }
 
-    public GalleryPropertiesProvisioningState provisioningState() {
+    public GalleryProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
     }
 

@@ -109,6 +109,27 @@ public interface CommunityGalleryImage {
     ImagePurchasePlan purchasePlan();
 
     /**
+     * Gets the architecture property: CPU architecture supported by an OS disk.
+     *
+     * @return the architecture value.
+     */
+    Architecture architecture();
+
+    /**
+     * Gets the privacyStatementUri property: Privacy statement uri for the current community gallery image.
+     *
+     * @return the privacyStatementUri value.
+     */
+    String privacyStatementUri();
+
+    /**
+     * Gets the eula property: End-user license agreement for the current community gallery image.
+     *
+     * @return the eula value.
+     */
+    String eula();
+
+    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryImageInner object.
      *
      * @return the inner object.

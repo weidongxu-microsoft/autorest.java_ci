@@ -141,12 +141,12 @@ public interface GalleryImage {
     ImagePurchasePlan purchasePlan();
 
     /**
-     * Gets the provisioningState property: The current state of the gallery image definition. The provisioning state,
-     * which only appears in the response.
+     * Gets the provisioningState property: The current state of the gallery or gallery artifact. The provisioning
+     * state, which only appears in the response.
      *
      * @return the provisioningState value.
      */
-    GalleryImagePropertiesProvisioningState provisioningState();
+    GalleryProvisioningState provisioningState();
 
     /**
      * Gets the features property: A list of gallery image features.
@@ -156,7 +156,7 @@ public interface GalleryImage {
     List<GalleryImageFeature> features();
 
     /**
-     * Gets the architecture property: The architecture of the image. Applicable to OS disks only.
+     * Gets the architecture property: CPU architecture supported by an OS disk.
      *
      * @return the architecture value.
      */
@@ -423,9 +423,9 @@ public interface GalleryImage {
         /** The stage of the GalleryImage definition allowing to specify architecture. */
         interface WithArchitecture {
             /**
-             * Specifies the architecture property: The architecture of the image. Applicable to OS disks only..
+             * Specifies the architecture property: CPU architecture supported by an OS disk..
              *
-             * @param architecture The architecture of the image. Applicable to OS disks only.
+             * @param architecture CPU architecture supported by an OS disk.
              * @return the next definition stage.
              */
             WithCreate withArchitecture(Architecture architecture);
@@ -629,9 +629,9 @@ public interface GalleryImage {
         /** The stage of the GalleryImage update allowing to specify architecture. */
         interface WithArchitecture {
             /**
-             * Specifies the architecture property: The architecture of the image. Applicable to OS disks only..
+             * Specifies the architecture property: CPU architecture supported by an OS disk..
              *
-             * @param architecture The architecture of the image. Applicable to OS disks only.
+             * @param architecture CPU architecture supported by an OS disk.
              * @return the next definition stage.
              */
             Update withArchitecture(Architecture architecture);

@@ -47,6 +47,21 @@ public interface SharedGalleryImageVersion {
     OffsetDateTime endOfLifeDate();
 
     /**
+     * Gets the excludeFromLatest property: If set to true, Virtual Machines deployed from the latest version of the
+     * Image Definition won't use this Image Version.
+     *
+     * @return the excludeFromLatest value.
+     */
+    Boolean excludeFromLatest();
+
+    /**
+     * Gets the storageProfile property: Describes the storage profile of the image version.
+     *
+     * @return the storageProfile value.
+     */
+    SharedGalleryImageVersionStorageProfile storageProfile();
+
+    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryImageVersionInner object.
      *
      * @return the inner object.
