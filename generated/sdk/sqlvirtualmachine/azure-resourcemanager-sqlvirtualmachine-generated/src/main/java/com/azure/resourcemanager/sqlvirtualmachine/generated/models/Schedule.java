@@ -34,7 +34,7 @@ public final class Schedule {
      * Day of the week to run assessment.
      */
     @JsonProperty(value = "dayOfWeek")
-    private DayOfWeek dayOfWeek;
+    private AssessmentDayOfWeek dayOfWeek;
 
     /*
      * Time of the day in HH:mm format. Eg. 17:30
@@ -109,7 +109,7 @@ public final class Schedule {
      *
      * @return the dayOfWeek value.
      */
-    public DayOfWeek dayOfWeek() {
+    public AssessmentDayOfWeek dayOfWeek() {
         return this.dayOfWeek;
     }
 
@@ -119,7 +119,7 @@ public final class Schedule {
      * @param dayOfWeek the dayOfWeek value to set.
      * @return the Schedule object itself.
      */
-    public Schedule withDayOfWeek(DayOfWeek dayOfWeek) {
+    public Schedule withDayOfWeek(AssessmentDayOfWeek dayOfWeek) {
         this.dayOfWeek = dayOfWeek;
         return this;
     }

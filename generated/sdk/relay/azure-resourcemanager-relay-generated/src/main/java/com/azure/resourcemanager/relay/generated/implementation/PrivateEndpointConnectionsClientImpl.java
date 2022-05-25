@@ -85,7 +85,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces"
                 + "/{namespaceName}/privateEndpointConnections/{privateEndpointConnectionName}")
-        @ExpectedResponses({200, 201})
+        @ExpectedResponses({200, 201, 202})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<PrivateEndpointConnectionInner>> createOrUpdate(
             @HostParam("$host") String endpoint,
