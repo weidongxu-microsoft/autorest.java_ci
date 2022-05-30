@@ -43,7 +43,7 @@ public class VirtualMachineScaleSetIdentity {
      */
     @JsonProperty(value = "userAssignedIdentities")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
-    private Map<String, VirtualMachineScaleSetIdentityUserAssignedIdentitiesValue> userAssignedIdentities;
+    private Map<String, UserAssignedIdentitiesValue> userAssignedIdentities;
 
     /**
      * Get the principalId property: The principal id of virtual machine scale set identity. This property will only be
@@ -96,7 +96,7 @@ public class VirtualMachineScaleSetIdentity {
      *
      * @return the userAssignedIdentities value.
      */
-    public Map<String, VirtualMachineScaleSetIdentityUserAssignedIdentitiesValue> userAssignedIdentities() {
+    public Map<String, UserAssignedIdentitiesValue> userAssignedIdentities() {
         return this.userAssignedIdentities;
     }
 
@@ -109,7 +109,7 @@ public class VirtualMachineScaleSetIdentity {
      * @return the VirtualMachineScaleSetIdentity object itself.
      */
     public VirtualMachineScaleSetIdentity withUserAssignedIdentities(
-        Map<String, VirtualMachineScaleSetIdentityUserAssignedIdentitiesValue> userAssignedIdentities) {
+        Map<String, UserAssignedIdentitiesValue> userAssignedIdentities) {
         this.userAssignedIdentities = userAssignedIdentities;
         return this;
     }

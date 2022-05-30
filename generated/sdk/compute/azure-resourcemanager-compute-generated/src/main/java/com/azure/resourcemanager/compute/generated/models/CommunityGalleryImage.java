@@ -109,7 +109,7 @@ public interface CommunityGalleryImage {
     ImagePurchasePlan purchasePlan();
 
     /**
-     * Gets the architecture property: CPU architecture supported by an OS disk.
+     * Gets the architecture property: The architecture of the image. Applicable to OS disks only.
      *
      * @return the architecture value.
      */

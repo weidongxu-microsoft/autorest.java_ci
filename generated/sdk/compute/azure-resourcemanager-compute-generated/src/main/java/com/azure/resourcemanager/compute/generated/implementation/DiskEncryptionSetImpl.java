@@ -86,6 +86,10 @@ public final class DiskEncryptionSetImpl
         return this.innerModel().autoKeyRotationError();
     }
 
+    public String federatedClientId() {
+        return this.innerModel().federatedClientId();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -248,6 +252,16 @@ public final class DiskEncryptionSetImpl
             return this;
         } else {
             this.updateDiskEncryptionSet.withRotationToLatestKeyVersionEnabled(rotationToLatestKeyVersionEnabled);
+            return this;
+        }
+    }
+
+    public DiskEncryptionSetImpl withFederatedClientId(String federatedClientId) {
+        if (isInCreateMode()) {
+            this.innerModel().withFederatedClientId(federatedClientId);
+            return this;
+        } else {
+            this.updateDiskEncryptionSet.withFederatedClientId(federatedClientId);
             return this;
         }
     }

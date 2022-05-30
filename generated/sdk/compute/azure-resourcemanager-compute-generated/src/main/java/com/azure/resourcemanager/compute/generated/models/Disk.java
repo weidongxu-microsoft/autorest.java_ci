@@ -65,7 +65,7 @@ public interface Disk {
 
     /**
      * Gets the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS,
-     * Premium_ZRS, or StandardSSD_ZRS.
+     * Premium_ZRS, StandardSSD_ZRS, or PremiumV2_LRS.
      *
      * @return the sku value.
      */
@@ -437,10 +437,10 @@ public interface Disk {
         interface WithSku {
             /**
              * Specifies the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS,
-             * UltraSSD_LRS, Premium_ZRS, or StandardSSD_ZRS..
+             * UltraSSD_LRS, Premium_ZRS, StandardSSD_ZRS, or PremiumV2_LRS..
              *
              * @param sku The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS,
-             *     Premium_ZRS, or StandardSSD_ZRS.
+             *     Premium_ZRS, StandardSSD_ZRS, or PremiumV2_LRS.
              * @return the next definition stage.
              */
             WithCreate withSku(DiskSku sku);
@@ -786,10 +786,10 @@ public interface Disk {
         interface WithSku {
             /**
              * Specifies the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS,
-             * UltraSSD_LRS, Premium_ZRS, or StandardSSD_ZRS..
+             * UltraSSD_LRS, Premium_ZRS, StandardSSD_ZRS, or PremiumV2_LRS..
              *
              * @param sku The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS,
-             *     Premium_ZRS, or StandardSSD_ZRS.
+             *     Premium_ZRS, StandardSSD_ZRS, or PremiumV2_LRS.
              * @return the next definition stage.
              */
             Update withSku(DiskSku sku);

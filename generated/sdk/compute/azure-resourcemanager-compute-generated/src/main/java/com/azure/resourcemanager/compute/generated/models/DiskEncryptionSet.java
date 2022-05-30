@@ -109,6 +109,14 @@ public interface DiskEncryptionSet {
     ApiError autoKeyRotationError();
 
     /**
+     * Gets the federatedClientId property: Multi-tenant application client id to access key vault in a different
+     * tenant. Setting the value to 'None' will clear the property.
+     *
+     * @return the federatedClientId value.
+     */
+    String federatedClientId();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -185,7 +193,8 @@ public interface DiskEncryptionSet {
                 DefinitionStages.WithIdentity,
                 DefinitionStages.WithEncryptionType,
                 DefinitionStages.WithActiveKey,
-                DefinitionStages.WithRotationToLatestKeyVersionEnabled {
+                DefinitionStages.WithRotationToLatestKeyVersionEnabled,
+                DefinitionStages.WithFederatedClientId {
             /**
              * Executes the create request.
              *
@@ -255,6 +264,18 @@ public interface DiskEncryptionSet {
              */
             WithCreate withRotationToLatestKeyVersionEnabled(Boolean rotationToLatestKeyVersionEnabled);
         }
+        /** The stage of the DiskEncryptionSet definition allowing to specify federatedClientId. */
+        interface WithFederatedClientId {
+            /**
+             * Specifies the federatedClientId property: Multi-tenant application client id to access key vault in a
+             * different tenant. Setting the value to 'None' will clear the property..
+             *
+             * @param federatedClientId Multi-tenant application client id to access key vault in a different tenant.
+             *     Setting the value to 'None' will clear the property.
+             * @return the next definition stage.
+             */
+            WithCreate withFederatedClientId(String federatedClientId);
+        }
     }
     /**
      * Begins update for the DiskEncryptionSet resource.
@@ -269,7 +290,8 @@ public interface DiskEncryptionSet {
             UpdateStages.WithIdentity,
             UpdateStages.WithEncryptionType,
             UpdateStages.WithActiveKey,
-            UpdateStages.WithRotationToLatestKeyVersionEnabled {
+            UpdateStages.WithRotationToLatestKeyVersionEnabled,
+            UpdateStages.WithFederatedClientId {
         /**
          * Executes the update request.
          *
@@ -341,6 +363,18 @@ public interface DiskEncryptionSet {
              * @return the next definition stage.
              */
             Update withRotationToLatestKeyVersionEnabled(Boolean rotationToLatestKeyVersionEnabled);
+        }
+        /** The stage of the DiskEncryptionSet update allowing to specify federatedClientId. */
+        interface WithFederatedClientId {
+            /**
+             * Specifies the federatedClientId property: Multi-tenant application client id to access key vault in a
+             * different tenant. Setting the value to 'None' will clear the property..
+             *
+             * @param federatedClientId Multi-tenant application client id to access key vault in a different tenant.
+             *     Setting the value to 'None' will clear the property.
+             * @return the next definition stage.
+             */
+            Update withFederatedClientId(String federatedClientId);
         }
     }
     /**

@@ -8,6 +8,7 @@ import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.SnapshotInner;
 import com.azure.resourcemanager.compute.generated.models.AccessUri;
+import com.azure.resourcemanager.compute.generated.models.CopyCompletionError;
 import com.azure.resourcemanager.compute.generated.models.CreationData;
 import com.azure.resourcemanager.compute.generated.models.DataAccessAuthMode;
 import com.azure.resourcemanager.compute.generated.models.DiskSecurityProfile;
@@ -149,6 +150,10 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
 
     public Float completionPercent() {
         return this.innerModel().completionPercent();
+    }
+
+    public CopyCompletionError copyCompletionError() {
+        return this.innerModel().copyCompletionError();
     }
 
     public DataAccessAuthMode dataAccessAuthMode() {
@@ -428,6 +433,11 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
 
     public SnapshotImpl withCompletionPercent(Float completionPercent) {
         this.innerModel().withCompletionPercent(completionPercent);
+        return this;
+    }
+
+    public SnapshotImpl withCopyCompletionError(CopyCompletionError copyCompletionError) {
+        this.innerModel().withCopyCompletionError(copyCompletionError);
         return this;
     }
 

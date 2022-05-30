@@ -6,6 +6,7 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskRestorePointInner;
 import com.azure.resourcemanager.compute.generated.models.DiskRestorePoint;
+import com.azure.resourcemanager.compute.generated.models.DiskSecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.Encryption;
 import com.azure.resourcemanager.compute.generated.models.HyperVGeneration;
 import com.azure.resourcemanager.compute.generated.models.NetworkAccessPolicy;
@@ -100,6 +101,10 @@ public final class DiskRestorePointImpl implements DiskRestorePoint {
 
     public String sourceResourceLocation() {
         return this.innerModel().sourceResourceLocation();
+    }
+
+    public DiskSecurityProfile securityProfile() {
+        return this.innerModel().securityProfile();
     }
 
     public DiskRestorePointInner innerModel() {

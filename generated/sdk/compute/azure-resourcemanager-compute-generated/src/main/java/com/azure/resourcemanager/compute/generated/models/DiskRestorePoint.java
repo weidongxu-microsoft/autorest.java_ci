@@ -149,6 +149,13 @@ public interface DiskRestorePoint {
     String sourceResourceLocation();
 
     /**
+     * Gets the securityProfile property: Contains the security related information for the resource.
+     *
+     * @return the securityProfile value.
+     */
+    DiskSecurityProfile securityProfile();
+
+    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.DiskRestorePointInner object.
      *
      * @return the inner object.

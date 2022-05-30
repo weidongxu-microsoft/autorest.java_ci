@@ -156,7 +156,7 @@ public interface GalleryImage {
     List<GalleryImageFeature> features();
 
     /**
-     * Gets the architecture property: CPU architecture supported by an OS disk.
+     * Gets the architecture property: The architecture of the image. Applicable to OS disks only.
      *
      * @return the architecture value.
      */
@@ -423,9 +423,9 @@ public interface GalleryImage {
         /** The stage of the GalleryImage definition allowing to specify architecture. */
         interface WithArchitecture {
             /**
-             * Specifies the architecture property: CPU architecture supported by an OS disk..
+             * Specifies the architecture property: The architecture of the image. Applicable to OS disks only..
              *
-             * @param architecture CPU architecture supported by an OS disk.
+             * @param architecture The architecture of the image. Applicable to OS disks only.
              * @return the next definition stage.
              */
             WithCreate withArchitecture(Architecture architecture);
@@ -629,9 +629,9 @@ public interface GalleryImage {
         /** The stage of the GalleryImage update allowing to specify architecture. */
         interface WithArchitecture {
             /**
-             * Specifies the architecture property: CPU architecture supported by an OS disk..
+             * Specifies the architecture property: The architecture of the image. Applicable to OS disks only..
              *
-             * @param architecture CPU architecture supported by an OS disk.
+             * @param architecture The architecture of the image. Applicable to OS disks only.
              * @return the next definition stage.
              */
             Update withArchitecture(Architecture architecture);

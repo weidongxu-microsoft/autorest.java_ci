@@ -84,7 +84,7 @@ public final class SharedGalleryImageProperties {
     private ImagePurchasePlan purchasePlan;
 
     /*
-     * CPU architecture supported by an OS disk.
+     * The architecture of the image. Applicable to OS disks only.
      */
     @JsonProperty(value = "architecture")
     private Architecture architecture;
@@ -282,7 +282,7 @@ public final class SharedGalleryImageProperties {
     }
 
     /**
-     * Get the architecture property: CPU architecture supported by an OS disk.
+     * Get the architecture property: The architecture of the image. Applicable to OS disks only.
      *
      * @return the architecture value.
      */
@@ -291,7 +291,7 @@ public final class SharedGalleryImageProperties {
     }
 
     /**
-     * Set the architecture property: CPU architecture supported by an OS disk.
+     * Set the architecture property: The architecture of the image. Applicable to OS disks only.
      *
      * @param architecture the architecture value to set.
      * @return the SharedGalleryImageProperties object itself.

@@ -360,7 +360,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Get the architecture property: CPU architecture supported by an OS disk.
+     * Get the architecture property: The architecture of the image. Applicable to OS disks only.
      *
      * @return the architecture value.
      */
@@ -369,7 +369,7 @@ public final class GalleryImageUpdate extends UpdateResourceDefinition {
     }
 
     /**
-     * Set the architecture property: CPU architecture supported by an OS disk.
+     * Set the architecture property: The architecture of the image. Applicable to OS disks only.
      *
      * @param architecture the architecture value to set.
      * @return the GalleryImageUpdate object itself.

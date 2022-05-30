@@ -223,6 +223,14 @@ public interface Snapshot {
     Float completionPercent();
 
     /**
+     * Gets the copyCompletionError property: Indicates the error details if the background copy of a resource created
+     * via the CopyStart operation fails.
+     *
+     * @return the copyCompletionError value.
+     */
+    CopyCompletionError copyCompletionError();
+
+    /**
      * Gets the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a
      * disk or snapshot.
      *
@@ -321,6 +329,7 @@ public interface Snapshot {
                 DefinitionStages.WithSupportsHibernation,
                 DefinitionStages.WithPublicNetworkAccess,
                 DefinitionStages.WithCompletionPercent,
+                DefinitionStages.WithCopyCompletionError,
                 DefinitionStages.WithDataAccessAuthMode {
             /**
              * Executes the create request.
@@ -544,6 +553,18 @@ public interface Snapshot {
              * @return the next definition stage.
              */
             WithCreate withCompletionPercent(Float completionPercent);
+        }
+        /** The stage of the Snapshot definition allowing to specify copyCompletionError. */
+        interface WithCopyCompletionError {
+            /**
+             * Specifies the copyCompletionError property: Indicates the error details if the background copy of a
+             * resource created via the CopyStart operation fails..
+             *
+             * @param copyCompletionError Indicates the error details if the background copy of a resource created via
+             *     the CopyStart operation fails.
+             * @return the next definition stage.
+             */
+            WithCreate withCopyCompletionError(CopyCompletionError copyCompletionError);
         }
         /** The stage of the Snapshot definition allowing to specify dataAccessAuthMode. */
         interface WithDataAccessAuthMode {

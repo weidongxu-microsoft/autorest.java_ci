@@ -243,7 +243,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
         } else {
             diskEncryptionSet.validate();
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -308,7 +308,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
         } else {
             diskEncryptionSet.validate();
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -566,7 +566,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
         } else {
             diskEncryptionSet.validate();
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -631,7 +631,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
         } else {
             diskEncryptionSet.validate();
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -881,7 +881,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter diskEncryptionSetName is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -935,7 +935,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter diskEncryptionSetName is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1039,7 +1039,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter diskEncryptionSetName is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1092,7 +1092,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter diskEncryptionSetName is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1288,7 +1288,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1343,7 +1343,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1449,7 +1449,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1492,7 +1492,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1597,7 +1597,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter diskEncryptionSetName is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1660,7 +1660,7 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter diskEncryptionSetName is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01";
+        final String apiVersion = "2022-03-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

@@ -377,7 +377,7 @@ public final class GalleryImageInner extends Resource {
     }
 
     /**
-     * Get the architecture property: CPU architecture supported by an OS disk.
+     * Get the architecture property: The architecture of the image. Applicable to OS disks only.
      *
      * @return the architecture value.
      */
@@ -386,7 +386,7 @@ public final class GalleryImageInner extends Resource {
     }
 
     /**
-     * Set the architecture property: CPU architecture supported by an OS disk.
+     * Set the architecture property: The architecture of the image. Applicable to OS disks only.
      *
      * @param architecture the architecture value to set.
      * @return the GalleryImageInner object itself.

@@ -184,17 +184,17 @@ public final class ComputeManager {
 
     private VirtualMachineScaleSetVMRunCommands virtualMachineScaleSetVMRunCommands;
 
-    private ResourceSkus resourceSkus;
-
     private Disks disks;
-
-    private Snapshots snapshots;
-
-    private DiskEncryptionSets diskEncryptionSets;
 
     private DiskAccesses diskAccesses;
 
+    private DiskEncryptionSets diskEncryptionSets;
+
     private DiskRestorePoints diskRestorePoints;
+
+    private Snapshots snapshots;
+
+    private ResourceSkus resourceSkus;
 
     private Galleries galleries;
 
@@ -781,18 +781,6 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of ResourceSkus.
-     *
-     * @return Resource collection API of ResourceSkus.
-     */
-    public ResourceSkus resourceSkus() {
-        if (this.resourceSkus == null) {
-            this.resourceSkus = new ResourceSkusImpl(clientObject.getResourceSkus(), this);
-        }
-        return resourceSkus;
-    }
-
-    /**
      * Gets the resource collection API of Disks. It manages Disk.
      *
      * @return Resource collection API of Disks.
@@ -802,30 +790,6 @@ public final class ComputeManager {
             this.disks = new DisksImpl(clientObject.getDisks(), this);
         }
         return disks;
-    }
-
-    /**
-     * Gets the resource collection API of Snapshots. It manages Snapshot.
-     *
-     * @return Resource collection API of Snapshots.
-     */
-    public Snapshots snapshots() {
-        if (this.snapshots == null) {
-            this.snapshots = new SnapshotsImpl(clientObject.getSnapshots(), this);
-        }
-        return snapshots;
-    }
-
-    /**
-     * Gets the resource collection API of DiskEncryptionSets. It manages DiskEncryptionSet.
-     *
-     * @return Resource collection API of DiskEncryptionSets.
-     */
-    public DiskEncryptionSets diskEncryptionSets() {
-        if (this.diskEncryptionSets == null) {
-            this.diskEncryptionSets = new DiskEncryptionSetsImpl(clientObject.getDiskEncryptionSets(), this);
-        }
-        return diskEncryptionSets;
     }
 
     /**
@@ -841,6 +805,18 @@ public final class ComputeManager {
     }
 
     /**
+     * Gets the resource collection API of DiskEncryptionSets. It manages DiskEncryptionSet.
+     *
+     * @return Resource collection API of DiskEncryptionSets.
+     */
+    public DiskEncryptionSets diskEncryptionSets() {
+        if (this.diskEncryptionSets == null) {
+            this.diskEncryptionSets = new DiskEncryptionSetsImpl(clientObject.getDiskEncryptionSets(), this);
+        }
+        return diskEncryptionSets;
+    }
+
+    /**
      * Gets the resource collection API of DiskRestorePoints.
      *
      * @return Resource collection API of DiskRestorePoints.
@@ -850,6 +826,30 @@ public final class ComputeManager {
             this.diskRestorePoints = new DiskRestorePointsImpl(clientObject.getDiskRestorePoints(), this);
         }
         return diskRestorePoints;
+    }
+
+    /**
+     * Gets the resource collection API of Snapshots. It manages Snapshot.
+     *
+     * @return Resource collection API of Snapshots.
+     */
+    public Snapshots snapshots() {
+        if (this.snapshots == null) {
+            this.snapshots = new SnapshotsImpl(clientObject.getSnapshots(), this);
+        }
+        return snapshots;
+    }
+
+    /**
+     * Gets the resource collection API of ResourceSkus.
+     *
+     * @return Resource collection API of ResourceSkus.
+     */
+    public ResourceSkus resourceSkus() {
+        if (this.resourceSkus == null) {
+            this.resourceSkus = new ResourceSkusImpl(clientObject.getResourceSkus(), this);
+        }
+        return resourceSkus;
     }
 
     /**
