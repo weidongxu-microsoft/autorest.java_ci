@@ -11,9 +11,11 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageResourceInner;
+import com.azure.resourcemanager.compute.generated.fluent.models.VmImagesInEdgeZoneListResultInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImage;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImageResource;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImages;
+import com.azure.resourcemanager.compute.generated.models.VmImagesInEdgeZoneListResult;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -189,6 +191,30 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
                     .stream()
                     .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
+        } else {
+            return null;
+        }
+    }
+
+    public VmImagesInEdgeZoneListResult listByEdgeZone(String location, String edgeZone) {
+        VmImagesInEdgeZoneListResultInner inner = this.serviceClient().listByEdgeZone(location, edgeZone);
+        if (inner != null) {
+            return new VmImagesInEdgeZoneListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<VmImagesInEdgeZoneListResult> listByEdgeZoneWithResponse(
+        String location, String edgeZone, Context context) {
+        Response<VmImagesInEdgeZoneListResultInner> inner =
+            this.serviceClient().listByEdgeZoneWithResponse(location, edgeZone, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new VmImagesInEdgeZoneListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
