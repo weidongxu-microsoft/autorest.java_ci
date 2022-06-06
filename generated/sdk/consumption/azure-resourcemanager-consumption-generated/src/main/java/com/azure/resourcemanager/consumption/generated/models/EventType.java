@@ -31,6 +31,9 @@ public final class EventType extends ExpandableStringEnum<EventType> {
     /** Static value NewCredit for EventType. */
     public static final EventType NEW_CREDIT = fromString("NewCredit");
 
+    /** Static value CreditExpired for EventType. */
+    public static final EventType CREDIT_EXPIRED = fromString("CreditExpired");
+
     /**
      * Creates or finds a EventType from its string representation.
      *
