@@ -48,12 +48,6 @@ public final class VaultProperties {
     private VaultPropertiesEncryption encryption;
 
     /*
-     * Monitoring Settings of the vault
-     */
-    @JsonProperty(value = "monitoringSettings")
-    private MonitoringSettings monitoringSettings;
-
-    /*
      * The details of the latest move operation performed on the Azure Resource
      */
     @JsonProperty(value = "moveDetails")
@@ -70,6 +64,18 @@ public final class VaultProperties {
      */
     @JsonProperty(value = "backupStorageVersion", access = JsonProperty.Access.WRITE_ONLY)
     private BackupStorageVersion backupStorageVersion;
+
+    /*
+     * Monitoring Settings of the vault
+     */
+    @JsonProperty(value = "monitoringSettings")
+    private MonitoringSettings monitoringSettings;
+
+    /*
+     * The redundancy Settings of a Vault
+     */
+    @JsonProperty(value = "redundancySettings")
+    private VaultPropertiesRedundancySettings redundancySettings;
 
     /**
      * Get the provisioningState property: Provisioning State.
@@ -148,26 +154,6 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the monitoringSettings property: Monitoring Settings of the vault.
-     *
-     * @return the monitoringSettings value.
-     */
-    public MonitoringSettings monitoringSettings() {
-        return this.monitoringSettings;
-    }
-
-    /**
-     * Set the monitoringSettings property: Monitoring Settings of the vault.
-     *
-     * @param monitoringSettings the monitoringSettings value to set.
-     * @return the VaultProperties object itself.
-     */
-    public VaultProperties withMonitoringSettings(MonitoringSettings monitoringSettings) {
-        this.monitoringSettings = monitoringSettings;
-        return this;
-    }
-
-    /**
      * Get the moveDetails property: The details of the latest move operation performed on the Azure Resource.
      *
      * @return the moveDetails value.
@@ -206,6 +192,46 @@ public final class VaultProperties {
     }
 
     /**
+     * Get the monitoringSettings property: Monitoring Settings of the vault.
+     *
+     * @return the monitoringSettings value.
+     */
+    public MonitoringSettings monitoringSettings() {
+        return this.monitoringSettings;
+    }
+
+    /**
+     * Set the monitoringSettings property: Monitoring Settings of the vault.
+     *
+     * @param monitoringSettings the monitoringSettings value to set.
+     * @return the VaultProperties object itself.
+     */
+    public VaultProperties withMonitoringSettings(MonitoringSettings monitoringSettings) {
+        this.monitoringSettings = monitoringSettings;
+        return this;
+    }
+
+    /**
+     * Get the redundancySettings property: The redundancy Settings of a Vault.
+     *
+     * @return the redundancySettings value.
+     */
+    public VaultPropertiesRedundancySettings redundancySettings() {
+        return this.redundancySettings;
+    }
+
+    /**
+     * Set the redundancySettings property: The redundancy Settings of a Vault.
+     *
+     * @param redundancySettings the redundancySettings value to set.
+     * @return the VaultProperties object itself.
+     */
+    public VaultProperties withRedundancySettings(VaultPropertiesRedundancySettings redundancySettings) {
+        this.redundancySettings = redundancySettings;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -220,11 +246,14 @@ public final class VaultProperties {
         if (encryption() != null) {
             encryption().validate();
         }
+        if (moveDetails() != null) {
+            moveDetails().validate();
+        }
         if (monitoringSettings() != null) {
             monitoringSettings().validate();
         }
-        if (moveDetails() != null) {
-            moveDetails().validate();
+        if (redundancySettings() != null) {
+            redundancySettings().validate();
         }
     }
 }
