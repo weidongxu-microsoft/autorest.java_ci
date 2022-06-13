@@ -55,10 +55,6 @@ public final class VerifiedPartnerImpl implements VerifiedPartner {
         return this.innerModel().partnerTopicDetails();
     }
 
-    public PartnerDetails partnerDestinationDetails() {
-        return this.innerModel().partnerDestinationDetails();
-    }
-
     public VerifiedPartnerProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
     }
