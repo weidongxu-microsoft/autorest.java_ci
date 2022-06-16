@@ -12,6 +12,7 @@ import com.azure.core.annotation.HeaderParam;
 import com.azure.core.annotation.Headers;
 import com.azure.core.annotation.Host;
 import com.azure.core.annotation.HostParam;
+import com.azure.core.annotation.Patch;
 import com.azure.core.annotation.PathParam;
 import com.azure.core.annotation.Put;
 import com.azure.core.annotation.QueryParam;
@@ -33,6 +34,7 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.frontdoor.generated.fluent.PoliciesClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.WebApplicationFirewallPolicyInner;
+import com.azure.resourcemanager.frontdoor.generated.models.TagsObject;
 import com.azure.resourcemanager.frontdoor.generated.models.WebApplicationFirewallPolicyList;
 import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
@@ -108,6 +110,22 @@ public final class PoliciesClientImpl implements PoliciesClient {
             @HeaderParam("Accept") String accept,
             Context context);
 
+        @Headers({"Content-Type: application/json"})
+        @Patch(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"
+                + "/FrontDoorWebApplicationFirewallPolicies/{policyName}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<Flux<ByteBuffer>>> update(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("policyName") String policyName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") TagsObject parameters,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
         @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
         @Delete(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"
@@ -162,7 +180,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-11-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -217,7 +235,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-11-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -335,7 +353,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-11-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -386,7 +404,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-11-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -488,7 +506,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-11-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -546,7 +564,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-11-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -734,6 +752,290 @@ public final class PoliciesClientImpl implements PoliciesClient {
     }
 
     /**
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param policyName The name of the Web Application Firewall Policy.
+     * @param parameters FrontdoorWebApplicationFirewallPolicy parameters to be patched.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines web application firewall policy along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(
+        String resourceGroupName, String policyName, TagsObject parameters) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (policyName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter policyName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String apiVersion = "2022-05-01";
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .update(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            policyName,
+                            this.client.getSubscriptionId(),
+                            apiVersion,
+                            parameters,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param policyName The name of the Web Application Firewall Policy.
+     * @param parameters FrontdoorWebApplicationFirewallPolicy parameters to be patched.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines web application firewall policy along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(
+        String resourceGroupName, String policyName, TagsObject parameters, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (policyName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter policyName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String apiVersion = "2022-05-01";
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .update(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                policyName,
+                this.client.getSubscriptionId(),
+                apiVersion,
+                parameters,
+                accept,
+                context);
+    }
+
+    /**
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param policyName The name of the Web Application Firewall Policy.
+     * @param parameters FrontdoorWebApplicationFirewallPolicy parameters to be patched.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of defines web application firewall policy.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<WebApplicationFirewallPolicyInner>, WebApplicationFirewallPolicyInner>
+        beginUpdateAsync(String resourceGroupName, String policyName, TagsObject parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono = updateWithResponseAsync(resourceGroupName, policyName, parameters);
+        return this
+            .client
+            .<WebApplicationFirewallPolicyInner, WebApplicationFirewallPolicyInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                WebApplicationFirewallPolicyInner.class,
+                WebApplicationFirewallPolicyInner.class,
+                this.client.getContext());
+    }
+
+    /**
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param policyName The name of the Web Application Firewall Policy.
+     * @param parameters FrontdoorWebApplicationFirewallPolicy parameters to be patched.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of defines web application firewall policy.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<WebApplicationFirewallPolicyInner>, WebApplicationFirewallPolicyInner>
+        beginUpdateAsync(String resourceGroupName, String policyName, TagsObject parameters, Context context) {
+        context = this.client.mergeContext(context);
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            updateWithResponseAsync(resourceGroupName, policyName, parameters, context);
+        return this
+            .client
+            .<WebApplicationFirewallPolicyInner, WebApplicationFirewallPolicyInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                WebApplicationFirewallPolicyInner.class,
+                WebApplicationFirewallPolicyInner.class,
+                context);
+    }
+
+    /**
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param policyName The name of the Web Application Firewall Policy.
+     * @param parameters FrontdoorWebApplicationFirewallPolicy parameters to be patched.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of defines web application firewall policy.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<WebApplicationFirewallPolicyInner>, WebApplicationFirewallPolicyInner> beginUpdate(
+        String resourceGroupName, String policyName, TagsObject parameters) {
+        return beginUpdateAsync(resourceGroupName, policyName, parameters).getSyncPoller();
+    }
+
+    /**
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param policyName The name of the Web Application Firewall Policy.
+     * @param parameters FrontdoorWebApplicationFirewallPolicy parameters to be patched.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of defines web application firewall policy.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<WebApplicationFirewallPolicyInner>, WebApplicationFirewallPolicyInner> beginUpdate(
+        String resourceGroupName, String policyName, TagsObject parameters, Context context) {
+        return beginUpdateAsync(resourceGroupName, policyName, parameters, context).getSyncPoller();
+    }
+
+    /**
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param policyName The name of the Web Application Firewall Policy.
+     * @param parameters FrontdoorWebApplicationFirewallPolicy parameters to be patched.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines web application firewall policy on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<WebApplicationFirewallPolicyInner> updateAsync(
+        String resourceGroupName, String policyName, TagsObject parameters) {
+        return beginUpdateAsync(resourceGroupName, policyName, parameters)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param policyName The name of the Web Application Firewall Policy.
+     * @param parameters FrontdoorWebApplicationFirewallPolicy parameters to be patched.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines web application firewall policy on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<WebApplicationFirewallPolicyInner> updateAsync(
+        String resourceGroupName, String policyName, TagsObject parameters, Context context) {
+        return beginUpdateAsync(resourceGroupName, policyName, parameters, context)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param policyName The name of the Web Application Firewall Policy.
+     * @param parameters FrontdoorWebApplicationFirewallPolicy parameters to be patched.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines web application firewall policy.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public WebApplicationFirewallPolicyInner update(
+        String resourceGroupName, String policyName, TagsObject parameters) {
+        return updateAsync(resourceGroupName, policyName, parameters).block();
+    }
+
+    /**
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param policyName The name of the Web Application Firewall Policy.
+     * @param parameters FrontdoorWebApplicationFirewallPolicy parameters to be patched.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines web application firewall policy.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public WebApplicationFirewallPolicyInner update(
+        String resourceGroupName, String policyName, TagsObject parameters, Context context) {
+        return updateAsync(resourceGroupName, policyName, parameters, context).block();
+    }
+
+    /**
      * Deletes Policy.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
@@ -764,7 +1066,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-11-01";
+        final String apiVersion = "2022-05-01";
         return FluxUtil
             .withContext(
                 context ->
@@ -812,7 +1114,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-11-01";
+        final String apiVersion = "2022-05-01";
         context = this.client.mergeContext(context);
         return service
             .delete(
