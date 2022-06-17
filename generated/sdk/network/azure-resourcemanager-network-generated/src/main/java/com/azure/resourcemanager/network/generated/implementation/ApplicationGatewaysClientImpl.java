@@ -374,6 +374,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -383,7 +384,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             this.client.getEndpoint(),
                             resourceGroupName,
                             applicationGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -425,6 +426,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -432,7 +434,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                 this.client.getEndpoint(),
                 resourceGroupName,
                 applicationGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -610,6 +612,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -619,7 +622,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             this.client.getEndpoint(),
                             resourceGroupName,
                             applicationGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -661,6 +664,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -668,7 +672,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                 this.client.getEndpoint(),
                 resourceGroupName,
                 applicationGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -763,6 +767,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -772,7 +777,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             this.client.getEndpoint(),
                             resourceGroupName,
                             applicationGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -821,6 +826,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -828,7 +834,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                 this.client.getEndpoint(),
                 resourceGroupName,
                 applicationGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -1038,6 +1044,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1047,7 +1054,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             this.client.getEndpoint(),
                             resourceGroupName,
                             applicationGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -1096,6 +1103,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1103,7 +1111,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                 this.client.getEndpoint(),
                 resourceGroupName,
                 applicationGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -1191,6 +1199,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1199,7 +1208,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                         .listByResourceGroup(
                             this.client.getEndpoint(),
                             resourceGroupName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1245,13 +1254,14 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listByResourceGroup(
                 this.client.getEndpoint(),
                 resourceGroupName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -1349,17 +1359,13 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .list(
-                            this.client.getEndpoint(),
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
+                        .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
             .<PagedResponse<ApplicationGatewayInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -1396,15 +1402,11 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context)
+            .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -1503,6 +1505,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1512,7 +1515,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             this.client.getEndpoint(),
                             resourceGroupName,
                             applicationGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1554,6 +1557,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1561,7 +1565,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                 this.client.getEndpoint(),
                 resourceGroupName,
                 applicationGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1739,6 +1743,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1748,7 +1753,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             this.client.getEndpoint(),
                             resourceGroupName,
                             applicationGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1790,6 +1795,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1797,7 +1803,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                 this.client.getEndpoint(),
                 resourceGroupName,
                 applicationGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1976,6 +1982,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1985,7 +1992,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             this.client.getEndpoint(),
                             resourceGroupName,
                             applicationGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             expand,
                             accept,
@@ -2030,6 +2037,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2037,7 +2045,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                 this.client.getEndpoint(),
                 resourceGroupName,
                 applicationGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 expand,
                 accept,
@@ -2296,6 +2304,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         } else {
             probeRequest.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2305,7 +2314,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             this.client.getEndpoint(),
                             resourceGroupName,
                             applicationGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             expand,
                             probeRequest,
@@ -2362,6 +2371,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         } else {
             probeRequest.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2369,7 +2379,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                 this.client.getEndpoint(),
                 resourceGroupName,
                 applicationGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 expand,
                 probeRequest,
@@ -2668,17 +2678,14 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listAvailableServerVariables(
-                            this.client.getEndpoint(),
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
+                            this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -2706,15 +2713,12 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listAvailableServerVariables(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context);
+                this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context);
     }
 
     /**
@@ -2778,17 +2782,14 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listAvailableRequestHeaders(
-                            this.client.getEndpoint(),
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
+                            this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -2816,15 +2817,12 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listAvailableRequestHeaders(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context);
+                this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context);
     }
 
     /**
@@ -2888,17 +2886,14 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listAvailableResponseHeaders(
-                            this.client.getEndpoint(),
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
+                            this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -2926,15 +2921,12 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listAvailableResponseHeaders(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context);
+                this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context);
     }
 
     /**
@@ -2999,17 +2991,14 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listAvailableWafRuleSets(
-                            this.client.getEndpoint(),
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
+                            this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -3038,15 +3027,12 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listAvailableWafRuleSets(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context);
+                this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context);
     }
 
     /**
@@ -3111,17 +3097,14 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listAvailableSslOptions(
-                            this.client.getEndpoint(),
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
+                            this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -3150,15 +3133,12 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listAvailableSslOptions(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context);
+                this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context);
     }
 
     /**
@@ -3223,17 +3203,14 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listAvailableSslPredefinedPolicies(
-                            this.client.getEndpoint(),
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
+                            this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
             .<PagedResponse<ApplicationGatewaySslPredefinedPolicyInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -3271,15 +3248,12 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listAvailableSslPredefinedPolicies(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context)
+                this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -3382,6 +3356,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
             return Mono
                 .error(new IllegalArgumentException("Parameter predefinedPolicyName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3389,7 +3364,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     service
                         .getSslPredefinedPolicy(
                             this.client.getEndpoint(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             predefinedPolicyName,
                             accept,
@@ -3427,12 +3402,13 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
             return Mono
                 .error(new IllegalArgumentException("Parameter predefinedPolicyName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .getSslPredefinedPolicy(
                 this.client.getEndpoint(),
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 predefinedPolicyName,
                 accept,

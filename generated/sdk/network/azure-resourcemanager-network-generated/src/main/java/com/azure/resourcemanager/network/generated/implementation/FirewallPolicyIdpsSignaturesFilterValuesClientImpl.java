@@ -118,6 +118,7 @@ public final class FirewallPolicyIdpsSignaturesFilterValuesClientImpl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -128,7 +129,7 @@ public final class FirewallPolicyIdpsSignaturesFilterValuesClientImpl
                             resourceGroupName,
                             firewallPolicyName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -179,6 +180,7 @@ public final class FirewallPolicyIdpsSignaturesFilterValuesClientImpl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -187,7 +189,7 @@ public final class FirewallPolicyIdpsSignaturesFilterValuesClientImpl
                 resourceGroupName,
                 firewallPolicyName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 parameters,
                 accept,
                 context);

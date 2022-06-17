@@ -137,6 +137,7 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -145,7 +146,7 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
                         .list(
                             this.client.getEndpoint(),
                             location,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -190,16 +191,11 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                location,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context)
+            .list(this.client.getEndpoint(), location, apiVersion, this.client.getSubscriptionId(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -303,6 +299,7 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -313,7 +310,7 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
                             location,
                             resourceGroupName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .<PagedResponse<AvailablePrivateEndpointTypeInner>>map(
@@ -362,6 +359,7 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -370,7 +368,7 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
                 location,
                 resourceGroupName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context)
             .map(

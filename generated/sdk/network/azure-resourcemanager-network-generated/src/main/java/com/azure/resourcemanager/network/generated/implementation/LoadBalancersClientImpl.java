@@ -244,6 +244,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -253,7 +254,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             loadBalancerName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -294,6 +295,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -301,7 +303,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 loadBalancerName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -477,6 +479,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -486,7 +489,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             loadBalancerName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             expand,
                             accept,
@@ -529,6 +532,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -536,7 +540,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 loadBalancerName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 expand,
                 accept,
@@ -651,6 +655,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -660,7 +665,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             loadBalancerName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -708,6 +713,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -715,7 +721,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 loadBalancerName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -920,6 +926,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -929,7 +936,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             loadBalancerName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -977,6 +984,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -984,7 +992,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 loadBalancerName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -1065,17 +1073,13 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .list(
-                            this.client.getEndpoint(),
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
+                        .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
             .<PagedResponse<LoadBalancerInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -1112,15 +1116,11 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context)
+            .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -1213,6 +1213,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1221,7 +1222,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                         .listByResourceGroup(
                             this.client.getEndpoint(),
                             resourceGroupName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1267,13 +1268,14 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listByResourceGroup(
                 this.client.getEndpoint(),
                 resourceGroupName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -1382,6 +1384,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1390,7 +1393,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                         .swapPublicIpAddresses(
                             this.client.getEndpoint(),
                             location,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -1432,13 +1435,14 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .swapPublicIpAddresses(
                 this.client.getEndpoint(),
                 location,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -1631,6 +1635,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1641,7 +1646,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                             groupName,
                             loadBalancerName,
                             backendPoolName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -1698,6 +1703,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1706,7 +1712,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
                 groupName,
                 loadBalancerName,
                 backendPoolName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,

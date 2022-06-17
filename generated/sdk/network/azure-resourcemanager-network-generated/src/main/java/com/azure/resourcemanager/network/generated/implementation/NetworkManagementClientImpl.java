@@ -177,18 +177,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.endpoint;
     }
 
-    /** Api Version. */
-    private final String apiVersion;
-
-    /**
-     * Gets Api Version.
-     *
-     * @return the apiVersion value.
-     */
-    public String getApiVersion() {
-        return this.apiVersion;
-    }
-
     /** The HTTP pipeline to send requests through. */
     private final HttpPipeline httpPipeline;
 
@@ -1618,7 +1606,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2021-08-01";
         this.applicationGateways = new ApplicationGatewaysClientImpl(this);
         this.applicationGatewayPrivateLinkResources = new ApplicationGatewayPrivateLinkResourcesClientImpl(this);
         this.applicationGatewayPrivateEndpointConnections =

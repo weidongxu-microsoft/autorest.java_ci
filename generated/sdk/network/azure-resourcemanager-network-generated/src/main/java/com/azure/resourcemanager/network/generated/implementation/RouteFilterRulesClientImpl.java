@@ -176,6 +176,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -186,7 +187,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                             resourceGroupName,
                             routeFilterName,
                             ruleName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -231,6 +232,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -239,7 +241,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                 resourceGroupName,
                 routeFilterName,
                 ruleName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -430,6 +432,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -440,7 +443,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                             resourceGroupName,
                             routeFilterName,
                             ruleName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -486,6 +489,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -494,7 +498,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                 resourceGroupName,
                 routeFilterName,
                 ruleName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -600,6 +604,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
         } else {
             routeFilterRuleParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -610,7 +615,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                             resourceGroupName,
                             routeFilterName,
                             ruleName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             routeFilterRuleParameters,
                             accept,
@@ -669,6 +674,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
         } else {
             routeFilterRuleParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -677,7 +683,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                 resourceGroupName,
                 routeFilterName,
                 ruleName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 routeFilterRuleParameters,
                 accept,
@@ -919,6 +925,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -928,7 +935,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                             this.client.getEndpoint(),
                             resourceGroupName,
                             routeFilterName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -979,6 +986,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -986,7 +994,7 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
                 this.client.getEndpoint(),
                 resourceGroupName,
                 routeFilterName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context)

@@ -195,6 +195,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -204,7 +205,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                             this.client.getEndpoint(),
                             resourceGroupName,
                             localNetworkGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -257,6 +258,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -264,7 +266,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                 this.client.getEndpoint(),
                 resourceGroupName,
                 localNetworkGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -482,6 +484,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -491,7 +494,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                             this.client.getEndpoint(),
                             resourceGroupName,
                             localNetworkGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -534,6 +537,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -541,7 +545,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                 this.client.getEndpoint(),
                 resourceGroupName,
                 localNetworkGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -630,6 +634,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -639,7 +644,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                             this.client.getEndpoint(),
                             resourceGroupName,
                             localNetworkGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -681,6 +686,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -688,7 +694,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                 this.client.getEndpoint(),
                 resourceGroupName,
                 localNetworkGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -873,6 +879,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -882,7 +889,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                             this.client.getEndpoint(),
                             resourceGroupName,
                             localNetworkGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -932,6 +939,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -939,7 +947,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                 this.client.getEndpoint(),
                 resourceGroupName,
                 localNetworkGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -1027,6 +1035,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1035,7 +1044,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                         .listByResourceGroup(
                             this.client.getEndpoint(),
                             resourceGroupName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1081,13 +1090,14 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listByResourceGroup(
                 this.client.getEndpoint(),
                 resourceGroupName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context)

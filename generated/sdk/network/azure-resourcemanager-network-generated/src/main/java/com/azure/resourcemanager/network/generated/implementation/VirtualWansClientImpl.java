@@ -206,6 +206,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -215,7 +216,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             virtualWanName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -255,6 +256,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -262,7 +264,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 virtualWanName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -354,6 +356,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
         } else {
             wanParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -364,7 +367,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             virtualWanName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             wanParameters,
                             accept,
                             context))
@@ -410,6 +413,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
         } else {
             wanParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -418,7 +422,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 virtualWanName,
-                this.client.getApiVersion(),
+                apiVersion,
                 wanParameters,
                 accept,
                 context);
@@ -621,6 +625,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
         } else {
             wanParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -631,7 +636,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             virtualWanName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             wanParameters,
                             accept,
                             context))
@@ -677,6 +682,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
         } else {
             wanParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -685,7 +691,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 virtualWanName,
-                this.client.getApiVersion(),
+                apiVersion,
                 wanParameters,
                 accept,
                 context);
@@ -774,6 +780,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
         if (virtualWanName == null) {
             return Mono.error(new IllegalArgumentException("Parameter virtualWanName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -784,7 +791,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             virtualWanName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -823,6 +830,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
         if (virtualWanName == null) {
             return Mono.error(new IllegalArgumentException("Parameter virtualWanName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -831,7 +839,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 virtualWanName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -1000,6 +1008,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1009,7 +1018,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                             this.client.getEndpoint(),
                             this.client.getSubscriptionId(),
                             resourceGroupName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .<PagedResponse<VirtualWanInner>>map(
@@ -1054,6 +1063,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1061,7 +1071,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                 this.client.getEndpoint(),
                 this.client.getSubscriptionId(),
                 resourceGroupName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context)
             .map(
@@ -1159,17 +1169,13 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .list(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+                        .list(this.client.getEndpoint(), this.client.getSubscriptionId(), apiVersion, accept, context))
             .<PagedResponse<VirtualWanInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -1206,15 +1212,11 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
-                accept,
-                context)
+            .list(this.client.getEndpoint(), this.client.getSubscriptionId(), apiVersion, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(

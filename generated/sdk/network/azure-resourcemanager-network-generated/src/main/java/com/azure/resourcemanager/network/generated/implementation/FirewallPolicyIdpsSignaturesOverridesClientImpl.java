@@ -166,6 +166,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -176,7 +177,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                             resourceGroupName,
                             firewallPolicyName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -224,6 +225,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -232,7 +234,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                 resourceGroupName,
                 firewallPolicyName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 parameters,
                 accept,
                 context);
@@ -331,6 +333,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -341,7 +344,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                             resourceGroupName,
                             firewallPolicyName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -389,6 +392,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -397,7 +401,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                 resourceGroupName,
                 firewallPolicyName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 parameters,
                 accept,
                 context);
@@ -490,6 +494,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -500,7 +505,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                             resourceGroupName,
                             firewallPolicyName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -541,6 +546,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -549,7 +555,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                 resourceGroupName,
                 firewallPolicyName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -636,6 +642,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -646,7 +653,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                             resourceGroupName,
                             firewallPolicyName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -687,6 +694,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -695,7 +703,7 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
                 resourceGroupName,
                 firewallPolicyName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }

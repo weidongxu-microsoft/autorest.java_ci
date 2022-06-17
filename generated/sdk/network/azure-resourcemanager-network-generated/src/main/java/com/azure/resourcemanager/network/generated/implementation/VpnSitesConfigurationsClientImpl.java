@@ -113,6 +113,7 @@ public final class VpnSitesConfigurationsClientImpl implements VpnSitesConfigura
         } else {
             request.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -123,7 +124,7 @@ public final class VpnSitesConfigurationsClientImpl implements VpnSitesConfigura
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             virtualWanName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             request,
                             accept,
                             context))
@@ -169,6 +170,7 @@ public final class VpnSitesConfigurationsClientImpl implements VpnSitesConfigura
         } else {
             request.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -177,7 +179,7 @@ public final class VpnSitesConfigurationsClientImpl implements VpnSitesConfigura
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 virtualWanName,
-                this.client.getApiVersion(),
+                apiVersion,
                 request,
                 accept,
                 context);

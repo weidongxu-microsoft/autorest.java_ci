@@ -290,6 +290,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         if (gatewayName == null) {
             return Mono.error(new IllegalArgumentException("Parameter gatewayName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -300,7 +301,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             gatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -339,6 +340,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         if (gatewayName == null) {
             return Mono.error(new IllegalArgumentException("Parameter gatewayName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -347,7 +349,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 gatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -440,6 +442,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         } else {
             p2SVpnGatewayParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -450,7 +453,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             gatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             p2SVpnGatewayParameters,
                             accept,
                             context))
@@ -498,6 +501,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         } else {
             p2SVpnGatewayParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -506,7 +510,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 gatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 p2SVpnGatewayParameters,
                 accept,
                 context);
@@ -712,6 +716,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         } else {
             p2SVpnGatewayParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -722,7 +727,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             gatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             p2SVpnGatewayParameters,
                             accept,
                             context))
@@ -770,6 +775,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         } else {
             p2SVpnGatewayParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -778,7 +784,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 gatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 p2SVpnGatewayParameters,
                 accept,
                 context);
@@ -974,6 +980,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         if (gatewayName == null) {
             return Mono.error(new IllegalArgumentException("Parameter gatewayName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -984,7 +991,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             gatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -1023,6 +1030,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         if (gatewayName == null) {
             return Mono.error(new IllegalArgumentException("Parameter gatewayName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1031,7 +1039,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 gatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -1198,6 +1206,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1207,7 +1216,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                             this.client.getEndpoint(),
                             this.client.getSubscriptionId(),
                             resourceGroupName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .<PagedResponse<P2SVpnGatewayInner>>map(
@@ -1252,6 +1261,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1259,7 +1269,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                 this.client.getEndpoint(),
                 this.client.getSubscriptionId(),
                 resourceGroupName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context)
             .map(
@@ -1357,17 +1367,13 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .list(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+                        .list(this.client.getEndpoint(), this.client.getSubscriptionId(), apiVersion, accept, context))
             .<PagedResponse<P2SVpnGatewayInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -1404,15 +1410,11 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
-                accept,
-                context)
+            .list(this.client.getEndpoint(), this.client.getSubscriptionId(), apiVersion, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -1508,6 +1510,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1517,7 +1520,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             gatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1557,6 +1560,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1564,7 +1568,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 gatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1752,6 +1756,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1761,7 +1766,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             gatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -1809,6 +1814,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1816,7 +1822,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 gatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -2019,6 +2025,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2028,7 +2035,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             gatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -2069,6 +2076,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2076,7 +2084,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 gatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -2276,6 +2284,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         } else {
             request.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2286,7 +2295,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             gatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             request,
                             accept,
                             context))
@@ -2334,6 +2343,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         } else {
             request.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2342,7 +2352,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 gatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 request,
                 accept,
                 context);
@@ -2571,6 +2581,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         } else {
             request.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2581,7 +2592,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             p2SVpnGatewayName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             request,
                             accept,
                             context))
@@ -2628,6 +2639,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
         } else {
             request.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2636,7 +2648,7 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 p2SVpnGatewayName,
-                this.client.getApiVersion(),
+                apiVersion,
                 request,
                 accept,
                 context);

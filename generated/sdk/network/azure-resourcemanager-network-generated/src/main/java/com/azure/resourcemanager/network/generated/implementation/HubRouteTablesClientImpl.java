@@ -186,6 +186,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
         } else {
             routeTableParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -197,7 +198,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
                             resourceGroupName,
                             virtualHubName,
                             routeTableName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             routeTableParameters,
                             accept,
                             context))
@@ -253,6 +254,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
         } else {
             routeTableParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -262,7 +264,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
                 resourceGroupName,
                 virtualHubName,
                 routeTableName,
-                this.client.getApiVersion(),
+                apiVersion,
                 routeTableParameters,
                 accept,
                 context);
@@ -506,6 +508,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
         if (routeTableName == null) {
             return Mono.error(new IllegalArgumentException("Parameter routeTableName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -517,7 +520,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
                             resourceGroupName,
                             virtualHubName,
                             routeTableName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -561,6 +564,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
         if (routeTableName == null) {
             return Mono.error(new IllegalArgumentException("Parameter routeTableName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -570,7 +574,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
                 resourceGroupName,
                 virtualHubName,
                 routeTableName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -662,6 +666,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
         if (routeTableName == null) {
             return Mono.error(new IllegalArgumentException("Parameter routeTableName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -673,7 +678,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
                             resourceGroupName,
                             virtualHubName,
                             routeTableName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -716,6 +721,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
         if (routeTableName == null) {
             return Mono.error(new IllegalArgumentException("Parameter routeTableName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -725,7 +731,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
                 resourceGroupName,
                 virtualHubName,
                 routeTableName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -912,6 +918,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
         if (virtualHubName == null) {
             return Mono.error(new IllegalArgumentException("Parameter virtualHubName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -922,7 +929,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             virtualHubName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .<PagedResponse<HubRouteTableInner>>map(
@@ -971,6 +978,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
         if (virtualHubName == null) {
             return Mono.error(new IllegalArgumentException("Parameter virtualHubName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -979,7 +987,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 virtualHubName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context)
             .map(

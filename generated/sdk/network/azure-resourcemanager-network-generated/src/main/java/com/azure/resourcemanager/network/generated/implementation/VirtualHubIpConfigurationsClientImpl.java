@@ -177,6 +177,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
         if (ipConfigName == null) {
             return Mono.error(new IllegalArgumentException("Parameter ipConfigName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -188,7 +189,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
                             resourceGroupName,
                             virtualHubName,
                             ipConfigName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -231,6 +232,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
         if (ipConfigName == null) {
             return Mono.error(new IllegalArgumentException("Parameter ipConfigName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -240,7 +242,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
                 resourceGroupName,
                 virtualHubName,
                 ipConfigName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -340,6 +342,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -351,7 +354,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
                             resourceGroupName,
                             virtualHubName,
                             ipConfigName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -406,6 +409,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -415,7 +419,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
                 resourceGroupName,
                 virtualHubName,
                 ipConfigName,
-                this.client.getApiVersion(),
+                apiVersion,
                 parameters,
                 accept,
                 context);
@@ -653,6 +657,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
         if (ipConfigName == null) {
             return Mono.error(new IllegalArgumentException("Parameter ipConfigName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -664,7 +669,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
                             resourceGroupName,
                             virtualHubName,
                             ipConfigName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -707,6 +712,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
         if (ipConfigName == null) {
             return Mono.error(new IllegalArgumentException("Parameter ipConfigName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -716,7 +722,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
                 resourceGroupName,
                 virtualHubName,
                 ipConfigName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -903,6 +909,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
         if (virtualHubName == null) {
             return Mono.error(new IllegalArgumentException("Parameter virtualHubName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -913,7 +920,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             virtualHubName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .<PagedResponse<HubIpConfigurationInner>>map(
@@ -962,6 +969,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
         if (virtualHubName == null) {
             return Mono.error(new IllegalArgumentException("Parameter virtualHubName is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -970,7 +978,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 virtualHubName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context)
             .map(

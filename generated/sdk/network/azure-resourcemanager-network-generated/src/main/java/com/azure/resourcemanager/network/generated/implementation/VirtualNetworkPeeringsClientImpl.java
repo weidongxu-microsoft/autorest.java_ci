@@ -182,6 +182,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -192,7 +193,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                             resourceGroupName,
                             virtualNetworkName,
                             virtualNetworkPeeringName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -240,6 +241,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -248,7 +250,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                 resourceGroupName,
                 virtualNetworkName,
                 virtualNetworkPeeringName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -447,6 +449,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -457,7 +460,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                             resourceGroupName,
                             virtualNetworkName,
                             virtualNetworkPeeringName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -506,6 +509,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -514,7 +518,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                 resourceGroupName,
                 virtualNetworkName,
                 virtualNetworkPeeringName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -630,6 +634,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
         } else {
             virtualNetworkPeeringParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -641,7 +646,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                             virtualNetworkName,
                             virtualNetworkPeeringName,
                             syncRemoteAddressSpace,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             virtualNetworkPeeringParameters,
                             accept,
@@ -708,6 +713,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
         } else {
             virtualNetworkPeeringParameters.validate();
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -717,7 +723,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                 virtualNetworkName,
                 virtualNetworkPeeringName,
                 syncRemoteAddressSpace,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 virtualNetworkPeeringParameters,
                 accept,
@@ -1096,6 +1102,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1105,7 +1112,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                             this.client.getEndpoint(),
                             resourceGroupName,
                             virtualNetworkName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1156,6 +1163,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1163,7 +1171,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
                 this.client.getEndpoint(),
                 resourceGroupName,
                 virtualNetworkName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context)
