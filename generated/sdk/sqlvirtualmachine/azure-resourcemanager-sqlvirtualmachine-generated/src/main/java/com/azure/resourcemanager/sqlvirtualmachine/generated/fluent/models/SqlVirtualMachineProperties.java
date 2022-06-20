@@ -72,6 +72,13 @@ public final class SqlVirtualMachineProperties {
     private WsfcDomainCredentials wsfcDomainCredentials;
 
     /*
+     * Domain credentials for setting up Windows Server Failover Cluster for
+     * SQL availability group.
+     */
+    @JsonProperty(value = "wsfcStaticIp")
+    private String wsfcStaticIp;
+
+    /*
      * Auto patching settings for applying critical security updates to SQL
      * virtual machine.
      */
@@ -260,6 +267,28 @@ public final class SqlVirtualMachineProperties {
      */
     public SqlVirtualMachineProperties withWsfcDomainCredentials(WsfcDomainCredentials wsfcDomainCredentials) {
         this.wsfcDomainCredentials = wsfcDomainCredentials;
+        return this;
+    }
+
+    /**
+     * Get the wsfcStaticIp property: Domain credentials for setting up Windows Server Failover Cluster for SQL
+     * availability group.
+     *
+     * @return the wsfcStaticIp value.
+     */
+    public String wsfcStaticIp() {
+        return this.wsfcStaticIp;
+    }
+
+    /**
+     * Set the wsfcStaticIp property: Domain credentials for setting up Windows Server Failover Cluster for SQL
+     * availability group.
+     *
+     * @param wsfcStaticIp the wsfcStaticIp value to set.
+     * @return the SqlVirtualMachineProperties object itself.
+     */
+    public SqlVirtualMachineProperties withWsfcStaticIp(String wsfcStaticIp) {
+        this.wsfcStaticIp = wsfcStaticIp;
         return this;
     }
 

@@ -9,6 +9,7 @@ import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AgConfiguration;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.LoadBalancerConfiguration;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.MultiSubnetIpConfiguration;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
@@ -100,6 +101,30 @@ public final class AvailabilityGroupListenerInner extends ProxyResource {
             this.innerProperties = new AvailabilityGroupListenerProperties();
         }
         this.innerProperties().withLoadBalancerConfigurations(loadBalancerConfigurations);
+        return this;
+    }
+
+    /**
+     * Get the multiSubnetIpConfigurations property: List of multi subnet IP configurations for an AG listener.
+     *
+     * @return the multiSubnetIpConfigurations value.
+     */
+    public List<MultiSubnetIpConfiguration> multiSubnetIpConfigurations() {
+        return this.innerProperties() == null ? null : this.innerProperties().multiSubnetIpConfigurations();
+    }
+
+    /**
+     * Set the multiSubnetIpConfigurations property: List of multi subnet IP configurations for an AG listener.
+     *
+     * @param multiSubnetIpConfigurations the multiSubnetIpConfigurations value to set.
+     * @return the AvailabilityGroupListenerInner object itself.
+     */
+    public AvailabilityGroupListenerInner withMultiSubnetIpConfigurations(
+        List<MultiSubnetIpConfiguration> multiSubnetIpConfigurations) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new AvailabilityGroupListenerProperties();
+        }
+        this.innerProperties().withMultiSubnetIpConfigurations(multiSubnetIpConfigurations);
         return this;
     }
 

@@ -62,6 +62,13 @@ public interface AvailabilityGroupListener {
     List<LoadBalancerConfiguration> loadBalancerConfigurations();
 
     /**
+     * Gets the multiSubnetIpConfigurations property: List of multi subnet IP configurations for an AG listener.
+     *
+     * @return the multiSubnetIpConfigurations value.
+     */
+    List<MultiSubnetIpConfiguration> multiSubnetIpConfigurations();
+
+    /**
      * Gets the createDefaultAvailabilityGroupIfNotExist property: Create a default availability group if it does not
      * exist.
      *
@@ -126,6 +133,7 @@ public interface AvailabilityGroupListener {
         interface WithCreate
             extends DefinitionStages.WithAvailabilityGroupName,
                 DefinitionStages.WithLoadBalancerConfigurations,
+                DefinitionStages.WithMultiSubnetIpConfigurations,
                 DefinitionStages.WithCreateDefaultAvailabilityGroupIfNotExist,
                 DefinitionStages.WithPort,
                 DefinitionStages.WithAvailabilityGroupConfiguration {
@@ -165,6 +173,17 @@ public interface AvailabilityGroupListener {
              * @return the next definition stage.
              */
             WithCreate withLoadBalancerConfigurations(List<LoadBalancerConfiguration> loadBalancerConfigurations);
+        }
+        /** The stage of the AvailabilityGroupListener definition allowing to specify multiSubnetIpConfigurations. */
+        interface WithMultiSubnetIpConfigurations {
+            /**
+             * Specifies the multiSubnetIpConfigurations property: List of multi subnet IP configurations for an AG
+             * listener..
+             *
+             * @param multiSubnetIpConfigurations List of multi subnet IP configurations for an AG listener.
+             * @return the next definition stage.
+             */
+            WithCreate withMultiSubnetIpConfigurations(List<MultiSubnetIpConfiguration> multiSubnetIpConfigurations);
         }
         /**
          * The stage of the AvailabilityGroupListener definition allowing to specify
@@ -212,6 +231,7 @@ public interface AvailabilityGroupListener {
     interface Update
         extends UpdateStages.WithAvailabilityGroupName,
             UpdateStages.WithLoadBalancerConfigurations,
+            UpdateStages.WithMultiSubnetIpConfigurations,
             UpdateStages.WithCreateDefaultAvailabilityGroupIfNotExist,
             UpdateStages.WithPort,
             UpdateStages.WithAvailabilityGroupConfiguration {
@@ -253,6 +273,17 @@ public interface AvailabilityGroupListener {
              * @return the next definition stage.
              */
             Update withLoadBalancerConfigurations(List<LoadBalancerConfiguration> loadBalancerConfigurations);
+        }
+        /** The stage of the AvailabilityGroupListener update allowing to specify multiSubnetIpConfigurations. */
+        interface WithMultiSubnetIpConfigurations {
+            /**
+             * Specifies the multiSubnetIpConfigurations property: List of multi subnet IP configurations for an AG
+             * listener..
+             *
+             * @param multiSubnetIpConfigurations List of multi subnet IP configurations for an AG listener.
+             * @return the next definition stage.
+             */
+            Update withMultiSubnetIpConfigurations(List<MultiSubnetIpConfiguration> multiSubnetIpConfigurations);
         }
         /**
          * The stage of the AvailabilityGroupListener update allowing to specify

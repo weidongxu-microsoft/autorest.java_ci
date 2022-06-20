@@ -181,7 +181,7 @@ public final class SqlVirtualMachineManagementClientImpl implements SqlVirtualMa
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2021-11-01-preview";
+        this.apiVersion = "2022-02-01";
         this.availabilityGroupListeners = new AvailabilityGroupListenersClientImpl(this);
         this.operations = new OperationsClientImpl(this);
         this.sqlVirtualMachineGroups = new SqlVirtualMachineGroupsClientImpl(this);

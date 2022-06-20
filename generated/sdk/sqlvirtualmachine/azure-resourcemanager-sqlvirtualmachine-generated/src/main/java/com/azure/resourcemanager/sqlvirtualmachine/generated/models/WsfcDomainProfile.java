@@ -62,6 +62,12 @@ public final class WsfcDomainProfile {
     @JsonProperty(value = "storageAccountPrimaryKey")
     private String storageAccountPrimaryKey;
 
+    /*
+     * Cluster subnet type.
+     */
+    @JsonProperty(value = "clusterSubnetType")
+    private ClusterSubnetType clusterSubnetType;
+
     /**
      * Get the domainFqdn property: Fully qualified name of the domain.
      *
@@ -225,6 +231,26 @@ public final class WsfcDomainProfile {
      */
     public WsfcDomainProfile withStorageAccountPrimaryKey(String storageAccountPrimaryKey) {
         this.storageAccountPrimaryKey = storageAccountPrimaryKey;
+        return this;
+    }
+
+    /**
+     * Get the clusterSubnetType property: Cluster subnet type.
+     *
+     * @return the clusterSubnetType value.
+     */
+    public ClusterSubnetType clusterSubnetType() {
+        return this.clusterSubnetType;
+    }
+
+    /**
+     * Set the clusterSubnetType property: Cluster subnet type.
+     *
+     * @param clusterSubnetType the clusterSubnetType value to set.
+     * @return the WsfcDomainProfile object itself.
+     */
+    public WsfcDomainProfile withClusterSubnetType(ClusterSubnetType clusterSubnetType) {
+        this.clusterSubnetType = clusterSubnetType;
         return this;
     }
 

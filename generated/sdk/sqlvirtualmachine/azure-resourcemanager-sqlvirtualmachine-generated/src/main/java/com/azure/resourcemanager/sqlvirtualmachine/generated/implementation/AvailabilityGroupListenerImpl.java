@@ -10,6 +10,7 @@ import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.Avail
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AgConfiguration;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AvailabilityGroupListener;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.LoadBalancerConfiguration;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.MultiSubnetIpConfiguration;
 import java.util.Collections;
 import java.util.List;
 
@@ -45,6 +46,15 @@ public final class AvailabilityGroupListenerImpl
 
     public List<LoadBalancerConfiguration> loadBalancerConfigurations() {
         List<LoadBalancerConfiguration> inner = this.innerModel().loadBalancerConfigurations();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<MultiSubnetIpConfiguration> multiSubnetIpConfigurations() {
+        List<MultiSubnetIpConfiguration> inner = this.innerModel().multiSubnetIpConfigurations();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
@@ -202,6 +212,12 @@ public final class AvailabilityGroupListenerImpl
     public AvailabilityGroupListenerImpl withLoadBalancerConfigurations(
         List<LoadBalancerConfiguration> loadBalancerConfigurations) {
         this.innerModel().withLoadBalancerConfigurations(loadBalancerConfigurations);
+        return this;
+    }
+
+    public AvailabilityGroupListenerImpl withMultiSubnetIpConfigurations(
+        List<MultiSubnetIpConfiguration> multiSubnetIpConfigurations) {
+        this.innerModel().withMultiSubnetIpConfigurations(multiSubnetIpConfigurations);
         return this;
     }
 
