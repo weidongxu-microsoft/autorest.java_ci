@@ -209,7 +209,6 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
         if (accountName == null) {
             return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -220,7 +219,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             accountName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             filter,
                             top,
                             orderby,
@@ -276,7 +275,6 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
         if (accountName == null) {
             return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -285,7 +283,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 accountName,
-                apiVersion,
+                this.client.getApiVersion(),
                 filter,
                 top,
                 orderby,
@@ -444,7 +442,6 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingLocatorName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -456,7 +453,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
                             resourceGroupName,
                             accountName,
                             streamingLocatorName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -501,7 +498,6 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingLocatorName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -511,7 +507,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
                 resourceGroupName,
                 accountName,
                 streamingLocatorName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -612,7 +608,6 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -624,7 +619,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
                             resourceGroupName,
                             accountName,
                             streamingLocatorName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             parameters,
                             accept,
                             context))
@@ -679,7 +674,6 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -689,7 +683,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
                 resourceGroupName,
                 accountName,
                 streamingLocatorName,
-                apiVersion,
+                this.client.getApiVersion(),
                 parameters,
                 accept,
                 context);
@@ -793,7 +787,6 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingLocatorName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -805,7 +798,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
                             resourceGroupName,
                             accountName,
                             streamingLocatorName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -849,7 +842,6 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingLocatorName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -859,7 +851,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
                 resourceGroupName,
                 accountName,
                 streamingLocatorName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -952,7 +944,6 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingLocatorName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -964,7 +955,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
                             resourceGroupName,
                             accountName,
                             streamingLocatorName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -1009,7 +1000,6 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingLocatorName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1019,7 +1009,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
                 resourceGroupName,
                 accountName,
                 streamingLocatorName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -1115,7 +1105,6 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingLocatorName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1127,7 +1116,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
                             resourceGroupName,
                             accountName,
                             streamingLocatorName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -1172,7 +1161,6 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingLocatorName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1182,7 +1170,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
                 resourceGroupName,
                 accountName,
                 streamingLocatorName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }

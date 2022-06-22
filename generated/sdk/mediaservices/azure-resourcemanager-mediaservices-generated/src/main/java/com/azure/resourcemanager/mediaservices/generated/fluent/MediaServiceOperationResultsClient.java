@@ -6,39 +6,36 @@ package com.azure.resourcemanager.mediaservices.generated.fluent;
 
 import com.azure.core.annotation.ReturnType;
 import com.azure.core.annotation.ServiceMethod;
-import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.mediaservices.generated.fluent.models.EntityNameAvailabilityCheckOutputInner;
-import com.azure.resourcemanager.mediaservices.generated.models.CheckNameAvailabilityInput;
+import com.azure.resourcemanager.mediaservices.generated.fluent.models.MediaServiceInner;
+import com.azure.resourcemanager.mediaservices.generated.models.MediaServiceOperationResultsGetResponse;
 
-/** An instance of this class provides access to all the operations defined in LocationsClient. */
-public interface LocationsClient {
+/** An instance of this class provides access to all the operations defined in MediaServiceOperationResultsClient. */
+public interface MediaServiceOperationResultsClient {
     /**
-     * Checks whether the Media Service resource name is available.
+     * Get media service operation result.
      *
      * @param locationName Location name.
-     * @param parameters The request parameters.
+     * @param operationId Operation Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request.
+     * @return media service operation result.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    EntityNameAvailabilityCheckOutputInner checkNameAvailability(
-        String locationName, CheckNameAvailabilityInput parameters);
+    MediaServiceInner get(String locationName, String operationId);
 
     /**
-     * Checks whether the Media Service resource name is available.
+     * Get media service operation result.
      *
      * @param locationName Location name.
-     * @param parameters The request parameters.
+     * @param operationId Operation Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request along with {@link Response}.
+     * @return media service operation result.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<EntityNameAvailabilityCheckOutputInner> checkNameAvailabilityWithResponse(
-        String locationName, CheckNameAvailabilityInput parameters, Context context);
+    MediaServiceOperationResultsGetResponse getWithResponse(String locationName, String operationId, Context context);
 }

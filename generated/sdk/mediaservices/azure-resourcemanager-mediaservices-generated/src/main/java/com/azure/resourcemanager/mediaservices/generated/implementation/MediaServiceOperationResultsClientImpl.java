@@ -4,84 +4,84 @@
 
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
-import com.azure.core.annotation.BodyParam;
 import com.azure.core.annotation.ExpectedResponses;
+import com.azure.core.annotation.Get;
 import com.azure.core.annotation.HeaderParam;
 import com.azure.core.annotation.Headers;
 import com.azure.core.annotation.Host;
 import com.azure.core.annotation.HostParam;
 import com.azure.core.annotation.PathParam;
-import com.azure.core.annotation.Post;
 import com.azure.core.annotation.QueryParam;
 import com.azure.core.annotation.ReturnType;
 import com.azure.core.annotation.ServiceInterface;
 import com.azure.core.annotation.ServiceMethod;
 import com.azure.core.annotation.UnexpectedResponseExceptionType;
-import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.resourcemanager.mediaservices.generated.fluent.LocationsClient;
-import com.azure.resourcemanager.mediaservices.generated.fluent.models.EntityNameAvailabilityCheckOutputInner;
-import com.azure.resourcemanager.mediaservices.generated.models.CheckNameAvailabilityInput;
+import com.azure.resourcemanager.mediaservices.generated.fluent.MediaServiceOperationResultsClient;
+import com.azure.resourcemanager.mediaservices.generated.fluent.models.MediaServiceInner;
+import com.azure.resourcemanager.mediaservices.generated.models.MediaServiceOperationResultsGetResponse;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in LocationsClient. */
-public final class LocationsClientImpl implements LocationsClient {
+/** An instance of this class provides access to all the operations defined in MediaServiceOperationResultsClient. */
+public final class MediaServiceOperationResultsClientImpl implements MediaServiceOperationResultsClient {
     /** The proxy service used to perform REST calls. */
-    private final LocationsService service;
+    private final MediaServiceOperationResultsService service;
 
     /** The service client containing this operation class. */
     private final AzureMediaServicesImpl client;
 
     /**
-     * Initializes an instance of LocationsClientImpl.
+     * Initializes an instance of MediaServiceOperationResultsClientImpl.
      *
      * @param client the instance of the service client containing this operation class.
      */
-    LocationsClientImpl(AzureMediaServicesImpl client) {
+    MediaServiceOperationResultsClientImpl(AzureMediaServicesImpl client) {
         this.service =
-            RestProxy.create(LocationsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+            RestProxy
+                .create(
+                    MediaServiceOperationResultsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
         this.client = client;
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesLocations to be used by the proxy service to
-     * perform REST calls.
+     * The interface defining all the services for AzureMediaServicesMediaServiceOperationResults to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
-    @ServiceInterface(name = "AzureMediaServicesLo")
-    private interface LocationsService {
+    @ServiceInterface(name = "AzureMediaServicesMe")
+    private interface MediaServiceOperationResultsService {
         @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Media/locations/{locationName}/checkNameAvailability")
-        @ExpectedResponses({200})
+        @Get(
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Media/locations/{locationName}"
+                + "/mediaServiceOperationResults/{operationId}")
+        @ExpectedResponses({200, 202})
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<EntityNameAvailabilityCheckOutputInner>> checkNameAvailability(
+        Mono<MediaServiceOperationResultsGetResponse> get(
             @HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
             @PathParam("locationName") String locationName,
+            @PathParam("operationId") String operationId,
             @QueryParam("api-version") String apiVersion,
-            @BodyParam("application/json") CheckNameAvailabilityInput parameters,
             @HeaderParam("Accept") String accept,
             Context context);
     }
 
     /**
-     * Checks whether the Media Service resource name is available.
+     * Get media service operation result.
      *
      * @param locationName Location name.
-     * @param parameters The request parameters.
+     * @param operationId Operation Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * @return media service operation result on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<EntityNameAvailabilityCheckOutputInner>> checkNameAvailabilityWithResponseAsync(
-        String locationName, CheckNameAvailabilityInput parameters) {
+    private Mono<MediaServiceOperationResultsGetResponse> getWithResponseAsync(
+        String locationName, String operationId) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -97,42 +97,39 @@ public final class LocationsClientImpl implements LocationsClient {
         if (locationName == null) {
             return Mono.error(new IllegalArgumentException("Parameter locationName is required and cannot be null."));
         }
-        if (parameters == null) {
-            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
-        } else {
-            parameters.validate();
+        if (operationId == null) {
+            return Mono.error(new IllegalArgumentException("Parameter operationId is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .checkNameAvailability(
+                        .get(
                             this.client.getEndpoint(),
                             this.client.getSubscriptionId(),
                             locationName,
+                            operationId,
                             this.client.getApiVersion(),
-                            parameters,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
-     * Checks whether the Media Service resource name is available.
+     * Get media service operation result.
      *
      * @param locationName Location name.
-     * @param parameters The request parameters.
+     * @param operationId Operation Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * @return media service operation result on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<EntityNameAvailabilityCheckOutputInner>> checkNameAvailabilityWithResponseAsync(
-        String locationName, CheckNameAvailabilityInput parameters, Context context) {
+    private Mono<MediaServiceOperationResultsGetResponse> getWithResponseAsync(
+        String locationName, String operationId, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -148,71 +145,66 @@ public final class LocationsClientImpl implements LocationsClient {
         if (locationName == null) {
             return Mono.error(new IllegalArgumentException("Parameter locationName is required and cannot be null."));
         }
-        if (parameters == null) {
-            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
-        } else {
-            parameters.validate();
+        if (operationId == null) {
+            return Mono.error(new IllegalArgumentException("Parameter operationId is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .checkNameAvailability(
+            .get(
                 this.client.getEndpoint(),
                 this.client.getSubscriptionId(),
                 locationName,
+                operationId,
                 this.client.getApiVersion(),
-                parameters,
                 accept,
                 context);
     }
 
     /**
-     * Checks whether the Media Service resource name is available.
+     * Get media service operation result.
      *
      * @param locationName Location name.
-     * @param parameters The request parameters.
+     * @param operationId Operation Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request on successful completion of {@link Mono}.
+     * @return media service operation result on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<EntityNameAvailabilityCheckOutputInner> checkNameAvailabilityAsync(
-        String locationName, CheckNameAvailabilityInput parameters) {
-        return checkNameAvailabilityWithResponseAsync(locationName, parameters)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    private Mono<MediaServiceInner> getAsync(String locationName, String operationId) {
+        return getWithResponseAsync(locationName, operationId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Checks whether the Media Service resource name is available.
+     * Get media service operation result.
      *
      * @param locationName Location name.
-     * @param parameters The request parameters.
+     * @param operationId Operation Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request.
+     * @return media service operation result.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public EntityNameAvailabilityCheckOutputInner checkNameAvailability(
-        String locationName, CheckNameAvailabilityInput parameters) {
-        return checkNameAvailabilityAsync(locationName, parameters).block();
+    public MediaServiceInner get(String locationName, String operationId) {
+        return getAsync(locationName, operationId).block();
     }
 
     /**
-     * Checks whether the Media Service resource name is available.
+     * Get media service operation result.
      *
      * @param locationName Location name.
-     * @param parameters The request parameters.
+     * @param operationId Operation Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request along with {@link Response}.
+     * @return media service operation result.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<EntityNameAvailabilityCheckOutputInner> checkNameAvailabilityWithResponse(
-        String locationName, CheckNameAvailabilityInput parameters, Context context) {
-        return checkNameAvailabilityWithResponseAsync(locationName, parameters, context).block();
+    public MediaServiceOperationResultsGetResponse getWithResponse(
+        String locationName, String operationId, Context context) {
+        return getWithResponseAsync(locationName, operationId, context).block();
     }
 }

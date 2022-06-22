@@ -33,6 +33,8 @@ import com.azure.resourcemanager.mediaservices.generated.implementation.JobsImpl
 import com.azure.resourcemanager.mediaservices.generated.implementation.LiveEventsImpl;
 import com.azure.resourcemanager.mediaservices.generated.implementation.LiveOutputsImpl;
 import com.azure.resourcemanager.mediaservices.generated.implementation.LocationsImpl;
+import com.azure.resourcemanager.mediaservices.generated.implementation.MediaServiceOperationResultsImpl;
+import com.azure.resourcemanager.mediaservices.generated.implementation.MediaServiceOperationStatusesImpl;
 import com.azure.resourcemanager.mediaservices.generated.implementation.MediaservicesImpl;
 import com.azure.resourcemanager.mediaservices.generated.implementation.OperationResultsImpl;
 import com.azure.resourcemanager.mediaservices.generated.implementation.OperationStatusesImpl;
@@ -52,6 +54,8 @@ import com.azure.resourcemanager.mediaservices.generated.models.Jobs;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEvents;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveOutputs;
 import com.azure.resourcemanager.mediaservices.generated.models.Locations;
+import com.azure.resourcemanager.mediaservices.generated.models.MediaServiceOperationResults;
+import com.azure.resourcemanager.mediaservices.generated.models.MediaServiceOperationStatuses;
 import com.azure.resourcemanager.mediaservices.generated.models.Mediaservices;
 import com.azure.resourcemanager.mediaservices.generated.models.OperationResults;
 import com.azure.resourcemanager.mediaservices.generated.models.OperationStatuses;
@@ -83,6 +87,10 @@ public final class MediaServicesManager {
     private PrivateEndpointConnections privateEndpointConnections;
 
     private Locations locations;
+
+    private MediaServiceOperationStatuses mediaServiceOperationStatuses;
+
+    private MediaServiceOperationResults mediaServiceOperationResults;
 
     private Assets assets;
 
@@ -403,6 +411,32 @@ public final class MediaServicesManager {
             this.locations = new LocationsImpl(clientObject.getLocations(), this);
         }
         return locations;
+    }
+
+    /**
+     * Gets the resource collection API of MediaServiceOperationStatuses.
+     *
+     * @return Resource collection API of MediaServiceOperationStatuses.
+     */
+    public MediaServiceOperationStatuses mediaServiceOperationStatuses() {
+        if (this.mediaServiceOperationStatuses == null) {
+            this.mediaServiceOperationStatuses =
+                new MediaServiceOperationStatusesImpl(clientObject.getMediaServiceOperationStatuses(), this);
+        }
+        return mediaServiceOperationStatuses;
+    }
+
+    /**
+     * Gets the resource collection API of MediaServiceOperationResults.
+     *
+     * @return Resource collection API of MediaServiceOperationResults.
+     */
+    public MediaServiceOperationResults mediaServiceOperationResults() {
+        if (this.mediaServiceOperationResults == null) {
+            this.mediaServiceOperationResults =
+                new MediaServiceOperationResultsImpl(clientObject.getMediaServiceOperationResults(), this);
+        }
+        return mediaServiceOperationResults;
     }
 
     /**

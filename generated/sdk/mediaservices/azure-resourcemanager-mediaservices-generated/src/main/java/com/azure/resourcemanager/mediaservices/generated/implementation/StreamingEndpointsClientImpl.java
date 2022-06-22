@@ -258,7 +258,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         if (accountName == null) {
             return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -269,7 +268,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             accountName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .<PagedResponse<StreamingEndpointInner>>map(
@@ -317,7 +316,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         if (accountName == null) {
             return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -326,7 +324,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 accountName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context)
             .map(
@@ -442,7 +440,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -454,7 +451,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                             resourceGroupName,
                             accountName,
                             streamingEndpointName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -498,7 +495,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -508,7 +504,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                 resourceGroupName,
                 accountName,
                 streamingEndpointName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -613,7 +609,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -625,7 +620,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                             resourceGroupName,
                             accountName,
                             streamingEndpointName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             autoStart,
                             parameters,
                             accept,
@@ -683,7 +678,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -693,7 +687,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                 resourceGroupName,
                 accountName,
                 streamingEndpointName,
-                apiVersion,
+                this.client.getApiVersion(),
                 autoStart,
                 parameters,
                 accept,
@@ -1002,7 +996,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1014,7 +1007,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                             resourceGroupName,
                             accountName,
                             streamingEndpointName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             parameters,
                             accept,
                             context))
@@ -1069,7 +1062,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1079,7 +1071,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                 resourceGroupName,
                 accountName,
                 streamingEndpointName,
-                apiVersion,
+                this.client.getApiVersion(),
                 parameters,
                 accept,
                 context);
@@ -1310,7 +1302,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1322,7 +1313,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                             resourceGroupName,
                             accountName,
                             streamingEndpointName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -1366,7 +1357,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1376,7 +1366,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                 resourceGroupName,
                 accountName,
                 streamingEndpointName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -1567,7 +1557,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1579,7 +1568,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                             resourceGroupName,
                             accountName,
                             streamingEndpointName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -1623,7 +1612,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1633,7 +1621,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                 resourceGroupName,
                 accountName,
                 streamingEndpointName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -1728,7 +1716,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1740,7 +1727,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                             resourceGroupName,
                             accountName,
                             streamingEndpointName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -1784,7 +1771,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1794,7 +1780,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                 resourceGroupName,
                 accountName,
                 streamingEndpointName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -1985,7 +1971,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1997,7 +1982,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                             resourceGroupName,
                             accountName,
                             streamingEndpointName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -2041,7 +2026,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
             return Mono
                 .error(new IllegalArgumentException("Parameter streamingEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2051,7 +2035,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                 resourceGroupName,
                 accountName,
                 streamingEndpointName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -2251,7 +2235,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2263,7 +2246,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                             resourceGroupName,
                             accountName,
                             streamingEndpointName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             parameters,
                             accept,
                             context))
@@ -2318,7 +2301,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2328,7 +2310,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
                 resourceGroupName,
                 accountName,
                 streamingEndpointName,
-                apiVersion,
+                this.client.getApiVersion(),
                 parameters,
                 accept,
                 context);

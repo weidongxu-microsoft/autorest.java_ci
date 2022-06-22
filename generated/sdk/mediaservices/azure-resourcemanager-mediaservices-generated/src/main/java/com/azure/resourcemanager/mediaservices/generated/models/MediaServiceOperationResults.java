@@ -7,31 +7,30 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of Locations. */
-public interface Locations {
+/** Resource collection API of MediaServiceOperationResults. */
+public interface MediaServiceOperationResults {
     /**
-     * Checks whether the Media Service resource name is available.
+     * Get media service operation result.
      *
      * @param locationName Location name.
-     * @param parameters The request parameters.
+     * @param operationId Operation Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request.
+     * @return media service operation result.
      */
-    EntityNameAvailabilityCheckOutput checkNameAvailability(String locationName, CheckNameAvailabilityInput parameters);
+    MediaService get(String locationName, String operationId);
 
     /**
-     * Checks whether the Media Service resource name is available.
+     * Get media service operation result.
      *
      * @param locationName Location name.
-     * @param parameters The request parameters.
+     * @param operationId Operation Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the check name availability request along with {@link Response}.
+     * @return media service operation result.
      */
-    Response<EntityNameAvailabilityCheckOutput> checkNameAvailabilityWithResponse(
-        String locationName, CheckNameAvailabilityInput parameters, Context context);
+    Response<MediaService> getWithResponse(String locationName, String operationId, Context context);
 }
