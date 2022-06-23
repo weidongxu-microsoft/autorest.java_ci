@@ -19,6 +19,9 @@ public final class ApplicationGatewaySslProtocol extends ExpandableStringEnum<Ap
     /** Static value TLSv1_2 for ApplicationGatewaySslProtocol. */
     public static final ApplicationGatewaySslProtocol TLSV1_2 = fromString("TLSv1_2");
 
+    /** Static value TLSv1_3 for ApplicationGatewaySslProtocol. */
+    public static final ApplicationGatewaySslProtocol TLSV1_3 = fromString("TLSv1_3");
+
     /**
      * Creates or finds a ApplicationGatewaySslProtocol from its string representation.
      *

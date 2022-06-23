@@ -22,6 +22,8 @@ import com.azure.core.util.polling.LongRunningOperationStatus;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
+import com.azure.resourcemanager.network.generated.fluent.AdminRuleCollectionsClient;
+import com.azure.resourcemanager.network.generated.fluent.AdminRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewayPrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewayPrivateLinkResourcesClient;
 import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewaysClient;
@@ -37,6 +39,7 @@ import com.azure.resourcemanager.network.generated.fluent.BastionHostsClient;
 import com.azure.resourcemanager.network.generated.fluent.BgpServiceCommunitiesClient;
 import com.azure.resourcemanager.network.generated.fluent.ConfigurationPolicyGroupsClient;
 import com.azure.resourcemanager.network.generated.fluent.ConnectionMonitorsClient;
+import com.azure.resourcemanager.network.generated.fluent.ConnectivityConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.CustomIpPrefixesClient;
 import com.azure.resourcemanager.network.generated.fluent.DdosCustomPoliciesClient;
 import com.azure.resourcemanager.network.generated.fluent.DdosProtectionPlansClient;
@@ -54,6 +57,7 @@ import com.azure.resourcemanager.network.generated.fluent.ExpressRouteLinksClien
 import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortAuthorizationsClient;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortsClient;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortsLocationsClient;
+import com.azure.resourcemanager.network.generated.fluent.ExpressRouteProviderPortsLocationsClient;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteServiceProvidersClient;
 import com.azure.resourcemanager.network.generated.fluent.FirewallPoliciesClient;
 import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyIdpsSignaturesClient;
@@ -75,13 +79,18 @@ import com.azure.resourcemanager.network.generated.fluent.LoadBalancerOutboundRu
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancerProbesClient;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancersClient;
 import com.azure.resourcemanager.network.generated.fluent.LocalNetworkGatewaysClient;
+import com.azure.resourcemanager.network.generated.fluent.ManagementGroupNetworkManagerConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.NatGatewaysClient;
 import com.azure.resourcemanager.network.generated.fluent.NatRulesClient;
+import com.azure.resourcemanager.network.generated.fluent.NetworkGroupsClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkInterfaceIpConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkInterfaceLoadBalancersClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkInterfaceTapConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkInterfacesClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkManagementClient;
+import com.azure.resourcemanager.network.generated.fluent.NetworkManagerCommitsClient;
+import com.azure.resourcemanager.network.generated.fluent.NetworkManagerDeploymentStatusOperationsClient;
+import com.azure.resourcemanager.network.generated.fluent.NetworkManagersClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkProfilesClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkSecurityGroupsClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkVirtualAppliancesClient;
@@ -102,6 +111,8 @@ import com.azure.resourcemanager.network.generated.fluent.RouteFiltersClient;
 import com.azure.resourcemanager.network.generated.fluent.RouteTablesClient;
 import com.azure.resourcemanager.network.generated.fluent.RoutesClient;
 import com.azure.resourcemanager.network.generated.fluent.RoutingIntentsClient;
+import com.azure.resourcemanager.network.generated.fluent.ScopeConnectionsClient;
+import com.azure.resourcemanager.network.generated.fluent.SecurityAdminConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.SecurityPartnerProvidersClient;
 import com.azure.resourcemanager.network.generated.fluent.SecurityRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.ServiceAssociationLinksClient;
@@ -109,7 +120,9 @@ import com.azure.resourcemanager.network.generated.fluent.ServiceEndpointPolicie
 import com.azure.resourcemanager.network.generated.fluent.ServiceEndpointPolicyDefinitionsClient;
 import com.azure.resourcemanager.network.generated.fluent.ServiceTagInformationsClient;
 import com.azure.resourcemanager.network.generated.fluent.ServiceTagsClient;
+import com.azure.resourcemanager.network.generated.fluent.StaticMembersClient;
 import com.azure.resourcemanager.network.generated.fluent.SubnetsClient;
+import com.azure.resourcemanager.network.generated.fluent.SubscriptionNetworkManagerConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.UsagesClient;
 import com.azure.resourcemanager.network.generated.fluent.VirtualApplianceSitesClient;
 import com.azure.resourcemanager.network.generated.fluent.VirtualApplianceSkusClient;
@@ -811,6 +824,150 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
      */
     public NetworkInterfaceTapConfigurationsClient getNetworkInterfaceTapConfigurations() {
         return this.networkInterfaceTapConfigurations;
+    }
+
+    /** The NetworkManagersClient object to access its operations. */
+    private final NetworkManagersClient networkManagers;
+
+    /**
+     * Gets the NetworkManagersClient object to access its operations.
+     *
+     * @return the NetworkManagersClient object.
+     */
+    public NetworkManagersClient getNetworkManagers() {
+        return this.networkManagers;
+    }
+
+    /** The NetworkManagerCommitsClient object to access its operations. */
+    private final NetworkManagerCommitsClient networkManagerCommits;
+
+    /**
+     * Gets the NetworkManagerCommitsClient object to access its operations.
+     *
+     * @return the NetworkManagerCommitsClient object.
+     */
+    public NetworkManagerCommitsClient getNetworkManagerCommits() {
+        return this.networkManagerCommits;
+    }
+
+    /** The NetworkManagerDeploymentStatusOperationsClient object to access its operations. */
+    private final NetworkManagerDeploymentStatusOperationsClient networkManagerDeploymentStatusOperations;
+
+    /**
+     * Gets the NetworkManagerDeploymentStatusOperationsClient object to access its operations.
+     *
+     * @return the NetworkManagerDeploymentStatusOperationsClient object.
+     */
+    public NetworkManagerDeploymentStatusOperationsClient getNetworkManagerDeploymentStatusOperations() {
+        return this.networkManagerDeploymentStatusOperations;
+    }
+
+    /** The SubscriptionNetworkManagerConnectionsClient object to access its operations. */
+    private final SubscriptionNetworkManagerConnectionsClient subscriptionNetworkManagerConnections;
+
+    /**
+     * Gets the SubscriptionNetworkManagerConnectionsClient object to access its operations.
+     *
+     * @return the SubscriptionNetworkManagerConnectionsClient object.
+     */
+    public SubscriptionNetworkManagerConnectionsClient getSubscriptionNetworkManagerConnections() {
+        return this.subscriptionNetworkManagerConnections;
+    }
+
+    /** The ManagementGroupNetworkManagerConnectionsClient object to access its operations. */
+    private final ManagementGroupNetworkManagerConnectionsClient managementGroupNetworkManagerConnections;
+
+    /**
+     * Gets the ManagementGroupNetworkManagerConnectionsClient object to access its operations.
+     *
+     * @return the ManagementGroupNetworkManagerConnectionsClient object.
+     */
+    public ManagementGroupNetworkManagerConnectionsClient getManagementGroupNetworkManagerConnections() {
+        return this.managementGroupNetworkManagerConnections;
+    }
+
+    /** The ConnectivityConfigurationsClient object to access its operations. */
+    private final ConnectivityConfigurationsClient connectivityConfigurations;
+
+    /**
+     * Gets the ConnectivityConfigurationsClient object to access its operations.
+     *
+     * @return the ConnectivityConfigurationsClient object.
+     */
+    public ConnectivityConfigurationsClient getConnectivityConfigurations() {
+        return this.connectivityConfigurations;
+    }
+
+    /** The NetworkGroupsClient object to access its operations. */
+    private final NetworkGroupsClient networkGroups;
+
+    /**
+     * Gets the NetworkGroupsClient object to access its operations.
+     *
+     * @return the NetworkGroupsClient object.
+     */
+    public NetworkGroupsClient getNetworkGroups() {
+        return this.networkGroups;
+    }
+
+    /** The StaticMembersClient object to access its operations. */
+    private final StaticMembersClient staticMembers;
+
+    /**
+     * Gets the StaticMembersClient object to access its operations.
+     *
+     * @return the StaticMembersClient object.
+     */
+    public StaticMembersClient getStaticMembers() {
+        return this.staticMembers;
+    }
+
+    /** The ScopeConnectionsClient object to access its operations. */
+    private final ScopeConnectionsClient scopeConnections;
+
+    /**
+     * Gets the ScopeConnectionsClient object to access its operations.
+     *
+     * @return the ScopeConnectionsClient object.
+     */
+    public ScopeConnectionsClient getScopeConnections() {
+        return this.scopeConnections;
+    }
+
+    /** The SecurityAdminConfigurationsClient object to access its operations. */
+    private final SecurityAdminConfigurationsClient securityAdminConfigurations;
+
+    /**
+     * Gets the SecurityAdminConfigurationsClient object to access its operations.
+     *
+     * @return the SecurityAdminConfigurationsClient object.
+     */
+    public SecurityAdminConfigurationsClient getSecurityAdminConfigurations() {
+        return this.securityAdminConfigurations;
+    }
+
+    /** The AdminRuleCollectionsClient object to access its operations. */
+    private final AdminRuleCollectionsClient adminRuleCollections;
+
+    /**
+     * Gets the AdminRuleCollectionsClient object to access its operations.
+     *
+     * @return the AdminRuleCollectionsClient object.
+     */
+    public AdminRuleCollectionsClient getAdminRuleCollections() {
+        return this.adminRuleCollections;
+    }
+
+    /** The AdminRulesClient object to access its operations. */
+    private final AdminRulesClient adminRules;
+
+    /**
+     * Gets the AdminRulesClient object to access its operations.
+     *
+     * @return the AdminRulesClient object.
+     */
+    public AdminRulesClient getAdminRules() {
+        return this.adminRules;
     }
 
     /** The NetworkProfilesClient object to access its operations. */
@@ -1583,6 +1740,18 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.webApplicationFirewallPolicies;
     }
 
+    /** The ExpressRouteProviderPortsLocationsClient object to access its operations. */
+    private final ExpressRouteProviderPortsLocationsClient expressRouteProviderPortsLocations;
+
+    /**
+     * Gets the ExpressRouteProviderPortsLocationsClient object to access its operations.
+     *
+     * @return the ExpressRouteProviderPortsLocationsClient object.
+     */
+    public ExpressRouteProviderPortsLocationsClient getExpressRouteProviderPortsLocations() {
+        return this.expressRouteProviderPortsLocations;
+    }
+
     /**
      * Initializes an instance of NetworkManagementClient client.
      *
@@ -1657,6 +1826,18 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.networkInterfaceIpConfigurations = new NetworkInterfaceIpConfigurationsClientImpl(this);
         this.networkInterfaceLoadBalancers = new NetworkInterfaceLoadBalancersClientImpl(this);
         this.networkInterfaceTapConfigurations = new NetworkInterfaceTapConfigurationsClientImpl(this);
+        this.networkManagers = new NetworkManagersClientImpl(this);
+        this.networkManagerCommits = new NetworkManagerCommitsClientImpl(this);
+        this.networkManagerDeploymentStatusOperations = new NetworkManagerDeploymentStatusOperationsClientImpl(this);
+        this.subscriptionNetworkManagerConnections = new SubscriptionNetworkManagerConnectionsClientImpl(this);
+        this.managementGroupNetworkManagerConnections = new ManagementGroupNetworkManagerConnectionsClientImpl(this);
+        this.connectivityConfigurations = new ConnectivityConfigurationsClientImpl(this);
+        this.networkGroups = new NetworkGroupsClientImpl(this);
+        this.staticMembers = new StaticMembersClientImpl(this);
+        this.scopeConnections = new ScopeConnectionsClientImpl(this);
+        this.securityAdminConfigurations = new SecurityAdminConfigurationsClientImpl(this);
+        this.adminRuleCollections = new AdminRuleCollectionsClientImpl(this);
+        this.adminRules = new AdminRulesClientImpl(this);
         this.networkProfiles = new NetworkProfilesClientImpl(this);
         this.networkSecurityGroups = new NetworkSecurityGroupsClientImpl(this);
         this.securityRules = new SecurityRulesClientImpl(this);
@@ -1722,6 +1903,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.hubRouteTables = new HubRouteTablesClientImpl(this);
         this.routingIntents = new RoutingIntentsClientImpl(this);
         this.webApplicationFirewallPolicies = new WebApplicationFirewallPoliciesClientImpl(this);
+        this.expressRouteProviderPortsLocations = new ExpressRouteProviderPortsLocationsClientImpl(this);
     }
 
     /**

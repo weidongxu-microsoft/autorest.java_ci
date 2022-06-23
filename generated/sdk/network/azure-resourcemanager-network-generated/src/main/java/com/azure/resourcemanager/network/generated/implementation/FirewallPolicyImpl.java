@@ -10,7 +10,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyInner;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallThreatIntelMode;
 import com.azure.resourcemanager.network.generated.models.DnsSettings;
-import com.azure.resourcemanager.network.generated.models.ExplicitProxySettings;
+import com.azure.resourcemanager.network.generated.models.ExplicitProxy;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicy;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyInsights;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyIntrusionDetection;
@@ -123,8 +123,8 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this.innerModel().dnsSettings();
     }
 
-    public ExplicitProxySettings explicitProxySettings() {
-        return this.innerModel().explicitProxySettings();
+    public ExplicitProxy explicitProxy() {
+        return this.innerModel().explicitProxy();
     }
 
     public FirewallPolicyIntrusionDetection intrusionDetection() {
@@ -309,8 +309,8 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this;
     }
 
-    public FirewallPolicyImpl withExplicitProxySettings(ExplicitProxySettings explicitProxySettings) {
-        this.innerModel().withExplicitProxySettings(explicitProxySettings);
+    public FirewallPolicyImpl withExplicitProxy(ExplicitProxy explicitProxy) {
+        this.innerModel().withExplicitProxy(explicitProxy);
         return this;
     }
 

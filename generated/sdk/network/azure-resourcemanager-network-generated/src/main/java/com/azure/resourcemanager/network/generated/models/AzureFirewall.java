@@ -442,4 +442,24 @@ public interface AzureFirewall {
      * @return the refreshed resource.
      */
     AzureFirewall refresh(Context context);
+
+    /**
+     * Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of SNAT IP Prefixes learnt by firewall to not SNAT.
+     */
+    IpPrefixesList listLearnedPrefixes();
+
+    /**
+     * Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of SNAT IP Prefixes learnt by firewall to not SNAT.
+     */
+    IpPrefixesList listLearnedPrefixes(Context context);
 }

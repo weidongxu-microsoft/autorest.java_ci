@@ -8,7 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.compute.generated.models.RoleInstanceNetworkProfile;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The RoleInstanceProperties model. */
+/** Role instance properties. */
 @Fluent
 public final class RoleInstancePropertiesInner {
     /*

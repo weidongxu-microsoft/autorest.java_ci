@@ -22,6 +22,14 @@ public final class ApplicationGatewaySslPolicyName extends ExpandableStringEnum<
     public static final ApplicationGatewaySslPolicyName APP_GW_SSL_POLICY20170401S =
         fromString("AppGwSslPolicy20170401S");
 
+    /** Static value AppGwSslPolicy20220101 for ApplicationGatewaySslPolicyName. */
+    public static final ApplicationGatewaySslPolicyName APP_GW_SSL_POLICY20220101 =
+        fromString("AppGwSslPolicy20220101");
+
+    /** Static value AppGwSslPolicy20220101S for ApplicationGatewaySslPolicyName. */
+    public static final ApplicationGatewaySslPolicyName APP_GW_SSL_POLICY20220101S =
+        fromString("AppGwSslPolicy20220101S");
+
     /**
      * Creates or finds a ApplicationGatewaySslPolicyName from its string representation.
      *

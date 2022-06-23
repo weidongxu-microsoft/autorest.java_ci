@@ -389,6 +389,90 @@ public interface NetworkManagementClient {
     NetworkInterfaceTapConfigurationsClient getNetworkInterfaceTapConfigurations();
 
     /**
+     * Gets the NetworkManagersClient object to access its operations.
+     *
+     * @return the NetworkManagersClient object.
+     */
+    NetworkManagersClient getNetworkManagers();
+
+    /**
+     * Gets the NetworkManagerCommitsClient object to access its operations.
+     *
+     * @return the NetworkManagerCommitsClient object.
+     */
+    NetworkManagerCommitsClient getNetworkManagerCommits();
+
+    /**
+     * Gets the NetworkManagerDeploymentStatusOperationsClient object to access its operations.
+     *
+     * @return the NetworkManagerDeploymentStatusOperationsClient object.
+     */
+    NetworkManagerDeploymentStatusOperationsClient getNetworkManagerDeploymentStatusOperations();
+
+    /**
+     * Gets the SubscriptionNetworkManagerConnectionsClient object to access its operations.
+     *
+     * @return the SubscriptionNetworkManagerConnectionsClient object.
+     */
+    SubscriptionNetworkManagerConnectionsClient getSubscriptionNetworkManagerConnections();
+
+    /**
+     * Gets the ManagementGroupNetworkManagerConnectionsClient object to access its operations.
+     *
+     * @return the ManagementGroupNetworkManagerConnectionsClient object.
+     */
+    ManagementGroupNetworkManagerConnectionsClient getManagementGroupNetworkManagerConnections();
+
+    /**
+     * Gets the ConnectivityConfigurationsClient object to access its operations.
+     *
+     * @return the ConnectivityConfigurationsClient object.
+     */
+    ConnectivityConfigurationsClient getConnectivityConfigurations();
+
+    /**
+     * Gets the NetworkGroupsClient object to access its operations.
+     *
+     * @return the NetworkGroupsClient object.
+     */
+    NetworkGroupsClient getNetworkGroups();
+
+    /**
+     * Gets the StaticMembersClient object to access its operations.
+     *
+     * @return the StaticMembersClient object.
+     */
+    StaticMembersClient getStaticMembers();
+
+    /**
+     * Gets the ScopeConnectionsClient object to access its operations.
+     *
+     * @return the ScopeConnectionsClient object.
+     */
+    ScopeConnectionsClient getScopeConnections();
+
+    /**
+     * Gets the SecurityAdminConfigurationsClient object to access its operations.
+     *
+     * @return the SecurityAdminConfigurationsClient object.
+     */
+    SecurityAdminConfigurationsClient getSecurityAdminConfigurations();
+
+    /**
+     * Gets the AdminRuleCollectionsClient object to access its operations.
+     *
+     * @return the AdminRuleCollectionsClient object.
+     */
+    AdminRuleCollectionsClient getAdminRuleCollections();
+
+    /**
+     * Gets the AdminRulesClient object to access its operations.
+     *
+     * @return the AdminRulesClient object.
+     */
+    AdminRulesClient getAdminRules();
+
+    /**
      * Gets the NetworkProfilesClient object to access its operations.
      *
      * @return the NetworkProfilesClient object.
@@ -835,4 +919,11 @@ public interface NetworkManagementClient {
      * @return the WebApplicationFirewallPoliciesClient object.
      */
     WebApplicationFirewallPoliciesClient getWebApplicationFirewallPolicies();
+
+    /**
+     * Gets the ExpressRouteProviderPortsLocationsClient object to access its operations.
+     *
+     * @return the ExpressRouteProviderPortsLocationsClient object.
+     */
+    ExpressRouteProviderPortsLocationsClient getExpressRouteProviderPortsLocations();
 }

@@ -44,7 +44,7 @@ public interface CloudServiceRole {
     CloudServiceRoleSku sku();
 
     /**
-     * Gets the properties property: The properties property.
+     * Gets the properties property: The cloud service role properties.
      *
      * @return the properties value.
      */

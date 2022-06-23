@@ -6,8 +6,10 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.resourcemanager.network.generated.fluent.models.PacketCaptureResultInner;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureFilter;
+import com.azure.resourcemanager.network.generated.models.PacketCaptureMachineScope;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureResult;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureStorageLocation;
+import com.azure.resourcemanager.network.generated.models.PacketCaptureTargetType;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import java.util.Collections;
 import java.util.List;
@@ -42,6 +44,14 @@ public final class PacketCaptureResultImpl implements PacketCaptureResult {
 
     public String target() {
         return this.innerModel().target();
+    }
+
+    public PacketCaptureMachineScope scope() {
+        return this.innerModel().scope();
+    }
+
+    public PacketCaptureTargetType targetType() {
+        return this.innerModel().targetType();
     }
 
     public Long bytesToCapturePerPacket() {

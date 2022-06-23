@@ -16,8 +16,8 @@ public interface CloudServiceRoleInstances {
      * Deletes a role instance from a cloud service.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -29,8 +29,8 @@ public interface CloudServiceRoleInstances {
      * Deletes a role instance from a cloud service.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -43,8 +43,8 @@ public interface CloudServiceRoleInstances {
      * Gets a role instance from a cloud service.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -57,8 +57,8 @@ public interface CloudServiceRoleInstances {
      * Gets a role instance from a cloud service.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @param expand The expand expression to apply to the operation. 'UserData' is not supported for cloud services.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -78,8 +78,8 @@ public interface CloudServiceRoleInstances {
      * Retrieves information about the run-time state of a role instance in a cloud service.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -92,8 +92,8 @@ public interface CloudServiceRoleInstances {
      * Retrieves information about the run-time state of a role instance in a cloud service.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -108,8 +108,8 @@ public interface CloudServiceRoleInstances {
      * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next
      * page of role instances. Do this till nextLink is null to fetch all the role instances.
      *
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -122,8 +122,8 @@ public interface CloudServiceRoleInstances {
      * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next
      * page of role instances. Do this till nextLink is null to fetch all the role instances.
      *
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @param expand The expand expression to apply to the operation. 'UserData' is not supported for cloud services.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -139,8 +139,8 @@ public interface CloudServiceRoleInstances {
      * The Reboot Role Instance asynchronous operation requests a reboot of a role instance in the cloud service.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -152,8 +152,8 @@ public interface CloudServiceRoleInstances {
      * The Reboot Role Instance asynchronous operation requests a reboot of a role instance in the cloud service.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -167,8 +167,8 @@ public interface CloudServiceRoleInstances {
      * worker roles.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -181,8 +181,8 @@ public interface CloudServiceRoleInstances {
      * worker roles.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -197,8 +197,8 @@ public interface CloudServiceRoleInstances {
      * storage resources, you can use Reimage Role Instance.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -212,8 +212,8 @@ public interface CloudServiceRoleInstances {
      * storage resources, you can use Reimage Role Instance.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -226,8 +226,8 @@ public interface CloudServiceRoleInstances {
      * Gets a remote desktop file for a role instance in a cloud service.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -239,8 +239,8 @@ public interface CloudServiceRoleInstances {
      * Gets a remote desktop file for a role instance in a cloud service.
      *
      * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName The resourceGroupName parameter.
-     * @param cloudServiceName The cloudServiceName parameter.
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

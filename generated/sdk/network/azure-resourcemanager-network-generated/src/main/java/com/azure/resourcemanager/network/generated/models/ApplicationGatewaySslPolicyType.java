@@ -16,6 +16,9 @@ public final class ApplicationGatewaySslPolicyType extends ExpandableStringEnum<
     /** Static value Custom for ApplicationGatewaySslPolicyType. */
     public static final ApplicationGatewaySslPolicyType CUSTOM = fromString("Custom");
 
+    /** Static value CustomV2 for ApplicationGatewaySslPolicyType. */
+    public static final ApplicationGatewaySslPolicyType CUSTOM_V2 = fromString("CustomV2");
+
     /**
      * Creates or finds a ApplicationGatewaySslPolicyType from its string representation.
      *

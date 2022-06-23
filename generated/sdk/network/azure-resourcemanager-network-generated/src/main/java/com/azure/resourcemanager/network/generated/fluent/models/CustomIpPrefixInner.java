@@ -267,6 +267,29 @@ public final class CustomIpPrefixInner extends Resource {
     }
 
     /**
+     * Get the noInternetAdvertise property: Whether to Advertise the range to Internet.
+     *
+     * @return the noInternetAdvertise value.
+     */
+    public Boolean noInternetAdvertise() {
+        return this.innerProperties() == null ? null : this.innerProperties().noInternetAdvertise();
+    }
+
+    /**
+     * Set the noInternetAdvertise property: Whether to Advertise the range to Internet.
+     *
+     * @param noInternetAdvertise the noInternetAdvertise value to set.
+     * @return the CustomIpPrefixInner object itself.
+     */
+    public CustomIpPrefixInner withNoInternetAdvertise(Boolean noInternetAdvertise) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new CustomIpPrefixPropertiesFormat();
+        }
+        this.innerProperties().withNoInternetAdvertise(noInternetAdvertise);
+        return this;
+    }
+
+    /**
      * Get the publicIpPrefixes property: The list of all referenced PublicIpPrefixes.
      *
      * @return the publicIpPrefixes value.

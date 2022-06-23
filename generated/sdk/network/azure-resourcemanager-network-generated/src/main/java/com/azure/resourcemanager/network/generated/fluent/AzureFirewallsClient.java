@@ -12,6 +12,7 @@ import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureFirewallInner;
+import com.azure.resourcemanager.network.generated.fluent.models.IpPrefixesListInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
 /** An instance of this class provides access to all the operations defined in AzureFirewallsClient. */
@@ -265,4 +266,60 @@ public interface AzureFirewallsClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AzureFirewallInner> list(Context context);
+
+    /**
+     * Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param azureFirewallName The name of the azure firewall.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of list of SNAT IP Prefixes learnt by firewall to not SNAT.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<IpPrefixesListInner>, IpPrefixesListInner> beginListLearnedPrefixes(
+        String resourceGroupName, String azureFirewallName);
+
+    /**
+     * Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param azureFirewallName The name of the azure firewall.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of list of SNAT IP Prefixes learnt by firewall to not SNAT.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<IpPrefixesListInner>, IpPrefixesListInner> beginListLearnedPrefixes(
+        String resourceGroupName, String azureFirewallName, Context context);
+
+    /**
+     * Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param azureFirewallName The name of the azure firewall.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of SNAT IP Prefixes learnt by firewall to not SNAT.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    IpPrefixesListInner listLearnedPrefixes(String resourceGroupName, String azureFirewallName);
+
+    /**
+     * Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param azureFirewallName The name of the azure firewall.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of SNAT IP Prefixes learnt by firewall to not SNAT.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    IpPrefixesListInner listLearnedPrefixes(String resourceGroupName, String azureFirewallName, Context context);
 }

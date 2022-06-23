@@ -56,6 +56,14 @@ public interface NetworkSecurityGroup {
     String id();
 
     /**
+     * Gets the flushConnection property: When enabled, flows created from Network Security Group connections will be
+     * re-evaluated when rules are updates. Initial enablement will trigger re-evaluation.
+     *
+     * @return the flushConnection value.
+     */
+    Boolean flushConnection();
+
+    /**
      * Gets the securityRules property: A collection of security rules of the network security group.
      *
      * @return the securityRules value.
@@ -176,7 +184,10 @@ public interface NetworkSecurityGroup {
          * The stage of the NetworkSecurityGroup definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSecurityRules {
+        interface WithCreate
+            extends DefinitionStages.WithTags,
+                DefinitionStages.WithFlushConnection,
+                DefinitionStages.WithSecurityRules {
             /**
              * Executes the create request.
              *
@@ -201,6 +212,18 @@ public interface NetworkSecurityGroup {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the NetworkSecurityGroup definition allowing to specify flushConnection. */
+        interface WithFlushConnection {
+            /**
+             * Specifies the flushConnection property: When enabled, flows created from Network Security Group
+             * connections will be re-evaluated when rules are updates. Initial enablement will trigger re-evaluation..
+             *
+             * @param flushConnection When enabled, flows created from Network Security Group connections will be
+             *     re-evaluated when rules are updates. Initial enablement will trigger re-evaluation.
+             * @return the next definition stage.
+             */
+            WithCreate withFlushConnection(Boolean flushConnection);
         }
         /** The stage of the NetworkSecurityGroup definition allowing to specify securityRules. */
         interface WithSecurityRules {

@@ -8,7 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallThreatIntelMode;
 import com.azure.resourcemanager.network.generated.models.DnsSettings;
-import com.azure.resourcemanager.network.generated.models.ExplicitProxySettings;
+import com.azure.resourcemanager.network.generated.models.ExplicitProxy;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyInsights;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyIntrusionDetection;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicySku;
@@ -93,8 +93,8 @@ public final class FirewallPolicyPropertiesFormat {
     /*
      * Explicit Proxy Settings definition.
      */
-    @JsonProperty(value = "explicitProxySettings")
-    private ExplicitProxySettings explicitProxySettings;
+    @JsonProperty(value = "explicitProxy")
+    private ExplicitProxy explicitProxy;
 
     /*
      * The configuration for Intrusion detection.
@@ -292,22 +292,22 @@ public final class FirewallPolicyPropertiesFormat {
     }
 
     /**
-     * Get the explicitProxySettings property: Explicit Proxy Settings definition.
+     * Get the explicitProxy property: Explicit Proxy Settings definition.
      *
-     * @return the explicitProxySettings value.
+     * @return the explicitProxy value.
      */
-    public ExplicitProxySettings explicitProxySettings() {
-        return this.explicitProxySettings;
+    public ExplicitProxy explicitProxy() {
+        return this.explicitProxy;
     }
 
     /**
-     * Set the explicitProxySettings property: Explicit Proxy Settings definition.
+     * Set the explicitProxy property: Explicit Proxy Settings definition.
      *
-     * @param explicitProxySettings the explicitProxySettings value to set.
+     * @param explicitProxy the explicitProxy value to set.
      * @return the FirewallPolicyPropertiesFormat object itself.
      */
-    public FirewallPolicyPropertiesFormat withExplicitProxySettings(ExplicitProxySettings explicitProxySettings) {
-        this.explicitProxySettings = explicitProxySettings;
+    public FirewallPolicyPropertiesFormat withExplicitProxy(ExplicitProxy explicitProxy) {
+        this.explicitProxy = explicitProxy;
         return this;
     }
 
@@ -392,8 +392,8 @@ public final class FirewallPolicyPropertiesFormat {
         if (dnsSettings() != null) {
             dnsSettings().validate();
         }
-        if (explicitProxySettings() != null) {
-            explicitProxySettings().validate();
+        if (explicitProxy() != null) {
+            explicitProxy().validate();
         }
         if (intrusionDetection() != null) {
             intrusionDetection().validate();

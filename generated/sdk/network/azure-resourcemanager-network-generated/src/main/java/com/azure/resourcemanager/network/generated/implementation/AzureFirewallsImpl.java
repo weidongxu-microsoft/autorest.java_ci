@@ -11,8 +11,10 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.AzureFirewallsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureFirewallInner;
+import com.azure.resourcemanager.network.generated.fluent.models.IpPrefixesListInner;
 import com.azure.resourcemanager.network.generated.models.AzureFirewall;
 import com.azure.resourcemanager.network.generated.models.AzureFirewalls;
+import com.azure.resourcemanager.network.generated.models.IpPrefixesList;
 
 public final class AzureFirewallsImpl implements AzureFirewalls {
     private static final ClientLogger LOGGER = new ClientLogger(AzureFirewallsImpl.class);
@@ -77,6 +79,25 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
     public PagedIterable<AzureFirewall> list(Context context) {
         PagedIterable<AzureFirewallInner> inner = this.serviceClient().list(context);
         return Utils.mapPage(inner, inner1 -> new AzureFirewallImpl(inner1, this.manager()));
+    }
+
+    public IpPrefixesList listLearnedPrefixes(String resourceGroupName, String azureFirewallName) {
+        IpPrefixesListInner inner = this.serviceClient().listLearnedPrefixes(resourceGroupName, azureFirewallName);
+        if (inner != null) {
+            return new IpPrefixesListImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public IpPrefixesList listLearnedPrefixes(String resourceGroupName, String azureFirewallName, Context context) {
+        IpPrefixesListInner inner =
+            this.serviceClient().listLearnedPrefixes(resourceGroupName, azureFirewallName, context);
+        if (inner != null) {
+            return new IpPrefixesListImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public AzureFirewall getById(String id) {

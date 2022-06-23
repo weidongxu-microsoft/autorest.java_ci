@@ -29,7 +29,8 @@ public final class PacketCapture {
     }
 
     /**
-     * Get the target property: The ID of the targeted resource, only VM is currently supported.
+     * Get the target property: The ID of the targeted resource, only AzureVM and AzureVMSS as target type are currently
+     * supported.
      *
      * @return the target value.
      */
@@ -38,7 +39,8 @@ public final class PacketCapture {
     }
 
     /**
-     * Set the target property: The ID of the targeted resource, only VM is currently supported.
+     * Set the target property: The ID of the targeted resource, only AzureVM and AzureVMSS as target type are currently
+     * supported.
      *
      * @param target the target value to set.
      * @return the PacketCapture object itself.
@@ -48,6 +50,54 @@ public final class PacketCapture {
             this.innerProperties = new PacketCaptureParameters();
         }
         this.innerProperties().withTarget(target);
+        return this;
+    }
+
+    /**
+     * Get the scope property: A list of AzureVMSS instances which can be included or excluded to run packet capture. If
+     * both included and excluded are empty, then the packet capture will run on all instances of AzureVMSS.
+     *
+     * @return the scope value.
+     */
+    public PacketCaptureMachineScope scope() {
+        return this.innerProperties() == null ? null : this.innerProperties().scope();
+    }
+
+    /**
+     * Set the scope property: A list of AzureVMSS instances which can be included or excluded to run packet capture. If
+     * both included and excluded are empty, then the packet capture will run on all instances of AzureVMSS.
+     *
+     * @param scope the scope value to set.
+     * @return the PacketCapture object itself.
+     */
+    public PacketCapture withScope(PacketCaptureMachineScope scope) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new PacketCaptureParameters();
+        }
+        this.innerProperties().withScope(scope);
+        return this;
+    }
+
+    /**
+     * Get the targetType property: Target type of the resource provided.
+     *
+     * @return the targetType value.
+     */
+    public PacketCaptureTargetType targetType() {
+        return this.innerProperties() == null ? null : this.innerProperties().targetType();
+    }
+
+    /**
+     * Set the targetType property: Target type of the resource provided.
+     *
+     * @param targetType the targetType value to set.
+     * @return the PacketCapture object itself.
+     */
+    public PacketCapture withTargetType(PacketCaptureTargetType targetType) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new PacketCaptureParameters();
+        }
+        this.innerProperties().withTargetType(targetType);
         return this;
     }
 

@@ -6,7 +6,9 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureFilter;
+import com.azure.resourcemanager.network.generated.models.PacketCaptureMachineScope;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureStorageLocation;
+import com.azure.resourcemanager.network.generated.models.PacketCaptureTargetType;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -33,6 +35,20 @@ public final class PacketCaptureResultProperties extends PacketCaptureParameters
     @Override
     public PacketCaptureResultProperties withTarget(String target) {
         super.withTarget(target);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PacketCaptureResultProperties withScope(PacketCaptureMachineScope scope) {
+        super.withScope(scope);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PacketCaptureResultProperties withTargetType(PacketCaptureTargetType targetType) {
+        super.withTargetType(targetType);
         return this;
     }
 

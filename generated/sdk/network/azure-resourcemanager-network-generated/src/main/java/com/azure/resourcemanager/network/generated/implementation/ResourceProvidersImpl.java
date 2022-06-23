@@ -10,17 +10,29 @@ import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.ResourceProvidersClient;
+import com.azure.resourcemanager.network.generated.fluent.models.ActiveConnectivityConfigurationsListResultInner;
+import com.azure.resourcemanager.network.generated.fluent.models.ActiveSecurityAdminRulesListResultInner;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionActiveSessionInner;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionSessionStateInner;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionShareableLinkInner;
 import com.azure.resourcemanager.network.generated.fluent.models.DnsNameAvailabilityResultInner;
+import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteProviderPortInner;
+import com.azure.resourcemanager.network.generated.fluent.models.NetworkManagerEffectiveConnectivityConfigurationListResultInner;
+import com.azure.resourcemanager.network.generated.fluent.models.NetworkManagerEffectiveSecurityAdminRulesListResultInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualWanSecurityProvidersInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnProfileResponseInner;
+import com.azure.resourcemanager.network.generated.models.ActiveConfigurationParameter;
+import com.azure.resourcemanager.network.generated.models.ActiveConnectivityConfigurationsListResult;
+import com.azure.resourcemanager.network.generated.models.ActiveSecurityAdminRulesListResult;
 import com.azure.resourcemanager.network.generated.models.BastionActiveSession;
 import com.azure.resourcemanager.network.generated.models.BastionSessionState;
 import com.azure.resourcemanager.network.generated.models.BastionShareableLink;
 import com.azure.resourcemanager.network.generated.models.BastionShareableLinkListRequest;
 import com.azure.resourcemanager.network.generated.models.DnsNameAvailabilityResult;
+import com.azure.resourcemanager.network.generated.models.ExpressRouteProviderPort;
+import com.azure.resourcemanager.network.generated.models.NetworkManagerEffectiveConnectivityConfigurationListResult;
+import com.azure.resourcemanager.network.generated.models.NetworkManagerEffectiveSecurityAdminRulesListResult;
+import com.azure.resourcemanager.network.generated.models.QueryRequestOptions;
 import com.azure.resourcemanager.network.generated.models.ResourceProviders;
 import com.azure.resourcemanager.network.generated.models.SessionIds;
 import com.azure.resourcemanager.network.generated.models.VirtualWanSecurityProviders;
@@ -130,6 +142,131 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
+    public ActiveConnectivityConfigurationsListResult listActiveConnectivityConfigurations(
+        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters) {
+        ActiveConnectivityConfigurationsListResultInner inner =
+            this
+                .serviceClient()
+                .listActiveConnectivityConfigurations(resourceGroupName, networkManagerName, parameters);
+        if (inner != null) {
+            return new ActiveConnectivityConfigurationsListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<ActiveConnectivityConfigurationsListResult> listActiveConnectivityConfigurationsWithResponse(
+        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters, Context context) {
+        Response<ActiveConnectivityConfigurationsListResultInner> inner =
+            this
+                .serviceClient()
+                .listActiveConnectivityConfigurationsWithResponse(
+                    resourceGroupName, networkManagerName, parameters, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new ActiveConnectivityConfigurationsListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ActiveSecurityAdminRulesListResult listActiveSecurityAdminRules(
+        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters) {
+        ActiveSecurityAdminRulesListResultInner inner =
+            this.serviceClient().listActiveSecurityAdminRules(resourceGroupName, networkManagerName, parameters);
+        if (inner != null) {
+            return new ActiveSecurityAdminRulesListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<ActiveSecurityAdminRulesListResult> listActiveSecurityAdminRulesWithResponse(
+        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters, Context context) {
+        Response<ActiveSecurityAdminRulesListResultInner> inner =
+            this
+                .serviceClient()
+                .listActiveSecurityAdminRulesWithResponse(resourceGroupName, networkManagerName, parameters, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new ActiveSecurityAdminRulesListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkManagerEffectiveConnectivityConfigurationListResult
+        listNetworkManagerEffectiveConnectivityConfigurations(
+            String resourceGroupName, String virtualNetworkName, QueryRequestOptions parameters) {
+        NetworkManagerEffectiveConnectivityConfigurationListResultInner inner =
+            this
+                .serviceClient()
+                .listNetworkManagerEffectiveConnectivityConfigurations(
+                    resourceGroupName, virtualNetworkName, parameters);
+        if (inner != null) {
+            return new NetworkManagerEffectiveConnectivityConfigurationListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<NetworkManagerEffectiveConnectivityConfigurationListResult>
+        listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(
+            String resourceGroupName, String virtualNetworkName, QueryRequestOptions parameters, Context context) {
+        Response<NetworkManagerEffectiveConnectivityConfigurationListResultInner> inner =
+            this
+                .serviceClient()
+                .listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(
+                    resourceGroupName, virtualNetworkName, parameters, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new NetworkManagerEffectiveConnectivityConfigurationListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkManagerEffectiveSecurityAdminRulesListResult listNetworkManagerEffectiveSecurityAdminRules(
+        String resourceGroupName, String virtualNetworkName, QueryRequestOptions parameters) {
+        NetworkManagerEffectiveSecurityAdminRulesListResultInner inner =
+            this
+                .serviceClient()
+                .listNetworkManagerEffectiveSecurityAdminRules(resourceGroupName, virtualNetworkName, parameters);
+        if (inner != null) {
+            return new NetworkManagerEffectiveSecurityAdminRulesListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<NetworkManagerEffectiveSecurityAdminRulesListResult>
+        listNetworkManagerEffectiveSecurityAdminRulesWithResponse(
+            String resourceGroupName, String virtualNetworkName, QueryRequestOptions parameters, Context context) {
+        Response<NetworkManagerEffectiveSecurityAdminRulesListResultInner> inner =
+            this
+                .serviceClient()
+                .listNetworkManagerEffectiveSecurityAdminRulesWithResponse(
+                    resourceGroupName, virtualNetworkName, parameters, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new NetworkManagerEffectiveSecurityAdminRulesListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
     public VirtualWanSecurityProviders supportedSecurityProviders(String resourceGroupName, String virtualWanName) {
         VirtualWanSecurityProvidersInner inner =
             this.serviceClient().supportedSecurityProviders(resourceGroupName, virtualWanName);
@@ -180,6 +317,30 @@ public final class ResourceProvidersImpl implements ResourceProviders {
                     resourceGroupName, virtualWanName, vpnClientParams, context);
         if (inner != null) {
             return new VpnProfileResponseImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRouteProviderPort expressRouteProviderPort(String providerport) {
+        ExpressRouteProviderPortInner inner = this.serviceClient().expressRouteProviderPort(providerport);
+        if (inner != null) {
+            return new ExpressRouteProviderPortImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<ExpressRouteProviderPort> expressRouteProviderPortWithResponse(
+        String providerport, Context context) {
+        Response<ExpressRouteProviderPortInner> inner =
+            this.serviceClient().expressRouteProviderPortWithResponse(providerport, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new ExpressRouteProviderPortImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }

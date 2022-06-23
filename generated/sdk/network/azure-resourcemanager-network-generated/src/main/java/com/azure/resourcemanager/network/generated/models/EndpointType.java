@@ -28,6 +28,12 @@ public final class EndpointType extends ExpandableStringEnum<EndpointType> {
     /** Static value MMAWorkspaceNetwork for EndpointType. */
     public static final EndpointType MMAWORKSPACE_NETWORK = fromString("MMAWorkspaceNetwork");
 
+    /** Static value AzureArcVM for EndpointType. */
+    public static final EndpointType AZURE_ARC_VM = fromString("AzureArcVM");
+
+    /** Static value AzureVMSS for EndpointType. */
+    public static final EndpointType AZURE_VMSS = fromString("AzureVMSS");
+
     /**
      * Creates or finds a EndpointType from its string representation.
      *

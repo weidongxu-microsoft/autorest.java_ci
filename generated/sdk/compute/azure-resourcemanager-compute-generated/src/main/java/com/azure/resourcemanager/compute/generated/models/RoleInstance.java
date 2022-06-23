@@ -45,14 +45,14 @@ public interface RoleInstance {
     Map<String, String> tags();
 
     /**
-     * Gets the sku property: The sku property.
+     * Gets the sku property: The role instance SKU.
      *
      * @return the sku value.
      */
     InstanceSku sku();
 
     /**
-     * Gets the properties property: The properties property.
+     * Gets the properties property: Role instance properties.
      *
      * @return the properties value.
      */

@@ -28,6 +28,10 @@ public final class CommissionedState extends ExpandableStringEnum<CommissionedSt
     /** Static value Deprovisioning for CommissionedState. */
     public static final CommissionedState DEPROVISIONING = fromString("Deprovisioning");
 
+    /** Static value CommissionedNoInternetAdvertise for CommissionedState. */
+    public static final CommissionedState COMMISSIONED_NO_INTERNET_ADVERTISE =
+        fromString("CommissionedNoInternetAdvertise");
+
     /**
      * Creates or finds a CommissionedState from its string representation.
      *

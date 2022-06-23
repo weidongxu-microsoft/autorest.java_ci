@@ -18,6 +18,7 @@ import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VirtualHub;
 import com.azure.resourcemanager.network.generated.models.VirtualHubRouteTable;
 import com.azure.resourcemanager.network.generated.models.VirtualHubRouteTableV2;
+import com.azure.resourcemanager.network.generated.models.VirtualRouterAutoScaleConfiguration;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -164,6 +165,10 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
 
     public HubRoutingPreference hubRoutingPreference() {
         return this.innerModel().hubRoutingPreference();
+    }
+
+    public VirtualRouterAutoScaleConfiguration virtualRouterAutoScaleConfiguration() {
+        return this.innerModel().virtualRouterAutoScaleConfiguration();
     }
 
     public Region region() {
@@ -387,6 +392,12 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
 
     public VirtualHubImpl withHubRoutingPreference(HubRoutingPreference hubRoutingPreference) {
         this.innerModel().withHubRoutingPreference(hubRoutingPreference);
+        return this;
+    }
+
+    public VirtualHubImpl withVirtualRouterAutoScaleConfiguration(
+        VirtualRouterAutoScaleConfiguration virtualRouterAutoScaleConfiguration) {
+        this.innerModel().withVirtualRouterAutoScaleConfiguration(virtualRouterAutoScaleConfiguration);
         return this;
     }
 

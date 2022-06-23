@@ -206,6 +206,13 @@ public interface VirtualHub {
     HubRoutingPreference hubRoutingPreference();
 
     /**
+     * Gets the virtualRouterAutoScaleConfiguration property: The VirtualHub Router autoscale configuration.
+     *
+     * @return the virtualRouterAutoScaleConfiguration value.
+     */
+    VirtualRouterAutoScaleConfiguration virtualRouterAutoScaleConfiguration();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -294,7 +301,8 @@ public interface VirtualHub {
                 DefinitionStages.WithVirtualRouterIps,
                 DefinitionStages.WithAllowBranchToBranchTraffic,
                 DefinitionStages.WithPreferredRoutingGateway,
-                DefinitionStages.WithHubRoutingPreference {
+                DefinitionStages.WithHubRoutingPreference,
+                DefinitionStages.WithVirtualRouterAutoScaleConfiguration {
             /**
              * Executes the create request.
              *
@@ -481,6 +489,18 @@ public interface VirtualHub {
              * @return the next definition stage.
              */
             WithCreate withHubRoutingPreference(HubRoutingPreference hubRoutingPreference);
+        }
+        /** The stage of the VirtualHub definition allowing to specify virtualRouterAutoScaleConfiguration. */
+        interface WithVirtualRouterAutoScaleConfiguration {
+            /**
+             * Specifies the virtualRouterAutoScaleConfiguration property: The VirtualHub Router autoscale
+             * configuration..
+             *
+             * @param virtualRouterAutoScaleConfiguration The VirtualHub Router autoscale configuration.
+             * @return the next definition stage.
+             */
+            WithCreate withVirtualRouterAutoScaleConfiguration(
+                VirtualRouterAutoScaleConfiguration virtualRouterAutoScaleConfiguration);
         }
     }
     /**

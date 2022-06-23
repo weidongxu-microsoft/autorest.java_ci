@@ -58,6 +58,10 @@ public final class NetworkSecurityGroupImpl
         return this.innerModel().id();
     }
 
+    public Boolean flushConnection() {
+        return this.innerModel().flushConnection();
+    }
+
     public List<SecurityRule> securityRules() {
         List<SecurityRuleInner> inner = this.innerModel().securityRules();
         if (inner != null) {
@@ -259,6 +263,11 @@ public final class NetworkSecurityGroupImpl
             this.updateParameters.withTags(tags);
             return this;
         }
+    }
+
+    public NetworkSecurityGroupImpl withFlushConnection(Boolean flushConnection) {
+        this.innerModel().withFlushConnection(flushConnection);
+        return this;
     }
 
     public NetworkSecurityGroupImpl withSecurityRules(List<SecurityRuleInner> securityRules) {

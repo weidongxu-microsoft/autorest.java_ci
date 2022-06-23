@@ -93,6 +93,10 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this.innerModel().commissionedState();
     }
 
+    public Boolean noInternetAdvertise() {
+        return this.innerModel().noInternetAdvertise();
+    }
+
     public List<SubResource> publicIpPrefixes() {
         List<SubResource> inner = this.innerModel().publicIpPrefixes();
         if (inner != null) {
@@ -276,6 +280,11 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
 
     public CustomIpPrefixImpl withCommissionedState(CommissionedState commissionedState) {
         this.innerModel().withCommissionedState(commissionedState);
+        return this;
+    }
+
+    public CustomIpPrefixImpl withNoInternetAdvertise(Boolean noInternetAdvertise) {
+        this.innerModel().withNoInternetAdvertise(noInternetAdvertise);
         return this;
     }
 

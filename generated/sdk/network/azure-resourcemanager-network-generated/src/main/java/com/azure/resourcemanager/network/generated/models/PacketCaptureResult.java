@@ -38,11 +38,27 @@ public interface PacketCaptureResult {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the target property: The ID of the targeted resource, only VM is currently supported.
+     * Gets the target property: The ID of the targeted resource, only AzureVM and AzureVMSS as target type are
+     * currently supported.
      *
      * @return the target value.
      */
     String target();
+
+    /**
+     * Gets the scope property: A list of AzureVMSS instances which can be included or excluded to run packet capture.
+     * If both included and excluded are empty, then the packet capture will run on all instances of AzureVMSS.
+     *
+     * @return the scope value.
+     */
+    PacketCaptureMachineScope scope();
+
+    /**
+     * Gets the targetType property: Target type of the resource provided.
+     *
+     * @return the targetType value.
+     */
+    PacketCaptureTargetType targetType();
 
     /**
      * Gets the bytesToCapturePerPacket property: Number of bytes captured per packet, the remaining bytes are

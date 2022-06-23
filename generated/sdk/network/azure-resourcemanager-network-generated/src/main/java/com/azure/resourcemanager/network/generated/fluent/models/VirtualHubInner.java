@@ -12,6 +12,7 @@ import com.azure.resourcemanager.network.generated.models.PreferredRoutingGatewa
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.RoutingState;
 import com.azure.resourcemanager.network.generated.models.VirtualHubRouteTable;
+import com.azure.resourcemanager.network.generated.models.VirtualRouterAutoScaleConfiguration;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -509,6 +510,30 @@ public final class VirtualHubInner extends Resource {
             this.innerProperties = new VirtualHubProperties();
         }
         this.innerProperties().withHubRoutingPreference(hubRoutingPreference);
+        return this;
+    }
+
+    /**
+     * Get the virtualRouterAutoScaleConfiguration property: The VirtualHub Router autoscale configuration.
+     *
+     * @return the virtualRouterAutoScaleConfiguration value.
+     */
+    public VirtualRouterAutoScaleConfiguration virtualRouterAutoScaleConfiguration() {
+        return this.innerProperties() == null ? null : this.innerProperties().virtualRouterAutoScaleConfiguration();
+    }
+
+    /**
+     * Set the virtualRouterAutoScaleConfiguration property: The VirtualHub Router autoscale configuration.
+     *
+     * @param virtualRouterAutoScaleConfiguration the virtualRouterAutoScaleConfiguration value to set.
+     * @return the VirtualHubInner object itself.
+     */
+    public VirtualHubInner withVirtualRouterAutoScaleConfiguration(
+        VirtualRouterAutoScaleConfiguration virtualRouterAutoScaleConfiguration) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new VirtualHubProperties();
+        }
+        this.innerProperties().withVirtualRouterAutoScaleConfiguration(virtualRouterAutoScaleConfiguration);
         return this;
     }
 

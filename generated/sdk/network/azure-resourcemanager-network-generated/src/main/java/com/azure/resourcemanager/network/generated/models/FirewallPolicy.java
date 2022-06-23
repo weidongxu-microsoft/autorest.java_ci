@@ -140,11 +140,11 @@ public interface FirewallPolicy {
     DnsSettings dnsSettings();
 
     /**
-     * Gets the explicitProxySettings property: Explicit Proxy Settings definition.
+     * Gets the explicitProxy property: Explicit Proxy Settings definition.
      *
-     * @return the explicitProxySettings value.
+     * @return the explicitProxy value.
      */
-    ExplicitProxySettings explicitProxySettings();
+    ExplicitProxy explicitProxy();
 
     /**
      * Gets the intrusionDetection property: The configuration for Intrusion detection.
@@ -249,7 +249,7 @@ public interface FirewallPolicy {
                 DefinitionStages.WithSnat,
                 DefinitionStages.WithSql,
                 DefinitionStages.WithDnsSettings,
-                DefinitionStages.WithExplicitProxySettings,
+                DefinitionStages.WithExplicitProxy,
                 DefinitionStages.WithIntrusionDetection,
                 DefinitionStages.WithTransportSecurity,
                 DefinitionStages.WithSku {
@@ -358,15 +358,15 @@ public interface FirewallPolicy {
              */
             WithCreate withDnsSettings(DnsSettings dnsSettings);
         }
-        /** The stage of the FirewallPolicy definition allowing to specify explicitProxySettings. */
-        interface WithExplicitProxySettings {
+        /** The stage of the FirewallPolicy definition allowing to specify explicitProxy. */
+        interface WithExplicitProxy {
             /**
-             * Specifies the explicitProxySettings property: Explicit Proxy Settings definition..
+             * Specifies the explicitProxy property: Explicit Proxy Settings definition..
              *
-             * @param explicitProxySettings Explicit Proxy Settings definition.
+             * @param explicitProxy Explicit Proxy Settings definition.
              * @return the next definition stage.
              */
-            WithCreate withExplicitProxySettings(ExplicitProxySettings explicitProxySettings);
+            WithCreate withExplicitProxy(ExplicitProxy explicitProxy);
         }
         /** The stage of the FirewallPolicy definition allowing to specify intrusionDetection. */
         interface WithIntrusionDetection {

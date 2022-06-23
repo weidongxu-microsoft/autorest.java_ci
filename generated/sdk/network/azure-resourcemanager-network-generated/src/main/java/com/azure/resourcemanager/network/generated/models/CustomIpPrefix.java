@@ -114,6 +114,13 @@ public interface CustomIpPrefix {
     CommissionedState commissionedState();
 
     /**
+     * Gets the noInternetAdvertise property: Whether to Advertise the range to Internet.
+     *
+     * @return the noInternetAdvertise value.
+     */
+    Boolean noInternetAdvertise();
+
+    /**
      * Gets the publicIpPrefixes property: The list of all referenced PublicIpPrefixes.
      *
      * @return the publicIpPrefixes value.
@@ -221,7 +228,8 @@ public interface CustomIpPrefix {
                 DefinitionStages.WithSignedMessage,
                 DefinitionStages.WithAuthorizationMessage,
                 DefinitionStages.WithCustomIpPrefixParent,
-                DefinitionStages.WithCommissionedState {
+                DefinitionStages.WithCommissionedState,
+                DefinitionStages.WithNoInternetAdvertise {
             /**
              * Executes the create request.
              *
@@ -318,6 +326,16 @@ public interface CustomIpPrefix {
              * @return the next definition stage.
              */
             WithCreate withCommissionedState(CommissionedState commissionedState);
+        }
+        /** The stage of the CustomIpPrefix definition allowing to specify noInternetAdvertise. */
+        interface WithNoInternetAdvertise {
+            /**
+             * Specifies the noInternetAdvertise property: Whether to Advertise the range to Internet..
+             *
+             * @param noInternetAdvertise Whether to Advertise the range to Internet.
+             * @return the next definition stage.
+             */
+            WithCreate withNoInternetAdvertise(Boolean noInternetAdvertise);
         }
     }
     /**

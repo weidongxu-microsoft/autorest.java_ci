@@ -17,6 +17,7 @@ import com.azure.resourcemanager.network.generated.models.AzureFirewallNetworkRu
 import com.azure.resourcemanager.network.generated.models.AzureFirewallSku;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallThreatIntelMode;
 import com.azure.resourcemanager.network.generated.models.HubIpAddresses;
+import com.azure.resourcemanager.network.generated.models.IpPrefixesList;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import java.util.Collections;
@@ -252,6 +253,14 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
                 .getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, context)
                 .getValue();
         return this;
+    }
+
+    public IpPrefixesList listLearnedPrefixes() {
+        return serviceManager.azureFirewalls().listLearnedPrefixes(resourceGroupName, azureFirewallName);
+    }
+
+    public IpPrefixesList listLearnedPrefixes(Context context) {
+        return serviceManager.azureFirewalls().listLearnedPrefixes(resourceGroupName, azureFirewallName, context);
     }
 
     public AzureFirewallImpl withRegion(Region location) {

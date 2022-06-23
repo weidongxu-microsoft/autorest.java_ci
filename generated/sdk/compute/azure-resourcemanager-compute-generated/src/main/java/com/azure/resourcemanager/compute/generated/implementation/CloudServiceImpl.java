@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.CloudServiceInner;
 import com.azure.resourcemanager.compute.generated.models.CloudService;
@@ -46,6 +47,10 @@ public final class CloudServiceImpl implements CloudService, CloudService.Defini
 
     public CloudServiceProperties properties() {
         return this.innerModel().properties();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Region region() {
@@ -240,6 +245,11 @@ public final class CloudServiceImpl implements CloudService, CloudService.Defini
 
     public CloudServiceImpl withProperties(CloudServiceProperties properties) {
         this.innerModel().withProperties(properties);
+        return this;
+    }
+
+    public CloudServiceImpl withSystemData(SystemData systemData) {
+        this.innerModel().withSystemData(systemData);
         return this;
     }
 

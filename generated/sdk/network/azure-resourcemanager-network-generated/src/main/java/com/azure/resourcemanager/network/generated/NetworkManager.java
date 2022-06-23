@@ -24,6 +24,8 @@ import com.azure.core.management.profile.AzureProfile;
 import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.NetworkManagementClient;
+import com.azure.resourcemanager.network.generated.implementation.AdminRuleCollectionsImpl;
+import com.azure.resourcemanager.network.generated.implementation.AdminRulesImpl;
 import com.azure.resourcemanager.network.generated.implementation.ApplicationGatewayPrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ApplicationGatewayPrivateLinkResourcesImpl;
 import com.azure.resourcemanager.network.generated.implementation.ApplicationGatewaysImpl;
@@ -39,6 +41,7 @@ import com.azure.resourcemanager.network.generated.implementation.BastionHostsIm
 import com.azure.resourcemanager.network.generated.implementation.BgpServiceCommunitiesImpl;
 import com.azure.resourcemanager.network.generated.implementation.ConfigurationPolicyGroupsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ConnectionMonitorsImpl;
+import com.azure.resourcemanager.network.generated.implementation.ConnectivityConfigurationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.CustomIpPrefixesImpl;
 import com.azure.resourcemanager.network.generated.implementation.DdosCustomPoliciesImpl;
 import com.azure.resourcemanager.network.generated.implementation.DdosProtectionPlansImpl;
@@ -56,6 +59,7 @@ import com.azure.resourcemanager.network.generated.implementation.ExpressRouteLi
 import com.azure.resourcemanager.network.generated.implementation.ExpressRoutePortAuthorizationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRoutePortsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRoutePortsLocationsImpl;
+import com.azure.resourcemanager.network.generated.implementation.ExpressRouteProviderPortsLocationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRouteServiceProvidersImpl;
 import com.azure.resourcemanager.network.generated.implementation.FirewallPoliciesImpl;
 import com.azure.resourcemanager.network.generated.implementation.FirewallPolicyIdpsSignaturesFilterValuesImpl;
@@ -77,13 +81,18 @@ import com.azure.resourcemanager.network.generated.implementation.LoadBalancerOu
 import com.azure.resourcemanager.network.generated.implementation.LoadBalancerProbesImpl;
 import com.azure.resourcemanager.network.generated.implementation.LoadBalancersImpl;
 import com.azure.resourcemanager.network.generated.implementation.LocalNetworkGatewaysImpl;
+import com.azure.resourcemanager.network.generated.implementation.ManagementGroupNetworkManagerConnectionsImpl;
 import com.azure.resourcemanager.network.generated.implementation.NatGatewaysImpl;
 import com.azure.resourcemanager.network.generated.implementation.NatRulesImpl;
+import com.azure.resourcemanager.network.generated.implementation.NetworkGroupsImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkInterfaceIpConfigurationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkInterfaceLoadBalancersImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkInterfaceTapConfigurationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkInterfacesImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkManagementClientBuilder;
+import com.azure.resourcemanager.network.generated.implementation.NetworkManagerCommitsImpl;
+import com.azure.resourcemanager.network.generated.implementation.NetworkManagerDeploymentStatusOperationsImpl;
+import com.azure.resourcemanager.network.generated.implementation.NetworkManagersImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkProfilesImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkSecurityGroupsImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkVirtualAppliancesImpl;
@@ -104,6 +113,8 @@ import com.azure.resourcemanager.network.generated.implementation.RouteFiltersIm
 import com.azure.resourcemanager.network.generated.implementation.RouteTablesImpl;
 import com.azure.resourcemanager.network.generated.implementation.RoutesImpl;
 import com.azure.resourcemanager.network.generated.implementation.RoutingIntentsImpl;
+import com.azure.resourcemanager.network.generated.implementation.ScopeConnectionsImpl;
+import com.azure.resourcemanager.network.generated.implementation.SecurityAdminConfigurationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.SecurityPartnerProvidersImpl;
 import com.azure.resourcemanager.network.generated.implementation.SecurityRulesImpl;
 import com.azure.resourcemanager.network.generated.implementation.ServiceAssociationLinksImpl;
@@ -111,7 +122,9 @@ import com.azure.resourcemanager.network.generated.implementation.ServiceEndpoin
 import com.azure.resourcemanager.network.generated.implementation.ServiceEndpointPolicyDefinitionsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ServiceTagInformationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ServiceTagsImpl;
+import com.azure.resourcemanager.network.generated.implementation.StaticMembersImpl;
 import com.azure.resourcemanager.network.generated.implementation.SubnetsImpl;
+import com.azure.resourcemanager.network.generated.implementation.SubscriptionNetworkManagerConnectionsImpl;
 import com.azure.resourcemanager.network.generated.implementation.UsagesImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualApplianceSitesImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualApplianceSkusImpl;
@@ -139,6 +152,8 @@ import com.azure.resourcemanager.network.generated.implementation.VpnSitesConfig
 import com.azure.resourcemanager.network.generated.implementation.VpnSitesImpl;
 import com.azure.resourcemanager.network.generated.implementation.WebApplicationFirewallPoliciesImpl;
 import com.azure.resourcemanager.network.generated.implementation.WebCategoriesImpl;
+import com.azure.resourcemanager.network.generated.models.AdminRuleCollections;
+import com.azure.resourcemanager.network.generated.models.AdminRules;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateEndpointConnections;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateLinkResources;
 import com.azure.resourcemanager.network.generated.models.ApplicationGateways;
@@ -154,6 +169,7 @@ import com.azure.resourcemanager.network.generated.models.BastionHosts;
 import com.azure.resourcemanager.network.generated.models.BgpServiceCommunities;
 import com.azure.resourcemanager.network.generated.models.ConfigurationPolicyGroups;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitors;
+import com.azure.resourcemanager.network.generated.models.ConnectivityConfigurations;
 import com.azure.resourcemanager.network.generated.models.CustomIpPrefixes;
 import com.azure.resourcemanager.network.generated.models.DdosCustomPolicies;
 import com.azure.resourcemanager.network.generated.models.DdosProtectionPlans;
@@ -171,6 +187,7 @@ import com.azure.resourcemanager.network.generated.models.ExpressRouteLinks;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePortAuthorizations;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePorts;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePortsLocations;
+import com.azure.resourcemanager.network.generated.models.ExpressRouteProviderPortsLocations;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteServiceProviders;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicies;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyIdpsSignatures;
@@ -192,12 +209,17 @@ import com.azure.resourcemanager.network.generated.models.LoadBalancerOutboundRu
 import com.azure.resourcemanager.network.generated.models.LoadBalancerProbes;
 import com.azure.resourcemanager.network.generated.models.LoadBalancers;
 import com.azure.resourcemanager.network.generated.models.LocalNetworkGateways;
+import com.azure.resourcemanager.network.generated.models.ManagementGroupNetworkManagerConnections;
 import com.azure.resourcemanager.network.generated.models.NatGateways;
 import com.azure.resourcemanager.network.generated.models.NatRules;
+import com.azure.resourcemanager.network.generated.models.NetworkGroups;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfigurations;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceLoadBalancers;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceTapConfigurations;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaces;
+import com.azure.resourcemanager.network.generated.models.NetworkManagerCommits;
+import com.azure.resourcemanager.network.generated.models.NetworkManagerDeploymentStatusOperations;
+import com.azure.resourcemanager.network.generated.models.NetworkManagers;
 import com.azure.resourcemanager.network.generated.models.NetworkProfiles;
 import com.azure.resourcemanager.network.generated.models.NetworkSecurityGroups;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliances;
@@ -218,6 +240,8 @@ import com.azure.resourcemanager.network.generated.models.RouteFilters;
 import com.azure.resourcemanager.network.generated.models.RouteTables;
 import com.azure.resourcemanager.network.generated.models.Routes;
 import com.azure.resourcemanager.network.generated.models.RoutingIntents;
+import com.azure.resourcemanager.network.generated.models.ScopeConnections;
+import com.azure.resourcemanager.network.generated.models.SecurityAdminConfigurations;
 import com.azure.resourcemanager.network.generated.models.SecurityPartnerProviders;
 import com.azure.resourcemanager.network.generated.models.SecurityRules;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLinks;
@@ -225,7 +249,9 @@ import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicie
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicyDefinitions;
 import com.azure.resourcemanager.network.generated.models.ServiceTagInformations;
 import com.azure.resourcemanager.network.generated.models.ServiceTags;
+import com.azure.resourcemanager.network.generated.models.StaticMembers;
 import com.azure.resourcemanager.network.generated.models.Subnets;
+import com.azure.resourcemanager.network.generated.models.SubscriptionNetworkManagerConnections;
 import com.azure.resourcemanager.network.generated.models.Usages;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSites;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSkus;
@@ -362,6 +388,30 @@ public final class NetworkManager {
 
     private NetworkInterfaceTapConfigurations networkInterfaceTapConfigurations;
 
+    private NetworkManagers networkManagers;
+
+    private NetworkManagerCommits networkManagerCommits;
+
+    private NetworkManagerDeploymentStatusOperations networkManagerDeploymentStatusOperations;
+
+    private SubscriptionNetworkManagerConnections subscriptionNetworkManagerConnections;
+
+    private ManagementGroupNetworkManagerConnections managementGroupNetworkManagerConnections;
+
+    private ConnectivityConfigurations connectivityConfigurations;
+
+    private NetworkGroups networkGroups;
+
+    private StaticMembers staticMembers;
+
+    private ScopeConnections scopeConnections;
+
+    private SecurityAdminConfigurations securityAdminConfigurations;
+
+    private AdminRuleCollections adminRuleCollections;
+
+    private AdminRules adminRules;
+
     private NetworkProfiles networkProfiles;
 
     private NetworkSecurityGroups networkSecurityGroups;
@@ -489,6 +539,8 @@ public final class NetworkManager {
     private RoutingIntents routingIntents;
 
     private WebApplicationFirewallPolicies webApplicationFirewallPolicies;
+
+    private ExpressRouteProviderPortsLocations expressRouteProviderPortsLocations;
 
     private final NetworkManagementClient clientObject;
 
@@ -1349,6 +1401,158 @@ public final class NetworkManager {
     }
 
     /**
+     * Gets the resource collection API of NetworkManagers. It manages NetworkManager.
+     *
+     * @return Resource collection API of NetworkManagers.
+     */
+    public NetworkManagers networkManagers() {
+        if (this.networkManagers == null) {
+            this.networkManagers = new NetworkManagersImpl(clientObject.getNetworkManagers(), this);
+        }
+        return networkManagers;
+    }
+
+    /**
+     * Gets the resource collection API of NetworkManagerCommits.
+     *
+     * @return Resource collection API of NetworkManagerCommits.
+     */
+    public NetworkManagerCommits networkManagerCommits() {
+        if (this.networkManagerCommits == null) {
+            this.networkManagerCommits = new NetworkManagerCommitsImpl(clientObject.getNetworkManagerCommits(), this);
+        }
+        return networkManagerCommits;
+    }
+
+    /**
+     * Gets the resource collection API of NetworkManagerDeploymentStatusOperations.
+     *
+     * @return Resource collection API of NetworkManagerDeploymentStatusOperations.
+     */
+    public NetworkManagerDeploymentStatusOperations networkManagerDeploymentStatusOperations() {
+        if (this.networkManagerDeploymentStatusOperations == null) {
+            this.networkManagerDeploymentStatusOperations =
+                new NetworkManagerDeploymentStatusOperationsImpl(
+                    clientObject.getNetworkManagerDeploymentStatusOperations(), this);
+        }
+        return networkManagerDeploymentStatusOperations;
+    }
+
+    /**
+     * Gets the resource collection API of SubscriptionNetworkManagerConnections. It manages NetworkManagerConnection.
+     *
+     * @return Resource collection API of SubscriptionNetworkManagerConnections.
+     */
+    public SubscriptionNetworkManagerConnections subscriptionNetworkManagerConnections() {
+        if (this.subscriptionNetworkManagerConnections == null) {
+            this.subscriptionNetworkManagerConnections =
+                new SubscriptionNetworkManagerConnectionsImpl(
+                    clientObject.getSubscriptionNetworkManagerConnections(), this);
+        }
+        return subscriptionNetworkManagerConnections;
+    }
+
+    /**
+     * Gets the resource collection API of ManagementGroupNetworkManagerConnections.
+     *
+     * @return Resource collection API of ManagementGroupNetworkManagerConnections.
+     */
+    public ManagementGroupNetworkManagerConnections managementGroupNetworkManagerConnections() {
+        if (this.managementGroupNetworkManagerConnections == null) {
+            this.managementGroupNetworkManagerConnections =
+                new ManagementGroupNetworkManagerConnectionsImpl(
+                    clientObject.getManagementGroupNetworkManagerConnections(), this);
+        }
+        return managementGroupNetworkManagerConnections;
+    }
+
+    /**
+     * Gets the resource collection API of ConnectivityConfigurations. It manages ConnectivityConfiguration.
+     *
+     * @return Resource collection API of ConnectivityConfigurations.
+     */
+    public ConnectivityConfigurations connectivityConfigurations() {
+        if (this.connectivityConfigurations == null) {
+            this.connectivityConfigurations =
+                new ConnectivityConfigurationsImpl(clientObject.getConnectivityConfigurations(), this);
+        }
+        return connectivityConfigurations;
+    }
+
+    /**
+     * Gets the resource collection API of NetworkGroups. It manages NetworkGroup.
+     *
+     * @return Resource collection API of NetworkGroups.
+     */
+    public NetworkGroups networkGroups() {
+        if (this.networkGroups == null) {
+            this.networkGroups = new NetworkGroupsImpl(clientObject.getNetworkGroups(), this);
+        }
+        return networkGroups;
+    }
+
+    /**
+     * Gets the resource collection API of StaticMembers. It manages StaticMember.
+     *
+     * @return Resource collection API of StaticMembers.
+     */
+    public StaticMembers staticMembers() {
+        if (this.staticMembers == null) {
+            this.staticMembers = new StaticMembersImpl(clientObject.getStaticMembers(), this);
+        }
+        return staticMembers;
+    }
+
+    /**
+     * Gets the resource collection API of ScopeConnections. It manages ScopeConnection.
+     *
+     * @return Resource collection API of ScopeConnections.
+     */
+    public ScopeConnections scopeConnections() {
+        if (this.scopeConnections == null) {
+            this.scopeConnections = new ScopeConnectionsImpl(clientObject.getScopeConnections(), this);
+        }
+        return scopeConnections;
+    }
+
+    /**
+     * Gets the resource collection API of SecurityAdminConfigurations. It manages SecurityAdminConfiguration.
+     *
+     * @return Resource collection API of SecurityAdminConfigurations.
+     */
+    public SecurityAdminConfigurations securityAdminConfigurations() {
+        if (this.securityAdminConfigurations == null) {
+            this.securityAdminConfigurations =
+                new SecurityAdminConfigurationsImpl(clientObject.getSecurityAdminConfigurations(), this);
+        }
+        return securityAdminConfigurations;
+    }
+
+    /**
+     * Gets the resource collection API of AdminRuleCollections. It manages AdminRuleCollection.
+     *
+     * @return Resource collection API of AdminRuleCollections.
+     */
+    public AdminRuleCollections adminRuleCollections() {
+        if (this.adminRuleCollections == null) {
+            this.adminRuleCollections = new AdminRuleCollectionsImpl(clientObject.getAdminRuleCollections(), this);
+        }
+        return adminRuleCollections;
+    }
+
+    /**
+     * Gets the resource collection API of AdminRules.
+     *
+     * @return Resource collection API of AdminRules.
+     */
+    public AdminRules adminRules() {
+        if (this.adminRules == null) {
+            this.adminRules = new AdminRulesImpl(clientObject.getAdminRules(), this);
+        }
+        return adminRules;
+    }
+
+    /**
      * Gets the resource collection API of NetworkProfiles. It manages NetworkProfile.
      *
      * @return Resource collection API of NetworkProfiles.
@@ -2139,6 +2343,19 @@ public final class NetworkManager {
                 new WebApplicationFirewallPoliciesImpl(clientObject.getWebApplicationFirewallPolicies(), this);
         }
         return webApplicationFirewallPolicies;
+    }
+
+    /**
+     * Gets the resource collection API of ExpressRouteProviderPortsLocations.
+     *
+     * @return Resource collection API of ExpressRouteProviderPortsLocations.
+     */
+    public ExpressRouteProviderPortsLocations expressRouteProviderPortsLocations() {
+        if (this.expressRouteProviderPortsLocations == null) {
+            this.expressRouteProviderPortsLocations =
+                new ExpressRouteProviderPortsLocationsImpl(clientObject.getExpressRouteProviderPortsLocations(), this);
+        }
+        return expressRouteProviderPortsLocations;
     }
 
     /**
