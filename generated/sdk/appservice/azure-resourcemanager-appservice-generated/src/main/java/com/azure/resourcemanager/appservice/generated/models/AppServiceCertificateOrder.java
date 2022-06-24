@@ -185,8 +185,7 @@ public interface AppServiceCertificateOrder {
      *
      * @return the appServiceCertificateNotRenewableReasons value.
      */
-    List<AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem>
-        appServiceCertificateNotRenewableReasons();
+    List<ResourceNotRenewableReason> appServiceCertificateNotRenewableReasons();
 
     /**
      * Gets the nextAutoRenewalTimestamp property: Time stamp when the certificate would be auto renewed next.
@@ -468,7 +467,7 @@ public interface AppServiceCertificateOrder {
     AppServiceCertificateOrder refresh(Context context);
 
     /**
-     * Reissue an existing certificate order.
+     * Description for Reissue an existing certificate order.
      *
      * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -479,7 +478,7 @@ public interface AppServiceCertificateOrder {
     void reissue(ReissueCertificateOrderRequest reissueCertificateOrderRequest);
 
     /**
-     * Reissue an existing certificate order.
+     * Description for Reissue an existing certificate order.
      *
      * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @param context The context to associate with this operation.
@@ -492,7 +491,7 @@ public interface AppServiceCertificateOrder {
     Response<Void> reissueWithResponse(ReissueCertificateOrderRequest reissueCertificateOrderRequest, Context context);
 
     /**
-     * Renew an existing certificate order.
+     * Description for Renew an existing certificate order.
      *
      * @param renewCertificateOrderRequest Renew parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -503,7 +502,7 @@ public interface AppServiceCertificateOrder {
     void renew(RenewCertificateOrderRequest renewCertificateOrderRequest);
 
     /**
-     * Renew an existing certificate order.
+     * Description for Renew an existing certificate order.
      *
      * @param renewCertificateOrderRequest Renew parameters.
      * @param context The context to associate with this operation.
@@ -516,7 +515,7 @@ public interface AppServiceCertificateOrder {
     Response<Void> renewWithResponse(RenewCertificateOrderRequest renewCertificateOrderRequest, Context context);
 
     /**
-     * Resend certificate email.
+     * Description for Resend certificate email.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -525,7 +524,7 @@ public interface AppServiceCertificateOrder {
     void resendEmail();
 
     /**
-     * Resend certificate email.
+     * Description for Resend certificate email.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -600,7 +599,7 @@ public interface AppServiceCertificateOrder {
     Response<SiteSeal> retrieveSiteSealWithResponse(SiteSealRequest siteSealRequest, Context context);
 
     /**
-     * Verify domain ownership for this certificate order.
+     * Description for Verify domain ownership for this certificate order.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -609,7 +608,7 @@ public interface AppServiceCertificateOrder {
     void verifyDomainOwnership();
 
     /**
-     * Verify domain ownership for this certificate order.
+     * Description for Verify domain ownership for this certificate order.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

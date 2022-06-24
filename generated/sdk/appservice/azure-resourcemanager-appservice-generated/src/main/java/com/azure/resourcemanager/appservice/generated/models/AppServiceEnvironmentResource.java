@@ -9,6 +9,8 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.AseV3NetworkingConfigurationInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.CustomDnsSuffixConfigurationInner;
 import java.util.List;
 import java.util.Map;
 
@@ -158,6 +160,13 @@ public interface AppServiceEnvironmentResource {
     Boolean hasLinuxWorkers();
 
     /**
+     * Gets the upgradePreference property: Upgrade Preference.
+     *
+     * @return the upgradePreference value.
+     */
+    UpgradePreference upgradePreference();
+
+    /**
      * Gets the dedicatedHostCount property: Dedicated Host Count.
      *
      * @return the dedicatedHostCount value.
@@ -170,6 +179,27 @@ public interface AppServiceEnvironmentResource {
      * @return the zoneRedundant value.
      */
     Boolean zoneRedundant();
+
+    /**
+     * Gets the customDnsSuffixConfiguration property: Full view of the custom domain suffix configuration for ASEv3.
+     *
+     * @return the customDnsSuffixConfiguration value.
+     */
+    CustomDnsSuffixConfiguration customDnsSuffixConfiguration();
+
+    /**
+     * Gets the networkingConfiguration property: Full view of networking configuration for an ASE.
+     *
+     * @return the networkingConfiguration value.
+     */
+    AseV3NetworkingConfiguration networkingConfiguration();
+
+    /**
+     * Gets the upgradeAvailability property: Whether an upgrade is available for this App Service Environment.
+     *
+     * @return the upgradeAvailability value.
+     */
+    UpgradeAvailability upgradeAvailability();
 
     /**
      * Gets the region of the resource.
@@ -255,8 +285,11 @@ public interface AppServiceEnvironmentResource {
                 DefinitionStages.WithFrontEndScaleFactor,
                 DefinitionStages.WithClusterSettings,
                 DefinitionStages.WithUserWhitelistedIpRanges,
+                DefinitionStages.WithUpgradePreference,
                 DefinitionStages.WithDedicatedHostCount,
-                DefinitionStages.WithZoneRedundant {
+                DefinitionStages.WithZoneRedundant,
+                DefinitionStages.WithCustomDnsSuffixConfiguration,
+                DefinitionStages.WithNetworkingConfiguration {
             /**
              * Executes the create request.
              *
@@ -376,6 +409,16 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withUserWhitelistedIpRanges(List<String> userWhitelistedIpRanges);
         }
+        /** The stage of the AppServiceEnvironmentResource definition allowing to specify upgradePreference. */
+        interface WithUpgradePreference {
+            /**
+             * Specifies the upgradePreference property: Upgrade Preference.
+             *
+             * @param upgradePreference Upgrade Preference.
+             * @return the next definition stage.
+             */
+            WithCreate withUpgradePreference(UpgradePreference upgradePreference);
+        }
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify dedicatedHostCount. */
         interface WithDedicatedHostCount {
             /**
@@ -396,6 +439,29 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withZoneRedundant(Boolean zoneRedundant);
         }
+        /**
+         * The stage of the AppServiceEnvironmentResource definition allowing to specify customDnsSuffixConfiguration.
+         */
+        interface WithCustomDnsSuffixConfiguration {
+            /**
+             * Specifies the customDnsSuffixConfiguration property: Full view of the custom domain suffix configuration
+             * for ASEv3..
+             *
+             * @param customDnsSuffixConfiguration Full view of the custom domain suffix configuration for ASEv3.
+             * @return the next definition stage.
+             */
+            WithCreate withCustomDnsSuffixConfiguration(CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration);
+        }
+        /** The stage of the AppServiceEnvironmentResource definition allowing to specify networkingConfiguration. */
+        interface WithNetworkingConfiguration {
+            /**
+             * Specifies the networkingConfiguration property: Full view of networking configuration for an ASE..
+             *
+             * @param networkingConfiguration Full view of networking configuration for an ASE.
+             * @return the next definition stage.
+             */
+            WithCreate withNetworkingConfiguration(AseV3NetworkingConfigurationInner networkingConfiguration);
+        }
     }
     /**
      * Begins update for the AppServiceEnvironmentResource resource.
@@ -415,8 +481,11 @@ public interface AppServiceEnvironmentResource {
             UpdateStages.WithFrontEndScaleFactor,
             UpdateStages.WithClusterSettings,
             UpdateStages.WithUserWhitelistedIpRanges,
+            UpdateStages.WithUpgradePreference,
             UpdateStages.WithDedicatedHostCount,
-            UpdateStages.WithZoneRedundant {
+            UpdateStages.WithZoneRedundant,
+            UpdateStages.WithCustomDnsSuffixConfiguration,
+            UpdateStages.WithNetworkingConfiguration {
         /**
          * Executes the update request.
          *
@@ -528,6 +597,16 @@ public interface AppServiceEnvironmentResource {
              */
             Update withUserWhitelistedIpRanges(List<String> userWhitelistedIpRanges);
         }
+        /** The stage of the AppServiceEnvironmentResource update allowing to specify upgradePreference. */
+        interface WithUpgradePreference {
+            /**
+             * Specifies the upgradePreference property: Upgrade Preference.
+             *
+             * @param upgradePreference Upgrade Preference.
+             * @return the next definition stage.
+             */
+            Update withUpgradePreference(UpgradePreference upgradePreference);
+        }
         /** The stage of the AppServiceEnvironmentResource update allowing to specify dedicatedHostCount. */
         interface WithDedicatedHostCount {
             /**
@@ -548,6 +627,27 @@ public interface AppServiceEnvironmentResource {
              */
             Update withZoneRedundant(Boolean zoneRedundant);
         }
+        /** The stage of the AppServiceEnvironmentResource update allowing to specify customDnsSuffixConfiguration. */
+        interface WithCustomDnsSuffixConfiguration {
+            /**
+             * Specifies the customDnsSuffixConfiguration property: Full view of the custom domain suffix configuration
+             * for ASEv3..
+             *
+             * @param customDnsSuffixConfiguration Full view of the custom domain suffix configuration for ASEv3.
+             * @return the next definition stage.
+             */
+            Update withCustomDnsSuffixConfiguration(CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration);
+        }
+        /** The stage of the AppServiceEnvironmentResource update allowing to specify networkingConfiguration. */
+        interface WithNetworkingConfiguration {
+            /**
+             * Specifies the networkingConfiguration property: Full view of networking configuration for an ASE..
+             *
+             * @param networkingConfiguration Full view of networking configuration for an ASE.
+             * @return the next definition stage.
+             */
+            Update withNetworkingConfiguration(AseV3NetworkingConfigurationInner networkingConfiguration);
+        }
     }
     /**
      * Refreshes the resource to sync with Azure.
@@ -565,7 +665,7 @@ public interface AppServiceEnvironmentResource {
     AppServiceEnvironmentResource refresh(Context context);
 
     /**
-     * Move an App Service Environment to a different VNET.
+     * Description for Move an App Service Environment to a different VNET.
      *
      * @param vnetInfo Details for the new virtual network.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -577,7 +677,7 @@ public interface AppServiceEnvironmentResource {
     PagedIterable<Site> changeVnet(VirtualNetworkProfile vnetInfo);
 
     /**
-     * Move an App Service Environment to a different VNET.
+     * Description for Move an App Service Environment to a different VNET.
      *
      * @param vnetInfo Details for the new virtual network.
      * @param context The context to associate with this operation.
@@ -590,7 +690,48 @@ public interface AppServiceEnvironmentResource {
     PagedIterable<Site> changeVnet(VirtualNetworkProfile vnetInfo, Context context);
 
     /**
-     * Reboot all machines in an App Service Environment.
+     * Send a test notification that an upgrade is available for this App Service Environment.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void testUpgradeAvailableNotification();
+
+    /**
+     * Send a test notification that an upgrade is available for this App Service Environment.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> testUpgradeAvailableNotificationWithResponse(Context context);
+
+    /**
+     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void upgrade();
+
+    /**
+     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void upgrade(Context context);
+
+    /**
+     * Description for Reboot all machines in an App Service Environment.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -599,7 +740,7 @@ public interface AppServiceEnvironmentResource {
     void reboot();
 
     /**
-     * Reboot all machines in an App Service Environment.
+     * Description for Reboot all machines in an App Service Environment.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -611,7 +752,7 @@ public interface AppServiceEnvironmentResource {
     Response<Void> rebootWithResponse(Context context);
 
     /**
-     * Resume an App Service Environment.
+     * Description for Resume an App Service Environment.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -621,7 +762,7 @@ public interface AppServiceEnvironmentResource {
     PagedIterable<Site> resume();
 
     /**
-     * Resume an App Service Environment.
+     * Description for Resume an App Service Environment.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -633,7 +774,7 @@ public interface AppServiceEnvironmentResource {
     PagedIterable<Site> resume(Context context);
 
     /**
-     * Suspend an App Service Environment.
+     * Description for Suspend an App Service Environment.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -643,7 +784,7 @@ public interface AppServiceEnvironmentResource {
     PagedIterable<Site> suspend();
 
     /**
-     * Suspend an App Service Environment.
+     * Description for Suspend an App Service Environment.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

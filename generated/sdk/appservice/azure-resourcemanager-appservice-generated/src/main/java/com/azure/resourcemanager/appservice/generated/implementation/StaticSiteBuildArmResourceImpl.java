@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.BuildStatus;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildArmResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteLinkedBackend;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserProvidedFunctionApp;
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -70,6 +71,15 @@ public final class StaticSiteBuildArmResourceImpl implements StaticSiteBuildArmR
 
     public List<StaticSiteUserProvidedFunctionApp> userProvidedFunctionApps() {
         List<StaticSiteUserProvidedFunctionApp> inner = this.innerModel().userProvidedFunctionApps();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<StaticSiteLinkedBackend> linkedBackends() {
+        List<StaticSiteLinkedBackend> inner = this.innerModel().linkedBackends();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {

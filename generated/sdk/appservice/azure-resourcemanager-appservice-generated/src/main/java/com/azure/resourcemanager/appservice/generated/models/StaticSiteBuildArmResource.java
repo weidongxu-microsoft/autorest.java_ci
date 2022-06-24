@@ -95,6 +95,13 @@ public interface StaticSiteBuildArmResource {
     List<StaticSiteUserProvidedFunctionApp> userProvidedFunctionApps();
 
     /**
+     * Gets the linkedBackends property: Backends linked to the static side build.
+     *
+     * @return the linkedBackends value.
+     */
+    List<StaticSiteLinkedBackend> linkedBackends();
+
+    /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner
      * object.
      *

@@ -34,10 +34,12 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.appservice.generated.fluent.AppServiceEnvironmentsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AddressResponseInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentPatchResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServicePlanInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AseV3NetworkingConfigurationInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmUsageQuotaInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.CustomDnsSuffixConfigurationInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostingEnvironmentDiagnosticsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.InboundEnvironmentEndpointInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.OperationInner;
@@ -51,7 +53,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StampCapacit
 import com.azure.resourcemanager.appservice.generated.fluent.models.UsageInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WorkerPoolResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironmentCollection;
-import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironmentPatchResource;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlanCollection;
 import com.azure.resourcemanager.appservice.generated.models.CsmUsageQuotaCollection;
 import com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException;
@@ -182,7 +183,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
             @PathParam("name") String name,
             @PathParam("subscriptionId") String subscriptionId,
             @QueryParam("api-version") String apiVersion,
-            @BodyParam("application/json") AppServiceEnvironmentPatchResource hostingEnvironmentEnvelope,
+            @BodyParam("application/json") AppServiceEnvironmentPatchResourceInner hostingEnvironmentEnvelope,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -229,6 +230,52 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
             @PathParam("subscriptionId") String subscriptionId,
             @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") VirtualNetworkProfile vnetInfo,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"
+                + "/hostingEnvironments/{name}/configurations/customdnssuffix")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<CustomDnsSuffixConfigurationInner>> getAseCustomDnsSuffixConfiguration(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Put(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"
+                + "/hostingEnvironments/{name}/configurations/customdnssuffix")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<CustomDnsSuffixConfigurationInner>> updateAseCustomDnsSuffixConfiguration(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Delete(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"
+                + "/hostingEnvironments/{name}/configurations/customdnssuffix")
+        @ExpectedResponses({200, 204})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<Object>> deleteAseCustomDnsSuffixConfiguration(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -409,6 +456,36 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<SkuInfoCollection>> listMultiRolePoolSkus(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"
+                + "/hostingEnvironments/{name}/testUpgradeAvailableNotification")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<Void>> testUpgradeAvailableNotification(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"
+                + "/hostingEnvironments/{name}/upgrade")
+        @ExpectedResponses({202})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<Flux<ByteBuffer>>> upgrade(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("name") String name,
@@ -985,12 +1062,12 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service Environments for a subscription.
+     * Description for Get all App Service Environments for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service Environments for a subscription along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceEnvironmentResourceInner>> listSinglePageAsync() {
@@ -1030,14 +1107,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service Environments for a subscription.
+     * Description for Get all App Service Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service Environments for a subscription along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceEnvironmentResourceInner>> listSinglePageAsync(Context context) {
@@ -1074,11 +1151,11 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service Environments for a subscription.
+     * Description for Get all App Service Environments for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service Environments for a subscription as paginated response with {@link PagedFlux}.
+     * @return collection of App Service Environments as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServiceEnvironmentResourceInner> listAsync() {
@@ -1086,13 +1163,13 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service Environments for a subscription.
+     * Description for Get all App Service Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service Environments for a subscription as paginated response with {@link PagedFlux}.
+     * @return collection of App Service Environments as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServiceEnvironmentResourceInner> listAsync(Context context) {
@@ -1101,11 +1178,11 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service Environments for a subscription.
+     * Description for Get all App Service Environments for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service Environments for a subscription as paginated response with {@link PagedIterable}.
+     * @return collection of App Service Environments as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServiceEnvironmentResourceInner> list() {
@@ -1113,13 +1190,13 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service Environments for a subscription.
+     * Description for Get all App Service Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service Environments for a subscription as paginated response with {@link PagedIterable}.
+     * @return collection of App Service Environments as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServiceEnvironmentResourceInner> list(Context context) {
@@ -1127,14 +1204,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service Environments in a resource group.
+     * Description for Get all App Service Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service Environments in a resource group along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceEnvironmentResourceInner>> listByResourceGroupSinglePageAsync(
@@ -1180,15 +1257,15 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service Environments in a resource group.
+     * Description for Get all App Service Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service Environments in a resource group along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return collection of App Service Environments along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServiceEnvironmentResourceInner>> listByResourceGroupSinglePageAsync(
@@ -1231,13 +1308,13 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service Environments in a resource group.
+     * Description for Get all App Service Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service Environments in a resource group as paginated response with {@link PagedFlux}.
+     * @return collection of App Service Environments as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServiceEnvironmentResourceInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -1247,14 +1324,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service Environments in a resource group.
+     * Description for Get all App Service Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service Environments in a resource group as paginated response with {@link PagedFlux}.
+     * @return collection of App Service Environments as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServiceEnvironmentResourceInner> listByResourceGroupAsync(
@@ -1265,13 +1342,13 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service Environments in a resource group.
+     * Description for Get all App Service Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service Environments in a resource group as paginated response with {@link PagedIterable}.
+     * @return collection of App Service Environments as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServiceEnvironmentResourceInner> listByResourceGroup(String resourceGroupName) {
@@ -1279,14 +1356,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service Environments in a resource group.
+     * Description for Get all App Service Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service Environments in a resource group as paginated response with {@link PagedIterable}.
+     * @return collection of App Service Environments as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServiceEnvironmentResourceInner> listByResourceGroup(
@@ -1295,15 +1372,15 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the properties of an App Service Environment.
+     * Description for Get the properties of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of an App Service Environment along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return app Service Environment ARM resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceEnvironmentResourceInner>> getByResourceGroupWithResponseAsync(
@@ -1344,7 +1421,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the properties of an App Service Environment.
+     * Description for Get the properties of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1352,8 +1429,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of an App Service Environment along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return app Service Environment ARM resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceEnvironmentResourceInner>> getByResourceGroupWithResponseAsync(
@@ -1391,14 +1468,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the properties of an App Service Environment.
+     * Description for Get the properties of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of an App Service Environment on successful completion of {@link Mono}.
+     * @return app Service Environment ARM resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceEnvironmentResourceInner> getByResourceGroupAsync(String resourceGroupName, String name) {
@@ -1407,14 +1484,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the properties of an App Service Environment.
+     * Description for Get the properties of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of an App Service Environment.
+     * @return app Service Environment ARM resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public AppServiceEnvironmentResourceInner getByResourceGroup(String resourceGroupName, String name) {
@@ -1422,7 +1499,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the properties of an App Service Environment.
+     * Description for Get the properties of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1430,7 +1507,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of an App Service Environment along with {@link Response}.
+     * @return app Service Environment ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AppServiceEnvironmentResourceInner> getByResourceGroupWithResponse(
@@ -1439,7 +1516,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1498,7 +1575,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1558,7 +1635,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1585,7 +1662,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1617,7 +1694,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1635,7 +1712,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1657,7 +1734,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1676,7 +1753,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1699,7 +1776,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1716,7 +1793,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1737,7 +1814,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Delete an App Service Environment.
+     * Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1788,7 +1865,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Delete an App Service Environment.
+     * Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1837,7 +1914,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Delete an App Service Environment.
+     * Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1859,7 +1936,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Delete an App Service Environment.
+     * Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1882,7 +1959,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Delete an App Service Environment.
+     * Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1899,7 +1976,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Delete an App Service Environment.
+     * Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1918,7 +1995,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Delete an App Service Environment.
+     * Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1937,7 +2014,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Delete an App Service Environment.
+     * Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1955,7 +2032,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Delete an App Service Environment.
+     * Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1975,7 +2052,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Delete an App Service Environment.
+     * Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1991,7 +2068,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Delete an App Service Environment.
+     * Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2006,7 +2083,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Delete an App Service Environment.
+     * Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2023,7 +2100,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2036,7 +2113,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServiceEnvironmentResourceInner>> updateWithResponseAsync(
-        String resourceGroupName, String name, AppServiceEnvironmentPatchResource hostingEnvironmentEnvelope) {
+        String resourceGroupName, String name, AppServiceEnvironmentPatchResourceInner hostingEnvironmentEnvelope) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -2082,7 +2159,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2098,7 +2175,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     private Mono<Response<AppServiceEnvironmentResourceInner>> updateWithResponseAsync(
         String resourceGroupName,
         String name,
-        AppServiceEnvironmentPatchResource hostingEnvironmentEnvelope,
+        AppServiceEnvironmentPatchResourceInner hostingEnvironmentEnvelope,
         Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -2142,7 +2219,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2154,13 +2231,13 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServiceEnvironmentResourceInner> updateAsync(
-        String resourceGroupName, String name, AppServiceEnvironmentPatchResource hostingEnvironmentEnvelope) {
+        String resourceGroupName, String name, AppServiceEnvironmentPatchResourceInner hostingEnvironmentEnvelope) {
         return updateWithResponseAsync(resourceGroupName, name, hostingEnvironmentEnvelope)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2172,12 +2249,12 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public AppServiceEnvironmentResourceInner update(
-        String resourceGroupName, String name, AppServiceEnvironmentPatchResource hostingEnvironmentEnvelope) {
+        String resourceGroupName, String name, AppServiceEnvironmentPatchResourceInner hostingEnvironmentEnvelope) {
         return updateAsync(resourceGroupName, name, hostingEnvironmentEnvelope).block();
     }
 
     /**
-     * Create or update an App Service Environment.
+     * Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2192,21 +2269,20 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     public Response<AppServiceEnvironmentResourceInner> updateWithResponse(
         String resourceGroupName,
         String name,
-        AppServiceEnvironmentPatchResource hostingEnvironmentEnvelope,
+        AppServiceEnvironmentPatchResourceInner hostingEnvironmentEnvelope,
         Context context) {
         return updateWithResponseAsync(resourceGroupName, name, hostingEnvironmentEnvelope, context).block();
     }
 
     /**
-     * Get the used, available, and total worker capacity an App Service Environment.
+     * Description for Get the used, available, and total worker capacity an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the used, available, and total worker capacity an App Service Environment along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of stamp capacities along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StampCapacityInner>> listCapacitiesSinglePageAsync(
@@ -2256,7 +2332,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the used, available, and total worker capacity an App Service Environment.
+     * Description for Get the used, available, and total worker capacity an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2264,8 +2340,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the used, available, and total worker capacity an App Service Environment along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of stamp capacities along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<StampCapacityInner>> listCapacitiesSinglePageAsync(
@@ -2312,15 +2387,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the used, available, and total worker capacity an App Service Environment.
+     * Description for Get the used, available, and total worker capacity an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the used, available, and total worker capacity an App Service Environment as paginated response with
-     *     {@link PagedFlux}.
+     * @return collection of stamp capacities as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StampCapacityInner> listCapacitiesAsync(String resourceGroupName, String name) {
@@ -2330,7 +2404,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the used, available, and total worker capacity an App Service Environment.
+     * Description for Get the used, available, and total worker capacity an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2338,8 +2412,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the used, available, and total worker capacity an App Service Environment as paginated response with
-     *     {@link PagedFlux}.
+     * @return collection of stamp capacities as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<StampCapacityInner> listCapacitiesAsync(String resourceGroupName, String name, Context context) {
@@ -2349,15 +2422,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the used, available, and total worker capacity an App Service Environment.
+     * Description for Get the used, available, and total worker capacity an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the used, available, and total worker capacity an App Service Environment as paginated response with
-     *     {@link PagedIterable}.
+     * @return collection of stamp capacities as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StampCapacityInner> listCapacities(String resourceGroupName, String name) {
@@ -2365,7 +2437,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the used, available, and total worker capacity an App Service Environment.
+     * Description for Get the used, available, and total worker capacity an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2373,8 +2445,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the used, available, and total worker capacity an App Service Environment as paginated response with
-     *     {@link PagedIterable}.
+     * @return collection of stamp capacities as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<StampCapacityInner> listCapacities(String resourceGroupName, String name, Context context) {
@@ -2382,15 +2453,15 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get IP addresses assigned to an App Service Environment.
+     * Description for Get IP addresses assigned to an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return iP addresses assigned to an App Service Environment along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * @return describes main public IP address and any extra virtual IPs along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AddressResponseInner>> getVipInfoWithResponseAsync(String resourceGroupName, String name) {
@@ -2430,7 +2501,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get IP addresses assigned to an App Service Environment.
+     * Description for Get IP addresses assigned to an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2438,8 +2509,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return iP addresses assigned to an App Service Environment along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * @return describes main public IP address and any extra virtual IPs along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AddressResponseInner>> getVipInfoWithResponseAsync(
@@ -2477,14 +2548,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get IP addresses assigned to an App Service Environment.
+     * Description for Get IP addresses assigned to an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return iP addresses assigned to an App Service Environment on successful completion of {@link Mono}.
+     * @return describes main public IP address and any extra virtual IPs on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AddressResponseInner> getVipInfoAsync(String resourceGroupName, String name) {
@@ -2492,14 +2563,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get IP addresses assigned to an App Service Environment.
+     * Description for Get IP addresses assigned to an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return iP addresses assigned to an App Service Environment.
+     * @return describes main public IP address and any extra virtual IPs.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public AddressResponseInner getVipInfo(String resourceGroupName, String name) {
@@ -2507,7 +2578,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get IP addresses assigned to an App Service Environment.
+     * Description for Get IP addresses assigned to an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2515,7 +2586,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return iP addresses assigned to an App Service Environment along with {@link Response}.
+     * @return describes main public IP address and any extra virtual IPs along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AddressResponseInner> getVipInfoWithResponse(
@@ -2524,7 +2595,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Move an App Service Environment to a different VNET.
+     * Description for Move an App Service Environment to a different VNET.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2604,7 +2675,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Move an App Service Environment to a different VNET.
+     * Description for Move an App Service Environment to a different VNET.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2677,7 +2748,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Move an App Service Environment to a different VNET.
+     * Description for Move an App Service Environment to a different VNET.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2696,7 +2767,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Move an App Service Environment to a different VNET.
+     * Description for Move an App Service Environment to a different VNET.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2716,7 +2787,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Move an App Service Environment to a different VNET.
+     * Description for Move an App Service Environment to a different VNET.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2732,7 +2803,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Move an App Service Environment to a different VNET.
+     * Description for Move an App Service Environment to a different VNET.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2750,15 +2821,481 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get networking configuration of an App Service Environment.
+     * Get Custom Dns Suffix configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networking configuration of an App Service Environment along with {@link Response} on successful
+     * @return custom Dns Suffix configuration of an App Service Environment along with {@link Response} on successful
      *     completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<CustomDnsSuffixConfigurationInner>> getAseCustomDnsSuffixConfigurationWithResponseAsync(
+        String resourceGroupName, String name) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getAseCustomDnsSuffixConfiguration(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Get Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return custom Dns Suffix configuration of an App Service Environment along with {@link Response} on successful
+     *     completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<CustomDnsSuffixConfigurationInner>> getAseCustomDnsSuffixConfigurationWithResponseAsync(
+        String resourceGroupName, String name, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getAseCustomDnsSuffixConfiguration(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Get Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return custom Dns Suffix configuration of an App Service Environment on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<CustomDnsSuffixConfigurationInner> getAseCustomDnsSuffixConfigurationAsync(
+        String resourceGroupName, String name) {
+        return getAseCustomDnsSuffixConfigurationWithResponseAsync(resourceGroupName, name)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Get Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return custom Dns Suffix configuration of an App Service Environment.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CustomDnsSuffixConfigurationInner getAseCustomDnsSuffixConfiguration(String resourceGroupName, String name) {
+        return getAseCustomDnsSuffixConfigurationAsync(resourceGroupName, name).block();
+    }
+
+    /**
+     * Get Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return custom Dns Suffix configuration of an App Service Environment along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<CustomDnsSuffixConfigurationInner> getAseCustomDnsSuffixConfigurationWithResponse(
+        String resourceGroupName, String name, Context context) {
+        return getAseCustomDnsSuffixConfigurationWithResponseAsync(resourceGroupName, name, context).block();
+    }
+
+    /**
+     * Update Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param customDnsSuffixConfiguration Full view of the custom domain suffix configuration for ASEv3.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of the custom domain suffix configuration for ASEv3 along with {@link Response} on successful
+     *     completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<CustomDnsSuffixConfigurationInner>> updateAseCustomDnsSuffixConfigurationWithResponseAsync(
+        String resourceGroupName, String name, CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (customDnsSuffixConfiguration == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter customDnsSuffixConfiguration is required and cannot be null."));
+        } else {
+            customDnsSuffixConfiguration.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .updateAseCustomDnsSuffixConfiguration(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            customDnsSuffixConfiguration,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Update Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param customDnsSuffixConfiguration Full view of the custom domain suffix configuration for ASEv3.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of the custom domain suffix configuration for ASEv3 along with {@link Response} on successful
+     *     completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<CustomDnsSuffixConfigurationInner>> updateAseCustomDnsSuffixConfigurationWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration,
+        Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (customDnsSuffixConfiguration == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter customDnsSuffixConfiguration is required and cannot be null."));
+        } else {
+            customDnsSuffixConfiguration.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .updateAseCustomDnsSuffixConfiguration(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                customDnsSuffixConfiguration,
+                accept,
+                context);
+    }
+
+    /**
+     * Update Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param customDnsSuffixConfiguration Full view of the custom domain suffix configuration for ASEv3.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of the custom domain suffix configuration for ASEv3 on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<CustomDnsSuffixConfigurationInner> updateAseCustomDnsSuffixConfigurationAsync(
+        String resourceGroupName, String name, CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration) {
+        return updateAseCustomDnsSuffixConfigurationWithResponseAsync(
+                resourceGroupName, name, customDnsSuffixConfiguration)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Update Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param customDnsSuffixConfiguration Full view of the custom domain suffix configuration for ASEv3.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of the custom domain suffix configuration for ASEv3.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CustomDnsSuffixConfigurationInner updateAseCustomDnsSuffixConfiguration(
+        String resourceGroupName, String name, CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration) {
+        return updateAseCustomDnsSuffixConfigurationAsync(resourceGroupName, name, customDnsSuffixConfiguration)
+            .block();
+    }
+
+    /**
+     * Update Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param customDnsSuffixConfiguration Full view of the custom domain suffix configuration for ASEv3.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of the custom domain suffix configuration for ASEv3 along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<CustomDnsSuffixConfigurationInner> updateAseCustomDnsSuffixConfigurationWithResponse(
+        String resourceGroupName,
+        String name,
+        CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration,
+        Context context) {
+        return updateAseCustomDnsSuffixConfigurationWithResponseAsync(
+                resourceGroupName, name, customDnsSuffixConfiguration, context)
+            .block();
+    }
+
+    /**
+     * Delete Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object along with {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Object>> deleteAseCustomDnsSuffixConfigurationWithResponseAsync(
+        String resourceGroupName, String name) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .deleteAseCustomDnsSuffixConfiguration(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Delete Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object along with {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Object>> deleteAseCustomDnsSuffixConfigurationWithResponseAsync(
+        String resourceGroupName, String name, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .deleteAseCustomDnsSuffixConfiguration(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Delete Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Object> deleteAseCustomDnsSuffixConfigurationAsync(String resourceGroupName, String name) {
+        return deleteAseCustomDnsSuffixConfigurationWithResponseAsync(resourceGroupName, name)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Delete Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Object deleteAseCustomDnsSuffixConfiguration(String resourceGroupName, String name) {
+        return deleteAseCustomDnsSuffixConfigurationAsync(resourceGroupName, name).block();
+    }
+
+    /**
+     * Delete Custom Dns Suffix configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<Object> deleteAseCustomDnsSuffixConfigurationWithResponse(
+        String resourceGroupName, String name, Context context) {
+        return deleteAseCustomDnsSuffixConfigurationWithResponseAsync(resourceGroupName, name, context).block();
+    }
+
+    /**
+     * Description for Get networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AseV3NetworkingConfigurationInner>> getAseV3NetworkingConfigurationWithResponseAsync(
@@ -2799,7 +3336,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get networking configuration of an App Service Environment.
+     * Description for Get networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2807,8 +3344,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networking configuration of an App Service Environment along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * @return full view of networking configuration for an ASE along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AseV3NetworkingConfigurationInner>> getAseV3NetworkingConfigurationWithResponseAsync(
@@ -2846,14 +3383,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get networking configuration of an App Service Environment.
+     * Description for Get networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networking configuration of an App Service Environment on successful completion of {@link Mono}.
+     * @return full view of networking configuration for an ASE on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AseV3NetworkingConfigurationInner> getAseV3NetworkingConfigurationAsync(
@@ -2863,14 +3400,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get networking configuration of an App Service Environment.
+     * Description for Get networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networking configuration of an App Service Environment.
+     * @return full view of networking configuration for an ASE.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public AseV3NetworkingConfigurationInner getAseV3NetworkingConfiguration(String resourceGroupName, String name) {
@@ -2878,7 +3415,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get networking configuration of an App Service Environment.
+     * Description for Get networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2886,7 +3423,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networking configuration of an App Service Environment along with {@link Response}.
+     * @return full view of networking configuration for an ASE along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AseV3NetworkingConfigurationInner> getAseV3NetworkingConfigurationWithResponse(
@@ -2895,7 +3432,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Update networking configuration of an App Service Environment.
+     * Description for Update networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2954,7 +3491,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Update networking configuration of an App Service Environment.
+     * Description for Update networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3014,7 +3551,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Update networking configuration of an App Service Environment.
+     * Description for Update networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3032,7 +3569,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Update networking configuration of an App Service Environment.
+     * Description for Update networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3049,7 +3586,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Update networking configuration of an App Service Environment.
+     * Description for Update networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3072,15 +3609,15 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get diagnostic information for an App Service Environment.
+     * Description for Get diagnostic information for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostic information for an App Service Environment along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * @return array of HostingEnvironmentDiagnostics along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<HostingEnvironmentDiagnosticsInner>>> listDiagnosticsWithResponseAsync(
@@ -3121,7 +3658,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get diagnostic information for an App Service Environment.
+     * Description for Get diagnostic information for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3129,8 +3666,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostic information for an App Service Environment along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * @return array of HostingEnvironmentDiagnostics along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<HostingEnvironmentDiagnosticsInner>>> listDiagnosticsWithResponseAsync(
@@ -3168,14 +3705,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get diagnostic information for an App Service Environment.
+     * Description for Get diagnostic information for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostic information for an App Service Environment on successful completion of {@link Mono}.
+     * @return array of HostingEnvironmentDiagnostics on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<HostingEnvironmentDiagnosticsInner>> listDiagnosticsAsync(String resourceGroupName, String name) {
@@ -3184,14 +3721,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get diagnostic information for an App Service Environment.
+     * Description for Get diagnostic information for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostic information for an App Service Environment.
+     * @return array of HostingEnvironmentDiagnostics.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public List<HostingEnvironmentDiagnosticsInner> listDiagnostics(String resourceGroupName, String name) {
@@ -3199,7 +3736,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get diagnostic information for an App Service Environment.
+     * Description for Get diagnostic information for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3207,7 +3744,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostic information for an App Service Environment along with {@link Response}.
+     * @return array of HostingEnvironmentDiagnostics along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<HostingEnvironmentDiagnosticsInner>> listDiagnosticsWithResponse(
@@ -3216,7 +3753,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get a diagnostics item for an App Service Environment.
+     * Description for Get a diagnostics item for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3224,8 +3761,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a diagnostics item for an App Service Environment along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return diagnostics for an App Service Environment along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HostingEnvironmentDiagnosticsInner>> getDiagnosticsItemWithResponseAsync(
@@ -3271,7 +3808,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get a diagnostics item for an App Service Environment.
+     * Description for Get a diagnostics item for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3280,8 +3817,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a diagnostics item for an App Service Environment along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return diagnostics for an App Service Environment along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HostingEnvironmentDiagnosticsInner>> getDiagnosticsItemWithResponseAsync(
@@ -3324,7 +3861,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get a diagnostics item for an App Service Environment.
+     * Description for Get a diagnostics item for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3332,7 +3869,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a diagnostics item for an App Service Environment on successful completion of {@link Mono}.
+     * @return diagnostics for an App Service Environment on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<HostingEnvironmentDiagnosticsInner> getDiagnosticsItemAsync(
@@ -3342,7 +3879,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get a diagnostics item for an App Service Environment.
+     * Description for Get a diagnostics item for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3350,7 +3887,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a diagnostics item for an App Service Environment.
+     * @return diagnostics for an App Service Environment.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public HostingEnvironmentDiagnosticsInner getDiagnosticsItem(
@@ -3359,7 +3896,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get a diagnostics item for an App Service Environment.
+     * Description for Get a diagnostics item for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3368,7 +3905,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a diagnostics item for an App Service Environment along with {@link Response}.
+     * @return diagnostics for an App Service Environment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<HostingEnvironmentDiagnosticsInner> getDiagnosticsItemWithResponse(
@@ -3377,15 +3914,15 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the network endpoints of all inbound dependencies of an App Service Environment.
+     * Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network endpoints of all inbound dependencies of an App Service Environment along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Inbound Environment Endpoints along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<InboundEnvironmentEndpointInner>> getInboundNetworkDependenciesEndpointsSinglePageAsync(
@@ -3435,7 +3972,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the network endpoints of all inbound dependencies of an App Service Environment.
+     * Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3443,8 +3980,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network endpoints of all inbound dependencies of an App Service Environment along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Inbound Environment Endpoints along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<InboundEnvironmentEndpointInner>> getInboundNetworkDependenciesEndpointsSinglePageAsync(
@@ -3491,15 +4028,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the network endpoints of all inbound dependencies of an App Service Environment.
+     * Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network endpoints of all inbound dependencies of an App Service Environment as paginated response
-     *     with {@link PagedFlux}.
+     * @return collection of Inbound Environment Endpoints as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<InboundEnvironmentEndpointInner> getInboundNetworkDependenciesEndpointsAsync(
@@ -3510,7 +4046,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the network endpoints of all inbound dependencies of an App Service Environment.
+     * Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3518,8 +4054,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network endpoints of all inbound dependencies of an App Service Environment as paginated response
-     *     with {@link PagedFlux}.
+     * @return collection of Inbound Environment Endpoints as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<InboundEnvironmentEndpointInner> getInboundNetworkDependenciesEndpointsAsync(
@@ -3530,15 +4065,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the network endpoints of all inbound dependencies of an App Service Environment.
+     * Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network endpoints of all inbound dependencies of an App Service Environment as paginated response
-     *     with {@link PagedIterable}.
+     * @return collection of Inbound Environment Endpoints as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<InboundEnvironmentEndpointInner> getInboundNetworkDependenciesEndpoints(
@@ -3547,7 +4081,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the network endpoints of all inbound dependencies of an App Service Environment.
+     * Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3555,8 +4089,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network endpoints of all inbound dependencies of an App Service Environment as paginated response
-     *     with {@link PagedIterable}.
+     * @return collection of Inbound Environment Endpoints as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<InboundEnvironmentEndpointInner> getInboundNetworkDependenciesEndpoints(
@@ -3565,14 +4098,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all multi-role pools.
+     * Description for Get all multi-role pools.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all multi-role pools along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of worker pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkerPoolResourceInner>> listMultiRolePoolsSinglePageAsync(
@@ -3622,7 +4155,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all multi-role pools.
+     * Description for Get all multi-role pools.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3630,7 +4163,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all multi-role pools along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of worker pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkerPoolResourceInner>> listMultiRolePoolsSinglePageAsync(
@@ -3677,14 +4210,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all multi-role pools.
+     * Description for Get all multi-role pools.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all multi-role pools as paginated response with {@link PagedFlux}.
+     * @return collection of worker pools as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkerPoolResourceInner> listMultiRolePoolsAsync(String resourceGroupName, String name) {
@@ -3694,7 +4227,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all multi-role pools.
+     * Description for Get all multi-role pools.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3702,7 +4235,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all multi-role pools as paginated response with {@link PagedFlux}.
+     * @return collection of worker pools as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkerPoolResourceInner> listMultiRolePoolsAsync(
@@ -3713,14 +4246,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all multi-role pools.
+     * Description for Get all multi-role pools.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all multi-role pools as paginated response with {@link PagedIterable}.
+     * @return collection of worker pools as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WorkerPoolResourceInner> listMultiRolePools(String resourceGroupName, String name) {
@@ -3728,7 +4261,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all multi-role pools.
+     * Description for Get all multi-role pools.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3736,7 +4269,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all multi-role pools as paginated response with {@link PagedIterable}.
+     * @return collection of worker pools as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WorkerPoolResourceInner> listMultiRolePools(
@@ -3745,14 +4278,15 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get properties of a multi-role pool.
+     * Description for Get properties of a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a multi-role pool along with {@link Response} on successful completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkerPoolResourceInner>> getMultiRolePoolWithResponseAsync(
@@ -3793,7 +4327,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get properties of a multi-role pool.
+     * Description for Get properties of a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3801,7 +4335,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a multi-role pool along with {@link Response} on successful completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkerPoolResourceInner>> getMultiRolePoolWithResponseAsync(
@@ -3839,14 +4374,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get properties of a multi-role pool.
+     * Description for Get properties of a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a multi-role pool on successful completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WorkerPoolResourceInner> getMultiRolePoolAsync(String resourceGroupName, String name) {
@@ -3855,14 +4390,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get properties of a multi-role pool.
+     * Description for Get properties of a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a multi-role pool.
+     * @return worker pool of an App Service Environment ARM resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public WorkerPoolResourceInner getMultiRolePool(String resourceGroupName, String name) {
@@ -3870,7 +4405,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get properties of a multi-role pool.
+     * Description for Get properties of a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3878,7 +4413,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a multi-role pool along with {@link Response}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<WorkerPoolResourceInner> getMultiRolePoolWithResponse(
@@ -3887,7 +4422,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3944,7 +4479,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3999,7 +4534,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4026,7 +4561,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4055,7 +4590,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4072,7 +4607,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4091,7 +4626,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4110,7 +4645,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4130,7 +4665,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4147,7 +4682,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4165,7 +4700,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4222,7 +4757,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4277,7 +4812,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4295,7 +4830,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4312,7 +4847,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a multi-role pool.
+     * Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4330,7 +4865,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
+     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
+     * Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4338,8 +4874,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a specific instance of a multi-role pool of an App Service Environment along with
-     *     {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -4394,7 +4930,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
+     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
+     * Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4403,8 +4940,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a specific instance of a multi-role pool of an App Service Environment along with
-     *     {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>>
@@ -4456,7 +4993,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
+     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
+     * Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4464,8 +5002,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a specific instance of a multi-role pool of an App Service Environment as
-     *     paginated response with {@link PagedFlux}.
+     * @return collection of metric definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ResourceMetricDefinitionInner> listMultiRolePoolInstanceMetricDefinitionsAsync(
@@ -4476,7 +5013,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
+     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
+     * Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4485,8 +5023,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a specific instance of a multi-role pool of an App Service Environment as
-     *     paginated response with {@link PagedFlux}.
+     * @return collection of metric definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ResourceMetricDefinitionInner> listMultiRolePoolInstanceMetricDefinitionsAsync(
@@ -4497,7 +5034,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
+     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
+     * Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4505,8 +5043,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a specific instance of a multi-role pool of an App Service Environment as
-     *     paginated response with {@link PagedIterable}.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ResourceMetricDefinitionInner> listMultiRolePoolInstanceMetricDefinitions(
@@ -4515,7 +5052,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
+     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
+     * Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4524,8 +5062,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a specific instance of a multi-role pool of an App Service Environment as
-     *     paginated response with {@link PagedIterable}.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ResourceMetricDefinitionInner> listMultiRolePoolInstanceMetricDefinitions(
@@ -4535,15 +5072,15 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a multi-role pool of an App Service Environment.
+     * Description for Get metric definitions for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a multi-role pool of an App Service Environment along with {@link PagedResponse}
-     *     on successful completion of {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>> listMultiRoleMetricDefinitionsSinglePageAsync(
@@ -4593,7 +5130,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a multi-role pool of an App Service Environment.
+     * Description for Get metric definitions for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4601,8 +5138,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a multi-role pool of an App Service Environment along with {@link PagedResponse}
-     *     on successful completion of {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>> listMultiRoleMetricDefinitionsSinglePageAsync(
@@ -4649,15 +5186,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a multi-role pool of an App Service Environment.
+     * Description for Get metric definitions for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a multi-role pool of an App Service Environment as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of metric definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ResourceMetricDefinitionInner> listMultiRoleMetricDefinitionsAsync(
@@ -4668,7 +5204,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a multi-role pool of an App Service Environment.
+     * Description for Get metric definitions for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4676,8 +5212,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a multi-role pool of an App Service Environment as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of metric definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ResourceMetricDefinitionInner> listMultiRoleMetricDefinitionsAsync(
@@ -4688,15 +5223,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a multi-role pool of an App Service Environment.
+     * Description for Get metric definitions for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a multi-role pool of an App Service Environment as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ResourceMetricDefinitionInner> listMultiRoleMetricDefinitions(
@@ -4705,7 +5239,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a multi-role pool of an App Service Environment.
+     * Description for Get metric definitions for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4713,8 +5247,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a multi-role pool of an App Service Environment as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ResourceMetricDefinitionInner> listMultiRoleMetricDefinitions(
@@ -4723,15 +5256,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get available SKUs for scaling a multi-role pool.
+     * Description for Get available SKUs for scaling a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available SKUs for scaling a multi-role pool along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return collection of SKU information along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SkuInfoInner>> listMultiRolePoolSkusSinglePageAsync(
@@ -4781,7 +5313,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get available SKUs for scaling a multi-role pool.
+     * Description for Get available SKUs for scaling a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4789,8 +5321,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available SKUs for scaling a multi-role pool along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return collection of SKU information along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SkuInfoInner>> listMultiRolePoolSkusSinglePageAsync(
@@ -4837,14 +5368,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get available SKUs for scaling a multi-role pool.
+     * Description for Get available SKUs for scaling a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available SKUs for scaling a multi-role pool as paginated response with {@link PagedFlux}.
+     * @return collection of SKU information as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SkuInfoInner> listMultiRolePoolSkusAsync(String resourceGroupName, String name) {
@@ -4854,7 +5385,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get available SKUs for scaling a multi-role pool.
+     * Description for Get available SKUs for scaling a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4862,7 +5393,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available SKUs for scaling a multi-role pool as paginated response with {@link PagedFlux}.
+     * @return collection of SKU information as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SkuInfoInner> listMultiRolePoolSkusAsync(String resourceGroupName, String name, Context context) {
@@ -4872,14 +5403,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get available SKUs for scaling a multi-role pool.
+     * Description for Get available SKUs for scaling a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available SKUs for scaling a multi-role pool as paginated response with {@link PagedIterable}.
+     * @return collection of SKU information as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SkuInfoInner> listMultiRolePoolSkus(String resourceGroupName, String name) {
@@ -4887,7 +5418,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get available SKUs for scaling a multi-role pool.
+     * Description for Get available SKUs for scaling a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4895,7 +5426,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available SKUs for scaling a multi-role pool as paginated response with {@link PagedIterable}.
+     * @return collection of SKU information as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SkuInfoInner> listMultiRolePoolSkus(String resourceGroupName, String name, Context context) {
@@ -4903,15 +5434,381 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get usage metrics for a multi-role pool of an App Service Environment.
+     * Send a test notification that an upgrade is available for this App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return usage metrics for a multi-role pool of an App Service Environment along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Void>> testUpgradeAvailableNotificationWithResponseAsync(
+        String resourceGroupName, String name) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .testUpgradeAvailableNotification(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Send a test notification that an upgrade is available for this App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Void>> testUpgradeAvailableNotificationWithResponseAsync(
+        String resourceGroupName, String name, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .testUpgradeAvailableNotification(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Send a test notification that an upgrade is available for this App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> testUpgradeAvailableNotificationAsync(String resourceGroupName, String name) {
+        return testUpgradeAvailableNotificationWithResponseAsync(resourceGroupName, name)
+            .flatMap(ignored -> Mono.empty());
+    }
+
+    /**
+     * Send a test notification that an upgrade is available for this App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void testUpgradeAvailableNotification(String resourceGroupName, String name) {
+        testUpgradeAvailableNotificationAsync(resourceGroupName, name).block();
+    }
+
+    /**
+     * Send a test notification that an upgrade is available for this App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<Void> testUpgradeAvailableNotificationWithResponse(
+        String resourceGroupName, String name, Context context) {
+        return testUpgradeAvailableNotificationWithResponseAsync(resourceGroupName, name, context).block();
+    }
+
+    /**
+     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> upgradeWithResponseAsync(String resourceGroupName, String name) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .upgrade(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> upgradeWithResponseAsync(
+        String resourceGroupName, String name, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .upgrade(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginUpgradeAsync(String resourceGroupName, String name) {
+        Mono<Response<Flux<ByteBuffer>>> mono = upgradeWithResponseAsync(resourceGroupName, name);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginUpgradeAsync(
+        String resourceGroupName, String name, Context context) {
+        context = this.client.mergeContext(context);
+        Mono<Response<Flux<ByteBuffer>>> mono = upgradeWithResponseAsync(resourceGroupName, name, context);
+        return this
+            .client
+            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, context);
+    }
+
+    /**
+     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<Void>, Void> beginUpgrade(String resourceGroupName, String name) {
+        return beginUpgradeAsync(resourceGroupName, name).getSyncPoller();
+    }
+
+    /**
+     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<Void>, Void> beginUpgrade(String resourceGroupName, String name, Context context) {
+        return beginUpgradeAsync(resourceGroupName, name, context).getSyncPoller();
+    }
+
+    /**
+     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> upgradeAsync(String resourceGroupName, String name) {
+        return beginUpgradeAsync(resourceGroupName, name).last().flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> upgradeAsync(String resourceGroupName, String name, Context context) {
+        return beginUpgradeAsync(resourceGroupName, name, context)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void upgrade(String resourceGroupName, String name) {
+        upgradeAsync(resourceGroupName, name).block();
+    }
+
+    /**
+     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void upgrade(String resourceGroupName, String name, Context context) {
+        upgradeAsync(resourceGroupName, name, context).block();
+    }
+
+    /**
+     * Description for Get usage metrics for a multi-role pool of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of usages along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageInner>> listMultiRoleUsagesSinglePageAsync(String resourceGroupName, String name) {
@@ -4960,7 +5857,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get usage metrics for a multi-role pool of an App Service Environment.
+     * Description for Get usage metrics for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4968,8 +5865,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return usage metrics for a multi-role pool of an App Service Environment along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of usages along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageInner>> listMultiRoleUsagesSinglePageAsync(
@@ -5016,15 +5912,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get usage metrics for a multi-role pool of an App Service Environment.
+     * Description for Get usage metrics for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return usage metrics for a multi-role pool of an App Service Environment as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of usages as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<UsageInner> listMultiRoleUsagesAsync(String resourceGroupName, String name) {
@@ -5034,7 +5929,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get usage metrics for a multi-role pool of an App Service Environment.
+     * Description for Get usage metrics for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5042,8 +5937,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return usage metrics for a multi-role pool of an App Service Environment as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of usages as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<UsageInner> listMultiRoleUsagesAsync(String resourceGroupName, String name, Context context) {
@@ -5053,15 +5947,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get usage metrics for a multi-role pool of an App Service Environment.
+     * Description for Get usage metrics for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return usage metrics for a multi-role pool of an App Service Environment as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of usages as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<UsageInner> listMultiRoleUsages(String resourceGroupName, String name) {
@@ -5069,7 +5962,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get usage metrics for a multi-role pool of an App Service Environment.
+     * Description for Get usage metrics for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5077,8 +5970,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return usage metrics for a multi-role pool of an App Service Environment as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of usages as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<UsageInner> listMultiRoleUsages(String resourceGroupName, String name, Context context) {
@@ -5086,7 +5978,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * List all currently running operations on the App Service Environment.
+     * Description for List all currently running operations on the App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5134,7 +6026,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * List all currently running operations on the App Service Environment.
+     * Description for List all currently running operations on the App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5180,7 +6072,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * List all currently running operations on the App Service Environment.
+     * Description for List all currently running operations on the App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5196,7 +6088,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * List all currently running operations on the App Service Environment.
+     * Description for List all currently running operations on the App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5211,7 +6103,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * List all currently running operations on the App Service Environment.
+     * Description for List all currently running operations on the App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5228,15 +6120,15 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the network endpoints of all outbound dependencies of an App Service Environment.
+     * Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network endpoints of all outbound dependencies of an App Service Environment along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Outbound Environment Endpoints along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OutboundEnvironmentEndpointInner>>
@@ -5286,7 +6178,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the network endpoints of all outbound dependencies of an App Service Environment.
+     * Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5294,8 +6186,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network endpoints of all outbound dependencies of an App Service Environment along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Outbound Environment Endpoints along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OutboundEnvironmentEndpointInner>>
@@ -5342,15 +6234,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the network endpoints of all outbound dependencies of an App Service Environment.
+     * Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network endpoints of all outbound dependencies of an App Service Environment as paginated response
-     *     with {@link PagedFlux}.
+     * @return collection of Outbound Environment Endpoints as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<OutboundEnvironmentEndpointInner> getOutboundNetworkDependenciesEndpointsAsync(
@@ -5361,7 +6252,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the network endpoints of all outbound dependencies of an App Service Environment.
+     * Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5369,8 +6260,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network endpoints of all outbound dependencies of an App Service Environment as paginated response
-     *     with {@link PagedFlux}.
+     * @return collection of Outbound Environment Endpoints as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<OutboundEnvironmentEndpointInner> getOutboundNetworkDependenciesEndpointsAsync(
@@ -5381,15 +6271,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the network endpoints of all outbound dependencies of an App Service Environment.
+     * Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network endpoints of all outbound dependencies of an App Service Environment as paginated response
-     *     with {@link PagedIterable}.
+     * @return collection of Outbound Environment Endpoints as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<OutboundEnvironmentEndpointInner> getOutboundNetworkDependenciesEndpoints(
@@ -5398,7 +6287,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get the network endpoints of all outbound dependencies of an App Service Environment.
+     * Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5406,8 +6295,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network endpoints of all outbound dependencies of an App Service Environment as paginated response
-     *     with {@link PagedIterable}.
+     * @return collection of Outbound Environment Endpoints as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<OutboundEnvironmentEndpointInner> getOutboundNetworkDependenciesEndpoints(
@@ -5416,15 +6304,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets the list of private endpoints associated with a hosting environment.
+     * Description for Gets the list of private endpoints associated with a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of private endpoints associated with a hosting environment along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return the response body along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RemotePrivateEndpointConnectionArmResourceInner>>
@@ -5474,7 +6361,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets the list of private endpoints associated with a hosting environment.
+     * Description for Gets the list of private endpoints associated with a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5482,8 +6369,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of private endpoints associated with a hosting environment along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return the response body along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RemotePrivateEndpointConnectionArmResourceInner>>
@@ -5530,15 +6416,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets the list of private endpoints associated with a hosting environment.
+     * Description for Gets the list of private endpoints associated with a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of private endpoints associated with a hosting environment as paginated response with {@link
-     *     PagedFlux}.
+     * @return the paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionListAsync(
@@ -5549,7 +6434,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets the list of private endpoints associated with a hosting environment.
+     * Description for Gets the list of private endpoints associated with a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5557,8 +6442,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of private endpoints associated with a hosting environment as paginated response with {@link
-     *     PagedFlux}.
+     * @return the paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionListAsync(
@@ -5569,15 +6453,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets the list of private endpoints associated with a hosting environment.
+     * Description for Gets the list of private endpoints associated with a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of private endpoints associated with a hosting environment as paginated response with {@link
-     *     PagedIterable}.
+     * @return the paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionList(
@@ -5586,7 +6469,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets the list of private endpoints associated with a hosting environment.
+     * Description for Gets the list of private endpoints associated with a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5594,8 +6477,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of private endpoints associated with a hosting environment as paginated response with {@link
-     *     PagedIterable}.
+     * @return the paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionList(
@@ -5604,7 +6486,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets a private endpoint connection.
+     * Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5612,7 +6494,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RemotePrivateEndpointConnectionArmResourceInner>>
@@ -5661,7 +6544,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets a private endpoint connection.
+     * Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5670,7 +6553,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RemotePrivateEndpointConnectionArmResourceInner>>
@@ -5716,7 +6600,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets a private endpoint connection.
+     * Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5724,7 +6608,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection on successful completion of {@link Mono}.
+     * @return remote Private Endpoint Connection ARM resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionAsync(
@@ -5734,7 +6618,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets a private endpoint connection.
+     * Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5742,7 +6626,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection.
+     * @return remote Private Endpoint Connection ARM resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public RemotePrivateEndpointConnectionArmResourceInner getPrivateEndpointConnection(
@@ -5751,7 +6635,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets a private endpoint connection.
+     * Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5760,7 +6644,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private endpoint connection along with {@link Response}.
+     * @return remote Private Endpoint Connection ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionWithResponse(
@@ -5771,7 +6655,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Approves or rejects a private endpoint connection.
+     * Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5840,7 +6724,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Approves or rejects a private endpoint connection.
+     * Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5908,7 +6792,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Approves or rejects a private endpoint connection.
+     * Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5943,7 +6827,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Approves or rejects a private endpoint connection.
+     * Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5981,7 +6865,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Approves or rejects a private endpoint connection.
+     * Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6007,7 +6891,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Approves or rejects a private endpoint connection.
+     * Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6035,7 +6919,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Approves or rejects a private endpoint connection.
+     * Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6059,7 +6943,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Approves or rejects a private endpoint connection.
+     * Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6085,7 +6969,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Approves or rejects a private endpoint connection.
+     * Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6108,7 +6992,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Approves or rejects a private endpoint connection.
+     * Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6133,7 +7017,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Deletes a private endpoint connection.
+     * Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6189,7 +7073,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Deletes a private endpoint connection.
+     * Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6243,7 +7127,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Deletes a private endpoint connection.
+     * Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6265,7 +7149,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Deletes a private endpoint connection.
+     * Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6289,7 +7173,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Deletes a private endpoint connection.
+     * Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6307,7 +7191,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Deletes a private endpoint connection.
+     * Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6327,7 +7211,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Deletes a private endpoint connection.
+     * Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6346,7 +7230,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Deletes a private endpoint connection.
+     * Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6367,7 +7251,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Deletes a private endpoint connection.
+     * Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6384,7 +7268,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Deletes a private endpoint connection.
+     * Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6403,14 +7287,15 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets the private link resources.
+     * Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources along with {@link Response} on successful completion of {@link Mono}.
+     * @return wrapper for a collection of private link resources along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourcesWrapperInner>> getPrivateLinkResourcesWithResponseAsync(
@@ -6451,7 +7336,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets the private link resources.
+     * Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6459,7 +7344,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources along with {@link Response} on successful completion of {@link Mono}.
+     * @return wrapper for a collection of private link resources along with {@link Response} on successful completion
+     *     of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourcesWrapperInner>> getPrivateLinkResourcesWithResponseAsync(
@@ -6497,14 +7383,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets the private link resources.
+     * Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources on successful completion of {@link Mono}.
+     * @return wrapper for a collection of private link resources on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkResourcesWrapperInner> getPrivateLinkResourcesAsync(String resourceGroupName, String name) {
@@ -6513,14 +7399,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets the private link resources.
+     * Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources.
+     * @return wrapper for a collection of private link resources.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public PrivateLinkResourcesWrapperInner getPrivateLinkResources(String resourceGroupName, String name) {
@@ -6528,7 +7414,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Gets the private link resources.
+     * Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6536,7 +7422,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources along with {@link Response}.
+     * @return wrapper for a collection of private link resources along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PrivateLinkResourcesWrapperInner> getPrivateLinkResourcesWithResponse(
@@ -6545,7 +7431,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Reboot all machines in an App Service Environment.
+     * Description for Reboot all machines in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6592,7 +7478,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Reboot all machines in an App Service Environment.
+     * Description for Reboot all machines in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6637,7 +7523,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Reboot all machines in an App Service Environment.
+     * Description for Reboot all machines in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6652,7 +7538,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Reboot all machines in an App Service Environment.
+     * Description for Reboot all machines in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6666,7 +7552,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Reboot all machines in an App Service Environment.
+     * Description for Reboot all machines in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6682,7 +7568,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Resume an App Service Environment.
+     * Description for Resume an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6754,7 +7640,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Resume an App Service Environment.
+     * Description for Resume an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6820,7 +7706,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Resume an App Service Environment.
+     * Description for Resume an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6836,7 +7722,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Resume an App Service Environment.
+     * Description for Resume an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6854,7 +7740,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Resume an App Service Environment.
+     * Description for Resume an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6869,7 +7755,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Resume an App Service Environment.
+     * Description for Resume an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6885,15 +7771,15 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service plans in an App Service Environment.
+     * Description for Get all App Service plans in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans in an App Service Environment along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listAppServicePlansSinglePageAsync(
@@ -6943,7 +7829,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service plans in an App Service Environment.
+     * Description for Get all App Service plans in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6951,8 +7837,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans in an App Service Environment along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listAppServicePlansSinglePageAsync(
@@ -6999,14 +7885,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service plans in an App Service Environment.
+     * Description for Get all App Service plans in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans in an App Service Environment as paginated response with {@link PagedFlux}.
+     * @return collection of App Service plans as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServicePlanInner> listAppServicePlansAsync(String resourceGroupName, String name) {
@@ -7016,7 +7902,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service plans in an App Service Environment.
+     * Description for Get all App Service plans in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7024,7 +7910,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans in an App Service Environment as paginated response with {@link PagedFlux}.
+     * @return collection of App Service plans as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServicePlanInner> listAppServicePlansAsync(
@@ -7035,14 +7921,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service plans in an App Service Environment.
+     * Description for Get all App Service plans in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans in an App Service Environment as paginated response with {@link PagedIterable}.
+     * @return collection of App Service plans as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServicePlanInner> listAppServicePlans(String resourceGroupName, String name) {
@@ -7050,7 +7936,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all App Service plans in an App Service Environment.
+     * Description for Get all App Service plans in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7058,7 +7944,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans in an App Service Environment as paginated response with {@link PagedIterable}.
+     * @return collection of App Service plans as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServicePlanInner> listAppServicePlans(
@@ -7067,7 +7953,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all apps in an App Service Environment.
+     * Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7075,8 +7961,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps in an App Service Environment along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return collection of App Service apps along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SiteInner>> listWebAppsSinglePageAsync(
@@ -7127,7 +8012,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all apps in an App Service Environment.
+     * Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7136,8 +8021,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps in an App Service Environment along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return collection of App Service apps along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SiteInner>> listWebAppsSinglePageAsync(
@@ -7185,7 +8069,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all apps in an App Service Environment.
+     * Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7193,7 +8077,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps in an App Service Environment as paginated response with {@link PagedFlux}.
+     * @return collection of App Service apps as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SiteInner> listWebAppsAsync(String resourceGroupName, String name, String propertiesToInclude) {
@@ -7203,14 +8087,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all apps in an App Service Environment.
+     * Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps in an App Service Environment as paginated response with {@link PagedFlux}.
+     * @return collection of App Service apps as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SiteInner> listWebAppsAsync(String resourceGroupName, String name) {
@@ -7221,7 +8105,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all apps in an App Service Environment.
+     * Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7230,7 +8114,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps in an App Service Environment as paginated response with {@link PagedFlux}.
+     * @return collection of App Service apps as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SiteInner> listWebAppsAsync(
@@ -7241,14 +8125,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all apps in an App Service Environment.
+     * Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps in an App Service Environment as paginated response with {@link PagedIterable}.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SiteInner> listWebApps(String resourceGroupName, String name) {
@@ -7257,7 +8141,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all apps in an App Service Environment.
+     * Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7266,7 +8150,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps in an App Service Environment as paginated response with {@link PagedIterable}.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SiteInner> listWebApps(
@@ -7275,7 +8159,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Suspend an App Service Environment.
+     * Description for Suspend an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7347,7 +8231,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Suspend an App Service Environment.
+     * Description for Suspend an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7413,7 +8297,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Suspend an App Service Environment.
+     * Description for Suspend an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7429,7 +8313,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Suspend an App Service Environment.
+     * Description for Suspend an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7447,7 +8331,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Suspend an App Service Environment.
+     * Description for Suspend an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7462,7 +8346,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Suspend an App Service Environment.
+     * Description for Suspend an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7478,7 +8362,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get global usage metrics of an App Service Environment.
+     * Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7488,8 +8372,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return global usage metrics of an App Service Environment along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return collection of CSM usage quotas along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmUsageQuotaInner>> listUsagesSinglePageAsync(
@@ -7540,7 +8423,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get global usage metrics of an App Service Environment.
+     * Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7551,8 +8434,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return global usage metrics of an App Service Environment along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return collection of CSM usage quotas along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmUsageQuotaInner>> listUsagesSinglePageAsync(
@@ -7600,7 +8482,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get global usage metrics of an App Service Environment.
+     * Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7610,7 +8492,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return global usage metrics of an App Service Environment as paginated response with {@link PagedFlux}.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CsmUsageQuotaInner> listUsagesAsync(String resourceGroupName, String name, String filter) {
@@ -7620,14 +8502,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get global usage metrics of an App Service Environment.
+     * Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return global usage metrics of an App Service Environment as paginated response with {@link PagedFlux}.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CsmUsageQuotaInner> listUsagesAsync(String resourceGroupName, String name) {
@@ -7638,7 +8520,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get global usage metrics of an App Service Environment.
+     * Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7649,7 +8531,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return global usage metrics of an App Service Environment as paginated response with {@link PagedFlux}.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CsmUsageQuotaInner> listUsagesAsync(
@@ -7660,14 +8542,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get global usage metrics of an App Service Environment.
+     * Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return global usage metrics of an App Service Environment as paginated response with {@link PagedIterable}.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<CsmUsageQuotaInner> listUsages(String resourceGroupName, String name) {
@@ -7676,7 +8558,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get global usage metrics of an App Service Environment.
+     * Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7687,7 +8569,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return global usage metrics of an App Service Environment as paginated response with {@link PagedIterable}.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<CsmUsageQuotaInner> listUsages(
@@ -7696,15 +8578,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all worker pools of an App Service Environment.
+     * Description for Get all worker pools of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all worker pools of an App Service Environment along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * @return collection of worker pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkerPoolResourceInner>> listWorkerPoolsSinglePageAsync(
@@ -7754,7 +8635,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all worker pools of an App Service Environment.
+     * Description for Get all worker pools of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7762,8 +8643,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all worker pools of an App Service Environment along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * @return collection of worker pools along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkerPoolResourceInner>> listWorkerPoolsSinglePageAsync(
@@ -7810,14 +8690,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all worker pools of an App Service Environment.
+     * Description for Get all worker pools of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all worker pools of an App Service Environment as paginated response with {@link PagedFlux}.
+     * @return collection of worker pools as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkerPoolResourceInner> listWorkerPoolsAsync(String resourceGroupName, String name) {
@@ -7827,7 +8707,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all worker pools of an App Service Environment.
+     * Description for Get all worker pools of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7835,7 +8715,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all worker pools of an App Service Environment as paginated response with {@link PagedFlux}.
+     * @return collection of worker pools as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkerPoolResourceInner> listWorkerPoolsAsync(
@@ -7846,14 +8726,14 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all worker pools of an App Service Environment.
+     * Description for Get all worker pools of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all worker pools of an App Service Environment as paginated response with {@link PagedIterable}.
+     * @return collection of worker pools as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WorkerPoolResourceInner> listWorkerPools(String resourceGroupName, String name) {
@@ -7861,7 +8741,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get all worker pools of an App Service Environment.
+     * Description for Get all worker pools of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7869,7 +8749,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all worker pools of an App Service Environment as paginated response with {@link PagedIterable}.
+     * @return collection of worker pools as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WorkerPoolResourceInner> listWorkerPools(
@@ -7878,7 +8758,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get properties of a worker pool.
+     * Description for Get properties of a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7886,7 +8766,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a worker pool along with {@link Response} on successful completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkerPoolResourceInner>> getWorkerPoolWithResponseAsync(
@@ -7931,7 +8812,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get properties of a worker pool.
+     * Description for Get properties of a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7940,7 +8821,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a worker pool along with {@link Response} on successful completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkerPoolResourceInner>> getWorkerPoolWithResponseAsync(
@@ -7982,7 +8864,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get properties of a worker pool.
+     * Description for Get properties of a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7990,7 +8872,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a worker pool on successful completion of {@link Mono}.
+     * @return worker pool of an App Service Environment ARM resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<WorkerPoolResourceInner> getWorkerPoolAsync(
@@ -8000,7 +8882,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get properties of a worker pool.
+     * Description for Get properties of a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8008,7 +8890,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a worker pool.
+     * @return worker pool of an App Service Environment ARM resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public WorkerPoolResourceInner getWorkerPool(String resourceGroupName, String name, String workerPoolName) {
@@ -8016,7 +8898,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get properties of a worker pool.
+     * Description for Get properties of a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8025,7 +8907,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a worker pool along with {@link Response}.
+     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<WorkerPoolResourceInner> getWorkerPoolWithResponse(
@@ -8034,7 +8916,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8096,7 +8978,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8160,7 +9042,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8187,7 +9069,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8221,7 +9103,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8240,7 +9122,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8264,7 +9146,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8284,7 +9166,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8309,7 +9191,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8327,7 +9209,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8351,7 +9233,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8413,7 +9295,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8477,7 +9359,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8496,7 +9378,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8514,7 +9396,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Create or update a worker pool.
+     * Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8538,7 +9420,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     * Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8547,8 +9429,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a specific instance of a worker pool of an App Service Environment along with
-     *     {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>> listWorkerPoolInstanceMetricDefinitionsSinglePageAsync(
@@ -8606,7 +9488,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     * Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8616,8 +9498,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a specific instance of a worker pool of an App Service Environment along with
-     *     {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>> listWorkerPoolInstanceMetricDefinitionsSinglePageAsync(
@@ -8672,7 +9554,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     * Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8681,8 +9563,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a specific instance of a worker pool of an App Service Environment as paginated
-     *     response with {@link PagedFlux}.
+     * @return collection of metric definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ResourceMetricDefinitionInner> listWorkerPoolInstanceMetricDefinitionsAsync(
@@ -8695,7 +9576,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     * Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8705,8 +9586,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a specific instance of a worker pool of an App Service Environment as paginated
-     *     response with {@link PagedFlux}.
+     * @return collection of metric definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ResourceMetricDefinitionInner> listWorkerPoolInstanceMetricDefinitionsAsync(
@@ -8719,7 +9599,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     * Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8728,8 +9608,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a specific instance of a worker pool of an App Service Environment as paginated
-     *     response with {@link PagedIterable}.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ResourceMetricDefinitionInner> listWorkerPoolInstanceMetricDefinitions(
@@ -8739,7 +9618,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     * Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8749,8 +9628,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a specific instance of a worker pool of an App Service Environment as paginated
-     *     response with {@link PagedIterable}.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ResourceMetricDefinitionInner> listWorkerPoolInstanceMetricDefinitions(
@@ -8760,7 +9638,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a worker pool of an App Service Environment.
+     * Description for Get metric definitions for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8768,8 +9646,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a worker pool of an App Service Environment along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>> listWebWorkerMetricDefinitionsSinglePageAsync(
@@ -8823,7 +9701,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a worker pool of an App Service Environment.
+     * Description for Get metric definitions for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8832,8 +9710,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a worker pool of an App Service Environment along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of metric definitions along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceMetricDefinitionInner>> listWebWorkerMetricDefinitionsSinglePageAsync(
@@ -8884,7 +9762,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a worker pool of an App Service Environment.
+     * Description for Get metric definitions for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8892,8 +9770,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a worker pool of an App Service Environment as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of metric definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ResourceMetricDefinitionInner> listWebWorkerMetricDefinitionsAsync(
@@ -8904,7 +9781,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a worker pool of an App Service Environment.
+     * Description for Get metric definitions for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8913,8 +9790,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a worker pool of an App Service Environment as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of metric definitions as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ResourceMetricDefinitionInner> listWebWorkerMetricDefinitionsAsync(
@@ -8925,7 +9801,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a worker pool of an App Service Environment.
+     * Description for Get metric definitions for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8933,8 +9809,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a worker pool of an App Service Environment as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ResourceMetricDefinitionInner> listWebWorkerMetricDefinitions(
@@ -8943,7 +9818,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get metric definitions for a worker pool of an App Service Environment.
+     * Description for Get metric definitions for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8952,8 +9827,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return metric definitions for a worker pool of an App Service Environment as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of metric definitions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ResourceMetricDefinitionInner> listWebWorkerMetricDefinitions(
@@ -8963,7 +9837,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get available SKUs for scaling a worker pool.
+     * Description for Get available SKUs for scaling a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8971,8 +9845,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available SKUs for scaling a worker pool along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return collection of SKU information along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SkuInfoInner>> listWorkerPoolSkusSinglePageAsync(
@@ -9026,7 +9899,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get available SKUs for scaling a worker pool.
+     * Description for Get available SKUs for scaling a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9035,8 +9908,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available SKUs for scaling a worker pool along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return collection of SKU information along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SkuInfoInner>> listWorkerPoolSkusSinglePageAsync(
@@ -9087,7 +9959,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get available SKUs for scaling a worker pool.
+     * Description for Get available SKUs for scaling a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9095,7 +9967,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available SKUs for scaling a worker pool as paginated response with {@link PagedFlux}.
+     * @return collection of SKU information as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SkuInfoInner> listWorkerPoolSkusAsync(
@@ -9106,7 +9978,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get available SKUs for scaling a worker pool.
+     * Description for Get available SKUs for scaling a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9115,7 +9987,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available SKUs for scaling a worker pool as paginated response with {@link PagedFlux}.
+     * @return collection of SKU information as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SkuInfoInner> listWorkerPoolSkusAsync(
@@ -9126,7 +9998,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get available SKUs for scaling a worker pool.
+     * Description for Get available SKUs for scaling a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9134,7 +10006,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available SKUs for scaling a worker pool as paginated response with {@link PagedIterable}.
+     * @return collection of SKU information as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SkuInfoInner> listWorkerPoolSkus(
@@ -9143,7 +10015,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get available SKUs for scaling a worker pool.
+     * Description for Get available SKUs for scaling a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9152,7 +10024,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available SKUs for scaling a worker pool as paginated response with {@link PagedIterable}.
+     * @return collection of SKU information as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SkuInfoInner> listWorkerPoolSkus(
@@ -9161,7 +10033,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get usage metrics for a worker pool of an App Service Environment.
+     * Description for Get usage metrics for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9169,8 +10041,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return usage metrics for a worker pool of an App Service Environment along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of usages along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageInner>> listWebWorkerUsagesSinglePageAsync(
@@ -9224,7 +10095,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get usage metrics for a worker pool of an App Service Environment.
+     * Description for Get usage metrics for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9233,8 +10104,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return usage metrics for a worker pool of an App Service Environment along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of usages along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageInner>> listWebWorkerUsagesSinglePageAsync(
@@ -9285,7 +10155,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get usage metrics for a worker pool of an App Service Environment.
+     * Description for Get usage metrics for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9293,8 +10163,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return usage metrics for a worker pool of an App Service Environment as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of usages as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<UsageInner> listWebWorkerUsagesAsync(
@@ -9305,7 +10174,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get usage metrics for a worker pool of an App Service Environment.
+     * Description for Get usage metrics for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9314,8 +10183,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return usage metrics for a worker pool of an App Service Environment as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of usages as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<UsageInner> listWebWorkerUsagesAsync(
@@ -9326,7 +10194,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get usage metrics for a worker pool of an App Service Environment.
+     * Description for Get usage metrics for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9334,8 +10202,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return usage metrics for a worker pool of an App Service Environment as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of usages as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<UsageInner> listWebWorkerUsages(String resourceGroupName, String name, String workerPoolName) {
@@ -9343,7 +10210,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Get usage metrics for a worker pool of an App Service Environment.
+     * Description for Get usage metrics for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9352,8 +10219,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return usage metrics for a worker pool of an App Service Environment as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of usages as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<UsageInner> listWebWorkerUsages(

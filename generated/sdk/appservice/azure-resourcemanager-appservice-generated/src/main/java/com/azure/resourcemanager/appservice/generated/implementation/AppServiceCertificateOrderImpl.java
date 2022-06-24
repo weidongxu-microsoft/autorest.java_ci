@@ -12,7 +12,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCe
 import com.azure.resourcemanager.appservice.generated.fluent.models.NameIdentifierInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrder;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrderPatchResource;
-import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem;
 import com.azure.resourcemanager.appservice.generated.models.CertificateDetails;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderContact;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderStatus;
@@ -20,6 +19,7 @@ import com.azure.resourcemanager.appservice.generated.models.CertificateProductT
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
 import com.azure.resourcemanager.appservice.generated.models.ReissueCertificateOrderRequest;
 import com.azure.resourcemanager.appservice.generated.models.RenewCertificateOrderRequest;
+import com.azure.resourcemanager.appservice.generated.models.ResourceNotRenewableReason;
 import com.azure.resourcemanager.appservice.generated.models.SiteSeal;
 import com.azure.resourcemanager.appservice.generated.models.SiteSealRequest;
 import java.time.OffsetDateTime;
@@ -135,10 +135,8 @@ public final class AppServiceCertificateOrderImpl
         return this.innerModel().isPrivateKeyExternal();
     }
 
-    public List<AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem>
-        appServiceCertificateNotRenewableReasons() {
-        List<AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem> inner =
-            this.innerModel().appServiceCertificateNotRenewableReasons();
+    public List<ResourceNotRenewableReason> appServiceCertificateNotRenewableReasons() {
+        List<ResourceNotRenewableReason> inner = this.innerModel().appServiceCertificateNotRenewableReasons();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {

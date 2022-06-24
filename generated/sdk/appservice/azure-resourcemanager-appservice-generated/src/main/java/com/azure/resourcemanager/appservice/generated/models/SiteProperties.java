@@ -107,6 +107,28 @@ public interface SiteProperties {
     OffsetDateTime lastModifiedTimeUtc();
 
     /**
+     * Gets the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to
+     * have Virtual Network Security Groups and User Defined Routes applied.
+     *
+     * @return the vnetRouteAllEnabled value.
+     */
+    Boolean vnetRouteAllEnabled();
+
+    /**
+     * Gets the vnetImagePullEnabled property: To enable pulling image over Virtual Network.
+     *
+     * @return the vnetImagePullEnabled value.
+     */
+    Boolean vnetImagePullEnabled();
+
+    /**
+     * Gets the vnetContentShareEnabled property: To enable accessing content over virtual network.
+     *
+     * @return the vnetContentShareEnabled value.
+     */
+    Boolean vnetContentShareEnabled();
+
+    /**
      * Gets the siteConfig property: Configuration of the app.
      *
      * @return the siteConfig value.
@@ -295,6 +317,14 @@ public interface SiteProperties {
      * @return the inProgressOperationId value.
      */
     UUID inProgressOperationId();
+
+    /**
+     * Gets the publicNetworkAccess property: Property to allow or block all public traffic. Allowed Values: 'Enabled',
+     * 'Disabled' or an empty string.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    String publicNetworkAccess();
 
     /**
      * Gets the storageAccountRequired property: Checks if Customer provided storage account is required.

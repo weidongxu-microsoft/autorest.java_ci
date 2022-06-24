@@ -75,6 +75,14 @@ public final class TriggeredWebJobImpl implements TriggeredWebJob {
         return this.innerModel().usingSdk();
     }
 
+    public String publicNetworkAccess() {
+        return this.innerModel().publicNetworkAccess();
+    }
+
+    public Boolean storageAccountRequired() {
+        return this.innerModel().storageAccountRequired();
+    }
+
     public Map<String, Object> settings() {
         Map<String, Object> inner = this.innerModel().settings();
         if (inner != null) {

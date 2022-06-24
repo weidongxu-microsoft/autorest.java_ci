@@ -15,6 +15,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEn
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServicePlanInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AseV3NetworkingConfigurationInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmUsageQuotaInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.CustomDnsSuffixConfigurationInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostingEnvironmentDiagnosticsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.InboundEnvironmentEndpointInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.OperationInner;
@@ -33,6 +34,7 @@ import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironme
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlan;
 import com.azure.resourcemanager.appservice.generated.models.AseV3NetworkingConfiguration;
 import com.azure.resourcemanager.appservice.generated.models.CsmUsageQuota;
+import com.azure.resourcemanager.appservice.generated.models.CustomDnsSuffixConfiguration;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentDiagnostics;
 import com.azure.resourcemanager.appservice.generated.models.InboundEnvironmentEndpoint;
 import com.azure.resourcemanager.appservice.generated.models.Operation;
@@ -164,6 +166,74 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         String resourceGroupName, String name, VirtualNetworkProfile vnetInfo, Context context) {
         PagedIterable<SiteInner> inner = this.serviceClient().changeVnet(resourceGroupName, name, vnetInfo, context);
         return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
+    }
+
+    public CustomDnsSuffixConfiguration getAseCustomDnsSuffixConfiguration(String resourceGroupName, String name) {
+        CustomDnsSuffixConfigurationInner inner =
+            this.serviceClient().getAseCustomDnsSuffixConfiguration(resourceGroupName, name);
+        if (inner != null) {
+            return new CustomDnsSuffixConfigurationImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<CustomDnsSuffixConfiguration> getAseCustomDnsSuffixConfigurationWithResponse(
+        String resourceGroupName, String name, Context context) {
+        Response<CustomDnsSuffixConfigurationInner> inner =
+            this.serviceClient().getAseCustomDnsSuffixConfigurationWithResponse(resourceGroupName, name, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new CustomDnsSuffixConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CustomDnsSuffixConfiguration updateAseCustomDnsSuffixConfiguration(
+        String resourceGroupName, String name, CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration) {
+        CustomDnsSuffixConfigurationInner inner =
+            this
+                .serviceClient()
+                .updateAseCustomDnsSuffixConfiguration(resourceGroupName, name, customDnsSuffixConfiguration);
+        if (inner != null) {
+            return new CustomDnsSuffixConfigurationImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<CustomDnsSuffixConfiguration> updateAseCustomDnsSuffixConfigurationWithResponse(
+        String resourceGroupName,
+        String name,
+        CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration,
+        Context context) {
+        Response<CustomDnsSuffixConfigurationInner> inner =
+            this
+                .serviceClient()
+                .updateAseCustomDnsSuffixConfigurationWithResponse(
+                    resourceGroupName, name, customDnsSuffixConfiguration, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new CustomDnsSuffixConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Object deleteAseCustomDnsSuffixConfiguration(String resourceGroupName, String name) {
+        return this.serviceClient().deleteAseCustomDnsSuffixConfiguration(resourceGroupName, name);
+    }
+
+    public Response<Object> deleteAseCustomDnsSuffixConfigurationWithResponse(
+        String resourceGroupName, String name, Context context) {
+        return this.serviceClient().deleteAseCustomDnsSuffixConfigurationWithResponse(resourceGroupName, name, context);
     }
 
     public AseV3NetworkingConfiguration getAseV3NetworkingConfiguration(String resourceGroupName, String name) {
@@ -419,6 +489,23 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         PagedIterable<SkuInfoInner> inner =
             this.serviceClient().listMultiRolePoolSkus(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new SkuInfoImpl(inner1, this.manager()));
+    }
+
+    public void testUpgradeAvailableNotification(String resourceGroupName, String name) {
+        this.serviceClient().testUpgradeAvailableNotification(resourceGroupName, name);
+    }
+
+    public Response<Void> testUpgradeAvailableNotificationWithResponse(
+        String resourceGroupName, String name, Context context) {
+        return this.serviceClient().testUpgradeAvailableNotificationWithResponse(resourceGroupName, name, context);
+    }
+
+    public void upgrade(String resourceGroupName, String name) {
+        this.serviceClient().upgrade(resourceGroupName, name);
+    }
+
+    public void upgrade(String resourceGroupName, String name, Context context) {
+        this.serviceClient().upgrade(resourceGroupName, name, context);
     }
 
     public PagedIterable<Usage> listMultiRoleUsages(String resourceGroupName, String name) {

@@ -12,6 +12,7 @@ import com.azure.resourcemanager.appservice.generated.models.ResponseMessageEnve
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
 import com.azure.resourcemanager.appservice.generated.models.StagingEnvironmentPolicy;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildProperties;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteLinkedBackend;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteTemplateOptions;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserProvidedFunctionApp;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -350,6 +351,15 @@ public final class StaticSiteArmResourceInner extends Resource {
     }
 
     /**
+     * Get the linkedBackends property: Backends linked to the static side.
+     *
+     * @return the linkedBackends value.
+     */
+    public List<StaticSiteLinkedBackend> linkedBackends() {
+        return this.innerProperties() == null ? null : this.innerProperties().linkedBackends();
+    }
+
+    /**
      * Get the provider property: The provider that submitted the last deployment to the primary environment of the
      * static site.
      *
@@ -396,6 +406,31 @@ public final class StaticSiteArmResourceInner extends Resource {
             this.innerProperties = new StaticSite();
         }
         this.innerProperties().withEnterpriseGradeCdnStatus(enterpriseGradeCdnStatus);
+        return this;
+    }
+
+    /**
+     * Get the publicNetworkAccess property: State indicating whether public traffic are allowed or not for a static web
+     * app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    public String publicNetworkAccess() {
+        return this.innerProperties() == null ? null : this.innerProperties().publicNetworkAccess();
+    }
+
+    /**
+     * Set the publicNetworkAccess property: State indicating whether public traffic are allowed or not for a static web
+     * app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
+     *
+     * @param publicNetworkAccess the publicNetworkAccess value to set.
+     * @return the StaticSiteArmResourceInner object itself.
+     */
+    public StaticSiteArmResourceInner withPublicNetworkAccess(String publicNetworkAccess) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new StaticSite();
+        }
+        this.innerProperties().withPublicNetworkAccess(publicNetworkAccess);
         return this;
     }
 

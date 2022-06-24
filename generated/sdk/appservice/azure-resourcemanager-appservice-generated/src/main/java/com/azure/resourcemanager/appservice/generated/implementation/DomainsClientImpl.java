@@ -350,7 +350,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Check if a domain is available for registration.
+     * Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -394,7 +394,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Check if a domain is available for registration.
+     * Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
      * @param context The context to associate with this operation.
@@ -436,7 +436,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Check if a domain is available for registration.
+     * Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -450,7 +450,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Check if a domain is available for registration.
+     * Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -464,7 +464,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Check if a domain is available for registration.
+     * Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
      * @param context The context to associate with this operation.
@@ -480,11 +480,11 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get all domains in a subscription.
+     * Description for Get all domains in a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all domains in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of domains along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainInner>> listSinglePageAsync() {
@@ -524,13 +524,13 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get all domains in a subscription.
+     * Description for Get all domains in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all domains in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of domains along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainInner>> listSinglePageAsync(Context context) {
@@ -567,11 +567,11 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get all domains in a subscription.
+     * Description for Get all domains in a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all domains in a subscription as paginated response with {@link PagedFlux}.
+     * @return collection of domains as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DomainInner> listAsync() {
@@ -579,13 +579,13 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get all domains in a subscription.
+     * Description for Get all domains in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all domains in a subscription as paginated response with {@link PagedFlux}.
+     * @return collection of domains as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DomainInner> listAsync(Context context) {
@@ -594,11 +594,11 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get all domains in a subscription.
+     * Description for Get all domains in a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all domains in a subscription as paginated response with {@link PagedIterable}.
+     * @return collection of domains as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DomainInner> list() {
@@ -606,13 +606,13 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get all domains in a subscription.
+     * Description for Get all domains in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all domains in a subscription as paginated response with {@link PagedIterable}.
+     * @return collection of domains as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DomainInner> list(Context context) {
@@ -620,7 +620,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Generate a single sign-on request for the domain management portal.
+     * Description for Generate a single sign-on request for the domain management portal.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -656,7 +656,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Generate a single sign-on request for the domain management portal.
+     * Description for Generate a single sign-on request for the domain management portal.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -692,7 +692,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Generate a single sign-on request for the domain management portal.
+     * Description for Generate a single sign-on request for the domain management portal.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -704,7 +704,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Generate a single sign-on request for the domain management portal.
+     * Description for Generate a single sign-on request for the domain management portal.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -716,7 +716,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Generate a single sign-on request for the domain management portal.
+     * Description for Generate a single sign-on request for the domain management portal.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -730,14 +730,14 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get domain name recommendations based on keywords.
+     * Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain name recommendations based on keywords along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NameIdentifierInner>> listRecommendationsSinglePageAsync(
@@ -784,15 +784,15 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get domain name recommendations based on keywords.
+     * Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain name recommendations based on keywords along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NameIdentifierInner>> listRecommendationsSinglePageAsync(
@@ -836,13 +836,13 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get domain name recommendations based on keywords.
+     * Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain name recommendations based on keywords as paginated response with {@link PagedFlux}.
+     * @return collection of domain name identifiers as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<NameIdentifierInner> listRecommendationsAsync(DomainRecommendationSearchParameters parameters) {
@@ -852,14 +852,14 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get domain name recommendations based on keywords.
+     * Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain name recommendations based on keywords as paginated response with {@link PagedFlux}.
+     * @return collection of domain name identifiers as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<NameIdentifierInner> listRecommendationsAsync(
@@ -870,13 +870,13 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get domain name recommendations based on keywords.
+     * Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain name recommendations based on keywords as paginated response with {@link PagedIterable}.
+     * @return collection of domain name identifiers as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<NameIdentifierInner> listRecommendations(DomainRecommendationSearchParameters parameters) {
@@ -884,14 +884,14 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get domain name recommendations based on keywords.
+     * Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain name recommendations based on keywords as paginated response with {@link PagedIterable}.
+     * @return collection of domain name identifiers as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<NameIdentifierInner> listRecommendations(
@@ -900,14 +900,13 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get all domains in a resource group.
+     * Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all domains in a resource group along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return collection of domains along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -952,15 +951,14 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get all domains in a resource group.
+     * Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all domains in a resource group along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return collection of domains along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainInner>> listByResourceGroupSinglePageAsync(
@@ -1003,13 +1001,13 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get all domains in a resource group.
+     * Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all domains in a resource group as paginated response with {@link PagedFlux}.
+     * @return collection of domains as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DomainInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -1019,14 +1017,14 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get all domains in a resource group.
+     * Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all domains in a resource group as paginated response with {@link PagedFlux}.
+     * @return collection of domains as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DomainInner> listByResourceGroupAsync(String resourceGroupName, Context context) {
@@ -1036,13 +1034,13 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get all domains in a resource group.
+     * Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all domains in a resource group as paginated response with {@link PagedIterable}.
+     * @return collection of domains as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DomainInner> listByResourceGroup(String resourceGroupName) {
@@ -1050,14 +1048,14 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get all domains in a resource group.
+     * Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all domains in a resource group as paginated response with {@link PagedIterable}.
+     * @return collection of domains as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<DomainInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -1065,14 +1063,14 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get a domain.
+     * Description for Get a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain along with {@link Response} on successful completion of {@link Mono}.
+     * @return information about a domain along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainInner>> getByResourceGroupWithResponseAsync(
@@ -1113,7 +1111,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get a domain.
+     * Description for Get a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1121,7 +1119,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain along with {@link Response} on successful completion of {@link Mono}.
+     * @return information about a domain along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainInner>> getByResourceGroupWithResponseAsync(
@@ -1159,14 +1157,14 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get a domain.
+     * Description for Get a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain on successful completion of {@link Mono}.
+     * @return information about a domain on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DomainInner> getByResourceGroupAsync(String resourceGroupName, String domainName) {
@@ -1175,14 +1173,14 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get a domain.
+     * Description for Get a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain.
+     * @return information about a domain.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public DomainInner getByResourceGroup(String resourceGroupName, String domainName) {
@@ -1190,7 +1188,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get a domain.
+     * Description for Get a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1198,7 +1196,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain along with {@link Response}.
+     * @return information about a domain along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DomainInner> getByResourceGroupWithResponse(
@@ -1207,7 +1205,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1262,7 +1260,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1315,7 +1313,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1336,7 +1334,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1360,7 +1358,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1377,7 +1375,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1395,7 +1393,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1413,7 +1411,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1433,7 +1431,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1449,7 +1447,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1467,7 +1465,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Delete a domain.
+     * Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1518,7 +1516,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Delete a domain.
+     * Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1567,7 +1565,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Delete a domain.
+     * Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1585,7 +1583,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Delete a domain.
+     * Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1602,7 +1600,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Delete a domain.
+     * Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1617,7 +1615,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Delete a domain.
+     * Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1636,7 +1634,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1691,7 +1689,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1744,7 +1742,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1761,7 +1759,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1777,7 +1775,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates or updates a domain.
+     * Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1795,7 +1793,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Lists domain ownership identifiers.
+     * Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1853,7 +1851,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Lists domain ownership identifiers.
+     * Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1909,7 +1907,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Lists domain ownership identifiers.
+     * Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1927,7 +1925,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Lists domain ownership identifiers.
+     * Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1946,7 +1944,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Lists domain ownership identifiers.
+     * Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1962,7 +1960,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Lists domain ownership identifiers.
+     * Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1979,7 +1977,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get ownership identifier for domain.
+     * Description for Get ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1987,7 +1985,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ownership identifier for domain along with {@link Response} on successful completion of {@link Mono}.
+     * @return domain ownership Identifier along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainOwnershipIdentifierInner>> getOwnershipIdentifierWithResponseAsync(
@@ -2032,7 +2030,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get ownership identifier for domain.
+     * Description for Get ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2041,7 +2039,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ownership identifier for domain along with {@link Response} on successful completion of {@link Mono}.
+     * @return domain ownership Identifier along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainOwnershipIdentifierInner>> getOwnershipIdentifierWithResponseAsync(
@@ -2083,7 +2081,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get ownership identifier for domain.
+     * Description for Get ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2091,7 +2089,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ownership identifier for domain on successful completion of {@link Mono}.
+     * @return domain ownership Identifier on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DomainOwnershipIdentifierInner> getOwnershipIdentifierAsync(
@@ -2101,7 +2099,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get ownership identifier for domain.
+     * Description for Get ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2109,7 +2107,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ownership identifier for domain.
+     * @return domain ownership Identifier.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public DomainOwnershipIdentifierInner getOwnershipIdentifier(
@@ -2118,7 +2116,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Get ownership identifier for domain.
+     * Description for Get ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2127,7 +2125,7 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ownership identifier for domain along with {@link Response}.
+     * @return domain ownership Identifier along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DomainOwnershipIdentifierInner> getOwnershipIdentifierWithResponse(
@@ -2136,7 +2134,8 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2202,7 +2201,8 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2267,7 +2267,8 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2290,7 +2291,8 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2312,7 +2314,8 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2337,7 +2340,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Delete ownership identifier for domain.
+     * Description for Delete ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2390,7 +2393,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Delete ownership identifier for domain.
+     * Description for Delete ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2441,7 +2444,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Delete ownership identifier for domain.
+     * Description for Delete ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2458,7 +2461,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Delete ownership identifier for domain.
+     * Description for Delete ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2473,7 +2476,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Delete ownership identifier for domain.
+     * Description for Delete ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2491,7 +2494,8 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2557,7 +2561,8 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2622,7 +2627,8 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2645,7 +2651,8 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2666,7 +2673,8 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2691,7 +2699,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Renew a domain.
+     * Description for Renew a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -2738,7 +2746,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Renew a domain.
+     * Description for Renew a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -2783,7 +2791,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Renew a domain.
+     * Description for Renew a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -2798,7 +2806,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Renew a domain.
+     * Description for Renew a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -2812,7 +2820,7 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Renew a domain.
+     * Description for Renew a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.

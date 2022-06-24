@@ -10,34 +10,6 @@ import java.time.OffsetDateTime;
 /** An immutable client-side representation of CertificateEmail. */
 public interface CertificateEmail {
     /**
-     * Gets the id property: Fully qualified resource Id for the resource.
-     *
-     * @return the id value.
-     */
-    String id();
-
-    /**
-     * Gets the name property: The name of the resource.
-     *
-     * @return the name value.
-     */
-    String name();
-
-    /**
-     * Gets the type property: The type of the resource.
-     *
-     * @return the type value.
-     */
-    String type();
-
-    /**
-     * Gets the kind property: Kind of resource.
-     *
-     * @return the kind value.
-     */
-    String kind();
-
-    /**
      * Gets the emailId property: Email id.
      *
      * @return the emailId value.

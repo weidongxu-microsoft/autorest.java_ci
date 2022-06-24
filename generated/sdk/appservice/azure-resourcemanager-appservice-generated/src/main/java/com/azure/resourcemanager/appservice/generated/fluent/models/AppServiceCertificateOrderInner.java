@@ -6,12 +6,12 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem;
 import com.azure.resourcemanager.appservice.generated.models.CertificateDetails;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderContact;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderStatus;
 import com.azure.resourcemanager.appservice.generated.models.CertificateProductType;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
+import com.azure.resourcemanager.appservice.generated.models.ResourceNotRenewableReason;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -335,8 +335,7 @@ public final class AppServiceCertificateOrderInner extends Resource {
      *
      * @return the appServiceCertificateNotRenewableReasons value.
      */
-    public List<AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem>
-        appServiceCertificateNotRenewableReasons() {
+    public List<ResourceNotRenewableReason> appServiceCertificateNotRenewableReasons() {
         return this.innerProperties() == null
             ? null
             : this.innerProperties().appServiceCertificateNotRenewableReasons();

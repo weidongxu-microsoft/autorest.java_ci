@@ -101,6 +101,21 @@ public interface TriggeredWebJob {
     Boolean usingSdk();
 
     /**
+     * Gets the publicNetworkAccess property: Property to allow or block all public traffic. Allowed Values: 'Enabled',
+     * 'Disabled' or an empty string.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    String publicNetworkAccess();
+
+    /**
+     * Gets the storageAccountRequired property: Checks if Customer provided storage account is required.
+     *
+     * @return the storageAccountRequired value.
+     */
+    Boolean storageAccountRequired();
+
+    /**
      * Gets the settings property: Job settings.
      *
      * @return the settings value.

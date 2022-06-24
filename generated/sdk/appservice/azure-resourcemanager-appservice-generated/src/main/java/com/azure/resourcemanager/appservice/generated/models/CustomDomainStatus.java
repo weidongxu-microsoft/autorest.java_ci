@@ -28,6 +28,9 @@ public final class CustomDomainStatus extends ExpandableStringEnum<CustomDomainS
     /** Static value Deleting for CustomDomainStatus. */
     public static final CustomDomainStatus DELETING = fromString("Deleting");
 
+    /** Static value Unhealthy for CustomDomainStatus. */
+    public static final CustomDomainStatus UNHEALTHY = fromString("Unhealthy");
+
     /**
      * Creates or finds a CustomDomainStatus from its string representation.
      *

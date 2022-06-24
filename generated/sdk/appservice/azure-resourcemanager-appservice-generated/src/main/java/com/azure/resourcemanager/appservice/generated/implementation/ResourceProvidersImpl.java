@@ -21,6 +21,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceName
 import com.azure.resourcemanager.appservice.generated.fluent.models.SkuInfosInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SourceControlInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.UserInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResponseInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
 import com.azure.resourcemanager.appservice.generated.models.BillingMeter;
@@ -37,7 +38,6 @@ import com.azure.resourcemanager.appservice.generated.models.SkuInfos;
 import com.azure.resourcemanager.appservice.generated.models.SkuName;
 import com.azure.resourcemanager.appservice.generated.models.SourceControl;
 import com.azure.resourcemanager.appservice.generated.models.User;
-import com.azure.resourcemanager.appservice.generated.models.ValidateRequest;
 import com.azure.resourcemanager.appservice.generated.models.ValidateResponse;
 import com.azure.resourcemanager.appservice.generated.models.VnetParameters;
 import com.azure.resourcemanager.appservice.generated.models.VnetValidationFailureDetails;
@@ -196,8 +196,8 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         return Utils.mapPage(inner, inner1 -> new CustomHostnameSitesImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<CustomHostnameSites> listCustomHostnameSites(Context context) {
-        PagedIterable<CustomHostnameSitesInner> inner = this.serviceClient().listCustomHostnameSites(context);
+    public PagedIterable<CustomHostnameSites> listCustomHostnameSites(String hostname, Context context) {
+        PagedIterable<CustomHostnameSitesInner> inner = this.serviceClient().listCustomHostnameSites(hostname, context);
         return Utils.mapPage(inner, inner1 -> new CustomHostnameSitesImpl(inner1, this.manager()));
     }
 
@@ -320,7 +320,7 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         return this.serviceClient().moveWithResponse(resourceGroupName, moveResourceEnvelope, context);
     }
 
-    public ValidateResponse validate(String resourceGroupName, ValidateRequest validateRequest) {
+    public ValidateResponse validate(String resourceGroupName, ValidateRequestInner validateRequest) {
         ValidateResponseInner inner = this.serviceClient().validate(resourceGroupName, validateRequest);
         if (inner != null) {
             return new ValidateResponseImpl(inner, this.manager());
@@ -330,7 +330,7 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     }
 
     public Response<ValidateResponse> validateWithResponse(
-        String resourceGroupName, ValidateRequest validateRequest, Context context) {
+        String resourceGroupName, ValidateRequestInner validateRequest, Context context) {
         Response<ValidateResponseInner> inner =
             this.serviceClient().validateWithResponse(resourceGroupName, validateRequest, context);
         if (inner != null) {

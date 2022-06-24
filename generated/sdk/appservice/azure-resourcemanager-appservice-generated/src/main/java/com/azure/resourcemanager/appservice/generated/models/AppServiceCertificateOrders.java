@@ -14,7 +14,7 @@ import java.util.List;
 /** Resource collection API of AppServiceCertificateOrders. */
 public interface AppServiceCertificateOrders {
     /**
-     * List all certificate orders in a subscription.
+     * Description for List all certificate orders in a subscription.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -24,7 +24,7 @@ public interface AppServiceCertificateOrders {
     PagedIterable<AppServiceCertificateOrder> list();
 
     /**
-     * List all certificate orders in a subscription.
+     * Description for List all certificate orders in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -36,7 +36,7 @@ public interface AppServiceCertificateOrders {
     PagedIterable<AppServiceCertificateOrder> list(Context context);
 
     /**
-     * Validate information for a certificate order.
+     * Description for Validate information for a certificate order.
      *
      * @param appServiceCertificateOrder Information for a certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -47,7 +47,7 @@ public interface AppServiceCertificateOrders {
     void validatePurchaseInformation(AppServiceCertificateOrderInner appServiceCertificateOrder);
 
     /**
-     * Validate information for a certificate order.
+     * Description for Validate information for a certificate order.
      *
      * @param appServiceCertificateOrder Information for a certificate order.
      * @param context The context to associate with this operation.
@@ -61,19 +61,19 @@ public interface AppServiceCertificateOrders {
         AppServiceCertificateOrderInner appServiceCertificateOrder, Context context);
 
     /**
-     * Get certificate orders in a resource group.
+     * Description for Get certificate orders in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return certificate orders in a resource group as paginated response with {@link PagedIterable}.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Get certificate orders in a resource group.
+     * Description for Get certificate orders in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -81,12 +81,12 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return certificate orders in a resource group as paginated response with {@link PagedIterable}.
+     * @return collection of certificate orders as paginated response with {@link PagedIterable}.
      */
     PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Get a certificate order.
+     * Description for Get a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order..
@@ -94,12 +94,12 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a certificate order.
+     * @return sSL certificate purchase order.
      */
     AppServiceCertificateOrder getByResourceGroup(String resourceGroupName, String certificateOrderName);
 
     /**
-     * Get a certificate order.
+     * Description for Get a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order..
@@ -108,13 +108,13 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a certificate order along with {@link Response}.
+     * @return sSL certificate purchase order along with {@link Response}.
      */
     Response<AppServiceCertificateOrder> getByResourceGroupWithResponse(
         String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Delete an existing certificate order.
+     * Description for Delete an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -126,7 +126,7 @@ public interface AppServiceCertificateOrders {
     void deleteByResourceGroup(String resourceGroupName, String certificateOrderName);
 
     /**
-     * Delete an existing certificate order.
+     * Description for Delete an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -140,7 +140,7 @@ public interface AppServiceCertificateOrders {
     Response<Void> deleteWithResponse(String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * List all certificates associated with a certificate order.
+     * Description for List all certificates associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -154,7 +154,7 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName);
 
     /**
-     * List all certificates associated with a certificate order.
+     * Description for List all certificates associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -169,7 +169,7 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Get the certificate associated with a certificate order.
+     * Description for Get the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -178,12 +178,12 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the certificate associated with a certificate order.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
      */
     AppServiceCertificateResource getCertificate(String resourceGroupName, String certificateOrderName, String name);
 
     /**
-     * Get the certificate associated with a certificate order.
+     * Description for Get the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -193,13 +193,14 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the certificate associated with a certificate order along with {@link Response}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response}.
      */
     Response<AppServiceCertificateResource> getCertificateWithResponse(
         String resourceGroupName, String certificateOrderName, String name, Context context);
 
     /**
-     * Delete the certificate associated with a certificate order.
+     * Description for Delete the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -212,7 +213,7 @@ public interface AppServiceCertificateOrders {
     void deleteCertificate(String resourceGroupName, String certificateOrderName, String name);
 
     /**
-     * Delete the certificate associated with a certificate order.
+     * Description for Delete the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -228,7 +229,7 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName, String name, Context context);
 
     /**
-     * Reissue an existing certificate order.
+     * Description for Reissue an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -244,7 +245,7 @@ public interface AppServiceCertificateOrders {
         ReissueCertificateOrderRequest reissueCertificateOrderRequest);
 
     /**
-     * Reissue an existing certificate order.
+     * Description for Reissue an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -263,7 +264,7 @@ public interface AppServiceCertificateOrders {
         Context context);
 
     /**
-     * Renew an existing certificate order.
+     * Description for Renew an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -279,7 +280,7 @@ public interface AppServiceCertificateOrders {
         RenewCertificateOrderRequest renewCertificateOrderRequest);
 
     /**
-     * Renew an existing certificate order.
+     * Description for Renew an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -298,7 +299,7 @@ public interface AppServiceCertificateOrders {
         Context context);
 
     /**
-     * Resend certificate email.
+     * Description for Resend certificate email.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -310,7 +311,7 @@ public interface AppServiceCertificateOrders {
     void resendEmail(String resourceGroupName, String certificateOrderName);
 
     /**
-     * Resend certificate email.
+     * Description for Resend certificate email.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -397,7 +398,7 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest, Context context);
 
     /**
-     * Verify domain ownership for this certificate order.
+     * Description for Verify domain ownership for this certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -409,7 +410,7 @@ public interface AppServiceCertificateOrders {
     void verifyDomainOwnership(String resourceGroupName, String certificateOrderName);
 
     /**
-     * Verify domain ownership for this certificate order.
+     * Description for Verify domain ownership for this certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -424,7 +425,7 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Retrieve the list of certificate actions.
+     * Description for Retrieve the list of certificate actions.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -437,7 +438,7 @@ public interface AppServiceCertificateOrders {
     List<CertificateOrderAction> retrieveCertificateActions(String resourceGroupName, String name);
 
     /**
-     * Retrieve the list of certificate actions.
+     * Description for Retrieve the list of certificate actions.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -452,7 +453,7 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Retrieve email history.
+     * Description for Retrieve email history.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -465,7 +466,7 @@ public interface AppServiceCertificateOrders {
     List<CertificateEmail> retrieveCertificateEmailHistory(String resourceGroupName, String name);
 
     /**
-     * Retrieve email history.
+     * Description for Retrieve email history.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -480,19 +481,19 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Get a certificate order.
+     * Description for Get a certificate order.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a certificate order along with {@link Response}.
+     * @return sSL certificate purchase order along with {@link Response}.
      */
     AppServiceCertificateOrder getById(String id);
 
     /**
-     * Get a certificate order.
+     * Description for Get a certificate order.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -500,24 +501,25 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a certificate order along with {@link Response}.
+     * @return sSL certificate purchase order along with {@link Response}.
      */
     Response<AppServiceCertificateOrder> getByIdWithResponse(String id, Context context);
 
     /**
-     * Get the certificate associated with a certificate order.
+     * Description for Get the certificate associated with a certificate order.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the certificate associated with a certificate order along with {@link Response}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response}.
      */
     AppServiceCertificateResource getCertificateById(String id);
 
     /**
-     * Get the certificate associated with a certificate order.
+     * Description for Get the certificate associated with a certificate order.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -525,12 +527,13 @@ public interface AppServiceCertificateOrders {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the certificate associated with a certificate order along with {@link Response}.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
+     *     Response}.
      */
     Response<AppServiceCertificateResource> getCertificateByIdWithResponse(String id, Context context);
 
     /**
-     * Delete an existing certificate order.
+     * Description for Delete an existing certificate order.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -541,7 +544,7 @@ public interface AppServiceCertificateOrders {
     void deleteById(String id);
 
     /**
-     * Delete an existing certificate order.
+     * Description for Delete an existing certificate order.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -554,7 +557,7 @@ public interface AppServiceCertificateOrders {
     Response<Void> deleteByIdWithResponse(String id, Context context);
 
     /**
-     * Delete the certificate associated with a certificate order.
+     * Description for Delete the certificate associated with a certificate order.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -565,7 +568,7 @@ public interface AppServiceCertificateOrders {
     void deleteCertificateById(String id);
 
     /**
-     * Delete the certificate associated with a certificate order.
+     * Description for Delete the certificate associated with a certificate order.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.

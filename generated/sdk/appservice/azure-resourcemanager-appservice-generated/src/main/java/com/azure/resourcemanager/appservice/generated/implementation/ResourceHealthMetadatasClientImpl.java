@@ -186,7 +186,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * List all ResourceHealthMetadata for all sites in the subscription.
+     * Description for List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -231,7 +231,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * List all ResourceHealthMetadata for all sites in the subscription.
+     * Description for List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -275,7 +275,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * List all ResourceHealthMetadata for all sites in the subscription.
+     * Description for List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -287,7 +287,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * List all ResourceHealthMetadata for all sites in the subscription.
+     * Description for List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -302,7 +302,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * List all ResourceHealthMetadata for all sites in the subscription.
+     * Description for List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -314,7 +314,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * List all ResourceHealthMetadata for all sites in the subscription.
+     * Description for List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -328,7 +328,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -381,7 +381,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -432,7 +432,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -448,7 +448,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -465,7 +465,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -479,7 +479,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -494,15 +494,15 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site as a collection along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listBySiteSinglePageAsync(
@@ -552,7 +552,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -560,8 +560,8 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site as a collection along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listBySiteSinglePageAsync(
@@ -608,15 +608,14 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site as a collection as paginated response
-     *     with {@link PagedFlux}.
+     * @return collection of resource health metadata as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ResourceHealthMetadataInner> listBySiteAsync(String resourceGroupName, String name) {
@@ -626,7 +625,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -634,8 +633,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site as a collection as paginated response
-     *     with {@link PagedFlux}.
+     * @return collection of resource health metadata as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ResourceHealthMetadataInner> listBySiteAsync(
@@ -646,15 +644,14 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site as a collection as paginated response
-     *     with {@link PagedIterable}.
+     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ResourceHealthMetadataInner> listBySite(String resourceGroupName, String name) {
@@ -662,7 +659,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -670,8 +667,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site as a collection as paginated response
-     *     with {@link PagedIterable}.
+     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ResourceHealthMetadataInner> listBySite(
@@ -680,15 +676,15 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceHealthMetadataInner>> getBySiteWithResponseAsync(
@@ -729,7 +725,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -737,8 +733,8 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceHealthMetadataInner>> getBySiteWithResponseAsync(
@@ -776,15 +772,14 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site on successful completion of {@link
-     *     Mono}.
+     * @return used for getting ResourceHealthCheck settings on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ResourceHealthMetadataInner> getBySiteAsync(String resourceGroupName, String name) {
@@ -792,14 +787,14 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site.
+     * @return used for getting ResourceHealthCheck settings.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ResourceHealthMetadataInner getBySite(String resourceGroupName, String name) {
@@ -807,7 +802,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -815,7 +810,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site along with {@link Response}.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ResourceHealthMetadataInner> getBySiteWithResponse(
@@ -824,7 +819,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -832,8 +827,8 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site as a collection along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listBySiteSlotSinglePageAsync(
@@ -887,7 +882,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -896,8 +891,8 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site as a collection along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of resource health metadata along with {@link PagedResponse} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ResourceHealthMetadataInner>> listBySiteSlotSinglePageAsync(
@@ -948,7 +943,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -956,8 +951,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site as a collection as paginated response
-     *     with {@link PagedFlux}.
+     * @return collection of resource health metadata as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ResourceHealthMetadataInner> listBySiteSlotAsync(
@@ -968,7 +962,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -977,8 +971,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site as a collection as paginated response
-     *     with {@link PagedFlux}.
+     * @return collection of resource health metadata as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ResourceHealthMetadataInner> listBySiteSlotAsync(
@@ -989,7 +982,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -997,8 +990,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site as a collection as paginated response
-     *     with {@link PagedIterable}.
+     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ResourceHealthMetadataInner> listBySiteSlot(
@@ -1007,7 +999,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1016,8 +1008,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site as a collection as paginated response
-     *     with {@link PagedIterable}.
+     * @return collection of resource health metadata as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ResourceHealthMetadataInner> listBySiteSlot(
@@ -1026,7 +1017,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1034,8 +1025,8 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceHealthMetadataInner>> getBySiteSlotWithResponseAsync(
@@ -1080,7 +1071,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1089,8 +1080,8 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response} on successful completion of
+     *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceHealthMetadataInner>> getBySiteSlotWithResponseAsync(
@@ -1132,7 +1123,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1140,8 +1131,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site on successful completion of {@link
-     *     Mono}.
+     * @return used for getting ResourceHealthCheck settings on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ResourceHealthMetadataInner> getBySiteSlotAsync(String resourceGroupName, String name, String slot) {
@@ -1150,7 +1140,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1158,7 +1148,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site.
+     * @return used for getting ResourceHealthCheck settings.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ResourceHealthMetadataInner getBySiteSlot(String resourceGroupName, String name, String slot) {
@@ -1166,7 +1156,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Gets the category of ResourceHealthMetadata to use for the given site.
+     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1175,7 +1165,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the category of ResourceHealthMetadata to use for the given site along with {@link Response}.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ResourceHealthMetadataInner> getBySiteSlotWithResponse(

@@ -16,6 +16,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteAr
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCustomDomainOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteFunctionOverviewArmResourceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteLinkedBackendArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserInvitationResponseResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserProvidedFunctionAppArmResourceInner;
@@ -30,6 +31,7 @@ import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildArmR
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDomainOverviewArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDomainRequestPropertiesArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteFunctionOverviewArmResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteLinkedBackendArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteResetPropertiesArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationRequestResource;
@@ -1027,6 +1029,209 @@ public final class StaticSitesImpl implements StaticSites {
             .createZipDeploymentForStaticSite(resourceGroupName, name, staticSiteZipDeploymentEnvelope, context);
     }
 
+    public void validateBackend(
+        String resourceGroupName,
+        String name,
+        String linkedBackendName,
+        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
+        this
+            .serviceClient()
+            .validateBackend(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope);
+    }
+
+    public void validateBackend(
+        String resourceGroupName,
+        String name,
+        String linkedBackendName,
+        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
+        Context context) {
+        this
+            .serviceClient()
+            .validateBackend(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope, context);
+    }
+
+    public void validateBackendForBuild(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String linkedBackendName,
+        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
+        this
+            .serviceClient()
+            .validateBackendForBuild(
+                resourceGroupName, name, environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope);
+    }
+
+    public void validateBackendForBuild(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String linkedBackendName,
+        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
+        Context context) {
+        this
+            .serviceClient()
+            .validateBackendForBuild(
+                resourceGroupName, name, environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope, context);
+    }
+
+    public PagedIterable<StaticSiteLinkedBackendArmResource> getLinkedBackends(String resourceGroupName, String name) {
+        PagedIterable<StaticSiteLinkedBackendArmResourceInner> inner =
+            this.serviceClient().getLinkedBackends(resourceGroupName, name);
+        return Utils.mapPage(inner, inner1 -> new StaticSiteLinkedBackendArmResourceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<StaticSiteLinkedBackendArmResource> getLinkedBackends(
+        String resourceGroupName, String name, Context context) {
+        PagedIterable<StaticSiteLinkedBackendArmResourceInner> inner =
+            this.serviceClient().getLinkedBackends(resourceGroupName, name, context);
+        return Utils.mapPage(inner, inner1 -> new StaticSiteLinkedBackendArmResourceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<StaticSiteLinkedBackendArmResource> getLinkedBackendsForBuild(
+        String resourceGroupName, String name, String environmentName) {
+        PagedIterable<StaticSiteLinkedBackendArmResourceInner> inner =
+            this.serviceClient().getLinkedBackendsForBuild(resourceGroupName, name, environmentName);
+        return Utils.mapPage(inner, inner1 -> new StaticSiteLinkedBackendArmResourceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<StaticSiteLinkedBackendArmResource> getLinkedBackendsForBuild(
+        String resourceGroupName, String name, String environmentName, Context context) {
+        PagedIterable<StaticSiteLinkedBackendArmResourceInner> inner =
+            this.serviceClient().getLinkedBackendsForBuild(resourceGroupName, name, environmentName, context);
+        return Utils.mapPage(inner, inner1 -> new StaticSiteLinkedBackendArmResourceImpl(inner1, this.manager()));
+    }
+
+    public StaticSiteLinkedBackendArmResource getLinkedBackend(
+        String resourceGroupName, String name, String linkedBackendName) {
+        StaticSiteLinkedBackendArmResourceInner inner =
+            this.serviceClient().getLinkedBackend(resourceGroupName, name, linkedBackendName);
+        if (inner != null) {
+            return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<StaticSiteLinkedBackendArmResource> getLinkedBackendWithResponse(
+        String resourceGroupName, String name, String linkedBackendName, Context context) {
+        Response<StaticSiteLinkedBackendArmResourceInner> inner =
+            this.serviceClient().getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StaticSiteLinkedBackendArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public void unlinkBackend(String resourceGroupName, String name, String linkedBackendName) {
+        this.serviceClient().unlinkBackend(resourceGroupName, name, linkedBackendName);
+    }
+
+    public Response<Void> unlinkBackendWithResponse(
+        String resourceGroupName,
+        String name,
+        String linkedBackendName,
+        Boolean isCleaningAuthConfig,
+        Context context) {
+        return this
+            .serviceClient()
+            .unlinkBackendWithResponse(resourceGroupName, name, linkedBackendName, isCleaningAuthConfig, context);
+    }
+
+    public StaticSiteLinkedBackendArmResource getLinkedBackendForBuild(
+        String resourceGroupName, String name, String environmentName, String linkedBackendName) {
+        StaticSiteLinkedBackendArmResourceInner inner =
+            this.serviceClient().getLinkedBackendForBuild(resourceGroupName, name, environmentName, linkedBackendName);
+        if (inner != null) {
+            return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<StaticSiteLinkedBackendArmResource> getLinkedBackendForBuildWithResponse(
+        String resourceGroupName, String name, String environmentName, String linkedBackendName, Context context) {
+        Response<StaticSiteLinkedBackendArmResourceInner> inner =
+            this
+                .serviceClient()
+                .getLinkedBackendForBuildWithResponse(
+                    resourceGroupName, name, environmentName, linkedBackendName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StaticSiteLinkedBackendArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StaticSiteLinkedBackendArmResource linkBackendToBuild(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String linkedBackendName,
+        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
+        StaticSiteLinkedBackendArmResourceInner inner =
+            this
+                .serviceClient()
+                .linkBackendToBuild(
+                    resourceGroupName, name, environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope);
+        if (inner != null) {
+            return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public StaticSiteLinkedBackendArmResource linkBackendToBuild(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String linkedBackendName,
+        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
+        Context context) {
+        StaticSiteLinkedBackendArmResourceInner inner =
+            this
+                .serviceClient()
+                .linkBackendToBuild(
+                    resourceGroupName,
+                    name,
+                    environmentName,
+                    linkedBackendName,
+                    staticSiteLinkedBackendEnvelope,
+                    context);
+        if (inner != null) {
+            return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public void unlinkBackendFromBuild(
+        String resourceGroupName, String name, String environmentName, String linkedBackendName) {
+        this.serviceClient().unlinkBackendFromBuild(resourceGroupName, name, environmentName, linkedBackendName);
+    }
+
+    public Response<Void> unlinkBackendFromBuildWithResponse(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String linkedBackendName,
+        Boolean isCleaningAuthConfig,
+        Context context) {
+        return this
+            .serviceClient()
+            .unlinkBackendFromBuildWithResponse(
+                resourceGroupName, name, environmentName, linkedBackendName, isCleaningAuthConfig, context);
+    }
+
     public StaticSiteArmResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -1196,6 +1401,60 @@ public final class StaticSitesImpl implements StaticSites {
         return this.getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, context);
     }
 
+    public StaticSiteLinkedBackendArmResource getLinkedBackendById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String linkedBackendName = Utils.getValueFromIdByName(id, "linkedBackends");
+        if (linkedBackendName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'linkedBackends'.", id)));
+        }
+        return this.getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, Context.NONE).getValue();
+    }
+
+    public Response<StaticSiteLinkedBackendArmResource> getLinkedBackendByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String linkedBackendName = Utils.getValueFromIdByName(id, "linkedBackends");
+        if (linkedBackendName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'linkedBackends'.", id)));
+        }
+        return this.getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, context);
+    }
+
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -1305,5 +1564,9 @@ public final class StaticSitesImpl implements StaticSites {
 
     public StaticSiteCustomDomainOverviewArmResourceImpl defineStaticSiteCustomDomain(String name) {
         return new StaticSiteCustomDomainOverviewArmResourceImpl(name, this.manager());
+    }
+
+    public StaticSiteLinkedBackendArmResourceImpl defineStaticSiteLinkedBackendArmResource(String name) {
+        return new StaticSiteLinkedBackendArmResourceImpl(name, this.manager());
     }
 }

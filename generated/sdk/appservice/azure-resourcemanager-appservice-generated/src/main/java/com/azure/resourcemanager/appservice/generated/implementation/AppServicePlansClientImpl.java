@@ -576,7 +576,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans for a subscription.
+     * Description for Get all App Service plans for a subscription.
      *
      * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
      *     &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties. Retrieval of all properties may
@@ -584,8 +584,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans for a subscription along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listSinglePageAsync(Boolean detailed) {
@@ -626,7 +626,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans for a subscription.
+     * Description for Get all App Service plans for a subscription.
      *
      * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
      *     &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties. Retrieval of all properties may
@@ -635,8 +635,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans for a subscription along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listSinglePageAsync(Boolean detailed, Context context) {
@@ -674,7 +674,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans for a subscription.
+     * Description for Get all App Service plans for a subscription.
      *
      * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
      *     &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties. Retrieval of all properties may
@@ -682,7 +682,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans for a subscription as paginated response with {@link PagedFlux}.
+     * @return collection of App Service plans as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServicePlanInner> listAsync(Boolean detailed) {
@@ -690,11 +690,11 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans for a subscription.
+     * Description for Get all App Service plans for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans for a subscription as paginated response with {@link PagedFlux}.
+     * @return collection of App Service plans as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServicePlanInner> listAsync() {
@@ -703,7 +703,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans for a subscription.
+     * Description for Get all App Service plans for a subscription.
      *
      * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
      *     &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties. Retrieval of all properties may
@@ -712,7 +712,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans for a subscription as paginated response with {@link PagedFlux}.
+     * @return collection of App Service plans as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServicePlanInner> listAsync(Boolean detailed, Context context) {
@@ -721,11 +721,11 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans for a subscription.
+     * Description for Get all App Service plans for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans for a subscription as paginated response with {@link PagedIterable}.
+     * @return collection of App Service plans as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServicePlanInner> list() {
@@ -734,7 +734,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans for a subscription.
+     * Description for Get all App Service plans for a subscription.
      *
      * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
      *     &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties. Retrieval of all properties may
@@ -743,7 +743,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans for a subscription as paginated response with {@link PagedIterable}.
+     * @return collection of App Service plans as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServicePlanInner> list(Boolean detailed, Context context) {
@@ -751,14 +751,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans in a resource group.
+     * Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans in a resource group along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -803,15 +803,15 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans in a resource group.
+     * Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans in a resource group along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listByResourceGroupSinglePageAsync(
@@ -854,13 +854,13 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans in a resource group.
+     * Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans in a resource group as paginated response with {@link PagedFlux}.
+     * @return collection of App Service plans as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServicePlanInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -870,14 +870,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans in a resource group.
+     * Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans in a resource group as paginated response with {@link PagedFlux}.
+     * @return collection of App Service plans as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AppServicePlanInner> listByResourceGroupAsync(String resourceGroupName, Context context) {
@@ -887,13 +887,13 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans in a resource group.
+     * Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans in a resource group as paginated response with {@link PagedIterable}.
+     * @return collection of App Service plans as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServicePlanInner> listByResourceGroup(String resourceGroupName) {
@@ -901,14 +901,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all App Service plans in a resource group.
+     * Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all App Service plans in a resource group as paginated response with {@link PagedIterable}.
+     * @return collection of App Service plans as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AppServicePlanInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -916,14 +916,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get an App Service plan.
+     * Description for Get an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an App Service plan along with {@link Response} on successful completion of {@link Mono}.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServicePlanInner>> getByResourceGroupWithResponseAsync(
@@ -964,7 +964,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get an App Service plan.
+     * Description for Get an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -972,7 +972,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an App Service plan along with {@link Response} on successful completion of {@link Mono}.
+     * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AppServicePlanInner>> getByResourceGroupWithResponseAsync(
@@ -1010,14 +1010,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get an App Service plan.
+     * Description for Get an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an App Service plan on successful completion of {@link Mono}.
+     * @return app Service plan on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AppServicePlanInner> getByResourceGroupAsync(String resourceGroupName, String name) {
@@ -1026,14 +1026,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get an App Service plan.
+     * Description for Get an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an App Service plan.
+     * @return app Service plan.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public AppServicePlanInner getByResourceGroup(String resourceGroupName, String name) {
@@ -1041,7 +1041,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get an App Service plan.
+     * Description for Get an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1049,7 +1049,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an App Service plan along with {@link Response}.
+     * @return app Service plan along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AppServicePlanInner> getByResourceGroupWithResponse(
@@ -1058,7 +1058,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1113,7 +1113,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1166,7 +1166,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1192,7 +1192,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1216,7 +1216,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1233,7 +1233,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1251,7 +1251,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1270,7 +1270,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1290,7 +1290,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1307,7 +1307,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1325,7 +1325,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete an App Service plan.
+     * Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1372,7 +1372,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete an App Service plan.
+     * Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1417,7 +1417,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete an App Service plan.
+     * Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1432,7 +1432,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete an App Service plan.
+     * Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1446,7 +1446,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete an App Service plan.
+     * Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1462,7 +1462,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1517,7 +1517,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1570,7 +1570,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1588,7 +1588,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1605,7 +1605,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Creates or updates an App Service Plan.
+     * Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1623,7 +1623,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * List all capabilities of an App Service plan.
+     * Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1671,7 +1671,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * List all capabilities of an App Service plan.
+     * Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1717,7 +1717,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * List all capabilities of an App Service plan.
+     * Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1733,7 +1733,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * List all capabilities of an App Service plan.
+     * Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1748,7 +1748,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * List all capabilities of an App Service plan.
+     * Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1765,7 +1765,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Retrieve a Hybrid Connection in use in an App Service plan.
+     * Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1823,7 +1823,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Retrieve a Hybrid Connection in use in an App Service plan.
+     * Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1879,7 +1879,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Retrieve a Hybrid Connection in use in an App Service plan.
+     * Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1898,7 +1898,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Retrieve a Hybrid Connection in use in an App Service plan.
+     * Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1916,7 +1916,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Retrieve a Hybrid Connection in use in an App Service plan.
+     * Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1935,7 +1935,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete a Hybrid Connection in use in an App Service plan.
+     * Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1993,7 +1993,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete a Hybrid Connection in use in an App Service plan.
+     * Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2049,7 +2049,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete a Hybrid Connection in use in an App Service plan.
+     * Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2068,7 +2068,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete a Hybrid Connection in use in an App Service plan.
+     * Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2084,7 +2084,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete a Hybrid Connection in use in an App Service plan.
+     * Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2104,7 +2104,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get the send key name and value of a Hybrid Connection.
+     * Description for Get the send key name and value of a Hybrid Connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2113,8 +2113,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the send key name and value of a Hybrid Connection along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * @return hybrid Connection key contract along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionKeyInner>> listHybridConnectionKeysWithResponseAsync(
@@ -2163,7 +2162,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get the send key name and value of a Hybrid Connection.
+     * Description for Get the send key name and value of a Hybrid Connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2173,8 +2172,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the send key name and value of a Hybrid Connection along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * @return hybrid Connection key contract along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionKeyInner>> listHybridConnectionKeysWithResponseAsync(
@@ -2220,7 +2218,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get the send key name and value of a Hybrid Connection.
+     * Description for Get the send key name and value of a Hybrid Connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2229,7 +2227,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the send key name and value of a Hybrid Connection on successful completion of {@link Mono}.
+     * @return hybrid Connection key contract on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<HybridConnectionKeyInner> listHybridConnectionKeysAsync(
@@ -2239,7 +2237,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get the send key name and value of a Hybrid Connection.
+     * Description for Get the send key name and value of a Hybrid Connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2248,7 +2246,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the send key name and value of a Hybrid Connection.
+     * @return hybrid Connection key contract.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public HybridConnectionKeyInner listHybridConnectionKeys(
@@ -2257,7 +2255,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get the send key name and value of a Hybrid Connection.
+     * Description for Get the send key name and value of a Hybrid Connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2267,7 +2265,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the send key name and value of a Hybrid Connection along with {@link Response}.
+     * @return hybrid Connection key contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<HybridConnectionKeyInner> listHybridConnectionKeysWithResponse(
@@ -2277,7 +2275,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2286,8 +2284,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps that use a Hybrid Connection in an App Service Plan along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<String>> listWebAppsByHybridConnectionSinglePageAsync(
@@ -2345,7 +2342,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2355,8 +2352,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps that use a Hybrid Connection in an App Service Plan along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of resources along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<String>> listWebAppsByHybridConnectionSinglePageAsync(
@@ -2411,7 +2407,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2420,8 +2416,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps that use a Hybrid Connection in an App Service Plan as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of resources as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<String> listWebAppsByHybridConnectionAsync(
@@ -2432,7 +2427,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2442,8 +2437,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps that use a Hybrid Connection in an App Service Plan as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of resources as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<String> listWebAppsByHybridConnectionAsync(
@@ -2456,7 +2450,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2465,8 +2459,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps that use a Hybrid Connection in an App Service Plan as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of resources as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<String> listWebAppsByHybridConnection(
@@ -2476,7 +2469,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2486,8 +2479,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps that use a Hybrid Connection in an App Service Plan as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of resources as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<String> listWebAppsByHybridConnection(
@@ -2497,15 +2489,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     * Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the maximum number of Hybrid Connections allowed in an App Service plan along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * @return hybrid Connection limits contract along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionLimitsInner>> getHybridConnectionPlanLimitWithResponseAsync(
@@ -2546,7 +2537,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     * Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2554,8 +2545,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the maximum number of Hybrid Connections allowed in an App Service plan along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * @return hybrid Connection limits contract along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HybridConnectionLimitsInner>> getHybridConnectionPlanLimitWithResponseAsync(
@@ -2593,15 +2583,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     * Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the maximum number of Hybrid Connections allowed in an App Service plan on successful completion of
-     *     {@link Mono}.
+     * @return hybrid Connection limits contract on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<HybridConnectionLimitsInner> getHybridConnectionPlanLimitAsync(String resourceGroupName, String name) {
@@ -2610,14 +2599,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     * Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the maximum number of Hybrid Connections allowed in an App Service plan.
+     * @return hybrid Connection limits contract.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public HybridConnectionLimitsInner getHybridConnectionPlanLimit(String resourceGroupName, String name) {
@@ -2625,7 +2614,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     * Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2633,7 +2622,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the maximum number of Hybrid Connections allowed in an App Service plan along with {@link Response}.
+     * @return hybrid Connection limits contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<HybridConnectionLimitsInner> getHybridConnectionPlanLimitWithResponse(
@@ -2642,7 +2631,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Retrieve all Hybrid Connections in use in an App Service plan.
+     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2700,7 +2689,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Retrieve all Hybrid Connections in use in an App Service plan.
+     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2756,7 +2745,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Retrieve all Hybrid Connections in use in an App Service plan.
+     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2773,7 +2762,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Retrieve all Hybrid Connections in use in an App Service plan.
+     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2792,7 +2781,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Retrieve all Hybrid Connections in use in an App Service plan.
+     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2807,7 +2796,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Retrieve all Hybrid Connections in use in an App Service plan.
+     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2824,7 +2813,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Restart all apps in an App Service plan.
+     * Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2876,7 +2865,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Restart all apps in an App Service plan.
+     * Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2926,7 +2915,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Restart all apps in an App Service plan.
+     * Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2944,7 +2933,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Restart all apps in an App Service plan.
+     * Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2960,7 +2949,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Restart all apps in an App Service plan.
+     * Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2975,7 +2964,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Restart all apps in an App Service plan.
+     * Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2995,7 +2984,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps associated with an App Service plan.
+     * Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3007,8 +2996,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps associated with an App Service plan along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return collection of App Service apps along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SiteInner>> listWebAppsSinglePageAsync(
@@ -3061,7 +3049,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps associated with an App Service plan.
+     * Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3074,8 +3062,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps associated with an App Service plan along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * @return collection of App Service apps along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SiteInner>> listWebAppsSinglePageAsync(
@@ -3125,7 +3112,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps associated with an App Service plan.
+     * Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3137,7 +3124,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps associated with an App Service plan as paginated response with {@link PagedFlux}.
+     * @return collection of App Service apps as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SiteInner> listWebAppsAsync(
@@ -3148,14 +3135,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps associated with an App Service plan.
+     * Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps associated with an App Service plan as paginated response with {@link PagedFlux}.
+     * @return collection of App Service apps as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SiteInner> listWebAppsAsync(String resourceGroupName, String name) {
@@ -3168,7 +3155,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps associated with an App Service plan.
+     * Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3181,7 +3168,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps associated with an App Service plan as paginated response with {@link PagedFlux}.
+     * @return collection of App Service apps as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SiteInner> listWebAppsAsync(
@@ -3192,14 +3179,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps associated with an App Service plan.
+     * Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps associated with an App Service plan as paginated response with {@link PagedIterable}.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SiteInner> listWebApps(String resourceGroupName, String name) {
@@ -3210,7 +3197,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all apps associated with an App Service plan.
+     * Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3223,7 +3210,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all apps associated with an App Service plan as paginated response with {@link PagedIterable}.
+     * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SiteInner> listWebApps(
@@ -3232,15 +3219,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Gets all selectable SKUs for a given App Service Plan.
+     * Description for Gets all selectable SKUs for a given App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all selectable SKUs for a given App Service Plan along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return any object along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Object>> getServerFarmSkusWithResponseAsync(String resourceGroupName, String name) {
@@ -3280,7 +3266,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Gets all selectable SKUs for a given App Service Plan.
+     * Description for Gets all selectable SKUs for a given App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3288,8 +3274,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all selectable SKUs for a given App Service Plan along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return any object along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Object>> getServerFarmSkusWithResponseAsync(
@@ -3327,14 +3312,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Gets all selectable SKUs for a given App Service Plan.
+     * Description for Gets all selectable SKUs for a given App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all selectable SKUs for a given App Service Plan on successful completion of {@link Mono}.
+     * @return any object on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Object> getServerFarmSkusAsync(String resourceGroupName, String name) {
@@ -3343,14 +3328,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Gets all selectable SKUs for a given App Service Plan.
+     * Description for Gets all selectable SKUs for a given App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all selectable SKUs for a given App Service Plan.
+     * @return any object.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Object getServerFarmSkus(String resourceGroupName, String name) {
@@ -3358,7 +3343,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Gets all selectable SKUs for a given App Service Plan.
+     * Description for Gets all selectable SKUs for a given App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3366,7 +3351,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all selectable SKUs for a given App Service Plan along with {@link Response}.
+     * @return any object along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Object> getServerFarmSkusWithResponse(String resourceGroupName, String name, Context context) {
@@ -3374,7 +3359,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Gets server farm usage information.
+     * Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3383,7 +3368,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return server farm usage information along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of CSM usage quotas along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmUsageQuotaInner>> listUsagesSinglePageAsync(
@@ -3434,7 +3419,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Gets server farm usage information.
+     * Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3444,7 +3429,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return server farm usage information along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of CSM usage quotas along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmUsageQuotaInner>> listUsagesSinglePageAsync(
@@ -3492,7 +3477,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Gets server farm usage information.
+     * Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3501,7 +3486,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return server farm usage information as paginated response with {@link PagedFlux}.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CsmUsageQuotaInner> listUsagesAsync(String resourceGroupName, String name, String filter) {
@@ -3511,14 +3496,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Gets server farm usage information.
+     * Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return server farm usage information as paginated response with {@link PagedFlux}.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CsmUsageQuotaInner> listUsagesAsync(String resourceGroupName, String name) {
@@ -3529,7 +3514,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Gets server farm usage information.
+     * Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3539,7 +3524,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return server farm usage information as paginated response with {@link PagedFlux}.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CsmUsageQuotaInner> listUsagesAsync(
@@ -3550,14 +3535,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Gets server farm usage information.
+     * Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return server farm usage information as paginated response with {@link PagedIterable}.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<CsmUsageQuotaInner> listUsages(String resourceGroupName, String name) {
@@ -3566,7 +3551,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Gets server farm usage information.
+     * Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3576,7 +3561,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return server farm usage information as paginated response with {@link PagedIterable}.
+     * @return collection of CSM usage quotas as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<CsmUsageQuotaInner> listUsages(
@@ -3585,15 +3570,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all Virtual Networks associated with an App Service plan.
+     * Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Virtual Networks associated with an App Service plan along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * @return array of VnetInfoResource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VnetInfoResourceInner>>> listVnetsWithResponseAsync(
@@ -3634,7 +3618,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all Virtual Networks associated with an App Service plan.
+     * Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3642,8 +3626,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Virtual Networks associated with an App Service plan along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * @return array of VnetInfoResource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VnetInfoResourceInner>>> listVnetsWithResponseAsync(
@@ -3681,14 +3664,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all Virtual Networks associated with an App Service plan.
+     * Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Virtual Networks associated with an App Service plan on successful completion of {@link Mono}.
+     * @return array of VnetInfoResource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VnetInfoResourceInner>> listVnetsAsync(String resourceGroupName, String name) {
@@ -3696,14 +3679,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all Virtual Networks associated with an App Service plan.
+     * Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Virtual Networks associated with an App Service plan.
+     * @return array of VnetInfoResource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public List<VnetInfoResourceInner> listVnets(String resourceGroupName, String name) {
@@ -3711,7 +3694,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all Virtual Networks associated with an App Service plan.
+     * Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3719,7 +3702,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Virtual Networks associated with an App Service plan along with {@link Response}.
+     * @return array of VnetInfoResource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VnetInfoResourceInner>> listVnetsWithResponse(
@@ -3728,7 +3711,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network associated with an App Service plan.
+     * Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3736,8 +3719,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network associated with an App Service plan along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * @return virtual Network information ARM resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetInfoResourceInner>> getVnetFromServerFarmWithResponseAsync(
@@ -3782,7 +3765,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network associated with an App Service plan.
+     * Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3791,8 +3774,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network associated with an App Service plan along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * @return virtual Network information ARM resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetInfoResourceInner>> getVnetFromServerFarmWithResponseAsync(
@@ -3834,7 +3817,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network associated with an App Service plan.
+     * Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3842,7 +3825,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network associated with an App Service plan on successful completion of {@link Mono}.
+     * @return virtual Network information ARM resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VnetInfoResourceInner> getVnetFromServerFarmAsync(
@@ -3852,7 +3835,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network associated with an App Service plan.
+     * Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3860,7 +3843,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network associated with an App Service plan.
+     * @return virtual Network information ARM resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public VnetInfoResourceInner getVnetFromServerFarm(String resourceGroupName, String name, String vnetName) {
@@ -3868,7 +3851,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network associated with an App Service plan.
+     * Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3877,7 +3860,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network associated with an App Service plan along with {@link Response}.
+     * @return virtual Network information ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VnetInfoResourceInner> getVnetFromServerFarmWithResponse(
@@ -3886,7 +3869,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network gateway.
+     * Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3895,7 +3878,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network gateway along with {@link Response} on successful completion of {@link Mono}.
+     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetGatewayInner>> getVnetGatewayWithResponseAsync(
@@ -3944,7 +3928,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network gateway.
+     * Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3954,7 +3938,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network gateway along with {@link Response} on successful completion of {@link Mono}.
+     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetGatewayInner>> getVnetGatewayWithResponseAsync(
@@ -4000,7 +3985,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network gateway.
+     * Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4009,7 +3994,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network gateway on successful completion of {@link Mono}.
+     * @return the Virtual Network gateway contract on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VnetGatewayInner> getVnetGatewayAsync(
@@ -4019,7 +4004,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network gateway.
+     * Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4028,7 +4013,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network gateway.
+     * @return the Virtual Network gateway contract.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public VnetGatewayInner getVnetGateway(String resourceGroupName, String name, String vnetName, String gatewayName) {
@@ -4036,7 +4021,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network gateway.
+     * Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4046,7 +4031,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network gateway along with {@link Response}.
+     * @return the Virtual Network gateway contract along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VnetGatewayInner> getVnetGatewayWithResponse(
@@ -4055,7 +4040,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Update a Virtual Network gateway.
+     * Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4126,7 +4111,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Update a Virtual Network gateway.
+     * Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4196,7 +4181,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Update a Virtual Network gateway.
+     * Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4220,7 +4205,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Update a Virtual Network gateway.
+     * Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4243,7 +4228,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Update a Virtual Network gateway.
+     * Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4270,7 +4255,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4278,8 +4263,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all routes that are associated with a Virtual Network in an App Service plan along with {@link Response}
-     *     on successful completion of {@link Mono}.
+     * @return array of VnetRoute along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VnetRouteInner>>> listRoutesForVnetWithResponseAsync(
@@ -4324,7 +4308,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4333,8 +4317,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all routes that are associated with a Virtual Network in an App Service plan along with {@link Response}
-     *     on successful completion of {@link Mono}.
+     * @return array of VnetRoute along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VnetRouteInner>>> listRoutesForVnetWithResponseAsync(
@@ -4376,7 +4359,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4384,8 +4367,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all routes that are associated with a Virtual Network in an App Service plan on successful completion of
-     *     {@link Mono}.
+     * @return array of VnetRoute on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VnetRouteInner>> listRoutesForVnetAsync(String resourceGroupName, String name, String vnetName) {
@@ -4394,7 +4376,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4402,7 +4384,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all routes that are associated with a Virtual Network in an App Service plan.
+     * @return array of VnetRoute.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public List<VnetRouteInner> listRoutesForVnet(String resourceGroupName, String name, String vnetName) {
@@ -4410,7 +4392,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4419,7 +4401,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all routes that are associated with a Virtual Network in an App Service plan along with {@link Response}.
+     * @return array of VnetRoute along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VnetRouteInner>> listRoutesForVnetWithResponse(
@@ -4428,7 +4410,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network route in an App Service plan.
+     * Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4437,8 +4419,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network route in an App Service plan along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return array of VnetRoute along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VnetRouteInner>>> getRouteForVnetWithResponseAsync(
@@ -4487,7 +4468,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network route in an App Service plan.
+     * Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4497,8 +4478,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network route in an App Service plan along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return array of VnetRoute along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VnetRouteInner>>> getRouteForVnetWithResponseAsync(
@@ -4544,7 +4524,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network route in an App Service plan.
+     * Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4553,7 +4533,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network route in an App Service plan on successful completion of {@link Mono}.
+     * @return array of VnetRoute on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VnetRouteInner>> getRouteForVnetAsync(
@@ -4563,7 +4543,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network route in an App Service plan.
+     * Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4572,7 +4552,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network route in an App Service plan.
+     * @return array of VnetRoute.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public List<VnetRouteInner> getRouteForVnet(
@@ -4581,7 +4561,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Get a Virtual Network route in an App Service plan.
+     * Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4591,7 +4571,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Virtual Network route in an App Service plan along with {@link Response}.
+     * @return array of VnetRoute along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VnetRouteInner>> getRouteForVnetWithResponse(
@@ -4600,7 +4580,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Create or update a Virtual Network route in an App Service plan.
+     * Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4666,7 +4646,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Create or update a Virtual Network route in an App Service plan.
+     * Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4735,7 +4715,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Create or update a Virtual Network route in an App Service plan.
+     * Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4756,7 +4736,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Create or update a Virtual Network route in an App Service plan.
+     * Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4775,7 +4755,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Create or update a Virtual Network route in an App Service plan.
+     * Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4802,7 +4782,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete a Virtual Network route in an App Service plan.
+     * Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4860,7 +4840,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete a Virtual Network route in an App Service plan.
+     * Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4916,7 +4896,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete a Virtual Network route in an App Service plan.
+     * Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4934,7 +4914,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete a Virtual Network route in an App Service plan.
+     * Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4950,7 +4930,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Delete a Virtual Network route in an App Service plan.
+     * Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4969,7 +4949,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Create or update a Virtual Network route in an App Service plan.
+     * Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5035,7 +5015,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Create or update a Virtual Network route in an App Service plan.
+     * Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5104,7 +5084,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Create or update a Virtual Network route in an App Service plan.
+     * Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5125,7 +5105,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Create or update a Virtual Network route in an App Service plan.
+     * Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5144,7 +5124,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Create or update a Virtual Network route in an App Service plan.
+     * Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5170,7 +5150,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Reboot a worker machine in an App Service plan.
+     * Description for Reboot a worker machine in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5223,7 +5203,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Reboot a worker machine in an App Service plan.
+     * Description for Reboot a worker machine in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5274,7 +5254,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Reboot a worker machine in an App Service plan.
+     * Description for Reboot a worker machine in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5290,7 +5270,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Reboot a worker machine in an App Service plan.
+     * Description for Reboot a worker machine in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5305,7 +5285,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Reboot a worker machine in an App Service plan.
+     * Description for Reboot a worker machine in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.

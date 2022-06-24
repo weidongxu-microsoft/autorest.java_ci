@@ -4,9 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironment;
+import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeploymentLocationsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.GeoRegionInner;
+import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironment;
 import com.azure.resourcemanager.appservice.generated.models.DeploymentLocations;
 import com.azure.resourcemanager.appservice.generated.models.GeoRegion;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentDeploymentInfo;
@@ -41,9 +42,14 @@ public final class DeploymentLocationsImpl implements DeploymentLocations {
     }
 
     public List<AppServiceEnvironment> hostingEnvironments() {
-        List<AppServiceEnvironment> inner = this.innerModel().hostingEnvironments();
+        List<AppServiceEnvironmentInner> inner = this.innerModel().hostingEnvironments();
         if (inner != null) {
-            return Collections.unmodifiableList(inner);
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new AppServiceEnvironmentImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

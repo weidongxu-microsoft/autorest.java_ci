@@ -100,6 +100,18 @@ public final class SitePropertiesImpl implements SiteProperties {
         return this.innerModel().lastModifiedTimeUtc();
     }
 
+    public Boolean vnetRouteAllEnabled() {
+        return this.innerModel().vnetRouteAllEnabled();
+    }
+
+    public Boolean vnetImagePullEnabled() {
+        return this.innerModel().vnetImagePullEnabled();
+    }
+
+    public Boolean vnetContentShareEnabled() {
+        return this.innerModel().vnetContentShareEnabled();
+    }
+
     public SiteConfig siteConfig() {
         SiteConfigInner inner = this.innerModel().siteConfig();
         if (inner != null) {
@@ -208,6 +220,10 @@ public final class SitePropertiesImpl implements SiteProperties {
 
     public UUID inProgressOperationId() {
         return this.innerModel().inProgressOperationId();
+    }
+
+    public String publicNetworkAccess() {
+        return this.innerModel().publicNetworkAccess();
     }
 
     public Boolean storageAccountRequired() {

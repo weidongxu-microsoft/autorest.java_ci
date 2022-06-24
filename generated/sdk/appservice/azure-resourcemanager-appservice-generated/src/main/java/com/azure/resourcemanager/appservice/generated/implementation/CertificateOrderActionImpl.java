@@ -21,22 +21,6 @@ public final class CertificateOrderActionImpl implements CertificateOrderAction 
         this.serviceManager = serviceManager;
     }
 
-    public String id() {
-        return this.innerModel().id();
-    }
-
-    public String name() {
-        return this.innerModel().name();
-    }
-
-    public String type() {
-        return this.innerModel().type();
-    }
-
-    public String kind() {
-        return this.innerModel().kind();
-    }
-
     public CertificateOrderActionType actionType() {
         return this.innerModel().actionType();
     }

@@ -74,6 +74,28 @@ public interface AseV3NetworkingConfiguration {
     Boolean allowNewPrivateEndpointConnections();
 
     /**
+     * Gets the ftpEnabled property: Property to enable and disable FTP on ASEV3.
+     *
+     * @return the ftpEnabled value.
+     */
+    Boolean ftpEnabled();
+
+    /**
+     * Gets the remoteDebugEnabled property: Property to enable and disable Remote Debug on ASEV3.
+     *
+     * @return the remoteDebugEnabled value.
+     */
+    Boolean remoteDebugEnabled();
+
+    /**
+     * Gets the inboundIpAddressOverride property: Customer provided Inbound IP Address. Only able to be set on Ase
+     * create.
+     *
+     * @return the inboundIpAddressOverride value.
+     */
+    String inboundIpAddressOverride();
+
+    /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AseV3NetworkingConfigurationInner
      * object.
      *

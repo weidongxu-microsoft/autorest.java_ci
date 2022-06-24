@@ -12,7 +12,7 @@ import java.time.OffsetDateTime;
 /** Resource collection API of CertificateOrdersDiagnostics. */
 public interface CertificateOrdersDiagnostics {
     /**
-     * Microsoft.CertificateRegistration to get the list of detectors for this RP.
+     * Description for Microsoft.CertificateRegistration to get the list of detectors for this RP.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.
@@ -26,7 +26,7 @@ public interface CertificateOrdersDiagnostics {
         String resourceGroupName, String certificateOrderName);
 
     /**
-     * Microsoft.CertificateRegistration to get the list of detectors for this RP.
+     * Description for Microsoft.CertificateRegistration to get the list of detectors for this RP.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.
@@ -41,7 +41,7 @@ public interface CertificateOrdersDiagnostics {
         String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Microsoft.CertificateRegistration call to get a detector response from App Lens.
+     * Description for Microsoft.CertificateRegistration call to get a detector response from App Lens.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.
@@ -56,7 +56,7 @@ public interface CertificateOrdersDiagnostics {
         String resourceGroupName, String certificateOrderName, String detectorName);
 
     /**
-     * Microsoft.CertificateRegistration call to get a detector response from App Lens.
+     * Description for Microsoft.CertificateRegistration call to get a detector response from App Lens.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.

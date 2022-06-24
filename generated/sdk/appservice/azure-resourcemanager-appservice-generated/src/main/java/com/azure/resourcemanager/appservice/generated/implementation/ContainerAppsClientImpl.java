@@ -620,7 +620,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Create or update a Container App.
+     * Description for Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -676,7 +676,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Create or update a Container App.
+     * Description for Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -730,7 +730,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Create or update a Container App.
+     * Description for Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -756,7 +756,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Create or update a Container App.
+     * Description for Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -780,7 +780,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Create or update a Container App.
+     * Description for Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -797,7 +797,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Create or update a Container App.
+     * Description for Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -815,7 +815,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Create or update a Container App.
+     * Description for Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -834,7 +834,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Create or update a Container App.
+     * Description for Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -854,7 +854,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Create or update a Container App.
+     * Description for Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -871,7 +871,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Create or update a Container App.
+     * Description for Create or update a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -889,7 +889,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Delete a Container App.
+     * Description for Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -936,7 +936,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Delete a Container App.
+     * Description for Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -982,7 +982,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Delete a Container App.
+     * Description for Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1001,7 +1001,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Delete a Container App.
+     * Description for Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1022,7 +1022,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Delete a Container App.
+     * Description for Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1037,7 +1037,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Delete a Container App.
+     * Description for Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1053,7 +1053,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Delete a Container App.
+     * Description for Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1068,7 +1068,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Delete a Container App.
+     * Description for Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1084,7 +1084,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Delete a Container App.
+     * Description for Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
@@ -1098,7 +1098,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     }
 
     /**
-     * Delete a Container App.
+     * Description for Delete a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.

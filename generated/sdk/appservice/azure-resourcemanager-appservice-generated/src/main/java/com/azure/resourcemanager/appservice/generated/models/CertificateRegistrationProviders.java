@@ -10,7 +10,8 @@ import com.azure.core.util.Context;
 /** Resource collection API of CertificateRegistrationProviders. */
 public interface CertificateRegistrationProviders {
     /**
-     * Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider.
+     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource
+     * provider.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -20,7 +21,8 @@ public interface CertificateRegistrationProviders {
     PagedIterable<CsmOperationDescription> listOperations();
 
     /**
-     * Implements Csm operations Api to exposes the list of available Csm Apis under the resource provider.
+     * Description for Implements Csm operations Api to exposes the list of available Csm Apis under the resource
+     * provider.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

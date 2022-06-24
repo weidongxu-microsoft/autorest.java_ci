@@ -20,7 +20,7 @@ import java.time.OffsetDateTime;
 /** An instance of this class provides access to all the operations defined in DiagnosticsClient. */
 public interface DiagnosticsClient {
     /**
-     * List Hosting Environment Detector Responses.
+     * Description for List Hosting Environment Detector Responses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site Name.
@@ -34,7 +34,7 @@ public interface DiagnosticsClient {
     PagedIterable<DetectorResponseInner> listHostingEnvironmentDetectorResponses(String resourceGroupName, String name);
 
     /**
-     * List Hosting Environment Detector Responses.
+     * Description for List Hosting Environment Detector Responses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site Name.
@@ -50,7 +50,7 @@ public interface DiagnosticsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Get Hosting Environment Detector Response.
+     * Description for Get Hosting Environment Detector Response.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name App Service Environment Name.
@@ -59,14 +59,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hosting Environment Detector Response.
+     * @return class representing Response from Detector.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     DetectorResponseInner getHostingEnvironmentDetectorResponse(
         String resourceGroupName, String name, String detectorName);
 
     /**
-     * Get Hosting Environment Detector Response.
+     * Description for Get Hosting Environment Detector Response.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name App Service Environment Name.
@@ -79,7 +79,7 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hosting Environment Detector Response along with {@link Response}.
+     * @return class representing Response from Detector along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DetectorResponseInner> getHostingEnvironmentDetectorResponseWithResponse(
@@ -92,7 +92,7 @@ public interface DiagnosticsClient {
         Context context);
 
     /**
-     * List Site Detector Responses.
+     * Description for List Site Detector Responses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -106,7 +106,7 @@ public interface DiagnosticsClient {
     PagedIterable<DetectorResponseInner> listSiteDetectorResponses(String resourceGroupName, String siteName);
 
     /**
-     * List Site Detector Responses.
+     * Description for List Site Detector Responses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -122,7 +122,7 @@ public interface DiagnosticsClient {
         String resourceGroupName, String siteName, Context context);
 
     /**
-     * Get site detector response.
+     * Description for Get site detector response.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -131,13 +131,13 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site detector response.
+     * @return class representing Response from Detector.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     DetectorResponseInner getSiteDetectorResponse(String resourceGroupName, String siteName, String detectorName);
 
     /**
-     * Get site detector response.
+     * Description for Get site detector response.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -150,7 +150,7 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site detector response along with {@link Response}.
+     * @return class representing Response from Detector along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DetectorResponseInner> getSiteDetectorResponseWithResponse(
@@ -163,7 +163,7 @@ public interface DiagnosticsClient {
         Context context);
 
     /**
-     * Get Diagnostics Categories.
+     * Description for Get Diagnostics Categories.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -171,13 +171,13 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics Categories as paginated response with {@link PagedIterable}.
+     * @return collection of Diagnostic Categories as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<DiagnosticCategoryInner> listSiteDiagnosticCategories(String resourceGroupName, String siteName);
 
     /**
-     * Get Diagnostics Categories.
+     * Description for Get Diagnostics Categories.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -186,14 +186,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics Categories as paginated response with {@link PagedIterable}.
+     * @return collection of Diagnostic Categories as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<DiagnosticCategoryInner> listSiteDiagnosticCategories(
         String resourceGroupName, String siteName, Context context);
 
     /**
-     * Get Diagnostics Category.
+     * Description for Get Diagnostics Category.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -202,14 +202,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics Category.
+     * @return class representing detector definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     DiagnosticCategoryInner getSiteDiagnosticCategory(
         String resourceGroupName, String siteName, String diagnosticCategory);
 
     /**
-     * Get Diagnostics Category.
+     * Description for Get Diagnostics Category.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -219,14 +219,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics Category along with {@link Response}.
+     * @return class representing detector definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DiagnosticCategoryInner> getSiteDiagnosticCategoryWithResponse(
         String resourceGroupName, String siteName, String diagnosticCategory, Context context);
 
     /**
-     * Get Site Analyses.
+     * Description for Get Site Analyses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -235,14 +235,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site Analyses as paginated response with {@link PagedIterable}.
+     * @return collection of Diagnostic Analyses as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AnalysisDefinitionInner> listSiteAnalyses(
         String resourceGroupName, String siteName, String diagnosticCategory);
 
     /**
-     * Get Site Analyses.
+     * Description for Get Site Analyses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -252,14 +252,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site Analyses as paginated response with {@link PagedIterable}.
+     * @return collection of Diagnostic Analyses as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AnalysisDefinitionInner> listSiteAnalyses(
         String resourceGroupName, String siteName, String diagnosticCategory, Context context);
 
     /**
-     * Get Site Analysis.
+     * Description for Get Site Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -269,14 +269,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site Analysis.
+     * @return definition of Analysis.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     AnalysisDefinitionInner getSiteAnalysis(
         String resourceGroupName, String siteName, String diagnosticCategory, String analysisName);
 
     /**
-     * Get Site Analysis.
+     * Description for Get Site Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -287,14 +287,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site Analysis along with {@link Response}.
+     * @return definition of Analysis along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AnalysisDefinitionInner> getSiteAnalysisWithResponse(
         String resourceGroupName, String siteName, String diagnosticCategory, String analysisName, Context context);
 
     /**
-     * Execute Analysis.
+     * Description for Execute Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -311,7 +311,7 @@ public interface DiagnosticsClient {
         String resourceGroupName, String siteName, String diagnosticCategory, String analysisName);
 
     /**
-     * Execute Analysis.
+     * Description for Execute Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -339,7 +339,7 @@ public interface DiagnosticsClient {
         Context context);
 
     /**
-     * Get Detectors.
+     * Description for Get Detectors.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -348,14 +348,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return detectors as paginated response with {@link PagedIterable}.
+     * @return collection of Diagnostic Detectors as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<DetectorDefinitionResourceInner> listSiteDetectors(
         String resourceGroupName, String siteName, String diagnosticCategory);
 
     /**
-     * Get Detectors.
+     * Description for Get Detectors.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -365,14 +365,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return detectors as paginated response with {@link PagedIterable}.
+     * @return collection of Diagnostic Detectors as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<DetectorDefinitionResourceInner> listSiteDetectors(
         String resourceGroupName, String siteName, String diagnosticCategory, Context context);
 
     /**
-     * Get Detector.
+     * Description for Get Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -382,14 +382,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return detector.
+     * @return aRM resource for a detector definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     DetectorDefinitionResourceInner getSiteDetector(
         String resourceGroupName, String siteName, String diagnosticCategory, String detectorName);
 
     /**
-     * Get Detector.
+     * Description for Get Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -400,14 +400,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return detector along with {@link Response}.
+     * @return aRM resource for a detector definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DetectorDefinitionResourceInner> getSiteDetectorWithResponse(
         String resourceGroupName, String siteName, String diagnosticCategory, String detectorName, Context context);
 
     /**
-     * Execute Detector.
+     * Description for Execute Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -424,7 +424,7 @@ public interface DiagnosticsClient {
         String resourceGroupName, String siteName, String detectorName, String diagnosticCategory);
 
     /**
-     * Execute Detector.
+     * Description for Execute Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -452,7 +452,7 @@ public interface DiagnosticsClient {
         Context context);
 
     /**
-     * List Site Detector Responses.
+     * Description for List Site Detector Responses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -468,7 +468,7 @@ public interface DiagnosticsClient {
         String resourceGroupName, String siteName, String slot);
 
     /**
-     * List Site Detector Responses.
+     * Description for List Site Detector Responses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -485,7 +485,7 @@ public interface DiagnosticsClient {
         String resourceGroupName, String siteName, String slot, Context context);
 
     /**
-     * Get site detector response.
+     * Description for Get site detector response.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -495,14 +495,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site detector response.
+     * @return class representing Response from Detector.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     DetectorResponseInner getSiteDetectorResponseSlot(
         String resourceGroupName, String siteName, String detectorName, String slot);
 
     /**
-     * Get site detector response.
+     * Description for Get site detector response.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -516,7 +516,7 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site detector response along with {@link Response}.
+     * @return class representing Response from Detector along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DetectorResponseInner> getSiteDetectorResponseSlotWithResponse(
@@ -530,7 +530,7 @@ public interface DiagnosticsClient {
         Context context);
 
     /**
-     * Get Diagnostics Categories.
+     * Description for Get Diagnostics Categories.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -539,14 +539,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics Categories as paginated response with {@link PagedIterable}.
+     * @return collection of Diagnostic Categories as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<DiagnosticCategoryInner> listSiteDiagnosticCategoriesSlot(
         String resourceGroupName, String siteName, String slot);
 
     /**
-     * Get Diagnostics Categories.
+     * Description for Get Diagnostics Categories.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -556,14 +556,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics Categories as paginated response with {@link PagedIterable}.
+     * @return collection of Diagnostic Categories as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<DiagnosticCategoryInner> listSiteDiagnosticCategoriesSlot(
         String resourceGroupName, String siteName, String slot, Context context);
 
     /**
-     * Get Diagnostics Category.
+     * Description for Get Diagnostics Category.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -573,14 +573,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics Category.
+     * @return class representing detector definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     DiagnosticCategoryInner getSiteDiagnosticCategorySlot(
         String resourceGroupName, String siteName, String diagnosticCategory, String slot);
 
     /**
-     * Get Diagnostics Category.
+     * Description for Get Diagnostics Category.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -591,14 +591,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics Category along with {@link Response}.
+     * @return class representing detector definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DiagnosticCategoryInner> getSiteDiagnosticCategorySlotWithResponse(
         String resourceGroupName, String siteName, String diagnosticCategory, String slot, Context context);
 
     /**
-     * Get Site Analyses.
+     * Description for Get Site Analyses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -608,14 +608,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site Analyses as paginated response with {@link PagedIterable}.
+     * @return collection of Diagnostic Analyses as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AnalysisDefinitionInner> listSiteAnalysesSlot(
         String resourceGroupName, String siteName, String diagnosticCategory, String slot);
 
     /**
-     * Get Site Analyses.
+     * Description for Get Site Analyses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -626,14 +626,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site Analyses as paginated response with {@link PagedIterable}.
+     * @return collection of Diagnostic Analyses as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AnalysisDefinitionInner> listSiteAnalysesSlot(
         String resourceGroupName, String siteName, String diagnosticCategory, String slot, Context context);
 
     /**
-     * Get Site Analysis.
+     * Description for Get Site Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -644,14 +644,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site Analysis.
+     * @return definition of Analysis.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     AnalysisDefinitionInner getSiteAnalysisSlot(
         String resourceGroupName, String siteName, String diagnosticCategory, String analysisName, String slot);
 
     /**
-     * Get Site Analysis.
+     * Description for Get Site Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -663,7 +663,7 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site Analysis along with {@link Response}.
+     * @return definition of Analysis along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AnalysisDefinitionInner> getSiteAnalysisSlotWithResponse(
@@ -675,7 +675,7 @@ public interface DiagnosticsClient {
         Context context);
 
     /**
-     * Execute Analysis.
+     * Description for Execute Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -693,7 +693,7 @@ public interface DiagnosticsClient {
         String resourceGroupName, String siteName, String diagnosticCategory, String analysisName, String slot);
 
     /**
-     * Execute Analysis.
+     * Description for Execute Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -723,7 +723,7 @@ public interface DiagnosticsClient {
         Context context);
 
     /**
-     * Get Detectors.
+     * Description for Get Detectors.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -733,14 +733,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return detectors as paginated response with {@link PagedIterable}.
+     * @return collection of Diagnostic Detectors as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<DetectorDefinitionResourceInner> listSiteDetectorsSlot(
         String resourceGroupName, String siteName, String diagnosticCategory, String slot);
 
     /**
-     * Get Detectors.
+     * Description for Get Detectors.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -751,14 +751,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return detectors as paginated response with {@link PagedIterable}.
+     * @return collection of Diagnostic Detectors as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<DetectorDefinitionResourceInner> listSiteDetectorsSlot(
         String resourceGroupName, String siteName, String diagnosticCategory, String slot, Context context);
 
     /**
-     * Get Detector.
+     * Description for Get Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -769,14 +769,14 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return detector.
+     * @return aRM resource for a detector definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     DetectorDefinitionResourceInner getSiteDetectorSlot(
         String resourceGroupName, String siteName, String diagnosticCategory, String detectorName, String slot);
 
     /**
-     * Get Detector.
+     * Description for Get Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -788,7 +788,7 @@ public interface DiagnosticsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return detector along with {@link Response}.
+     * @return aRM resource for a detector definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DetectorDefinitionResourceInner> getSiteDetectorSlotWithResponse(
@@ -800,7 +800,7 @@ public interface DiagnosticsClient {
         Context context);
 
     /**
-     * Execute Detector.
+     * Description for Execute Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -818,7 +818,7 @@ public interface DiagnosticsClient {
         String resourceGroupName, String siteName, String detectorName, String diagnosticCategory, String slot);
 
     /**
-     * Execute Detector.
+     * Description for Execute Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.

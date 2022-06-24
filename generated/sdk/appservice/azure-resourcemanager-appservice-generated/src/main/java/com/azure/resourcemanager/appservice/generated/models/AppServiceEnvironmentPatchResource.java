@@ -4,335 +4,187 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Fluent;
-import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironment;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentPatchResourceInner;
 import java.util.List;
 
-/** ARM resource for a app service environment. */
-@Fluent
-public final class AppServiceEnvironmentPatchResource extends ProxyOnlyResource {
-    /*
-     * Core resource properties
-     */
-    @JsonProperty(value = "properties")
-    private AppServiceEnvironment innerProperties;
-
+/** An immutable client-side representation of AppServiceEnvironmentPatchResource. */
+public interface AppServiceEnvironmentPatchResource {
     /**
-     * Get the innerProperties property: Core resource properties.
+     * Gets the id property: Fully qualified resource Id for the resource.
      *
-     * @return the innerProperties value.
+     * @return the id value.
      */
-    private AppServiceEnvironment innerProperties() {
-        return this.innerProperties;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public AppServiceEnvironmentPatchResource withKind(String kind) {
-        super.withKind(kind);
-        return this;
-    }
+    String id();
 
     /**
-     * Get the provisioningState property: Provisioning state of the App Service Environment.
+     * Gets the name property: The name of the resource.
+     *
+     * @return the name value.
+     */
+    String name();
+
+    /**
+     * Gets the type property: The type of the resource.
+     *
+     * @return the type value.
+     */
+    String type();
+
+    /**
+     * Gets the kind property: Kind of resource.
+     *
+     * @return the kind value.
+     */
+    String kind();
+
+    /**
+     * Gets the provisioningState property: Provisioning state of the App Service Environment.
      *
      * @return the provisioningState value.
      */
-    public ProvisioningState provisioningState() {
-        return this.innerProperties() == null ? null : this.innerProperties().provisioningState();
-    }
+    ProvisioningState provisioningState();
 
     /**
-     * Get the status property: Current status of the App Service Environment.
+     * Gets the status property: Current status of the App Service Environment.
      *
      * @return the status value.
      */
-    public HostingEnvironmentStatus status() {
-        return this.innerProperties() == null ? null : this.innerProperties().status();
-    }
+    HostingEnvironmentStatus status();
 
     /**
-     * Get the virtualNetwork property: Description of the Virtual Network.
+     * Gets the virtualNetwork property: Description of the Virtual Network.
      *
      * @return the virtualNetwork value.
      */
-    public VirtualNetworkProfile virtualNetwork() {
-        return this.innerProperties() == null ? null : this.innerProperties().virtualNetwork();
-    }
+    VirtualNetworkProfile virtualNetwork();
 
     /**
-     * Set the virtualNetwork property: Description of the Virtual Network.
-     *
-     * @param virtualNetwork the virtualNetwork value to set.
-     * @return the AppServiceEnvironmentPatchResource object itself.
-     */
-    public AppServiceEnvironmentPatchResource withVirtualNetwork(VirtualNetworkProfile virtualNetwork) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new AppServiceEnvironment();
-        }
-        this.innerProperties().withVirtualNetwork(virtualNetwork);
-        return this;
-    }
-
-    /**
-     * Get the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network
+     * Gets the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network
      * for the App Service Environment.
      *
      * @return the internalLoadBalancingMode value.
      */
-    public LoadBalancingMode internalLoadBalancingMode() {
-        return this.innerProperties() == null ? null : this.innerProperties().internalLoadBalancingMode();
-    }
+    LoadBalancingMode internalLoadBalancingMode();
 
     /**
-     * Set the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network
-     * for the App Service Environment.
-     *
-     * @param internalLoadBalancingMode the internalLoadBalancingMode value to set.
-     * @return the AppServiceEnvironmentPatchResource object itself.
-     */
-    public AppServiceEnvironmentPatchResource withInternalLoadBalancingMode(
-        LoadBalancingMode internalLoadBalancingMode) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new AppServiceEnvironment();
-        }
-        this.innerProperties().withInternalLoadBalancingMode(internalLoadBalancingMode);
-        return this;
-    }
-
-    /**
-     * Get the multiSize property: Front-end VM size, e.g. "Medium", "Large".
+     * Gets the multiSize property: Front-end VM size, e.g. "Medium", "Large".
      *
      * @return the multiSize value.
      */
-    public String multiSize() {
-        return this.innerProperties() == null ? null : this.innerProperties().multiSize();
-    }
+    String multiSize();
 
     /**
-     * Set the multiSize property: Front-end VM size, e.g. "Medium", "Large".
-     *
-     * @param multiSize the multiSize value to set.
-     * @return the AppServiceEnvironmentPatchResource object itself.
-     */
-    public AppServiceEnvironmentPatchResource withMultiSize(String multiSize) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new AppServiceEnvironment();
-        }
-        this.innerProperties().withMultiSize(multiSize);
-        return this;
-    }
-
-    /**
-     * Get the multiRoleCount property: Number of front-end instances.
+     * Gets the multiRoleCount property: Number of front-end instances.
      *
      * @return the multiRoleCount value.
      */
-    public Integer multiRoleCount() {
-        return this.innerProperties() == null ? null : this.innerProperties().multiRoleCount();
-    }
+    Integer multiRoleCount();
 
     /**
-     * Get the ipsslAddressCount property: Number of IP SSL addresses reserved for the App Service Environment.
+     * Gets the ipsslAddressCount property: Number of IP SSL addresses reserved for the App Service Environment.
      *
      * @return the ipsslAddressCount value.
      */
-    public Integer ipsslAddressCount() {
-        return this.innerProperties() == null ? null : this.innerProperties().ipsslAddressCount();
-    }
+    Integer ipsslAddressCount();
 
     /**
-     * Set the ipsslAddressCount property: Number of IP SSL addresses reserved for the App Service Environment.
-     *
-     * @param ipsslAddressCount the ipsslAddressCount value to set.
-     * @return the AppServiceEnvironmentPatchResource object itself.
-     */
-    public AppServiceEnvironmentPatchResource withIpsslAddressCount(Integer ipsslAddressCount) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new AppServiceEnvironment();
-        }
-        this.innerProperties().withIpsslAddressCount(ipsslAddressCount);
-        return this;
-    }
-
-    /**
-     * Get the dnsSuffix property: DNS suffix of the App Service Environment.
+     * Gets the dnsSuffix property: DNS suffix of the App Service Environment.
      *
      * @return the dnsSuffix value.
      */
-    public String dnsSuffix() {
-        return this.innerProperties() == null ? null : this.innerProperties().dnsSuffix();
-    }
+    String dnsSuffix();
 
     /**
-     * Set the dnsSuffix property: DNS suffix of the App Service Environment.
-     *
-     * @param dnsSuffix the dnsSuffix value to set.
-     * @return the AppServiceEnvironmentPatchResource object itself.
-     */
-    public AppServiceEnvironmentPatchResource withDnsSuffix(String dnsSuffix) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new AppServiceEnvironment();
-        }
-        this.innerProperties().withDnsSuffix(dnsSuffix);
-        return this;
-    }
-
-    /**
-     * Get the maximumNumberOfMachines property: Maximum number of VMs in the App Service Environment.
+     * Gets the maximumNumberOfMachines property: Maximum number of VMs in the App Service Environment.
      *
      * @return the maximumNumberOfMachines value.
      */
-    public Integer maximumNumberOfMachines() {
-        return this.innerProperties() == null ? null : this.innerProperties().maximumNumberOfMachines();
-    }
+    Integer maximumNumberOfMachines();
 
     /**
-     * Get the frontEndScaleFactor property: Scale factor for front-ends.
+     * Gets the frontEndScaleFactor property: Scale factor for front-ends.
      *
      * @return the frontEndScaleFactor value.
      */
-    public Integer frontEndScaleFactor() {
-        return this.innerProperties() == null ? null : this.innerProperties().frontEndScaleFactor();
-    }
+    Integer frontEndScaleFactor();
 
     /**
-     * Set the frontEndScaleFactor property: Scale factor for front-ends.
-     *
-     * @param frontEndScaleFactor the frontEndScaleFactor value to set.
-     * @return the AppServiceEnvironmentPatchResource object itself.
-     */
-    public AppServiceEnvironmentPatchResource withFrontEndScaleFactor(Integer frontEndScaleFactor) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new AppServiceEnvironment();
-        }
-        this.innerProperties().withFrontEndScaleFactor(frontEndScaleFactor);
-        return this;
-    }
-
-    /**
-     * Get the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended; otherwise,
-     * &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is no longer
-     * available (most likely because NSG blocked the incoming traffic).
+     * Gets the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is
+     * no longer available (most likely because NSG blocked the incoming traffic).
      *
      * @return the suspended value.
      */
-    public Boolean suspended() {
-        return this.innerProperties() == null ? null : this.innerProperties().suspended();
-    }
+    Boolean suspended();
 
     /**
-     * Get the clusterSettings property: Custom settings for changing the behavior of the App Service Environment.
+     * Gets the clusterSettings property: Custom settings for changing the behavior of the App Service Environment.
      *
      * @return the clusterSettings value.
      */
-    public List<NameValuePair> clusterSettings() {
-        return this.innerProperties() == null ? null : this.innerProperties().clusterSettings();
-    }
+    List<NameValuePair> clusterSettings();
 
     /**
-     * Set the clusterSettings property: Custom settings for changing the behavior of the App Service Environment.
-     *
-     * @param clusterSettings the clusterSettings value to set.
-     * @return the AppServiceEnvironmentPatchResource object itself.
-     */
-    public AppServiceEnvironmentPatchResource withClusterSettings(List<NameValuePair> clusterSettings) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new AppServiceEnvironment();
-        }
-        this.innerProperties().withClusterSettings(clusterSettings);
-        return this;
-    }
-
-    /**
-     * Get the userWhitelistedIpRanges property: User added ip ranges to whitelist on ASE db.
+     * Gets the userWhitelistedIpRanges property: User added ip ranges to whitelist on ASE db.
      *
      * @return the userWhitelistedIpRanges value.
      */
-    public List<String> userWhitelistedIpRanges() {
-        return this.innerProperties() == null ? null : this.innerProperties().userWhitelistedIpRanges();
-    }
+    List<String> userWhitelistedIpRanges();
 
     /**
-     * Set the userWhitelistedIpRanges property: User added ip ranges to whitelist on ASE db.
-     *
-     * @param userWhitelistedIpRanges the userWhitelistedIpRanges value to set.
-     * @return the AppServiceEnvironmentPatchResource object itself.
-     */
-    public AppServiceEnvironmentPatchResource withUserWhitelistedIpRanges(List<String> userWhitelistedIpRanges) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new AppServiceEnvironment();
-        }
-        this.innerProperties().withUserWhitelistedIpRanges(userWhitelistedIpRanges);
-        return this;
-    }
-
-    /**
-     * Get the hasLinuxWorkers property: Flag that displays whether an ASE has linux workers or not.
+     * Gets the hasLinuxWorkers property: Flag that displays whether an ASE has linux workers or not.
      *
      * @return the hasLinuxWorkers value.
      */
-    public Boolean hasLinuxWorkers() {
-        return this.innerProperties() == null ? null : this.innerProperties().hasLinuxWorkers();
-    }
+    Boolean hasLinuxWorkers();
 
     /**
-     * Get the dedicatedHostCount property: Dedicated Host Count.
+     * Gets the upgradePreference property: Upgrade Preference.
+     *
+     * @return the upgradePreference value.
+     */
+    UpgradePreference upgradePreference();
+
+    /**
+     * Gets the dedicatedHostCount property: Dedicated Host Count.
      *
      * @return the dedicatedHostCount value.
      */
-    public Integer dedicatedHostCount() {
-        return this.innerProperties() == null ? null : this.innerProperties().dedicatedHostCount();
-    }
+    Integer dedicatedHostCount();
 
     /**
-     * Set the dedicatedHostCount property: Dedicated Host Count.
-     *
-     * @param dedicatedHostCount the dedicatedHostCount value to set.
-     * @return the AppServiceEnvironmentPatchResource object itself.
-     */
-    public AppServiceEnvironmentPatchResource withDedicatedHostCount(Integer dedicatedHostCount) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new AppServiceEnvironment();
-        }
-        this.innerProperties().withDedicatedHostCount(dedicatedHostCount);
-        return this;
-    }
-
-    /**
-     * Get the zoneRedundant property: Whether or not this App Service Environment is zone-redundant.
+     * Gets the zoneRedundant property: Whether or not this App Service Environment is zone-redundant.
      *
      * @return the zoneRedundant value.
      */
-    public Boolean zoneRedundant() {
-        return this.innerProperties() == null ? null : this.innerProperties().zoneRedundant();
-    }
+    Boolean zoneRedundant();
 
     /**
-     * Set the zoneRedundant property: Whether or not this App Service Environment is zone-redundant.
+     * Gets the customDnsSuffixConfiguration property: Full view of the custom domain suffix configuration for ASEv3.
      *
-     * @param zoneRedundant the zoneRedundant value to set.
-     * @return the AppServiceEnvironmentPatchResource object itself.
+     * @return the customDnsSuffixConfiguration value.
      */
-    public AppServiceEnvironmentPatchResource withZoneRedundant(Boolean zoneRedundant) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new AppServiceEnvironment();
-        }
-        this.innerProperties().withZoneRedundant(zoneRedundant);
-        return this;
-    }
+    CustomDnsSuffixConfiguration customDnsSuffixConfiguration();
 
     /**
-     * Validates the instance.
+     * Gets the networkingConfiguration property: Full view of networking configuration for an ASE.
      *
-     * @throws IllegalArgumentException thrown if the instance is not valid.
+     * @return the networkingConfiguration value.
      */
-    @Override
-    public void validate() {
-        super.validate();
-        if (innerProperties() != null) {
-            innerProperties().validate();
-        }
-    }
+    AseV3NetworkingConfiguration networkingConfiguration();
+
+    /**
+     * Gets the upgradeAvailability property: Whether an upgrade is available for this App Service Environment.
+     *
+     * @return the upgradeAvailability value.
+     */
+    UpgradeAvailability upgradeAvailability();
+
+    /**
+     * Gets the inner
+     * com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentPatchResourceInner object.
+     *
+     * @return the inner object.
+     */
+    AppServiceEnvironmentPatchResourceInner innerModel();
 }

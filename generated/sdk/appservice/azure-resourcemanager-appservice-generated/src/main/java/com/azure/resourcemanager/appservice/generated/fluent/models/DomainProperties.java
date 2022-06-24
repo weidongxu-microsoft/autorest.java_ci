@@ -8,11 +8,11 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.Contact;
 import com.azure.resourcemanager.appservice.generated.models.DnsType;
-import com.azure.resourcemanager.appservice.generated.models.DomainPropertiesDomainNotRenewableReasonsItem;
 import com.azure.resourcemanager.appservice.generated.models.DomainPurchaseConsent;
 import com.azure.resourcemanager.appservice.generated.models.DomainStatus;
 import com.azure.resourcemanager.appservice.generated.models.Hostname;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
+import com.azure.resourcemanager.appservice.generated.models.ResourceNotRenewableReason;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -119,7 +119,7 @@ public final class DomainProperties {
      * Reasons why domain is not renewable.
      */
     @JsonProperty(value = "domainNotRenewableReasons", access = JsonProperty.Access.WRITE_ONLY)
-    private List<DomainPropertiesDomainNotRenewableReasonsItem> domainNotRenewableReasons;
+    private List<ResourceNotRenewableReason> domainNotRenewableReasons;
 
     /*
      * Current DNS type
@@ -368,7 +368,7 @@ public final class DomainProperties {
      *
      * @return the domainNotRenewableReasons value.
      */
-    public List<DomainPropertiesDomainNotRenewableReasonsItem> domainNotRenewableReasons() {
+    public List<ResourceNotRenewableReason> domainNotRenewableReasons() {
         return this.domainNotRenewableReasons;
     }
 

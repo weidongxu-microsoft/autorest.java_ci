@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironment;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeploymentLocationsInner;
 import java.util.List;
 

@@ -153,6 +153,18 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this.innerModel().lastModifiedTimeUtc();
     }
 
+    public Boolean vnetRouteAllEnabled() {
+        return this.innerModel().vnetRouteAllEnabled();
+    }
+
+    public Boolean vnetImagePullEnabled() {
+        return this.innerModel().vnetImagePullEnabled();
+    }
+
+    public Boolean vnetContentShareEnabled() {
+        return this.innerModel().vnetContentShareEnabled();
+    }
+
     public SiteConfig siteConfig() {
         SiteConfigInner inner = this.innerModel().siteConfig();
         if (inner != null) {
@@ -261,6 +273,10 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
 
     public UUID inProgressOperationId() {
         return this.innerModel().inProgressOperationId();
+    }
+
+    public String publicNetworkAccess() {
+        return this.innerModel().publicNetworkAccess();
     }
 
     public Boolean storageAccountRequired() {
@@ -670,6 +686,21 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
+    public SiteImpl withVnetRouteAllEnabled(Boolean vnetRouteAllEnabled) {
+        this.innerModel().withVnetRouteAllEnabled(vnetRouteAllEnabled);
+        return this;
+    }
+
+    public SiteImpl withVnetImagePullEnabled(Boolean vnetImagePullEnabled) {
+        this.innerModel().withVnetImagePullEnabled(vnetImagePullEnabled);
+        return this;
+    }
+
+    public SiteImpl withVnetContentShareEnabled(Boolean vnetContentShareEnabled) {
+        this.innerModel().withVnetContentShareEnabled(vnetContentShareEnabled);
+        return this;
+    }
+
     public SiteImpl withSiteConfig(SiteConfigInner siteConfig) {
         if (isInCreateMode()) {
             this.innerModel().withSiteConfig(siteConfig);
@@ -798,6 +829,11 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
             this.updateSiteEnvelope.withRedundancyMode(redundancyMode);
             return this;
         }
+    }
+
+    public SiteImpl withPublicNetworkAccess(String publicNetworkAccess) {
+        this.innerModel().withPublicNetworkAccess(publicNetworkAccess);
+        return this;
     }
 
     public SiteImpl withStorageAccountRequired(Boolean storageAccountRequired) {

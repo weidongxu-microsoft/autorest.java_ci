@@ -215,14 +215,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationStackResourceInner>> getAvailableStacksSinglePageAsync(
@@ -253,15 +253,15 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationStackResourceInner>> getAvailableStacksSinglePageAsync(
@@ -288,13 +288,13 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions as paginated response with {@link PagedFlux}.
+     * @return collection of Application Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ApplicationStackResourceInner> getAvailableStacksAsync(ProviderOsTypeSelected osTypeSelected) {
@@ -304,11 +304,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions as paginated response with {@link PagedFlux}.
+     * @return collection of Application Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ApplicationStackResourceInner> getAvailableStacksAsync() {
@@ -319,14 +319,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions as paginated response with {@link PagedFlux}.
+     * @return collection of Application Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ApplicationStackResourceInner> getAvailableStacksAsync(
@@ -337,11 +337,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions as paginated response with {@link PagedIterable}.
+     * @return collection of Application Stacks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ApplicationStackResourceInner> getAvailableStacks() {
@@ -350,14 +350,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions as paginated response with {@link PagedIterable}.
+     * @return collection of Application Stacks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ApplicationStackResourceInner> getAvailableStacks(
@@ -366,14 +366,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions.
+     * Description for Get available Function app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksSinglePageAsync(
@@ -404,15 +404,15 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions.
+     * Description for Get available Function app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksSinglePageAsync(
@@ -439,13 +439,13 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions.
+     * Description for Get available Function app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions as paginated response with {@link PagedFlux}.
+     * @return collection of Function app Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<FunctionAppStackInner> getFunctionAppStacksAsync(ProviderStackOsType stackOsType) {
@@ -455,11 +455,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions.
+     * Description for Get available Function app frameworks and their versions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions as paginated response with {@link PagedFlux}.
+     * @return collection of Function app Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<FunctionAppStackInner> getFunctionAppStacksAsync() {
@@ -470,14 +470,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions.
+     * Description for Get available Function app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions as paginated response with {@link PagedFlux}.
+     * @return collection of Function app Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<FunctionAppStackInner> getFunctionAppStacksAsync(
@@ -488,11 +488,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions.
+     * Description for Get available Function app frameworks and their versions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions as paginated response with {@link PagedIterable}.
+     * @return collection of Function app Stacks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<FunctionAppStackInner> getFunctionAppStacks() {
@@ -501,14 +501,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions.
+     * Description for Get available Function app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions as paginated response with {@link PagedIterable}.
+     * @return collection of Function app Stacks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<FunctionAppStackInner> getFunctionAppStacks(ProviderStackOsType stackOsType, Context context) {
@@ -516,15 +516,15 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions for location.
+     * Description for Get available Function app frameworks and their versions for location.
      *
      * @param location Function App stack location.
      * @param stackOsType Stack OS Type.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions for location along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksForLocationSinglePageAsync(
@@ -563,7 +563,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions for location.
+     * Description for Get available Function app frameworks and their versions for location.
      *
      * @param location Function App stack location.
      * @param stackOsType Stack OS Type.
@@ -571,8 +571,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions for location along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksForLocationSinglePageAsync(
@@ -603,15 +603,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions for location.
+     * Description for Get available Function app frameworks and their versions for location.
      *
      * @param location Function App stack location.
      * @param stackOsType Stack OS Type.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions for location as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of Function app Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<FunctionAppStackInner> getFunctionAppStacksForLocationAsync(
@@ -622,14 +621,13 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions for location.
+     * Description for Get available Function app frameworks and their versions for location.
      *
      * @param location Function App stack location.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions for location as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of Function app Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<FunctionAppStackInner> getFunctionAppStacksForLocationAsync(String location) {
@@ -640,7 +638,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions for location.
+     * Description for Get available Function app frameworks and their versions for location.
      *
      * @param location Function App stack location.
      * @param stackOsType Stack OS Type.
@@ -648,8 +646,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions for location as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of Function app Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<FunctionAppStackInner> getFunctionAppStacksForLocationAsync(
@@ -660,14 +657,13 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions for location.
+     * Description for Get available Function app frameworks and their versions for location.
      *
      * @param location Function App stack location.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions for location as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of Function app Stacks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<FunctionAppStackInner> getFunctionAppStacksForLocation(String location) {
@@ -676,7 +672,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Function app frameworks and their versions for location.
+     * Description for Get available Function app frameworks and their versions for location.
      *
      * @param location Function App stack location.
      * @param stackOsType Stack OS Type.
@@ -684,8 +680,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Function app frameworks and their versions for location as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of Function app Stacks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<FunctionAppStackInner> getFunctionAppStacksForLocation(
@@ -694,15 +689,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions for location.
+     * Description for Get available Web app frameworks and their versions for location.
      *
      * @param location Web App stack location.
      * @param stackOsType Stack OS Type.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions for location along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of Web app Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WebAppStackInner>> getWebAppStacksForLocationSinglePageAsync(
@@ -741,7 +735,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions for location.
+     * Description for Get available Web app frameworks and their versions for location.
      *
      * @param location Web App stack location.
      * @param stackOsType Stack OS Type.
@@ -749,8 +743,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions for location along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of Web app Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WebAppStackInner>> getWebAppStacksForLocationSinglePageAsync(
@@ -781,15 +774,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions for location.
+     * Description for Get available Web app frameworks and their versions for location.
      *
      * @param location Web App stack location.
      * @param stackOsType Stack OS Type.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions for location as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of Web app Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WebAppStackInner> getWebAppStacksForLocationAsync(
@@ -800,14 +792,13 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions for location.
+     * Description for Get available Web app frameworks and their versions for location.
      *
      * @param location Web App stack location.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions for location as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of Web app Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WebAppStackInner> getWebAppStacksForLocationAsync(String location) {
@@ -818,7 +809,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions for location.
+     * Description for Get available Web app frameworks and their versions for location.
      *
      * @param location Web App stack location.
      * @param stackOsType Stack OS Type.
@@ -826,8 +817,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions for location as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of Web app Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WebAppStackInner> getWebAppStacksForLocationAsync(
@@ -838,14 +828,13 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions for location.
+     * Description for Get available Web app frameworks and their versions for location.
      *
      * @param location Web App stack location.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions for location as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of Web app Stacks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WebAppStackInner> getWebAppStacksForLocation(String location) {
@@ -854,7 +843,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions for location.
+     * Description for Get available Web app frameworks and their versions for location.
      *
      * @param location Web App stack location.
      * @param stackOsType Stack OS Type.
@@ -862,8 +851,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions for location as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of Web app Stacks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WebAppStackInner> getWebAppStacksForLocation(
@@ -872,12 +860,13 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
+     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * metric definitions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available operations for the Microsoft.Web resource provider along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmOperationDescriptionInner>> listOperationsSinglePageAsync() {
@@ -905,14 +894,15 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
+     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * metric definitions.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available operations for the Microsoft.Web resource provider along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmOperationDescriptionInner>> listOperationsSinglePageAsync(Context context) {
@@ -938,12 +928,12 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
+     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * metric definitions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available operations for the Microsoft.Web resource provider as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of Azure resource manager operation metadata as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CsmOperationDescriptionInner> listOperationsAsync() {
@@ -952,14 +942,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
+     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * metric definitions.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available operations for the Microsoft.Web resource provider as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of Azure resource manager operation metadata as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CsmOperationDescriptionInner> listOperationsAsync(Context context) {
@@ -969,12 +959,12 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
+     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * metric definitions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available operations for the Microsoft.Web resource provider as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of Azure resource manager operation metadata as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<CsmOperationDescriptionInner> listOperations() {
@@ -982,14 +972,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
+     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * metric definitions.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available operations for the Microsoft.Web resource provider as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of Azure resource manager operation metadata as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<CsmOperationDescriptionInner> listOperations(Context context) {
@@ -997,14 +987,13 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions.
+     * Description for Get available Web app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * @return collection of Web app Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WebAppStackInner>> getWebAppStacksSinglePageAsync(ProviderStackOsType stackOsType) {
@@ -1034,15 +1023,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions.
+     * Description for Get available Web app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * @return collection of Web app Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WebAppStackInner>> getWebAppStacksSinglePageAsync(
@@ -1069,13 +1057,13 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions.
+     * Description for Get available Web app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions as paginated response with {@link PagedFlux}.
+     * @return collection of Web app Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WebAppStackInner> getWebAppStacksAsync(ProviderStackOsType stackOsType) {
@@ -1085,11 +1073,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions.
+     * Description for Get available Web app frameworks and their versions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions as paginated response with {@link PagedFlux}.
+     * @return collection of Web app Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WebAppStackInner> getWebAppStacksAsync() {
@@ -1100,14 +1088,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions.
+     * Description for Get available Web app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions as paginated response with {@link PagedFlux}.
+     * @return collection of Web app Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WebAppStackInner> getWebAppStacksAsync(ProviderStackOsType stackOsType, Context context) {
@@ -1117,11 +1105,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions.
+     * Description for Get available Web app frameworks and their versions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions as paginated response with {@link PagedIterable}.
+     * @return collection of Web app Stacks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WebAppStackInner> getWebAppStacks() {
@@ -1130,14 +1118,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available Web app frameworks and their versions.
+     * Description for Get available Web app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available Web app frameworks and their versions as paginated response with {@link PagedIterable}.
+     * @return collection of Web app Stacks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WebAppStackInner> getWebAppStacks(ProviderStackOsType stackOsType, Context context) {
@@ -1145,14 +1133,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationStackResourceInner>> listSinglePageAsync(
@@ -1194,15 +1182,15 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationStackResourceInner>> listSinglePageAsync(
@@ -1241,13 +1229,13 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions as paginated response with {@link PagedFlux}.
+     * @return collection of Application Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ApplicationStackResourceInner> listAsync(ProviderOsTypeSelected osTypeSelected) {
@@ -1257,11 +1245,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions as paginated response with {@link PagedFlux}.
+     * @return collection of Application Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ApplicationStackResourceInner> listAsync() {
@@ -1272,14 +1260,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions as paginated response with {@link PagedFlux}.
+     * @return collection of Application Stacks as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ApplicationStackResourceInner> listAsync(ProviderOsTypeSelected osTypeSelected, Context context) {
@@ -1289,11 +1277,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions as paginated response with {@link PagedIterable}.
+     * @return collection of Application Stacks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ApplicationStackResourceInner> list() {
@@ -1302,14 +1290,14 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * Get available application frameworks and their versions.
+     * Description for Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available application frameworks and their versions as paginated response with {@link PagedIterable}.
+     * @return collection of Application Stacks as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ApplicationStackResourceInner> list(ProviderOsTypeSelected osTypeSelected, Context context) {

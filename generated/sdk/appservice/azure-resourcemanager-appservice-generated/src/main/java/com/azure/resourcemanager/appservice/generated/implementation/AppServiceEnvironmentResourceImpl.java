@@ -8,14 +8,20 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentPatchResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner;
-import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironmentPatchResource;
+import com.azure.resourcemanager.appservice.generated.fluent.models.AseV3NetworkingConfigurationInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.CustomDnsSuffixConfigurationInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironmentResource;
+import com.azure.resourcemanager.appservice.generated.models.AseV3NetworkingConfiguration;
+import com.azure.resourcemanager.appservice.generated.models.CustomDnsSuffixConfiguration;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentStatus;
 import com.azure.resourcemanager.appservice.generated.models.LoadBalancingMode;
 import com.azure.resourcemanager.appservice.generated.models.NameValuePair;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
 import com.azure.resourcemanager.appservice.generated.models.Site;
+import com.azure.resourcemanager.appservice.generated.models.UpgradeAvailability;
+import com.azure.resourcemanager.appservice.generated.models.UpgradePreference;
 import com.azure.resourcemanager.appservice.generated.models.VirtualNetworkProfile;
 import java.util.Collections;
 import java.util.List;
@@ -124,12 +130,38 @@ public final class AppServiceEnvironmentResourceImpl
         return this.innerModel().hasLinuxWorkers();
     }
 
+    public UpgradePreference upgradePreference() {
+        return this.innerModel().upgradePreference();
+    }
+
     public Integer dedicatedHostCount() {
         return this.innerModel().dedicatedHostCount();
     }
 
     public Boolean zoneRedundant() {
         return this.innerModel().zoneRedundant();
+    }
+
+    public CustomDnsSuffixConfiguration customDnsSuffixConfiguration() {
+        CustomDnsSuffixConfigurationInner inner = this.innerModel().customDnsSuffixConfiguration();
+        if (inner != null) {
+            return new CustomDnsSuffixConfigurationImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public AseV3NetworkingConfiguration networkingConfiguration() {
+        AseV3NetworkingConfigurationInner inner = this.innerModel().networkingConfiguration();
+        if (inner != null) {
+            return new AseV3NetworkingConfigurationImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public UpgradeAvailability upgradeAvailability() {
+        return this.innerModel().upgradeAvailability();
     }
 
     public Region region() {
@@ -156,7 +188,7 @@ public final class AppServiceEnvironmentResourceImpl
 
     private String name;
 
-    private AppServiceEnvironmentPatchResource updateHostingEnvironmentEnvelope;
+    private AppServiceEnvironmentPatchResourceInner updateHostingEnvironmentEnvelope;
 
     public AppServiceEnvironmentResourceImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -189,7 +221,7 @@ public final class AppServiceEnvironmentResourceImpl
     }
 
     public AppServiceEnvironmentResourceImpl update() {
-        this.updateHostingEnvironmentEnvelope = new AppServiceEnvironmentPatchResource();
+        this.updateHostingEnvironmentEnvelope = new AppServiceEnvironmentPatchResourceInner();
         return this;
     }
 
@@ -248,6 +280,24 @@ public final class AppServiceEnvironmentResourceImpl
 
     public PagedIterable<Site> changeVnet(VirtualNetworkProfile vnetInfo, Context context) {
         return serviceManager.appServiceEnvironments().changeVnet(resourceGroupName, name, vnetInfo, context);
+    }
+
+    public void testUpgradeAvailableNotification() {
+        serviceManager.appServiceEnvironments().testUpgradeAvailableNotification(resourceGroupName, name);
+    }
+
+    public Response<Void> testUpgradeAvailableNotificationWithResponse(Context context) {
+        return serviceManager
+            .appServiceEnvironments()
+            .testUpgradeAvailableNotificationWithResponse(resourceGroupName, name, context);
+    }
+
+    public void upgrade() {
+        serviceManager.appServiceEnvironments().upgrade(resourceGroupName, name);
+    }
+
+    public void upgrade(Context context) {
+        serviceManager.appServiceEnvironments().upgrade(resourceGroupName, name, context);
     }
 
     public void reboot() {
@@ -380,6 +430,16 @@ public final class AppServiceEnvironmentResourceImpl
         }
     }
 
+    public AppServiceEnvironmentResourceImpl withUpgradePreference(UpgradePreference upgradePreference) {
+        if (isInCreateMode()) {
+            this.innerModel().withUpgradePreference(upgradePreference);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withUpgradePreference(upgradePreference);
+            return this;
+        }
+    }
+
     public AppServiceEnvironmentResourceImpl withDedicatedHostCount(Integer dedicatedHostCount) {
         if (isInCreateMode()) {
             this.innerModel().withDedicatedHostCount(dedicatedHostCount);
@@ -396,6 +456,28 @@ public final class AppServiceEnvironmentResourceImpl
             return this;
         } else {
             this.updateHostingEnvironmentEnvelope.withZoneRedundant(zoneRedundant);
+            return this;
+        }
+    }
+
+    public AppServiceEnvironmentResourceImpl withCustomDnsSuffixConfiguration(
+        CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration) {
+        if (isInCreateMode()) {
+            this.innerModel().withCustomDnsSuffixConfiguration(customDnsSuffixConfiguration);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withCustomDnsSuffixConfiguration(customDnsSuffixConfiguration);
+            return this;
+        }
+    }
+
+    public AppServiceEnvironmentResourceImpl withNetworkingConfiguration(
+        AseV3NetworkingConfigurationInner networkingConfiguration) {
+        if (isInCreateMode()) {
+            this.innerModel().withNetworkingConfiguration(networkingConfiguration);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withNetworkingConfiguration(networkingConfiguration);
             return this;
         }
     }

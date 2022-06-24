@@ -82,6 +82,10 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         return this.innerModel().maximumNumberOfWorkers();
     }
 
+    public Integer numberOfWorkers() {
+        return this.innerModel().numberOfWorkers();
+    }
+
     public String geoRegion() {
         return this.innerModel().geoRegion();
     }

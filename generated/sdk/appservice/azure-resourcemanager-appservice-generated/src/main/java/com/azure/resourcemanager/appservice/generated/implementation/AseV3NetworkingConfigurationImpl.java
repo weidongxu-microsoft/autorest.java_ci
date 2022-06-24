@@ -77,6 +77,18 @@ public final class AseV3NetworkingConfigurationImpl implements AseV3NetworkingCo
         return this.innerModel().allowNewPrivateEndpointConnections();
     }
 
+    public Boolean ftpEnabled() {
+        return this.innerModel().ftpEnabled();
+    }
+
+    public Boolean remoteDebugEnabled() {
+        return this.innerModel().remoteDebugEnabled();
+    }
+
+    public String inboundIpAddressOverride() {
+        return this.innerModel().inboundIpAddressOverride();
+    }
+
     public AseV3NetworkingConfigurationInner innerModel() {
         return this.innerObject;
     }

@@ -20,22 +20,6 @@ public final class CertificateEmailImpl implements CertificateEmail {
         this.serviceManager = serviceManager;
     }
 
-    public String id() {
-        return this.innerModel().id();
-    }
-
-    public String name() {
-        return this.innerModel().name();
-    }
-
-    public String type() {
-        return this.innerModel().type();
-    }
-
-    public String kind() {
-        return this.innerModel().kind();
-    }
-
     public String emailId() {
         return this.innerModel().emailId();
     }

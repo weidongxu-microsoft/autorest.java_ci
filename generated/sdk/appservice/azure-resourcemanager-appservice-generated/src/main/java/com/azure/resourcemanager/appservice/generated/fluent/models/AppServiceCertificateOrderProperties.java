@@ -6,12 +6,12 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem;
 import com.azure.resourcemanager.appservice.generated.models.CertificateDetails;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderContact;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderStatus;
 import com.azure.resourcemanager.appservice.generated.models.CertificateProductType;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
+import com.azure.resourcemanager.appservice.generated.models.ResourceNotRenewableReason;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -131,8 +131,7 @@ public final class AppServiceCertificateOrderProperties {
      * moment.
      */
     @JsonProperty(value = "appServiceCertificateNotRenewableReasons", access = JsonProperty.Access.WRITE_ONLY)
-    private List<AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem>
-        appServiceCertificateNotRenewableReasons;
+    private List<ResourceNotRenewableReason> appServiceCertificateNotRenewableReasons;
 
     /*
      * Time stamp when the certificate would be auto renewed next
@@ -385,8 +384,7 @@ public final class AppServiceCertificateOrderProperties {
      *
      * @return the appServiceCertificateNotRenewableReasons value.
      */
-    public List<AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem>
-        appServiceCertificateNotRenewableReasons() {
+    public List<ResourceNotRenewableReason> appServiceCertificateNotRenewableReasons() {
         return this.appServiceCertificateNotRenewableReasons;
     }
 

@@ -170,7 +170,7 @@ public interface Domain {
      *
      * @return the domainNotRenewableReasons value.
      */
-    List<DomainPropertiesDomainNotRenewableReasonsItem> domainNotRenewableReasons();
+    List<ResourceNotRenewableReason> domainNotRenewableReasons();
 
     /**
      * Gets the dnsType property: Current DNS type.
@@ -549,7 +549,7 @@ public interface Domain {
     Domain refresh(Context context);
 
     /**
-     * Renew a domain.
+     * Description for Renew a domain.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -558,7 +558,7 @@ public interface Domain {
     void renew();
 
     /**
-     * Renew a domain.
+     * Description for Renew a domain.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

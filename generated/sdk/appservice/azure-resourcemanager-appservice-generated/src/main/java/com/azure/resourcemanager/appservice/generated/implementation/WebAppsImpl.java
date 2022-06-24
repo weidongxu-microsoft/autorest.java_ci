@@ -17,6 +17,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.BackupItemIn
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ConnectionStringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ContinuousWebJobInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.CsmDeploymentStatusInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmUsageQuotaInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CustomHostnameAnalysisResultInner;
@@ -76,6 +77,7 @@ import com.azure.resourcemanager.appservice.generated.models.BackupItem;
 import com.azure.resourcemanager.appservice.generated.models.BackupRequest;
 import com.azure.resourcemanager.appservice.generated.models.ConnectionStringDictionary;
 import com.azure.resourcemanager.appservice.generated.models.ContinuousWebJob;
+import com.azure.resourcemanager.appservice.generated.models.CsmDeploymentStatus;
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingCredentialsPoliciesEntity;
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingProfileOptions;
 import com.azure.resourcemanager.appservice.generated.models.CsmSlotEntity;
@@ -1332,6 +1334,44 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> stopContinuousWebJobWithResponse(
         String resourceGroupName, String name, String webJobName, Context context) {
         return this.serviceClient().stopContinuousWebJobWithResponse(resourceGroupName, name, webJobName, context);
+    }
+
+    public PagedIterable<CsmDeploymentStatus> listProductionSiteDeploymentStatuses(
+        String resourceGroupName, String name) {
+        PagedIterable<CsmDeploymentStatusInner> inner =
+            this.serviceClient().listProductionSiteDeploymentStatuses(resourceGroupName, name);
+        return Utils.mapPage(inner, inner1 -> new CsmDeploymentStatusImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<CsmDeploymentStatus> listProductionSiteDeploymentStatuses(
+        String resourceGroupName, String name, Context context) {
+        PagedIterable<CsmDeploymentStatusInner> inner =
+            this.serviceClient().listProductionSiteDeploymentStatuses(resourceGroupName, name, context);
+        return Utils.mapPage(inner, inner1 -> new CsmDeploymentStatusImpl(inner1, this.manager()));
+    }
+
+    public CsmDeploymentStatus getProductionSiteDeploymentStatus(
+        String resourceGroupName, String name, String deploymentStatusId) {
+        CsmDeploymentStatusInner inner =
+            this.serviceClient().getProductionSiteDeploymentStatus(resourceGroupName, name, deploymentStatusId);
+        if (inner != null) {
+            return new CsmDeploymentStatusImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public CsmDeploymentStatus getProductionSiteDeploymentStatus(
+        String resourceGroupName, String name, String deploymentStatusId, Context context) {
+        CsmDeploymentStatusInner inner =
+            this
+                .serviceClient()
+                .getProductionSiteDeploymentStatus(resourceGroupName, name, deploymentStatusId, context);
+        if (inner != null) {
+            return new CsmDeploymentStatusImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public PagedIterable<Deployment> listDeployments(String resourceGroupName, String name) {
@@ -4362,6 +4402,44 @@ public final class WebAppsImpl implements WebApps {
         return this
             .serviceClient()
             .stopContinuousWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot, context);
+    }
+
+    public PagedIterable<CsmDeploymentStatus> listSlotSiteDeploymentStatusesSlot(
+        String resourceGroupName, String name, String slot) {
+        PagedIterable<CsmDeploymentStatusInner> inner =
+            this.serviceClient().listSlotSiteDeploymentStatusesSlot(resourceGroupName, name, slot);
+        return Utils.mapPage(inner, inner1 -> new CsmDeploymentStatusImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<CsmDeploymentStatus> listSlotSiteDeploymentStatusesSlot(
+        String resourceGroupName, String name, String slot, Context context) {
+        PagedIterable<CsmDeploymentStatusInner> inner =
+            this.serviceClient().listSlotSiteDeploymentStatusesSlot(resourceGroupName, name, slot, context);
+        return Utils.mapPage(inner, inner1 -> new CsmDeploymentStatusImpl(inner1, this.manager()));
+    }
+
+    public CsmDeploymentStatus getSlotSiteDeploymentStatusSlot(
+        String resourceGroupName, String name, String slot, String deploymentStatusId) {
+        CsmDeploymentStatusInner inner =
+            this.serviceClient().getSlotSiteDeploymentStatusSlot(resourceGroupName, name, slot, deploymentStatusId);
+        if (inner != null) {
+            return new CsmDeploymentStatusImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public CsmDeploymentStatus getSlotSiteDeploymentStatusSlot(
+        String resourceGroupName, String name, String slot, String deploymentStatusId, Context context) {
+        CsmDeploymentStatusInner inner =
+            this
+                .serviceClient()
+                .getSlotSiteDeploymentStatusSlot(resourceGroupName, name, slot, deploymentStatusId, context);
+        if (inner != null) {
+            return new CsmDeploymentStatusImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public PagedIterable<Deployment> listDeploymentsSlot(String resourceGroupName, String name, String slot) {

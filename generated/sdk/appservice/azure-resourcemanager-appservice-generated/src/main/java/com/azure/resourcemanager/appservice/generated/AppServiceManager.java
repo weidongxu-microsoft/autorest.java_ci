@@ -46,6 +46,15 @@ import com.azure.resourcemanager.appservice.generated.implementation.StaticSites
 import com.azure.resourcemanager.appservice.generated.implementation.TopLevelDomainsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.WebAppsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.WebSiteManagementClientBuilder;
+import com.azure.resourcemanager.appservice.generated.implementation.WorkflowRunActionRepetitionsImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.WorkflowRunActionRepetitionsRequestHistoriesImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.WorkflowRunActionScopeRepetitionsImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.WorkflowRunActionsImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.WorkflowRunsImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.WorkflowTriggerHistoriesImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.WorkflowTriggersImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.WorkflowVersionsImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.WorkflowsImpl;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrders;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironments;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlans;
@@ -67,6 +76,15 @@ import com.azure.resourcemanager.appservice.generated.models.ResourceProviders;
 import com.azure.resourcemanager.appservice.generated.models.StaticSites;
 import com.azure.resourcemanager.appservice.generated.models.TopLevelDomains;
 import com.azure.resourcemanager.appservice.generated.models.WebApps;
+import com.azure.resourcemanager.appservice.generated.models.WorkflowRunActionRepetitions;
+import com.azure.resourcemanager.appservice.generated.models.WorkflowRunActionRepetitionsRequestHistories;
+import com.azure.resourcemanager.appservice.generated.models.WorkflowRunActionScopeRepetitions;
+import com.azure.resourcemanager.appservice.generated.models.WorkflowRunActions;
+import com.azure.resourcemanager.appservice.generated.models.WorkflowRuns;
+import com.azure.resourcemanager.appservice.generated.models.WorkflowTriggerHistories;
+import com.azure.resourcemanager.appservice.generated.models.WorkflowTriggers;
+import com.azure.resourcemanager.appservice.generated.models.WorkflowVersions;
+import com.azure.resourcemanager.appservice.generated.models.Workflows;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -117,6 +135,24 @@ public final class AppServiceManager {
     private StaticSites staticSites;
 
     private WebApps webApps;
+
+    private Workflows workflows;
+
+    private WorkflowRuns workflowRuns;
+
+    private WorkflowRunActions workflowRunActions;
+
+    private WorkflowRunActionRepetitions workflowRunActionRepetitions;
+
+    private WorkflowRunActionRepetitionsRequestHistories workflowRunActionRepetitionsRequestHistories;
+
+    private WorkflowRunActionScopeRepetitions workflowRunActionScopeRepetitions;
+
+    private WorkflowTriggers workflowTriggers;
+
+    private WorkflowTriggerHistories workflowTriggerHistories;
+
+    private WorkflowVersions workflowVersions;
 
     private final WebSiteManagementClient clientObject;
 
@@ -579,7 +615,8 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of StaticSites. It manages StaticSiteArmResource,
-     * StaticSiteUserProvidedFunctionAppArmResource, StaticSiteCustomDomainOverviewArmResource.
+     * StaticSiteUserProvidedFunctionAppArmResource, StaticSiteCustomDomainOverviewArmResource,
+     * StaticSiteLinkedBackendArmResource.
      *
      * @return Resource collection API of StaticSites.
      */
@@ -602,6 +639,119 @@ public final class AppServiceManager {
             this.webApps = new WebAppsImpl(clientObject.getWebApps(), this);
         }
         return webApps;
+    }
+
+    /**
+     * Gets the resource collection API of Workflows.
+     *
+     * @return Resource collection API of Workflows.
+     */
+    public Workflows workflows() {
+        if (this.workflows == null) {
+            this.workflows = new WorkflowsImpl(clientObject.getWorkflows(), this);
+        }
+        return workflows;
+    }
+
+    /**
+     * Gets the resource collection API of WorkflowRuns.
+     *
+     * @return Resource collection API of WorkflowRuns.
+     */
+    public WorkflowRuns workflowRuns() {
+        if (this.workflowRuns == null) {
+            this.workflowRuns = new WorkflowRunsImpl(clientObject.getWorkflowRuns(), this);
+        }
+        return workflowRuns;
+    }
+
+    /**
+     * Gets the resource collection API of WorkflowRunActions.
+     *
+     * @return Resource collection API of WorkflowRunActions.
+     */
+    public WorkflowRunActions workflowRunActions() {
+        if (this.workflowRunActions == null) {
+            this.workflowRunActions = new WorkflowRunActionsImpl(clientObject.getWorkflowRunActions(), this);
+        }
+        return workflowRunActions;
+    }
+
+    /**
+     * Gets the resource collection API of WorkflowRunActionRepetitions.
+     *
+     * @return Resource collection API of WorkflowRunActionRepetitions.
+     */
+    public WorkflowRunActionRepetitions workflowRunActionRepetitions() {
+        if (this.workflowRunActionRepetitions == null) {
+            this.workflowRunActionRepetitions =
+                new WorkflowRunActionRepetitionsImpl(clientObject.getWorkflowRunActionRepetitions(), this);
+        }
+        return workflowRunActionRepetitions;
+    }
+
+    /**
+     * Gets the resource collection API of WorkflowRunActionRepetitionsRequestHistories.
+     *
+     * @return Resource collection API of WorkflowRunActionRepetitionsRequestHistories.
+     */
+    public WorkflowRunActionRepetitionsRequestHistories workflowRunActionRepetitionsRequestHistories() {
+        if (this.workflowRunActionRepetitionsRequestHistories == null) {
+            this.workflowRunActionRepetitionsRequestHistories =
+                new WorkflowRunActionRepetitionsRequestHistoriesImpl(
+                    clientObject.getWorkflowRunActionRepetitionsRequestHistories(), this);
+        }
+        return workflowRunActionRepetitionsRequestHistories;
+    }
+
+    /**
+     * Gets the resource collection API of WorkflowRunActionScopeRepetitions.
+     *
+     * @return Resource collection API of WorkflowRunActionScopeRepetitions.
+     */
+    public WorkflowRunActionScopeRepetitions workflowRunActionScopeRepetitions() {
+        if (this.workflowRunActionScopeRepetitions == null) {
+            this.workflowRunActionScopeRepetitions =
+                new WorkflowRunActionScopeRepetitionsImpl(clientObject.getWorkflowRunActionScopeRepetitions(), this);
+        }
+        return workflowRunActionScopeRepetitions;
+    }
+
+    /**
+     * Gets the resource collection API of WorkflowTriggers.
+     *
+     * @return Resource collection API of WorkflowTriggers.
+     */
+    public WorkflowTriggers workflowTriggers() {
+        if (this.workflowTriggers == null) {
+            this.workflowTriggers = new WorkflowTriggersImpl(clientObject.getWorkflowTriggers(), this);
+        }
+        return workflowTriggers;
+    }
+
+    /**
+     * Gets the resource collection API of WorkflowTriggerHistories.
+     *
+     * @return Resource collection API of WorkflowTriggerHistories.
+     */
+    public WorkflowTriggerHistories workflowTriggerHistories() {
+        if (this.workflowTriggerHistories == null) {
+            this.workflowTriggerHistories =
+                new WorkflowTriggerHistoriesImpl(clientObject.getWorkflowTriggerHistories(), this);
+        }
+        return workflowTriggerHistories;
+    }
+
+    /**
+     * Gets the resource collection API of WorkflowVersions.
+     *
+     * @return Resource collection API of WorkflowVersions.
+     */
+    public WorkflowVersions workflowVersions() {
+        if (this.workflowVersions == null) {
+            this.workflowVersions = new WorkflowVersionsImpl(clientObject.getWorkflowVersions(), this);
+        }
+        return workflowVersions;
     }
 
     /**

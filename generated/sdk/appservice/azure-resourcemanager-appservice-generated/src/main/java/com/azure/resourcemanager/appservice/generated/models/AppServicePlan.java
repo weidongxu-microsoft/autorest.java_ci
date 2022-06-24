@@ -107,6 +107,13 @@ public interface AppServicePlan {
     Integer maximumNumberOfWorkers();
 
     /**
+     * Gets the numberOfWorkers property: The number of instances that are assigned to this App Service plan.
+     *
+     * @return the numberOfWorkers value.
+     */
+    Integer numberOfWorkers();
+
+    /**
      * Gets the geoRegion property: Geographical location for the App Service plan.
      *
      * @return the geoRegion value.
@@ -749,7 +756,7 @@ public interface AppServicePlan {
     AppServicePlan refresh(Context context);
 
     /**
-     * Restart all apps in an App Service plan.
+     * Description for Restart all apps in an App Service plan.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -758,7 +765,7 @@ public interface AppServicePlan {
     void restartWebApps();
 
     /**
-     * Restart all apps in an App Service plan.
+     * Description for Restart all apps in an App Service plan.
      *
      * @param softRestart Specify &lt;code&gt;true&lt;/code&gt; to perform a soft restart, applies the configuration
      *     settings and restarts the apps if necessary. The default is &lt;code&gt;false&lt;/code&gt;, which always

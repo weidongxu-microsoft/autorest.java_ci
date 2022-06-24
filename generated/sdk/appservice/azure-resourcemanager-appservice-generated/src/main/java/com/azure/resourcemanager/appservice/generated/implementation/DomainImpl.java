@@ -12,11 +12,11 @@ import com.azure.resourcemanager.appservice.generated.models.Contact;
 import com.azure.resourcemanager.appservice.generated.models.DnsType;
 import com.azure.resourcemanager.appservice.generated.models.Domain;
 import com.azure.resourcemanager.appservice.generated.models.DomainPatchResource;
-import com.azure.resourcemanager.appservice.generated.models.DomainPropertiesDomainNotRenewableReasonsItem;
 import com.azure.resourcemanager.appservice.generated.models.DomainPurchaseConsent;
 import com.azure.resourcemanager.appservice.generated.models.DomainStatus;
 import com.azure.resourcemanager.appservice.generated.models.Hostname;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
+import com.azure.resourcemanager.appservice.generated.models.ResourceNotRenewableReason;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -126,8 +126,8 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         return this.innerModel().consent();
     }
 
-    public List<DomainPropertiesDomainNotRenewableReasonsItem> domainNotRenewableReasons() {
-        List<DomainPropertiesDomainNotRenewableReasonsItem> inner = this.innerModel().domainNotRenewableReasons();
+    public List<ResourceNotRenewableReason> domainNotRenewableReasons() {
+        List<ResourceNotRenewableReason> inner = this.innerModel().domainNotRenewableReasons();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {

@@ -297,8 +297,7 @@ public final class AppServiceCertificateOrderPatchResource extends ProxyOnlyReso
      *
      * @return the appServiceCertificateNotRenewableReasons value.
      */
-    public List<AppServiceCertificateOrderPatchResourcePropertiesAppServiceCertificateNotRenewableReasonsItem>
-        appServiceCertificateNotRenewableReasons() {
+    public List<ResourceNotRenewableReason> appServiceCertificateNotRenewableReasons() {
         return this.innerProperties() == null
             ? null
             : this.innerProperties().appServiceCertificateNotRenewableReasons();

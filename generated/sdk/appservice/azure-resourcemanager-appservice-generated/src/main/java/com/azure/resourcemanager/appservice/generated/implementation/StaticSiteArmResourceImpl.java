@@ -15,6 +15,7 @@ import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
 import com.azure.resourcemanager.appservice.generated.models.StagingEnvironmentPolicy;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildProperties;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteLinkedBackend;
 import com.azure.resourcemanager.appservice.generated.models.StaticSitePatchResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteResetPropertiesArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteTemplateOptions;
@@ -139,12 +140,25 @@ public final class StaticSiteArmResourceImpl
         }
     }
 
+    public List<StaticSiteLinkedBackend> linkedBackends() {
+        List<StaticSiteLinkedBackend> inner = this.innerModel().linkedBackends();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public String provider() {
         return this.innerModel().provider();
     }
 
     public EnterpriseGradeCdnStatus enterpriseGradeCdnStatus() {
         return this.innerModel().enterpriseGradeCdnStatus();
+    }
+
+    public String publicNetworkAccess() {
+        return this.innerModel().publicNetworkAccess();
     }
 
     public Region region() {
@@ -459,6 +473,16 @@ public final class StaticSiteArmResourceImpl
             return this;
         } else {
             this.updateStaticSiteEnvelope.withEnterpriseGradeCdnStatus(enterpriseGradeCdnStatus);
+            return this;
+        }
+    }
+
+    public StaticSiteArmResourceImpl withPublicNetworkAccess(String publicNetworkAccess) {
+        if (isInCreateMode()) {
+            this.innerModel().withPublicNetworkAccess(publicNetworkAccess);
+            return this;
+        } else {
+            this.updateStaticSiteEnvelope.withPublicNetworkAccess(publicNetworkAccess);
             return this;
         }
     }
