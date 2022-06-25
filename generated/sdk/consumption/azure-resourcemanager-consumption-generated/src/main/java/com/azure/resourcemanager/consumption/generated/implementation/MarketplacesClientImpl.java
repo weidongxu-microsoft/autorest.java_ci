@@ -58,7 +58,7 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
     private interface MarketplacesService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.Consumption/marketplaces")
-        @ExpectedResponses({200})
+        @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<MarketplacesListResult>> list(
             @HostParam("$host") String endpoint,
@@ -72,7 +72,7 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
 
         @Headers({"Content-Type: application/json"})
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<MarketplacesListResult>> listNext(
             @PathParam(value = "nextLink", encoded = true) String nextLink,
