@@ -63,7 +63,7 @@ public final class ModernReservationTransactionProperties {
     private OffsetDateTime eventDate;
 
     /*
-     * The type of the transaction (Purchase, Cancel, etc.)
+     * The type of the transaction (Purchase, Cancel or Refund).
      */
     @JsonProperty(value = "eventType", access = JsonProperty.Access.WRITE_ONLY)
     private String eventType;
@@ -211,7 +211,7 @@ public final class ModernReservationTransactionProperties {
     }
 
     /**
-     * Get the eventType property: The type of the transaction (Purchase, Cancel, etc.).
+     * Get the eventType property: The type of the transaction (Purchase, Cancel or Refund).
      *
      * @return the eventType value.
      */

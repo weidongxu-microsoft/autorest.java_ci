@@ -59,7 +59,7 @@ public class ReservationTransactionInner extends ReservationTransactionResource 
     }
 
     /**
-     * Get the eventType property: The type of the transaction (Purchase, Cancel, etc.).
+     * Get the eventType property: The type of the transaction (Purchase, Cancel or Refund).
      *
      * @return the eventType value.
      */
