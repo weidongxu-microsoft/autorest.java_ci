@@ -130,7 +130,8 @@ public interface NetworkInterface {
     Boolean vnetEncryptionSupported();
 
     /**
-     * Gets the enableAcceleratedNetworking property: If the network interface is accelerated networking enabled.
+     * Gets the enableAcceleratedNetworking property: If the network interface is configured for accelerated networking.
+     * Not applicable to VM sizes which require accelerated networking.
      *
      * @return the enableAcceleratedNetworking value.
      */
@@ -360,10 +361,11 @@ public interface NetworkInterface {
         /** The stage of the NetworkInterface definition allowing to specify enableAcceleratedNetworking. */
         interface WithEnableAcceleratedNetworking {
             /**
-             * Specifies the enableAcceleratedNetworking property: If the network interface is accelerated networking
-             * enabled..
+             * Specifies the enableAcceleratedNetworking property: If the network interface is configured for
+             * accelerated networking. Not applicable to VM sizes which require accelerated networking..
              *
-             * @param enableAcceleratedNetworking If the network interface is accelerated networking enabled.
+             * @param enableAcceleratedNetworking If the network interface is configured for accelerated networking. Not
+             *     applicable to VM sizes which require accelerated networking.
              * @return the next definition stage.
              */
             WithCreate withEnableAcceleratedNetworking(Boolean enableAcceleratedNetworking);

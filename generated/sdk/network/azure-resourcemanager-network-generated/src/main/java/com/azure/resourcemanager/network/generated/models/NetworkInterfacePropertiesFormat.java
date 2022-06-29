@@ -75,7 +75,8 @@ public interface NetworkInterfacePropertiesFormat {
     Boolean vnetEncryptionSupported();
 
     /**
-     * Gets the enableAcceleratedNetworking property: If the network interface is accelerated networking enabled.
+     * Gets the enableAcceleratedNetworking property: If the network interface is configured for accelerated networking.
+     * Not applicable to VM sizes which require accelerated networking.
      *
      * @return the enableAcceleratedNetworking value.
      */
