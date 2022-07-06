@@ -380,7 +380,7 @@ public interface DedicatedHost {
      * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is
      * running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource
      * Health Center in the Azure Portal. Please refer to
-     * https://docs.microsoft.com/en-us/azure/service-health/resource-health-overview for more details.
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      *
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -392,7 +392,7 @@ public interface DedicatedHost {
      * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is
      * running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource
      * Health Center in the Azure Portal. Please refer to
-     * https://docs.microsoft.com/en-us/azure/service-health/resource-health-overview for more details.
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
