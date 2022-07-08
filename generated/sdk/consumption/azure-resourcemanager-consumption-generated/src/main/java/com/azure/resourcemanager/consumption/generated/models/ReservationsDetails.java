@@ -10,7 +10,9 @@ import com.azure.core.util.Context;
 /** Resource collection API of ReservationsDetails. */
 public interface ReservationsDetails {
     /**
-     * Lists the reservations details for provided date range.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 502 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller
+     * date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
      * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
@@ -23,7 +25,9 @@ public interface ReservationsDetails {
     PagedIterable<ReservationDetail> listByReservationOrder(String reservationOrderId, String filter);
 
     /**
-     * Lists the reservations details for provided date range.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 502 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller
+     * date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
      * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
@@ -37,7 +41,9 @@ public interface ReservationsDetails {
     PagedIterable<ReservationDetail> listByReservationOrder(String reservationOrderId, String filter, Context context);
 
     /**
-     * Lists the reservations details for provided date range.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 502 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller
+     * date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
@@ -52,7 +58,9 @@ public interface ReservationsDetails {
         String reservationOrderId, String reservationId, String filter);
 
     /**
-     * Lists the reservations details for provided date range.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 502 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller
+     * date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
@@ -68,7 +76,9 @@ public interface ReservationsDetails {
         String reservationOrderId, String reservationId, String filter, Context context);
 
     /**
-     * Lists the reservations details for the defined scope and provided date range.
+     * Lists the reservations details for the defined scope and provided date range. Note: ARM has a payload size limit
+     * of 12MB, so currently callers get 502 when the response size exceeds the ARM limit. In such cases, API call
+     * should be made with smaller date ranges.
      *
      * @param resourceScope The scope associated with reservations details operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
@@ -82,7 +92,9 @@ public interface ReservationsDetails {
     PagedIterable<ReservationDetail> list(String resourceScope);
 
     /**
-     * Lists the reservations details for the defined scope and provided date range.
+     * Lists the reservations details for the defined scope and provided date range. Note: ARM has a payload size limit
+     * of 12MB, so currently callers get 502 when the response size exceeds the ARM limit. In such cases, API call
+     * should be made with smaller date ranges.
      *
      * @param resourceScope The scope associated with reservations details operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
